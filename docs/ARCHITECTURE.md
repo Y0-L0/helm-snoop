@@ -31,10 +31,17 @@ The analyzer is static-first, schema-aware, and offers a `--strict` mode to enfo
 8. Report unused and undefined keys; warn on unresolved dynamic accesses.
 
 ## Parsing & AST
+- Prefer Helm chart loader: use `helm.sh/helm/v3/pkg/chart/loader` to load charts, values, templates, and subcharts consistently.
 - Use Go `text/template` parser to obtain `parse.Tree` per file.
 - Node types of interest: `ActionNode` (pipelines), `IfNode`, `RangeNode`, `WithNode`, `TemplateNode`, `ListNode`.
 - Visit both `List` and `ElseList` for branching nodes; branch reachability is ignored by design.
 - Collect `define` blocks; map them by name for resolving `template`/`include` references.
+- Guard against recursive includes/templates with a recursion limit; surface a diagnostic when cycles are detected.
+
+## Function Evaluators
+- Maintain a registry of lightweight evaluators keyed by function name (e.g., `index`, `dig`, `get`, `default`, `hasKey`, `include`, `tpl`).
+- Keep the walker generic; evaluators interpret pipelines into the abstract domain (Path/PathSet/LiteralSet/Unknown).
+- Provide a tolerant FuncMap (Sprig + stubs) for parsing only; do not execute functions during analysis.
 
 ## Data Model (Abstract Values)
 Represent expressions in pipelines using a small abstract domain:
@@ -71,6 +78,8 @@ Utilities:
 - tpl:
   - If argument is literal or from default `values.yaml` and parses as template → analyze it recursively.
   - If argument can be overridden by user → mark as dynamic; warn (error in `--strict`).
+- Root `.Values` usage:
+  - If templates reference bare `.Values` (or `$ .Values`) treat usage as dynamic. Suppress “defined-but-not-used” claims unless `--strict` and dynamic accesses are fully resolved.
 
 ## Variable & Scope Handling
 - Maintain a stack of scopes. Push on entering `If/With/Range` bodies and `define` bodies.
@@ -81,6 +90,7 @@ Utilities:
 
 ## Schema Integration
 - Load `values.schema.json` if present.
+- Allow pluggable schema providers (e.g., generated schemas) when a chart does not ship one.
 - Provide helpers to answer:
   - Is a path defined? What type (object/array/string/etc.)?
   - For objects: is `additionalProperties` false (closed object)? Enumerated `properties`?
@@ -100,6 +110,7 @@ Utilities:
 - default/required/ternaries: treat as reads of the non-default operand.
 - include/template: follow call graph (with recursion guard).
 - tpl: literal/default-only; override-origin tpl is dynamic.
+ - Parent/child heuristics: consider a parent key effectively used if any child key is used; avoid flagging container-only keys as unused when children exist.
 
 ## Strict Mode
 - `--strict` enforces:
@@ -119,6 +130,9 @@ Utilities:
   - Dynamic: sites where access could not be resolved statically.
 - Formats: text (human), JSON (CI/machine).
 - Exit codes: 0 success; non-zero based on thresholds/flags (e.g., any undefined, any unused in strict, etc.).
+- Source locations: include filename:line spans from `parse.Node` positions for all findings.
+- Ignore pragmas: support inline comments to suppress specific diagnostics (e.g., `# helmcheck: ignore-unused=foo.bar`).
+- Explain mode: optional verbose output to show why a key is considered used (origin node/evaluator).
 
 ## CLI Flags (initial)
 - `--values <path>`: path to values.yaml (default: chart root).
@@ -133,6 +147,7 @@ Utilities:
 - Reuse schema lookups via memoized path resolution.
 - Bounded recursion for template/include to avoid cycles.
 - Analysis is linear in AST size; expect fast runs for typical charts.
+ - Avoid pre-scan/quick modes; rely on deterministic AST traversal with caching for performance.
 
 ## Limitations & Future Work
 - Advanced data-flow (merging branches, multi-step variable propagation) beyond simple aliasing.
