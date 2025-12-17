@@ -1,6 +1,6 @@
 apiVersion: v2
 name: test-chart
-description: A minimal chart for analyzer tests
+description: A minimal chart for helm-snoop integration tests
 type: application
 version: 0.1.0
 

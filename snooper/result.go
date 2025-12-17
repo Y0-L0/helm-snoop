@@ -1,4 +1,4 @@
-package analyzer
+package snooper
 
 // Result holds the outcome of an analysis run.
 // It is intended to be serialized or formatted by multiple output backends.

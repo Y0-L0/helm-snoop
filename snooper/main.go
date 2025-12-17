@@ -1,4 +1,4 @@
-package analyzer
+package snooper
 
 import (
 	"fmt"
@@ -13,7 +13,7 @@ import (
 // Exit codes: 0 success; 1 analysis error; 2 usage error.
 func Main(args []string, stdout io.Writer, stderr io.Writer) int {
 	if len(args) != 2 {
-		_, _ = fmt.Fprintln(stderr, "usage: helm-analyzer <path-to-chart>")
+		_, _ = fmt.Fprintln(stderr, "usage: helm-snoop <path-to-chart>")
 		return 2
 	}
 
@@ -23,7 +23,7 @@ func Main(args []string, stdout io.Writer, stderr io.Writer) int {
 		_, _ = fmt.Fprintf(stderr, "Failed to read helm chart.\nerror: %v\n", err)
 		return 1
 	}
-	r, err := AnalysisV2(chart)
+	r, err := Analyse(chart)
 	if err != nil {
 		_, _ = fmt.Fprintf(stderr, "Failed to analyze the helm chart.\nerror: %v\n", err)
 		return 1

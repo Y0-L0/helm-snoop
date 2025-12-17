@@ -40,7 +40,7 @@ This document defines an MVP-first path to validate the approach, followed by a 
    1. Run both tools on the same fixtures and compare sets; differences reveal gaps quickly.
 
 2. Golden snapshots from real charts
-   1. Capture analyzer output on a few public charts; review changes as functionality grows.
+   1. Capture `helm-snoop` output on a few public charts; review changes as functionality grows.
 
 3. Property-based snippet tests
    1. Generate tiny templates combining direct paths with `quote/default/include`; ensure the referenced set is stable under benign wrappers.
@@ -97,7 +97,7 @@ This document defines an MVP-first path to validate the approach, followed by a 
    1. Unit tests: pipeline evaluators (`index`, `dig`, `get`, `default`), variable aliasing, field chains.
    2. Schema helpers: path resolution, enum extraction, closed object detection.
    3. AST traversal tests: visit both branch bodies and follow include/template with recursion guard.
-   4. End-to-end tests: run analyzer on fixture charts; snapshot text/JSON outputs; verify `--strict` failures for unresolved dynamic sites.
+   4. End-to-end tests: run `helm-snoop` on fixture charts; snapshot text/JSON outputs; verify `--strict` failures for unresolved dynamic sites.
 
 ## Developer Notes
 

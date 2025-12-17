@@ -1,4 +1,4 @@
-package analyzer
+package snooper
 
 import (
 	loader "helm.sh/helm/v4/pkg/chart/v2/loader"
@@ -10,7 +10,7 @@ func (s *Integrationtest) TestAnalysisV2_SimpleChart() {
 	chart, err := loader.Load(s.chartPath)
 	s.Require().NoError(err)
 
-	r, err := AnalysisV2(chart)
+	r, err := Analyse(chart)
 	s.Require().NoError(err)
 
 	s.Require().Contains(r.Referenced, "config.enabled")

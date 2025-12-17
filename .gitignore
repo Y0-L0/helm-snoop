@@ -30,3 +30,6 @@ go.work.sum
 
 research
 .editorconfig
+
+**/coverage.out
+**/coverage.html

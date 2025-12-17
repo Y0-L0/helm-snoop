@@ -1,4 +1,4 @@
-package analyzer
+package snooper
 
 func flattenValues(prefix string, v interface{}, out map[string]struct{}) {
 	switch val := v.(type) {
