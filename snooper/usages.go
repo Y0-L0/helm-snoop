@@ -64,15 +64,19 @@ func collectUsedValues(node parse.Node) []string {
 			}
 		}
 	case *parse.IfNode:
-		out = append(out, collectUsedValues(n.List)...)
-		out = append(out, collectUsedValues(n.ElseList)...)
+		panic("`if` / `else` is not implemented")
+		// out = append(out, collectUsedValues(n.List)...)
+		// out = append(out, collectUsedValues(n.ElseList)...)
 	case *parse.WithNode:
-		out = append(out, collectUsedValues(n.List)...)
-		out = append(out, collectUsedValues(n.ElseList)...)
+		panic("`with` is not implemented")
+		// out = append(out, collectUsedValues(n.List)...)
+		// out = append(out, collectUsedValues(n.ElseList)...)
 	case *parse.RangeNode:
-		out = append(out, collectUsedValues(n.List)...)
-		out = append(out, collectUsedValues(n.ElseList)...)
+		panic("`range` is not implemented")
+		// out = append(out, collectUsedValues(n.List)...)
+		// out = append(out, collectUsedValues(n.ElseList)...)
 	case *parse.TemplateNode:
+		panic("`template` is not implemented")
 		// include/template resolution not implemented yet
 	default:
 		_ = n

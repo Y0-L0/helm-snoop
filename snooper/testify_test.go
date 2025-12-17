@@ -21,6 +21,12 @@ func (s *LoggingSuite) SetupTest() {
 	slog.SetDefault(slog.New(handler))
 }
 
+type Unittest struct {
+	LoggingSuite
+}
+
+func TestUnit(t *testing.T) { suite.Run(t, new(Unittest)) }
+
 // Integrationtest is the integration test suite.
 // It tests with the real helm chart in the test-chart directory
 type Integrationtest struct {

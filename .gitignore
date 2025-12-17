@@ -28,6 +28,7 @@ go.work.sum
 .idea/
 .vscode/
 
+.gocache
 research
 .editorconfig
 
