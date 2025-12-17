@@ -1,4 +1,4 @@
-module github.com/y0-l0/helm-analyzer
+module github.com/y0-l0/helm-snoop
 
 go 1.25
 

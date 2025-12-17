@@ -1,4 +1,4 @@
-package analyzer
+package snooper
 
 import (
 	"bytes"
@@ -7,21 +7,21 @@ import (
 
 func (s *Integrationtest) TestMain_UsageError() {
 	var out, err bytes.Buffer
-	code := Main([]string{"analyzer"}, &out, &err)
+	code := Main([]string{"helm-snoop"}, &out, &err)
 	s.Require().Equal(2, code)
 	s.Require().Contains(err.String(), "usage:")
 }
 
 func (s *Integrationtest) TestMain_NonexistentChart() {
 	var out, err bytes.Buffer
-	code := Main([]string{"analyzer", "does-not-exist"}, &out, &err)
+	code := Main([]string{"helm-snoop", "does-not-exist"}, &out, &err)
 	s.Require().Equal(1, code)
 	s.Require().Contains(err.String(), "error:")
 }
 
 func (s *Integrationtest) TestMain_SimpleChart() {
 	var out, err bytes.Buffer
-	code := Main([]string{"analyzer", s.chartPath}, &out, &err)
+	code := Main([]string{"helm-snoop", s.chartPath}, &out, &err)
 	s.Require().Equal(0, code, err.String())
 
 	s.Require().Contains(out.String(), "Referenced:")

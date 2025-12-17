@@ -1,12 +1,12 @@
 # Survey: Existing Tools and Approaches
 
-This document catalogs existing projects and discussions related to detecting unused/undefined Helm values and drift between values.yaml / schema and templates. Each entry notes how it differs from this project’s planned static analyzer.
+This document catalogs existing projects and discussions related to detecting unused/undefined Helm values and drift between values.yaml / schema and templates. Each entry notes how it differs from this project’s planned static analysis.
 
 ## Tools and Plugins
 
 - helm-unused-values (Go, AST parse)
   - Parses templates with text/template/parse and collects direct `.Values.*` field accesses at top level. No recursive traversal into `if/with/range`, no include/define graph, no functions (index/dig), no variable aliasing, no schema integration.
-  - Differs: Our analyzer walks the full AST (all branches), recognizes function forms, tracks variables/scopes, integrates schema (enums/closed objects), and supports strict mode.
+  - Differs: `helm-snoop` walks the full AST (all branches), recognizes function forms, tracks variables/scopes, integrates schema (enums/closed objects), and supports strict mode.
 
 - helm-dirty-values (Python, Helm plugin)
   - Flattens values files and regex-scans templates for `Values.<key>` references; groups unused keys by source file. No AST, no dynamic function handling, no schema awareness.
@@ -27,7 +27,7 @@ This document catalogs existing projects and discussions related to detecting un
 ## Language Servers and Parsers
 
 - helm-ls (language server)
-  - Converts template files to YAML and delegates to yaml-language-server; generates JSON schemas for values files for completion. Not a `.Values` usage analyzer.
+  - Converts template files to YAML and delegates to yaml-language-server; generates JSON schemas for values files for completion. Not a `.Values` usage analysis.
   - Differs: We directly parse Go template AST to extract `.Values` usage and validate against values/schema.
 
 - tree-sitter-go-template (grammar)
@@ -42,7 +42,7 @@ This document catalogs existing projects and discussions related to detecting un
 
 - chart-testing / chart-verifier
   - General lint/testing/certification tools; do not detect unused values or template/values drift.
-  - Differs: Our analyzer fills this specific gap.
+  - Differs: `helm-snoop` fills this specific gap.
 
 ## Community Discussions
 
@@ -57,7 +57,7 @@ This document catalogs existing projects and discussions related to detecting un
     - For third‑party charts without schemas, options include forking to add schemas or generating schemas (see arthurkoziel.com guide) as a stopgap.
     - Use Helm flow‑control functions (`default`, `fail`, `required`) to harden templates against missing inputs, though this does not detect unused keys.
     - Helm issue #6422 referenced; feature not implemented in core Helm.
-  - Alignment: Our analyzer complements schema validation by inspecting template usage directly; works even when charts lack schemas, and can enforce strict completeness when schemas are present.
+  - Alignment: `helm-snoop` complements schema validation by inspecting template usage directly; works even when charts lack schemas, and can enforce strict completeness when schemas are present.
 
 ## Summary: How This Project Differs
 

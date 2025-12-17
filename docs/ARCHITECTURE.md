@@ -6,7 +6,7 @@ A static analysis tool that detects drift between Helm chart templates and value
 - Flattening keys defined in `values.yaml` and optionally `values.schema.json`.
 - Reporting differences: unused keys (defined but never referenced) and undefined keys (referenced but not defined by defaults/schema).
 
-The analyzer is static-first, schema-aware, and offers a `--strict` mode to enforce full static resolvability in common dynamic patterns.
+`helm-snoop` is static-first, schema-aware, and offers a `--strict` mode to enforce full static resolvability in common dynamic patterns.
 
 ## Scope
 - Charts: root and subcharts (optional; see Implementation Plan phase for order).
@@ -157,4 +157,4 @@ Utilities:
 
 ---
 
-This document encodes the initial architecture and a pragmatic, incremental plan to reach a useful analyzer quickly while leaving room for stricter static guarantees under `--strict`.
+This document encodes the initial architecture and a pragmatic, incremental plan to quickly reach a useful state while leaving room for stricter static guarantees under `--strict`.

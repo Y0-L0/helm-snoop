@@ -1,4 +1,4 @@
-package analyzer
+package snooper
 
 import (
 	"fmt"
@@ -7,8 +7,8 @@ import (
 	chart "helm.sh/helm/v4/pkg/chart/v2"
 )
 
-// AnalysisV2 analyzes a Helm chart loaded via Helm's loader.
-func AnalysisV2(ch *chart.Chart) (*Result, error) {
+// Analyse analyses a Helm chart loaded via Helm's loader.
+func Analyse(ch *chart.Chart) (*Result, error) {
 	if ch == nil {
 		return nil, fmt.Errorf("nil chart")
 	}
