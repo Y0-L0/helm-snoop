@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: test-config
+data:
+  message: {{ .Values.config.message }}
+  enabled: {{ .Values.config.enabled }}
+
