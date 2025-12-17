@@ -3,34 +3,30 @@ package analyzer
 import (
 	"bytes"
 	"strings"
-	"testing"
-
-	"github.com/stretchr/testify/require"
 )
 
-func TestMain_UsageError(t *testing.T) {
+func (s *Integrationtest) TestMain_UsageError() {
 	var out, err bytes.Buffer
 	code := Main([]string{"analyzer"}, &out, &err)
-	require.Equal(t, 2, code)
-	require.Contains(t, err.String(), "usage:")
+	s.Require().Equal(2, code)
+	s.Require().Contains(err.String(), "usage:")
 }
 
-func TestMain_NonexistentChart(t *testing.T) {
+func (s *Integrationtest) TestMain_NonexistentChart() {
 	var out, err bytes.Buffer
 	code := Main([]string{"analyzer", "does-not-exist"}, &out, &err)
-	require.Equal(t, 1, code)
-	require.Contains(t, err.String(), "error:")
+	s.Require().Equal(1, code)
+	s.Require().Contains(err.String(), "error:")
 }
 
-func TestMain_SimpleChart(t *testing.T) {
+func (s *Integrationtest) TestMain_SimpleChart() {
 	var out, err bytes.Buffer
-	code := Main([]string{"analyzer", "../test-chart"}, &out, &err)
-	require.Equal(t, 0, code, err.String())
+	code := Main([]string{"analyzer", s.chartPath}, &out, &err)
+	s.Require().Equal(0, code, err.String())
 
-	s := out.String()
-	require.Contains(t, s, "Referenced:")
-	require.True(t, strings.Contains(s, "config.enabled") && strings.Contains(s, "config.message"))
-	require.Contains(t, s, "Defined-not-used:")
-	require.Contains(t, s, "Used-not-defined:")
-	require.Equal(t, "", err.String())
+	s.Require().Contains(out.String(), "Referenced:")
+	s.Require().True(strings.Contains(out.String(), "config.enabled") && strings.Contains(out.String(), "config.message"))
+	s.Require().Contains(out.String(), "Defined-not-used:")
+	s.Require().Contains(out.String(), "Used-not-defined:")
+	s.Require().Equal("", err.String())
 }
