@@ -29,3 +29,4 @@ go.work.sum
 .vscode/
 
 research
+.editorconfig

@@ -3,6 +3,8 @@ package analyzer
 import (
 	"fmt"
 	"io"
+
+	loader "helm.sh/helm/v4/pkg/chart/v2/loader"
 )
 
 // Simple entry point for CLI-style invocation.
@@ -16,9 +18,14 @@ func Main(args []string, stdout io.Writer, stderr io.Writer) int {
 	}
 
 	chartPath := args[1]
-	var r Result
-	if err := Analyze(chartPath, &r); err != nil {
-		_, _ = fmt.Fprintf(stderr, "error: %v\n", err)
+	chart, err := loader.Load(chartPath)
+	if err != nil {
+		_, _ = fmt.Fprintf(stderr, "Failed to read helm chart.\nerror: %v\n", err)
+		return 1
+	}
+	r, err := AnalysisV2(chart)
+	if err != nil {
+		_, _ = fmt.Fprintf(stderr, "Failed to analyze the helm chart.\nerror: %v\n", err)
 		return 1
 	}
 
