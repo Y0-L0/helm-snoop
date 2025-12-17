@@ -1,5 +1,7 @@
 package snooper
 
+import "fmt"
+
 func flattenValues(prefix string, v interface{}, out map[string]struct{}) {
 	switch val := v.(type) {
 	case map[string]interface{}:
@@ -12,10 +14,7 @@ func flattenValues(prefix string, v interface{}, out map[string]struct{}) {
 		}
 	case map[interface{}]interface{}:
 		for rk, child := range val {
-			ks, ok := rk.(string)
-			if !ok {
-				continue
-			}
+			ks := fmt.Sprintf("%v", rk)
 			key := ks
 			if prefix != "" {
 				key = prefix + "." + ks
