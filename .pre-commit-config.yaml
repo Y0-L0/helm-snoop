@@ -1,0 +1,16 @@
+repos:
+  - repo: local
+    hooks:
+      - id: go-fmt
+        name: gofmt
+        entry: gofmt -w
+        language: system
+        pass_filenames: true
+        files: \.go$
+
+      - id: go-test
+        name: go test with kubebuilder assets
+        entry: go test ./...
+        language: system
+        pass_filenames: false
+        files: \.go$
