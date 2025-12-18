@@ -14,7 +14,10 @@ func getFn(args ...interface{}) interface{} {
 		panic("not implemented")
 	}
 	key, ok := args[1].(LiteralSet)
-	if !ok || len(key.Values) != 1 {
+	if !ok {
+		panic("not implemented")
+	}
+	if len(key.Values) != 1 {
 		panic("not implemented")
 	}
 	segs := append(append([]string{}, base.Segs...), key.Values[0])
@@ -24,7 +27,7 @@ func getFn(args ...interface{}) interface{} {
 // indexFn appends one or more literal keys to an absolute .Values path.
 func indexFn(args ...interface{}) interface{} {
 	if len(args) < 2 {
-		return nil
+		panic("not implemented / invalid template")
 	}
 	base, ok := args[0].(AbsPath)
 	if !ok {
@@ -33,7 +36,10 @@ func indexFn(args ...interface{}) interface{} {
 	segs := append([]string{}, base.Segs...)
 	for _, a := range args[1:] {
 		lit, ok := a.(LiteralSet)
-		if !ok || len(lit.Values) != 1 {
+		if !ok {
+			panic("not implemented")
+		}
+		if len(lit.Values) != 1 {
 			panic("not implemented")
 		}
 		segs = append(segs, lit.Values[0])
@@ -46,7 +52,13 @@ func defaultFn(args ...interface{}) interface{} {
 	if len(args) == 0 {
 		return nil
 	}
-	return args[len(args)-1]
+	// Prefer returning a .Values path if present (order-agnostic for piping)
+	for i := len(args) - 1; i >= 0; i-- {
+		if ap, ok := args[i].(AbsPath); ok {
+			return ap
+		}
+	}
+	return nil
 }
 
 func passthrough1Fn(args ...interface{}) interface{} {

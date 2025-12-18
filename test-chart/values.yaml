@@ -1,6 +1,16 @@
 config:
   message: "hello"
   enabled: true
+  disabled: null
 
 integerKey:
   1234: "boom"
+
+getPipe:
+  someKey: someValue
+
+indexPipe:
+  someKey: someValue
+  nestedKey:
+    someOtherKey: nestedPipedValue
+

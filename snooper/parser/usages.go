@@ -22,7 +22,7 @@ func GetUsages(ch *chart.Chart) ([]string, error) {
 
 // parseFile parses one template file and returns all observed .Values paths.
 func parseFile(name string, data []byte) ([]string, error) {
-	trees, err := parse.Parse(name, string(data), "", "", newFuncMap())
+	trees, err := parse.Parse(name, string(data), "", "", templFuncMap)
 	if err != nil {
 		return nil, fmt.Errorf("parse template %s: %w", name, err)
 	}
