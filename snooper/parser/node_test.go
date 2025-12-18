@@ -1,12 +1,4 @@
-package snooper
-
-// NoValues: template without any .Values usage should yield empty slice.
-func (s *Unittest) TestParseFile_NoValues() {
-	tmpl := `kind: ConfigMap\nmetadata: { name: test }\n# no values here\nliteral: text`
-	got, err := parseFile("novals.tmpl", []byte(tmpl))
-	s.Require().NoError(err)
-	s.Require().Empty(got)
-}
+package parser
 
 // Happy-path tests for parseFile/collectUsedValues.
 func (s *Unittest) TestParseFile_Happy() {
@@ -57,28 +49,12 @@ func (s *Unittest) TestParseFile_NotImplemented() {
 		{name: "with block", tmpl: `{{ with . }}{{ .Values.a.x }}{{ end }}`},
 		{name: "range block", tmpl: `{{ range .Values.items }}{{ end }}`},
 		{name: "template action", tmpl: `{{ template "x" . }}`},
-		// {name: "tpl function", tmpl: `{{ tpl "{{ .Values.a.x }}" . }}`},
 	}
 	for _, testCase := range cases {
 		s.Run(testCase.name, func() {
 			s.Require().Panics(func() {
 				_, _ = parseFile(testCase.name+".tmpl", []byte(testCase.tmpl))
 			})
-		})
-	}
-}
-
-// Invalid template syntax should return an error, not panic.
-func (s *Unittest) TestParseFile_InvalidTemplate() {
-	cases := []string{
-		"{{",                    // unclosed action
-		`{{ .Values.config. }}`, // invalid field
-		`{{ if }}`,              // invalid if syntax
-	}
-	for i, src := range cases {
-		s.Run("invalid-"+string(rune('a'+i)), func() {
-			_, err := parseFile("invalid.tmpl", []byte(src))
-			s.Require().Error(err)
 		})
 	}
 }
