@@ -3,6 +3,7 @@ package snooper
 import (
 	"sort"
 
+	"github.com/y0-l0/helm-snoop/snooper/parser"
 	chart "helm.sh/helm/v4/pkg/chart/v2"
 )
 
@@ -13,7 +14,7 @@ func Analyse(chart *chart.Chart) (*Result, error) {
 	}
 
 	// Per-file extraction into a flat list; reduce later for dedupe.
-	usages, err := getUsages(chart)
+	usages, err := parser.GetUsages(chart)
 	if err != nil {
 		return nil, err
 	}
@@ -22,7 +23,7 @@ func Analyse(chart *chart.Chart) (*Result, error) {
 	// Flatten defaults from chart values
 	definedSet := map[string]struct{}{}
 	if chart.Values != nil {
-		flattenValues("", chart.Values, definedSet)
+		parser.GetDefinitions("", chart.Values, definedSet)
 	}
 
 	// Build result

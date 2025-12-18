@@ -1,4 +1,4 @@
-package snooper
+package parser
 
 import (
 	"testing"
@@ -67,7 +67,7 @@ nestedMap:
 			assert.NoError(t, err)
 
 			out := make(map[string]struct{})
-			flattenValues(testCase.prefix, values, out)
+			GetDefinitions(testCase.prefix, values, out)
 
 			expectedMap := make(map[string]struct{})
 			for _, item := range testCase.expected {
@@ -87,7 +87,7 @@ func TestFlattenValues_NonStringKeys(t *testing.T) {
 		}
 
 		out := make(map[string]struct{})
-		flattenValues("", values, out)
+		GetDefinitions("", values, out)
 
 		expected := map[string]struct{}{
 			"stringKey": {},
