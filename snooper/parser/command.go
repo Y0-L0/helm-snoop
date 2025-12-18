@@ -11,32 +11,20 @@ func evaluateCommand(cmd *parse.CommandNode) []string {
 	if cmd == nil || len(cmd.Args) == 0 {
 		return nil
 	}
-	// Evaluate arguments into abstract values
-	args := make([]interface{}, 0, len(cmd.Args))
-	name := ""
-	for i, a := range cmd.Args {
-		if i == 0 {
-			if id, ok := a.(*parse.IdentifierNode); ok {
-				name = id.Ident
-				continue // do not treat identifier as argument
-			}
-		}
-		args = append(args, evalArgNode(a))
-	}
-	if name == "" {
-		// No function: collect fields directly from args
+	// First arg must be an identifier to be treated as a function name.
+	id, ok := cmd.Args[0].(*parse.IdentifierNode)
+	if !ok {
 		return scanFieldArgs(cmd.Args)
 	}
-	// Lookup function in funcMap; execute to get abstract result
-	fm := newFuncMap()
-	if fn, ok := fm[name]; ok {
-		if f, ok := fn.(func(...interface{}) interface{}); ok {
-			res := f(args...)
-			return collectFromAbstract(res)
-		}
+
+	args := make([]interface{}, 0, len(cmd.Args)-1)
+	for _, a := range cmd.Args[1:] {
+		args = append(args, evalArgNode(a))
 	}
-	// Unknown function: best-effort direct scan
-	return scanFieldArgs(cmd.Args[1:])
+
+	function := getTemplateFunction(id.Ident)
+	result := function(args...)
+	return collectFromAbstract(result)
 }
 
 func evalArgNode(n parse.Node) interface{} {
@@ -52,7 +40,7 @@ func evalArgNode(n parse.Node) interface{} {
 			return LiteralSet{Values: []string{a.Text}}
 		}
 	}
-	return Unknown{}
+	panic("not implemented")
 }
 
 func collectFromAbstract(v interface{}) []string {
@@ -61,8 +49,6 @@ func collectFromAbstract(v interface{}) []string {
 		return []string{strings.Join(t.Segs, ".")}
 	case LiteralSet:
 		// literals alone don't constitute a .Values read
-		return nil
-	case Unknown:
 		return nil
 	default:
 		return nil

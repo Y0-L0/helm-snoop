@@ -1,8 +1,12 @@
 package parser
 
 import (
+	"fmt"
+
 	sprig "github.com/Masterminds/sprig/v3"
 )
+
+type templFunc = func(...interface{}) interface{}
 
 // newFuncMap returns a tolerant function map for parsing templates.
 // For out-of-scope helpers, we explicitly panic if ever invoked.
@@ -33,7 +37,8 @@ func newFuncMap() map[string]interface{} {
 	funcMap["and"] = noopFn
 	funcMap["call"] = noopFn
 	funcMap["html"] = noopFn
-	funcMap["index"] = noopFn
+	funcMap["index"] = indexFn
+	funcMap["get"] = getFn
 	funcMap["slice"] = noopFn
 	funcMap["js"] = noopFn
 	funcMap["len"] = noopFn
@@ -53,21 +58,17 @@ func newFuncMap() map[string]interface{} {
 	return funcMap
 }
 
-func includeFn(...interface{}) interface{} { panic("not implemented") }
-func tplFn(...interface{}) interface{}     { panic("not implemented") }
-func noopFn(...interface{}) interface{}    { return nil }
-
-// Analysis-aware helpers used by our evaluator.
-func defaultFn(args ...interface{}) interface{} {
-	if len(args) == 0 {
-		return nil
+func getTemplateFunction(name string) templFunc {
+	value, ok := templFuncMap[name]
+	if !ok {
+		panic(fmt.Sprintf("unknown template function name: %s", name))
 	}
-	return args[len(args)-1]
+	function, ok := value.(templFunc)
+	if !ok {
+		panic(fmt.Sprintf("invalid template function signature for function name: %s", name))
+	}
+	return function
 }
 
-func passthrough1Fn(args ...interface{}) interface{} {
-	if len(args) == 0 {
-		return nil
-	}
-	return args[0]
-}
+// Build once and reuse to avoid recreating the map frequently.
+var templFuncMap = newFuncMap()

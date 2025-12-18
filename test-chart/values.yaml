@@ -2,3 +2,5 @@ config:
   message: "hello"
   enabled: true
 
+integerKey:
+  1234: "boom"
