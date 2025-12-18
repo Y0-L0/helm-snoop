@@ -29,20 +29,28 @@
    - Use `a.b[1].c` → TypeMismatch(ArrayIndexUsedOnObject) at `/a/b`.
 
 ## Suggested Minimal Types
-1. SegKind
-   1. type SegKind int // Key, Index, Wildcard, EnumSet (start with Key, Index)
-2. Segment
-   1. type Segment struct { Kind SegKind; S string; I int; Set []string }
-3. Path
-   1. type Path []Segment
-4. Canonical ID
-   1. func CanonicalID(Path) string // JSON Pointer for definite; extend later
-5. Usage
+1. Kind
+   1. type kind byte // keyKind, indexKind
+   2. Future: wildcardKeyKind, wildcardIndexKind, enumKind
+2. Path (two slices)
+   1. type Path struct { tokens []string; kinds []kind } // same length
+   2. Future: enums [][]string (only for Enum segments)
+3. IDs
+   1. func (p Path) ID() string // RFC 6901 over definite segments
+   2. Future: ExtID() including wildcards/enums (escape ~,/,* as ~0,~1,~2)
+4. Builders
+   1. func (p *Path) Key(s string) *Path
+   2. func (p *Path) Idx(s string) *Path
+   3. Future: WildcardKey(), WildcardIndex(), Enum(vals []string)
+5. Match
+   1. func Match(a, b Path) bool // now: Key==Key and Index==Index only
+   2. Future: WildcardKey/Index match-any; Enum↔Key membership; Enum↔Enum intersect
+6. Usage
    1. type Usage struct { Path Path; FileID int; Offset int; Kind UsageKind; Confidence Conf; Notes []string }
-6. DefinedMeta
+7. DefinedMeta
    1. type DefinedMeta struct { Kind NodeKind }
-7. Aggregations
-   1. `map[string][]Usage`; `map[string]DefinedMeta`
+8. Aggregations
+   1. Use `ID()` for map keys; future: carry dynamic metadata for wildcards/enums
 
 ## Map vs List of Structs
 1. Extraction produces a list of Usage structs (detailed, per-site).
