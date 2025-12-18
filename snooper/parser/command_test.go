@@ -4,37 +4,55 @@ package parser
 func (s *Unittest) TestParseCommand_Noops() {
 	cases := []struct {
 		name string
-		tmpl string
+		tmpl []string
 		want []string
 	}{
 		{
-			name: "quote wrapper",
-			tmpl: `{{ quote .Values.app.name }}`,
+			name: "quote",
+			tmpl: []string{
+				`{{ quote .Values.app.name }}`,
+				`{{ .Values.app.name | quote }}`,
+			},
 			want: []string{"app.name"},
 		},
 		{
-			name: "upper wrapper",
-			tmpl: `{{ upper .Values.ns }}`,
+			name: "upper",
+			tmpl: []string{
+				`{{ upper .Values.ns }}`,
+				`{{ .Values.ns | upper }}`,
+			},
 			want: []string{"ns"},
 		},
 		{
-			name: "lower wrapper",
-			tmpl: `{{ lower .Values.Kind }}`,
+			name: "lower",
+			tmpl: []string{
+				`{{ lower .Values.Kind }}`,
+				`{{ .Values.Kind | lower }}`,
+			},
 			want: []string{"Kind"},
 		},
 		{
 			name: "default literal + value",
-			tmpl: `{{ default "x" .Values.cfg.path }}`,
+			tmpl: []string{
+				`{{ default "x" .Values.cfg.path }}`,
+				`{{ "x" | default .Values.cfg.path }}`,
+			},
 			want: []string{"cfg.path"},
 		},
 	}
 
 	for _, tc := range cases {
-		s.Run(tc.name, func() {
-			got, err := parseFile(tc.name+".tmpl", []byte(tc.tmpl))
-			s.Require().NoError(err)
-			s.Require().Equal(tc.want, got)
-		})
+		for i, tmpl := range tc.tmpl {
+			name := tc.name
+			if i == 1 {
+				name += "_piped"
+			}
+			s.Run(name, func() {
+				got, err := parseFile(name+".tmpl", []byte(tmpl))
+				s.Require().NoError(err)
+				s.Require().Equal(tc.want, got)
+			})
+		}
 	}
 }
 
@@ -42,32 +60,47 @@ func (s *Unittest) TestParseCommand_Noops() {
 func (s *Unittest) TestParseCommand_Return() {
 	cases := []struct {
 		name string
-		tmpl string
+		tmpl []string
 		want []string
 	}{
 		{
 			name: "get wrapper",
-			tmpl: `{{ get .Values.app "name"}}`,
+			tmpl: []string{
+				`{{ get .Values.app "name"}}`,
+				`{{ "name" | get .Values.app }}`,
+			},
 			want: []string{"app.name"},
 		},
 		{
 			name: "index one",
-			tmpl: `{{ index .Values.cfg.path "firstIndex" }}`,
+			tmpl: []string{
+				`{{ index .Values.cfg.path "firstIndex" }}`,
+				`{{ "firstIndex" | index index .Values.cfg.path }}`,
+			},
 			want: []string{"cfg.path.firstIndex"},
 		},
 		{
 			name: "index two",
-			tmpl: `{{ index .Values.cfg.path "firstIndex" "secondIndex" }}`,
+			tmpl: []string{
+				`{{ index .Values.cfg.path "firstIndex" "secondIndex" }}`,
+				`{{ "secondIndex" | index .Values.cfg.path "firstIndex" }}`,
+			},
 			want: []string{"cfg.path.firstIndex.secondIndex"},
 		},
 	}
 
 	for _, tc := range cases {
-		s.Run(tc.name, func() {
-			got, err := parseFile(tc.name+".tmpl", []byte(tc.tmpl))
-			s.Require().NoError(err)
-			s.Require().Equal(tc.want, got)
-		})
+		for i, tmpl := range tc.tmpl {
+			name := tc.name
+			if i == 1 {
+				name += "_piped"
+			}
+			s.Run(name, func() {
+				got, err := parseFile(tc.name+".tmpl", []byte(tmpl))
+				s.Require().NoError(err)
+				s.Require().Equal(tc.want, got)
+			})
+		}
 	}
 }
 

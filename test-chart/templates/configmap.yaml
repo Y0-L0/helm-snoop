@@ -3,7 +3,13 @@ kind: ConfigMap
 metadata:
   name: test-config
 data:
-  message: {{ .Values.config.message }}
-  enabled: {{ .Values.config.enabled }}
-  non-string-key: {{ get .Values.integerKey "1234" }}
-  non-string-key-alternate: {{ index .Values.integerKey "1234" }}
+  message: {{ .Values.config.message | quote }}
+  enabled: {{ default false .Values.config.enabled }}
+  enabled-pipe: {{ false | default .Values.config.enabled }}
+  disabled: {{ default false .Values.config.disabled }}
+  disabled-pipe: {{ false | default .Values.config.disabled  }}
+  get_integer_key: {{ get .Values.integerKey "1234" }}
+  get_pipe: {{ "someKey" | index .Values.getPipe }}
+  index_integer_key: {{ index .Values.integerKey "1234" }}
+  index_pipe: {{  "someKey" | index .Values.indexPipe }}
+  index_pipe_multiple_values: {{  "someOtherKey" | index .Values.indexPipe "nestedKey" }}

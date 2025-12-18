@@ -23,9 +23,7 @@ func collectUsedValues(node parse.Node) []string {
 		if n.Pipe == nil {
 			return out
 		}
-		for _, cmd := range n.Pipe.Cmds {
-			out = append(out, evaluateCommand(cmd)...)
-		}
+		out = append(out, evaluatePipe(n.Pipe)...)
 	case *parse.IfNode:
 		panic("`if` / `else` is not implemented")
 		// out = append(out, collectUsedValues(n.List)...)
