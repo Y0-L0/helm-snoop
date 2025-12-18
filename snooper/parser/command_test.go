@@ -1,6 +1,5 @@
 package parser
 
-// Functions that should behave as no-ops for extraction in Stage 2.
 // quote/upper/lower simply wrap a value; default X Y reads only Y when X is literal.
 func (s *Unittest) TestParseCommand_Noops() {
 	cases := []struct {
@@ -27,6 +26,39 @@ func (s *Unittest) TestParseCommand_Noops() {
 			name: "default literal + value",
 			tmpl: `{{ default "x" .Values.cfg.path }}`,
 			want: []string{"cfg.path"},
+		},
+	}
+
+	for _, tc := range cases {
+		s.Run(tc.name, func() {
+			got, err := parseFile(tc.name+".tmpl", []byte(tc.tmpl))
+			s.Require().NoError(err)
+			s.Require().Equal(tc.want, got)
+		})
+	}
+}
+
+// get/index merge their arguments and return them.
+func (s *Unittest) TestParseCommand_Return() {
+	cases := []struct {
+		name string
+		tmpl string
+		want []string
+	}{
+		{
+			name: "get wrapper",
+			tmpl: `{{ get .Values.app "name"}}`,
+			want: []string{"app.name"},
+		},
+		{
+			name: "index one",
+			tmpl: `{{ index .Values.cfg.path "firstIndex" }}`,
+			want: []string{"cfg.path.firstIndex"},
+		},
+		{
+			name: "index two",
+			tmpl: `{{ index .Values.cfg.path "firstIndex" "secondIndex" }}`,
+			want: []string{"cfg.path.firstIndex.secondIndex"},
 		},
 	}
 
