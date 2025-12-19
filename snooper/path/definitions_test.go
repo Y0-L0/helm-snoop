@@ -20,12 +20,12 @@ func (s *Unittest) EqualPaths(expected Paths, actual Paths) {
 func (s *Unittest) TestParseYaml() {
 	testCases := []struct {
 		name     string
-		expected []*Path
+		expected Paths
 		values   string
 	}{
 		{
 			name: "simple map",
-			expected: []*Path{
+			expected: Paths{
 				np().Key("key1"),
 				np().Key("key2"),
 			},
@@ -36,7 +36,7 @@ key2: value2
 		},
 		{
 			name: "complex",
-			expected: []*Path{
+			expected: Paths{
 				np().Key("list").Idx("0"),
 				np().Key("list").Idx("1"),
 				np().Key("nestedMap").Key("nestedKey"),
@@ -56,7 +56,7 @@ nestedMap:
 		},
 		{
 			name: "list of maps",
-			expected: []*Path{
+			expected: Paths{
 				np().Idx("0").Key("listKey1").Key("value1").Key("nestedKey"),
 				np().Idx("1").Key("listKey2"),
 			},
@@ -69,7 +69,7 @@ nestedMap:
 		},
 		{
 			name:     "integer key",
-			expected: []*Path{np().Key("1234").Key("integerValue")},
+			expected: Paths{np().Key("1234").Key("integerValue")},
 			values: `
 1234:
   integerValue: something
@@ -84,7 +84,7 @@ nestedMap:
 			s.Require().NoError(err)
 			slog.Debug("complete test values.yaml", "yaml", values)
 
-			out := []*Path{}
+			out := Paths{}
 			GetDefinitions(Path{}, values, &out)
 
 			s.EqualPaths(Paths(tc.expected), Paths(out))
@@ -98,10 +98,10 @@ func (s *Unittest) TestFlattenValues_NonStringKeys() {
 		123:         "value2", // non-string key
 	}
 
-	out := []*Path{}
+	out := Paths{}
 	GetDefinitions(Path{}, values, &out)
 
-	expected := []*Path{
+	expected := Paths{
 		np().Key("stringKey"),
 		np().Key("123"),
 	}

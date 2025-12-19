@@ -18,6 +18,10 @@ func (ps Paths) Len() int           { return len(ps) }
 func (ps Paths) Swap(i, j int)      { ps[i], ps[j] = ps[j], ps[i] }
 func (ps Paths) Less(i, j int) bool { return ps[i].Compare(*ps[j]) < 0 }
 
+func (ps *Paths) Append(paths ...*Path) {
+	*ps = append(*ps, paths...)
+}
+
 type Path struct {
 	tokens []string
 	kinds  []kind
@@ -74,6 +78,17 @@ func (p *Path) Idx(key string) *Path {
 	p.tokens = append(p.tokens, escaper.Replace(key))
 	p.kinds = append(p.kinds, indexKind)
 	return p
+}
+
+func NewPath(tokens []string) *Path {
+	p := Path{
+		make([]string, len(tokens)),
+		make([]kind, len(tokens)),
+	}
+	for _, t := range tokens {
+		p.Key(t)
+	}
+	return &p
 }
 
 // newPath helper for test Path construction
