@@ -3,7 +3,7 @@ package snooper
 import (
 	"sort"
 
-	parser "github.com/y0-l0/helm-snoop/snooper/oldparser"
+	parser "github.com/y0-l0/helm-snoop/pkg/oldparser"
 	chart "helm.sh/helm/v4/pkg/chart/v2"
 )
 

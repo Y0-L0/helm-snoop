@@ -5,7 +5,7 @@ import (
 	"log/slog"
 	"text/template/parse"
 
-	"github.com/y0-l0/helm-snoop/snooper/path"
+	"github.com/y0-l0/helm-snoop/pkg/path"
 	chart "helm.sh/helm/v4/pkg/chart/v2"
 )
 

@@ -1,6 +1,6 @@
 package parser
 
-import "github.com/y0-l0/helm-snoop/snooper/path"
+import "github.com/y0-l0/helm-snoop/pkg/path"
 
 // Happy-path tests for parseFile/collectUsedValues.
 func (s *Unittest) TestParseFile_Happy() {
