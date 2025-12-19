@@ -20,6 +20,14 @@ func (s *LoggingSuite) SetupTest() {
 	slog.SetDefault(slog.New(handler))
 }
 
+func (loggingSuite *LoggingSuite) TearDownTest() {
+	if !loggingSuite.T().Failed() || !testing.Verbose() {
+		return
+	}
+	loggingSuite.T().Log("=== Captured Production Logs ===\n")
+	loggingSuite.T().Log(loggingSuite.logBuf.String())
+}
+
 type Unittest struct {
 	LoggingSuite
 }
