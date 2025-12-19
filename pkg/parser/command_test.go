@@ -1,6 +1,6 @@
 package parser
 
-import "github.com/y0-l0/helm-snoop/snooper/path"
+import "github.com/y0-l0/helm-snoop/pkg/path"
 
 // quote/upper/lower simply wrap a value; default X Y reads only Y when X is literal.
 func (s *Unittest) TestParseCommand_Noops() {

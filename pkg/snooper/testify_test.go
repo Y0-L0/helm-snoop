@@ -22,7 +22,7 @@ type Integrationtest struct {
 }
 
 func (s *Integrationtest) SetupSuite() {
-	s.chartPath = "../test-chart"
+	s.chartPath = "../../test-chart"
 	_, err := os.Stat(s.chartPath)
 	s.Require().NoError(err, "expected test chart at %s", s.chartPath)
 }

@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"text/template/parse"
 
-	"github.com/y0-l0/helm-snoop/snooper/path"
+	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
 // collectUsedValues walks a template node and returns all direct .Values paths
