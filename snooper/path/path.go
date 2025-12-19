@@ -80,7 +80,7 @@ func (p *Path) Idx(key string) *Path {
 	return p
 }
 
-func NewPath(tokens []string) *Path {
+func NewPath(tokens ...string) *Path {
 	p := Path{
 		make([]string, len(tokens)),
 		make([]kind, len(tokens)),
