@@ -1,6 +1,7 @@
 package snooper
 
 import (
+	"github.com/y0-l0/helm-snoop/pkg/path"
 	loader "helm.sh/helm/v4/pkg/chart/v2/loader"
 )
 
@@ -10,11 +11,11 @@ func (s *Integrationtest) TestAnalysisV2_SimpleChart() {
 	chart, err := loader.Load(s.chartPath)
 	s.Require().NoError(err)
 
-	r, err := Analyse(chart)
+	r, err := Snoop(chart)
 	s.Require().NoError(err)
 
-	s.Require().Contains(r.Referenced, "config.enabled")
-	s.Require().Contains(r.Referenced, "config.message")
+	s.Require().Contains(r.Referenced, path.NewPath("config", "enabled"))
+	s.Require().Contains(r.Referenced, path.NewPath("config", "message"))
 	s.Require().Empty(r.DefinedNotUsed)
 	s.Require().Empty(r.UsedNotDefined)
 }

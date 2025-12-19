@@ -25,7 +25,7 @@ func (s *Integrationtest) TestMain_SimpleChart() {
 	s.Require().Equal(0, code, err.String())
 
 	s.Require().Contains(out.String(), "Referenced:")
-	s.Require().True(strings.Contains(out.String(), "config.enabled") && strings.Contains(out.String(), "config.message"))
+	s.Require().True(strings.Contains(out.String(), "/config/enabled") && strings.Contains(out.String(), "/config/message"))
 	s.Require().Contains(out.String(), "Defined-not-used:")
 	s.Require().Contains(out.String(), "Used-not-defined:")
 	s.Require().Equal("", err.String())
