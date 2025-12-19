@@ -72,8 +72,8 @@ func (p *Path) Idx(key string) *Path {
 
 func NewPath(tokens ...string) *Path {
 	p := Path{
-		make([]string, len(tokens)),
-		make([]kind, len(tokens)),
+		make([]string, 0, len(tokens)),
+		make([]kind, 0, len(tokens)),
 	}
 	for _, t := range tokens {
 		p.Key(t)

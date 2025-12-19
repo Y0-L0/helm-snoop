@@ -18,10 +18,14 @@ func getPath(paths Paths, i int) *Path {
 
 func EqualPaths(eq equality, expected Paths, actual Paths) {
 	slog.Debug("Asserting equal Paths", "expected", expected, "actual", actual)
-	eq.Equal(len(expected), len(actual))
 	sort.Sort(expected)
 	sort.Sort(actual)
+	EqualInorderPaths(eq, expected, actual)
+}
 
+func EqualInorderPaths(eq equality, expected Paths, actual Paths) {
+	slog.Debug("Asserting equal in-order Paths", "expected", expected, "actual", actual)
+	eq.Equal(len(expected), len(actual))
 	for i := 0; i < len(expected) || i < len(actual); i++ {
 		act := getPath(actual, i)
 		exp := getPath(expected, i)
