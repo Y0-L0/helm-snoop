@@ -35,7 +35,7 @@ func (s *Unittest) TestParseFile_Happy() {
 		s.Run(tc.name, func() {
 			got, err := parseFile(tc.name+".tmpl", []byte(tc.tmpl))
 			s.Require().NoError(err)
-			s.EqualPaths(tc.want, got)
+			path.EqualPaths(s, tc.want, got)
 		})
 	}
 }

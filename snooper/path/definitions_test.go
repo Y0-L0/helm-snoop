@@ -2,20 +2,9 @@ package path
 
 import (
 	"log/slog"
-	"sort"
 
 	"gopkg.in/yaml.v3"
 )
-
-func (s *Unittest) EqualPaths(expected Paths, actual Paths) {
-	s.Require().Equal(len(expected), len(actual))
-	sort.Sort(expected)
-	sort.Sort(actual)
-
-	for i, exp := range expected {
-		s.Equal(exp, actual[i])
-	}
-}
 
 func (s *Unittest) TestParseYaml() {
 	testCases := []struct {
@@ -87,7 +76,7 @@ nestedMap:
 			out := Paths{}
 			GetDefinitions(Path{}, values, &out)
 
-			s.EqualPaths(Paths(tc.expected), Paths(out))
+			EqualPaths(s, Paths(tc.expected), Paths(out))
 		})
 	}
 }
@@ -106,5 +95,5 @@ func (s *Unittest) TestFlattenValues_NonStringKeys() {
 		np().Key("123"),
 	}
 
-	s.EqualPaths(Paths(expected), Paths(out))
+	EqualPaths(s, Paths(expected), Paths(out))
 }
