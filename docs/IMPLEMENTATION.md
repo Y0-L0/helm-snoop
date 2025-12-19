@@ -104,3 +104,4 @@ This document defines an MVP-first path to validate the approach, followed by a 
 1. Memoize schema path lookups; cache parsed templates to keep runs fast.
 2. Normalize paths to dot notation consistently; differentiate container vs leaf usage in reports.
 3. Keep evaluators conservative: prefer `Unknown` over incorrect precision; rely on `--strict` to enforce completeness.
+4. Future: add JSON Pointer (RFC 6901) conformance checks with a tiny parser/resolver; validate Path.ID encoding/round‑trip against shared test vectors.
