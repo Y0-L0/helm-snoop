@@ -69,12 +69,12 @@ func evalArgNode(n parse.Node) interface{} {
 	case *parse.NumberNode:
 		// numeric literal key (e.g., index with integers)
 		if a.Text != "" {
-			return LiteralSet{Values: []string{a.Text}}
+			return KeySet{a.Text}
 		}
 		return nil
 	case *parse.StringNode:
 		if a.Text != "" {
-			return LiteralSet{Values: []string{a.Text}}
+			return KeySet{a.Text}
 		}
 	}
 	panic("not implemented")
@@ -84,7 +84,7 @@ func collectFromAbstract(v interface{}) *path.Path {
 	switch t := v.(type) {
 	case *path.Path:
 		return t
-	case LiteralSet:
+	case KeySet:
 		// literals alone don't constitute a .Values read
 		return nil
 	default:

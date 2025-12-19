@@ -6,7 +6,7 @@ func includeFn(...interface{}) interface{} { panic("not implemented") }
 func tplFn(...interface{}) interface{}     { panic("not implemented") }
 func noopFn(...interface{}) interface{}    { return nil }
 
-// getFn appends a literal key (unknown kind) to an absolute .Values path.
+// getFn appends a literal key (unknown kind) to a .Values Path.
 func getFn(args ...interface{}) interface{} {
 	if len(args) != 2 {
 		panic("not implemented / invalid template")
@@ -15,15 +15,15 @@ func getFn(args ...interface{}) interface{} {
 	if !ok {
 		panic("not implemented")
 	}
-	key, ok := args[1].(LiteralSet)
+	key, ok := args[1].(KeySet)
 	if !ok {
 		panic("not implemented")
 	}
-	if len(key.Values) != 1 {
+	if len(key) != 1 {
 		panic("not implemented")
 	}
 	p := *base
-	p = p.WithAny(key.Values[0])
+	p = p.WithAny(key[0])
 	return &p
 }
 
@@ -38,14 +38,14 @@ func indexFn(args ...interface{}) interface{} {
 	}
 	p := *base
 	for _, a := range args[1:] {
-		lit, ok := a.(LiteralSet)
+		lit, ok := a.(KeySet)
 		if !ok {
 			panic("not implemented")
 		}
-		if len(lit.Values) != 1 {
+		if len(lit) != 1 {
 			panic("not implemented")
 		}
-		p = p.WithAny(lit.Values[0])
+		p = p.WithAny(lit[0])
 	}
 	return &p
 }

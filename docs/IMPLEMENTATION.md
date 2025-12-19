@@ -73,10 +73,10 @@ This document defines an MVP-first path to validate the approach, followed by a 
 5. Schema integration (lookup)
    1. Load and parse `values.schema.json` when present.
    2. Provide helpers to resolve path existence/type, object closedness (`additionalProperties: false`), and string enums.
-   3. Use enums to resolve variables to `LiteralSet` where applicable.
+   3. Use enums to resolve variables to `KeySet` where applicable.
 
 6. Functions (schema-aware)
-   1. Extend `index`/`dig` evaluators to accept key variables if they resolve to finite `LiteralSet` via schema (enums or closed objects).
+   1. Extend `index`/`dig` evaluators to accept key variables if they resolve to finite `KeySet` via schema (enums or closed objects).
    2. Range handling: mark containers used for `range` over objects/arrays; in `--strict` and closed objects, mark enumerated children as used.
 
 7. tpl handling

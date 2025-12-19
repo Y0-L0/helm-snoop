@@ -40,28 +40,28 @@ A static analysis tool that detects drift between Helm chart templates and value
 
 ## Function Evaluators
 - Maintain a registry of lightweight evaluators keyed by function name (e.g., `index`, `dig`, `get`, `default`, `hasKey`, `include`, `tpl`).
-- Keep the walker generic; evaluators interpret pipelines into the abstract domain (Path/PathSet/LiteralSet/Unknown).
+- Keep the walker generic; evaluators interpret pipelines into the abstract domain (Path/PathSet/KeySet/Unknown).
 - Provide a tolerant FuncMap (Sprig + stubs) for parsing only; do not execute functions during analysis.
 
 ## Data Model (Abstract Values)
 Represent expressions in pipelines using a small abstract domain:
 - Path: root + path segments, e.g., `Root=Values, ["image","repository"]`.
 - PathSet: finite set of Paths (for union results, e.g., enum-driven keys).
-- LiteralSet: finite set of strings (used for dynamic key operands).
+- KeySet: finite set of strings (used for dynamic key operands).
 - Unknown: cannot be resolved statically to a finite set.
 - Container markers: Object(root path), Array(root path) for ranges over maps/lists.
 
 Utilities:
 - FlattenedKey: dot-form string for Paths (e.g., `image.repository`).
-- Scope: symbol table mapping var names → (Path | PathSet | LiteralSet | Unknown).
+- Scope: symbol table mapping var names → (Path | PathSet | KeySet | Unknown).
 
 ## Analysis Rules (selected)
 - Field chain: `.Values.a.b` → Path(Values, [a,b]).
 - Variable alias: `$x := .Values.a.b` → bind `$x` to that Path.
-- Variable literal: `$k := "foo"` → LiteralSet{"foo"}.
-- Enum value: `$k := .Values.someEnum` with schema enum → LiteralSet{...}.
+- Variable literal: `$k := "foo"` → KeySet{"foo"}.
+- Enum value: `$k := .Values.someEnum` with schema enum → KeySet{...}.
 - index:
-  - `index <root> <k1> <k2> ...` → if all keys resolve to `LiteralSet`, produce `PathSet` of all combinations; else Unknown.
+  - `index <root> <k1> <k2> ...` → if all keys resolve to `KeySet`, produce `PathSet` of all combinations; else Unknown.
   - `<root>` may be `.Values` or a `Path`/`PathSet`.
 - dig (Sprig):
   - `dig "a" "b" .Values` or `.Values | dig "a" "b"` → same as index with all-literal keys.
@@ -96,7 +96,7 @@ Utilities:
   - For objects: is `additionalProperties` false (closed object)? Enumerated `properties`?
   - For strings: enum values?
 - Use schema to:
-  - Resolve LiteralSet for enum-driven key selections.
+- Resolve KeySet for enum-driven key selections.
   - Decide if a map’s entries are finite (closed) to mark child keys used under `range`.
   - Validate referenced-but-undefined keys.
 
@@ -104,7 +104,7 @@ Utilities:
 - Direct field chains: fully supported.
 - index/dig with literal keys: fully supported.
 - index/dig with variables:
-  - If variable resolves to LiteralSet: supported.
+- If variable resolves to KeySet: supported.
   - Else: dynamic (warn; fail in `--strict`).
 - range over lists/maps: mark container as used; optionally expand to children under strict+closed schema.
 - default/required/ternaries: treat as reads of the non-default operand.
@@ -114,7 +114,7 @@ Utilities:
 
 ## Strict Mode
 - `--strict` enforces:
-  - All index/dig/get key operands must resolve to finite LiteralSet via literals or schema (enums/closed objects).
+- All index/dig/get key operands must resolve to finite KeySet via literals or schema (enums/closed objects).
   - `tpl` on non-literal or override-origin sources is an error.
   - Open maps without `additionalProperties: false` cannot be claimed fully used via `range`.
 - Useful for CI scenarios seeking complete static guarantees.
