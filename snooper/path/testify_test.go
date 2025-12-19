@@ -1,35 +1,14 @@
 package path
 
 import (
-	"bytes"
-	"log/slog"
 	"testing"
 
 	"github.com/stretchr/testify/suite"
+	"github.com/y0-l0/helm-snoop/internal/testsuite"
 )
 
-// LoggingSuite sets a default slog logger per test for diagnostics.
-type LoggingSuite struct {
-	suite.Suite
-	logBuf bytes.Buffer
-}
-
-func (s *LoggingSuite) SetupTest() {
-	s.logBuf.Reset()
-	handler := slog.NewTextHandler(&s.logBuf, &slog.HandlerOptions{AddSource: false, Level: slog.LevelDebug})
-	slog.SetDefault(slog.New(handler))
-}
-
-func (loggingSuite *LoggingSuite) TearDownTest() {
-	if !loggingSuite.T().Failed() || !testing.Verbose() {
-		return
-	}
-	loggingSuite.T().Log("=== Captured Production Logs ===\n")
-	loggingSuite.T().Log(loggingSuite.logBuf.String())
-}
-
 type Unittest struct {
-	LoggingSuite
+	testsuite.LoggingSuite
 }
 
 func TestUnit(t *testing.T) { suite.Run(t, new(Unittest)) }
