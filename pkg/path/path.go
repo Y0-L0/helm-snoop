@@ -10,6 +10,7 @@ type kind byte
 const (
 	indexKind kind = 'I'
 	keyKind   kind = 'K'
+	anyKind   kind = 'A'
 )
 
 type Path struct {
@@ -67,6 +68,24 @@ func (p Path) WithIdx(key string) Path {
 func (p *Path) Idx(key string) *Path {
 	p.tokens = append(p.tokens, escaper.Replace(key))
 	p.kinds = append(p.kinds, indexKind)
+	return p
+}
+
+func (p Path) WithAny(token string) Path {
+	p.tokens = append([]string(nil), p.tokens...)
+	p.tokens = append(p.tokens, escaper.Replace(token))
+
+	p.kinds = append([]kind(nil), p.kinds...)
+	p.kinds = append(p.kinds, anyKind)
+
+	return p
+}
+
+// Any is a mutator: it appends an unknown-kind segment to the receiver Path in place.
+// Prefer the immutable-style WithAny in traversal code to avoid slice aliasing across siblings.
+func (p *Path) Any(token string) *Path {
+	p.tokens = append(p.tokens, escaper.Replace(token))
+	p.kinds = append(p.kinds, anyKind)
 	return p
 }
 

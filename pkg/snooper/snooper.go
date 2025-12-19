@@ -23,7 +23,7 @@ func Snoop(chart *chart.Chart) (*Result, error) {
 	}
 
 	result := &Result{}
-	result.Referenced, result.DefinedNotUsed, result.UsedNotDefined = path.MergeJoinSet(defined, used)
+	result.Referenced, result.DefinedNotUsed, result.UsedNotDefined = path.MergeJoinLoose(defined, used)
 
 	return result, nil
 }

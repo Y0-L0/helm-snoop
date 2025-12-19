@@ -27,7 +27,7 @@ func (s *Unittest) assertMergeJoin(a, b Paths, expInter, expOnlyA, expOnlyB Path
 	origA := append(Paths(nil), a...)
 	origB := append(Paths(nil), b...)
 
-	inter, onlyA, onlyB := MergeJoinSet(a, b)
+	inter, onlyA, onlyB := MergeJoinLoose(a, b)
 
 	EqualInorderPaths(s, expInter, inter)
 	EqualInorderPaths(s, expOnlyA, onlyA)
@@ -77,4 +77,33 @@ func (s *Unittest) TestMergeJoinSet_EmptySides() {
 
 	s.assertMergeJoin(a, b, expInter, expOnlyA, expOnlyB)
 	s.assertMergeJoin(b, a, expInter, expOnlyB, expOnlyA)
+}
+
+// Loose join tests with anyKind
+func (s *Unittest) assertMergeJoinLoose(a, b Paths, expInter, expOnlyA, expOnlyB Paths) {
+	origA := append(Paths(nil), a...)
+	origB := append(Paths(nil), b...)
+	inter, onlyA, onlyB := MergeJoinLoose(a, b)
+	EqualInorderPaths(s, expInter, inter)
+	EqualInorderPaths(s, expOnlyA, onlyA)
+	EqualInorderPaths(s, expOnlyB, onlyB)
+	s.Require().True(slices.Equal(a, origA))
+	s.Require().True(slices.Equal(b, origB))
+}
+
+func (s *Unittest) TestMergeJoinLoose_AnyMatchesKeyAndIdx() {
+	a := Paths{np().Any("x")}
+	b := Paths{np().Key("x"), np().Idx("x")}
+	// Greedy matches the first by sorted order within the token bucket; with kinds
+	// sorted, Idx ('I') precedes Key ('K'), so Any will match Idx and Key remains.
+	s.assertMergeJoinLoose(a, b, Paths{a[0]}, nil, Paths{np().Key("x")})
+	// Flipped: inter picks the first in sorted order; onlyA/onlyB swap accordingly
+	s.assertMergeJoinLoose(b, a, Paths{np().Idx("x")}, Paths{np().Key("x")}, nil)
+}
+
+func (s *Unittest) TestMergeJoinLoose_DisjointKinds() {
+	a := Paths{np().Key("x")}
+	b := Paths{np().Idx("x")}
+	s.assertMergeJoinLoose(a, b, nil, a, b)
+	s.assertMergeJoinLoose(b, a, nil, b, a)
 }
