@@ -52,7 +52,7 @@ func (s *Unittest) TestParseCommand_Noops() {
 			s.Run(name, func() {
 				got, err := parseFile(name+".tmpl", []byte(tmpl))
 				s.Require().NoError(err)
-				s.EqualPaths(tc.want, got)
+				path.EqualPaths(s, tc.want, got)
 			})
 		}
 	}
@@ -100,7 +100,7 @@ func (s *Unittest) TestParseCommand_Return() {
 			s.Run(name, func() {
 				got, err := parseFile(tc.name+".tmpl", []byte(tmpl))
 				s.Require().NoError(err)
-				s.EqualPaths(tc.want, got)
+				path.EqualPaths(s, tc.want, got)
 			})
 		}
 	}
