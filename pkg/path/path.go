@@ -12,25 +12,6 @@ const (
 	keyKind   kind = 'K'
 )
 
-type Paths []*Path
-
-func (ps Paths) Len() int      { return len(ps) }
-func (ps Paths) Swap(i, j int) { ps[i], ps[j] = ps[j], ps[i] }
-func (ps Paths) Less(i, j int) bool {
-	pi, pj := ps[i], ps[j]
-	if pi == nil {
-		return false
-	}
-	if pj == nil {
-		return true
-	}
-	return ps[i].Compare(*ps[j]) < 0
-}
-
-func (ps *Paths) Append(paths ...*Path) {
-	*ps = append(*ps, paths...)
-}
-
 type Path struct {
 	tokens []string
 	kinds  []kind
@@ -53,14 +34,6 @@ func (p Path) Compare(other Path) int {
 
 var escaper = strings.NewReplacer("~", "~0", "/", "~1")
 
-// Key is a mutator: it appends a map key segment to the receiver Path in place.
-// Prefer the immutable-style WithKey in traversal code to avoid slice aliasing across siblings.
-func (p *Path) Key(key string) *Path {
-	p.tokens = append(p.tokens, escaper.Replace(key))
-	p.kinds = append(p.kinds, keyKind)
-	return p
-}
-
 func (p Path) WithKey(key string) Path {
 	p.tokens = append([]string(nil), p.tokens...)
 	p.tokens = append(p.tokens, escaper.Replace(key))
@@ -68,6 +41,14 @@ func (p Path) WithKey(key string) Path {
 	p.kinds = append([]kind(nil), p.kinds...)
 	p.kinds = append(p.kinds, keyKind)
 
+	return p
+}
+
+// Key is a mutator: it appends a map key segment to the receiver Path in place.
+// Prefer the immutable-style WithKey in traversal code to avoid slice aliasing across siblings.
+func (p *Path) Key(key string) *Path {
+	p.tokens = append(p.tokens, escaper.Replace(key))
+	p.kinds = append(p.kinds, keyKind)
 	return p
 }
 
