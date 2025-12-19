@@ -4,7 +4,7 @@ import (
 	"strings"
 	"text/template/parse"
 
-	"github.com/y0-l0/helm-snoop/snooper/path"
+	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
 // evaluatePipe evaluates a full pipeline and returns resulting .Values paths.
