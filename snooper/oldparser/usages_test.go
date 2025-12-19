@@ -1,4 +1,4 @@
-package parser
+package oldparser
 
 // NoValues: template without any .Values usage should yield empty slice.
 func (s *Unittest) TestParseFile_NoValues() {

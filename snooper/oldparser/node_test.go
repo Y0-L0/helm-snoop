@@ -1,4 +1,4 @@
-package parser
+package oldparser
 
 // Happy-path tests for parseFile/collectUsedValues.
 func (s *Unittest) TestParseFile_Happy() {

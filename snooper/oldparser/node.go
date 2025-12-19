@@ -1,4 +1,4 @@
-package parser
+package oldparser
 
 import (
 	"text/template/parse"

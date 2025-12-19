@@ -1,4 +1,4 @@
-package parser
+package oldparser
 
 // quote/upper/lower simply wrap a value; default X Y reads only Y when X is literal.
 func (s *Unittest) TestParseCommand_Noops() {
