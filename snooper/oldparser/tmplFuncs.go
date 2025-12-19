@@ -1,4 +1,4 @@
-package parser
+package oldparser
 
 func includeFn(...interface{}) interface{} { panic("not implemented") }
 func tplFn(...interface{}) interface{}     { panic("not implemented") }
