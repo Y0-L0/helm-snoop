@@ -7,8 +7,8 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
-// evaluatePipe evaluates a full pipeline and returns resulting .Values paths.
-func evaluatePipe(node *parse.PipeNode, out *path.Paths) {
+// evalPipe evaluates a full pipeline and adds resulting .Values Paths to out.
+func evalPipe(node *parse.PipeNode, out *path.Paths) {
 	if node == nil || len(node.Cmds) == 0 {
 		return
 	}

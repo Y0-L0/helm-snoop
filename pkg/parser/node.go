@@ -7,27 +7,26 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
-// collectUsedValues walks a template node and returns all direct .Values paths
-// observed as dot-joined strings (e.g., "config.message").
-func collectUsedValues(node parse.Node, out *path.Paths) {
-	if node == nil {
+// collectUsedValues walks a template node and returns all direct .Values Paths
+func collectUsedValues(rawNode parse.Node, out *path.Paths) {
+	if rawNode == nil {
 		return
 	}
-	slog.Debug("Handling node", "node", node)
-	switch n := node.(type) {
+	slog.Debug("Handling node", "node", rawNode)
+	switch node := rawNode.(type) {
 	case *parse.ListNode:
-		if n == nil {
+		if node == nil {
 			return
 		}
-		slog.Debug("Expanding list nodes", "nodes", n.Nodes)
-		for _, nd := range n.Nodes {
-			collectUsedValues(nd, out)
+		slog.Debug("Expanding list nodes", "nodes", node.Nodes)
+		for _, childNode := range node.Nodes {
+			collectUsedValues(childNode, out)
 		}
 	case *parse.ActionNode:
-		if n.Pipe == nil {
+		if node.Pipe == nil {
 			return
 		}
-		evaluatePipe(n.Pipe, out)
+		evalPipe(node.Pipe, out)
 	case *parse.IfNode:
 		panic("`if` / `else` is not implemented")
 		// out = append(out, collectUsedValues(n.List)...)
@@ -44,6 +43,6 @@ func collectUsedValues(node parse.Node, out *path.Paths) {
 		panic("`template` is not implemented")
 		// include/template resolution not implemented yet
 	default:
-		_ = n
+		_ = node
 	}
 }
