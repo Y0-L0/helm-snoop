@@ -6,7 +6,7 @@ import (
 	"strconv"
 )
 
-func GetDefinitions(path Path, abstractNode interface{}, out *[]*Path) {
+func GetDefinitions(path Path, abstractNode interface{}, out *Paths) {
 	slog.Debug("GetDefinitions called", "path", path, "v", abstractNode)
 	switch node := abstractNode.(type) {
 	// object/map with string keys
