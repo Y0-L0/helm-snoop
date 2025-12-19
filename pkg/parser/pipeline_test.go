@@ -71,7 +71,7 @@ func (s *Unittest) TestParseCommand_Return() {
 				`{{ get .Values.app "name"}}`,
 				`{{ "name" | get .Values.app }}`,
 			},
-			want: path.Paths{path.NewPath("app", "name")},
+			want: path.Paths{path.NewPath("app").Any("name")},
 		},
 		{
 			name: "index one",
@@ -79,7 +79,7 @@ func (s *Unittest) TestParseCommand_Return() {
 				`{{ index .Values.cfg.path "firstIndex" }}`,
 				`{{ "firstIndex" | index index .Values.cfg.path }}`,
 			},
-			want: path.Paths{path.NewPath("cfg", "path", "firstIndex")},
+			want: path.Paths{path.NewPath("cfg", "path").Any("firstIndex")},
 		},
 		{
 			name: "index two",
@@ -87,7 +87,7 @@ func (s *Unittest) TestParseCommand_Return() {
 				`{{ index .Values.cfg.path "firstIndex" "secondIndex" }}`,
 				`{{ "secondIndex" | index .Values.cfg.path "firstIndex" }}`,
 			},
-			want: path.Paths{path.NewPath("cfg", "path", "firstIndex", "secondIndex")},
+			want: path.Paths{path.NewPath("cfg", "path").Any("firstIndex").Any("secondIndex")},
 		},
 	}
 

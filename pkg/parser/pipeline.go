@@ -55,7 +55,7 @@ func evalArgNode(n parse.Node) interface{} {
 	case *parse.FieldNode:
 		if len(a.Ident) > 0 && a.Ident[0] == "Values" {
 			if key := strings.Join(a.Ident[1:], "."); key != "" {
-				return AbsPath{Segs: a.Ident[1:]}
+				return path.NewPath(a.Ident[1:]...)
 			}
 			// bare .Values: ignore
 			return nil
@@ -82,8 +82,8 @@ func evalArgNode(n parse.Node) interface{} {
 
 func collectFromAbstract(v interface{}) *path.Path {
 	switch t := v.(type) {
-	case AbsPath:
-		return path.NewPath(t.Segs...)
+	case *path.Path:
+		return t
 	case LiteralSet:
 		// literals alone don't constitute a .Values read
 		return nil
