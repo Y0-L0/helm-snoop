@@ -40,17 +40,17 @@ func Main(args []string, stdout io.Writer, stderr io.Writer) int {
 
 	fmt.Fprintln(stdout, "Referenced:")
 	for _, p := range r.Referenced {
-		_, _ = fmt.Fprintln(stdout, p.ID())
+		_, _ = fmt.Fprintln(stdout, "  "+p.ID())
 	}
 
 	_, _ = fmt.Fprintln(stdout, "Defined-not-used:")
 	for _, p := range r.DefinedNotUsed {
-		_, _ = fmt.Fprintln(stdout, p.ID())
+		_, _ = fmt.Fprintln(stdout, "  "+p.ID())
 	}
 
 	_, _ = fmt.Fprintln(stdout, "Used-not-defined:")
 	for _, p := range r.UsedNotDefined {
-		_, _ = fmt.Fprintln(stdout, p.ID())
+		_, _ = fmt.Fprintln(stdout, "  "+p.ID())
 	}
 
 	return 0
