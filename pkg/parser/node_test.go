@@ -47,7 +47,6 @@ func (s *Unittest) TestParseFile_NotImplemented() {
 		name string
 		tmpl string
 	}{
-		{name: "if block", tmpl: `{{ if .Values.a.x }}ok{{ end }}`},
 		{name: "with block", tmpl: `{{ with . }}{{ .Values.a.x }}{{ end }}`},
 		{name: "range block", tmpl: `{{ range .Values.items }}{{ end }}`},
 		{name: "template action", tmpl: `{{ template "x" . }}`},
@@ -57,6 +56,33 @@ func (s *Unittest) TestParseFile_NotImplemented() {
 			s.Require().Panics(func() {
 				_, _ = parseFile(testCase.name+".tmpl", []byte(testCase.tmpl))
 			})
+		})
+	}
+}
+
+// if/else should be supported: evaluate the condition and both branches.
+func (s *Unittest) TestParseFile_IfElse() {
+	cases := []struct {
+		name string
+		tmpl string
+		want path.Paths
+	}{
+		{
+			name: "if condition only",
+			tmpl: `{{ if .Values.a.x }}ok{{ end }}`,
+			want: path.Paths{path.NewPath("a", "x")},
+		},
+		{
+			name: "if with else, values in both",
+			tmpl: `{{ if .Values.a.x }}{{ .Values.p }}{{ else }}{{ .Values.q }}{{ end }}`,
+			want: path.Paths{path.NewPath("a", "x"), path.NewPath("p"), path.NewPath("q")},
+		},
+	}
+	for _, tc := range cases {
+		s.Run(tc.name, func() {
+			got, err := parseFile(tc.name+".tmpl", []byte(tc.tmpl))
+			s.Require().NoError(err)
+			path.EqualPaths(s, tc.want, got)
 		})
 	}
 }

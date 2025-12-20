@@ -28,12 +28,16 @@ func collectUsedValues(tree *parse.Tree, rawNode parse.Node, out *path.Paths) {
 		}
 		evalPipe(tree, node.Pipe, out)
 	case *parse.IfNode:
-		loc, _ := tree.ErrorContext(node)
-		slog.Warn("if/else not implemented", "pipe", node.Pipe, "pos", loc)
-		must("if/else not implemented")
+		// record values used in the condition
+		evalPipe(tree, node.Pipe, out)
+		// evaluate both branches
+		if node.List != nil {
+			collectUsedValues(tree, node.List, out)
+		}
+		if node.ElseList != nil {
+			collectUsedValues(tree, node.ElseList, out)
+		}
 		return
-		// out = append(out, collectUsedValues(n.List)...)
-		// out = append(out, collectUsedValues(n.ElseList)...)
 	case *parse.WithNode:
 		loc, _ := tree.ErrorContext(node)
 		slog.Warn("with not implemented", "pipe", node.Pipe, "pos", loc)

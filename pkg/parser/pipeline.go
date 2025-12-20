@@ -56,6 +56,9 @@ func evalCommandAbs(tree *parse.Tree, cmd *parse.CommandNode, input interface{},
 
 func evalArgNode(n parse.Node) interface{} {
 	switch a := n.(type) {
+	case *parse.PipeNode:
+		// nested pipe used as an argument; ignore for analysis for now
+		return nil
 	case *parse.FieldNode:
 		if len(a.Ident) > 0 && a.Ident[0] == "Values" {
 			if key := strings.Join(a.Ident[1:], "."); key != "" {
@@ -68,6 +71,9 @@ func evalArgNode(n parse.Node) interface{} {
 		return nil
 	case *parse.DotNode:
 		// "." as an argument (e.g., include "x" .) — ignore for analysis.
+		return nil
+	case *parse.VariableNode:
+		// Variables (e.g., $name) are ignored in this minimal analysis phase.
 		return nil
 	case *parse.IdentifierNode:
 		// treat non-function identifiers used as args as no-ops for analysis
