@@ -9,13 +9,13 @@ import (
 )
 
 // evalPipe evaluates a full pipeline and adds resulting .Values Paths to out.
-func evalPipe(node *parse.PipeNode, out *path.Paths) {
+func evalPipe(tree *parse.Tree, node *parse.PipeNode, out *path.Paths) {
 	if node == nil || len(node.Cmds) == 0 {
 		return
 	}
 	var cur interface{}
 	for i, cmd := range node.Cmds {
-		cur = evalCommandAbs(cmd, cur, i > 0)
+		cur = evalCommandAbs(tree, cmd, cur, i > 0)
 	}
 	if p := collectFromAbstract(cur); p != nil {
 		out.Append(p)
@@ -24,7 +24,7 @@ func evalPipe(node *parse.PipeNode, out *path.Paths) {
 
 // evalCommandAbs evaluates one command into an abstract value.
 // When piped is true, the input is appended as the last argument for functions.
-func evalCommandAbs(cmd *parse.CommandNode, input interface{}, piped bool) interface{} {
+func evalCommandAbs(tree *parse.Tree, cmd *parse.CommandNode, input interface{}, piped bool) interface{} {
 	if cmd == nil || len(cmd.Args) == 0 {
 		return nil
 	}
@@ -49,6 +49,7 @@ func evalCommandAbs(cmd *parse.CommandNode, input interface{}, piped bool) inter
 	if piped && input != nil {
 		args = append(args, input) // pipeline passes previous value last
 	}
+	logNotImplementedCommand(tree, id.Ident, cmd)
 	fn := getTemplateFunction(id.Ident)
 	return fn(args...)
 }
@@ -63,6 +64,11 @@ func evalArgNode(n parse.Node) interface{} {
 			// bare .Values: ignore
 			return nil
 		}
+		// Non-.Values field like .Chart.Name, .Release.Name, etc.: ignore silently.
+		return nil
+	case *parse.DotNode:
+		// "." as an argument (e.g., include "x" .) — ignore for analysis.
+		return nil
 	case *parse.IdentifierNode:
 		// treat non-function identifiers used as args as no-ops for analysis
 		return nil
