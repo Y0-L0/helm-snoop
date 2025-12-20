@@ -2,6 +2,7 @@ package parser
 
 import (
 	"fmt"
+	"log/slog"
 
 	sprig "github.com/Masterminds/sprig/v3"
 )
@@ -61,10 +62,12 @@ func newFuncMap() map[string]interface{} {
 func getTemplateFunction(name string) templFunc {
 	value, ok := templFuncMap[name]
 	if !ok {
+		slog.Warn("unknown template function name", "name", name)
 		panic(fmt.Sprintf("unknown template function name: %s", name))
 	}
 	function, ok := value.(templFunc)
 	if !ok {
+		slog.Warn("invalid template function signature", "name", name, "value", value)
 		panic(fmt.Sprintf("invalid template function signature for function name: %s", name))
 	}
 	return function

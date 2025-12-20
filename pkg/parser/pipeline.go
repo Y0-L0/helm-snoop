@@ -1,6 +1,7 @@
 package parser
 
 import (
+	"log/slog"
 	"strings"
 	"text/template/parse"
 
@@ -32,7 +33,9 @@ func evalCommandAbs(cmd *parse.CommandNode, input interface{}, piped bool) inter
 	if !ok {
 		// Not a function: expect a single literal/field
 		if len(cmd.Args) != 1 {
-			panic("not implemented")
+			slog.Warn("command with unexpected arg count", "args_len", len(cmd.Args))
+			must("command with unexpected arg count")
+			return nil
 		}
 		return evalArgNode(cmd.Args[0])
 	}
@@ -77,7 +80,9 @@ func evalArgNode(n parse.Node) interface{} {
 			return KeySet{a.Text}
 		}
 	}
-	panic("not implemented")
+	slog.Warn("unsupported node kind", "node", n)
+	must("evalArgNode: unsupported node kind")
+	return nil
 }
 
 func collectFromAbstract(v interface{}) *path.Path {
