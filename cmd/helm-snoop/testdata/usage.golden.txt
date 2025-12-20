@@ -1,0 +1,1 @@
+usage: helm-snoop <path-to-chart> [debug|info|warn|error]
