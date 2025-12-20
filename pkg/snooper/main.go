@@ -3,6 +3,8 @@ package snooper
 import (
 	"fmt"
 	"io"
+	"log/slog"
+	"strings"
 
 	loader "helm.sh/helm/v4/pkg/chart/v2/loader"
 )
@@ -12,8 +14,15 @@ import (
 // Writes a plain-text report to stdout and returns an exit code.
 // Exit codes: 0 success; 1 analysis error; 2 usage error.
 func Main(args []string, stdout io.Writer, stderr io.Writer) int {
+	// Optional second CLI arg can specify log level: debug|info|warn|error
+	level := slog.LevelInfo
+	if len(args) >= 3 {
+		level = parseLevel(args[2])
+		args = args[:2]
+	}
+	SetupLogging(level)
 	if len(args) != 2 {
-		_, _ = fmt.Fprintln(stderr, "usage: helm-snoop <path-to-chart>")
+		_, _ = fmt.Fprintln(stderr, "usage: helm-snoop <path-to-chart> [debug|info|warn|error]")
 		return 2
 	}
 
@@ -45,4 +54,17 @@ func Main(args []string, stdout io.Writer, stderr io.Writer) int {
 	}
 
 	return 0
+}
+
+func parseLevel(s string) slog.Level {
+	switch strings.ToLower(s) {
+	case "debug":
+		return slog.LevelDebug
+	case "warn", "warning":
+		return slog.LevelWarn
+	case "error", "err":
+		return slog.LevelError
+	default:
+		return slog.LevelInfo
+	}
 }

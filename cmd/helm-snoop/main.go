@@ -6,4 +6,6 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/snooper"
 )
 
-func main() { os.Exit(snooper.Main(os.Args, os.Stdout, os.Stderr)) }
+func main() {
+	os.Exit(snooper.Main(os.Args, os.Stdout, os.Stderr))
+}
