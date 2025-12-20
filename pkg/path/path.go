@@ -40,10 +40,8 @@ func (p Path) KindsString() string {
 		return ""
 	}
 	b := make([]byte, 0, len(p.kinds)*2-1)
-	for i, k := range p.kinds {
-		if i > 0 {
-			b = append(b, '/')
-		}
+	for _, k := range p.kinds {
+		b = append(b, '/')
 		switch k {
 		case keyKind:
 			b = append(b, 'K')
