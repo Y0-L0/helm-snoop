@@ -1,0 +1,34 @@
+{
+  "referenced": [
+    {
+      "id": "/config/disabled",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/config/enabled",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/config/message",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/getPipe/someKey",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/indexPipe/nestedKey/someOtherKey",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/indexPipe/someKey",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/integerKey/1234",
+      "kinds": "/K/K"
+    }
+  ],
+  "definedNotUsed": [],
+  "usedNotDefined": []
+}
