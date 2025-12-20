@@ -33,6 +33,31 @@ func (p Path) Compare(other Path) int {
 	return slices.Compare(p.kinds, other.kinds)
 }
 
+// KindsString returns a slash-separated string encoding of the path segment kinds.
+// Example: "K/K/I/K" for /a/b/1/c
+func (p Path) KindsString() string {
+	if len(p.kinds) == 0 {
+		return ""
+	}
+	b := make([]byte, 0, len(p.kinds)*2-1)
+	for i, k := range p.kinds {
+		if i > 0 {
+			b = append(b, '/')
+		}
+		switch k {
+		case keyKind:
+			b = append(b, 'K')
+		case indexKind:
+			b = append(b, 'I')
+		case anyKind:
+			b = append(b, 'A')
+		default:
+			panic("invalid kind: zero or unknown value")
+		}
+	}
+	return string(b)
+}
+
 var escaper = strings.NewReplacer("~", "~0", "/", "~1")
 
 func (p Path) WithKey(key string) Path {
