@@ -51,16 +51,3 @@ var update = flag.Bool("update", false, "update golden files")
 
 // helper methods for golden handling
 func (s *GoldenTest) goldenPath(name string) string { return filepath.Join("testdata", name) }
-func (s *GoldenTest) writeFile(path string, data []byte) {
-	if err := os.MkdirAll(filepath.Dir(path), 0o755); err != nil {
-		s.Require().NoError(err, "mkdir testdata")
-	}
-	if err := os.WriteFile(path, data, 0o644); err != nil {
-		s.Require().NoError(err, "write golden")
-	}
-}
-func (s *GoldenTest) readFile(path string) []byte {
-	b, err := os.ReadFile(path)
-	s.Require().NoError(err, "read golden")
-	return b
-}
