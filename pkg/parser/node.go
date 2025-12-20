@@ -28,19 +28,27 @@ func collectUsedValues(rawNode parse.Node, out *path.Paths) {
 		}
 		evalPipe(node.Pipe, out)
 	case *parse.IfNode:
-		panic("`if` / `else` is not implemented")
+		slog.Warn("if/else not implemented", "node", node)
+		must("if/else not implemented")
+		return
 		// out = append(out, collectUsedValues(n.List)...)
 		// out = append(out, collectUsedValues(n.ElseList)...)
 	case *parse.WithNode:
-		panic("`with` is not implemented")
+		slog.Warn("with not implemented", "node", node)
+		must("with not implemented")
+		return
 		// out = append(out, collectUsedValues(n.List)...)
 		// out = append(out, collectUsedValues(n.ElseList)...)
 	case *parse.RangeNode:
-		panic("`range` is not implemented")
+		slog.Warn("range not implemented", "node", node)
+		must("range not implemented")
+		return
 		// out = append(out, collectUsedValues(n.List)...)
 		// out = append(out, collectUsedValues(n.ElseList)...)
 	case *parse.TemplateNode:
-		panic("`template` is not implemented")
+		slog.Warn("template action not implemented", "node", node)
+		must("template action not implemented")
+		return
 		// include/template resolution not implemented yet
 	default:
 		_ = node

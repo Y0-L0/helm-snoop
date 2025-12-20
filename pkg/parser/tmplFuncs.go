@@ -1,26 +1,46 @@
 package parser
 
-import "github.com/y0-l0/helm-snoop/pkg/path"
+import (
+	"log/slog"
 
-func includeFn(...interface{}) interface{} { panic("not implemented") }
-func tplFn(...interface{}) interface{}     { panic("not implemented") }
-func noopFn(...interface{}) interface{}    { return nil }
+	"github.com/y0-l0/helm-snoop/pkg/path"
+)
+
+func includeFn(...interface{}) interface{} {
+	slog.Warn("include not implemented")
+	must("include not implemented")
+	return nil
+}
+func tplFn(...interface{}) interface{} {
+	slog.Warn("tpl not implemented")
+	must("tpl not implemented")
+	return nil
+}
+func noopFn(...interface{}) interface{} { return nil }
 
 // getFn appends a literal key (unknown kind) to a .Values Path.
 func getFn(args ...interface{}) interface{} {
 	if len(args) != 2 {
-		panic("not implemented / invalid template")
+		slog.Warn("get: invalid template arg count", "args_len", len(args))
+		must("get: invalid template")
+		return nil
 	}
 	base, ok := args[0].(*path.Path)
 	if !ok {
-		panic("not implemented")
+		slog.Warn("get: base is not a path", "base", args[0])
+		must("get: base is not a path")
+		return nil
 	}
 	key, ok := args[1].(KeySet)
 	if !ok {
-		panic("not implemented")
+		slog.Warn("get: key is not a KeySet", "key", args[1])
+		must("get: key is not a KeySet")
+		return nil
 	}
 	if len(key) != 1 {
-		panic("not implemented")
+		slog.Warn("get: key length != 1", "len", len(key))
+		must("get: key length != 1")
+		return nil
 	}
 	p := *base
 	p = p.WithAny(key[0])
@@ -30,20 +50,28 @@ func getFn(args ...interface{}) interface{} {
 // indexFn appends one or more literal keys (unknown kind) to an absolute .Values path.
 func indexFn(args ...interface{}) interface{} {
 	if len(args) < 2 {
-		panic("not implemented / invalid template")
+		slog.Warn("index: invalid template arg count", "args_len", len(args))
+		must("index: invalid template")
+		return nil
 	}
 	base, ok := args[0].(*path.Path)
 	if !ok {
-		panic("not implemented")
+		slog.Warn("index: base is not a path", "base", args[0])
+		must("index: base is not a path")
+		return nil
 	}
 	p := *base
 	for _, a := range args[1:] {
 		lit, ok := a.(KeySet)
 		if !ok {
-			panic("not implemented")
+			slog.Warn("index: key is not a KeySet", "arg", a)
+			must("index: key is not a KeySet")
+			return nil
 		}
 		if len(lit) != 1 {
-			panic("not implemented")
+			slog.Warn("index: key length != 1", "len", len(lit))
+			must("index: key length != 1")
+			return nil
 		}
 		p = p.WithAny(lit[0])
 	}
