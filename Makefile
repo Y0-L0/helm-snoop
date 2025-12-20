@@ -28,7 +28,7 @@ coverage: fmt
 # Keeps track of exit code across steps and returns it at the end.
 complete: fmt
 	@status=0; \
-	go run ./cmd/... test-chart/ || status=$$?; \
+	go run ./cmd/... testdata/test-chart/ || status=$$?; \
 	$(MAKE) coverage -- $(filter-out $@,$(MAKECMDGOALS)) TF="$(TF)" || status=$$?; \
 	exit $$status
 
