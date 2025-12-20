@@ -26,35 +26,40 @@ func newFuncMap() map[string]interface{} {
 	funcMap["upper"] = passthrough1Fn
 	funcMap["lower"] = passthrough1Fn
 
-	funcMap["toToml"] = noopFn
-	funcMap["toYaml"] = noopFn
-	funcMap["fromYaml"] = noopFn
-	funcMap["fromYamlArray"] = noopFn
-	funcMap["toJson"] = noopFn
-	funcMap["fromJson"] = noopFn
-	funcMap["fromJsonArray"] = noopFn
-	funcMap["required"] = noopFn
-	funcMap["lookup"] = noopFn
 	funcMap["and"] = noopFn
 	funcMap["call"] = noopFn
+	funcMap["eq"] = noopFn
+	funcMap["fromJson"] = noopFn
+	funcMap["fromJsonArray"] = noopFn
+	funcMap["fromYaml"] = noopFn
+	funcMap["fromYamlArray"] = noopFn
+	funcMap["ge"] = noopFn
+	funcMap["get"] = getFn
+	funcMap["gt"] = noopFn
 	funcMap["html"] = noopFn
 	funcMap["index"] = indexFn
-	funcMap["get"] = getFn
-	funcMap["slice"] = noopFn
 	funcMap["js"] = noopFn
+	funcMap["le"] = noopFn
 	funcMap["len"] = noopFn
+	funcMap["lookup"] = noopFn
+	funcMap["lt"] = noopFn
+	funcMap["ne"] = noopFn
+	funcMap["nindent"] = noopFn
 	funcMap["not"] = noopFn
 	funcMap["or"] = noopFn
 	funcMap["print"] = noopFn
 	funcMap["printf"] = noopFn
 	funcMap["println"] = noopFn
+	funcMap["replace"] = noopFn
+	funcMap["required"] = noopFn
+	funcMap["sha256sum"] = noopFn
+	funcMap["slice"] = noopFn
+	funcMap["toJson"] = noopFn
+	funcMap["toToml"] = noopFn
+	funcMap["toYaml"] = noopFn
+	funcMap["trimSuffix"] = noopFn
+	funcMap["trunc"] = noopFn
 	funcMap["urlquery"] = noopFn
-	funcMap["eq"] = noopFn
-	funcMap["ge"] = noopFn
-	funcMap["gt"] = noopFn
-	funcMap["le"] = noopFn
-	funcMap["lt"] = noopFn
-	funcMap["ne"] = noopFn
 
 	return funcMap
 }
