@@ -19,11 +19,11 @@ func (s *GoldenTest) TestSnoop_TestChart() {
 	if s.update {
 		actualData, err := json.MarshalIndent(actual, "", "  ")
 		s.Require().NoError(err)
-		s.writeFile(goldenPath, actualData)
+		s.WriteFile(goldenPath, actualData)
 	}
 
 	var expected ResultsJSON
-	s.Require().NoError(json.Unmarshal(s.readFile(goldenPath), &expected))
+	s.Require().NoError(json.Unmarshal(s.ReadFile(goldenPath), &expected))
 
 	s.Require().Equal(expected, actual)
 }

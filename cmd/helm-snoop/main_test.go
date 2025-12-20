@@ -44,9 +44,9 @@ func interceptMain(args []string) (restore func(), out *bytes.Buffer, errBuf *by
 func (s *GoldenTest) EqualGoldenFile(golfenFileName string, actual []byte) {
 	goldenFilePath := s.goldenFile(golfenFileName)
 	if s.update {
-		s.writeFile(goldenFilePath, actual)
+		s.WriteFile(goldenFilePath, actual)
 	}
-	expected := s.readFile(goldenFilePath)
+	expected := s.ReadFile(goldenFilePath)
 	exp, act := string(expected), string(actual)
 	s.Require().Equal(exp, act)
 }
