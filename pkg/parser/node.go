@@ -10,9 +10,24 @@ import (
 // analyzer holds traversal state for parsing a single template tree.
 // It is intentionally unexported and constructed by parseFile/GetUsages.
 type analyzer struct {
-	tree *parse.Tree
-	out  *path.Paths
-	idx  *TemplateIndex
+	tree     *parse.Tree
+	out      *path.Paths
+	idx      *TemplateIndex
+	inStack  map[string]bool
+	depth    int
+	maxDepth int
+}
+
+// newAnalyzer constructs an analyzer with initialized state.
+func newAnalyzer(tree *parse.Tree, out *path.Paths, idx *TemplateIndex) *analyzer {
+	return &analyzer{
+		tree:     tree,
+		out:      out,
+		idx:      idx,
+		inStack:  make(map[string]bool),
+		depth:    0,
+		maxDepth: 64,
+	}
 }
 
 // collect walks a template node and appends observed .Values paths to a.out.
