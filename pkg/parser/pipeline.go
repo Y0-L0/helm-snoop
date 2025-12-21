@@ -49,9 +49,50 @@ func (a *analyzer) evalCommandAbs(cmd *parse.CommandNode, input interface{}, pip
 	if piped && input != nil {
 		args = append(args, input) // pipeline passes previous value last
 	}
+	if id.Ident == "include" {
+		a.evalInclude(args)
+		return nil
+	}
 	logNotImplementedCommand(a.tree, id.Ident, cmd)
 	fn := getTemplateFunction(id.Ident)
 	return fn(args...)
+}
+
+func (a *analyzer) evalInclude(args []interface{}) {
+	if len(args) == 0 {
+		slog.Warn("include: missing template name")
+		must("include: missing template name")
+		return
+	}
+	// first arg is template name, represented as KeySet from a string literal
+	var name string
+	switch v := args[0].(type) {
+	case KeySet:
+		if len(v) != 1 {
+			slog.Warn("include: invalid name literal", "len", len(v))
+			must("include: invalid name literal")
+			return
+		}
+		name = v[0]
+	case string:
+		name = v
+	default:
+		slog.Warn("include: unexpected name arg type", "arg", args[0])
+		must("include: unexpected name arg type")
+		return
+	}
+	if a.idx == nil {
+		slog.Warn("include: no template index set")
+		must("include: no template index")
+		return
+	}
+	def, ok := a.idx.get(name)
+	if !ok {
+		slog.Warn("include: unknown template name", "name", name)
+		must("include: unknown template name")
+		return
+	}
+	collectUsedValues(def.tree, def.root, a.out)
 }
 
 func (a *analyzer) evalArgNode(n parse.Node) interface{} {

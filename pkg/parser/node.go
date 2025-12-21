@@ -12,6 +12,7 @@ import (
 type analyzer struct {
 	tree *parse.Tree
 	out  *path.Paths
+	idx  *TemplateIndex
 }
 
 // collect walks a template node and appends observed .Values paths to a.out.
