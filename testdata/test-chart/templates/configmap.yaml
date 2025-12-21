@@ -13,3 +13,4 @@ data:
   index_integer_key: {{ index .Values.integerKey "1234" }}
   index_pipe: {{  "someKey" | index .Values.indexPipe }}
   index_pipe_multiple_values: {{  "someOtherKey" | index .Values.indexPipe "nestedKey" }}
+  include_from_define: {{ include "tpl.included" . }}

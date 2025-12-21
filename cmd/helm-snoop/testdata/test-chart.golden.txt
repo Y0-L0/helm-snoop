@@ -2,6 +2,7 @@ Referenced:
   /config/disabled
   /config/enabled
   /config/message
+  /extra/fromDefine
   /getPipe/someKey
   /indexPipe/nestedKey/someOtherKey
   /indexPipe/someKey

@@ -14,3 +14,5 @@ indexPipe:
   nestedKey:
     someOtherKey: nestedPipedValue
 
+extra:
+  fromDefine: fromValues
