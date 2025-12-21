@@ -33,10 +33,10 @@ func (a *analyzer) collect(rawNode parse.Node) {
 		if node.Pipe == nil {
 			return
 		}
-		evalPipe(a.tree, node.Pipe, a.out)
+		a.evalPipe(node.Pipe)
 	case *parse.IfNode:
 		// record values used in the condition
-		evalPipe(a.tree, node.Pipe, a.out)
+		a.evalPipe(node.Pipe)
 		// evaluate both branches
 		if node.List != nil {
 			a.collect(node.List)

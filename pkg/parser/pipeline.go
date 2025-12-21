@@ -8,23 +8,23 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
-// evalPipe evaluates a full pipeline and adds resulting .Values Paths to out.
-func evalPipe(tree *parse.Tree, node *parse.PipeNode, out *path.Paths) {
+// evalPipe evaluates a full pipeline and adds resulting .Values Paths to a.out.
+func (a *analyzer) evalPipe(node *parse.PipeNode) {
 	if node == nil || len(node.Cmds) == 0 {
 		return
 	}
 	var cur interface{}
 	for i, cmd := range node.Cmds {
-		cur = evalCommandAbs(tree, cmd, cur, i > 0)
+		cur = a.evalCommandAbs(cmd, cur, i > 0)
 	}
 	if p := collectFromAbstract(cur); p != nil {
-		out.Append(p)
+		a.out.Append(p)
 	}
 }
 
 // evalCommandAbs evaluates one command into an abstract value.
 // When piped is true, the input is appended as the last argument for functions.
-func evalCommandAbs(tree *parse.Tree, cmd *parse.CommandNode, input interface{}, piped bool) interface{} {
+func (a *analyzer) evalCommandAbs(cmd *parse.CommandNode, input interface{}, piped bool) interface{} {
 	if cmd == nil || len(cmd.Args) == 0 {
 		return nil
 	}
@@ -37,32 +37,32 @@ func evalCommandAbs(tree *parse.Tree, cmd *parse.CommandNode, input interface{},
 			must("command with unexpected arg count")
 			return nil
 		}
-		return evalArgNode(cmd.Args[0])
+		return a.evalArgNode(cmd.Args[0])
 	}
 	// Build args from remaining nodes
 	args := make([]interface{}, 0, len(cmd.Args)-1+1)
-	for _, a := range cmd.Args[1:] {
-		if v := evalArgNode(a); v != nil {
+	for _, aNode := range cmd.Args[1:] {
+		if v := a.evalArgNode(aNode); v != nil {
 			args = append(args, v)
 		}
 	}
 	if piped && input != nil {
 		args = append(args, input) // pipeline passes previous value last
 	}
-	logNotImplementedCommand(tree, id.Ident, cmd)
+	logNotImplementedCommand(a.tree, id.Ident, cmd)
 	fn := getTemplateFunction(id.Ident)
 	return fn(args...)
 }
 
-func evalArgNode(n parse.Node) interface{} {
-	switch a := n.(type) {
+func (a *analyzer) evalArgNode(n parse.Node) interface{} {
+	switch an := n.(type) {
 	case *parse.PipeNode:
 		// nested pipe used as an argument; ignore for analysis for now
 		return nil
 	case *parse.FieldNode:
-		if len(a.Ident) > 0 && a.Ident[0] == "Values" {
-			if key := strings.Join(a.Ident[1:], "."); key != "" {
-				return path.NewPath(a.Ident[1:]...)
+		if len(an.Ident) > 0 && an.Ident[0] == "Values" {
+			if key := strings.Join(an.Ident[1:], "."); key != "" {
+				return path.NewPath(an.Ident[1:]...)
 			}
 			// bare .Values: ignore
 			return nil
@@ -83,13 +83,13 @@ func evalArgNode(n parse.Node) interface{} {
 		return nil
 	case *parse.NumberNode:
 		// numeric literal key (e.g., index with integers)
-		if a.Text != "" {
-			return KeySet{a.Text}
+		if an.Text != "" {
+			return KeySet{an.Text}
 		}
 		return nil
 	case *parse.StringNode:
-		if a.Text != "" {
-			return KeySet{a.Text}
+		if an.Text != "" {
+			return KeySet{an.Text}
 		}
 	}
 	slog.Warn("unsupported node kind", "node", n)
