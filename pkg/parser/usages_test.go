@@ -3,7 +3,7 @@ package parser
 // NoValues: template without any .Values usage should yield empty slice.
 func (s *Unittest) TestParseFile_NoValues() {
 	tmpl := `kind: ConfigMap\nmetadata: { name: test }\n# no values here\nliteral: text`
-	got, err := parseFile("novals.tmpl", []byte(tmpl))
+	got, err := parseFile("novals.tmpl", []byte(tmpl), nil)
 	s.Require().NoError(err)
 	s.Require().Empty(got)
 }
@@ -17,7 +17,7 @@ func (s *Unittest) TestParseFile_InvalidTemplate() {
 	}
 	for i, src := range cases {
 		s.Run("invalid-"+string(rune('a'+i)), func() {
-			_, err := parseFile("invalid.tmpl", []byte(src))
+			_, err := parseFile("invalid.tmpl", []byte(src), nil)
 			s.Require().Error(err)
 		})
 	}
