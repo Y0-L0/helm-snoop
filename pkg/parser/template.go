@@ -1,6 +1,7 @@
 package parser
 
 import (
+	"fmt"
 	"text/template/parse"
 
 	chart "helm.sh/helm/v4/pkg/chart/v2"
@@ -42,23 +43,50 @@ func (ti *TemplateIndex) empty() bool { return len(ti.byName) == 0 }
 // BuildTemplateIndex parses all templates in the chart and indexes define'd templates by name.
 func BuildTemplateIndex(ch *chart.Chart) (*TemplateIndex, error) {
 	idx := &TemplateIndex{byName: make(map[string]TemplateDef)}
+	seen := make(map[*chart.Chart]bool)
+	if err := buildIndexRecursive(ch, "", idx, seen); err != nil {
+		return nil, err
+	}
+	return idx, nil
+}
+
+// buildIndexRecursive adds define'd templates from chart and its transitive dependencies.
+// prefix indicates the synthetic path prefix for dependency files (e.g., charts/<dep>/...).
+func buildIndexRecursive(ch *chart.Chart, prefix string, idx *TemplateIndex, seen map[*chart.Chart]bool) error {
+	if ch == nil {
+		return nil
+	}
+	if seen[ch] {
+		return nil
+	}
+	seen[ch] = true
 	for _, tmpl := range ch.Templates {
 		trees, err := parse.Parse(tmpl.Name, string(tmpl.Data), "", "", templFuncMap)
 		if err != nil {
-			return nil, err
+			return err
 		}
 		for name, tree := range trees {
-			// Exclude the synthetic entry that matches the file name; we want only define'd names.
 			if name == tmpl.Name {
 				continue
 			}
 			if tree == nil || tree.Root == nil {
 				continue
 			}
-			idx.add(name, TemplateDef{name: name, file: tmpl.Name, root: tree.Root, tree: tree})
+			idx.add(name, TemplateDef{name: name, file: prefix + tmpl.Name, root: tree.Root, tree: tree})
 		}
 	}
-	return idx, nil
+	// Recurse into direct dependencies (Helm v4 exposes this as a method)
+	for _, dep := range ch.Dependencies() {
+		depName := "unknown"
+		if dep != nil && dep.Metadata != nil && dep.Metadata.Name != "" {
+			depName = dep.Metadata.Name
+		}
+		depPrefix := fmt.Sprintf("%scharts/%s/", prefix, depName)
+		if err := buildIndexRecursive(dep, depPrefix, idx, seen); err != nil {
+			return err
+		}
+	}
+	return nil
 }
 
 // (no test-only helpers here; parser tests use real chart.Chart construction)
