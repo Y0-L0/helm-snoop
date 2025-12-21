@@ -2,7 +2,7 @@ package parser
 
 import "github.com/y0-l0/helm-snoop/pkg/path"
 
-// Happy-path tests for parseFile/collectUsedValues.
+// Happy-path tests for parseFile/analyzer.collect.
 func (s *Unittest) TestParseFile_Happy() {
 	cases := []struct {
 		name string
@@ -41,7 +41,7 @@ func (s *Unittest) TestParseFile_Happy() {
 }
 
 // Unhappy-path: control structures are not implemented and should panic
-// when encountered by collectUsedValues (for now).
+// when encountered by analyzer.collect (for now).
 func (s *Unittest) TestParseFile_NotImplemented() {
 	cases := []struct {
 		name string

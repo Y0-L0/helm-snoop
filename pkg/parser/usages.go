@@ -33,7 +33,8 @@ func parseFile(name string, data []byte) (path.Paths, error) {
 	out := path.Paths{}
 	for i, tree := range trees {
 		slog.Debug("Analizing parse tree", "index", i, "root", tree.Root)
-		collectUsedValues(tree, tree.Root, &out)
+		a := analyzer{tree: tree, out: &out}
+		a.collect(tree.Root)
 	}
 	return out, nil
 }
