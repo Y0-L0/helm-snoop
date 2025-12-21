@@ -5,6 +5,10 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/fullnameOverride",
+      "kinds": "/K"
+    },
+    {
       "id": "/global/domain",
       "kinds": "/K/K"
     },
@@ -103,6 +107,10 @@
     {
       "id": "/livenessProbe/timeoutSeconds",
       "kinds": "/K/K"
+    },
+    {
+      "id": "/nameOverride",
+      "kinds": "/K"
     },
     {
       "id": "/podSecurityContext/enabled",
@@ -237,10 +245,6 @@
     {
       "id": "/containerSecurityContext/seccompProfile/type",
       "kinds": "/K/K/K"
-    },
-    {
-      "id": "/fullnameOverride",
-      "kinds": "/K"
     },
     {
       "id": "/global/imagePullPolicy",
@@ -475,10 +479,6 @@
       "kinds": "/K/K"
     },
     {
-      "id": "/nameOverride",
-      "kinds": "/K"
-    },
-    {
       "id": "/podSecurityContext/fsGroup",
       "kinds": "/K/K"
     },
@@ -614,6 +614,10 @@
     },
     {
       "id": "/ingress/annotations",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ingress/apiVersion",
       "kinds": "/K/K"
     },
     {
