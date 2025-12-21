@@ -14,6 +14,7 @@ func GetUsages(ch *chart.Chart) (path.Paths, error) {
 	result := make(path.Paths, 0)
 	// Build template index for include resolution across files
 	idx, err := BuildTemplateIndex(ch)
+	slog.Debug("Built template index", "index", idx)
 	if err != nil {
 		return nil, err
 	}

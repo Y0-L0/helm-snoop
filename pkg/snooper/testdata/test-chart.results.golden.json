@@ -13,6 +13,10 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/extra/fromDefine",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/getPipe/someKey",
       "kinds": "/K/K"
     },
