@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"os"
+	"path/filepath"
 )
 
 func (s *GoldenTest) TestCLI_Usage() {
@@ -22,7 +23,8 @@ func (s *GoldenTest) TestCLI_Missing() {
 }
 
 func (s *GoldenTest) TestCLI_TestChart() {
-	restore, stdout, stderr, code := interceptMain([]string{"helm-snoop", s.chartPath, "debug"})
+	chartPath := filepath.Join(s.chartsDir, "test-chart")
+	restore, stdout, stderr, code := interceptMain([]string{"helm-snoop", chartPath, "debug"})
 	defer restore()
 	main()
 	s.Require().Equal(0, *code, stderr.String())
