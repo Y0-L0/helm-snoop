@@ -39,7 +39,8 @@ func (p Path) KindsString() string {
 	if len(p.kinds) == 0 {
 		return ""
 	}
-	b := make([]byte, 0, len(p.kinds)*2-1)
+	// Prepend a leading slash to mirror ID().
+	b := make([]byte, 0, len(p.kinds)*2)
 	for _, k := range p.kinds {
 		b = append(b, '/')
 		switch k {

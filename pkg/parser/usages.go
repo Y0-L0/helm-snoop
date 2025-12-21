@@ -28,7 +28,7 @@ func GetUsages(ch *chart.Chart) (path.Paths, error) {
 	return result, nil
 }
 
-// parseFile parses one template file and returns all observed .Values paths.
+// parseFile parses a file; idx enables include resolution across templates.
 func parseFile(name string, data []byte, idx *TemplateIndex) (path.Paths, error) {
 	trees, err := parse.Parse(name, string(data), "", "", templFuncMap)
 	if err != nil {
@@ -38,7 +38,7 @@ func parseFile(name string, data []byte, idx *TemplateIndex) (path.Paths, error)
 	out := path.Paths{}
 	for i, tree := range trees {
 		slog.Debug("Analizing parse tree", "index", i, "root", tree.Root)
-		a := analyzer{tree: tree, out: &out, idx: idx}
+		a := newAnalyzer(tree, &out, idx)
 		a.collect(tree.Root)
 	}
 	return out, nil

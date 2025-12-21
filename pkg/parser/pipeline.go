@@ -92,7 +92,36 @@ func (a *analyzer) evalInclude(args []interface{}) {
 		must("include: unknown template name")
 		return
 	}
-	collectUsedValues(def.tree, def.root, a.out)
+
+	defer a.withIncludeScope(name)()
+
+	oldTree := a.tree
+	a.tree = def.tree
+	a.collect(def.root)
+	a.tree = oldTree
+}
+
+// withIncludeScope runs fn within an include expansion scope for the given template name.
+// It enforces recursion and depth limits and restores state afterwards.
+func (a *analyzer) withIncludeScope(name string) func() {
+	if a.inStack == nil {
+		a.inStack = make(map[string]bool)
+	}
+	if a.depth >= a.maxDepth {
+		slog.Warn("include: max depth exceeded", "depth", a.depth)
+		panic("include: max depth exceeded")
+	}
+	if a.inStack[name] {
+		slog.Warn("include: recursion detected", "name", name)
+		panic("include: recursion detected")
+	}
+	a.inStack[name] = true
+	a.depth++
+
+	return func() {
+		a.depth--
+		delete(a.inStack, name)
+	}
 }
 
 func (a *analyzer) evalArgNode(n parse.Node) interface{} {
