@@ -1,0 +1,692 @@
+{
+  "referenced": [
+    {
+      "id": "/containerSecurityContext/enabled",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/global/domain",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ics/default/protocol",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/matrix/auth/applicationServiceSecret",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/ics/matrix/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/oidc/clientSecret",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/portal/auth/sharedSecret",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/ics/portal/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/redis/auth/password",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/ics/redis/ssl/customca",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/ics/redis/ssl/mTLS/enabled",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/ics/redis/ssl/pathCA",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/ics/session/secret",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/image/pullPolicy",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ingress/enabled",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ingress/host",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ingress/ingressClassName",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ingress/path",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ingress/pathType",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ingress/tls/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ingress/tls/secretName",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/livenessProbe/failureThreshold",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/livenessProbe/initialDelaySeconds",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/livenessProbe/periodSeconds",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/livenessProbe/successThreshold",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/livenessProbe/timeoutSeconds",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/podSecurityContext/enabled",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/config/debug/enabled",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/config/debug/pauseBeforeScriptStart",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/config/keycloak/auth/password",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/enabled",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/image/pullPolicy",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/image/registry",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/image/repository",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/image/tag",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/provisioningImage/pullPolicy",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/provisioningImage/registry",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/provisioningImage/repository",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/provisioningImage/tag",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/readinessProbe/failureThreshold",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/readinessProbe/initialDelaySeconds",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/readinessProbe/successThreshold",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/readinessProbe/timeoutSeconds",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/replicaCount",
+      "kinds": "/K"
+    },
+    {
+      "id": "/service/enabled",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/service/sessionAffinity/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/service/sessionAffinity/timeoutSeconds",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/service/type",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/serviceAccount/automountServiceAccountToken",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/serviceAccount/create",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/terminationGracePeriodSeconds",
+      "kinds": "/K"
+    }
+  ],
+  "definedNotUsed": [
+    {
+      "id": "/containerSecurityContext/allowPrivilegeEscalation",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/containerSecurityContext/capabilities/drop/0",
+      "kinds": "/K/K/K/I"
+    },
+    {
+      "id": "/containerSecurityContext/privileged",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/containerSecurityContext/readOnlyRootFilesystem",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/containerSecurityContext/runAsGroup",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/containerSecurityContext/runAsNonRoot",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/containerSecurityContext/runAsUser",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/containerSecurityContext/seccompProfile/type",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/fullnameOverride",
+      "kinds": "/K"
+    },
+    {
+      "id": "/global/imagePullPolicy",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/global/imageRegistry",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/global/subDomains/keycloak",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/global/subDomains/portal",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/default/domain",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/enableSessionCookie",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ics/issuerBaseUrl",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ics/keycloak/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/keycloak/realm",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/keycloak/subdomain",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/keycloak/url",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/logLevel",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ics/matrix/auth/existingSecret/keyMapping/password",
+      "kinds": "/K/K/K/K/K/K"
+    },
+    {
+      "id": "/ics/matrix/auth/existingSecret/name",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/ics/matrix/serverName",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/matrix/subdomain",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/matrix/url",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/nextcloud/audience",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/nextcloud/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/nextcloud/origin",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/nextcloud/originUrl",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/nextcloud/subdomain",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/nextcloud/url",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/nordeck/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/nordeck/mode",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/nordeck/subdomain",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/nordeck/url",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/oidc/existingSecret/keyMapping/clientSecret",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/ics/oidc/existingSecret/name",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/ics/oidc/id",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/originRegex",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ics/portal/auth/existingSecret/keyMapping/sharedSecret",
+      "kinds": "/K/K/K/K/K/K"
+    },
+    {
+      "id": "/ics/portal/auth/existingSecret/name",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/ics/portal/subdomain",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/portal/url",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/proxy",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ics/redis/auth/existingSecret/keyMapping/password",
+      "kinds": "/K/K/K/K/K/K"
+    },
+    {
+      "id": "/ics/redis/auth/existingSecret/name",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/ics/redis/auth/username",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/ics/redis/host",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/redis/port",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/redis/ssl/enabled",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/ics/redis/ssl/mTLS/clientCert",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/ics/redis/ssl/mTLS/clientKey",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/ics/redis/ssl/mTLS/existingSecret/name",
+      "kinds": "/K/K/K/K/K/K"
+    },
+    {
+      "id": "/ics/session/existingSecret/keyMapping/secret",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/ics/session/existingSecret/name",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/ics/sessionRollingDuration",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ics/userUniqueMapper",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ics/usernameClaim",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ics/xwiki/audience",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/xwiki/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/xwiki/subdomain",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/xwiki/url",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/image/registry",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/image/repository",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/image/tag",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/livenessProbe/enabled",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/nameOverride",
+      "kinds": "/K"
+    },
+    {
+      "id": "/podSecurityContext/fsGroup",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/podSecurityContext/fsGroupChangePolicy",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/config/clientBaseUrl",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/config/keycloak/auth/existingSecret/keyMapping/password",
+      "kinds": "/K/K/K/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/config/keycloak/auth/existingSecret/name",
+      "kinds": "/K/K/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/config/keycloak/auth/username",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/config/keycloak/connection/host",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/config/keycloak/connection/port",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/config/keycloak/connection/protocol",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/config/keycloak/realm",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/securityContext/allowPrivilegeEscalation",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/securityContext/capabilities/drop/0",
+      "kinds": "/K/K/K/K/I"
+    },
+    {
+      "id": "/provisioning/securityContext/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/securityContext/privileged",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/securityContext/readOnlyRootFilesystem",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/securityContext/runAsGroup",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/securityContext/runAsNonRoot",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/securityContext/runAsUser",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/securityContext/seccompProfile/type",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/readinessProbe/enabled",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/readinessProbe/periodSeconds",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/resources/limits/cpu",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/resources/limits/memory",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/resources/requests/cpu",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/resources/requests/memory",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/service/ports/http/containerPort",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/service/ports/http/port",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/service/ports/http/protocol",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/updateStrategy/type",
+      "kinds": "/K/K"
+    }
+  ],
+  "usedNotDefined": [
+    {
+      "id": "/additionalAnnotations",
+      "kinds": "/K"
+    },
+    {
+      "id": "/affinity",
+      "kinds": "/K"
+    },
+    {
+      "id": "/extraVolumeMounts",
+      "kinds": "/K"
+    },
+    {
+      "id": "/extraVolumes",
+      "kinds": "/K"
+    },
+    {
+      "id": "/ingress/annotations",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ingress/tls",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/lifecycleHooks",
+      "kinds": "/K"
+    },
+    {
+      "id": "/nodeSelector",
+      "kinds": "/K"
+    },
+    {
+      "id": "/podAnnotations",
+      "kinds": "/K"
+    },
+    {
+      "id": "/provisioning/additionalAnnotations",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/args",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/config/keycloak/credentialSecret/key",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/config/keycloak/password",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/extraAnnotations",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/extraLabels",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/extraVolumeMounts",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/image/sha256",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/provisioningImage/sha256",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/resources",
+      "kinds": "/K"
+    },
+    {
+      "id": "/service/annotations",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/serviceAccount/annotations",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/tolerations",
+      "kinds": "/K"
+    },
+    {
+      "id": "/topologySpreadConstraints",
+      "kinds": "/K"
+    }
+  ]
+}
