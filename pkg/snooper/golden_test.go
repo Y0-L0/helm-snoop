@@ -2,12 +2,13 @@ package snooper
 
 import (
 	"encoding/json"
+	"path/filepath"
 
 	loader "helm.sh/helm/v4/pkg/chart/v2/loader"
 )
 
 func (s *GoldenTest) TestSnoop_TestChart() {
-	chart, err := loader.Load(s.chartPath)
+	chart, err := loader.Load(filepath.Join(s.chartsDir, "test-chart"))
 	s.Require().NoError(err)
 
 	results, err := Snoop(chart)

@@ -2,7 +2,6 @@ package main
 
 import (
 	"flag"
-	"os"
 	"path/filepath"
 	"testing"
 
@@ -14,14 +13,12 @@ var update = flag.Bool("update", false, "update golden files")
 
 type GoldenTest struct {
 	testsuite.LoggingSuite
-	chartPath string
+	chartsDir string
 	update    bool
 }
 
 func (s *GoldenTest) SetupSuite() {
-	s.chartPath = filepath.Join("..", "..", "testdata", "test-chart")
-	_, err := os.Stat(s.chartPath)
-	s.Require().NoError(err, "expected test chart at %s", s.chartPath)
+	s.chartsDir = filepath.Join("..", "..", "testdata")
 	s.update = *update
 }
 
