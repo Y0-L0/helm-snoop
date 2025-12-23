@@ -33,7 +33,7 @@ func (a *analyzer) evalCommandAbs(cmd *parse.CommandNode, input interface{}, pip
 	if !ok {
 		// Not a function: expect a single literal/field
 		if len(cmd.Args) != 1 {
-			slog.Warn("command with unexpected arg count", "args_len", len(cmd.Args))
+			slog.Warn("command with unexpected arg count", "args_len", len(cmd.Args), "args", cmd.Args)
 			must("command with unexpected arg count")
 			return nil
 		}
@@ -53,7 +53,7 @@ func (a *analyzer) evalCommandAbs(cmd *parse.CommandNode, input interface{}, pip
 		a.evalInclude(args)
 		return nil
 	}
-	logNotImplementedCommand(a.tree, id.Ident, cmd)
+	slog.Debug("Running template function", "funcName", id.Ident, "args", args, "cmd", cmd)
 	fn := getTemplateFunction(id.Ident)
 	return fn(args...)
 }
