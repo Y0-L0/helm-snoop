@@ -31,7 +31,7 @@ func GetUsages(ch *chart.Chart) (path.Paths, error) {
 
 // parseFile parses a file; idx enables include resolution across templates.
 func parseFile(name string, data []byte, idx *TemplateIndex) (path.Paths, error) {
-	trees, err := parse.Parse(name, string(data), "", "", templFuncMap)
+	trees, err := parse.Parse(name, string(data), "", "", stubFuncMap)
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse template %s: %w", name, err)
 	}

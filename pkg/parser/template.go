@@ -61,7 +61,7 @@ func buildIndexRecursive(ch *chart.Chart, prefix string, idx *TemplateIndex, see
 	}
 	seen[ch] = true
 	for _, tmpl := range ch.Templates {
-		trees, err := parse.Parse(tmpl.Name, string(tmpl.Data), "", "", templFuncMap)
+		trees, err := parse.Parse(tmpl.Name, string(tmpl.Data), "", "", stubFuncMap)
 		if err != nil {
 			return err
 		}

@@ -13,6 +13,14 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/global/imagePullPolicy",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/global/imageRegistry",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/ics/default/protocol",
       "kinds": "/K/K/K"
     },
@@ -26,6 +34,10 @@
     },
     {
       "id": "/ics/oidc/clientSecret",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/oidc/id",
       "kinds": "/K/K/K"
     },
     {
@@ -117,6 +129,10 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/provisioning/config/clientBaseUrl",
+      "kinds": "/K/K/K"
+    },
+    {
       "id": "/provisioning/config/debug/enabled",
       "kinds": "/K/K/K/K"
     },
@@ -127,6 +143,14 @@
     {
       "id": "/provisioning/config/keycloak/auth/password",
       "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/config/keycloak/auth/username",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/config/keycloak/realm",
+      "kinds": "/K/K/K/K"
     },
     {
       "id": "/provisioning/enabled",
@@ -247,14 +271,6 @@
       "kinds": "/K/K/K"
     },
     {
-      "id": "/global/imagePullPolicy",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/global/imageRegistry",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/global/subDomains/keycloak",
       "kinds": "/K/K/K"
     },
@@ -361,10 +377,6 @@
     {
       "id": "/ics/oidc/existingSecret/name",
       "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/ics/oidc/id",
-      "kinds": "/K/K/K"
     },
     {
       "id": "/ics/originRegex",
@@ -487,20 +499,12 @@
       "kinds": "/K/K"
     },
     {
-      "id": "/provisioning/config/clientBaseUrl",
-      "kinds": "/K/K/K"
-    },
-    {
       "id": "/provisioning/config/keycloak/auth/existingSecret/keyMapping/password",
       "kinds": "/K/K/K/K/K/K/K"
     },
     {
       "id": "/provisioning/config/keycloak/auth/existingSecret/name",
       "kinds": "/K/K/K/K/K/K"
-    },
-    {
-      "id": "/provisioning/config/keycloak/auth/username",
-      "kinds": "/K/K/K/K/K"
     },
     {
       "id": "/provisioning/config/keycloak/connection/host",
@@ -513,10 +517,6 @@
     {
       "id": "/provisioning/config/keycloak/connection/protocol",
       "kinds": "/K/K/K/K/K"
-    },
-    {
-      "id": "/provisioning/config/keycloak/realm",
-      "kinds": "/K/K/K/K"
     },
     {
       "id": "/provisioning/securityContext/allowPrivilegeEscalation",
@@ -613,6 +613,10 @@
       "kinds": "/K"
     },
     {
+      "id": "/global/ingressClass",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/ingress/annotations",
       "kinds": "/K/K"
     },
@@ -625,7 +629,15 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/kubeVersion",
+      "kinds": "/K"
+    },
+    {
       "id": "/lifecycleHooks",
+      "kinds": "/K"
+    },
+    {
+      "id": "/namespaceOverride",
       "kinds": "/K"
     },
     {
@@ -671,6 +683,10 @@
     {
       "id": "/provisioning/provisioningImage/sha256",
       "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/securityContext",
+      "kinds": "/K/K"
     },
     {
       "id": "/resources",

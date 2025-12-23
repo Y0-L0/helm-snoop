@@ -2,103 +2,181 @@ package parser
 
 import (
 	"log/slog"
-
-	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
-func includeFn(...interface{}) interface{} {
-	slog.Warn("include not implemented")
-	must("include not implemented")
+// include/tpl remain out of scope; keep them as strict-not-implemented.
+func includeFn(ctx *FnCtx, call Call) []string {
+	// Expect template name as first arg (literal string)
+	if len(call.Args) == 0 {
+		slog.Warn("include: missing template name")
+		must("include: missing template name")
+		return nil
+	}
+	lits := ctx.EvalNode(call.Args[0]).Strings
+	if len(lits) != 1 {
+		slog.Warn("include: invalid name literal", "len", len(lits))
+		must("include: invalid name literal")
+		return nil
+	}
+	name := lits[0]
+	if ctx.a == nil || ctx.a.idx == nil {
+		slog.Warn("include: no template index")
+		must("include: no template index")
+		return nil
+	}
+	def, ok := ctx.a.idx.get(name)
+	if !ok {
+		slog.Warn("include: unknown template name", "name", name)
+		must("include: unknown template name")
+		return nil
+	}
+	defer ctx.a.withIncludeScope(name)()
+	oldTree := ctx.a.tree
+	ctx.a.tree = def.tree
+	ctx.a.collect(def.root)
+	ctx.a.tree = oldTree
 	return nil
 }
-func tplFn(...interface{}) interface{} {
+func tplFn(_ *FnCtx, _ Call) []string {
 	slog.Warn("tpl not implemented")
 	must("tpl not implemented")
 	return nil
 }
 
-// makeNotImplementedFn returns a templFunc that logs the function name
-// and calls must() to fail in strict mode. Use when we want to surface
-// unsupported helper usage instead of silently no-oping.
+// makeNotImplementedFn logs and fails in strict mode.
 func makeNotImplementedFn(name string) templFunc {
-	return func(...interface{}) interface{} {
+	return func(_ *FnCtx, _ Call) []string {
 		slog.Warn("template function not implemented", "name", name)
 		must("template function not implemented: " + name)
 		return nil
 	}
 }
-func noopFn(...interface{}) interface{} { return nil }
 
-// getFn appends a literal key (unknown kind) to a .Values Path.
-func getFn(args ...interface{}) interface{} {
-	if len(args) != 2 {
-		slog.Warn("get: invalid template arg count", "args_len", len(args))
-		must("get: invalid template")
-		return nil
-	}
-	base, ok := args[0].(*path.Path)
-	if !ok {
-		slog.Warn("get: base is not a path", "base", args[0])
-		must("get: base is not a path")
-		return nil
-	}
-	key, ok := args[1].(KeySet)
-	if !ok {
-		slog.Warn("get: key is not a KeySet", "key", args[1])
-		must("get: key is not a KeySet")
-		return nil
-	}
-	if len(key) != 1 {
-		slog.Warn("get: key length != 1", "len", len(key))
-		must("get: key length != 1")
-		return nil
-	}
-	p := *base
-	p = p.WithAny(key[0])
-	return &p
-}
+func noopStrings(_ *FnCtx, _ Call) []string { return nil }
 
-// indexFn appends one or more literal keys (unknown kind) to an absolute .Values path.
-func indexFn(args ...interface{}) interface{} {
-	if len(args) < 2 {
-		slog.Warn("index: invalid template arg count", "args_len", len(args))
-		must("index: invalid template")
-		return nil
-	}
-	base, ok := args[0].(*path.Path)
-	if !ok {
-		slog.Warn("index: base is not a path", "base", args[0])
-		must("index: base is not a path")
-		return nil
-	}
-	p := *base
-	for _, a := range args[1:] {
-		lit, ok := a.(KeySet)
-		if !ok {
-			slog.Warn("index: key is not a KeySet", "arg", a)
-			must("index: key is not a KeySet")
-			return nil
-		}
-		if len(lit) != 1 {
-			slog.Warn("index: key length != 1", "len", len(lit))
-			must("index: key length != 1")
-			return nil
-		}
-		p = p.WithAny(lit[0])
-	}
-	return &p
-}
-
-// Analysis-aware helpers used by our evaluator.
-func defaultFn(args ...interface{}) interface{} {
-	if len(args) == 0 {
-		return nil
-	}
-	// Prefer returning a .Values path if present (order-agnostic for piping)
-	for i := len(args) - 1; i >= 0; i-- {
-		if ap, ok := args[i].(*path.Path); ok {
-			return ap
+// emitArgsNoResultFn evaluates all args and emits any .Values paths found.
+func emitArgsNoResultFn(ctx *FnCtx, call Call) []string {
+	for _, arg := range call.Args {
+		ev := ctx.EvalNode(arg)
+		if ev.Path != nil {
+			ctx.Emit(ev.Path)
 		}
 	}
 	return nil
 }
+
+// unaryPassThroughFn emits the arg path if present, and returns literal string if available.
+func unaryPassThroughFn(ctx *FnCtx, call Call) []string {
+	if len(call.Args) == 0 && !call.Piped {
+		return nil
+	}
+	var ev Eval
+	if len(call.Args) > 0 {
+		ev = ctx.EvalNode(call.Args[0])
+	} else if call.Piped {
+		if call.InputPath != nil {
+			ctx.Emit(call.InputPath)
+		}
+		return call.Input
+	}
+	if ev.Path != nil {
+		ctx.Emit(ev.Path)
+	}
+	return ev.Strings
+}
+
+// getFn: base must be a path; key must be a literal string; emit child path.
+func getFn(ctx *FnCtx, call Call) []string {
+	if len(call.Args) < 1 {
+		slog.Warn("get: invalid template arg count", "args_len", len(call.Args))
+		must("get: invalid template")
+		return nil
+	}
+	base := ctx.EvalNode(call.Args[0]).Path
+	if base == nil {
+		slog.Warn("get: base is not a path")
+		must("get: base is not a path")
+		return nil
+	}
+	var keys []string
+	if len(call.Args) >= 2 {
+		keys = ctx.EvalNode(call.Args[1]).Strings
+	} else if call.Piped && len(call.Input) > 0 {
+		keys = call.Input
+	}
+	if len(keys) != 1 {
+		slog.Warn("get: key must be exactly one literal", "len", len(keys))
+		must("get: key length != 1")
+		return nil
+	}
+	p := *base
+	p = p.WithAny(keys[0])
+	ctx.Emit(&p)
+	return nil
+}
+
+// indexFn: base must be a path; subsequent args must be literal strings; emit child path.
+func indexFn(ctx *FnCtx, call Call) []string {
+	if len(call.Args) < 1 {
+		slog.Warn("index: invalid template arg count", "args_len", len(call.Args))
+		must("index: invalid template")
+		return nil
+	}
+	// base may be provided as first arg, or piped as a previously synthesized path.
+	base := ctx.EvalNode(call.Args[0]).Path
+	baseIdx := 0
+	if base == nil && call.Piped && call.InputPath != nil {
+		base = call.InputPath
+		baseIdx = -1
+	}
+	if base == nil {
+		baseIdx = -1
+		for i, n := range call.Args {
+			if b := ctx.EvalNode(n).Path; b != nil {
+				base = b
+				baseIdx = i
+				break
+			}
+		}
+	}
+	if base == nil {
+		slog.Warn("index: base is not a path")
+		must("index: base is not a path")
+		return nil
+	}
+	p := *base
+	start := baseIdx + 1
+	if start < 1 {
+		start = 1
+	}
+	for i := start; i < len(call.Args); i++ {
+		lit := ctx.EvalNode(call.Args[i]).Strings
+		if len(lit) != 1 {
+			slog.Warn("index: key must be exactly one literal")
+			must("index: key must be exactly one literal")
+			return nil
+		}
+		p = p.WithAny(lit[0])
+	}
+	// keys may also come from piped input strings
+	if call.Piped && len(call.Input) > 0 {
+		for _, lit := range call.Input {
+			p = p.WithAny(lit)
+		}
+	}
+	ctx.Emit(&p)
+	return nil
+}
+
+// defaultFn: emit any arg paths; returns no strings.
+func defaultFn(ctx *FnCtx, call Call) []string {
+	for _, arg := range call.Args {
+		ev := ctx.EvalNode(arg)
+		if ev.Path != nil {
+			ctx.Emit(ev.Path)
+		}
+	}
+	return nil
+}
+
+// no coalesceFn implementation yet (intentionally omitted)
