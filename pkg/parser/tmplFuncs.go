@@ -16,6 +16,17 @@ func tplFn(...interface{}) interface{} {
 	must("tpl not implemented")
 	return nil
 }
+
+// makeNotImplementedFn returns a templFunc that logs the function name
+// and calls must() to fail in strict mode. Use when we want to surface
+// unsupported helper usage instead of silently no-oping.
+func makeNotImplementedFn(name string) templFunc {
+	return func(...interface{}) interface{} {
+		slog.Warn("template function not implemented", "name", name)
+		must("template function not implemented: " + name)
+		return nil
+	}
+}
 func noopFn(...interface{}) interface{} { return nil }
 
 // getFn appends a literal key (unknown kind) to a .Values Path.
@@ -90,11 +101,4 @@ func defaultFn(args ...interface{}) interface{} {
 		}
 	}
 	return nil
-}
-
-func passthrough1Fn(args ...interface{}) interface{} {
-	if len(args) == 0 {
-		return nil
-	}
-	return args[0]
 }

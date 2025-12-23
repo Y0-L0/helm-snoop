@@ -3,86 +3,117 @@ package parser
 import (
 	"fmt"
 	"log/slog"
-
-	sprig "github.com/Masterminds/sprig/v3"
 )
 
 type templFunc = func(...interface{}) interface{}
 
 // newFuncMap returns a tolerant function map for parsing templates.
 // For out-of-scope helpers, we explicitly panic if ever invoked.
-func newFuncMap() map[string]interface{} {
-	funcMap := sprig.TxtFuncMap()
+var templFuncMap = map[string]interface{}{
+	// Analysis-aware real handlers
+	"include": includeFn,
+	"tpl":     tplFn,
+	"default": defaultFn,
+	"get":     getFn,
+	"index":   indexFn,
 
-	// Named stubs so we can add real logic later.
-	funcMap["include"] = includeFn
-	funcMap["tpl"] = tplFn
-	// Note: "template" and "define" are Go template actions, not functions,
-	// so adding them to the FuncMap has no effect on parsing; left out on purpose.
+	// Pass-through helpers (preserve .Values usage)
+	"indent":   passthrough1Fn,
+	"lower":    passthrough1Fn,
+	"nindent":  passthrough1Fn,
+	"quote":    passthrough1Fn,
+	"required": passthrough1Fn,
+	"upper":    passthrough1Fn,
 
-	// Analysis-aware overrides
-	funcMap["default"] = defaultFn
-	funcMap["quote"] = passthrough1Fn
-	funcMap["upper"] = passthrough1Fn
-	funcMap["lower"] = passthrough1Fn
-	funcMap["get"] = getFn
-	funcMap["index"] = indexFn
+	// TODO: Should return wildcard key kinds in the future
+	"toYaml":       passthrough1Fn,
+	"mustToYaml":   passthrough1Fn,
+	"toYamlPretty": passthrough1Fn,
+	"toJson":       passthrough1Fn,
+	"mustToJson":   passthrough1Fn,
+	"toToml":       passthrough1Fn,
 
-	funcMap["and"] = noopFn
-	funcMap["call"] = noopFn
-	funcMap["contains"] = noopFn
-	funcMap["contains"] = noopFn
-	funcMap["dict"] = noopFn
-	funcMap["eq"] = noopFn
-	funcMap["fail"] = noopFn
-	funcMap["fromJson"] = noopFn
-	funcMap["fromJsonArray"] = noopFn
-	funcMap["fromToml"] = noopFn
-	funcMap["fromYaml"] = noopFn
-	funcMap["fromYamlArray"] = noopFn
-	funcMap["ge"] = noopFn
-	funcMap["getHostByName"] = noopFn
-	funcMap["gt"] = noopFn
-	funcMap["html"] = noopFn
-	funcMap["indent"] = noopFn
-	funcMap["js"] = noopFn
-	funcMap["le"] = noopFn
-	funcMap["len"] = noopFn
-	funcMap["lookup"] = noopFn
-	funcMap["lt"] = noopFn
-	funcMap["merge"] = noopFn
-	funcMap["mustToJson"] = noopFn
-	funcMap["mustToYaml"] = noopFn
-	funcMap["ne"] = noopFn
-	funcMap["nindent"] = noopFn
-	funcMap["nindent"] = noopFn
-	funcMap["not"] = noopFn
-	funcMap["omit"] = noopFn
-	funcMap["or"] = noopFn
-	funcMap["print"] = noopFn
-	funcMap["printf"] = noopFn
-	funcMap["println"] = noopFn
-	funcMap["replace"] = noopFn
-	funcMap["required"] = noopFn
-	funcMap["semverCompare"] = noopFn
-	funcMap["sha256sum"] = noopFn
-	funcMap["slice"] = noopFn
-	funcMap["toJson"] = noopFn
-	funcMap["toToml"] = noopFn
-	funcMap["toYaml"] = noopFn
-	funcMap["toYamlPretty"] = noopFn
-	funcMap["trimSuffix"] = noopFn
-	funcMap["trunc"] = noopFn
-	funcMap["urlquery"] = noopFn
+	// Data conversion: ignored in analysis
+	"fromJson":      noopFn,
+	"fromJsonArray": noopFn,
+	"fromYaml":      noopFn,
+	"fromYamlArray": noopFn,
 
-	// Ensure all functions in the map conform to templFunc so our evaluator
-	// can dispatch uniformly without signature panics.
-	for k, v := range funcMap {
-		if _, ok := v.(templFunc); !ok {
-			funcMap[k] = noopFn
-		}
-	}
-	return funcMap
+	// Common collection/string helpers (ignored for now)
+	"and":                    makeNotImplementedFn("and"),
+	"append":                 makeNotImplementedFn("append"),
+	"b64dec":                 makeNotImplementedFn("b64dec"),
+	"b64enc":                 makeNotImplementedFn("b64enc"),
+	"call":                   makeNotImplementedFn("call"),
+	"cat":                    makeNotImplementedFn("cat"),
+	"concat":                 makeNotImplementedFn("concat"),
+	"contains":               makeNotImplementedFn("contains"),
+	"derivePassword":         makeNotImplementedFn("derivePassword"),
+	"dict":                   makeNotImplementedFn("dict"),
+	"empty":                  makeNotImplementedFn("empty"),
+	"eq":                     makeNotImplementedFn("eq"),
+	"first":                  makeNotImplementedFn("first"),
+	"ge":                     makeNotImplementedFn("ge"),
+	"gt":                     makeNotImplementedFn("gt"),
+	"has":                    makeNotImplementedFn("has"),
+	"hasKey":                 makeNotImplementedFn("hasKey"),
+	"html":                   makeNotImplementedFn("html"),
+	"int":                    makeNotImplementedFn("int"),
+	"join":                   makeNotImplementedFn("join"),
+	"js":                     makeNotImplementedFn("js"),
+	"keys":                   makeNotImplementedFn("keys"),
+	"kindIs":                 makeNotImplementedFn("kindIs"),
+	"le":                     makeNotImplementedFn("le"),
+	"len":                    makeNotImplementedFn("len"),
+	"list":                   makeNotImplementedFn("list"),
+	"lt":                     makeNotImplementedFn("lt"),
+	"merge":                  makeNotImplementedFn("merge"),
+	"mergeOverwrite":         makeNotImplementedFn("mergeOverwrite"),
+	"ne":                     makeNotImplementedFn("ne"),
+	"not":                    makeNotImplementedFn("not"),
+	"omit":                   makeNotImplementedFn("omit"),
+	"or":                     makeNotImplementedFn("or"),
+	"pick":                   makeNotImplementedFn("pick"),
+	"print":                  makeNotImplementedFn("print"),
+	"printf":                 makeNotImplementedFn("printf"),
+	"println":                makeNotImplementedFn("println"),
+	"randAlpha":              makeNotImplementedFn("randAlpha"),
+	"randAlphaNum":           makeNotImplementedFn("randAlphaNum"),
+	"randAscii":              makeNotImplementedFn("randAscii"),
+	"randNumeric":            makeNotImplementedFn("randNumeric"),
+	"regexFind":              makeNotImplementedFn("regexFind"),
+	"regexMatch":             makeNotImplementedFn("regexMatch"),
+	"regexReplaceAllLiteral": makeNotImplementedFn("regexReplaceAllLiteral"),
+	"replace":                makeNotImplementedFn("replace"),
+	"reverse":                makeNotImplementedFn("reverse"),
+	"semver":                 makeNotImplementedFn("semver"),
+	"semverCompare":          makeNotImplementedFn("semverCompare"),
+	"set":                    makeNotImplementedFn("set"),
+	"sha1sum":                makeNotImplementedFn("sha1sum"),
+	"sha256sum":              makeNotImplementedFn("sha256sum"),
+	"shuffle":                makeNotImplementedFn("shuffle"),
+	"slice":                  makeNotImplementedFn("slice"),
+	"split":                  makeNotImplementedFn("split"),
+	"splitList":              makeNotImplementedFn("splitList"),
+	"substr":                 makeNotImplementedFn("substr"),
+	"ternary":                makeNotImplementedFn("ternary"),
+	"toString":               makeNotImplementedFn("toString"),
+	"trim":                   makeNotImplementedFn("trim"),
+	"trimSuffix":             makeNotImplementedFn("trimSuffix"),
+	"trunc":                  noopFn,
+	"typeIs":                 noopFn,
+	"typeIsLike":             noopFn,
+	"typeOf":                 makeNotImplementedFn("typeOf"),
+	"uniq":                   makeNotImplementedFn("uniq"),
+	"urlquery":               makeNotImplementedFn("urlquery"),
+
+	// Not implemented (surface usage in Strict tests)
+	"fail":          makeNotImplementedFn("fail"),
+	"lookup":        makeNotImplementedFn("lookup"),
+	"getHostByName": makeNotImplementedFn("getHostByName"),
+
+	// Frequently used sprig helper; treat as pass-through to avoid parse/exec failure
+	"coalesce": passthrough1Fn,
 }
 
 func getTemplateFunction(name string) templFunc {
@@ -98,6 +129,3 @@ func getTemplateFunction(name string) templFunc {
 	}
 	return function
 }
-
-// Build once and reuse to avoid recreating the map frequently.
-var templFuncMap = newFuncMap()
