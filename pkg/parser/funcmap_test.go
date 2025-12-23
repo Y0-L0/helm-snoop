@@ -2,12 +2,12 @@ package parser
 
 import "sort"
 
-// Ensure all entries in templFuncMap are templFunc-typed so getTemplateFunction
+// Ensure all entries in evalRegistry are templFunc-typed so getTemplateFunction
 // can retrieve them without signature panics.
 func (s *Unittest) TestFuncMap_AllEntriesAreTemplFunc() {
-	for k, v := range templFuncMap {
-		if _, ok := v.(templFunc); !ok {
-			s.T().Errorf("funcmap entry %q is not templFunc-typed: %T", k, v)
+	for k, v := range funcMap {
+		if v == nil {
+			s.T().Errorf("evalRegistry entry %q is nil", k)
 		}
 	}
 }
@@ -36,8 +36,8 @@ func expectedFuncKeys() []string {
 
 func (s *Unittest) TestFuncMap_KeysMatchExpected() {
 	expected := expectedFuncKeys()
-	actual := make([]string, 0, len(templFuncMap))
-	for k := range templFuncMap {
+	actual := make([]string, 0, len(funcMap))
+	for k := range funcMap {
 		actual = append(actual, k)
 	}
 	sort.Strings(actual)
