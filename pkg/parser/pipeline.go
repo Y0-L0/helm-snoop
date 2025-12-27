@@ -56,7 +56,7 @@ func (a *analyzer) evalCommand(cmd *parse.CommandNode, input []string, prevNF Ev
 	// Not a function: expect a single literal/field
 	if len(cmd.Args) != 1 {
 		slog.Warn("command with unexpected arg count", "args_len", len(cmd.Args), "args", cmd.Args)
-		must("command with unexpected arg count")
+		Must("command with unexpected arg count")
 		return nil, Eval{}, false
 	}
 	ev := a.evalNode(cmd.Args[0])
@@ -66,7 +66,7 @@ func (a *analyzer) evalCommand(cmd *parse.CommandNode, input []string, prevNF Ev
 func (a *analyzer) evalInclude(args []interface{}) {
 	if len(args) == 0 {
 		slog.Warn("include: missing template name")
-		must("include: missing template name")
+		Must("include: missing template name")
 		return
 	}
 	// first arg is template name, represented as KeySet from a string literal
@@ -75,7 +75,7 @@ func (a *analyzer) evalInclude(args []interface{}) {
 	case KeySet:
 		if len(v) != 1 {
 			slog.Warn("include: invalid name literal", "len", len(v))
-			must("include: invalid name literal")
+			Must("include: invalid name literal")
 			return
 		}
 		name = v[0]
@@ -83,18 +83,18 @@ func (a *analyzer) evalInclude(args []interface{}) {
 		name = v
 	default:
 		slog.Warn("include: unexpected name arg type", "arg", args[0])
-		must("include: unexpected name arg type")
+		Must("include: unexpected name arg type")
 		return
 	}
 	if a.idx == nil {
 		slog.Warn("include: no template index set")
-		must("include: no template index")
+		Must("include: no template index")
 		return
 	}
 	def, ok := a.idx.get(name)
 	if !ok {
 		slog.Warn("include: unknown template name", "name", name)
-		must("include: unknown template name")
+		Must("include: unknown template name")
 		return
 	}
 
@@ -168,7 +168,7 @@ func (a *analyzer) evalArgNode(n parse.Node) interface{} {
 		}
 	}
 	slog.Warn("unsupported node kind", "node", n)
-	must("evalArgNode: unsupported node kind")
+	Must("evalArgNode: unsupported node kind")
 	return nil
 }
 
@@ -258,7 +258,7 @@ func (a *analyzer) evalNode(n parse.Node) Eval {
 		return Eval{}
 	default:
 		slog.Warn("unsupported node kind in evalNode", "node", n)
-		must("evalNode: unsupported node kind")
+		Must("evalNode: unsupported node kind")
 		return Eval{}
 	}
 }

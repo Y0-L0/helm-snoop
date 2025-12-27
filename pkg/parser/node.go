@@ -64,18 +64,18 @@ func (a *analyzer) collect(rawNode parse.Node) {
 	case *parse.WithNode:
 		loc, _ := a.tree.ErrorContext(node)
 		slog.Warn("with not implemented", "pipe", node.Pipe, "pos", loc)
-		must("with not implemented")
+		Must("with not implemented")
 		return
 		// range/with body handling to be implemented later
 	case *parse.RangeNode:
 		loc, _ := a.tree.ErrorContext(node)
 		slog.Warn("range not implemented", "pipe", node.Pipe, "pos", loc)
-		must("range not implemented")
+		Must("range not implemented")
 		return
 	case *parse.TemplateNode:
 		loc, _ := a.tree.ErrorContext(node)
 		slog.Warn("template action not implemented", "name", node.Name, "pipe", node.Pipe, "pos", loc)
-		must("template action not implemented")
+		Must("template action not implemented")
 		return
 	default:
 		_ = node
