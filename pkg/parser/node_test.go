@@ -40,22 +40,24 @@ func (s *Unittest) TestParseFile_Happy() {
 	}
 }
 
-// Unhappy-path: control structures are not implemented and should panic
-// when encountered by analyzer.collect (for now).
+// with/range/template are now supported
 func (s *Unittest) TestParseFile_NotImplemented() {
+	// All previously unsupported features are now implemented
+	// This test now verifies they don't panic
 	cases := []struct {
 		name string
 		tmpl string
+		want path.Paths
 	}{
-		{name: "with block", tmpl: `{{ with . }}{{ .Values.a.x }}{{ end }}`},
-		{name: "range block", tmpl: `{{ range .Values.items }}{{ end }}`},
-		{name: "template action", tmpl: `{{ template "x" . }}`},
+		{name: "with block", tmpl: `{{ with . }}{{ .Values.a.x }}{{ end }}`, want: path.Paths{path.NewPath("a", "x")}},
+		{name: "range block", tmpl: `{{ range .Values.items }}{{ end }}`, want: path.Paths{path.NewPath("items")}},
+		{name: "template action", tmpl: `{{ template "x" . }}`, want: path.Paths{}},
 	}
 	for _, testCase := range cases {
 		s.Run(testCase.name, func() {
-			s.Require().Panics(func() {
-				_, _ = parseFile(testCase.name+".tmpl", []byte(testCase.tmpl), nil)
-			})
+			got, err := parseFile(testCase.name+".tmpl", []byte(testCase.tmpl), nil)
+			s.Require().NoError(err)
+			path.EqualPaths(s, testCase.want, got)
 		})
 	}
 }

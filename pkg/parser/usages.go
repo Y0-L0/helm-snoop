@@ -12,12 +12,14 @@ import (
 // getUsages walks all chart templates and returns a flat list of observed .Values paths.
 func GetUsages(ch *chart.Chart) (path.Paths, error) {
 	result := make(path.Paths, 0)
+
 	// Build template index for include resolution across files
 	idx, err := BuildTemplateIndex(ch)
-	slog.Debug("Built template index", "index", idx)
 	if err != nil {
 		return nil, err
 	}
+	slog.Debug("Built template index", "template_count", len(idx.byName))
+
 	for _, tmpl := range ch.Templates {
 		paths, err := parseFile(tmpl.Name, tmpl.Data, idx)
 		slog.Debug("Analized template file", "name", tmpl.Name, "paths", paths)
@@ -39,8 +41,8 @@ func parseFile(name string, data []byte, idx *TemplateIndex) (path.Paths, error)
 	out := path.Paths{}
 	for i, tree := range trees {
 		slog.Debug("Analizing parse tree", "index", i, "root", tree.Root)
-		a := newAnalyzer(tree, &out, idx)
-		a.collect(tree.Root)
+		ctx := newEvalCtx(tree, &out, idx)
+		ctx.Eval(tree.Root)
 	}
 	return out, nil
 }

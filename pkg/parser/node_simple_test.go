@@ -77,7 +77,7 @@ func (s *Unittest) TestParseCommand_Return() {
 			name: "index one",
 			tmpl: []string{
 				`{{ index .Values.cfg.path "firstIndex" }}`,
-				`{{ "firstIndex" | index index .Values.cfg.path }}`,
+				`{{ "firstIndex" | index .Values.cfg.path }}`,
 			},
 			want: path.Paths{path.NewPath("cfg", "path").Any("firstIndex")},
 		},
@@ -106,20 +106,61 @@ func (s *Unittest) TestParseCommand_Return() {
 	}
 }
 
-// Functions out of scope: include/tpl should be treated as not implemented.
-func (s *Unittest) TestParseCommand_NotImplemented() {
+// Test complex function calls (with multiple args) being piped to other functions.
+// This tests that non-piped function calls can be piped as a whole.
+func (s *Unittest) TestParseCommand_ComplexPipe() {
 	cases := []struct {
 		name string
 		tmpl string
+		want path.Paths
 	}{
-		{name: "include function", tmpl: `{{ include "x" . }}`},
-		{name: "tpl function", tmpl: `{{ tpl "{{ .Values.a.x }}" . }}`},
+		{
+			name: "index then quote",
+			tmpl: `{{ index .Values.cfg.path "firstIndex" | quote }}`,
+			want: path.Paths{path.NewPath("cfg", "path").Any("firstIndex")},
+		},
+		{
+			name: "get then upper",
+			tmpl: `{{ get .Values.app "name" | upper }}`,
+			want: path.Paths{path.NewPath("app").Any("name")},
+		},
+		{
+			name: "default then lower",
+			tmpl: `{{ default "fallback" .Values.config | lower }}`,
+			want: path.Paths{path.NewPath("config")},
+		},
+		{
+			name: "index two keys then quote",
+			tmpl: `{{ index .Values.nested "key1" "key2" | quote }}`,
+			want: path.Paths{path.NewPath("nested").Any("key1").Any("key2")},
+		},
+		{
+			name: "triple pipe",
+			tmpl: `{{ .Values.data | quote | upper | lower }}`,
+			want: path.Paths{path.NewPath("data")},
+		},
+		{
+			name: "complex triple pipe",
+			tmpl: `{{ index .Values.foo "bar" | quote | upper }}`,
+			want: path.Paths{path.NewPath("foo").Any("bar")},
+		},
+		{
+			name: "default chain preserves all",
+			tmpl: `{{ .Values.a | default .Values.b | default .Values.c }}`,
+			want: path.Paths{path.NewPath("a"), path.NewPath("b"), path.NewPath("c")},
+		},
+		{
+			name: "default with piped value",
+			tmpl: `{{ .Values.primary | default .Values.fallback }}`,
+			want: path.Paths{path.NewPath("primary"), path.NewPath("fallback")},
+		},
 	}
+
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			s.Require().Panics(func() {
-				_, _ = parseFile(tc.name+".tmpl", []byte(tc.tmpl), nil)
-			})
+			got, err := parseFile(tc.name+".tmpl", []byte(tc.tmpl), nil)
+			s.Require().NoError(err)
+			path.EqualPaths(s, tc.want, got)
 		})
 	}
 }

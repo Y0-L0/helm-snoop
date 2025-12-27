@@ -2,11 +2,12 @@ package parser
 
 import "log/slog"
 
-// tmpl functions now receive context and a Call and return literal strings.
-type templFunc = func(*FnCtx, Call) []string
+// tmplFunc is the signature for all analyzer template functions.
+// Functions receive a context and Call (with unevaluated args), then return evalResult.
+type tmplFunc func(ctx *evalCtx, call Call) evalResult
 
 // funcMap holds real analyzer handlers used during evaluation.
-var funcMap map[string]templFunc
+var funcMap map[string]tmplFunc
 
 // stubFuncMap lists all known function names for the parser (stubs only).
 var stubFuncMap map[string]interface{}
@@ -16,7 +17,7 @@ var parseStub = func(...interface{}) interface{} { return nil }
 
 func init() {
 	// 1) Build evaluation registry with concrete handlers or not-implemented stubs.
-	funcMap = map[string]templFunc{
+	funcMap = map[string]tmplFunc{
 		// Analysis-aware real handlers
 		"include": includeFn,
 		"tpl":     tplFn,
@@ -56,7 +57,7 @@ func init() {
 		"concat":                 makeNotImplementedFn("concat"),
 		"contains":               makeNotImplementedFn("contains"),
 		"derivePassword":         makeNotImplementedFn("derivePassword"),
-		"dict":                   makeNotImplementedFn("dict"),
+		"dict":                   dictFn,
 		"empty":                  makeNotImplementedFn("empty"),
 		"eq":                     makeNotImplementedFn("eq"),
 		"first":                  makeNotImplementedFn("first"),
@@ -130,7 +131,7 @@ func init() {
 	}
 }
 
-func getTemplateFunction(name string) templFunc {
+func getTemplateFunction(name string) tmplFunc {
 	if fn, ok := funcMap[name]; ok {
 		return fn
 	}
