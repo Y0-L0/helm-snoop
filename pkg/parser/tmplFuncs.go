@@ -9,25 +9,25 @@ func includeFn(ctx *FnCtx, call Call) []string {
 	// Expect template name as first arg (literal string)
 	if len(call.Args) == 0 {
 		slog.Warn("include: missing template name")
-		must("include: missing template name")
+		Must("include: missing template name")
 		return nil
 	}
 	lits := ctx.EvalNode(call.Args[0]).Strings
 	if len(lits) != 1 {
 		slog.Warn("include: invalid name literal", "len", len(lits))
-		must("include: invalid name literal")
+		Must("include: invalid name literal")
 		return nil
 	}
 	name := lits[0]
 	if ctx.a == nil || ctx.a.idx == nil {
 		slog.Warn("include: no template index")
-		must("include: no template index")
+		Must("include: no template index")
 		return nil
 	}
 	def, ok := ctx.a.idx.get(name)
 	if !ok {
 		slog.Warn("include: unknown template name", "name", name)
-		must("include: unknown template name")
+		Must("include: unknown template name")
 		return nil
 	}
 	defer ctx.a.withIncludeScope(name)()
@@ -39,7 +39,7 @@ func includeFn(ctx *FnCtx, call Call) []string {
 }
 func tplFn(_ *FnCtx, _ Call) []string {
 	slog.Warn("tpl not implemented")
-	must("tpl not implemented")
+	Must("tpl not implemented")
 	return nil
 }
 
@@ -47,7 +47,7 @@ func tplFn(_ *FnCtx, _ Call) []string {
 func makeNotImplementedFn(name string) templFunc {
 	return func(_ *FnCtx, _ Call) []string {
 		slog.Warn("template function not implemented", "name", name)
-		must("template function not implemented: " + name)
+		Must("template function not implemented: " + name)
 		return nil
 	}
 }
@@ -89,13 +89,13 @@ func unaryPassThroughFn(ctx *FnCtx, call Call) []string {
 func getFn(ctx *FnCtx, call Call) []string {
 	if len(call.Args) < 1 {
 		slog.Warn("get: invalid template arg count", "args_len", len(call.Args))
-		must("get: invalid template")
+		Must("get: invalid template")
 		return nil
 	}
 	base := ctx.EvalNode(call.Args[0]).Path
 	if base == nil {
 		slog.Warn("get: base is not a path")
-		must("get: base is not a path")
+		Must("get: base is not a path")
 		return nil
 	}
 	var keys []string
@@ -106,7 +106,7 @@ func getFn(ctx *FnCtx, call Call) []string {
 	}
 	if len(keys) != 1 {
 		slog.Warn("get: key must be exactly one literal", "len", len(keys))
-		must("get: key length != 1")
+		Must("get: key length != 1")
 		return nil
 	}
 	p := *base
@@ -119,7 +119,7 @@ func getFn(ctx *FnCtx, call Call) []string {
 func indexFn(ctx *FnCtx, call Call) []string {
 	if len(call.Args) < 1 {
 		slog.Warn("index: invalid template arg count", "args_len", len(call.Args))
-		must("index: invalid template")
+		Must("index: invalid template")
 		return nil
 	}
 	// base may be provided as first arg, or piped as a previously synthesized path.
@@ -141,7 +141,7 @@ func indexFn(ctx *FnCtx, call Call) []string {
 	}
 	if base == nil {
 		slog.Warn("index: base is not a path")
-		must("index: base is not a path")
+		Must("index: base is not a path")
 		return nil
 	}
 	p := *base
@@ -153,7 +153,7 @@ func indexFn(ctx *FnCtx, call Call) []string {
 		lit := ctx.EvalNode(call.Args[i]).Strings
 		if len(lit) != 1 {
 			slog.Warn("index: key must be exactly one literal")
-			must("index: key must be exactly one literal")
+			Must("index: key must be exactly one literal")
 			return nil
 		}
 		p = p.WithAny(lit[0])
