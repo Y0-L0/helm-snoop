@@ -1,182 +1,269 @@
 package parser
 
 import (
+	"fmt"
 	"log/slog"
+
+	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
-// include/tpl remain out of scope; keep them as strict-not-implemented.
-func includeFn(ctx *FnCtx, call Call) []string {
-	// Expect template name as first arg (literal string)
-	if len(call.Args) == 0 {
-		slog.Warn("include: missing template name")
-		Must("include: missing template name")
-		return nil
+// ==============================================================================
+// NOT IMPLEMENTED / PLACEHOLDERS
+// ==============================================================================
+
+func includeFn(ctx *evalCtx, call Call) evalResult {
+	// 1. Validate arguments - include requires at least 1 argument (template name)
+	if len(call.Args) < 1 {
+		Must("include: requires at least 1 argument")
+		return evalResult{}
 	}
-	lits := ctx.EvalNode(call.Args[0]).Strings
-	if len(lits) != 1 {
-		slog.Warn("include: invalid name literal", "len", len(lits))
-		Must("include: invalid name literal")
-		return nil
+
+	// 2. Extract template name from first argument
+	nameResult := ctx.Eval(call.Args[0])
+	for _, p := range nameResult.paths {
+		ctx.Emit(p)
 	}
-	name := lits[0]
-	if ctx.a == nil || ctx.a.idx == nil {
-		slog.Warn("include: no template index")
-		Must("include: no template index")
-		return nil
+
+	// 3. Evaluate context argument if present (second arg)
+	if len(call.Args) >= 2 {
+		ctxResult := ctx.Eval(call.Args[1])
+		for _, p := range ctxResult.paths {
+			ctx.Emit(p)
+		}
 	}
-	def, ok := ctx.a.idx.get(name)
-	if !ok {
-		slog.Warn("include: unknown template name", "name", name)
-		Must("include: unknown template name")
-		return nil
+
+	// Extract template name from literal strings
+	if len(nameResult.args) == 0 {
+		Must("include: template name must be a string literal")
+		return evalResult{}
 	}
-	defer ctx.a.withIncludeScope(name)()
-	oldTree := ctx.a.tree
-	ctx.a.tree = def.tree
-	ctx.a.collect(def.root)
-	ctx.a.tree = oldTree
-	return nil
+	templateName := nameResult.args[0]
+
+	// 4. Check template index availability
+	if ctx.idx == nil {
+		Must("include: template index not available")
+		return evalResult{}
+	}
+
+	// 5. Look up the template definition
+	tmplDef, found := ctx.idx.get(templateName)
+	if !found {
+		Must(fmt.Sprintf("include: template %q not found", templateName))
+		return evalResult{}
+	}
+
+	// 6. Check for circular includes using inStack
+	if ctx.inStack[templateName] {
+		panic(fmt.Sprintf("include: circular dependency on template %q", templateName))
+	}
+
+	// 7. Mark template as in-stack before evaluation
+	ctx.inStack[templateName] = true
+	defer func() {
+		// Clean up stack after evaluation (even if panic occurs)
+		delete(ctx.inStack, templateName)
+	}()
+
+	slog.Debug("include: evaluating template body", "name", templateName, "file", tmplDef.file)
+
+	// 8. Evaluate the template body
+	// The depth guard in ctx.Eval() will handle max depth checking automatically
+	ctx.Eval(tmplDef.root)
+
+	// Include doesn't return a value for path analysis
+	// (paths are emitted during evaluation of the template body)
+	return evalResult{}
 }
-func tplFn(_ *FnCtx, _ Call) []string {
+
+func tplFn(_ *evalCtx, _ Call) evalResult {
 	slog.Warn("tpl not implemented")
 	Must("tpl not implemented")
-	return nil
+	return evalResult{}
 }
 
 // makeNotImplementedFn logs and fails in strict mode.
-func makeNotImplementedFn(name string) templFunc {
-	return func(_ *FnCtx, _ Call) []string {
+func makeNotImplementedFn(name string) tmplFunc {
+	return func(_ *evalCtx, _ Call) evalResult {
 		slog.Warn("template function not implemented", "name", name)
 		Must("template function not implemented: " + name)
-		return nil
+		return evalResult{}
 	}
 }
 
-func noopStrings(_ *FnCtx, _ Call) []string { return nil }
+func noopStrings(_ *evalCtx, _ Call) evalResult {
+	return evalResult{}
+}
 
-// emitArgsNoResultFn evaluates all args and emits any .Values paths found.
-func emitArgsNoResultFn(ctx *FnCtx, call Call) []string {
-	for _, arg := range call.Args {
-		ev := ctx.EvalNode(arg)
-		if ev.Path != nil {
-			ctx.Emit(ev.Path)
+// ==============================================================================
+// FLAVOR 1: COMPLEX VALUE PRODUCERS
+// ==============================================================================
+
+// dictFn builds both conservative union AND structure tracking
+func dictFn(ctx *evalCtx, call Call) evalResult {
+	dict := make(map[string]*path.Path)
+	var allPaths []*path.Path
+
+	// Parse key1, val1, key2, val2, ...
+	for i := 0; i+1 < len(call.Args); i += 2 {
+		keyResult := ctx.Eval(call.Args[i])
+		valResult := ctx.Eval(call.Args[i+1])
+
+		// Conservative union
+		allPaths = append(allPaths, valResult.paths...)
+
+		// Structure tracking
+		if len(keyResult.args) == 1 && len(valResult.paths) > 0 {
+			dict[keyResult.args[0]] = valResult.paths[0]
 		}
 	}
-	return nil
+
+	return evalResult{
+		paths: allPaths,
+		dict:  dict,
+	}
 }
 
-// unaryPassThroughFn emits the arg path if present, and returns literal string if available.
-func unaryPassThroughFn(ctx *FnCtx, call Call) []string {
-	if len(call.Args) == 0 && !call.Piped {
-		return nil
+// indexFn builds child paths by appending keys
+func indexFn(ctx *evalCtx, call Call) evalResult {
+	if len(call.Args) < 2 {
+		slog.Warn("index: need at least 2 args", "count", len(call.Args))
+		Must("index: need at least 2 args")
+		return evalResult{}
 	}
-	var ev Eval
-	if len(call.Args) > 0 {
-		ev = ctx.EvalNode(call.Args[0])
-	} else if call.Piped {
-		if call.InputPath != nil {
-			ctx.Emit(call.InputPath)
-		}
-		return call.Input
-	}
-	if ev.Path != nil {
-		ctx.Emit(ev.Path)
-	}
-	return ev.Strings
-}
 
-// getFn: base must be a path; key must be a literal string; emit child path.
-func getFn(ctx *FnCtx, call Call) []string {
-	if len(call.Args) < 1 {
-		slog.Warn("get: invalid template arg count", "args_len", len(call.Args))
-		Must("get: invalid template")
-		return nil
-	}
-	base := ctx.EvalNode(call.Args[0]).Path
-	if base == nil {
-		slog.Warn("get: base is not a path")
-		Must("get: base is not a path")
-		return nil
-	}
-	var keys []string
-	if len(call.Args) >= 2 {
-		keys = ctx.EvalNode(call.Args[1]).Strings
-	} else if call.Piped && len(call.Input) > 0 {
-		keys = call.Input
-	}
-	if len(keys) != 1 {
-		slog.Warn("get: key must be exactly one literal", "len", len(keys))
-		Must("get: key length != 1")
-		return nil
-	}
-	p := *base
-	p = p.WithAny(keys[0])
-	ctx.Emit(&p)
-	return nil
-}
+	// Eval base arg
+	baseResult := ctx.Eval(call.Args[0])
 
-// indexFn: base must be a path; subsequent args must be literal strings; emit child path.
-func indexFn(ctx *FnCtx, call Call) []string {
-	if len(call.Args) < 1 {
-		slog.Warn("index: invalid template arg count", "args_len", len(call.Args))
-		Must("index: invalid template")
-		return nil
-	}
-	// base may be provided as first arg, or piped as a previously synthesized path.
-	base := ctx.EvalNode(call.Args[0]).Path
-	baseIdx := 0
-	if base == nil && call.Piped && call.InputPath != nil {
-		base = call.InputPath
-		baseIdx = -1
-	}
-	if base == nil {
-		baseIdx = -1
-		for i, n := range call.Args {
-			if b := ctx.EvalNode(n).Path; b != nil {
-				base = b
-				baseIdx = i
-				break
+	// Check for dict structure
+	if baseResult.dict != nil {
+		var resolvedPaths []*path.Path
+
+		// Extract keys from remaining args
+		for _, arg := range call.Args[1:] {
+			keyResult := ctx.Eval(arg)
+			for _, key := range keyResult.args {
+				if p, ok := baseResult.dict[key]; ok {
+					resolvedPaths = append(resolvedPaths, p)
+				}
 			}
 		}
+
+		return evalResult{paths: resolvedPaths}
 	}
-	if base == nil {
-		slog.Warn("index: base is not a path")
-		Must("index: base is not a path")
-		return nil
+
+	// Fall back to conservative: append keys to all paths
+	var keys []string
+	for _, arg := range call.Args[1:] {
+		keyResult := ctx.Eval(arg)
+		keys = append(keys, keyResult.args...)
 	}
-	p := *base
-	start := baseIdx + 1
-	if start < 1 {
-		start = 1
-	}
-	for i := start; i < len(call.Args); i++ {
-		lit := ctx.EvalNode(call.Args[i]).Strings
-		if len(lit) != 1 {
-			slog.Warn("index: key must be exactly one literal")
-			Must("index: key must be exactly one literal")
-			return nil
+
+	var modifiedPaths []*path.Path
+	for _, base := range baseResult.paths {
+		p := *base
+		for _, key := range keys {
+			p = p.WithAny(key)
 		}
-		p = p.WithAny(lit[0])
+		modifiedPaths = append(modifiedPaths, &p)
 	}
-	// keys may also come from piped input strings
-	if call.Piped && len(call.Input) > 0 {
-		for _, lit := range call.Input {
-			p = p.WithAny(lit)
-		}
-	}
-	ctx.Emit(&p)
-	return nil
+
+	return evalResult{paths: modifiedPaths}
 }
 
-// defaultFn: emit any arg paths; returns no strings.
-func defaultFn(ctx *FnCtx, call Call) []string {
+// getFn is like index but with exactly 2 args
+func getFn(ctx *evalCtx, call Call) evalResult {
+	if len(call.Args) != 2 {
+		slog.Warn("get: need exactly 2 args", "count", len(call.Args))
+		Must("get: need exactly 2 args")
+		return evalResult{}
+	}
+
+	baseResult := ctx.Eval(call.Args[0])
+	keyResult := ctx.Eval(call.Args[1])
+
+	// Check for dict structure
+	if baseResult.dict != nil && len(keyResult.args) == 1 {
+		if p, ok := baseResult.dict[keyResult.args[0]]; ok {
+			return evalResult{paths: []*path.Path{p}}
+		}
+		return evalResult{}
+	}
+
+	// Fall back to conservative
+	if len(keyResult.args) != 1 {
+		slog.Warn("get: key must be exactly one literal", "count", len(keyResult.args))
+		Must("get: key must be exactly one literal")
+		return evalResult{}
+	}
+
+	var modifiedPaths []*path.Path
+	for _, base := range baseResult.paths {
+		p := *base
+		p = p.WithAny(keyResult.args[0])
+		modifiedPaths = append(modifiedPaths, &p)
+	}
+
+	return evalResult{paths: modifiedPaths}
+}
+
+// defaultFn unions all argument paths
+func defaultFn(ctx *evalCtx, call Call) evalResult {
+	var allPaths []*path.Path
+
 	for _, arg := range call.Args {
-		ev := ctx.EvalNode(arg)
-		if ev.Path != nil {
-			ctx.Emit(ev.Path)
-		}
+		result := ctx.Eval(arg)
+		allPaths = append(allPaths, result.paths...)
 	}
-	return nil
+
+	return evalResult{paths: allPaths}
 }
 
-// no coalesceFn implementation yet (intentionally omitted)
+// ==============================================================================
+// FLAVOR 2: SIMPLE VALUE PRODUCERS (emit paths immediately)
+// ==============================================================================
+
+// quoteFn emits arg paths and returns strings if available
+func quoteFn(ctx *evalCtx, call Call) evalResult {
+	var allStrings []string
+
+	for _, arg := range call.Args {
+		result := ctx.Eval(arg)
+
+		// Emit paths immediately
+		for _, p := range result.paths {
+			ctx.Emit(p)
+		}
+
+		allStrings = append(allStrings, result.args...)
+	}
+
+	return evalResult{args: allStrings}
+}
+
+// unaryPassThroughFn emits the arg path if present, returns literal strings
+func unaryPassThroughFn(ctx *evalCtx, call Call) evalResult {
+	if len(call.Args) == 0 {
+		return evalResult{}
+	}
+
+	result := ctx.Eval(call.Args[0])
+
+	// Emit paths
+	for _, p := range result.paths {
+		ctx.Emit(p)
+	}
+
+	return evalResult{args: result.args}
+}
+
+// emitArgsNoResultFn evaluates all args and emits any .Values paths found
+func emitArgsNoResultFn(ctx *evalCtx, call Call) evalResult {
+	for _, arg := range call.Args {
+		result := ctx.Eval(arg)
+		for _, p := range result.paths {
+			ctx.Emit(p)
+		}
+	}
+
+	return evalResult{}
+}

@@ -57,6 +57,14 @@
       "kinds": "/K/K/K/K"
     },
     {
+      "id": "/ics/redis/ssl/mTLS/clientCert",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/ics/redis/ssl/mTLS/clientKey",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
       "id": "/ics/redis/ssl/mTLS/enabled",
       "kinds": "/K/K/K/K/K"
     },
@@ -427,14 +435,6 @@
       "kinds": "/K/K/K/K"
     },
     {
-      "id": "/ics/redis/ssl/mTLS/clientCert",
-      "kinds": "/K/K/K/K/K"
-    },
-    {
-      "id": "/ics/redis/ssl/mTLS/clientKey",
-      "kinds": "/K/K/K/K/K"
-    },
-    {
       "id": "/ics/redis/ssl/mTLS/existingSecret/name",
       "kinds": "/K/K/K/K/K/K"
     },
@@ -601,6 +601,10 @@
       "kinds": "/K"
     },
     {
+      "id": "/additionalLabels",
+      "kinds": "/K"
+    },
+    {
       "id": "/affinity",
       "kinds": "/K"
     },
@@ -613,8 +617,40 @@
       "kinds": "/K"
     },
     {
+      "id": "/global/imagePullSecrets",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/global/ingressClass",
       "kinds": "/K/K"
+    },
+    {
+      "id": "/ics",
+      "kinds": "/K"
+    },
+    {
+      "id": "/ics/matrix/auth/existingSecret",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/ics/oidc/existingSecret",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/portal/auth/existingSecret",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/ics/redis/auth/existingSecret",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/ics/session/existingSecret",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/imagePullSecrets",
+      "kinds": "/K"
     },
     {
       "id": "/ingress/annotations",
@@ -637,10 +673,6 @@
       "kinds": "/K"
     },
     {
-      "id": "/namespaceOverride",
-      "kinds": "/K"
-    },
-    {
       "id": "/nodeSelector",
       "kinds": "/K"
     },
@@ -657,6 +689,10 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/provisioning/config/keycloak/auth/existingSecret",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
       "id": "/provisioning/config/keycloak/credentialSecret/key",
       "kinds": "/K/K/K/K/K"
     },
@@ -666,6 +702,10 @@
     },
     {
       "id": "/provisioning/extraAnnotations",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/extraEnvVars",
       "kinds": "/K/K"
     },
     {
@@ -697,6 +737,10 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/service/ports",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/serviceAccount/annotations",
       "kinds": "/K/K"
     },
@@ -706,6 +750,10 @@
     },
     {
       "id": "/topologySpreadConstraints",
+      "kinds": "/K"
+    },
+    {
+      "id": "/updateStrategy",
       "kinds": "/K"
     }
   ]
