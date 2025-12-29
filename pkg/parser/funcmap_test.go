@@ -24,10 +24,10 @@ func expectedFuncKeys() []string {
 		"toJson", "mustToJson", "toToml",
 		"fromYaml", "fromYamlArray", "fromJson", "fromJsonArray",
 		"dict", "merge", "mergeOverwrite", "omit", "contains", "replace", "slice",
-		"sha256sum", "sha1sum", "semverCompare", "trimSuffix", "trunc", "urlquery",
+		"sha256sum", "sha1sum", "semverCompare", "trimPrefix", "trimSuffix", "trunc", "urlquery",
 		"print", "printf", "println", "trim",
 		"or", "and", "not", "eq", "ne", "ge", "gt", "le", "lt", "len", "html", "js", "call", "pick", "kindIs",
-		"fail", "lookup", "getHostByName", "required", "derivePassword", "empty", "has", "hasKey", "regexFind", "regexMatch", "regexReplaceAllLiteral", "substr", "toString", "typeIs", "typeOf", "typeIsLike", "b64dec", "b64enc", "list", "randAlpha", "randAlphaNum", "randNumeric", "join", "randAscii", "shuffle", "splitList", "keys", "reverse", "split", "uniq", "semver",
+		"fail", "lookup", "getHostByName", "required", "derivePassword", "empty", "has", "hasKey", "hasPrefix", "hasSuffix", "regexFind", "regexMatch", "regexReplaceAllLiteral", "substr", "toString", "typeIs", "typeOf", "typeIsLike", "b64dec", "b64enc", "list", "randAlpha", "randAlphaNum", "randNumeric", "join", "randAscii", "shuffle", "splitList", "keys", "reverse", "split", "uniq", "semver",
 		"coalesce", "append", "first", "set", "ternary", "cat",
 	}
 	sort.Strings(keys)
