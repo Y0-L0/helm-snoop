@@ -2,6 +2,7 @@ package parser
 
 import (
 	"fmt"
+	"log/slog"
 	"text/template/parse"
 
 	chart "helm.sh/helm/v4/pkg/chart/v2"
@@ -32,6 +33,7 @@ func (ti *TemplateIndex) get(name string) (TemplateDef, bool) {
 // add inserts a template definition, panicking on duplicates.
 func (ti *TemplateIndex) add(name string, def TemplateDef) {
 	if _, exists := ti.byName[name]; exists {
+		slog.Warn("duplicate template name", "name", name)
 		Must("duplicate template name: " + name)
 	}
 	ti.byName[name] = def

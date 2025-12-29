@@ -14,6 +14,7 @@ import (
 func includeFn(ctx *evalCtx, call Call) evalResult {
 	// 1. Validate arguments - include requires at least 1 argument (template name)
 	if len(call.Args) < 1 {
+		slog.Warn("include: requires at least 1 argument", "count", len(call.Args))
 		Must("include: requires at least 1 argument")
 		return evalResult{}
 	}
@@ -34,6 +35,7 @@ func includeFn(ctx *evalCtx, call Call) evalResult {
 
 	// Extract template name from literal strings
 	if len(nameResult.args) == 0 {
+		slog.Warn("include: template name must be a string literal")
 		Must("include: template name must be a string literal")
 		return evalResult{}
 	}
@@ -41,6 +43,7 @@ func includeFn(ctx *evalCtx, call Call) evalResult {
 
 	// 4. Check template index availability
 	if ctx.idx == nil {
+		slog.Warn("include: template index not available")
 		Must("include: template index not available")
 		return evalResult{}
 	}
@@ -48,6 +51,7 @@ func includeFn(ctx *evalCtx, call Call) evalResult {
 	// 5. Look up the template definition
 	tmplDef, found := ctx.idx.get(templateName)
 	if !found {
+		slog.Warn("include: template not found", "name", templateName)
 		Must(fmt.Sprintf("include: template %q not found", templateName))
 		return evalResult{}
 	}
