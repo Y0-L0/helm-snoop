@@ -124,6 +124,20 @@ func NewPath(tokens ...string) *Path {
 	return &p
 }
 
+// Join returns a new Path by appending other's tokens and kinds to this path.
+// Used to prepend a prefix to a path.
+func (p Path) Join(other Path) Path {
+	result := Path{
+		tokens: make([]string, 0, len(p.tokens)+len(other.tokens)),
+		kinds:  make([]kind, 0, len(p.kinds)+len(other.kinds)),
+	}
+	result.tokens = append(result.tokens, p.tokens...)
+	result.tokens = append(result.tokens, other.tokens...)
+	result.kinds = append(result.kinds, p.kinds...)
+	result.kinds = append(result.kinds, other.kinds...)
+	return result
+}
+
 // newPath helper for test Path construction
 func np() *Path {
 	return &Path{}
