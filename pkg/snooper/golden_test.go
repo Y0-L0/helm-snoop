@@ -16,18 +16,7 @@ func (s *GoldenTest) TestSnoop_TestChart() {
 	s.Require().NoError(err)
 
 	actual := results.ToJSON()
-
-	goldenPath := s.goldenPath("test-chart.results.golden.json")
-	if s.update {
-		actualData, err := json.MarshalIndent(actual, "", "  ")
-		s.Require().NoError(err)
-		s.WriteFile(goldenPath, actualData)
-	}
-
-	var expected ResultsJSON
-	s.Require().NoError(json.Unmarshal(s.ReadFile(goldenPath), &expected))
-
-	s.Require().Equal(expected, actual)
+	s.EqualGoldenJSON("test-chart.results.golden.json", actual)
 }
 
 func (s *GoldenTest) TestSnoop_IntercomService() {
@@ -53,7 +42,11 @@ func (s *GoldenTest) EqualGoldenJSON(name string, actual ResultsJSON) {
 	}
 	var expected ResultsJSON
 	s.Require().NoError(json.Unmarshal(s.ReadFile(path), &expected))
-	s.Require().Equal(expected, actual)
+
+	// Compare each field separately for clearer diffs
+	s.Require().Equal(expected.Referenced, actual.Referenced, "Referenced paths mismatch")
+	s.Require().Equal(expected.UsedNotDefined, actual.UsedNotDefined, "UsedNotDefined paths mismatch")
+	s.Require().Equal(expected.DefinedNotUsed, actual.DefinedNotUsed, "DefinedNotUsed paths mismatch")
 }
 
 func disableStrictParsing() func() {
