@@ -19,14 +19,21 @@ func (e *evalCtx) evalFieldNode(node *parse.FieldNode) evalResult {
 			// Just ".Values" with no path
 			return evalResult{}
 		}
-		// Build path from .Values.foo.bar -> ["foo", "bar"]
+		// Build absolute path from .Values.foo.bar -> ["foo", "bar"]
 		p := path.NewPath(node.Ident[1:]...)
 		return evalResult{paths: []*path.Path{p}}
 	}
 
-	// Non-.Values fields (e.g., .Release, .Chart, context fields)
-	// Return empty for now
-	return evalResult{}
+	// Only track relative field access inside with/range blocks
+	// (outside with/range, relative fields like .Release.Name are not .Values)
+	if !e.hasPrefix() {
+		return evalResult{}
+	}
+
+	// Build path with prefix
+	p := path.NewPath(node.Ident...)
+	prefixed := e.addPrefix(p)
+	return evalResult{paths: []*path.Path{prefixed}}
 }
 
 // evalCommandNode evaluates a command (either a function call or single field/literal)
@@ -88,9 +95,7 @@ func (e *evalCtx) evalPipeNode(node *parse.PipeNode) evalResult {
 			lastResult = e.evalCommandNode(cmd)
 		}
 		// Emit paths if not already emitted
-		for _, p := range lastResult.paths {
-			e.Emit(p)
-		}
+		e.Emit(lastResult.paths...)
 		return lastResult
 	}
 
@@ -129,9 +134,7 @@ func (e *evalCtx) evalIfNode(node *parse.IfNode) evalResult {
 	// Evaluate condition and emit paths
 	if node.Pipe != nil {
 		result := e.Eval(node.Pipe)
-		for _, p := range result.paths {
-			e.Emit(p)
-		}
+		e.Emit(result.paths...)
 	}
 
 	// Evaluate "then" branch
@@ -151,19 +154,26 @@ func (e *evalCtx) evalIfNode(node *parse.IfNode) evalResult {
 // Control flow nodes emit their range expression paths directly (not wrapped in ActionNode).
 func (e *evalCtx) evalRangeNode(node *parse.RangeNode) evalResult {
 	// Evaluate range expression and emit paths
+	var rangePrefix *path.Path
 	if node.Pipe != nil {
 		result := e.Eval(node.Pipe)
-		for _, p := range result.paths {
-			e.Emit(p)
+		e.Emit(result.paths...)
+		// Set prefix for range body: items -> items.*
+		// The path from Eval() is already prefixed if needed
+		if len(result.paths) > 0 {
+			p := result.paths[0].WithKey("*")
+			rangePrefix = &p
 		}
 	}
 
-	// Evaluate range body
+	// Evaluate range body with prefix
 	if node.List != nil {
+		restore := e.WithPrefix(rangePrefix)
 		e.Eval(node.List)
+		restore() // Restore original context before else branch
 	}
 
-	// Evaluate else branch if present
+	// Evaluate else branch if present (no prefix in else)
 	if node.ElseList != nil {
 		e.Eval(node.ElseList)
 	}
@@ -175,19 +185,25 @@ func (e *evalCtx) evalRangeNode(node *parse.RangeNode) evalResult {
 // Control flow nodes emit their with expression paths directly (not wrapped in ActionNode).
 func (e *evalCtx) evalWithNode(node *parse.WithNode) evalResult {
 	// Evaluate with expression and emit paths
+	var withPrefix *path.Path
 	if node.Pipe != nil {
 		result := e.Eval(node.Pipe)
-		for _, p := range result.paths {
-			e.Emit(p)
+		e.Emit(result.paths...)
+		// Set prefix for with body
+		// The path from Eval() is already prefixed if needed
+		if len(result.paths) > 0 {
+			withPrefix = result.paths[0]
 		}
 	}
 
-	// Evaluate with body
+	// Evaluate with body with prefix
 	if node.List != nil {
+		restore := e.WithPrefix(withPrefix)
 		e.Eval(node.List)
+		restore() // Restore original context before else branch
 	}
 
-	// Evaluate else branch if present
+	// Evaluate else branch if present (no prefix in else)
 	if node.ElseList != nil {
 		e.Eval(node.ElseList)
 	}
@@ -202,9 +218,7 @@ func (e *evalCtx) evalTemplateNode(node *parse.TemplateNode) evalResult {
 	if node.Pipe != nil {
 		result := e.Eval(node.Pipe)
 		// Emit pipeline paths
-		for _, p := range result.paths {
-			e.Emit(p)
-		}
+		e.Emit(result.paths...)
 	}
 	// Note: We don't evaluate the template body itself here
 	// That would require template resolution like include

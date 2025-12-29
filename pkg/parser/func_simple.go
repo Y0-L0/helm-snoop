@@ -14,9 +14,7 @@ func quoteFn(ctx *evalCtx, call Call) evalResult {
 		result := ctx.Eval(arg)
 
 		// Emit paths immediately
-		for _, p := range result.paths {
-			ctx.Emit(p)
-		}
+		ctx.Emit(result.paths...)
 
 		allStrings = append(allStrings, result.args...)
 	}
@@ -33,9 +31,7 @@ func unaryPassThroughFn(ctx *evalCtx, call Call) evalResult {
 	result := ctx.Eval(call.Args[0])
 
 	// Emit paths
-	for _, p := range result.paths {
-		ctx.Emit(p)
-	}
+	ctx.Emit(result.paths...)
 
 	return evalResult{args: result.args}
 }
@@ -44,9 +40,7 @@ func unaryPassThroughFn(ctx *evalCtx, call Call) evalResult {
 func emitArgsNoResultFn(ctx *evalCtx, call Call) evalResult {
 	for _, arg := range call.Args {
 		result := ctx.Eval(arg)
-		for _, p := range result.paths {
-			ctx.Emit(p)
-		}
+		ctx.Emit(result.paths...)
 	}
 
 	return evalResult{}
@@ -67,9 +61,7 @@ func binaryEvalFn(ctx *evalCtx, call Call) evalResult {
 	// Only evaluate the first 2 arguments
 	for _, arg := range call.Args[:2] {
 		result := ctx.Eval(arg)
-		for _, p := range result.paths {
-			ctx.Emit(p)
-		}
+		ctx.Emit(result.paths...)
 	}
 
 	return evalResult{}

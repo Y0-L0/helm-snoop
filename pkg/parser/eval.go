@@ -43,17 +43,43 @@ func newEvalCtx(tree *parse.Tree, out *path.Paths, idx *TemplateIndex) *evalCtx 
 	}
 }
 
-func (e *evalCtx) Emit(p *path.Path) {
-	if p == nil || e == nil || e.out == nil {
+func (e *evalCtx) Emit(paths ...*path.Path) {
+	if e == nil || e.out == nil {
 		panic("Invalid state in Emit function")
 	}
-	// TODO: Add prefix support alongside evalCtx.WithPrefix(p *path.Path)
-	e.out.Append(p)
+	for _, p := range paths {
+		if p == nil {
+			panic("Invalid state in Emit function")
+		}
+		e.out.Append(p)
+	}
 }
 
-// TODO: Implement WithPrefix behaviour for with and range blocks.
+// addPrefix returns a new path with the context prefix prepended if one is set.
+// Used when creating relative paths inside with/range blocks.
+// Returns the original path if no prefix is set.
+func (e *evalCtx) addPrefix(p *path.Path) *path.Path {
+	if !e.hasPrefix() {
+		return p
+	}
+	prefixed := e.prefix.Join(*p)
+	return &prefixed
+}
+
+// WithPrefix sets a context prefix and returns a cleanup function.
+// Used by with/range to change the meaning of "." in nested scopes.
+// If p is nil, no prefix is set (no-op that still returns a valid cleanup function).
 func (e *evalCtx) WithPrefix(p *path.Path) func() {
-	return nil
+	oldPrefix := e.prefix
+	e.prefix = p
+	return func() {
+		e.prefix = oldPrefix
+	}
+}
+
+// hasPrefix returns true if a context prefix is currently set.
+func (e *evalCtx) hasPrefix() bool {
+	return e.prefix != nil
 }
 
 // Eval recursively evaluates a node and returns paths, strings, and structure.
@@ -137,9 +163,7 @@ func (e *evalCtx) evalActionNode(node *parse.ActionNode) evalResult {
 		result := e.Eval(node.Pipe)
 		// Emit paths at the top level (ActionNode), not at every pipe level
 		// This prevents duplicate emissions from nested pipes
-		for _, p := range result.paths {
-			e.Emit(p)
-		}
+		e.Emit(result.paths...)
 		return result
 	}
 	return evalResult{}
