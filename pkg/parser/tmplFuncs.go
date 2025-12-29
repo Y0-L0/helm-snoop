@@ -21,16 +21,12 @@ func includeFn(ctx *evalCtx, call Call) evalResult {
 
 	// 2. Extract template name from first argument
 	nameResult := ctx.Eval(call.Args[0])
-	for _, p := range nameResult.paths {
-		ctx.Emit(p)
-	}
+	ctx.Emit(nameResult.paths...)
 
 	// 3. Evaluate context argument if present (second arg)
 	if len(call.Args) >= 2 {
 		ctxResult := ctx.Eval(call.Args[1])
-		for _, p := range ctxResult.paths {
-			ctx.Emit(p)
-		}
+		ctx.Emit(ctxResult.paths...)
 	}
 
 	// Extract template name from literal strings

@@ -1,0 +1,261 @@
+package parser
+
+import (
+	"github.com/y0-l0/helm-snoop/pkg/path"
+)
+
+// TestParseFile_Range tests range statement evaluation
+func (s *Unittest) TestParseFile_Range() {
+	cases := []struct {
+		name     string
+		template string
+		expected path.Paths
+	}{
+		{
+			name:     "range_over_values_path",
+			template: `{{ range .Values.items }}{{ end }}`,
+			expected: path.Paths{path.NewPath("items")},
+		},
+		{
+			name:     "range_body_accesses_values",
+			template: `{{ range .Values.items }}{{ .Values.name }}{{ end }}`,
+			expected: path.Paths{path.NewPath("items"), path.NewPath("name")},
+		},
+		{
+			name:     "range_with_else",
+			template: `{{ range .Values.items }}{{ else }}{{ .Values.fallback }}{{ end }}`,
+			expected: path.Paths{path.NewPath("items"), path.NewPath("fallback")},
+		},
+		{
+			name: "range_body_and_else_both_access_values",
+			template: `{{ range .Values.items }}{{ .Values.itemName }}` +
+				`{{ else }}{{ .Values.defaultName }}{{ end }}`,
+			expected: path.Paths{
+				path.NewPath("items"),
+				path.NewPath("itemName"),
+				path.NewPath("defaultName"),
+			},
+		},
+		{
+			name: "nested_range",
+			template: `{{ range .Values.outer }}{{ range .Values.inner }}` +
+				`{{ .Values.leaf }}{{ end }}{{ end }}`,
+			expected: path.Paths{
+				path.NewPath("outer"),
+				path.NewPath("inner"),
+				path.NewPath("leaf"),
+			},
+		},
+		{
+			name:     "range_with_variable_assignment",
+			template: `{{ range $item := .Values.items }}{{ .Values.name }}{{ end }}`,
+			expected: path.Paths{path.NewPath("items"), path.NewPath("name")},
+		},
+		{
+			name:     "range_with_index_and_value",
+			template: `{{ range $index, $item := .Values.items }}{{ .Values.name }}{{ end }}`,
+			expected: path.Paths{path.NewPath("items"), path.NewPath("name")},
+		},
+	}
+
+	for _, tc := range cases {
+		s.Run(tc.name, func() {
+			actual, err := parseFile(tc.name+".tmpl", []byte(tc.template), nil)
+			s.Require().NoError(err)
+			path.EqualPaths(s, tc.expected, actual)
+		})
+	}
+}
+
+// TestParseFile_RangePrefix tests that range blocks change the context
+// so that .foo inside "range .Values.items" refers to items[*].foo
+func (s *Unittest) TestParseFile_RangePrefix() {
+	cases := []struct {
+		name     string
+		template string
+		expected path.Paths
+	}{
+		{
+			name:     "range_changes_dot_context",
+			template: `{{ range .Values.items }}{{ .name }}{{ end }}`,
+			expected: path.Paths{
+				path.NewPath("items"),
+				path.NewPath("items", "*", "name"),
+			},
+		},
+		{
+			name:     "range_multiple_field_access",
+			template: `{{ range .Values.users }}{{ .id }}{{ .email }}{{ end }}`,
+			expected: path.Paths{
+				path.NewPath("users"),
+				path.NewPath("users", "*", "id"),
+				path.NewPath("users", "*", "email"),
+			},
+		},
+		{
+			name:     "range_deep_field_access",
+			template: `{{ range .Values.services }}{{ .metadata.name }}{{ end }}`,
+			expected: path.Paths{
+				path.NewPath("services"),
+				path.NewPath("services", "*", "metadata", "name"),
+			},
+		},
+		{
+			name: "nested_range_contexts",
+			template: `{{ range .Values.teams }}
+				{{ .name }}
+				{{ range .members }}
+					{{ .email }}
+				{{ end }}
+			{{ end }}`,
+			expected: path.Paths{
+				path.NewPath("teams"),
+				path.NewPath("teams", "*", "name"),
+				path.NewPath("teams", "*", "members"),
+				path.NewPath("teams", "*", "members", "*", "email"),
+			},
+		},
+		{
+			name: "range_else_preserves_original_context",
+			template: `{{ range .Values.items }}{{ .name }}` +
+				`{{ else }}{{ .Values.emptyMessage }}{{ end }}`,
+			expected: path.Paths{
+				path.NewPath("items"),
+				path.NewPath("items", "*", "name"),
+				path.NewPath("emptyMessage"),
+			},
+		},
+		// TODO: Variable tracking not yet implemented
+		// {
+		// 	name:     "range_with_variable_still_tracks_field_access",
+		// 	template: `{{ range $item := .Values.items }}{{ $item.name }}{{ end }}`,
+		// 	expected: path.Paths{
+		// 		path.NewPath("items"),
+		// 		path.NewPath("items", "*", "name"),
+		// 	},
+		// },
+	}
+
+	for _, tc := range cases {
+		s.Run(tc.name, func() {
+			actual, err := parseFile(tc.name+".tmpl", []byte(tc.template), nil)
+			s.Require().NoError(err)
+			path.EqualPaths(s, tc.expected, actual)
+		})
+	}
+}
+
+// TestParseFile_RangeWithInteraction tests range and with together with other features
+func (s *Unittest) TestParseFile_RangeWithInteraction() {
+	cases := []struct {
+		name     string
+		template string
+		expected path.Paths
+	}{
+		{
+			name: "range_inside_if",
+			template: `{{ if .Values.enabled }}{{ range .Values.items }}` +
+				`{{ .Values.name }}{{ end }}{{ end }}`,
+			expected: path.Paths{
+				path.NewPath("enabled"),
+				path.NewPath("items"),
+				path.NewPath("name"),
+			},
+		},
+		{
+			name: "with_inside_range",
+			template: `{{ range .Values.items }}{{ with .Values.config }}` +
+				`{{ .Values.setting }}{{ end }}{{ end }}`,
+			expected: path.Paths{
+				path.NewPath("items"),
+				path.NewPath("config"),
+				path.NewPath("setting"),
+			},
+		},
+		{
+			name:     "range_with_function_call",
+			template: `{{ range .Values.items }}{{ .Values.name | upper }}{{ end }}`,
+			expected: path.Paths{path.NewPath("items"), path.NewPath("name")},
+		},
+		{
+			name: "with_with_function_call",
+			template: `{{ with .Values.config | default .Values.fallback }}` +
+				`{{ .Values.name }}{{ end }}`,
+			expected: path.Paths{
+				path.NewPath("config"),
+				path.NewPath("fallback"),
+				path.NewPath("name"),
+			},
+		},
+	}
+
+	for _, tc := range cases {
+		s.Run(tc.name, func() {
+			actual, err := parseFile(tc.name+".tmpl", []byte(tc.template), nil)
+			s.Require().NoError(err)
+			path.EqualPaths(s, tc.expected, actual)
+		})
+	}
+}
+
+// TestParseFile_RangeWithMixedContexts tests interaction between range/with and explicit .Values
+func (s *Unittest) TestParseFile_RangeWithMixedContexts() {
+	cases := []struct {
+		name     string
+		template string
+		expected path.Paths
+	}{
+		{
+			name:     "with_explicit_values_overrides_context",
+			template: `{{ with .Values.config }}{{ .name }}{{ .Values.global }}{{ end }}`,
+			expected: path.Paths{
+				path.NewPath("config"),
+				path.NewPath("config", "name"),
+				path.NewPath("global"),
+			},
+		},
+		{
+			name:     "range_explicit_values_overrides_context",
+			template: `{{ range .Values.items }}{{ .name }}{{ .Values.count }}{{ end }}`,
+			expected: path.Paths{
+				path.NewPath("items"),
+				path.NewPath("items", "*", "name"),
+				path.NewPath("count"),
+			},
+		},
+		{
+			name: "with_inside_range",
+			template: `{{ range .Values.items }}
+				{{ with .config }}
+					{{ .timeout }}
+				{{ end }}
+			{{ end }}`,
+			expected: path.Paths{
+				path.NewPath("items"),
+				path.NewPath("items", "*", "config"),
+				path.NewPath("items", "*", "config", "timeout"),
+			},
+		},
+		{
+			name: "range_inside_with",
+			template: `{{ with .Values.app }}
+				{{ range .services }}
+					{{ .port }}
+				{{ end }}
+			{{ end }}`,
+			expected: path.Paths{
+				path.NewPath("app"),
+				path.NewPath("app", "services"),
+				path.NewPath("app", "services", "*", "port"),
+			},
+		},
+	}
+
+	for _, tc := range cases {
+		s.Run(tc.name, func() {
+			actual, err := parseFile(tc.name+".tmpl", []byte(tc.template), nil)
+			s.Require().NoError(err)
+			path.EqualPaths(s, tc.expected, actual)
+		})
+	}
+}
