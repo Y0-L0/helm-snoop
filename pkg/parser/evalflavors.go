@@ -24,8 +24,18 @@ func (e *evalCtx) evalFieldNode(node *parse.FieldNode) evalResult {
 		return evalResult{paths: []*path.Path{p}}
 	}
 
+	// Built-in Helm objects should never get a prefix
+	// These are global objects, not relative field access
+	if node.Ident[0] == "Release" || node.Ident[0] == "Chart" ||
+		node.Ident[0] == "Files" || node.Ident[0] == "Capabilities" ||
+		node.Ident[0] == "Template" {
+		// These are built-in Helm objects, not .Values paths
+		// We don't track them as .Values usage
+		return evalResult{}
+	}
+
 	// Only track relative field access inside with/range blocks
-	// (outside with/range, relative fields like .Release.Name are not .Values)
+	// (outside with/range, relative fields like .foo are not .Values)
 	if !e.hasPrefix() {
 		return evalResult{}
 	}

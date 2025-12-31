@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"helm.sh/helm/v4/pkg/chart/common"
 	chart "helm.sh/helm/v4/pkg/chart/v2"
+
+	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
 // include "tpl.a" . should traverse the defined template and collect its .Values usage.
@@ -105,4 +107,92 @@ data:
 	s.Require().Panics(func() {
 		_, _ = parseFile(main.Name, main.Data, idx)
 	})
+}
+
+// Test that include with $ argument clears the prefix even when called
+// from within a with block.
+func (s *Unittest) TestInclude_RootContextClearsPrefix() {
+	c := &chart.Chart{Templates: []*common.File{
+		{
+			Name: "templates/_helpers.yaml",
+			// Use relative path .name which should be prefixed by current context
+			Data: []byte(`{{ define "test.tpl" }}{{ .name }}{{ end }}`),
+		},
+		{
+			Name: "templates/main.yaml",
+			// Call from within `with .Values.ics` but pass $ (root context)
+			Data: []byte(`{{ with .Values.ics }}{{ include "test.tpl" $ }}{{ end }}`),
+		},
+	}}
+
+	idx, err := BuildTemplateIndex(c)
+	s.Require().NoError(err)
+
+	paths, err := parseFile("templates/main.yaml", c.Templates[1].Data, idx)
+	s.Require().NoError(err)
+
+	// Should have only /ics (from with block)
+	// The .name access inside the template should NOT create a path because:
+	// - $ clears the prefix, so we have no prefix
+	// - .name with no prefix returns nothing (only tracked inside with/range blocks)
+	expected := path.Paths{path.NewPath("ics")}
+	path.EqualPaths(s, expected, paths)
+}
+
+// Test that include with . argument preserves the current prefix
+func (s *Unittest) TestInclude_DotContextPreservesPrefix() {
+	c := &chart.Chart{Templates: []*common.File{
+		{
+			Name: "templates/_helpers.yaml",
+			// Use relative path .name which should be prefixed by current context
+			Data: []byte(`{{ define "test.tpl" }}{{ .name }}{{ end }}`),
+		},
+		{
+			Name: "templates/main.yaml",
+			// Call from within `with .Values.config` and pass . (current context)
+			Data: []byte(`{{ with .Values.config }}{{ include "test.tpl" . }}{{ end }}`),
+		},
+	}}
+
+	idx, err := BuildTemplateIndex(c)
+	s.Require().NoError(err)
+
+	paths, err := parseFile("templates/main.yaml", c.Templates[1].Data, idx)
+	s.Require().NoError(err)
+
+	// Should have /config and /config/name (. preserves the config prefix)
+	expected := path.Paths{
+		path.NewPath("config"),
+		path.NewPath("config", "name"),
+	}
+	path.EqualPaths(s, expected, paths)
+}
+
+// Test that include with .Values.foo sets foo as the prefix
+func (s *Unittest) TestInclude_ExplicitContextSetsPrefix() {
+	c := &chart.Chart{Templates: []*common.File{
+		{
+			Name: "templates/_helpers.yaml",
+			// Use relative path .name which should be prefixed by current context
+			Data: []byte(`{{ define "test.tpl" }}{{ .name }}{{ end }}`),
+		},
+		{
+			Name: "templates/main.yaml",
+			// Call include with explicit .Values.database context
+			Data: []byte(`{{ include "test.tpl" .Values.database }}`),
+		},
+	}}
+
+	idx, err := BuildTemplateIndex(c)
+	s.Require().NoError(err)
+
+	paths, err := parseFile("templates/main.yaml", c.Templates[1].Data, idx)
+	s.Require().NoError(err)
+
+	// Should have /database and /database/name
+	expected := path.Paths{
+		path.NewPath("database"),
+		path.NewPath("database", "name"),
+	}
+	path.EqualPaths(s, expected, paths)
 }

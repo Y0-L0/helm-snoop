@@ -3,13 +3,10 @@ package parser
 import (
 	"fmt"
 	"log/slog"
+	"text/template/parse"
 
 	"github.com/y0-l0/helm-snoop/pkg/path"
 )
-
-// ==============================================================================
-// NOT IMPLEMENTED / PLACEHOLDERS
-// ==============================================================================
 
 func includeFn(ctx *evalCtx, call Call) evalResult {
 	// 1. Validate arguments - include requires at least 1 argument (template name)
@@ -23,10 +20,31 @@ func includeFn(ctx *evalCtx, call Call) evalResult {
 	nameResult := ctx.Eval(call.Args[0])
 	ctx.Emit(nameResult.paths...)
 
-	// 3. Evaluate context argument if present (second arg)
+	// 3. Determine prefix for template body based on context argument
+	// The context argument (if present) becomes "." inside the template
+	var templatePrefix *path.Path
+	isRootContext := false
+
 	if len(call.Args) >= 2 {
-		ctxResult := ctx.Eval(call.Args[1])
-		ctx.Emit(ctxResult.paths...)
+		ctxArg := call.Args[1]
+
+		// Check if context argument is $ (root variable)
+		if varNode, ok := ctxArg.(*parse.VariableNode); ok && len(varNode.Ident) > 0 && varNode.Ident[0] == "$" {
+			// $ refers to root context -> no prefix for template body
+			isRootContext = true
+		} else {
+			// Evaluate the context argument to determine prefix
+			ctxResult := ctx.Eval(ctxArg)
+			ctx.Emit(ctxResult.paths...)
+
+			// Only set prefix for simple contexts, not dicts
+			// dict != nil indicates the context is a dict structure (from dictFn)
+			// Dict context handling is not yet supported - would need to map dict keys to paths
+			// For now, we skip prefix setting to avoid false positives like /foo/value, /foo/scope
+			if ctxResult.dict == nil && len(ctxResult.paths) > 0 {
+				templatePrefix = ctxResult.paths[0]
+			}
+		}
 	}
 
 	// Extract template name from literal strings
@@ -66,14 +84,34 @@ func includeFn(ctx *evalCtx, call Call) evalResult {
 
 	slog.Debug("include: evaluating template body", "name", templateName, "file", tmplDef.file)
 
-	// 8. Evaluate the template body
-	// The depth guard in ctx.Eval() will handle max depth checking automatically
+	// 8. Evaluate the template body with the appropriate prefix
+	// The context argument to include becomes "." inside the template
+	// - If arg is $: no prefix (root context)
+	// - If arg is .: current prefix
+	// - If arg is .Values.foo: prefix = foo
+	var restore func()
+	if isRootContext {
+		// $ argument -> clear prefix for template body
+		restore = ctx.WithPrefix(nil)
+	} else if templatePrefix != nil {
+		// Explicit context -> use it as prefix
+		restore = ctx.WithPrefix(templatePrefix)
+	} else {
+		// No context arg or DotNode -> keep current prefix
+		restore = func() {}
+	}
+
 	ctx.Eval(tmplDef.root)
+	restore()
 
 	// Include doesn't return a value for path analysis
 	// (paths are emitted during evaluation of the template body)
 	return evalResult{}
 }
+
+// ==============================================================================
+// NOT IMPLEMENTED / PLACEHOLDERS
+// ==============================================================================
 
 func tplFn(_ *evalCtx, _ Call) evalResult {
 	slog.Warn("tpl not implemented")
@@ -100,6 +138,9 @@ func noopStrings(_ *evalCtx, _ Call) evalResult {
 
 // dictFn builds both conservative union AND structure tracking
 func dictFn(ctx *evalCtx, call Call) evalResult {
+	// Always create a non-nil map, even if empty
+	// This serves as a marker that the result came from a dict call
+	// (nil dict = not from dict, non-nil dict = from dict)
 	dict := make(map[string]*path.Path)
 	var allPaths []*path.Path
 
@@ -111,7 +152,7 @@ func dictFn(ctx *evalCtx, call Call) evalResult {
 		// Conservative union
 		allPaths = append(allPaths, valResult.paths...)
 
-		// Structure tracking
+		// Structure tracking - populate map when we can resolve keys
 		if len(keyResult.args) == 1 && len(valResult.paths) > 0 {
 			dict[keyResult.args[0]] = valResult.paths[0]
 		}
@@ -119,7 +160,7 @@ func dictFn(ctx *evalCtx, call Call) evalResult {
 
 	return evalResult{
 		paths: allPaths,
-		dict:  dict,
+		dict:  dict, // Non-nil map (possibly empty) marks this as dict result
 	}
 }
 

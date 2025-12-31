@@ -259,3 +259,46 @@ func (s *Unittest) TestParseFile_RangeWithMixedContexts() {
 		})
 	}
 }
+
+// TestParseFile_RangeBuiltinObjects tests that built-in Helm objects like
+// Chart and Release are never tracked as .Values paths, even when accessed
+// from within a range block that sets a prefix.
+func (s *Unittest) TestParseFile_RangeBuiltinObjects() {
+	cases := []struct {
+		name     string
+		template string
+		expected path.Paths
+	}{
+		{
+			name:     "chart_not_tracked_in_range",
+			template: `{{ range .Values.items }}{{ .Chart.AppVersion }}{{ end }}`,
+			expected: path.Paths{path.NewPath("items")},
+		},
+		{
+			name:     "release_not_tracked_in_range",
+			template: `{{ range .Values.items }}{{ .Release.Name }}{{ end }}`,
+			expected: path.Paths{path.NewPath("items")},
+		},
+		{
+			name:     "chart_and_release_not_tracked",
+			template: `{{ range .Values.items }}{{ .Chart.AppVersion }}{{ .Release.Name }}{{ end }}`,
+			expected: path.Paths{path.NewPath("items")},
+		},
+		{
+			name:     "builtin_with_relative_paths",
+			template: `{{ range .Values.items }}{{ .name }}{{ .Chart.AppVersion }}{{ end }}`,
+			expected: path.Paths{
+				path.NewPath("items"),
+				path.NewPath("items", "*", "name"),
+			},
+		},
+	}
+
+	for _, tc := range cases {
+		s.Run(tc.name, func() {
+			actual, err := parseFile(tc.name+".tmpl", []byte(tc.template), nil)
+			s.Require().NoError(err)
+			path.EqualPaths(s, tc.expected, actual)
+		})
+	}
+}

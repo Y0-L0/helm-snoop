@@ -135,3 +135,53 @@ func (s *Unittest) TestParseFile_WithPrefix() {
 		})
 	}
 }
+
+// TestParseFile_WithBuiltinObjects tests that built-in Helm objects like
+// Chart and Release are never tracked as .Values paths, even when accessed
+// from within a with block that sets a prefix.
+func (s *Unittest) TestParseFile_WithBuiltinObjects() {
+	cases := []struct {
+		name     string
+		template string
+		expected path.Paths
+	}{
+		{
+			name:     "chart_not_tracked_in_with",
+			template: `{{ with .Values.config }}{{ .Chart.AppVersion }}{{ end }}`,
+			expected: path.Paths{path.NewPath("config")},
+		},
+		{
+			name:     "release_not_tracked_in_with",
+			template: `{{ with .Values.config }}{{ .Release.Name }}{{ end }}`,
+			expected: path.Paths{path.NewPath("config")},
+		},
+		{
+			name:     "chart_and_release_not_tracked",
+			template: `{{ with .Values.config }}{{ .Chart.AppVersion }}{{ .Release.Name }}{{ .Release.Service }}{{ end }}`,
+			expected: path.Paths{path.NewPath("config")},
+		},
+		{
+			name:     "files_not_tracked_in_with",
+			template: `{{ with .Values.config }}{{ .Files.Get "foo.txt" }}{{ end }}`,
+			expected: path.Paths{path.NewPath("config")},
+		},
+		{
+			name:     "capabilities_not_tracked_in_with",
+			template: `{{ with .Values.config }}{{ .Capabilities.APIVersions }}{{ end }}`,
+			expected: path.Paths{path.NewPath("config")},
+		},
+		{
+			name:     "template_not_tracked_in_with",
+			template: `{{ with .Values.config }}{{ .Template.Name }}{{ end }}`,
+			expected: path.Paths{path.NewPath("config")},
+		},
+	}
+
+	for _, tc := range cases {
+		s.Run(tc.name, func() {
+			actual, err := parseFile(tc.name+".tmpl", []byte(tc.template), nil)
+			s.Require().NoError(err)
+			path.EqualPaths(s, tc.expected, actual)
+		})
+	}
+}
