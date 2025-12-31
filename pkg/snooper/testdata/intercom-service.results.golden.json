@@ -633,14 +633,6 @@
       "kinds": "/K"
     },
     {
-      "id": "/ics/Chart/Name",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/ics/Release/Name",
-      "kinds": "/K/K/K"
-    },
-    {
       "id": "/ics/matrix/auth/existingSecret",
       "kinds": "/K/K/K/K"
     },
