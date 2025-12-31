@@ -34,3 +34,12 @@ research
 
 **/coverage.out
 **/coverage.html
+
+.claude/
+AGENTS.md
+
+/*.json.old
+/*.tgz
+
+helm-snoop
+testdata/intercom-service/*
