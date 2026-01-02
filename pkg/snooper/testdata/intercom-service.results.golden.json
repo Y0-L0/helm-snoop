@@ -217,6 +217,18 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/image/registry",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/image/repository",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/image/tag",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/ingress/enabled",
       "kinds": "/K/K"
     },
@@ -475,18 +487,6 @@
       "kinds": "/K/K/K/K"
     },
     {
-      "id": "/image/registry",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/image/repository",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/image/tag",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/livenessProbe/enabled",
       "kinds": "/K/K"
     },
@@ -609,6 +609,10 @@
       "kinds": "/K"
     },
     {
+      "id": "/containerSecurityContext",
+      "kinds": "/K"
+    },
+    {
       "id": "/extraVolumeMounts",
       "kinds": "/K"
     },
@@ -627,6 +631,14 @@
     {
       "id": "/ics",
       "kinds": "/K"
+    },
+    {
+      "id": "/ics/Chart/Name",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ics/Release/Name",
+      "kinds": "/K/K/K"
     },
     {
       "id": "/ics/matrix/auth/existingSecret",
@@ -682,6 +694,10 @@
     },
     {
       "id": "/podAnnotations",
+      "kinds": "/K"
+    },
+    {
+      "id": "/podSecurityContext",
       "kinds": "/K"
     },
     {
