@@ -27,20 +27,68 @@ func CompareTokens(a, b *Path) int { return slices.Compare(a.tokens, b.tokens) }
 // equalKindLoose returns true if kinds are equal, or either side is anyKind.
 func equalKindLoose(ka, kb kind) bool { return ka == kb || ka == anyKind || kb == anyKind }
 
-// EqualLoose returns true if tokens are equal and per-segment kinds are equal
-// or one side uses anyKind.
+// getCompareLen calculates how many positions to compare between two paths.
+// Returns (compareLen, ok) where ok=false means paths are incompatible.
+func equalLenLoose(a, b *Path) (int, bool) {
+	aLen := len(a.kinds)
+	bLen := len(b.kinds)
+	aHasTerminal := aLen > 0 && a.kinds[aLen-1] == wildcardKind
+	bHasTerminal := bLen > 0 && b.kinds[bLen-1] == wildcardKind
+
+	aEffective := aLen
+	if aHasTerminal {
+		aEffective--
+	}
+	bEffective := bLen
+	if bHasTerminal {
+		bEffective--
+	}
+
+	if aHasTerminal && bHasTerminal {
+		if aEffective < bEffective {
+			return aEffective, true
+		}
+		return bEffective, true
+	} else if aHasTerminal {
+		if bEffective < aEffective {
+			return 0, false
+		}
+		return aEffective, true
+	} else if bHasTerminal {
+		if aEffective < bEffective {
+			return 0, false
+		}
+		return bEffective, true
+	}
+
+	if aEffective != bEffective {
+		return 0, false
+	}
+	return aEffective, true
+}
+
+// EqualLoose returns true if paths match with:
+// - Exact tokens and loose kind matching (anyKind matches anything), OR
+// - Wildcard matching: terminal /* matches descendants, interior /* matches one segment
 func EqualLoose(a, b *Path) bool {
-	if CompareTokens(a, b) != 0 {
+	compareLen, ok := equalLenLoose(a, b)
+	if !ok {
 		return false
 	}
-	if len(a.kinds) != len(b.kinds) {
-		return false
-	}
-	for i := range a.kinds {
+
+	for i := 0; i < compareLen; i++ {
+		// If either position is a wildcard, automatic match
+		if a.kinds[i] == wildcardKind || b.kinds[i] == wildcardKind {
+			continue
+		}
+		if a.tokens[i] != b.tokens[i] {
+			return false
+		}
 		if !equalKindLoose(a.kinds[i], b.kinds[i]) {
 			return false
 		}
 	}
+
 	return true
 }
 
@@ -53,7 +101,6 @@ func MergeJoinLoose(a, b Paths) (inter Paths, onlyA Paths, onlyB Paths) {
 
 	matchedB := make([]bool, len(b))
 
-	// For each path in a, check all of b and immediately classify as inter or onlyA
 	for _, pa := range a {
 		matched := false
 		for j, pb := range b {
@@ -76,7 +123,5 @@ func MergeJoinLoose(a, b Paths) (inter Paths, onlyA Paths, onlyB Paths) {
 		}
 	}
 
-	// Results are already sorted (inputs were sorted by SortDedup)
-	// but we deduplicate inter/onlyA/onlyB just in case
-	return SortDedup(inter), SortDedup(onlyA), SortDedup(onlyB)
+	return inter, onlyA, onlyB
 }
