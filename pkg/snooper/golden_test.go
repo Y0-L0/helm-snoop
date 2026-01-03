@@ -19,7 +19,7 @@ func (s *GoldenTest) TestSnoop_TestChart() {
 	s.EqualGoldenJSON("test-chart.results.golden.json", actual)
 }
 
-func (s *GoldenTest) TestSnoop_IntercomService() {
+func (s *GoldenTest) TestSnoop_Chart_IntercomService() {
 	restore := disableStrictParsing()
 	defer restore()
 
@@ -31,6 +31,20 @@ func (s *GoldenTest) TestSnoop_IntercomService() {
 
 	actual := results.ToJSON()
 	s.EqualGoldenJSON("intercom-service.results.golden.json", actual)
+}
+
+func (s *GoldenTest) TestSnoop_Chart_Guardian() {
+	restore := disableStrictParsing()
+	defer restore()
+
+	chart, err := loader.Load(filepath.Join(s.chartsDir, "guardian-0.24.4.tgz"))
+	s.Require().NoError(err)
+
+	results, err := Snoop(chart)
+	s.Require().NoError(err)
+
+	actual := results.ToJSON()
+	s.EqualGoldenJSON("guardian.results.golden.json", actual)
 }
 
 func (s *GoldenTest) EqualGoldenJSON(name string, actual ResultsJSON) {
