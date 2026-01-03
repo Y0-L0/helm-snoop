@@ -61,8 +61,40 @@
       "kinds": "/K/K/K"
     },
     {
+      "id": "/authorizationApi/containerSecurityContext/allowPrivilegeEscalation",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/containerSecurityContext/capabilities/drop/0",
+      "kinds": "/K/K/K/K/I"
+    },
+    {
       "id": "/authorizationApi/containerSecurityContext/enabled",
       "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/containerSecurityContext/privileged",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/containerSecurityContext/readOnlyRootFilesystem",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/containerSecurityContext/runAsGroup",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/containerSecurityContext/runAsNonRoot",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/containerSecurityContext/runAsUser",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/containerSecurityContext/seccompProfile/type",
+      "kinds": "/K/K/K/K"
     },
     {
       "id": "/authorizationApi/image/pullPolicy",
@@ -86,6 +118,14 @@
     },
     {
       "id": "/authorizationApi/podSecurityContext/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/podSecurityContext/fsGroup",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/podSecurityContext/fsGroupChangePolicy",
       "kinds": "/K/K/K"
     },
     {
@@ -293,8 +333,40 @@
       "kinds": "/K/K/K"
     },
     {
+      "id": "/managementApi/containerSecurityContext/allowPrivilegeEscalation",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/containerSecurityContext/capabilities/drop/0",
+      "kinds": "/K/K/K/K/I"
+    },
+    {
       "id": "/managementApi/containerSecurityContext/enabled",
       "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/containerSecurityContext/privileged",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/containerSecurityContext/readOnlyRootFilesystem",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/containerSecurityContext/runAsGroup",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/containerSecurityContext/runAsNonRoot",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/containerSecurityContext/runAsUser",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/containerSecurityContext/seccompProfile/type",
+      "kinds": "/K/K/K/K"
     },
     {
       "id": "/managementApi/image/pullPolicy",
@@ -318,6 +390,14 @@
     },
     {
       "id": "/managementApi/podSecurityContext/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/podSecurityContext/fsGroup",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/podSecurityContext/fsGroupChangePolicy",
       "kinds": "/K/K/K"
     },
     {
@@ -433,8 +513,40 @@
       "kinds": "/K/K/K"
     },
     {
+      "id": "/managementUi/containerSecurityContext/allowPrivilegeEscalation",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/containerSecurityContext/capabilities/drop/0",
+      "kinds": "/K/K/K/K/I"
+    },
+    {
       "id": "/managementUi/containerSecurityContext/enabled",
       "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/containerSecurityContext/privileged",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/containerSecurityContext/readOnlyRootFilesystem",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/containerSecurityContext/runAsGroup",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/containerSecurityContext/runAsNonRoot",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/containerSecurityContext/runAsUser",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/containerSecurityContext/seccompProfile/type",
+      "kinds": "/K/K/K/K"
     },
     {
       "id": "/managementUi/image/pullPolicy",
@@ -458,6 +570,18 @@
     },
     {
       "id": "/managementUi/podSecurityContext/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/podSecurityContext/fsGroup",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/podSecurityContext/runAsGroup",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/podSecurityContext/runAsUser",
       "kinds": "/K/K/K"
     },
     {
@@ -569,8 +693,40 @@
       "kinds": "/K/K/K"
     },
     {
+      "id": "/openPolicyAgent/containerSecurityContext/allowPrivilegeEscalation",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/containerSecurityContext/capabilities/drop/0",
+      "kinds": "/K/K/K/K/I"
+    },
+    {
       "id": "/openPolicyAgent/containerSecurityContext/enabled",
       "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/containerSecurityContext/privileged",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/containerSecurityContext/readOnlyRootFilesystem",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/containerSecurityContext/runAsGroup",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/containerSecurityContext/runAsNonRoot",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/containerSecurityContext/runAsUser",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/containerSecurityContext/seccompProfile/type",
+      "kinds": "/K/K/K/K"
     },
     {
       "id": "/openPolicyAgent/image/pullPolicy",
@@ -594,6 +750,14 @@
     },
     {
       "id": "/openPolicyAgent/podSecurityContext/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/podSecurityContext/fsGroup",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/podSecurityContext/fsGroupChangePolicy",
       "kinds": "/K/K/K"
     },
     {
@@ -709,8 +873,40 @@
       "kinds": "/K/K/K"
     },
     {
+      "id": "/provisioning/containerSecurityContext/allowPrivilegeEscalation",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/containerSecurityContext/capabilities/drop/0",
+      "kinds": "/K/K/K/K/I"
+    },
+    {
       "id": "/provisioning/containerSecurityContext/enabled",
       "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/containerSecurityContext/privileged",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/containerSecurityContext/readOnlyRootFilesystem",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/containerSecurityContext/runAsGroup",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/containerSecurityContext/runAsNonRoot",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/containerSecurityContext/runAsUser",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/containerSecurityContext/seccompProfile/type",
+      "kinds": "/K/K/K/K"
     },
     {
       "id": "/provisioning/enabled",
@@ -753,6 +949,14 @@
       "kinds": "/K/K/K"
     },
     {
+      "id": "/provisioning/podSecurityContext/fsGroup",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/podSecurityContext/fsGroupChangePolicy",
+      "kinds": "/K/K/K"
+    },
+    {
       "id": "/provisioning/provisioningImage/pullPolicy",
       "kinds": "/K/K/K"
     },
@@ -787,38 +991,6 @@
   ],
   "definedNotUsed": [
     {
-      "id": "/authorizationApi/containerSecurityContext/allowPrivilegeEscalation",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/authorizationApi/containerSecurityContext/capabilities/drop/0",
-      "kinds": "/K/K/K/K/I"
-    },
-    {
-      "id": "/authorizationApi/containerSecurityContext/privileged",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/authorizationApi/containerSecurityContext/readOnlyRootFilesystem",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/authorizationApi/containerSecurityContext/runAsGroup",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/authorizationApi/containerSecurityContext/runAsNonRoot",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/authorizationApi/containerSecurityContext/runAsUser",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/authorizationApi/containerSecurityContext/seccompProfile/type",
-      "kinds": "/K/K/K/K"
-    },
-    {
       "id": "/authorizationApi/fullnameOverride",
       "kinds": "/K/K"
     },
@@ -833,14 +1005,6 @@
     {
       "id": "/authorizationApi/persistence/data/storageClass",
       "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/authorizationApi/podSecurityContext/fsGroup",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/authorizationApi/podSecurityContext/fsGroupChangePolicy",
-      "kinds": "/K/K/K"
     },
     {
       "id": "/authorizationApi/service/ports/http/containerPort",
@@ -999,38 +1163,6 @@
       "kinds": "/K/K/K"
     },
     {
-      "id": "/managementApi/containerSecurityContext/allowPrivilegeEscalation",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/managementApi/containerSecurityContext/capabilities/drop/0",
-      "kinds": "/K/K/K/K/I"
-    },
-    {
-      "id": "/managementApi/containerSecurityContext/privileged",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/managementApi/containerSecurityContext/readOnlyRootFilesystem",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/managementApi/containerSecurityContext/runAsGroup",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/managementApi/containerSecurityContext/runAsNonRoot",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/managementApi/containerSecurityContext/runAsUser",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/managementApi/containerSecurityContext/seccompProfile/type",
-      "kinds": "/K/K/K/K"
-    },
-    {
       "id": "/managementApi/fullnameOverride",
       "kinds": "/K/K"
     },
@@ -1059,14 +1191,6 @@
       "kinds": "/K/K/K/K"
     },
     {
-      "id": "/managementApi/podSecurityContext/fsGroup",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/managementApi/podSecurityContext/fsGroupChangePolicy",
-      "kinds": "/K/K/K"
-    },
-    {
       "id": "/managementApi/service/ports/http/containerPort",
       "kinds": "/K/K/K/K/K"
     },
@@ -1077,38 +1201,6 @@
     {
       "id": "/managementApi/service/ports/http/protocol",
       "kinds": "/K/K/K/K/K"
-    },
-    {
-      "id": "/managementUi/containerSecurityContext/allowPrivilegeEscalation",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/managementUi/containerSecurityContext/capabilities/drop/0",
-      "kinds": "/K/K/K/K/I"
-    },
-    {
-      "id": "/managementUi/containerSecurityContext/privileged",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/managementUi/containerSecurityContext/readOnlyRootFilesystem",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/managementUi/containerSecurityContext/runAsGroup",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/managementUi/containerSecurityContext/runAsNonRoot",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/managementUi/containerSecurityContext/runAsUser",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/managementUi/containerSecurityContext/seccompProfile/type",
-      "kinds": "/K/K/K/K"
     },
     {
       "id": "/managementUi/fullnameOverride",
@@ -1127,18 +1219,6 @@
       "kinds": "/K/K/K/K"
     },
     {
-      "id": "/managementUi/podSecurityContext/fsGroup",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/managementUi/podSecurityContext/runAsGroup",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/managementUi/podSecurityContext/runAsUser",
-      "kinds": "/K/K/K"
-    },
-    {
       "id": "/managementUi/service/ports/http/containerPort",
       "kinds": "/K/K/K/K/K"
     },
@@ -1151,52 +1231,12 @@
       "kinds": "/K/K/K/K/K"
     },
     {
-      "id": "/openPolicyAgent/containerSecurityContext/allowPrivilegeEscalation",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/openPolicyAgent/containerSecurityContext/capabilities/drop/0",
-      "kinds": "/K/K/K/K/I"
-    },
-    {
-      "id": "/openPolicyAgent/containerSecurityContext/privileged",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/openPolicyAgent/containerSecurityContext/readOnlyRootFilesystem",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/openPolicyAgent/containerSecurityContext/runAsGroup",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/openPolicyAgent/containerSecurityContext/runAsNonRoot",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/openPolicyAgent/containerSecurityContext/runAsUser",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/openPolicyAgent/containerSecurityContext/seccompProfile/type",
-      "kinds": "/K/K/K/K"
-    },
-    {
       "id": "/openPolicyAgent/fullnameOverride",
       "kinds": "/K/K"
     },
     {
       "id": "/openPolicyAgent/nameOverride",
       "kinds": "/K/K"
-    },
-    {
-      "id": "/openPolicyAgent/podSecurityContext/fsGroup",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/openPolicyAgent/podSecurityContext/fsGroupChangePolicy",
-      "kinds": "/K/K/K"
     },
     {
       "id": "/openPolicyAgent/service/ports/http/containerPort",
@@ -1227,38 +1267,6 @@
       "kinds": "/K/K/K"
     },
     {
-      "id": "/provisioning/containerSecurityContext/allowPrivilegeEscalation",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/provisioning/containerSecurityContext/capabilities/drop/0",
-      "kinds": "/K/K/K/K/I"
-    },
-    {
-      "id": "/provisioning/containerSecurityContext/privileged",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/provisioning/containerSecurityContext/readOnlyRootFilesystem",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/provisioning/containerSecurityContext/runAsGroup",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/provisioning/containerSecurityContext/runAsNonRoot",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/provisioning/containerSecurityContext/runAsUser",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/provisioning/containerSecurityContext/seccompProfile/type",
-      "kinds": "/K/K/K/K"
-    },
-    {
       "id": "/provisioning/keycloak/auth/existingSecret/keyMapping/adminPassword",
       "kinds": "/K/K/K/K/K/K"
     },
@@ -1269,14 +1277,6 @@
     {
       "id": "/provisioning/keycloak/auth/username",
       "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/provisioning/podSecurityContext/fsGroup",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/provisioning/podSecurityContext/fsGroupChangePolicy",
-      "kinds": "/K/K/K"
     },
     {
       "id": "/provisioning/resources/limits/cpu",
@@ -1313,10 +1313,6 @@
       "kinds": "/K/K"
     },
     {
-      "id": "/authorizationApi/containerSecurityContext",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/authorizationApi/credentialSecretName",
       "kinds": "/K/K"
     },
@@ -1342,10 +1338,6 @@
     },
     {
       "id": "/authorizationApi/podAnnotations",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/authorizationApi/podSecurityContext",
       "kinds": "/K/K"
     },
     {
@@ -1453,10 +1445,6 @@
       "kinds": "/K/K"
     },
     {
-      "id": "/managementApi/containerSecurityContext",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/managementApi/extraEnvVars",
       "kinds": "/K/K"
     },
@@ -1481,10 +1469,6 @@
       "kinds": "/K/K"
     },
     {
-      "id": "/managementApi/podSecurityContext",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/managementApi/service/ports",
       "kinds": "/K/K/K"
     },
@@ -1497,10 +1481,6 @@
       "kinds": "/K/K"
     },
     {
-      "id": "/managementUi/containerSecurityContext",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/managementUi/extraEnvVars",
       "kinds": "/K/K"
     },
@@ -1510,10 +1490,6 @@
     },
     {
       "id": "/managementUi/podAnnotations",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/managementUi/podSecurityContext",
       "kinds": "/K/K"
     },
     {
@@ -1533,10 +1509,6 @@
       "kinds": "/K/K"
     },
     {
-      "id": "/openPolicyAgent/containerSecurityContext",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/openPolicyAgent/extraEnvVars",
       "kinds": "/K/K"
     },
@@ -1546,10 +1518,6 @@
     },
     {
       "id": "/openPolicyAgent/podAnnotations",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/openPolicyAgent/podSecurityContext",
       "kinds": "/K/K"
     },
     {
@@ -1570,10 +1538,6 @@
     },
     {
       "id": "/provisioning/args",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/provisioning/containerSecurityContext",
       "kinds": "/K/K"
     },
     {
@@ -1618,10 +1582,6 @@
     },
     {
       "id": "/provisioning/nodeSelector",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/provisioning/podSecurityContext",
       "kinds": "/K/K"
     },
     {
