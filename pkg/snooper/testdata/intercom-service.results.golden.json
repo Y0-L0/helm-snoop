@@ -1,6 +1,18 @@
 {
   "referenced": [
     {
+      "id": "/additionalAnnotations",
+      "kinds": "/K"
+    },
+    {
+      "id": "/additionalLabels",
+      "kinds": "/K"
+    },
+    {
+      "id": "/affinity",
+      "kinds": "/K"
+    },
+    {
       "id": "/containerSecurityContext/allowPrivilegeEscalation",
       "kinds": "/K/K"
     },
@@ -37,6 +49,14 @@
       "kinds": "/K/K/K"
     },
     {
+      "id": "/extraVolumeMounts",
+      "kinds": "/K"
+    },
+    {
+      "id": "/extraVolumes",
+      "kinds": "/K"
+    },
+    {
       "id": "/fullnameOverride",
       "kinds": "/K"
     },
@@ -46,6 +66,10 @@
     },
     {
       "id": "/global/imagePullPolicy",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/global/imagePullSecrets",
       "kinds": "/K/K"
     },
     {
@@ -261,6 +285,14 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/imagePullSecrets",
+      "kinds": "/K"
+    },
+    {
+      "id": "/ingress/annotations",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/ingress/enabled",
       "kinds": "/K/K"
     },
@@ -289,6 +321,10 @@
       "kinds": "/K/K/K"
     },
     {
+      "id": "/lifecycleHooks",
+      "kinds": "/K"
+    },
+    {
       "id": "/livenessProbe/failureThreshold",
       "kinds": "/K/K"
     },
@@ -310,6 +346,14 @@
     },
     {
       "id": "/nameOverride",
+      "kinds": "/K"
+    },
+    {
+      "id": "/nodeSelector",
+      "kinds": "/K"
+    },
+    {
+      "id": "/podAnnotations",
       "kinds": "/K"
     },
     {
@@ -350,6 +394,14 @@
     },
     {
       "id": "/provisioning/enabled",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/extraEnvVars",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/extraVolumeMounts",
       "kinds": "/K/K"
     },
     {
@@ -441,6 +493,10 @@
       "kinds": "/K"
     },
     {
+      "id": "/service/annotations",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/service/enabled",
       "kinds": "/K/K"
     },
@@ -457,6 +513,10 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/serviceAccount/annotations",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/serviceAccount/automountServiceAccountToken",
       "kinds": "/K/K"
     },
@@ -466,6 +526,14 @@
     },
     {
       "id": "/terminationGracePeriodSeconds",
+      "kinds": "/K"
+    },
+    {
+      "id": "/tolerations",
+      "kinds": "/K"
+    },
+    {
+      "id": "/topologySpreadConstraints",
       "kinds": "/K"
     }
   ],
@@ -535,6 +603,10 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/podLabels",
+      "kinds": "/K"
+    },
+    {
       "id": "/provisioning/config/keycloak/auth/existingSecret/keyMapping/password",
       "kinds": "/K/K/K/K/K/K/K"
     },
@@ -553,6 +625,14 @@
     {
       "id": "/provisioning/config/keycloak/connection/protocol",
       "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/image/imagePullSecrets",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/provisioningImage/imagePullSecrets",
+      "kinds": "/K/K/K"
     },
     {
       "id": "/readinessProbe/enabled",
@@ -591,35 +671,15 @@
       "kinds": "/K/K/K/K"
     },
     {
+      "id": "/serviceAccount/labels",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/updateStrategy/type",
       "kinds": "/K/K"
     }
   ],
   "usedNotDefined": [
-    {
-      "id": "/additionalAnnotations",
-      "kinds": "/K"
-    },
-    {
-      "id": "/additionalLabels",
-      "kinds": "/K"
-    },
-    {
-      "id": "/affinity",
-      "kinds": "/K"
-    },
-    {
-      "id": "/extraVolumeMounts",
-      "kinds": "/K"
-    },
-    {
-      "id": "/extraVolumes",
-      "kinds": "/K"
-    },
-    {
-      "id": "/global/imagePullSecrets",
-      "kinds": "/K/K"
-    },
     {
       "id": "/global/ingressClass",
       "kinds": "/K/K"
@@ -653,14 +713,6 @@
       "kinds": "/K/K/K"
     },
     {
-      "id": "/imagePullSecrets",
-      "kinds": "/K"
-    },
-    {
-      "id": "/ingress/annotations",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/ingress/apiVersion",
       "kinds": "/K/K"
     },
@@ -670,18 +722,6 @@
     },
     {
       "id": "/kubeVersion",
-      "kinds": "/K"
-    },
-    {
-      "id": "/lifecycleHooks",
-      "kinds": "/K"
-    },
-    {
-      "id": "/nodeSelector",
-      "kinds": "/K"
-    },
-    {
-      "id": "/podAnnotations",
       "kinds": "/K"
     },
     {
@@ -709,15 +749,7 @@
       "kinds": "/K/K"
     },
     {
-      "id": "/provisioning/extraEnvVars",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/provisioning/extraLabels",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/provisioning/extraVolumeMounts",
       "kinds": "/K/K"
     },
     {
@@ -733,24 +765,8 @@
       "kinds": "/K"
     },
     {
-      "id": "/service/annotations",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/service/ports",
       "kinds": "/K/K"
-    },
-    {
-      "id": "/serviceAccount/annotations",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/tolerations",
-      "kinds": "/K"
-    },
-    {
-      "id": "/topologySpreadConstraints",
-      "kinds": "/K"
     },
     {
       "id": "/updateStrategy",

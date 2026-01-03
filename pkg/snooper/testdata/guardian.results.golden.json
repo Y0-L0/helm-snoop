@@ -1,6 +1,18 @@
 {
   "referenced": [
     {
+      "id": "/additionalAnnotations",
+      "kinds": "/K"
+    },
+    {
+      "id": "/additionalLabels",
+      "kinds": "/K"
+    },
+    {
+      "id": "/authorizationApi/affinity",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/authorizationApi/config/guardianAuthzAdapterAppPersistencePort",
       "kinds": "/K/K/K"
     },
@@ -97,6 +109,10 @@
       "kinds": "/K/K/K/K"
     },
     {
+      "id": "/authorizationApi/extraEnvVars",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/authorizationApi/image/pullPolicy",
       "kinds": "/K/K/K"
     },
@@ -115,6 +131,14 @@
     {
       "id": "/authorizationApi/image/tag",
       "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/nodeSelector",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/authorizationApi/podAnnotations",
+      "kinds": "/K/K"
     },
     {
       "id": "/authorizationApi/podSecurityContext/enabled",
@@ -213,8 +237,24 @@
       "kinds": "/K/K/K"
     },
     {
+      "id": "/authorizationApi/tolerations",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/authorizationApi/udm/auth/username",
       "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/extraIngresses",
+      "kinds": "/K"
+    },
+    {
+      "id": "/extraSecrets",
+      "kinds": "/K"
+    },
+    {
+      "id": "/extraVolumes",
+      "kinds": "/K"
     },
     {
       "id": "/global/domain",
@@ -222,6 +262,10 @@
     },
     {
       "id": "/global/imagePullPolicy",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/global/imagePullSecrets",
       "kinds": "/K/K"
     },
     {
@@ -245,12 +289,20 @@
       "kinds": "/K/K/K"
     },
     {
+      "id": "/imagePullSecrets",
+      "kinds": "/K"
+    },
+    {
       "id": "/ingress/enabled",
       "kinds": "/K/K"
     },
     {
       "id": "/ingress/tls/secretName",
       "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/affinity",
+      "kinds": "/K/K"
     },
     {
       "id": "/managementApi/config/guardianManagementAdapterAppPersistencePort",
@@ -369,6 +421,10 @@
       "kinds": "/K/K/K/K"
     },
     {
+      "id": "/managementApi/extraEnvVars",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/managementApi/image/pullPolicy",
       "kinds": "/K/K/K"
     },
@@ -387,6 +443,14 @@
     {
       "id": "/managementApi/image/tag",
       "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/nodeSelector",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementApi/podAnnotations",
+      "kinds": "/K/K"
     },
     {
       "id": "/managementApi/podSecurityContext/enabled",
@@ -485,6 +549,14 @@
       "kinds": "/K/K/K"
     },
     {
+      "id": "/managementApi/tolerations",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementUi/affinity",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/managementUi/config/nginx/disableIPv6",
       "kinds": "/K/K/K/K"
     },
@@ -549,6 +621,10 @@
       "kinds": "/K/K/K/K"
     },
     {
+      "id": "/managementUi/extraEnvVars",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/managementUi/image/pullPolicy",
       "kinds": "/K/K/K"
     },
@@ -567,6 +643,14 @@
     {
       "id": "/managementUi/image/tag",
       "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/nodeSelector",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementUi/podAnnotations",
+      "kinds": "/K/K"
     },
     {
       "id": "/managementUi/podSecurityContext/enabled",
@@ -669,6 +753,14 @@
       "kinds": "/K/K/K"
     },
     {
+      "id": "/managementUi/tolerations",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/affinity",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/openPolicyAgent/config/isUniventionAppCenter",
       "kinds": "/K/K/K"
     },
@@ -729,6 +821,10 @@
       "kinds": "/K/K/K/K"
     },
     {
+      "id": "/openPolicyAgent/extraEnvVars",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/openPolicyAgent/image/pullPolicy",
       "kinds": "/K/K/K"
     },
@@ -747,6 +843,14 @@
     {
       "id": "/openPolicyAgent/image/tag",
       "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/nodeSelector",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/podAnnotations",
+      "kinds": "/K/K"
     },
     {
       "id": "/openPolicyAgent/podSecurityContext/enabled",
@@ -845,6 +949,10 @@
       "kinds": "/K/K/K"
     },
     {
+      "id": "/openPolicyAgent/tolerations",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/postgresql/auth/database",
       "kinds": "/K/K/K"
     },
@@ -913,6 +1021,10 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/provisioning/extraEnvVars",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/provisioning/image/registry",
       "kinds": "/K/K/K"
     },
@@ -977,6 +1089,10 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/provisioning/tolerations",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/provisioning/ttlSecondsAfterFinished",
       "kinds": "/K/K"
     },
@@ -990,6 +1106,10 @@
     }
   ],
   "definedNotUsed": [
+    {
+      "id": "/authorizationApi/environment",
+      "kinds": "/K/K"
+    },
     {
       "id": "/authorizationApi/fullnameOverride",
       "kinds": "/K/K"
@@ -1027,6 +1147,22 @@
       "kinds": "/K/K/K/K/K"
     },
     {
+      "id": "/extraEnvVars",
+      "kinds": "/K"
+    },
+    {
+      "id": "/extraVolumeMounts",
+      "kinds": "/K"
+    },
+    {
+      "id": "/global/affinity",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/global/environment",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/global/fullnameOverride",
       "kinds": "/K/K"
     },
@@ -1035,7 +1171,31 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/global/nodeSelector",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/global/podAnnotations",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/global/podSecurityContext",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/global/replicaCount",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/global/securityContext",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/global/tolerations",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ingress/annotations",
       "kinds": "/K/K"
     },
     {
@@ -1057,6 +1217,10 @@
     {
       "id": "/ingress/ingressClassName",
       "kinds": "/K/K"
+    },
+    {
+      "id": "/ingress/items/0/annotations",
+      "kinds": "/K/K/I/K"
     },
     {
       "id": "/ingress/items/0/host",
@@ -1091,6 +1255,10 @@
       "kinds": "/K/K/I/K/K"
     },
     {
+      "id": "/ingress/items/1/annotations",
+      "kinds": "/K/K/I/K"
+    },
+    {
       "id": "/ingress/items/1/host",
       "kinds": "/K/K/I/K"
     },
@@ -1121,6 +1289,10 @@
     {
       "id": "/ingress/items/1/tls/secretName",
       "kinds": "/K/K/I/K/K"
+    },
+    {
+      "id": "/ingress/items/2/annotations",
+      "kinds": "/K/K/I/K"
     },
     {
       "id": "/ingress/items/2/host",
@@ -1163,6 +1335,10 @@
       "kinds": "/K/K/K"
     },
     {
+      "id": "/managementApi/environment",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/managementApi/fullnameOverride",
       "kinds": "/K/K"
     },
@@ -1203,6 +1379,10 @@
       "kinds": "/K/K/K/K/K"
     },
     {
+      "id": "/managementUi/environment",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/managementUi/fullnameOverride",
       "kinds": "/K/K"
     },
@@ -1229,6 +1409,10 @@
     {
       "id": "/managementUi/service/ports/http/protocol",
       "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/environment",
+      "kinds": "/K/K"
     },
     {
       "id": "/openPolicyAgent/fullnameOverride",
@@ -1295,33 +1479,25 @@
       "kinds": "/K/K/K/K"
     },
     {
+      "id": "/serviceAccount/annotations",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/serviceAccount/labels",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/serviceAccount/name",
       "kinds": "/K/K"
     }
   ],
   "usedNotDefined": [
     {
-      "id": "/additionalAnnotations",
-      "kinds": "/K"
-    },
-    {
-      "id": "/additionalLabels",
-      "kinds": "/K"
-    },
-    {
-      "id": "/authorizationApi/affinity",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/authorizationApi/credentialSecretName",
       "kinds": "/K/K"
     },
     {
       "id": "/authorizationApi/extraAnnotations",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/authorizationApi/extraEnvVars",
       "kinds": "/K/K"
     },
     {
@@ -1333,32 +1509,12 @@
       "kinds": "/K/K"
     },
     {
-      "id": "/authorizationApi/nodeSelector",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/authorizationApi/podAnnotations",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/authorizationApi/service/ports",
       "kinds": "/K/K/K"
     },
     {
-      "id": "/authorizationApi/tolerations",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/authorizationApi/udm/auth/existingSecret",
       "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/extraIngresses",
-      "kinds": "/K"
-    },
-    {
-      "id": "/extraSecrets",
-      "kinds": "/K"
     },
     {
       "id": "/extraSecrets/*/context",
@@ -1397,20 +1553,8 @@
       "kinds": "/K/W/K"
     },
     {
-      "id": "/extraVolumes",
-      "kinds": "/K"
-    },
-    {
-      "id": "/extraVolumes/*",
-      "kinds": "/K/W"
-    },
-    {
       "id": "/fullnameOverride",
       "kinds": "/K"
-    },
-    {
-      "id": "/global/imagePullSecrets",
-      "kinds": "/K/K"
     },
     {
       "id": "/global/keycloak/realm",
@@ -1425,10 +1569,6 @@
       "kinds": "/K/K"
     },
     {
-      "id": "/imagePullSecrets",
-      "kinds": "/K"
-    },
-    {
       "id": "/ingress/apiVersion",
       "kinds": "/K/K"
     },
@@ -1441,14 +1581,6 @@
       "kinds": "/K"
     },
     {
-      "id": "/managementApi/affinity",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/managementApi/extraEnvVars",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/managementApi/extraVolumeMounts",
       "kinds": "/K/K"
     },
@@ -1457,76 +1589,24 @@
       "kinds": "/K/K"
     },
     {
-      "id": "/managementApi/nodeSelector",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/managementApi/oauth/auth/existingSecret",
       "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/managementApi/podAnnotations",
-      "kinds": "/K/K"
     },
     {
       "id": "/managementApi/service/ports",
       "kinds": "/K/K/K"
     },
     {
-      "id": "/managementApi/tolerations",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/managementUi/affinity",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/managementUi/extraEnvVars",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/managementUi/nodeSelector",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/managementUi/podAnnotations",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/managementUi/service/ports",
       "kinds": "/K/K/K"
-    },
-    {
-      "id": "/managementUi/tolerations",
-      "kinds": "/K/K"
     },
     {
       "id": "/nameOverride",
       "kinds": "/K"
     },
     {
-      "id": "/openPolicyAgent/affinity",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/openPolicyAgent/extraEnvVars",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/openPolicyAgent/nodeSelector",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/openPolicyAgent/podAnnotations",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/openPolicyAgent/service/ports",
       "kinds": "/K/K/K"
-    },
-    {
-      "id": "/openPolicyAgent/tolerations",
-      "kinds": "/K/K"
     },
     {
       "id": "/postgresql/auth/existingSecret",
@@ -1547,10 +1627,6 @@
     {
       "id": "/provisioning/extraAnnotations/*",
       "kinds": "/K/K/W"
-    },
-    {
-      "id": "/provisioning/extraEnvVars",
-      "kinds": "/K/K"
     },
     {
       "id": "/provisioning/extraVolumeMounts",
@@ -1590,10 +1666,6 @@
     },
     {
       "id": "/provisioning/resources",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/provisioning/tolerations",
       "kinds": "/K/K"
     }
   ]
