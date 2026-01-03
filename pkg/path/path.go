@@ -8,9 +8,10 @@ import (
 type kind byte
 
 const (
-	indexKind kind = 'I'
-	keyKind   kind = 'K'
-	anyKind   kind = 'A'
+	indexKind    kind = 'I'
+	keyKind      kind = 'K'
+	anyKind      kind = 'A'
+	wildcardKind kind = 'W'
 )
 
 type Path struct {
@@ -50,6 +51,8 @@ func (p Path) KindsString() string {
 			b = append(b, 'I')
 		case anyKind:
 			b = append(b, 'A')
+		case wildcardKind:
+			b = append(b, 'W')
 		default:
 			panic("invalid kind: zero or unknown value")
 		}
@@ -105,11 +108,30 @@ func (p Path) WithAny(token string) Path {
 	return p
 }
 
+func (p Path) WithWildcard() Path {
+	p.tokens = append([]string(nil), p.tokens...)
+	p.tokens = append(p.tokens, "*")
+
+	p.kinds = append([]kind(nil), p.kinds...)
+	p.kinds = append(p.kinds, wildcardKind)
+
+	return p
+}
+
 // Any is a mutator: it appends an unknown-kind segment to the receiver Path in place.
 // Prefer the immutable-style WithAny in traversal code to avoid slice aliasing across siblings.
 func (p *Path) Any(token string) *Path {
 	p.tokens = append(p.tokens, escaper.Replace(token))
 	p.kinds = append(p.kinds, anyKind)
+	return p
+}
+
+// Wildcard is a mutator: it appends a wildcard segment to the receiver Path in place.
+// Wildcards match any descendant at that position and beyond.
+// Prefer the immutable-style WithWildcard in traversal code to avoid slice aliasing across siblings.
+func (p *Path) Wildcard() *Path {
+	p.tokens = append(p.tokens, "*")
+	p.kinds = append(p.kinds, wildcardKind)
 	return p
 }
 
