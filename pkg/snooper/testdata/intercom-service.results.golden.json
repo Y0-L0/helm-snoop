@@ -345,6 +345,42 @@
       "kinds": "/K/K/K"
     },
     {
+      "id": "/provisioning/securityContext/allowPrivilegeEscalation",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/securityContext/capabilities/drop/0",
+      "kinds": "/K/K/K/K/I"
+    },
+    {
+      "id": "/provisioning/securityContext/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/securityContext/privileged",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/securityContext/readOnlyRootFilesystem",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/securityContext/runAsGroup",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/securityContext/runAsNonRoot",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/securityContext/runAsUser",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/securityContext/seccompProfile/type",
+      "kinds": "/K/K/K/K"
+    },
+    {
       "id": "/readinessProbe/failureThreshold",
       "kinds": "/K/K"
     },
@@ -517,42 +553,6 @@
     {
       "id": "/provisioning/config/keycloak/connection/protocol",
       "kinds": "/K/K/K/K/K"
-    },
-    {
-      "id": "/provisioning/securityContext/allowPrivilegeEscalation",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/provisioning/securityContext/capabilities/drop/0",
-      "kinds": "/K/K/K/K/I"
-    },
-    {
-      "id": "/provisioning/securityContext/enabled",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/provisioning/securityContext/privileged",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/provisioning/securityContext/readOnlyRootFilesystem",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/provisioning/securityContext/runAsGroup",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/provisioning/securityContext/runAsNonRoot",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/provisioning/securityContext/runAsUser",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/provisioning/securityContext/seccompProfile/type",
-      "kinds": "/K/K/K/K"
     },
     {
       "id": "/readinessProbe/enabled",
@@ -735,10 +735,6 @@
     {
       "id": "/provisioning/provisioningImage/sha256",
       "kinds": "/K/K/K"
-    },
-    {
-      "id": "/provisioning/securityContext",
-      "kinds": "/K/K"
     },
     {
       "id": "/resources",
