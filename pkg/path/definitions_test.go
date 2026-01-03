@@ -97,3 +97,55 @@ func (s *Unittest) TestFlattenValues_NonStringKeys() {
 
 	EqualPaths(s, Paths(expected), Paths(out))
 }
+
+func (s *Unittest) TestFlattenValues_EmptyCollections() {
+	testCases := []struct {
+		name     string
+		expected Paths
+		values   string
+	}{
+		{
+			name: "empty_dict",
+			expected: Paths{
+				np().Key("podAnnotations"),
+			},
+			values: `
+podAnnotations: {}
+`,
+		},
+		{
+			name: "empty_list",
+			expected: Paths{
+				np().Key("items"),
+			},
+			values: `
+items: []
+`,
+		},
+		{
+			name: "nested_empty_collections",
+			expected: Paths{
+				np().Key("config").Key("annotations"),
+				np().Key("config").Key("labels"),
+			},
+			values: `
+config:
+  annotations: {}
+  labels: {}
+`,
+		},
+	}
+
+	for _, tc := range testCases {
+		s.Run(tc.name, func() {
+			var values interface{}
+			err := yaml.Unmarshal([]byte(tc.values), &values)
+			s.Require().NoError(err)
+
+			out := Paths{}
+			GetDefinitions(Path{}, values, &out)
+
+			EqualPaths(s, Paths(tc.expected), Paths(out))
+		})
+	}
+}

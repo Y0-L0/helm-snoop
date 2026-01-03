@@ -43,3 +43,4 @@ AGENTS.md
 
 helm-snoop
 testdata/intercom-service/*
+testdata/guardian/*
