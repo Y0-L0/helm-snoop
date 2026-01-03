@@ -4,6 +4,11 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
+// Helper for building paths in tests
+func np() *path.Path {
+	return &path.Path{}
+}
+
 // TestParseFile_Range tests range statement evaluation
 func (s *Unittest) TestParseFile_Range() {
 	cases := []struct {
@@ -80,7 +85,7 @@ func (s *Unittest) TestParseFile_RangePrefix() {
 			template: `{{ range .Values.items }}{{ .name }}{{ end }}`,
 			expected: path.Paths{
 				path.NewPath("items"),
-				path.NewPath("items", "*", "name"),
+				np().Key("items").Wildcard().Key("name"),
 			},
 		},
 		{
@@ -88,8 +93,8 @@ func (s *Unittest) TestParseFile_RangePrefix() {
 			template: `{{ range .Values.users }}{{ .id }}{{ .email }}{{ end }}`,
 			expected: path.Paths{
 				path.NewPath("users"),
-				path.NewPath("users", "*", "id"),
-				path.NewPath("users", "*", "email"),
+				np().Key("users").Wildcard().Key("id"),
+				np().Key("users").Wildcard().Key("email"),
 			},
 		},
 		{
@@ -97,7 +102,7 @@ func (s *Unittest) TestParseFile_RangePrefix() {
 			template: `{{ range .Values.services }}{{ .metadata.name }}{{ end }}`,
 			expected: path.Paths{
 				path.NewPath("services"),
-				path.NewPath("services", "*", "metadata", "name"),
+				np().Key("services").Wildcard().Key("metadata").Key("name"),
 			},
 		},
 		{
@@ -110,9 +115,9 @@ func (s *Unittest) TestParseFile_RangePrefix() {
 			{{ end }}`,
 			expected: path.Paths{
 				path.NewPath("teams"),
-				path.NewPath("teams", "*", "name"),
-				path.NewPath("teams", "*", "members"),
-				path.NewPath("teams", "*", "members", "*", "email"),
+				np().Key("teams").Wildcard().Key("name"),
+				np().Key("teams").Wildcard().Key("members"),
+				np().Key("teams").Wildcard().Key("members").Wildcard().Key("email"),
 			},
 		},
 		{
@@ -121,7 +126,7 @@ func (s *Unittest) TestParseFile_RangePrefix() {
 				`{{ else }}{{ .Values.emptyMessage }}{{ end }}`,
 			expected: path.Paths{
 				path.NewPath("items"),
-				path.NewPath("items", "*", "name"),
+				np().Key("items").Wildcard().Key("name"),
 				path.NewPath("emptyMessage"),
 			},
 		},
@@ -219,7 +224,7 @@ func (s *Unittest) TestParseFile_RangeWithMixedContexts() {
 			template: `{{ range .Values.items }}{{ .name }}{{ .Values.count }}{{ end }}`,
 			expected: path.Paths{
 				path.NewPath("items"),
-				path.NewPath("items", "*", "name"),
+				np().Key("items").Wildcard().Key("name"),
 				path.NewPath("count"),
 			},
 		},
@@ -232,8 +237,8 @@ func (s *Unittest) TestParseFile_RangeWithMixedContexts() {
 			{{ end }}`,
 			expected: path.Paths{
 				path.NewPath("items"),
-				path.NewPath("items", "*", "config"),
-				path.NewPath("items", "*", "config", "timeout"),
+				np().Key("items").Wildcard().Key("config"),
+				np().Key("items").Wildcard().Key("config").Key("timeout"),
 			},
 		},
 		{
@@ -246,7 +251,7 @@ func (s *Unittest) TestParseFile_RangeWithMixedContexts() {
 			expected: path.Paths{
 				path.NewPath("app"),
 				path.NewPath("app", "services"),
-				path.NewPath("app", "services", "*", "port"),
+				np().Key("app").Key("services").Wildcard().Key("port"),
 			},
 		},
 	}
@@ -289,7 +294,7 @@ func (s *Unittest) TestParseFile_RangeBuiltinObjects() {
 			template: `{{ range .Values.items }}{{ .name }}{{ .Chart.AppVersion }}{{ end }}`,
 			expected: path.Paths{
 				path.NewPath("items"),
-				path.NewPath("items", "*", "name"),
+				np().Key("items").Wildcard().Key("name"),
 			},
 		},
 	}

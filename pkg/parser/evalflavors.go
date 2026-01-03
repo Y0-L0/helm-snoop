@@ -168,10 +168,10 @@ func (e *evalCtx) evalRangeNode(node *parse.RangeNode) evalResult {
 	if node.Pipe != nil {
 		result := e.Eval(node.Pipe)
 		e.Emit(result.paths...)
-		// Set prefix for range body: items -> items.*
+		// Set prefix for range body: items -> items/*
 		// The path from Eval() is already prefixed if needed
 		if len(result.paths) > 0 {
-			p := result.paths[0].WithKey("*")
+			p := result.paths[0].WithWildcard()
 			rangePrefix = &p
 		}
 	}
