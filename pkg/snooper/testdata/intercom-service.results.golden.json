@@ -1,8 +1,40 @@
 {
   "referenced": [
     {
+      "id": "/containerSecurityContext/allowPrivilegeEscalation",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/containerSecurityContext/capabilities/drop/0",
+      "kinds": "/K/K/K/I"
+    },
+    {
       "id": "/containerSecurityContext/enabled",
       "kinds": "/K/K"
+    },
+    {
+      "id": "/containerSecurityContext/privileged",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/containerSecurityContext/readOnlyRootFilesystem",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/containerSecurityContext/runAsGroup",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/containerSecurityContext/runAsNonRoot",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/containerSecurityContext/runAsUser",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/containerSecurityContext/seccompProfile/type",
+      "kinds": "/K/K/K"
     },
     {
       "id": "/fullnameOverride",
@@ -285,6 +317,14 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/podSecurityContext/fsGroup",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/podSecurityContext/fsGroupChangePolicy",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/provisioning/config/clientBaseUrl",
       "kinds": "/K/K/K"
     },
@@ -431,38 +471,6 @@
   ],
   "definedNotUsed": [
     {
-      "id": "/containerSecurityContext/allowPrivilegeEscalation",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/containerSecurityContext/capabilities/drop/0",
-      "kinds": "/K/K/K/I"
-    },
-    {
-      "id": "/containerSecurityContext/privileged",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/containerSecurityContext/readOnlyRootFilesystem",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/containerSecurityContext/runAsGroup",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/containerSecurityContext/runAsNonRoot",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/containerSecurityContext/runAsUser",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/containerSecurityContext/seccompProfile/type",
-      "kinds": "/K/K/K"
-    },
-    {
       "id": "/global/subDomains/keycloak",
       "kinds": "/K/K/K"
     },
@@ -524,14 +532,6 @@
     },
     {
       "id": "/livenessProbe/enabled",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/podSecurityContext/fsGroup",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/podSecurityContext/fsGroupChangePolicy",
       "kinds": "/K/K"
     },
     {
@@ -609,10 +609,6 @@
       "kinds": "/K"
     },
     {
-      "id": "/containerSecurityContext",
-      "kinds": "/K"
-    },
-    {
       "id": "/extraVolumeMounts",
       "kinds": "/K"
     },
@@ -686,10 +682,6 @@
     },
     {
       "id": "/podAnnotations",
-      "kinds": "/K"
-    },
-    {
-      "id": "/podSecurityContext",
       "kinds": "/K"
     },
     {

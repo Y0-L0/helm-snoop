@@ -30,14 +30,12 @@ func unaryPassThroughFn(ctx *evalCtx, call Call) evalResult {
 
 	result := ctx.Eval(call.Args[0])
 
-	// Emit paths
 	ctx.Emit(result.paths...)
 
 	return evalResult{args: result.args}
 }
 
 // unarySerializeFn emits the arg path with a terminal wildcard (for toYaml, toJson, etc.)
-// These functions serialize the entire subtree, so we add /* to indicate all descendants are accessed
 func unarySerializeFn(ctx *evalCtx, call Call) evalResult {
 	if len(call.Args) == 0 {
 		return evalResult{}
@@ -45,7 +43,6 @@ func unarySerializeFn(ctx *evalCtx, call Call) evalResult {
 
 	result := ctx.Eval(call.Args[0])
 
-	// Add terminal wildcard to each path
 	for _, p := range result.paths {
 		wildcardPath := p.WithWildcard()
 		ctx.Emit(&wildcardPath)
@@ -62,6 +59,22 @@ func emitArgsNoResultFn(ctx *evalCtx, call Call) evalResult {
 	}
 
 	return evalResult{}
+}
+
+// omitPickFn handles omit/pick functions - evaluates all args but returns only the first arg's paths
+// This allows the result to be piped to other functions like toYaml
+func omitPickFn(ctx *evalCtx, call Call) evalResult {
+	if len(call.Args) == 0 {
+		return evalResult{}
+	}
+
+	result := ctx.Eval(call.Args[0])
+
+	for i := 1; i < len(call.Args); i++ {
+		_ = ctx.Eval(call.Args[i])
+	}
+
+	return evalResult{paths: result.paths, args: result.args}
 }
 
 // binaryEvalFn evaluates the first 2 args and emits any .Values paths found
