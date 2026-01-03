@@ -94,11 +94,12 @@ func (s *Unittest) assertMergeJoinLoose(a, b Paths, expInter, expOnlyA, expOnlyB
 func (s *Unittest) TestMergeJoinLoose_AnyMatchesKeyAndIdx() {
 	a := Paths{np().Any("x")}
 	b := Paths{np().Key("x"), np().Idx("x")}
-	// Greedy matches the first by sorted order within the token bucket; with kinds
-	// sorted, Idx ('I') precedes Key ('K'), so Any will match Idx and Key remains.
-	s.assertMergeJoinLoose(a, b, Paths{a[0]}, nil, Paths{np().Key("x")})
-	// Flipped: inter picks the first in sorted order; onlyA/onlyB swap accordingly
-	s.assertMergeJoinLoose(b, a, Paths{np().Idx("x")}, Paths{np().Key("x")}, nil)
+	// Many-to-many matching: anyKind matches BOTH keyKind and indexKind
+	// So the one path in 'a' matches both paths in 'b'
+	s.assertMergeJoinLoose(a, b, Paths{a[0]}, nil, nil)
+	// Flipped: both paths in 'a' match the anyKind in 'b'
+	// Results are sorted by kind: indexKind ('I') before keyKind ('K')
+	s.assertMergeJoinLoose(b, a, Paths{np().Idx("x"), np().Key("x")}, nil, nil)
 }
 
 func (s *Unittest) TestMergeJoinLoose_DisjointKinds() {
@@ -106,4 +107,39 @@ func (s *Unittest) TestMergeJoinLoose_DisjointKinds() {
 	b := Paths{np().Idx("x")}
 	s.assertMergeJoinLoose(a, b, nil, a, b)
 	s.assertMergeJoinLoose(b, a, nil, b, a)
+}
+
+// TestMergeJoinLoose_OneDefinitionMatchesMultipleUsages tests that a single
+// definition can match multiple usages with different kinds.
+//
+// Scenario:
+//
+//	values.yaml defines: items: [foo, bar]  → creates /items/0 (indexKind)
+//
+//	templates use:
+//	  {{ index .Values.items 0 }}        → /items/0 (indexKind)
+//	  {{ index .Values.items .dynamic }} → /items/* (anyKind) - unknown index
+//
+// Expected: The definition /items/0 should match BOTH usages.
+func (s *Unittest) TestMergeJoinLoose_OneDefinitionMatchesMultipleUsages() {
+	definitions := Paths{
+		np().Key("items").Idx("0"), // Defined in values.yaml
+	}
+
+	usages := Paths{
+		np().Key("items").Idx("0"), // Used with literal index
+		np().Key("items").Any("0"), // Used with dynamic index (anyKind)
+	}
+
+	inter, onlyDef, onlyUsage := MergeJoinLoose(definitions, usages)
+
+	// The definition matches both usages, so it appears in inter
+	s.Equal(1, len(inter), "definition should match both usages")
+	s.Equal("/items/0", inter[0].ID())
+
+	// Nothing defined but not used
+	s.Equal(0, len(onlyDef), "no definitions should be unmatched")
+
+	// Both usages matched the definition, so nothing used but not defined
+	s.Equal(0, len(onlyUsage), "both usages should match the definition")
 }
