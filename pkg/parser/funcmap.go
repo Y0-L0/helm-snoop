@@ -24,15 +24,15 @@ func init() {
 		// =================================================================
 		"include":       includeFn, // Analysis-aware: resolves template definitions
 		"tpl":           tplFn,     // Not implemented yet
-		"toToml":        unaryPassThroughFn,
+		"toToml":        unarySerializeFn,
 		"fromToml":      noopStrings,
-		"toYaml":        unaryPassThroughFn,
-		"mustToYaml":    unaryPassThroughFn,
-		"toYamlPretty":  unaryPassThroughFn,
+		"toYaml":        unarySerializeFn,
+		"mustToYaml":    unarySerializeFn,
+		"toYamlPretty":  unarySerializeFn,
 		"fromYaml":      noopStrings,
 		"fromYamlArray": noopStrings,
-		"toJson":        unaryPassThroughFn,
-		"mustToJson":    unaryPassThroughFn,
+		"toJson":        unarySerializeFn,
+		"mustToJson":    unarySerializeFn,
 		"fromJson":      noopStrings,
 		"fromJsonArray": noopStrings,
 		"lookup":        noopStrings,
@@ -339,8 +339,8 @@ func init() {
 		// =================================================================
 		"mustToPrettyJson": noopStrings,
 		"mustToRawJson":    noopStrings,
-		"toPrettyJson":     unaryPassThroughFn,
-		"toRawJson":        unaryPassThroughFn,
+		"toPrettyJson":     unarySerializeFn,
+		"toRawJson":        unarySerializeFn,
 	}
 
 	// Build parse stubs from eval keys

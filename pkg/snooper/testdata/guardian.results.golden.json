@@ -141,6 +141,22 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/authorizationApi/resources/limits/cpu",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/resources/limits/memory",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/resources/requests/cpu",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/resources/requests/memory",
+      "kinds": "/K/K/K/K"
+    },
+    {
       "id": "/authorizationApi/service/enabled",
       "kinds": "/K/K/K"
     },
@@ -357,6 +373,22 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/managementApi/resources/limits/cpu",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/resources/limits/memory",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/resources/requests/cpu",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/resources/requests/memory",
+      "kinds": "/K/K/K/K"
+    },
+    {
       "id": "/managementApi/service/enabled",
       "kinds": "/K/K/K"
     },
@@ -481,6 +513,22 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/managementUi/resources/limits/cpu",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/resources/limits/memory",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/resources/requests/cpu",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/resources/requests/memory",
+      "kinds": "/K/K/K/K"
+    },
+    {
       "id": "/managementUi/service/enabled",
       "kinds": "/K/K/K"
     },
@@ -599,6 +647,22 @@
     {
       "id": "/openPolicyAgent/replicaCount",
       "kinds": "/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/resources/limits/cpu",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/resources/limits/memory",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/resources/requests/cpu",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/resources/requests/memory",
+      "kinds": "/K/K/K/K"
     },
     {
       "id": "/openPolicyAgent/service/enabled",
@@ -777,22 +841,6 @@
     {
       "id": "/authorizationApi/podSecurityContext/fsGroupChangePolicy",
       "kinds": "/K/K/K"
-    },
-    {
-      "id": "/authorizationApi/resources/limits/cpu",
-      "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/authorizationApi/resources/limits/memory",
-      "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/authorizationApi/resources/requests/cpu",
-      "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/authorizationApi/resources/requests/memory",
-      "kinds": "/K/K/K/K"
     },
     {
       "id": "/authorizationApi/service/ports/http/containerPort",
@@ -1019,22 +1067,6 @@
       "kinds": "/K/K/K"
     },
     {
-      "id": "/managementApi/resources/limits/cpu",
-      "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/managementApi/resources/limits/memory",
-      "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/managementApi/resources/requests/cpu",
-      "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/managementApi/resources/requests/memory",
-      "kinds": "/K/K/K/K"
-    },
-    {
       "id": "/managementApi/service/ports/http/containerPort",
       "kinds": "/K/K/K/K/K"
     },
@@ -1107,22 +1139,6 @@
       "kinds": "/K/K/K"
     },
     {
-      "id": "/managementUi/resources/limits/cpu",
-      "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/managementUi/resources/limits/memory",
-      "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/managementUi/resources/requests/cpu",
-      "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/managementUi/resources/requests/memory",
-      "kinds": "/K/K/K/K"
-    },
-    {
       "id": "/managementUi/service/ports/http/containerPort",
       "kinds": "/K/K/K/K/K"
     },
@@ -1181,22 +1197,6 @@
     {
       "id": "/openPolicyAgent/podSecurityContext/fsGroupChangePolicy",
       "kinds": "/K/K/K"
-    },
-    {
-      "id": "/openPolicyAgent/resources/limits/cpu",
-      "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/openPolicyAgent/resources/limits/memory",
-      "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/openPolicyAgent/resources/requests/cpu",
-      "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/openPolicyAgent/resources/requests/memory",
-      "kinds": "/K/K/K/K"
     },
     {
       "id": "/openPolicyAgent/service/ports/http/containerPort",
@@ -1349,10 +1349,6 @@
       "kinds": "/K/K"
     },
     {
-      "id": "/authorizationApi/resources",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/authorizationApi/service/ports",
       "kinds": "/K/K/K"
     },
@@ -1374,43 +1370,47 @@
     },
     {
       "id": "/extraSecrets/*/context",
-      "kinds": "/K/K/K"
+      "kinds": "/K/W/K"
     },
     {
       "id": "/extraSecrets/*/context/Chart/AppVersion",
-      "kinds": "/K/K/K/K/K"
+      "kinds": "/K/W/K/K/K"
     },
     {
       "id": "/extraSecrets/*/context/Release/Name",
-      "kinds": "/K/K/K/K/K"
+      "kinds": "/K/W/K/K/K"
     },
     {
       "id": "/extraSecrets/*/context/Release/Service",
-      "kinds": "/K/K/K/K/K"
+      "kinds": "/K/W/K/K/K"
     },
     {
       "id": "/extraSecrets/*/customLabels",
-      "kinds": "/K/K/K"
+      "kinds": "/K/W/K"
     },
     {
       "id": "/extraSecrets/*/data",
-      "kinds": "/K/K/K"
+      "kinds": "/K/W/K"
     },
     {
       "id": "/extraSecrets/*/name",
-      "kinds": "/K/K/K"
+      "kinds": "/K/W/K"
     },
     {
       "id": "/extraSecrets/*/stringData",
-      "kinds": "/K/K/K"
+      "kinds": "/K/W/K"
     },
     {
       "id": "/extraSecrets/*/values",
-      "kinds": "/K/K/K"
+      "kinds": "/K/W/K"
     },
     {
       "id": "/extraVolumes",
       "kinds": "/K"
+    },
+    {
+      "id": "/extraVolumes/*",
+      "kinds": "/K/W"
     },
     {
       "id": "/fullnameOverride",
@@ -1485,10 +1485,6 @@
       "kinds": "/K/K"
     },
     {
-      "id": "/managementApi/resources",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/managementApi/service/ports",
       "kinds": "/K/K/K"
     },
@@ -1518,10 +1514,6 @@
     },
     {
       "id": "/managementUi/podSecurityContext",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/managementUi/resources",
       "kinds": "/K/K"
     },
     {
@@ -1561,10 +1553,6 @@
       "kinds": "/K/K"
     },
     {
-      "id": "/openPolicyAgent/resources",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/openPolicyAgent/service/ports",
       "kinds": "/K/K/K"
     },
@@ -1591,6 +1579,10 @@
     {
       "id": "/provisioning/extraAnnotations",
       "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/extraAnnotations/*",
+      "kinds": "/K/K/W"
     },
     {
       "id": "/provisioning/extraEnvVars",
