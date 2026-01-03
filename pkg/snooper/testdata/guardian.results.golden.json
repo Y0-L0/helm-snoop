@@ -1,0 +1,1648 @@
+{
+  "referenced": [
+    {
+      "id": "/authorizationApi/config/guardianAuthzAdapterAppPersistencePort",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/config/guardianAuthzAdapterAuthenticationPort",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/config/guardianAuthzAdapterPolicyPort",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/config/guardianAuthzAdapterSettingsPort",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/config/guardianAuthzCorsAllowedOrigins",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/config/guardianAuthzLoggingFormat",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/config/guardianAuthzLoggingLevel",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/config/guardianAuthzLoggingStructured",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/config/home",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/config/isUniventionAppCenter",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/config/oauthAdapterWellKnownUrl",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/config/opaAdapterUrl",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/config/udmDataAdapterPasswordFile",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/config/udmDataAdapterUrl",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/config/udmDataAdapterUsernameFile",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/containerSecurityContext/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/image/pullPolicy",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/image/registry",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/image/repository",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/image/sha256",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/image/tag",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/podSecurityContext/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/probes/liveness/enabled",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/probes/liveness/failureThreshold",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/probes/liveness/initialDelaySeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/probes/liveness/periodSeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/probes/liveness/successThreshold",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/probes/liveness/timeoutSeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/probes/readiness/enabled",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/probes/readiness/failureThreshold",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/probes/readiness/initialDelaySeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/probes/readiness/periodSeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/probes/readiness/successThreshold",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/probes/readiness/timeoutSeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/replicaCount",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/authorizationApi/service/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/service/sessionAffinity/enabled",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/service/sessionAffinity/timeoutSeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/service/type",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/udm/auth/username",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/global/domain",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/global/imagePullPolicy",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/global/imageRegistry",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/global/postgresql/connection/host",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/global/postgresql/connection/port",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/global/subDomains/keycloak",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/global/subDomains/portal",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ingress/enabled",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ingress/tls/secretName",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/config/guardianManagementAdapterAppPersistencePort",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/config/guardianManagementAdapterAuthenticationPort",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/config/guardianManagementAdapterAuthorizationApiUrl",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/config/guardianManagementAdapterCapabilityPersistencePort",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/config/guardianManagementAdapterConditionPersistencePort",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/config/guardianManagementAdapterContextPersistencePort",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/config/guardianManagementAdapterNamespacePersistencePort",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/config/guardianManagementAdapterPermissionPersistencePort",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/config/guardianManagementAdapterResourceAuthorizationPort",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/config/guardianManagementAdapterRolePersistencePort",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/config/guardianManagementAdapterSettingsPort",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/config/guardianManagementBaseUrl",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/config/guardianManagementCorsAllowedOrigins",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/config/guardianManagementLoggingFormat",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/config/guardianManagementLoggingLevel",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/config/guardianManagementLoggingStructured",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/config/home",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/config/isUniventionAppCenter",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/config/oauthAdapterM2mSecretFile",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/config/sqlPersistenceAdapterDialect",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/containerSecurityContext/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/image/pullPolicy",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/image/registry",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/image/repository",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/image/sha256",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/image/tag",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/podSecurityContext/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/probes/liveness/enabled",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/probes/liveness/failureThreshold",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/probes/liveness/initialDelaySeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/probes/liveness/periodSeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/probes/liveness/successThreshold",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/probes/liveness/timeoutSeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/probes/readiness/enabled",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/probes/readiness/failureThreshold",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/probes/readiness/initialDelaySeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/probes/readiness/periodSeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/probes/readiness/successThreshold",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/probes/readiness/timeoutSeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/replicaCount",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementApi/service/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/service/sessionAffinity/enabled",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/service/sessionAffinity/timeoutSeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/service/type",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/config/nginx/disableIPv6",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/config/viteApiDataAdapterUri",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/config/viteKeycloakAuthenticationAdapterClientId",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/config/viteKeycloakAuthenticationAdapterRealm",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/config/viteKeycloakAuthenticationAdapterSsoUri",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/config/viteManagementUiAdapterAuthenticationPort",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/config/viteManagementUiAdapterDataPort",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/containerSecurityContext/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/image/pullPolicy",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/image/registry",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/image/repository",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/image/sha256",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/image/tag",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/podSecurityContext/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/probes/liveness/enabled",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/probes/liveness/failureThreshold",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/probes/liveness/initialDelaySeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/probes/liveness/periodSeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/probes/liveness/successThreshold",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/probes/liveness/timeoutSeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/probes/readiness/enabled",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/probes/readiness/failureThreshold",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/probes/readiness/initialDelaySeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/probes/readiness/periodSeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/probes/readiness/successThreshold",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/probes/readiness/timeoutSeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/replicaCount",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementUi/service/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/service/sessionAffinity/enabled",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/service/sessionAffinity/timeoutSeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/service/type",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/config/isUniventionAppCenter",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/config/opaDataBundle",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/config/opaGuardianManagementUrl",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/config/opaPolicyBundle",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/config/opaPollingMaxDelay",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/config/opaPollingMinDelay",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/containerSecurityContext/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/image/pullPolicy",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/image/registry",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/image/repository",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/image/sha256",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/image/tag",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/podSecurityContext/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/probes/liveness/enabled",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/probes/liveness/failureThreshold",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/probes/liveness/initialDelaySeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/probes/liveness/periodSeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/probes/liveness/successThreshold",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/probes/liveness/timeoutSeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/probes/readiness/enabled",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/probes/readiness/failureThreshold",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/probes/readiness/initialDelaySeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/probes/readiness/periodSeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/probes/readiness/successThreshold",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/probes/readiness/timeoutSeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/replicaCount",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/service/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/service/sessionAffinity/enabled",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/service/sessionAffinity/timeoutSeconds",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/service/type",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/postgresql/auth/database",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/postgresql/connection/host",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/postgresql/connection/port",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/backoffLimit",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/config/debug/enabled",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/config/debug/pauseBeforeScriptStart",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/config/nubusBaseUrl",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/containerSecurityContext/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/enabled",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/image/registry",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/image/repository",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/image/sha256",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/image/tag",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/keycloak/auth/password",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/keycloak/connection/host",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/keycloak/connection/port",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/keycloak/realm",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/podSecurityContext/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/provisioningImage/pullPolicy",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/provisioningImage/registry",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/provisioningImage/repository",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/provisioningImage/tag",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/restartPolicy",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/ttlSecondsAfterFinished",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/serviceAccount/automountServiceAccountToken",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/serviceAccount/create",
+      "kinds": "/K/K"
+    }
+  ],
+  "definedNotUsed": [
+    {
+      "id": "/authorizationApi/containerSecurityContext/allowPrivilegeEscalation",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/containerSecurityContext/capabilities/drop/0",
+      "kinds": "/K/K/K/K/I"
+    },
+    {
+      "id": "/authorizationApi/containerSecurityContext/privileged",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/containerSecurityContext/readOnlyRootFilesystem",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/containerSecurityContext/runAsGroup",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/containerSecurityContext/runAsNonRoot",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/containerSecurityContext/runAsUser",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/containerSecurityContext/seccompProfile/type",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/fullnameOverride",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/authorizationApi/nameOverride",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/authorizationApi/persistence/data/size",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/persistence/data/storageClass",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/podSecurityContext/fsGroup",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/podSecurityContext/fsGroupChangePolicy",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/resources/limits/cpu",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/resources/limits/memory",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/resources/requests/cpu",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/resources/requests/memory",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/service/ports/http/containerPort",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/service/ports/http/port",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/service/ports/http/protocol",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/udm/auth/existingSecret/keyMapping/password",
+      "kinds": "/K/K/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/udm/auth/existingSecret/name",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/global/fullnameOverride",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/global/nameOverride",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/global/replicaCount",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ingress/certManager/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ingress/certManager/issuerRef/kind",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/ingress/certManager/issuerRef/name",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/ingress/host",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ingress/ingressClassName",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ingress/items/0/host",
+      "kinds": "/K/K/I/K"
+    },
+    {
+      "id": "/ingress/items/0/ingressClassName",
+      "kinds": "/K/K/I/K"
+    },
+    {
+      "id": "/ingress/items/0/name",
+      "kinds": "/K/K/I/K"
+    },
+    {
+      "id": "/ingress/items/0/paths/0/backend/service/name",
+      "kinds": "/K/K/I/K/I/K/K/K"
+    },
+    {
+      "id": "/ingress/items/0/paths/0/backend/service/port/number",
+      "kinds": "/K/K/I/K/I/K/K/K/K"
+    },
+    {
+      "id": "/ingress/items/0/paths/0/path",
+      "kinds": "/K/K/I/K/I/K"
+    },
+    {
+      "id": "/ingress/items/0/paths/0/pathType",
+      "kinds": "/K/K/I/K/I/K"
+    },
+    {
+      "id": "/ingress/items/0/tls/secretName",
+      "kinds": "/K/K/I/K/K"
+    },
+    {
+      "id": "/ingress/items/1/host",
+      "kinds": "/K/K/I/K"
+    },
+    {
+      "id": "/ingress/items/1/ingressClassName",
+      "kinds": "/K/K/I/K"
+    },
+    {
+      "id": "/ingress/items/1/name",
+      "kinds": "/K/K/I/K"
+    },
+    {
+      "id": "/ingress/items/1/paths/0/backend/service/name",
+      "kinds": "/K/K/I/K/I/K/K/K"
+    },
+    {
+      "id": "/ingress/items/1/paths/0/backend/service/port/number",
+      "kinds": "/K/K/I/K/I/K/K/K/K"
+    },
+    {
+      "id": "/ingress/items/1/paths/0/path",
+      "kinds": "/K/K/I/K/I/K"
+    },
+    {
+      "id": "/ingress/items/1/paths/0/pathType",
+      "kinds": "/K/K/I/K/I/K"
+    },
+    {
+      "id": "/ingress/items/1/tls/secretName",
+      "kinds": "/K/K/I/K/K"
+    },
+    {
+      "id": "/ingress/items/2/host",
+      "kinds": "/K/K/I/K"
+    },
+    {
+      "id": "/ingress/items/2/ingressClassName",
+      "kinds": "/K/K/I/K"
+    },
+    {
+      "id": "/ingress/items/2/name",
+      "kinds": "/K/K/I/K"
+    },
+    {
+      "id": "/ingress/items/2/paths/0/backend/service/name",
+      "kinds": "/K/K/I/K/I/K/K/K"
+    },
+    {
+      "id": "/ingress/items/2/paths/0/backend/service/port/number",
+      "kinds": "/K/K/I/K/I/K/K/K/K"
+    },
+    {
+      "id": "/ingress/items/2/paths/0/path",
+      "kinds": "/K/K/I/K/I/K"
+    },
+    {
+      "id": "/ingress/items/2/paths/0/pathType",
+      "kinds": "/K/K/I/K/I/K"
+    },
+    {
+      "id": "/ingress/items/2/tls/secretName",
+      "kinds": "/K/K/I/K/K"
+    },
+    {
+      "id": "/ingress/tls/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/config/oauthAdapterWellKnownUrl",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/containerSecurityContext/allowPrivilegeEscalation",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/containerSecurityContext/capabilities/drop/0",
+      "kinds": "/K/K/K/K/I"
+    },
+    {
+      "id": "/managementApi/containerSecurityContext/privileged",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/containerSecurityContext/readOnlyRootFilesystem",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/containerSecurityContext/runAsGroup",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/containerSecurityContext/runAsNonRoot",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/containerSecurityContext/runAsUser",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/containerSecurityContext/seccompProfile/type",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/fullnameOverride",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementApi/nameOverride",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementApi/oauth/auth/clientSecret",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/oauth/auth/existingSecret/keyMapping/clientSecret",
+      "kinds": "/K/K/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/oauth/auth/existingSecret/name",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/persistence/data/size",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/persistence/data/storageClass",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/podSecurityContext/fsGroup",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/podSecurityContext/fsGroupChangePolicy",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/resources/limits/cpu",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/resources/limits/memory",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/resources/requests/cpu",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/resources/requests/memory",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/service/ports/http/containerPort",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/service/ports/http/port",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/service/ports/http/protocol",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/containerSecurityContext/allowPrivilegeEscalation",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/containerSecurityContext/capabilities/drop/0",
+      "kinds": "/K/K/K/K/I"
+    },
+    {
+      "id": "/managementUi/containerSecurityContext/privileged",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/containerSecurityContext/readOnlyRootFilesystem",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/containerSecurityContext/runAsGroup",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/containerSecurityContext/runAsNonRoot",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/containerSecurityContext/runAsUser",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/containerSecurityContext/seccompProfile/type",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/fullnameOverride",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementUi/nameOverride",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementUi/persistence/data/size",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/persistence/data/storageClass",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/podSecurityContext/fsGroup",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/podSecurityContext/runAsGroup",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/podSecurityContext/runAsUser",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/resources/limits/cpu",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/resources/limits/memory",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/resources/requests/cpu",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/resources/requests/memory",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/service/ports/http/containerPort",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/service/ports/http/port",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/service/ports/http/protocol",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/containerSecurityContext/allowPrivilegeEscalation",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/containerSecurityContext/capabilities/drop/0",
+      "kinds": "/K/K/K/K/I"
+    },
+    {
+      "id": "/openPolicyAgent/containerSecurityContext/privileged",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/containerSecurityContext/readOnlyRootFilesystem",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/containerSecurityContext/runAsGroup",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/containerSecurityContext/runAsNonRoot",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/containerSecurityContext/runAsUser",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/containerSecurityContext/seccompProfile/type",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/fullnameOverride",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/nameOverride",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/podSecurityContext/fsGroup",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/podSecurityContext/fsGroupChangePolicy",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/resources/limits/cpu",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/resources/limits/memory",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/resources/requests/cpu",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/resources/requests/memory",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/service/ports/http/containerPort",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/service/ports/http/port",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/service/ports/http/protocol",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/postgresql/auth/existingSecret/keyMapping/password",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/postgresql/auth/existingSecret/name",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/postgresql/auth/password",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/postgresql/auth/username",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/containerSecurityContext/allowPrivilegeEscalation",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/containerSecurityContext/capabilities/drop/0",
+      "kinds": "/K/K/K/K/I"
+    },
+    {
+      "id": "/provisioning/containerSecurityContext/privileged",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/containerSecurityContext/readOnlyRootFilesystem",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/containerSecurityContext/runAsGroup",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/containerSecurityContext/runAsNonRoot",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/containerSecurityContext/runAsUser",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/containerSecurityContext/seccompProfile/type",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/keycloak/auth/existingSecret/keyMapping/adminPassword",
+      "kinds": "/K/K/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/keycloak/auth/existingSecret/name",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/keycloak/auth/username",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/podSecurityContext/fsGroup",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/podSecurityContext/fsGroupChangePolicy",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/resources/limits/cpu",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/resources/limits/memory",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/resources/requests/cpu",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/resources/requests/memory",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/serviceAccount/name",
+      "kinds": "/K/K"
+    }
+  ],
+  "usedNotDefined": [
+    {
+      "id": "/additionalAnnotations",
+      "kinds": "/K"
+    },
+    {
+      "id": "/additionalLabels",
+      "kinds": "/K"
+    },
+    {
+      "id": "/authorizationApi/affinity",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/authorizationApi/containerSecurityContext",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/authorizationApi/credentialSecretName",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/authorizationApi/extraAnnotations",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/authorizationApi/extraEnvVars",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/authorizationApi/extraVolumeMounts",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/authorizationApi/extraVolumes",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/authorizationApi/nodeSelector",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/authorizationApi/podAnnotations",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/authorizationApi/podSecurityContext",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/authorizationApi/resources",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/authorizationApi/service/ports",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/tolerations",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/authorizationApi/udm/auth/existingSecret",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/extraIngresses",
+      "kinds": "/K"
+    },
+    {
+      "id": "/extraSecrets",
+      "kinds": "/K"
+    },
+    {
+      "id": "/extraSecrets/*/context",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/extraSecrets/*/context/Chart/AppVersion",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/extraSecrets/*/context/Release/Name",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/extraSecrets/*/context/Release/Service",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/extraSecrets/*/customLabels",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/extraSecrets/*/data",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/extraSecrets/*/name",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/extraSecrets/*/stringData",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/extraSecrets/*/values",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/extraVolumes",
+      "kinds": "/K"
+    },
+    {
+      "id": "/fullnameOverride",
+      "kinds": "/K"
+    },
+    {
+      "id": "/global/imagePullSecrets",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/global/keycloak/realm",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/global/nubusDeployment",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/global/restartPolicy",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/imagePullSecrets",
+      "kinds": "/K"
+    },
+    {
+      "id": "/ingress/apiVersion",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ingress/items",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/kubeVersion",
+      "kinds": "/K"
+    },
+    {
+      "id": "/managementApi/affinity",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementApi/containerSecurityContext",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementApi/extraEnvVars",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementApi/extraVolumeMounts",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementApi/extraVolumes",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementApi/nodeSelector",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementApi/oauth/auth/existingSecret",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/podAnnotations",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementApi/podSecurityContext",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementApi/resources",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementApi/service/ports",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementApi/tolerations",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementUi/affinity",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementUi/containerSecurityContext",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementUi/extraEnvVars",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementUi/nodeSelector",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementUi/podAnnotations",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementUi/podSecurityContext",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementUi/resources",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/managementUi/service/ports",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/managementUi/tolerations",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/nameOverride",
+      "kinds": "/K"
+    },
+    {
+      "id": "/openPolicyAgent/affinity",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/containerSecurityContext",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/extraEnvVars",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/nodeSelector",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/podAnnotations",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/podSecurityContext",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/resources",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/service/ports",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/tolerations",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/postgresql/auth/existingSecret",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/affinity",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/args",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/containerSecurityContext",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/extraAnnotations",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/extraEnvVars",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/extraVolumeMounts",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/extraVolumes",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/image/pullPolicy",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/keycloak/auth/existingSecret",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/keycloak/connection/baseUrl",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/keycloak/connection/protocol",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/keycloak/url",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/nodeSelector",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/podSecurityContext",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/provisioningImage/sha256",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/resources",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/tolerations",
+      "kinds": "/K/K"
+    }
+  ]
+}
