@@ -44,66 +44,39 @@ func EqualLoose(a, b *Path) bool {
 	return true
 }
 
-// MergeJoinLoose performs an outer join grouped by tokens and matched loosely by kind.
+// MergeJoinLoose performs an outer join with loose matching by kind.
+// Uses many-to-many matching: one path can match multiple paths (e.g., anyKind matches both indexKind and keyKind).
+// Simple O(n*m) implementation is acceptable for typical helm chart path counts.
 func MergeJoinLoose(a, b Paths) (inter Paths, onlyA Paths, onlyB Paths) {
 	a = SortDedup(a)
 	b = SortDedup(b)
 
-	inter, onlyA, onlyB = make(Paths, 0), make(Paths, 0), make(Paths, 0)
-	i, j := 0, 0
-	for i < len(a) && j < len(b) {
-		switch cmpTok := CompareTokens(a[i], b[j]); {
-		case cmpTok < 0:
-			onlyA = append(onlyA, a[i])
-			i++
-		case cmpTok > 0:
-			onlyB = append(onlyB, b[j])
-			j++
-		default:
-			ia0 := i
-			for i < len(a) && CompareTokens(a[i], a[ia0]) == 0 {
-				i++
-			}
-			jb0 := j
-			for j < len(b) && CompareTokens(b[j], b[jb0]) == 0 {
-				j++
-			}
-			matchedB := make([]bool, j-jb0)
-			for ai := ia0; ai < i; ai++ {
-				matched := false
-				for bj := jb0; bj < j; bj++ {
-					idx := bj - jb0
-					if matchedB[idx] {
-						continue
-					}
-					if EqualLoose(a[ai], b[bj]) {
-						matchedB[idx] = true
-						inter = append(inter, a[ai])
-						matched = true
-						break
-					}
-				}
-				if !matched {
-					onlyA = append(onlyA, a[ai])
-				}
-			}
-			for bj := jb0; bj < j; bj++ {
-				idx := bj - jb0
-				if !matchedB[idx] {
-					onlyB = append(onlyB, b[bj])
-				}
+	matchedB := make([]bool, len(b))
+
+	// For each path in a, check all of b and immediately classify as inter or onlyA
+	for _, pa := range a {
+		matched := false
+		for j, pb := range b {
+			if EqualLoose(pa, pb) {
+				matchedB[j] = true
+				matched = true
 			}
 		}
-	}
-	for ; i < len(a); i++ {
-		onlyA = append(onlyA, a[i])
-	}
-	for ; j < len(b); j++ {
-		onlyB = append(onlyB, b[j])
+		if matched {
+			inter = append(inter, pa)
+		} else {
+			onlyA = append(onlyA, pa)
+		}
 	}
 
-	sort.Sort(inter)
-	sort.Sort(onlyA)
-	sort.Sort(onlyB)
-	return
+	// Collect unmatched paths from b
+	for j, pb := range b {
+		if !matchedB[j] {
+			onlyB = append(onlyB, pb)
+		}
+	}
+
+	// Results are already sorted (inputs were sorted by SortDedup)
+	// but we deduplicate inter/onlyA/onlyB just in case
+	return SortDedup(inter), SortDedup(onlyA), SortDedup(onlyB)
 }
