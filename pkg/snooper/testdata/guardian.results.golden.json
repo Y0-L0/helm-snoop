@@ -301,8 +301,36 @@
       "kinds": "/K"
     },
     {
+      "id": "/ingress/annotations",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ingress/certManager/enabled",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/ingress/certManager/issuerRef/kind",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/ingress/certManager/issuerRef/name",
+      "kinds": "/K/K/K/K"
+    },
+    {
       "id": "/ingress/enabled",
       "kinds": "/K/K"
+    },
+    {
+      "id": "/ingress/host",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ingress/ingressClassName",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/ingress/tls/enabled",
+      "kinds": "/K/K/K"
     },
     {
       "id": "/ingress/tls/secretName",
@@ -1247,30 +1275,6 @@
       "kinds": "/K/K"
     },
     {
-      "id": "/ingress/annotations",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/ingress/certManager/enabled",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/ingress/certManager/issuerRef/kind",
-      "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/ingress/certManager/issuerRef/name",
-      "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/ingress/host",
-      "kinds": "/K/K"
-    },
-    {
-      "id": "/ingress/ingressClassName",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/ingress/items/0/annotations",
       "kinds": "/K/K/I/K"
     },
@@ -1377,10 +1381,6 @@
     {
       "id": "/ingress/items/2/tls/secretName",
       "kinds": "/K/K/I/K/K"
-    },
-    {
-      "id": "/ingress/tls/enabled",
-      "kinds": "/K/K/K"
     },
     {
       "id": "/managementApi/environment",
@@ -1529,10 +1529,6 @@
       "kinds": "/K/W/K/K/K"
     },
     {
-      "id": "/extraSecrets/*/customLabels",
-      "kinds": "/K/W/K"
-    },
-    {
       "id": "/extraSecrets/*/data",
       "kinds": "/K/W/K"
     },
@@ -1551,6 +1547,14 @@
     {
       "id": "/fullnameOverride",
       "kinds": "/K"
+    },
+    {
+      "id": "/global/certManagerIssuer",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/global/ingressClass",
+      "kinds": "/K/K"
     },
     {
       "id": "/global/keycloak/realm",

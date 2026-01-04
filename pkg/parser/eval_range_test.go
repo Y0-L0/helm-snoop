@@ -121,6 +121,13 @@ func (s *Unittest) TestParseFile_RangePrefix() {
 				path.NewPath("emptyMessage"),
 			},
 		},
+		{
+			name:     "range_dollar_accesses_root_context",
+			template: `{{ range .Values.items }}{{ $.Values.config }}{{ end }}`,
+			expected: path.Paths{
+				path.NewPath("config"),
+			},
+		},
 		// TODO: Variable tracking not yet implemented
 		// {
 		// 	name:     "range_with_variable_still_tracks_field_access",

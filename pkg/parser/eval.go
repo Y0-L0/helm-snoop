@@ -154,7 +154,7 @@ func (e *evalCtx) Eval(n parse.Node) evalResult {
 	case *parse.CommentNode:
 		return evalResult{}
 	case *parse.VariableNode:
-		return evalResult{}
+		return e.evalVariableNode(node)
 	case *parse.IdentifierNode:
 		return evalResult{}
 	case *parse.NilNode:
