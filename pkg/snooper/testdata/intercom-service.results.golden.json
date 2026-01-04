@@ -233,6 +233,10 @@
       "kinds": "/K/K/K/K/K"
     },
     {
+      "id": "/ics/redis/ssl/mTLS/existingSecret/name",
+      "kinds": "/K/K/K/K/K/K"
+    },
+    {
       "id": "/ics/redis/ssl/pathCA",
       "kinds": "/K/K/K/K"
     },
@@ -386,6 +390,14 @@
     },
     {
       "id": "/provisioning/config/keycloak/auth/username",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/config/keycloak/connection/host",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/config/keycloak/connection/port",
       "kinds": "/K/K/K/K/K"
     },
     {
@@ -587,10 +599,6 @@
       "kinds": "/K/K/K/K"
     },
     {
-      "id": "/ics/redis/ssl/mTLS/existingSecret/name",
-      "kinds": "/K/K/K/K/K/K"
-    },
-    {
       "id": "/ics/session/existingSecret/keyMapping/secret",
       "kinds": "/K/K/K/K/K"
     },
@@ -613,14 +621,6 @@
     {
       "id": "/provisioning/config/keycloak/auth/existingSecret/name",
       "kinds": "/K/K/K/K/K/K"
-    },
-    {
-      "id": "/provisioning/config/keycloak/connection/host",
-      "kinds": "/K/K/K/K/K"
-    },
-    {
-      "id": "/provisioning/config/keycloak/connection/port",
-      "kinds": "/K/K/K/K/K"
     },
     {
       "id": "/provisioning/config/keycloak/connection/protocol",
