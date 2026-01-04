@@ -1,6 +1,7 @@
 package parser
 
 import (
+	"fmt"
 	"log/slog"
 	"text/template/parse"
 
@@ -22,13 +23,15 @@ type Call struct {
 }
 
 type evalCtx struct {
-	tree     *parse.Tree
-	out      *path.Paths
-	prefix   *path.Path
-	idx      *TemplateIndex
-	inStack  map[string]bool
-	depth    int
-	maxDepth int
+	tree       *parse.Tree
+	out        *path.Paths
+	prefix     *path.Path
+	paramPaths map[string]*path.Path
+	paramLits  map[string]string
+	idx        *TemplateIndex
+	inStack    map[string]bool
+	depth      int
+	maxDepth   int
 }
 
 // newEvalCtx constructs an evaluation context with initialized state.
@@ -82,6 +85,18 @@ func (e *evalCtx) hasPrefix() bool {
 	return e.prefix != nil
 }
 
+// WithDictParams sets dict parameter mappings and returns a cleanup function.
+func (e *evalCtx) WithDictParams(paths map[string]*path.Path, lits map[string]string) func() {
+	oldPaths := e.paramPaths
+	oldLits := e.paramLits
+	e.paramPaths = paths
+	e.paramLits = lits
+	return func() {
+		e.paramPaths = oldPaths
+		e.paramLits = oldLits
+	}
+}
+
 // Eval recursively evaluates a node and returns paths, strings, and structure.
 // This is the primary entry point for functions to analyze their arguments.
 func (e *evalCtx) Eval(n parse.Node) evalResult {
@@ -122,6 +137,8 @@ func (e *evalCtx) Eval(n parse.Node) evalResult {
 			return evalResult{paths: path.Paths{e.addPrefix(&path.Path{})}}
 		}
 		return evalResult{}
+	case *parse.ChainNode:
+		return e.evalChainNode(node)
 
 	// Literal value nodes
 	case *parse.StringNode:
@@ -144,7 +161,7 @@ func (e *evalCtx) Eval(n parse.Node) evalResult {
 		return evalResult{}
 
 	default:
-		slog.Warn("unsupported node type in Eval", "type", node.Type())
+		slog.Warn("unsupported node type in Eval", "type", node.Type(), "nodeString", fmt.Sprintf("%T", n))
 		Must("unsupported node type in Eval")
 		return evalResult{}
 	}

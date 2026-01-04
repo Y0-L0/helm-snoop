@@ -41,6 +41,6 @@ AGENTS.md
 /*.json.old
 /*.tgz
 
-helm-snoop
+/helm-snoop
 testdata/intercom-service/*
 testdata/guardian/*
