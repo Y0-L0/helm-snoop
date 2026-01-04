@@ -381,6 +381,10 @@
       "kinds": "/K/K/K"
     },
     {
+      "id": "/managementApi/config/oauthAdapterWellKnownUrl",
+      "kinds": "/K/K/K"
+    },
+    {
       "id": "/managementApi/config/sqlPersistenceAdapterDialect",
       "kinds": "/K/K/K"
     },
@@ -957,6 +961,10 @@
       "kinds": "/K/K/K"
     },
     {
+      "id": "/postgresql/auth/username",
+      "kinds": "/K/K/K"
+    },
+    {
       "id": "/postgresql/connection/host",
       "kinds": "/K/K/K"
     },
@@ -1042,6 +1050,10 @@
     },
     {
       "id": "/provisioning/keycloak/auth/password",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/keycloak/auth/username",
       "kinds": "/K/K/K/K"
     },
     {
@@ -1347,10 +1359,6 @@
       "kinds": "/K/K/K"
     },
     {
-      "id": "/managementApi/config/oauthAdapterWellKnownUrl",
-      "kinds": "/K/K/K"
-    },
-    {
       "id": "/managementApi/environment",
       "kinds": "/K/K"
     },
@@ -1463,20 +1471,12 @@
       "kinds": "/K/K/K"
     },
     {
-      "id": "/postgresql/auth/username",
-      "kinds": "/K/K/K"
-    },
-    {
       "id": "/provisioning/keycloak/auth/existingSecret/keyMapping/adminPassword",
       "kinds": "/K/K/K/K/K/K"
     },
     {
       "id": "/provisioning/keycloak/auth/existingSecret/name",
       "kinds": "/K/K/K/K/K"
-    },
-    {
-      "id": "/provisioning/keycloak/auth/username",
-      "kinds": "/K/K/K/K"
     },
     {
       "id": "/serviceAccount/annotations",
