@@ -685,10 +685,6 @@
       "kinds": "/K/K"
     },
     {
-      "id": "/ics",
-      "kinds": "/K"
-    },
-    {
       "id": "/ics/matrix/auth/existingSecret",
       "kinds": "/K/K/K/K"
     },
@@ -763,10 +759,6 @@
     {
       "id": "/resources",
       "kinds": "/K"
-    },
-    {
-      "id": "/service/ports",
-      "kinds": "/K/K"
     },
     {
       "id": "/updateStrategy",

@@ -50,7 +50,7 @@ func (s *Unittest) TestParseFile_NotImplemented() {
 		want path.Paths
 	}{
 		{name: "with block", tmpl: `{{ with . }}{{ .Values.a.x }}{{ end }}`, want: path.Paths{path.NewPath("a", "x")}},
-		{name: "range block", tmpl: `{{ range .Values.items }}{{ end }}`, want: path.Paths{path.NewPath("items")}},
+		{name: "range block", tmpl: `{{ range .Values.items }}{{ end }}`, want: path.Paths{}},
 		{name: "template action", tmpl: `{{ template "x" . }}`, want: path.Paths{}},
 	}
 	for _, testCase := range cases {
