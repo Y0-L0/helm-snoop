@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "common.names.fullname" . }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ include "common.names.fullname" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "common.names.fullname" . }}
+    spec:
+      containers:
+      - name: app
+        image: "{{ .Values.image.registry }}/{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        env:
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ include "common.secrets.name" (dict "existingSecret" .Values.postgresql.auth.existingSecret "defaultNameSuffix" "postgresql-credentials" "context" .) }}
+              key: {{ include "common.secrets.key" (dict "existingSecret" .Values.postgresql.auth.existingSecret "key" "password" "context" .) }}
