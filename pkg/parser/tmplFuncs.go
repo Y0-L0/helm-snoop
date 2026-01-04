@@ -84,11 +84,11 @@ func includeFn(ctx *evalCtx, call Call) evalResult {
 	// 8. Evaluate template body with context
 	var restore func()
 	if isRootContext {
-		restore = ctx.WithPrefix(nil)
+		restore = ctx.WithPrefixes(nil)
 	} else if dictPaths != nil || dictLits != nil {
 		restore = ctx.WithDictParams(dictPaths, dictLits)
 	} else if templatePrefix != nil {
-		restore = ctx.WithPrefix(templatePrefix)
+		restore = ctx.WithPrefixes(path.Paths{templatePrefix})
 	} else {
 		restore = func() {}
 	}
@@ -249,9 +249,9 @@ func getFn(ctx *evalCtx, call Call) evalResult {
 	return evalResult{paths: modifiedPaths}
 }
 
-// defaultFn unions all argument paths
+// defaultFn unions all argument paths and returns them.
 func defaultFn(ctx *evalCtx, call Call) evalResult {
-	var allPaths []*path.Path
+	var allPaths path.Paths
 	for _, arg := range call.Args {
 		result := ctx.Eval(arg)
 		allPaths = append(allPaths, result.paths...)

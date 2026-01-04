@@ -80,8 +80,8 @@ func (e *evalCtx) evalFieldNode(node *parse.FieldNode) evalResult {
 	}
 
 	p := path.NewPath(node.Ident...)
-	prefixed := e.addPrefix(p)
-	return evalResult{paths: []*path.Path{prefixed}}
+	prefixed := e.addPrefixes(p)
+	return evalResult{paths: prefixed}
 }
 
 // evalChainNode evaluates (.foo).bar.baz
@@ -228,18 +228,20 @@ func (e *evalCtx) evalIfNode(node *parse.IfNode) evalResult {
 // evalRangeNode evaluates a range loop control flow node.
 // The range expression sets the context prefix but is not emitted itself.
 // Paths are only emitted when actually accessed via . inside the body.
+// If the range expression returns multiple paths (e.g., from concat),
+// all paths are set as prefixes and field access generates paths for each.
 func (e *evalCtx) evalRangeNode(node *parse.RangeNode) evalResult {
-	var rangePrefix *path.Path
+	var rangePrefixes path.Paths
 	if node.Pipe != nil {
 		result := e.Eval(node.Pipe)
-		if len(result.paths) > 0 {
-			p := result.paths[0].WithWildcard()
-			rangePrefix = &p
+		for _, p := range result.paths {
+			wildcardPath := p.WithWildcard()
+			rangePrefixes = append(rangePrefixes, &wildcardPath)
 		}
 	}
 
 	if node.List != nil {
-		restore := e.WithPrefix(rangePrefix)
+		restore := e.WithPrefixes(rangePrefixes)
 		e.Eval(node.List)
 		restore()
 	}
@@ -254,17 +256,17 @@ func (e *evalCtx) evalRangeNode(node *parse.RangeNode) evalResult {
 // evalWithNode evaluates a with scoping control flow node.
 // The with expression sets the context prefix but is not emitted itself.
 // Paths are only emitted when actually accessed via . inside the body.
+// If the with expression returns multiple paths (e.g., from concat or default),
+// all paths are set as prefixes and field access generates paths for each.
 func (e *evalCtx) evalWithNode(node *parse.WithNode) evalResult {
-	var withPrefix *path.Path
+	var withPrefixes path.Paths
 	if node.Pipe != nil {
 		result := e.Eval(node.Pipe)
-		if len(result.paths) > 0 {
-			withPrefix = result.paths[0]
-		}
+		withPrefixes = result.paths
 	}
 
 	if node.List != nil {
-		restore := e.WithPrefix(withPrefix)
+		restore := e.WithPrefixes(withPrefixes)
 		e.Eval(node.List)
 		restore()
 	}

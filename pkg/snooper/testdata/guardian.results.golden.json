@@ -329,6 +329,114 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/ingress/items/0/annotations",
+      "kinds": "/K/K/I/K"
+    },
+    {
+      "id": "/ingress/items/0/host",
+      "kinds": "/K/K/I/K"
+    },
+    {
+      "id": "/ingress/items/0/ingressClassName",
+      "kinds": "/K/K/I/K"
+    },
+    {
+      "id": "/ingress/items/0/name",
+      "kinds": "/K/K/I/K"
+    },
+    {
+      "id": "/ingress/items/0/paths/0/backend/service/name",
+      "kinds": "/K/K/I/K/I/K/K/K"
+    },
+    {
+      "id": "/ingress/items/0/paths/0/backend/service/port/number",
+      "kinds": "/K/K/I/K/I/K/K/K/K"
+    },
+    {
+      "id": "/ingress/items/0/paths/0/path",
+      "kinds": "/K/K/I/K/I/K"
+    },
+    {
+      "id": "/ingress/items/0/paths/0/pathType",
+      "kinds": "/K/K/I/K/I/K"
+    },
+    {
+      "id": "/ingress/items/0/tls/secretName",
+      "kinds": "/K/K/I/K/K"
+    },
+    {
+      "id": "/ingress/items/1/annotations",
+      "kinds": "/K/K/I/K"
+    },
+    {
+      "id": "/ingress/items/1/host",
+      "kinds": "/K/K/I/K"
+    },
+    {
+      "id": "/ingress/items/1/ingressClassName",
+      "kinds": "/K/K/I/K"
+    },
+    {
+      "id": "/ingress/items/1/name",
+      "kinds": "/K/K/I/K"
+    },
+    {
+      "id": "/ingress/items/1/paths/0/backend/service/name",
+      "kinds": "/K/K/I/K/I/K/K/K"
+    },
+    {
+      "id": "/ingress/items/1/paths/0/backend/service/port/number",
+      "kinds": "/K/K/I/K/I/K/K/K/K"
+    },
+    {
+      "id": "/ingress/items/1/paths/0/path",
+      "kinds": "/K/K/I/K/I/K"
+    },
+    {
+      "id": "/ingress/items/1/paths/0/pathType",
+      "kinds": "/K/K/I/K/I/K"
+    },
+    {
+      "id": "/ingress/items/1/tls/secretName",
+      "kinds": "/K/K/I/K/K"
+    },
+    {
+      "id": "/ingress/items/2/annotations",
+      "kinds": "/K/K/I/K"
+    },
+    {
+      "id": "/ingress/items/2/host",
+      "kinds": "/K/K/I/K"
+    },
+    {
+      "id": "/ingress/items/2/ingressClassName",
+      "kinds": "/K/K/I/K"
+    },
+    {
+      "id": "/ingress/items/2/name",
+      "kinds": "/K/K/I/K"
+    },
+    {
+      "id": "/ingress/items/2/paths/0/backend/service/name",
+      "kinds": "/K/K/I/K/I/K/K/K"
+    },
+    {
+      "id": "/ingress/items/2/paths/0/backend/service/port/number",
+      "kinds": "/K/K/I/K/I/K/K/K/K"
+    },
+    {
+      "id": "/ingress/items/2/paths/0/path",
+      "kinds": "/K/K/I/K/I/K"
+    },
+    {
+      "id": "/ingress/items/2/paths/0/pathType",
+      "kinds": "/K/K/I/K/I/K"
+    },
+    {
+      "id": "/ingress/items/2/tls/secretName",
+      "kinds": "/K/K/I/K/K"
+    },
+    {
       "id": "/ingress/tls/enabled",
       "kinds": "/K/K/K"
     },
@@ -1275,114 +1383,6 @@
       "kinds": "/K/K"
     },
     {
-      "id": "/ingress/items/0/annotations",
-      "kinds": "/K/K/I/K"
-    },
-    {
-      "id": "/ingress/items/0/host",
-      "kinds": "/K/K/I/K"
-    },
-    {
-      "id": "/ingress/items/0/ingressClassName",
-      "kinds": "/K/K/I/K"
-    },
-    {
-      "id": "/ingress/items/0/name",
-      "kinds": "/K/K/I/K"
-    },
-    {
-      "id": "/ingress/items/0/paths/0/backend/service/name",
-      "kinds": "/K/K/I/K/I/K/K/K"
-    },
-    {
-      "id": "/ingress/items/0/paths/0/backend/service/port/number",
-      "kinds": "/K/K/I/K/I/K/K/K/K"
-    },
-    {
-      "id": "/ingress/items/0/paths/0/path",
-      "kinds": "/K/K/I/K/I/K"
-    },
-    {
-      "id": "/ingress/items/0/paths/0/pathType",
-      "kinds": "/K/K/I/K/I/K"
-    },
-    {
-      "id": "/ingress/items/0/tls/secretName",
-      "kinds": "/K/K/I/K/K"
-    },
-    {
-      "id": "/ingress/items/1/annotations",
-      "kinds": "/K/K/I/K"
-    },
-    {
-      "id": "/ingress/items/1/host",
-      "kinds": "/K/K/I/K"
-    },
-    {
-      "id": "/ingress/items/1/ingressClassName",
-      "kinds": "/K/K/I/K"
-    },
-    {
-      "id": "/ingress/items/1/name",
-      "kinds": "/K/K/I/K"
-    },
-    {
-      "id": "/ingress/items/1/paths/0/backend/service/name",
-      "kinds": "/K/K/I/K/I/K/K/K"
-    },
-    {
-      "id": "/ingress/items/1/paths/0/backend/service/port/number",
-      "kinds": "/K/K/I/K/I/K/K/K/K"
-    },
-    {
-      "id": "/ingress/items/1/paths/0/path",
-      "kinds": "/K/K/I/K/I/K"
-    },
-    {
-      "id": "/ingress/items/1/paths/0/pathType",
-      "kinds": "/K/K/I/K/I/K"
-    },
-    {
-      "id": "/ingress/items/1/tls/secretName",
-      "kinds": "/K/K/I/K/K"
-    },
-    {
-      "id": "/ingress/items/2/annotations",
-      "kinds": "/K/K/I/K"
-    },
-    {
-      "id": "/ingress/items/2/host",
-      "kinds": "/K/K/I/K"
-    },
-    {
-      "id": "/ingress/items/2/ingressClassName",
-      "kinds": "/K/K/I/K"
-    },
-    {
-      "id": "/ingress/items/2/name",
-      "kinds": "/K/K/I/K"
-    },
-    {
-      "id": "/ingress/items/2/paths/0/backend/service/name",
-      "kinds": "/K/K/I/K/I/K/K/K"
-    },
-    {
-      "id": "/ingress/items/2/paths/0/backend/service/port/number",
-      "kinds": "/K/K/I/K/I/K/K/K/K"
-    },
-    {
-      "id": "/ingress/items/2/paths/0/path",
-      "kinds": "/K/K/I/K/I/K"
-    },
-    {
-      "id": "/ingress/items/2/paths/0/pathType",
-      "kinds": "/K/K/I/K/I/K"
-    },
-    {
-      "id": "/ingress/items/2/tls/secretName",
-      "kinds": "/K/K/I/K/K"
-    },
-    {
       "id": "/managementApi/environment",
       "kinds": "/K/K"
     },
@@ -1513,6 +1513,74 @@
       "kinds": "/K/K/K/K"
     },
     {
+      "id": "/extraIngresses/*/annotations",
+      "kinds": "/K/W/K"
+    },
+    {
+      "id": "/extraIngresses/*/context",
+      "kinds": "/K/W/K"
+    },
+    {
+      "id": "/extraIngresses/*/context/Chart/AppVersion",
+      "kinds": "/K/W/K/K/K"
+    },
+    {
+      "id": "/extraIngresses/*/context/Release/Name",
+      "kinds": "/K/W/K/K/K"
+    },
+    {
+      "id": "/extraIngresses/*/context/Release/Service",
+      "kinds": "/K/W/K/K/K"
+    },
+    {
+      "id": "/extraIngresses/*/host",
+      "kinds": "/K/W/K"
+    },
+    {
+      "id": "/extraIngresses/*/name",
+      "kinds": "/K/W/K"
+    },
+    {
+      "id": "/extraIngresses/*/paths",
+      "kinds": "/K/W/K"
+    },
+    {
+      "id": "/extraIngresses/*/paths/*/backend",
+      "kinds": "/K/W/K/W/K"
+    },
+    {
+      "id": "/extraIngresses/*/paths/*/backend/service/name",
+      "kinds": "/K/W/K/W/K/K/K"
+    },
+    {
+      "id": "/extraIngresses/*/paths/*/backend/service/port/*",
+      "kinds": "/K/W/K/W/K/K/K/W"
+    },
+    {
+      "id": "/extraIngresses/*/paths/*/path",
+      "kinds": "/K/W/K/W/K"
+    },
+    {
+      "id": "/extraIngresses/*/paths/*/pathType",
+      "kinds": "/K/W/K/W/K"
+    },
+    {
+      "id": "/extraIngresses/*/scope",
+      "kinds": "/K/W/K"
+    },
+    {
+      "id": "/extraIngresses/*/tls/enabled",
+      "kinds": "/K/W/K/K"
+    },
+    {
+      "id": "/extraIngresses/*/tls/secretName",
+      "kinds": "/K/W/K/K"
+    },
+    {
+      "id": "/extraIngresses/*/value/*",
+      "kinds": "/K/W/K/W"
+    },
+    {
       "id": "/extraSecrets/*/context",
       "kinds": "/K/W/K"
     },
@@ -1581,8 +1649,40 @@
       "kinds": "/K/K"
     },
     {
-      "id": "/ingress/items",
-      "kinds": "/K/K"
+      "id": "/ingress/items/*/context",
+      "kinds": "/K/K/W/K"
+    },
+    {
+      "id": "/ingress/items/*/context/Chart/AppVersion",
+      "kinds": "/K/K/W/K/K/K"
+    },
+    {
+      "id": "/ingress/items/*/context/Release/Name",
+      "kinds": "/K/K/W/K/K/K"
+    },
+    {
+      "id": "/ingress/items/*/context/Release/Service",
+      "kinds": "/K/K/W/K/K/K"
+    },
+    {
+      "id": "/ingress/items/*/paths",
+      "kinds": "/K/K/W/K"
+    },
+    {
+      "id": "/ingress/items/*/paths/*/backend",
+      "kinds": "/K/K/W/K/W/K"
+    },
+    {
+      "id": "/ingress/items/*/scope",
+      "kinds": "/K/K/W/K"
+    },
+    {
+      "id": "/ingress/items/*/tls/enabled",
+      "kinds": "/K/K/W/K/K"
+    },
+    {
+      "id": "/ingress/items/*/value/*",
+      "kinds": "/K/K/W/K/W"
     },
     {
       "id": "/kubeVersion",
