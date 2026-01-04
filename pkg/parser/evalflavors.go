@@ -287,3 +287,13 @@ func (e *evalCtx) evalTemplateNode(node *parse.TemplateNode) evalResult {
 	// That would require template resolution like include
 	return evalResult{}
 }
+
+// evalVariableNode handles $ root context variable.
+func (e *evalCtx) evalVariableNode(node *parse.VariableNode) evalResult {
+	if len(node.Ident) < 3 || node.Ident[0] != "$" || node.Ident[1] != "Values" {
+		return evalResult{}
+	}
+
+	p := path.NewPath(node.Ident[2:]...)
+	return evalResult{paths: path.Paths{p}}
+}
