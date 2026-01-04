@@ -5,7 +5,34 @@ import (
 	"sort"
 )
 
+// subsumes returns true if a subsumes b (i.e., b is redundant if a exists).
+// Specifically: /foo/* subsumes /foo, /foo/bar/* subsumes /foo/bar, etc.
+func subsumes(a, b *Path) bool {
+	aLen := len(a.kinds)
+	bLen := len(b.kinds)
+
+	// Check if a has terminal wildcard
+	if aLen == 0 || a.kinds[aLen-1] != wildcardKind {
+		return false
+	}
+
+	// a is /foo/*, b must be /foo (same prefix, no wildcard)
+	if bLen != aLen-1 {
+		return false
+	}
+
+	// Check all tokens match (excluding wildcard)
+	for i := 0; i < bLen; i++ {
+		if a.tokens[i] != b.tokens[i] || a.kinds[i] != b.kinds[i] {
+			return false
+		}
+	}
+
+	return true
+}
+
 // SortDedup returns a new slice sorted by Path.Compare and deduplicated.
+// Removes exact duplicates and paths subsumed by wildcards (e.g., /foo when /foo/* exists).
 func SortDedup(ps Paths) Paths {
 	if len(ps) == 0 {
 		return nil
@@ -18,7 +45,23 @@ func SortDedup(ps Paths) Paths {
 	}
 	sort.Sort(out)
 	out = slices.CompactFunc(out, func(a, b *Path) bool { return a.Compare(*b) == 0 })
-	return out
+
+	// Remove paths subsumed by wildcards
+	filtered := make(Paths, 0, len(out))
+	for _, p := range out {
+		subsumed := false
+		for _, other := range out {
+			if subsumes(other, p) {
+				subsumed = true
+				break
+			}
+		}
+		if !subsumed {
+			filtered = append(filtered, p)
+		}
+	}
+
+	return filtered
 }
 
 // CompareTokens compares two paths by tokens only, ignoring kinds.

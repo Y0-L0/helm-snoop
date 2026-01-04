@@ -1501,16 +1501,8 @@
       "kinds": "/K/K"
     },
     {
-      "id": "/authorizationApi/extraVolumeMounts",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/authorizationApi/extraVolumeMounts/*",
       "kinds": "/K/K/W"
-    },
-    {
-      "id": "/authorizationApi/extraVolumes",
-      "kinds": "/K/K"
     },
     {
       "id": "/authorizationApi/extraVolumes/*",
@@ -1593,16 +1585,8 @@
       "kinds": "/K"
     },
     {
-      "id": "/managementApi/extraVolumeMounts",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/managementApi/extraVolumeMounts/*",
       "kinds": "/K/K/W"
-    },
-    {
-      "id": "/managementApi/extraVolumes",
-      "kinds": "/K/K"
     },
     {
       "id": "/managementApi/extraVolumes/*",
@@ -1629,24 +1613,12 @@
       "kinds": "/K/K"
     },
     {
-      "id": "/provisioning/extraAnnotations",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/provisioning/extraAnnotations/*",
       "kinds": "/K/K/W"
     },
     {
-      "id": "/provisioning/extraVolumeMounts",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/provisioning/extraVolumeMounts/*",
       "kinds": "/K/K/W"
-    },
-    {
-      "id": "/provisioning/extraVolumes",
-      "kinds": "/K/K"
     },
     {
       "id": "/provisioning/extraVolumes/*",
