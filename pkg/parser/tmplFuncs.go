@@ -250,7 +250,6 @@ func getFn(ctx *evalCtx, call Call) evalResult {
 // defaultFn unions all argument paths
 func defaultFn(ctx *evalCtx, call Call) evalResult {
 	var allPaths []*path.Path
-
 	for _, arg := range call.Args {
 		result := ctx.Eval(arg)
 		allPaths = append(allPaths, result.paths...)

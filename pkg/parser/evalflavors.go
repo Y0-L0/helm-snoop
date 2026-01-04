@@ -13,24 +13,20 @@ func (e *evalCtx) evalFieldNode(node *parse.FieldNode) evalResult {
 		return evalResult{}
 	}
 
-	// Check if it starts with "Values"
 	if node.Ident[0] == "Values" {
 		if len(node.Ident) == 1 {
 			// Just ".Values" with no path
 			return evalResult{}
 		}
-		// Build absolute path from .Values.foo.bar -> ["foo", "bar"]
 		p := path.NewPath(node.Ident[1:]...)
 		return evalResult{paths: []*path.Path{p}}
 	}
 
-	// Built-in Helm objects should never get a prefix
-	// These are global objects, not relative field access
+	// These are built-in Helm objects, not .Values paths
+	// We don't track them as .Values usage
 	if node.Ident[0] == "Release" || node.Ident[0] == "Chart" ||
 		node.Ident[0] == "Files" || node.Ident[0] == "Capabilities" ||
 		node.Ident[0] == "Template" {
-		// These are built-in Helm objects, not .Values paths
-		// We don't track them as .Values usage
 		return evalResult{}
 	}
 
@@ -40,7 +36,6 @@ func (e *evalCtx) evalFieldNode(node *parse.FieldNode) evalResult {
 		return evalResult{}
 	}
 
-	// Build path with prefix
 	p := path.NewPath(node.Ident...)
 	prefixed := e.addPrefix(p)
 	return evalResult{paths: []*path.Path{prefixed}}
@@ -161,29 +156,24 @@ func (e *evalCtx) evalIfNode(node *parse.IfNode) evalResult {
 }
 
 // evalRangeNode evaluates a range loop control flow node.
-// Control flow nodes emit their range expression paths directly (not wrapped in ActionNode).
+// The range expression sets the context prefix but is not emitted itself.
+// Paths are only emitted when actually accessed via . inside the body.
 func (e *evalCtx) evalRangeNode(node *parse.RangeNode) evalResult {
-	// Evaluate range expression and emit paths
 	var rangePrefix *path.Path
 	if node.Pipe != nil {
 		result := e.Eval(node.Pipe)
-		e.Emit(result.paths...)
-		// Set prefix for range body: items -> items/*
-		// The path from Eval() is already prefixed if needed
 		if len(result.paths) > 0 {
 			p := result.paths[0].WithWildcard()
 			rangePrefix = &p
 		}
 	}
 
-	// Evaluate range body with prefix
 	if node.List != nil {
 		restore := e.WithPrefix(rangePrefix)
 		e.Eval(node.List)
-		restore() // Restore original context before else branch
+		restore()
 	}
 
-	// Evaluate else branch if present (no prefix in else)
 	if node.ElseList != nil {
 		e.Eval(node.ElseList)
 	}
@@ -192,28 +182,23 @@ func (e *evalCtx) evalRangeNode(node *parse.RangeNode) evalResult {
 }
 
 // evalWithNode evaluates a with scoping control flow node.
-// Control flow nodes emit their with expression paths directly (not wrapped in ActionNode).
+// The with expression sets the context prefix but is not emitted itself.
+// Paths are only emitted when actually accessed via . inside the body.
 func (e *evalCtx) evalWithNode(node *parse.WithNode) evalResult {
-	// Evaluate with expression and emit paths
 	var withPrefix *path.Path
 	if node.Pipe != nil {
 		result := e.Eval(node.Pipe)
-		e.Emit(result.paths...)
-		// Set prefix for with body
-		// The path from Eval() is already prefixed if needed
 		if len(result.paths) > 0 {
 			withPrefix = result.paths[0]
 		}
 	}
 
-	// Evaluate with body with prefix
 	if node.List != nil {
 		restore := e.WithPrefix(withPrefix)
 		e.Eval(node.List)
-		restore() // Restore original context before else branch
+		restore()
 	}
 
-	// Evaluate else branch if present (no prefix in else)
 	if node.ElseList != nil {
 		e.Eval(node.ElseList)
 	}
@@ -224,10 +209,8 @@ func (e *evalCtx) evalWithNode(node *parse.WithNode) evalResult {
 // evalTemplateNode evaluates a template action node.
 // Template actions like {{ template "name" pipeline }} evaluate the pipeline argument.
 func (e *evalCtx) evalTemplateNode(node *parse.TemplateNode) evalResult {
-	// Evaluate the pipeline argument if present
 	if node.Pipe != nil {
 		result := e.Eval(node.Pipe)
-		// Emit pipeline paths
 		e.Emit(result.paths...)
 	}
 	// Note: We don't evaluate the template body itself here

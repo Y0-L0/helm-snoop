@@ -14,24 +14,23 @@ func (s *Unittest) TestParseFile_With() {
 		{
 			name:     "with_values_path",
 			template: `{{ with .Values.config }}{{ end }}`,
-			expected: path.Paths{path.NewPath("config")},
+			expected: path.Paths{},
 		},
 		{
 			name:     "with_body_accesses_values",
 			template: `{{ with .Values.config }}{{ .Values.name }}{{ end }}`,
-			expected: path.Paths{path.NewPath("config"), path.NewPath("name")},
+			expected: path.Paths{path.NewPath("name")},
 		},
 		{
 			name:     "with_else",
 			template: `{{ with .Values.config }}{{ else }}{{ .Values.defaultConfig }}{{ end }}`,
-			expected: path.Paths{path.NewPath("config"), path.NewPath("defaultConfig")},
+			expected: path.Paths{path.NewPath("defaultConfig")},
 		},
 		{
 			name: "with_body_and_else_both_access_values",
 			template: `{{ with .Values.config }}{{ .Values.enabled }}` +
 				`{{ else }}{{ .Values.disabled }}{{ end }}`,
 			expected: path.Paths{
-				path.NewPath("config"),
 				path.NewPath("enabled"),
 				path.NewPath("disabled"),
 			},
@@ -41,15 +40,13 @@ func (s *Unittest) TestParseFile_With() {
 			template: `{{ with .Values.outer }}{{ with .Values.inner }}` +
 				`{{ .Values.leaf }}{{ end }}{{ end }}`,
 			expected: path.Paths{
-				path.NewPath("outer"),
-				path.NewPath("inner"),
 				path.NewPath("leaf"),
 			},
 		},
 		{
 			name:     "with_variable_assignment",
 			template: `{{ with $cfg := .Values.config }}{{ .Values.name }}{{ end }}`,
-			expected: path.Paths{path.NewPath("config"), path.NewPath("name")},
+			expected: path.Paths{path.NewPath("name")},
 		},
 		{
 			name:     "with_dot_context",
@@ -79,7 +76,6 @@ func (s *Unittest) TestParseFile_WithPrefix() {
 			name:     "with_changes_dot_context",
 			template: `{{ with .Values.config }}{{ .name }}{{ end }}`,
 			expected: path.Paths{
-				path.NewPath("config"),
 				path.NewPath("config", "name"),
 			},
 		},
@@ -87,7 +83,6 @@ func (s *Unittest) TestParseFile_WithPrefix() {
 			name:     "with_nested_field_access",
 			template: `{{ with .Values.database }}{{ .host }}{{ .port }}{{ end }}`,
 			expected: path.Paths{
-				path.NewPath("database"),
 				path.NewPath("database", "host"),
 				path.NewPath("database", "port"),
 			},
@@ -96,7 +91,6 @@ func (s *Unittest) TestParseFile_WithPrefix() {
 			name:     "with_deep_field_access",
 			template: `{{ with .Values.app }}{{ .config.timeout }}{{ end }}`,
 			expected: path.Paths{
-				path.NewPath("app"),
 				path.NewPath("app", "config", "timeout"),
 			},
 		},
@@ -109,9 +103,7 @@ func (s *Unittest) TestParseFile_WithPrefix() {
 				{{ end }}
 			{{ end }}`,
 			expected: path.Paths{
-				path.NewPath("outer"),
 				path.NewPath("outer", "field1"),
-				path.NewPath("outer", "inner"),
 				path.NewPath("outer", "inner", "field2"),
 			},
 		},
@@ -120,7 +112,6 @@ func (s *Unittest) TestParseFile_WithPrefix() {
 			template: `{{ with .Values.config }}{{ .name }}` +
 				`{{ else }}{{ .Values.default }}{{ end }}`,
 			expected: path.Paths{
-				path.NewPath("config"),
 				path.NewPath("config", "name"),
 				path.NewPath("default"),
 			},
@@ -148,32 +139,76 @@ func (s *Unittest) TestParseFile_WithBuiltinObjects() {
 		{
 			name:     "chart_not_tracked_in_with",
 			template: `{{ with .Values.config }}{{ .Chart.AppVersion }}{{ end }}`,
-			expected: path.Paths{path.NewPath("config")},
+			expected: path.Paths{},
 		},
 		{
 			name:     "release_not_tracked_in_with",
 			template: `{{ with .Values.config }}{{ .Release.Name }}{{ end }}`,
-			expected: path.Paths{path.NewPath("config")},
+			expected: path.Paths{},
 		},
 		{
 			name:     "chart_and_release_not_tracked",
 			template: `{{ with .Values.config }}{{ .Chart.AppVersion }}{{ .Release.Name }}{{ .Release.Service }}{{ end }}`,
-			expected: path.Paths{path.NewPath("config")},
+			expected: path.Paths{},
 		},
 		{
 			name:     "files_not_tracked_in_with",
 			template: `{{ with .Values.config }}{{ .Files.Get "foo.txt" }}{{ end }}`,
-			expected: path.Paths{path.NewPath("config")},
+			expected: path.Paths{},
 		},
 		{
 			name:     "capabilities_not_tracked_in_with",
 			template: `{{ with .Values.config }}{{ .Capabilities.APIVersions }}{{ end }}`,
-			expected: path.Paths{path.NewPath("config")},
+			expected: path.Paths{},
 		},
 		{
 			name:     "template_not_tracked_in_with",
 			template: `{{ with .Values.config }}{{ .Template.Name }}{{ end }}`,
-			expected: path.Paths{path.NewPath("config")},
+			expected: path.Paths{},
+		},
+	}
+
+	for _, tc := range cases {
+		s.Run(tc.name, func() {
+			actual, err := parseFile(tc.name+".tmpl", []byte(tc.template), nil)
+			s.Require().NoError(err)
+			path.EqualPaths(s, tc.expected, actual)
+		})
+	}
+}
+
+func (s *Unittest) TestParseFile_WithDotToYaml() {
+	cases := []struct {
+		name     string
+		template string
+		expected path.Paths
+	}{
+		{
+			name: "with_dot_toYaml",
+			template: `{{ with .Values.authorizationApi.podAnnotations }}
+{{ toYaml . }}
+{{ end }}`,
+			expected: path.Paths{
+				np().Key("authorizationApi").Key("podAnnotations").Wildcard(),
+			},
+		},
+		{
+			name: "with_dot_toYaml_piped",
+			template: `{{ with .Values.config }}
+{{ . | toYaml }}
+{{ end }}`,
+			expected: path.Paths{
+				np().Key("config").Wildcard(),
+			},
+		},
+		{
+			name: "with_resources_toYaml",
+			template: `{{ with .Values.provisioning.resources }}
+  {{- toYaml . | nindent 10 }}
+{{ end }}`,
+			expected: path.Paths{
+				np().Key("provisioning").Key("resources").Wildcard(),
+			},
 		},
 	}
 

@@ -1085,6 +1085,22 @@
       "kinds": "/K/K/K"
     },
     {
+      "id": "/provisioning/resources/limits/cpu",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/resources/limits/memory",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/resources/requests/cpu",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/resources/requests/memory",
+      "kinds": "/K/K/K/K"
+    },
+    {
       "id": "/provisioning/restartPolicy",
       "kinds": "/K/K"
     },
@@ -1463,22 +1479,6 @@
       "kinds": "/K/K/K/K"
     },
     {
-      "id": "/provisioning/resources/limits/cpu",
-      "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/provisioning/resources/limits/memory",
-      "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/provisioning/resources/requests/cpu",
-      "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/provisioning/resources/requests/memory",
-      "kinds": "/K/K/K/K"
-    },
-    {
       "id": "/serviceAccount/annotations",
       "kinds": "/K/K"
     },
@@ -1507,10 +1507,6 @@
     {
       "id": "/authorizationApi/extraVolumes",
       "kinds": "/K/K"
-    },
-    {
-      "id": "/authorizationApi/service/ports",
-      "kinds": "/K/K/K"
     },
     {
       "id": "/authorizationApi/udm/auth/existingSecret",
@@ -1593,28 +1589,16 @@
       "kinds": "/K/K/K/K"
     },
     {
-      "id": "/managementApi/service/ports",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/managementUi/service/ports",
-      "kinds": "/K/K/K"
-    },
-    {
       "id": "/nameOverride",
       "kinds": "/K"
-    },
-    {
-      "id": "/openPolicyAgent/service/ports",
-      "kinds": "/K/K/K"
     },
     {
       "id": "/postgresql/auth/existingSecret",
       "kinds": "/K/K/K"
     },
     {
-      "id": "/provisioning/affinity",
-      "kinds": "/K/K"
+      "id": "/provisioning/affinity/*",
+      "kinds": "/K/K/W"
     },
     {
       "id": "/provisioning/args",
@@ -1657,16 +1641,12 @@
       "kinds": "/K/K/K"
     },
     {
-      "id": "/provisioning/nodeSelector",
-      "kinds": "/K/K"
+      "id": "/provisioning/nodeSelector/*",
+      "kinds": "/K/K/W"
     },
     {
       "id": "/provisioning/provisioningImage/sha256",
       "kinds": "/K/K/K"
-    },
-    {
-      "id": "/provisioning/resources",
-      "kinds": "/K/K"
     }
   ]
 }
