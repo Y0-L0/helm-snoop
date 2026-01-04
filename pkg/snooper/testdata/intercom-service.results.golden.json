@@ -577,6 +577,14 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/service/ports/http/containerPort",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/service/ports/http/port",
+      "kinds": "/K/K/K/K"
+    },
+    {
       "id": "/service/sessionAffinity/enabled",
       "kinds": "/K/K/K"
     },
@@ -661,14 +669,6 @@
     {
       "id": "/readinessProbe/periodSeconds",
       "kinds": "/K/K"
-    },
-    {
-      "id": "/service/ports/http/containerPort",
-      "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/service/ports/http/port",
-      "kinds": "/K/K/K/K"
     },
     {
       "id": "/service/ports/http/protocol",

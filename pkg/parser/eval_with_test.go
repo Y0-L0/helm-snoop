@@ -116,6 +116,13 @@ func (s *Unittest) TestParseFile_WithPrefix() {
 				path.NewPath("default"),
 			},
 		},
+		{
+			name:     "with_dollar_accesses_root_context",
+			template: `{{ with .Values.config }}{{ $.Values.fallback }}{{ end }}`,
+			expected: path.Paths{
+				path.NewPath("fallback"),
+			},
+		},
 	}
 
 	for _, tc := range cases {
