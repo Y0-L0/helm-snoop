@@ -113,10 +113,17 @@ func includeFn(ctx *evalCtx, call Call) evalResult {
 // NOT IMPLEMENTED / PLACEHOLDERS
 // ==============================================================================
 
-func tplFn(_ *evalCtx, _ Call) evalResult {
-	slog.Warn("tpl not implemented")
-	Must("tpl not implemented")
-	return evalResult{}
+func tplFn(ctx *evalCtx, call Call) evalResult {
+	slog.Warn("tpl partially implemented (ignoring context argument)")
+	Must("tpl partially implemented (ignoring context argument)")
+
+	if len(call.Args) < 1 {
+		return evalResult{}
+	}
+
+	result := ctx.Eval(call.Args[0])
+
+	return result
 }
 
 // makeNotImplementedFn logs and fails in strict mode.
