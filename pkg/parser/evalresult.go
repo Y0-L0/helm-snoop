@@ -17,4 +17,7 @@ type evalResult struct {
 	// Only populated by the dict function; nil otherwise.
 	// Functions like index, get, and include can use this for precise resolution.
 	dict map[string]*path.Path
+
+	// dictLits tracks literal values in dict (not paths).
+	dictLits map[string]string
 }

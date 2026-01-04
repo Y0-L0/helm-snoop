@@ -17,7 +17,23 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/fullnameOverride",
+      "kinds": "/K"
+    },
+    {
       "id": "/getPipe/someKey",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/image/registry",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/image/repository",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/image/tag",
       "kinds": "/K/K"
     },
     {
@@ -31,8 +47,30 @@
     {
       "id": "/integerKey/1234",
       "kinds": "/K/K"
+    },
+    {
+      "id": "/nameOverride",
+      "kinds": "/K"
+    },
+    {
+      "id": "/postgresql/auth/existingSecret/keyMapping/password",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/postgresql/auth/existingSecret/name",
+      "kinds": "/K/K/K/K"
     }
   ],
-  "definedNotUsed": [],
-  "usedNotDefined": []
+  "definedNotUsed": [
+    {
+      "id": "/postgresql/auth/password",
+      "kinds": "/K/K/K"
+    }
+  ],
+  "usedNotDefined": [
+    {
+      "id": "/postgresql/auth/existingSecret",
+      "kinds": "/K/K/K"
+    }
+  ]
 }

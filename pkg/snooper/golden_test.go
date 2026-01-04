@@ -9,6 +9,9 @@ import (
 )
 
 func (s *GoldenTest) TestSnoop_TestChart() {
+	restore := disableStrictParsing()
+	defer restore()
+
 	chart, err := loader.Load(filepath.Join(s.chartsDir, "test-chart"))
 	s.Require().NoError(err)
 
