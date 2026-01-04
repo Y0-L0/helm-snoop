@@ -26,7 +26,7 @@ Functions receive unevaluated arguments and call `ctx.Eval()` recursively. Behav
 ### Flavor 1: Complex Value Producers (dict/map/list)
 Return paths for composition; **do NOT emit**. Allows further composition like `index (default .Values.a .Values.b) "key"`.
 
-Examples: `index`, `get`, `default`, `ternary`, `coalesce`, `dict`, `merge`, `list`, `pick`, `omit`
+Examples: `index`, `get`, `default`, `ternary`, `coalesce`, `dict`, `merge`, `list`, `pick`, `omit`, `concat`
 
 ```go
 func indexFn(ctx *evalCtx, call Call) evalResult {
@@ -48,6 +48,48 @@ func quoteFn(ctx *evalCtx, call Call) evalResult {
     return evalResult{args: result.args}
 }
 ```
+
+### Flavor 3: Control Flow (with/range)
+Set paths as context prefixes; **do NOT emit**. Paths are only tracked when accessed via relative fields (`.field`) in the body.
+
+Examples: `with`, `range`
+
+```go
+func evalWithNode(node *parse.WithNode) evalResult {
+    result := e.Eval(node.Pipe)
+    // Use paths as prefixes, don't emit
+    restore := e.WithPrefixes(result.paths)
+    e.Eval(node.List)
+    restore()
+    return evalResult{}
+}
+```
+
+When functions like `concat` or `default` are used with control flow, they return multiple paths that all become prefixes:
+```yaml
+{{ range concat .Values.a .Values.b }}{{ .field }}{{ end }}
+# Tracks: .Values.a.*.field and .Values.b.*.field
+```
+
+### Critical Rule: Never Combine Patterns
+
+**Never** both emit and return paths in the same function. This would cause:
+- Duplicate path tracking
+- False positives in "Defined-not-used" detection
+- Incorrect analysis results
+
+**Bad Example:**
+```go
+func badFn(ctx *evalCtx, call Call) evalResult {
+    result := ctx.Eval(call.Args[0])
+    ctx.Emit(result.paths...)              // ❌ Emits
+    return evalResult{paths: result.paths} // ❌ Also returns - DUPLICATE!
+}
+```
+
+The correct approach: choose ONE pattern based on how the function is used:
+- If used standalone (e.g., `{{ default .Values.a .Values.b }}`), ActionNode emits the returned paths
+- If used with control flow (e.g., `{{ with default ... }}`), control flow uses returned paths as prefixes
 
 ## Structure Tracking
 
