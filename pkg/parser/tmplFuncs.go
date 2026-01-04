@@ -20,28 +20,25 @@ func includeFn(ctx *evalCtx, call Call) evalResult {
 	nameResult := ctx.Eval(call.Args[0])
 	ctx.Emit(nameResult.paths...)
 
-	// 3. Determine prefix for template body based on context argument
-	// The context argument (if present) becomes "." inside the template
+	// 3. Determine context for template body
 	var templatePrefix *path.Path
+	var dictPaths map[string]*path.Path
+	var dictLits map[string]string
 	isRootContext := false
 
 	if len(call.Args) >= 2 {
 		ctxArg := call.Args[1]
 
-		// Check if context argument is $ (root variable)
 		if varNode, ok := ctxArg.(*parse.VariableNode); ok && len(varNode.Ident) > 0 && varNode.Ident[0] == "$" {
-			// $ refers to root context -> no prefix for template body
 			isRootContext = true
 		} else {
-			// Evaluate the context argument to determine prefix
 			ctxResult := ctx.Eval(ctxArg)
 			ctx.Emit(ctxResult.paths...)
 
-			// Only set prefix for simple contexts, not dicts
-			// dict != nil indicates the context is a dict structure (from dictFn)
-			// Dict context handling is not yet supported - would need to map dict keys to paths
-			// For now, we skip prefix setting to avoid false positives like /foo/value, /foo/scope
-			if ctxResult.dict == nil && len(ctxResult.paths) > 0 {
+			if ctxResult.dict != nil || ctxResult.dictLits != nil {
+				dictPaths = ctxResult.dict
+				dictLits = ctxResult.dictLits
+			} else if len(ctxResult.paths) > 0 {
 				templatePrefix = ctxResult.paths[0]
 			}
 		}
@@ -84,20 +81,15 @@ func includeFn(ctx *evalCtx, call Call) evalResult {
 
 	slog.Debug("include: evaluating template body", "name", templateName, "file", tmplDef.file)
 
-	// 8. Evaluate the template body with the appropriate prefix
-	// The context argument to include becomes "." inside the template
-	// - If arg is $: no prefix (root context)
-	// - If arg is .: current prefix
-	// - If arg is .Values.foo: prefix = foo
+	// 8. Evaluate template body with context
 	var restore func()
 	if isRootContext {
-		// $ argument -> clear prefix for template body
 		restore = ctx.WithPrefix(nil)
+	} else if dictPaths != nil || dictLits != nil {
+		restore = ctx.WithDictParams(dictPaths, dictLits)
 	} else if templatePrefix != nil {
-		// Explicit context -> use it as prefix
 		restore = ctx.WithPrefix(templatePrefix)
 	} else {
-		// No context arg or DotNode -> keep current prefix
 		restore = func() {}
 	}
 
@@ -145,29 +137,34 @@ func noopStrings(_ *evalCtx, _ Call) evalResult {
 
 // dictFn builds both conservative union AND structure tracking
 func dictFn(ctx *evalCtx, call Call) evalResult {
-	// Always create a non-nil map, even if empty
-	// This serves as a marker that the result came from a dict call
-	// (nil dict = not from dict, non-nil dict = from dict)
 	dict := make(map[string]*path.Path)
+	dictLits := make(map[string]string)
 	var allPaths []*path.Path
 
-	// Parse key1, val1, key2, val2, ...
 	for i := 0; i+1 < len(call.Args); i += 2 {
 		keyResult := ctx.Eval(call.Args[i])
 		valResult := ctx.Eval(call.Args[i+1])
 
-		// Conservative union
 		allPaths = append(allPaths, valResult.paths...)
 
-		// Structure tracking - populate map when we can resolve keys
-		if len(keyResult.args) == 1 && len(valResult.paths) > 0 {
-			dict[keyResult.args[0]] = valResult.paths[0]
+		if len(keyResult.args) != 1 {
+			continue
+		}
+		key := keyResult.args[0]
+
+		if len(valResult.paths) > 0 {
+			dict[key] = valResult.paths[0]
+		}
+
+		if len(valResult.args) > 0 {
+			dictLits[key] = valResult.args[0]
 		}
 	}
 
 	return evalResult{
-		paths: allPaths,
-		dict:  dict, // Non-nil map (possibly empty) marks this as dict result
+		paths:    allPaths,
+		dict:     dict,
+		dictLits: dictLits,
 	}
 }
 
@@ -179,14 +176,12 @@ func indexFn(ctx *evalCtx, call Call) evalResult {
 		return evalResult{}
 	}
 
-	// Eval base arg
 	baseResult := ctx.Eval(call.Args[0])
 
 	// Check for dict structure
 	if baseResult.dict != nil {
 		var resolvedPaths []*path.Path
 
-		// Extract keys from remaining args
 		for _, arg := range call.Args[1:] {
 			keyResult := ctx.Eval(arg)
 			for _, key := range keyResult.args {

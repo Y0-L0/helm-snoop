@@ -117,6 +117,14 @@
       "kinds": "/K/K/K/K"
     },
     {
+      "id": "/ics/matrix/auth/existingSecret/keyMapping/password",
+      "kinds": "/K/K/K/K/K/K"
+    },
+    {
+      "id": "/ics/matrix/auth/existingSecret/name",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
       "id": "/ics/matrix/enabled",
       "kinds": "/K/K/K"
     },
@@ -173,12 +181,28 @@
       "kinds": "/K/K/K"
     },
     {
+      "id": "/ics/oidc/existingSecret/keyMapping/clientSecret",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/ics/oidc/existingSecret/name",
+      "kinds": "/K/K/K/K"
+    },
+    {
       "id": "/ics/oidc/id",
       "kinds": "/K/K/K"
     },
     {
       "id": "/ics/originRegex",
       "kinds": "/K/K"
+    },
+    {
+      "id": "/ics/portal/auth/existingSecret/keyMapping/sharedSecret",
+      "kinds": "/K/K/K/K/K/K"
+    },
+    {
+      "id": "/ics/portal/auth/existingSecret/name",
+      "kinds": "/K/K/K/K/K"
     },
     {
       "id": "/ics/portal/auth/sharedSecret",
@@ -199,6 +223,14 @@
     {
       "id": "/ics/proxy",
       "kinds": "/K/K"
+    },
+    {
+      "id": "/ics/redis/auth/existingSecret/keyMapping/password",
+      "kinds": "/K/K/K/K/K/K"
+    },
+    {
+      "id": "/ics/redis/auth/existingSecret/name",
+      "kinds": "/K/K/K/K/K"
     },
     {
       "id": "/ics/redis/auth/password",
@@ -238,6 +270,14 @@
     },
     {
       "id": "/ics/redis/ssl/pathCA",
+      "kinds": "/K/K/K/K"
+    },
+    {
+      "id": "/ics/session/existingSecret/keyMapping/secret",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/ics/session/existingSecret/name",
       "kinds": "/K/K/K/K"
     },
     {
@@ -385,6 +425,14 @@
       "kinds": "/K/K/K/K"
     },
     {
+      "id": "/provisioning/config/keycloak/auth/existingSecret/keyMapping/password",
+      "kinds": "/K/K/K/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/config/keycloak/auth/existingSecret/name",
+      "kinds": "/K/K/K/K/K/K"
+    },
+    {
       "id": "/provisioning/config/keycloak/auth/password",
       "kinds": "/K/K/K/K/K"
     },
@@ -505,6 +553,22 @@
       "kinds": "/K"
     },
     {
+      "id": "/resources/limits/cpu",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/resources/limits/memory",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/resources/requests/cpu",
+      "kinds": "/K/K/K"
+    },
+    {
+      "id": "/resources/requests/memory",
+      "kinds": "/K/K/K"
+    },
+    {
       "id": "/service/annotations",
       "kinds": "/K/K"
     },
@@ -547,6 +611,10 @@
     {
       "id": "/topologySpreadConstraints",
       "kinds": "/K"
+    },
+    {
+      "id": "/updateStrategy/type",
+      "kinds": "/K/K"
     }
   ],
   "definedNotUsed": [
@@ -559,51 +627,11 @@
       "kinds": "/K/K/K"
     },
     {
-      "id": "/ics/matrix/auth/existingSecret/keyMapping/password",
-      "kinds": "/K/K/K/K/K/K"
-    },
-    {
-      "id": "/ics/matrix/auth/existingSecret/name",
-      "kinds": "/K/K/K/K/K"
-    },
-    {
       "id": "/ics/nordeck/enabled",
       "kinds": "/K/K/K"
     },
     {
-      "id": "/ics/oidc/existingSecret/keyMapping/clientSecret",
-      "kinds": "/K/K/K/K/K"
-    },
-    {
-      "id": "/ics/oidc/existingSecret/name",
-      "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/ics/portal/auth/existingSecret/keyMapping/sharedSecret",
-      "kinds": "/K/K/K/K/K/K"
-    },
-    {
-      "id": "/ics/portal/auth/existingSecret/name",
-      "kinds": "/K/K/K/K/K"
-    },
-    {
-      "id": "/ics/redis/auth/existingSecret/keyMapping/password",
-      "kinds": "/K/K/K/K/K/K"
-    },
-    {
-      "id": "/ics/redis/auth/existingSecret/name",
-      "kinds": "/K/K/K/K/K"
-    },
-    {
       "id": "/ics/redis/auth/username",
-      "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/ics/session/existingSecret/keyMapping/secret",
-      "kinds": "/K/K/K/K/K"
-    },
-    {
-      "id": "/ics/session/existingSecret/name",
       "kinds": "/K/K/K/K"
     },
     {
@@ -613,14 +641,6 @@
     {
       "id": "/podLabels",
       "kinds": "/K"
-    },
-    {
-      "id": "/provisioning/config/keycloak/auth/existingSecret/keyMapping/password",
-      "kinds": "/K/K/K/K/K/K/K"
-    },
-    {
-      "id": "/provisioning/config/keycloak/auth/existingSecret/name",
-      "kinds": "/K/K/K/K/K/K"
     },
     {
       "id": "/provisioning/config/keycloak/connection/protocol",
@@ -643,22 +663,6 @@
       "kinds": "/K/K"
     },
     {
-      "id": "/resources/limits/cpu",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/resources/limits/memory",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/resources/requests/cpu",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/resources/requests/memory",
-      "kinds": "/K/K/K"
-    },
-    {
       "id": "/service/ports/http/containerPort",
       "kinds": "/K/K/K/K"
     },
@@ -673,15 +677,15 @@
     {
       "id": "/serviceAccount/labels",
       "kinds": "/K/K"
-    },
-    {
-      "id": "/updateStrategy/type",
-      "kinds": "/K/K"
     }
   ],
   "usedNotDefined": [
     {
       "id": "/global/ingressClass",
+      "kinds": "/K/K"
+    },
+    {
+      "id": "/global/kubeVersion",
       "kinds": "/K/K"
     },
     {
@@ -725,6 +729,10 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/provisioning/additionalAnnotations/*",
+      "kinds": "/K/K/W"
+    },
+    {
       "id": "/provisioning/args",
       "kinds": "/K/K"
     },
@@ -745,8 +753,16 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/provisioning/extraAnnotations/*",
+      "kinds": "/K/K/W"
+    },
+    {
       "id": "/provisioning/extraLabels",
       "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/extraLabels/*",
+      "kinds": "/K/K/W"
     },
     {
       "id": "/provisioning/image/sha256",

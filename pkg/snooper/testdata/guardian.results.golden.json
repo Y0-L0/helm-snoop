@@ -241,6 +241,14 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/authorizationApi/udm/auth/existingSecret/keyMapping/password",
+      "kinds": "/K/K/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/udm/auth/existingSecret/name",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
       "id": "/authorizationApi/udm/auth/username",
       "kinds": "/K/K/K/K"
     },
@@ -451,6 +459,14 @@
     {
       "id": "/managementApi/nodeSelector",
       "kinds": "/K/K"
+    },
+    {
+      "id": "/managementApi/oauth/auth/existingSecret/keyMapping/clientSecret",
+      "kinds": "/K/K/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/oauth/auth/existingSecret/name",
+      "kinds": "/K/K/K/K/K"
     },
     {
       "id": "/managementApi/podAnnotations",
@@ -961,6 +977,14 @@
       "kinds": "/K/K/K"
     },
     {
+      "id": "/postgresql/auth/existingSecret/keyMapping/password",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/postgresql/auth/existingSecret/name",
+      "kinds": "/K/K/K/K"
+    },
+    {
       "id": "/postgresql/auth/username",
       "kinds": "/K/K/K"
     },
@@ -1047,6 +1071,14 @@
     {
       "id": "/provisioning/image/tag",
       "kinds": "/K/K/K"
+    },
+    {
+      "id": "/provisioning/keycloak/auth/existingSecret/keyMapping/adminPassword",
+      "kinds": "/K/K/K/K/K/K"
+    },
+    {
+      "id": "/provisioning/keycloak/auth/existingSecret/name",
+      "kinds": "/K/K/K/K/K"
     },
     {
       "id": "/provisioning/keycloak/auth/password",
@@ -1164,14 +1196,6 @@
     },
     {
       "id": "/authorizationApi/service/ports/http/protocol",
-      "kinds": "/K/K/K/K/K"
-    },
-    {
-      "id": "/authorizationApi/udm/auth/existingSecret/keyMapping/password",
-      "kinds": "/K/K/K/K/K/K"
-    },
-    {
-      "id": "/authorizationApi/udm/auth/existingSecret/name",
       "kinds": "/K/K/K/K/K"
     },
     {
@@ -1375,14 +1399,6 @@
       "kinds": "/K/K/K/K"
     },
     {
-      "id": "/managementApi/oauth/auth/existingSecret/keyMapping/clientSecret",
-      "kinds": "/K/K/K/K/K/K"
-    },
-    {
-      "id": "/managementApi/oauth/auth/existingSecret/name",
-      "kinds": "/K/K/K/K/K"
-    },
-    {
       "id": "/managementApi/persistence/data/size",
       "kinds": "/K/K/K/K"
     },
@@ -1459,24 +1475,8 @@
       "kinds": "/K/K/K/K/K"
     },
     {
-      "id": "/postgresql/auth/existingSecret/keyMapping/password",
-      "kinds": "/K/K/K/K/K"
-    },
-    {
-      "id": "/postgresql/auth/existingSecret/name",
-      "kinds": "/K/K/K/K"
-    },
-    {
       "id": "/postgresql/auth/password",
       "kinds": "/K/K/K"
-    },
-    {
-      "id": "/provisioning/keycloak/auth/existingSecret/keyMapping/adminPassword",
-      "kinds": "/K/K/K/K/K/K"
-    },
-    {
-      "id": "/provisioning/keycloak/auth/existingSecret/name",
-      "kinds": "/K/K/K/K/K"
     },
     {
       "id": "/serviceAccount/annotations",
@@ -1505,8 +1505,16 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/authorizationApi/extraVolumeMounts/*",
+      "kinds": "/K/K/W"
+    },
+    {
       "id": "/authorizationApi/extraVolumes",
       "kinds": "/K/K"
+    },
+    {
+      "id": "/authorizationApi/extraVolumes/*",
+      "kinds": "/K/K/W"
     },
     {
       "id": "/authorizationApi/udm/auth/existingSecret",
@@ -1557,12 +1565,20 @@
       "kinds": "/K/K/K"
     },
     {
+      "id": "/global/kubeVersion",
+      "kinds": "/K/K"
+    },
+    {
       "id": "/global/nubusDeployment",
       "kinds": "/K/K"
     },
     {
       "id": "/global/restartPolicy",
       "kinds": "/K/K"
+    },
+    {
+      "id": "/global/secrets/keep",
+      "kinds": "/K/K/K"
     },
     {
       "id": "/ingress/apiVersion",
@@ -1581,8 +1597,16 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/managementApi/extraVolumeMounts/*",
+      "kinds": "/K/K/W"
+    },
+    {
       "id": "/managementApi/extraVolumes",
       "kinds": "/K/K"
+    },
+    {
+      "id": "/managementApi/extraVolumes/*",
+      "kinds": "/K/K/W"
     },
     {
       "id": "/managementApi/oauth/auth/existingSecret",
@@ -1617,8 +1641,16 @@
       "kinds": "/K/K"
     },
     {
+      "id": "/provisioning/extraVolumeMounts/*",
+      "kinds": "/K/K/W"
+    },
+    {
       "id": "/provisioning/extraVolumes",
       "kinds": "/K/K"
+    },
+    {
+      "id": "/provisioning/extraVolumes/*",
+      "kinds": "/K/K/W"
     },
     {
       "id": "/provisioning/image/pullPolicy",

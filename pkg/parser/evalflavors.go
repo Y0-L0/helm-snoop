@@ -7,26 +7,69 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
+func (e *evalCtx) evalParamPaths(firstField string, restFields []string) (evalResult, bool) {
+	if e.paramPaths == nil {
+		return evalResult{}, false
+	}
+	basePath, ok := e.paramPaths[firstField]
+	if !ok {
+		return evalResult{}, false
+	}
+	p := *basePath
+	for _, field := range restFields {
+		p = p.WithKey(field)
+	}
+	return evalResult{paths: []*path.Path{&p}}, true
+}
+
+func (e *evalCtx) evalParamLits(firstField string, restFields []string) (evalResult, bool) {
+	if e.paramLits == nil {
+		return evalResult{}, false
+	}
+	litVal, ok := e.paramLits[firstField]
+	if !ok {
+		return evalResult{}, false
+	}
+	if len(restFields) > 0 {
+		slog.Warn("field access on literal parameter", "param", firstField, "literal", litVal)
+		return evalResult{}, true
+	}
+	slog.Debug("resolved literal parameter", "param", firstField, "value", litVal)
+
+	return evalResult{args: []string{litVal}}, true
+}
+
 // evalFieldNode evaluates field access like .Values.foo.bar
 func (e *evalCtx) evalFieldNode(node *parse.FieldNode) evalResult {
 	if len(node.Ident) == 0 {
 		return evalResult{}
 	}
 
-	if node.Ident[0] == "Values" {
+	firstField := node.Ident[0]
+	restFields := node.Ident[1:]
+
+	if result, ok := e.evalParamPaths(firstField, restFields); ok {
+		return result
+	}
+
+	if result, ok := e.evalParamLits(firstField, restFields); ok {
+		return result
+	}
+
+	if firstField == "Values" {
 		if len(node.Ident) == 1 {
 			// Just ".Values" with no path
 			return evalResult{}
 		}
-		p := path.NewPath(node.Ident[1:]...)
+		p := path.NewPath(restFields...)
 		return evalResult{paths: []*path.Path{p}}
 	}
 
 	// These are built-in Helm objects, not .Values paths
 	// We don't track them as .Values usage
-	if node.Ident[0] == "Release" || node.Ident[0] == "Chart" ||
-		node.Ident[0] == "Files" || node.Ident[0] == "Capabilities" ||
-		node.Ident[0] == "Template" {
+	if firstField == "Release" || firstField == "Chart" ||
+		firstField == "Files" || firstField == "Capabilities" ||
+		firstField == "Template" {
 		return evalResult{}
 	}
 
@@ -39,6 +82,33 @@ func (e *evalCtx) evalFieldNode(node *parse.FieldNode) evalResult {
 	p := path.NewPath(node.Ident...)
 	prefixed := e.addPrefix(p)
 	return evalResult{paths: []*path.Path{prefixed}}
+}
+
+// evalChainNode evaluates (.foo).bar.baz
+func (e *evalCtx) evalChainNode(node *parse.ChainNode) evalResult {
+	if node.Node == nil {
+		return evalResult{}
+	}
+
+	baseResult := e.Eval(node.Node)
+
+	if len(node.Field) == 0 {
+		return baseResult
+	}
+
+	var modifiedPaths []*path.Path
+	for _, basePath := range baseResult.paths {
+		p := *basePath
+		for _, field := range node.Field {
+			p = p.WithKey(field)
+		}
+		modifiedPaths = append(modifiedPaths, &p)
+	}
+
+	return evalResult{
+		paths: modifiedPaths,
+		args:  baseResult.args,
+	}
 }
 
 // evalCommandNode evaluates a command (either a function call or single field/literal)
