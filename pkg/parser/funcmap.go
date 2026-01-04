@@ -182,7 +182,7 @@ func init() {
 		// =================================================================
 		// SPRIG: DEFAULTS AND CONDITIONALS
 		// =================================================================
-		"coalesce": emitArgsNoResultFn,
+		"coalesce": defaultFn, // Same behavior as default for analysis
 		"empty":    emitArgsNoResultFn,
 		"required": emitArgsNoResultFn,
 		"ternary":  emitArgsNoResultFn,
@@ -193,7 +193,7 @@ func init() {
 		"append":      emitArgsNoResultFn,
 		"chunk":       unaryPassThroughFn,
 		"compact":     unaryPassThroughFn,
-		"concat":      emitArgsNoResultFn,
+		"concat":      concatFn,
 		"first":       unaryPassThroughFn,
 		"initial":     unaryPassThroughFn,
 		"last":        unaryPassThroughFn,

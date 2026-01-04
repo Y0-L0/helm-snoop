@@ -123,6 +123,14 @@ func (s *Unittest) TestParseFile_WithPrefix() {
 				path.NewPath("fallback"),
 			},
 		},
+		{
+			name:     "with_concat",
+			template: `{{ with concat .Values.config .Values.fallback }}{{ .timeout }}{{ end }}`,
+			expected: path.Paths{
+				np().Key("config").Key("timeout"),
+				np().Key("fallback").Key("timeout"),
+			},
+		},
 	}
 
 	for _, tc := range cases {
