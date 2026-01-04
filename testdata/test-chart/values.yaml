@@ -1,3 +1,6 @@
+fullnameOverride: nil
+nameOverride: nil
+
 config:
   message: "hello"
   enabled: true
@@ -16,3 +19,17 @@ indexPipe:
 
 extra:
   fromDefine: fromValues
+
+image:
+  registry: docker.io
+  repository: myapp
+  tag: latest
+
+# PostgreSQL configuration with existingSecret pattern
+postgresql:
+  auth:
+    password: mypassword
+    existingSecret:
+      name: my-custom-postgres-secret
+      keyMapping:
+        password: pg_password
