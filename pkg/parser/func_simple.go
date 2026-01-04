@@ -1,6 +1,10 @@
 package parser
 
-import "log/slog"
+import (
+	"log/slog"
+
+	"github.com/y0-l0/helm-snoop/pkg/path"
+)
 
 // ==============================================================================
 // FLAVOR 2: SIMPLE VALUE PRODUCERS (emit paths immediately)
@@ -75,6 +79,18 @@ func omitPickFn(ctx *evalCtx, call Call) evalResult {
 	}
 
 	return evalResult{paths: result.paths, args: result.args}
+}
+
+// concatFn evaluates all args and returns all paths (for concat which merges lists)
+func concatFn(ctx *evalCtx, call Call) evalResult {
+	var allPaths path.Paths
+
+	for _, arg := range call.Args {
+		result := ctx.Eval(arg)
+		allPaths = append(allPaths, result.paths...)
+	}
+
+	return evalResult{paths: allPaths}
 }
 
 // binaryEvalFn evaluates the first 2 args and emits any .Values paths found

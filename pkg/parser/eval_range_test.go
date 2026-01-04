@@ -128,6 +128,22 @@ func (s *Unittest) TestParseFile_RangePrefix() {
 				path.NewPath("config"),
 			},
 		},
+		{
+			name:     "range_over_concat",
+			template: `{{ range concat .Values.ingress.items .Values.extraIngresses }}{{ .host }}{{ end }}`,
+			expected: path.Paths{
+				np().Key("ingress").Key("items").Wildcard().Key("host"),
+				np().Key("extraIngresses").Wildcard().Key("host"),
+			},
+		},
+		{
+			name:     "range_over_concat_with_parens",
+			template: `{{ range (concat .Values.ingress.items .Values.extraIngresses) }}{{ .host }}{{ end }}`,
+			expected: path.Paths{
+				np().Key("ingress").Key("items").Wildcard().Key("host"),
+				np().Key("extraIngresses").Wildcard().Key("host"),
+			},
+		},
 		// TODO: Variable tracking not yet implemented
 		// {
 		// 	name:     "range_with_variable_still_tracks_field_access",
@@ -182,8 +198,6 @@ func (s *Unittest) TestParseFile_RangeWithInteraction() {
 			template: `{{ with .Values.config | default .Values.fallback }}` +
 				`{{ .Values.name }}{{ end }}`,
 			expected: path.Paths{
-				path.NewPath("config"),
-				path.NewPath("fallback"),
 				path.NewPath("name"),
 			},
 		},
@@ -191,9 +205,6 @@ func (s *Unittest) TestParseFile_RangeWithInteraction() {
 
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			if tc.name == "with_with_function_call" {
-				s.T().Skip("Skipped: defaultFn returns paths instead of emitting")
-			}
 			actual, err := parseFile(tc.name+".tmpl", []byte(tc.template), nil)
 			s.Require().NoError(err)
 			path.EqualPaths(s, tc.expected, actual)

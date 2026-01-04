@@ -25,7 +25,7 @@ type Call struct {
 type evalCtx struct {
 	tree       *parse.Tree
 	out        *path.Paths
-	prefix     *path.Path
+	prefixes   path.Paths
 	paramPaths map[string]*path.Path
 	paramLits  map[string]string
 	idx        *TemplateIndex
@@ -58,31 +58,36 @@ func (e *evalCtx) Emit(paths ...*path.Path) {
 	}
 }
 
-// addPrefix returns a new path with the context prefix prepended if one is set.
+// addPrefixes generates paths for all context prefixes if any are set.
 // Used when creating relative paths inside with/range blocks.
-// Returns the original path if no prefix is set.
-func (e *evalCtx) addPrefix(p *path.Path) *path.Path {
+// Returns a slice with the original path if no prefixes are set.
+func (e *evalCtx) addPrefixes(p *path.Path) path.Paths {
 	if !e.hasPrefix() {
-		return p
+		return path.Paths{p}
 	}
-	prefixed := e.prefix.Join(*p)
-	return &prefixed
+
+	var result path.Paths
+	for _, prefix := range e.prefixes {
+		prefixed := prefix.Join(*p)
+		result = append(result, &prefixed)
+	}
+	return result
 }
 
-// WithPrefix sets a context prefix and returns a cleanup function.
+// WithPrefixes sets context prefixes and returns a cleanup function.
 // Used by with/range to change the meaning of "." in nested scopes.
-// If p is nil, no prefix is set (no-op that still returns a valid cleanup function).
-func (e *evalCtx) WithPrefix(p *path.Path) func() {
-	oldPrefix := e.prefix
-	e.prefix = p
+// If prefixes is nil or empty, no prefix is set (no-op that still returns a valid cleanup function).
+func (e *evalCtx) WithPrefixes(prefixes path.Paths) func() {
+	oldPrefixes := e.prefixes
+	e.prefixes = prefixes
 	return func() {
-		e.prefix = oldPrefix
+		e.prefixes = oldPrefixes
 	}
 }
 
-// hasPrefix returns true if a context prefix is currently set.
+// hasPrefix returns true if any context prefixes are currently set.
 func (e *evalCtx) hasPrefix() bool {
-	return e.prefix != nil
+	return len(e.prefixes) > 0
 }
 
 // WithDictParams sets dict parameter mappings and returns a cleanup function.
@@ -134,7 +139,7 @@ func (e *evalCtx) Eval(n parse.Node) evalResult {
 	case *parse.DotNode:
 		// Inside with/range blocks, . refers to the scoped context
 		if e.hasPrefix() {
-			return evalResult{paths: path.Paths{e.addPrefix(&path.Path{})}}
+			return evalResult{paths: e.addPrefixes(&path.Path{})}
 		}
 		return evalResult{}
 	case *parse.ChainNode:
