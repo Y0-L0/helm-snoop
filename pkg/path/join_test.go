@@ -22,6 +22,28 @@ func (s *Unittest) TestSortDedup() {
 	s.Require().True(slices.Equal(ps, orig), "input mutated")
 }
 
+func (s *Unittest) TestSortDedup_WildcardSubsumption() {
+	ps := Paths{
+		NewPath("foo"),
+		np().Key("foo").Wildcard(),
+		NewPath("bar", "baz"),
+		np().Key("bar").Key("baz").Wildcard(),
+		NewPath("other"),
+	}
+
+	got := SortDedup(ps)
+
+	// /foo should be removed (subsumed by /foo/*)
+	// /bar/baz should be removed (subsumed by /bar/baz/*)
+	// /other should remain (no wildcard version)
+	expected := Paths{
+		np().Key("bar").Key("baz").Wildcard(),
+		np().Key("foo").Wildcard(),
+		NewPath("other"),
+	}
+	EqualInorderPaths(s, expected, got)
+}
+
 func (s *Unittest) assertMergeJoin(a, b Paths, expInter, expOnlyA, expOnlyB Paths) {
 	// Copies to assert non-mutation of inputs
 	origA := append(Paths(nil), a...)

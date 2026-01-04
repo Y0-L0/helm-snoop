@@ -725,10 +725,6 @@
       "kinds": "/K"
     },
     {
-      "id": "/provisioning/additionalAnnotations",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/provisioning/additionalAnnotations/*",
       "kinds": "/K/K/W"
     },
@@ -749,16 +745,8 @@
       "kinds": "/K/K/K/K"
     },
     {
-      "id": "/provisioning/extraAnnotations",
-      "kinds": "/K/K"
-    },
-    {
       "id": "/provisioning/extraAnnotations/*",
       "kinds": "/K/K/W"
-    },
-    {
-      "id": "/provisioning/extraLabels",
-      "kinds": "/K/K"
     },
     {
       "id": "/provisioning/extraLabels/*",
@@ -771,14 +759,6 @@
     {
       "id": "/provisioning/provisioningImage/sha256",
       "kinds": "/K/K/K"
-    },
-    {
-      "id": "/resources",
-      "kinds": "/K"
-    },
-    {
-      "id": "/updateStrategy",
-      "kinds": "/K"
     }
   ]
 }
