@@ -56,3 +56,36 @@
 1. Extraction produces a list of Usage structs (detailed, per-site).
 2. Reporting reduces to a map keyed by canonical path (dedup + collapse rules).
 3. This separates concerns: extraction = detailed, reduction = summarized.
+
+## Path Comparison Flavors
+
+The analyzer uses three distinct comparison operations:
+
+### 1. Strict (`Compare`)
+Exact equality for sorting. Compares tokens AND kinds position by position.
+- Used in: `sort.Sort()`, duplicate removal
+- Example: `/foo` (keyKind) ≠ `/foo` (indexKind)
+
+### 2. Subsumption (`subsumes`)
+One-way implication for removing redundant paths.
+- `/foo/*` subsumes `/foo` (wildcard implies base exists)
+- `/foo/*` does NOT subsume `/foo/bar` (different constraints)
+- Used in: `SortDedup()`
+
+### 3. Loose (`EqualLoose`)
+Bidirectional matching for joining definitions with usages.
+- anyKind matches keyKind/indexKind
+- Terminal wildcards match descendants: `/foo/*` matches `/foo/bar`
+- Used in: `MergeJoinLoose()`
+
+**Key distinction**: Subsumption vs Loose
+- `/foo/*` and `/foo/bar` match loosely (for joining)
+- But are NOT redundant (both needed in "used not defined" reports)
+  - `/foo/*` = need ANY children
+  - `/foo/bar` = need THIS SPECIFIC field
+
+| Operation | Function | Symmetric | Purpose |
+|-----------|----------|-----------|---------|
+| Strict | `Compare()` | Yes | Sorting |
+| Subsumption | `subsumes()` | No | Deduplication |
+| Loose | `EqualLoose()` | Yes | Joining defs↔usages |
