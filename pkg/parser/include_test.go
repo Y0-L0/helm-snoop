@@ -131,11 +131,11 @@ func (s *Unittest) TestInclude_RootContextClearsPrefix() {
 	paths, err := parseFile("templates/main.yaml", c.Templates[1].Data, idx)
 	s.Require().NoError(err)
 
-	// Should have only /ics (from with block)
-	// The .name access inside the template should NOT create a path because:
-	// - $ clears the prefix, so we have no prefix
-	// - .name with no prefix returns nothing (only tracked inside with/range blocks)
-	expected := path.Paths{path.NewPath("ics")}
+	// Should have no paths:
+	// - with .Values.ics doesn't emit (only emits when body uses it)
+	// - include passes $ (root context), clearing the prefix
+	// - .name inside template with no prefix emits nothing
+	expected := path.Paths{}
 	path.EqualPaths(s, expected, paths)
 }
 

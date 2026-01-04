@@ -116,6 +116,12 @@ func (e *evalCtx) Eval(n parse.Node) evalResult {
 		return e.evalWithNode(node)
 	case *parse.TemplateNode:
 		return e.evalTemplateNode(node)
+	case *parse.DotNode:
+		// Inside with/range blocks, . refers to the scoped context
+		if e.hasPrefix() {
+			return evalResult{paths: path.Paths{e.addPrefix(&path.Path{})}}
+		}
+		return evalResult{}
 
 	// Literal value nodes
 	case *parse.StringNode:
@@ -129,8 +135,6 @@ func (e *evalCtx) Eval(n parse.Node) evalResult {
 	case *parse.TextNode:
 		return evalResult{}
 	case *parse.CommentNode:
-		return evalResult{}
-	case *parse.DotNode:
 		return evalResult{}
 	case *parse.VariableNode:
 		return evalResult{}
