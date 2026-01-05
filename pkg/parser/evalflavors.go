@@ -7,6 +7,13 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
+// isBuiltinObject checks if a field name is a Helm built-in object
+func isBuiltinObject(field string) bool {
+	return field == "Release" || field == "Chart" ||
+		field == "Files" || field == "Capabilities" ||
+		field == "Template"
+}
+
 func (e *evalCtx) evalParamPaths(firstField string, restFields []string) (evalResult, bool) {
 	if e.paramPaths == nil {
 		return evalResult{}, false
@@ -15,6 +22,11 @@ func (e *evalCtx) evalParamPaths(firstField string, restFields []string) (evalRe
 	if !ok {
 		return evalResult{}, false
 	}
+
+	if len(restFields) > 0 && isBuiltinObject(restFields[0]) {
+		return evalResult{}, true
+	}
+
 	p := *basePath
 	for _, field := range restFields {
 		p = p.WithKey(field)
@@ -65,11 +77,7 @@ func (e *evalCtx) evalFieldNode(node *parse.FieldNode) evalResult {
 		return evalResult{paths: []*path.Path{p}}
 	}
 
-	// These are built-in Helm objects, not .Values paths
-	// We don't track them as .Values usage
-	if firstField == "Release" || firstField == "Chart" ||
-		firstField == "Files" || firstField == "Capabilities" ||
-		firstField == "Template" {
+	if isBuiltinObject(firstField) {
 		return evalResult{}
 	}
 
@@ -283,16 +291,24 @@ func (e *evalCtx) evalWithNode(node *parse.WithNode) evalResult {
 func (e *evalCtx) evalTemplateNode(node *parse.TemplateNode) evalResult {
 	if node.Pipe != nil {
 		result := e.Eval(node.Pipe)
-		e.Emit(result.paths...)
+		if result.dict == nil && result.dictLits == nil {
+			e.Emit(result.paths...)
+		}
 	}
-	// Note: We don't evaluate the template body itself here
-	// That would require template resolution like include
 	return evalResult{}
 }
 
 // evalVariableNode handles $ root context variable.
 func (e *evalCtx) evalVariableNode(node *parse.VariableNode) evalResult {
-	if len(node.Ident) < 3 || node.Ident[0] != "$" || node.Ident[1] != "Values" {
+	if len(node.Ident) == 0 || node.Ident[0] != "$" {
+		return evalResult{}
+	}
+
+	if len(node.Ident) == 1 {
+		return evalResult{paths: path.Paths{path.NewPath()}}
+	}
+
+	if len(node.Ident) < 3 || node.Ident[1] != "Values" {
 		return evalResult{}
 	}
 

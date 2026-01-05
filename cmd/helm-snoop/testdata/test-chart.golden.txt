@@ -17,4 +17,3 @@ Referenced:
 Defined-not-used:
   /postgresql/auth/password
 Used-not-defined:
-  /postgresql/auth/existingSecret

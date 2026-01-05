@@ -689,27 +689,7 @@
       "kinds": "/K/K"
     },
     {
-      "id": "/ics/matrix/auth/existingSecret",
-      "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/ics/oidc/existingSecret",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/ics/portal/auth/existingSecret",
-      "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/ics/redis/auth/existingSecret",
-      "kinds": "/K/K/K/K"
-    },
-    {
       "id": "/ics/redis/username",
-      "kinds": "/K/K/K"
-    },
-    {
-      "id": "/ics/session/existingSecret",
       "kinds": "/K/K/K"
     },
     {
@@ -731,10 +711,6 @@
     {
       "id": "/provisioning/args",
       "kinds": "/K/K"
-    },
-    {
-      "id": "/provisioning/config/keycloak/auth/existingSecret",
-      "kinds": "/K/K/K/K/K"
     },
     {
       "id": "/provisioning/config/keycloak/credentialSecret/key",

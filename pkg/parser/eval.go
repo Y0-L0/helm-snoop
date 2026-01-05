@@ -54,6 +54,9 @@ func (e *evalCtx) Emit(paths ...*path.Path) {
 		if p == nil {
 			panic("Invalid state in Emit function")
 		}
+		if p.ID() == "/" {
+			continue
+		}
 		e.out.Append(p)
 	}
 }
@@ -137,11 +140,11 @@ func (e *evalCtx) Eval(n parse.Node) evalResult {
 	case *parse.TemplateNode:
 		return e.evalTemplateNode(node)
 	case *parse.DotNode:
-		// Inside with/range blocks, . refers to the scoped context
 		if e.hasPrefix() {
 			return evalResult{paths: e.addPrefixes(&path.Path{})}
 		}
-		return evalResult{}
+		// Outside with/range, return empty path (root context)
+		return evalResult{paths: path.Paths{path.NewPath()}}
 	case *parse.ChainNode:
 		return e.evalChainNode(node)
 
@@ -187,9 +190,9 @@ func (e *evalCtx) evalListNode(node *parse.ListNode) evalResult {
 func (e *evalCtx) evalActionNode(node *parse.ActionNode) evalResult {
 	if node.Pipe != nil {
 		result := e.Eval(node.Pipe)
-		// Emit paths at the top level (ActionNode), not at every pipe level
-		// This prevents duplicate emissions from nested pipes
-		e.Emit(result.paths...)
+		if result.dict == nil && result.dictLits == nil {
+			e.Emit(result.paths...)
+		}
 		return result
 	}
 	return evalResult{}
