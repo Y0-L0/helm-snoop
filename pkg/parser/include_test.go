@@ -2,6 +2,7 @@ package parser
 
 import (
 	"fmt"
+
 	"helm.sh/helm/v4/pkg/chart/common"
 	chart "helm.sh/helm/v4/pkg/chart/v2"
 
@@ -193,6 +194,75 @@ func (s *Unittest) TestInclude_ExplicitContextSetsPrefix() {
 	expected := path.Paths{
 		path.NewPath("database"),
 		path.NewPath("database", "name"),
+	}
+	path.EqualPaths(s, expected, paths)
+}
+
+// Test that dict with "context" -> $ followed by .context.Release.Name
+// should recognize Release as a built-in object and not track it
+func (s *Unittest) TestInclude_DictWithRootContextAndBuiltinObjects() {
+	helperTpl := `{{ define "test.tpl" }}{{ .context.Release.Name }}{{ end }}`
+	mainTpl := `{{ range .Values.items }}{{ include "test.tpl" (dict "context" $) }}{{ end }}`
+
+	c := &chart.Chart{Templates: []*common.File{
+		{
+			Name: "templates/_helpers.yaml",
+			Data: []byte(helperTpl),
+		},
+		{
+			Name: "templates/main.yaml",
+			Data: []byte(mainTpl),
+		},
+	}}
+
+	paths, err := GetUsages(c)
+	s.Require().NoError(err)
+
+	// Should have no paths because:
+	// - dict creates "context" -> $ (root context)
+	// - .context.Release.Name accesses built-in Release object
+	// - Built-in objects should never be tracked
+	expected := path.Paths{}
+	path.EqualPaths(s, expected, paths)
+}
+
+// Test that template definitions are NOT evaluated standalone
+// Template definitions should only be evaluated when called via include/template
+func (s *Unittest) TestInclude_TemplateDefsNotEvaluatedStandalone() {
+	// This matches the guardian _labels.tpl pattern with example usage in a comment
+	helperTpl := `{{/*
+Example usage:
+{{ include "test.tpl" (dict "customLabels" .Values.commonLabels "context" $) -}}
+*/}}
+{{- define "test.tpl" -}}
+{{- if and (hasKey . "customLabels") (hasKey . "context") -}}
+{{- $default := dict "key" .context.Release.Name -}}
+{{ .customLabels }}
+{{- end -}}
+{{- end -}}`
+
+	// Call it both with dict and with just . like guardian does
+	mainTpl := `{{ include "test.tpl" (dict "customLabels" .Values.labels "context" .) }}
+{{ include "test.tpl" . }}`
+
+	c := &chart.Chart{Templates: []*common.File{
+		{
+			Name: "templates/_helpers.yaml",
+			Data: []byte(helperTpl),
+		},
+		{
+			Name: "templates/main.yaml",
+			Data: []byte(mainTpl),
+		},
+	}}
+
+	paths, err := GetUsages(c)
+	s.Require().NoError(err)
+
+	// Should only have /labels from the main template
+	// Should NOT have /context or /customLabels from standalone template def analysis
+	expected := path.Paths{
+		path.NewPath("labels"),
 	}
 	path.EqualPaths(s, expected, paths)
 }

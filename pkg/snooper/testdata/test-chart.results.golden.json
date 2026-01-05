@@ -67,10 +67,5 @@
       "kinds": "/K/K/K"
     }
   ],
-  "usedNotDefined": [
-    {
-      "id": "/postgresql/auth/existingSecret",
-      "kinds": "/K/K/K"
-    }
-  ]
+  "usedNotDefined": []
 }
