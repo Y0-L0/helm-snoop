@@ -357,3 +357,12 @@ func getTemplateFunction(name string) tmplFunc {
 	slog.Warn("unknown template function name", "name", name)
 	return makeNotImplementedFn(name)
 }
+
+// makeNotImplementedFn logs and fails in strict mode.
+func makeNotImplementedFn(name string) tmplFunc {
+	return func(_ *evalCtx, _ Call) evalResult {
+		slog.Warn("template function not implemented", "name", name)
+		Must("template function not implemented: " + name)
+		return evalResult{}
+	}
+}
