@@ -6,6 +6,10 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
+func noopStrings(_ *evalCtx, _ Call) evalResult {
+	return evalResult{}
+}
+
 // ==============================================================================
 // FLAVOR 2: SIMPLE VALUE PRODUCERS (emit paths immediately)
 // ==============================================================================
