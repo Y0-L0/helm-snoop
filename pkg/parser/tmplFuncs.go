@@ -33,13 +33,20 @@ func includeFn(ctx *evalCtx, call Call) evalResult {
 			isRootContext = true
 		} else {
 			ctxResult := ctx.Eval(ctxArg)
-			ctx.Emit(ctxResult.paths...)
 
 			if ctxResult.dict != nil || ctxResult.dictLits != nil {
 				dictPaths = ctxResult.dict
 				dictLits = ctxResult.dictLits
-			} else if len(ctxResult.paths) > 0 {
-				templatePrefix = ctxResult.paths[0]
+			} else {
+				ctx.Emit(ctxResult.paths...)
+				if len(ctxResult.paths) > 0 {
+					// Only set prefix for non-empty paths
+					// Empty path / means root context without dict params,
+					// so relative fields are unresolved parameter names, not .Values paths
+					if ctxResult.paths[0].ID() != "/" {
+						templatePrefix = ctxResult.paths[0]
+					}
+				}
 			}
 		}
 	}
