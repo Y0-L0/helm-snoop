@@ -32,7 +32,7 @@ func Main(args []string, stdout io.Writer, stderr io.Writer) int {
 		_, _ = fmt.Fprintf(stderr, "Failed to read helm chart.\nerror: %v\n", err)
 		return 1
 	}
-	r, err := Snoop(chart)
+	r, err := Snoop(chart, nil)
 	if err != nil {
 		_, _ = fmt.Fprintf(stderr, "Failed to analyze the helm chart.\nerror: %v\n", err)
 		return 1

@@ -7,7 +7,7 @@ import (
 )
 
 // Snoop analyses a Helm chart loaded via Helm's loader.
-func Snoop(chart *chart.Chart) (*Result, error) {
+func Snoop(chart *chart.Chart, ignore []string) (*Result, error) {
 	if chart == nil {
 		panic("chart is nil")
 	}
@@ -25,5 +25,41 @@ func Snoop(chart *chart.Chart) (*Result, error) {
 	result := &Result{}
 	result.Referenced, result.DefinedNotUsed, result.UsedNotDefined = path.MergeJoinLoose(defined, used)
 
+	if len(ignore) > 0 {
+		result = filterIgnored(result, ignore)
+	}
+
 	return result, nil
+}
+
+// filterIgnored removes paths from DefinedNotUsed and UsedNotDefined only
+func filterIgnored(result *Result, ignore []string) *Result {
+	if len(ignore) == 0 {
+		return result
+	}
+
+	ignoreMap := make(map[string]bool, len(ignore))
+	for _, key := range ignore {
+		ignoreMap[key] = true
+	}
+
+	filteredDefinedNotUsed := make(path.Paths, 0, len(result.DefinedNotUsed))
+	for _, p := range result.DefinedNotUsed {
+		if !ignoreMap[p.ID()] {
+			filteredDefinedNotUsed = append(filteredDefinedNotUsed, p)
+		}
+	}
+
+	filteredUsedNotDefined := make(path.Paths, 0, len(result.UsedNotDefined))
+	for _, p := range result.UsedNotDefined {
+		if !ignoreMap[p.ID()] {
+			filteredUsedNotDefined = append(filteredUsedNotDefined, p)
+		}
+	}
+
+	return &Result{
+		Referenced:     result.Referenced,
+		DefinedNotUsed: filteredDefinedNotUsed,
+		UsedNotDefined: filteredUsedNotDefined,
+	}
 }

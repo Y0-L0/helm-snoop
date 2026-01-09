@@ -15,10 +15,10 @@ func (s *GoldenTest) TestSnoop_TestChart() {
 	chart, err := loader.Load(filepath.Join(s.chartsDir, "test-chart"))
 	s.Require().NoError(err)
 
-	results, err := Snoop(chart)
+	results, err := Snoop(chart, nil)
 	s.Require().NoError(err)
 
-	actual := results.ToJSON()
+	actual := results.toJSON()
 	s.EqualGoldenJSON("test-chart.results.golden.json", actual)
 }
 
@@ -29,10 +29,10 @@ func (s *GoldenTest) TestSnoop_Chart_IntercomService() {
 	chart, err := loader.Load(filepath.Join(s.chartsDir, "intercom-service-2.23.0.tgz"))
 	s.Require().NoError(err)
 
-	results, err := Snoop(chart)
+	results, err := Snoop(chart, nil)
 	s.Require().NoError(err)
 
-	actual := results.ToJSON()
+	actual := results.toJSON()
 	s.EqualGoldenJSON("intercom-service.results.golden.json", actual)
 }
 
@@ -43,10 +43,10 @@ func (s *GoldenTest) TestSnoop_Chart_Guardian() {
 	chart, err := loader.Load(filepath.Join(s.chartsDir, "guardian-0.24.4.tgz"))
 	s.Require().NoError(err)
 
-	results, err := Snoop(chart)
+	results, err := Snoop(chart, nil)
 	s.Require().NoError(err)
 
-	actual := results.ToJSON()
+	actual := results.toJSON()
 	s.EqualGoldenJSON("guardian.results.golden.json", actual)
 }
 
