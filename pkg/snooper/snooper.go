@@ -6,7 +6,8 @@ import (
 	chart "helm.sh/helm/v4/pkg/chart/v2"
 )
 
-// Snoop analyses a Helm chart loaded via Helm's loader.
+type SnoopFunc func(*chart.Chart, []string) (*Result, error)
+
 func Snoop(chart *chart.Chart, ignore []string) (*Result, error) {
 	if chart == nil {
 		panic("chart is nil")
