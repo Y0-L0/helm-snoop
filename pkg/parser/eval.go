@@ -28,6 +28,7 @@ type evalCtx struct {
 	prefixes   path.Paths
 	paramPaths map[string]*path.Path
 	paramLits  map[string]string
+	variables  map[string]*path.Path
 	idx        *TemplateIndex
 	inStack    map[string]bool
 	depth      int
@@ -102,6 +103,54 @@ func (e *evalCtx) WithDictParams(paths map[string]*path.Path, lits map[string]st
 	return func() {
 		e.paramPaths = oldPaths
 		e.paramLits = oldLits
+	}
+}
+
+// extractVariableDecls extracts variable names from a pipe's declarations.
+func extractVariableDecls(pipe *parse.PipeNode) []string {
+	if pipe == nil || len(pipe.Decl) == 0 {
+		return nil
+	}
+
+	var names []string
+	for _, v := range pipe.Decl {
+		// Strip $ prefix: ["$item"] -> "item"
+		if len(v.Ident) > 0 {
+			varName := v.Ident[0]
+			if len(varName) > 1 && varName[0] == '$' {
+				names = append(names, varName[1:])
+			}
+		}
+	}
+	return names
+}
+
+// WithVariables sets up context for range/with blocks and returns a restore function.
+// useLastVar: true for range (binds value not key), false for with.
+func (e *evalCtx) WithVariables(pipe *parse.PipeNode, prefixes path.Paths, useLastVar bool) func() {
+	varNames := extractVariableDecls(pipe)
+
+	if len(varNames) == 0 || len(prefixes) == 0 {
+		return e.WithPrefixes(prefixes)
+	}
+
+	var varName string
+	if useLastVar {
+		varName = varNames[len(varNames)-1]
+	} else {
+		varName = varNames[0]
+	}
+
+	oldVars := e.variables
+	newVars := make(map[string]*path.Path)
+	for k, v := range oldVars {
+		newVars[k] = v
+	}
+	newVars[varName] = prefixes[0]
+	e.variables = newVars
+
+	return func() {
+		e.variables = oldVars
 	}
 }
 
