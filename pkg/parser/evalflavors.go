@@ -238,6 +238,7 @@ func (e *evalCtx) evalIfNode(node *parse.IfNode) evalResult {
 // Paths are only emitted when actually accessed via . inside the body.
 // If the range expression returns multiple paths (e.g., from concat),
 // all paths are set as prefixes and field access generates paths for each.
+// Variable declarations bind the value variable to the wildcard path.
 func (e *evalCtx) evalRangeNode(node *parse.RangeNode) evalResult {
 	var rangePrefixes path.Paths
 	if node.Pipe != nil {
@@ -249,7 +250,7 @@ func (e *evalCtx) evalRangeNode(node *parse.RangeNode) evalResult {
 	}
 
 	if node.List != nil {
-		restore := e.WithPrefixes(rangePrefixes)
+		restore := e.WithVariables(node.Pipe, rangePrefixes, true)
 		e.Eval(node.List)
 		restore()
 	}
@@ -266,6 +267,7 @@ func (e *evalCtx) evalRangeNode(node *parse.RangeNode) evalResult {
 // Paths are only emitted when actually accessed via . inside the body.
 // If the with expression returns multiple paths (e.g., from concat or default),
 // all paths are set as prefixes and field access generates paths for each.
+// Variable declarations bind the variable to the path.
 func (e *evalCtx) evalWithNode(node *parse.WithNode) evalResult {
 	var withPrefixes path.Paths
 	if node.Pipe != nil {
@@ -274,7 +276,7 @@ func (e *evalCtx) evalWithNode(node *parse.WithNode) evalResult {
 	}
 
 	if node.List != nil {
-		restore := e.WithPrefixes(withPrefixes)
+		restore := e.WithVariables(node.Pipe, withPrefixes, false)
 		e.Eval(node.List)
 		restore()
 	}
@@ -298,20 +300,49 @@ func (e *evalCtx) evalTemplateNode(node *parse.TemplateNode) evalResult {
 	return evalResult{}
 }
 
-// evalVariableNode handles $ root context variable.
+// evalVariableNode handles $ root context and range/with variables.
 func (e *evalCtx) evalVariableNode(node *parse.VariableNode) evalResult {
-	if len(node.Ident) == 0 || node.Ident[0] != "$" {
+	if len(node.Ident) == 0 {
 		return evalResult{}
 	}
 
-	if len(node.Ident) == 1 {
-		return evalResult{paths: path.Paths{path.NewPath()}}
-	}
-
-	if len(node.Ident) < 3 || node.Ident[1] != "Values" {
+	firstIdent := node.Ident[0]
+	if len(firstIdent) == 0 || firstIdent[0] != '$' {
 		return evalResult{}
 	}
 
-	p := path.NewPath(node.Ident[2:]...)
-	return evalResult{paths: path.Paths{p}}
+	// Handle bare $ (root context)
+	if firstIdent == "$" {
+		if len(node.Ident) == 1 {
+			return evalResult{paths: path.Paths{path.NewPath()}}
+		}
+
+		if node.Ident[1] == "Values" {
+			if len(node.Ident) < 3 {
+				return evalResult{}
+			}
+			p := path.NewPath(node.Ident[2:]...)
+			return evalResult{paths: path.Paths{p}}
+		}
+
+		return evalResult{}
+	}
+
+	// Check for range/with variables: strip $ prefix
+	varName := firstIdent[1:]
+
+	if e.variables != nil {
+		if basePath, ok := e.variables[varName]; ok {
+			if len(node.Ident) == 1 {
+				return evalResult{paths: []*path.Path{basePath}}
+			}
+			p := *basePath
+			for _, field := range node.Ident[1:] {
+				p = p.WithKey(field)
+			}
+			return evalResult{paths: []*path.Path{&p}}
+		}
+	}
+
+	return evalResult{}
 }

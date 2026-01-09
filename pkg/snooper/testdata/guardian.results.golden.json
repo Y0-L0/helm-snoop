@@ -225,6 +225,18 @@
       "kinds": "/K/K/K"
     },
     {
+      "id": "/authorizationApi/service/ports/http/containerPort",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/service/ports/http/port",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/authorizationApi/service/ports/http/protocol",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
       "id": "/authorizationApi/service/sessionAffinity/enabled",
       "kinds": "/K/K/K/K"
     },
@@ -251,10 +263,6 @@
     {
       "id": "/authorizationApi/udm/auth/username",
       "kinds": "/K/K/K/K"
-    },
-    {
-      "id": "/extraIngresses",
-      "kinds": "/K"
     },
     {
       "id": "/extraSecrets",
@@ -693,6 +701,18 @@
       "kinds": "/K/K/K"
     },
     {
+      "id": "/managementApi/service/ports/http/containerPort",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/service/ports/http/port",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/managementApi/service/ports/http/protocol",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
       "id": "/managementApi/service/sessionAffinity/enabled",
       "kinds": "/K/K/K/K"
     },
@@ -897,6 +917,18 @@
       "kinds": "/K/K/K"
     },
     {
+      "id": "/managementUi/service/ports/http/containerPort",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/service/ports/http/port",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/managementUi/service/ports/http/protocol",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
       "id": "/managementUi/service/sessionAffinity/enabled",
       "kinds": "/K/K/K/K"
     },
@@ -1091,6 +1123,18 @@
     {
       "id": "/openPolicyAgent/service/enabled",
       "kinds": "/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/service/ports/http/containerPort",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/service/ports/http/port",
+      "kinds": "/K/K/K/K/K"
+    },
+    {
+      "id": "/openPolicyAgent/service/ports/http/protocol",
+      "kinds": "/K/K/K/K/K"
     },
     {
       "id": "/openPolicyAgent/service/sessionAffinity/enabled",
@@ -1323,19 +1367,11 @@
       "kinds": "/K/K/K/K"
     },
     {
-      "id": "/authorizationApi/service/ports/http/containerPort",
-      "kinds": "/K/K/K/K/K"
-    },
-    {
-      "id": "/authorizationApi/service/ports/http/port",
-      "kinds": "/K/K/K/K/K"
-    },
-    {
-      "id": "/authorizationApi/service/ports/http/protocol",
-      "kinds": "/K/K/K/K/K"
-    },
-    {
       "id": "/extraEnvVars",
+      "kinds": "/K"
+    },
+    {
+      "id": "/extraIngresses",
       "kinds": "/K"
     },
     {
@@ -1407,18 +1443,6 @@
       "kinds": "/K/K/K/K"
     },
     {
-      "id": "/managementApi/service/ports/http/containerPort",
-      "kinds": "/K/K/K/K/K"
-    },
-    {
-      "id": "/managementApi/service/ports/http/port",
-      "kinds": "/K/K/K/K/K"
-    },
-    {
-      "id": "/managementApi/service/ports/http/protocol",
-      "kinds": "/K/K/K/K/K"
-    },
-    {
       "id": "/managementUi/environment",
       "kinds": "/K/K"
     },
@@ -1439,18 +1463,6 @@
       "kinds": "/K/K/K/K"
     },
     {
-      "id": "/managementUi/service/ports/http/containerPort",
-      "kinds": "/K/K/K/K/K"
-    },
-    {
-      "id": "/managementUi/service/ports/http/port",
-      "kinds": "/K/K/K/K/K"
-    },
-    {
-      "id": "/managementUi/service/ports/http/protocol",
-      "kinds": "/K/K/K/K/K"
-    },
-    {
       "id": "/openPolicyAgent/environment",
       "kinds": "/K/K"
     },
@@ -1461,18 +1473,6 @@
     {
       "id": "/openPolicyAgent/nameOverride",
       "kinds": "/K/K"
-    },
-    {
-      "id": "/openPolicyAgent/service/ports/http/containerPort",
-      "kinds": "/K/K/K/K/K"
-    },
-    {
-      "id": "/openPolicyAgent/service/ports/http/port",
-      "kinds": "/K/K/K/K/K"
-    },
-    {
-      "id": "/openPolicyAgent/service/ports/http/protocol",
-      "kinds": "/K/K/K/K/K"
     },
     {
       "id": "/postgresql/auth/password",
@@ -1517,68 +1517,20 @@
       "kinds": "/K/K/W"
     },
     {
-      "id": "/extraIngresses/*/annotations",
-      "kinds": "/K/W/K"
+      "id": "/authorizationApi/service/ports/*/nodePort",
+      "kinds": "/K/K/K/W/K"
     },
     {
-      "id": "/extraIngresses/*/host",
-      "kinds": "/K/W/K"
-    },
-    {
-      "id": "/extraIngresses/*/name",
-      "kinds": "/K/W/K"
-    },
-    {
-      "id": "/extraIngresses/*/paths",
-      "kinds": "/K/W/K"
-    },
-    {
-      "id": "/extraIngresses/*/paths/*/backend",
-      "kinds": "/K/W/K/W/K"
-    },
-    {
-      "id": "/extraIngresses/*/paths/*/backend/service/name",
-      "kinds": "/K/W/K/W/K/K/K"
-    },
-    {
-      "id": "/extraIngresses/*/paths/*/backend/service/port/*",
-      "kinds": "/K/W/K/W/K/K/K/W"
-    },
-    {
-      "id": "/extraIngresses/*/paths/*/path",
-      "kinds": "/K/W/K/W/K"
-    },
-    {
-      "id": "/extraIngresses/*/paths/*/pathType",
-      "kinds": "/K/W/K/W/K"
-    },
-    {
-      "id": "/extraIngresses/*/scope",
-      "kinds": "/K/W/K"
-    },
-    {
-      "id": "/extraIngresses/*/tls/enabled",
-      "kinds": "/K/W/K/K"
-    },
-    {
-      "id": "/extraIngresses/*/tls/secretName",
-      "kinds": "/K/W/K/K"
-    },
-    {
-      "id": "/extraIngresses/*/value/*",
+      "id": "/extraSecrets/*/data/*",
       "kinds": "/K/W/K/W"
-    },
-    {
-      "id": "/extraSecrets/*/data",
-      "kinds": "/K/W/K"
     },
     {
       "id": "/extraSecrets/*/name",
       "kinds": "/K/W/K"
     },
     {
-      "id": "/extraSecrets/*/stringData",
-      "kinds": "/K/W/K"
+      "id": "/extraSecrets/*/stringData/*",
+      "kinds": "/K/W/K/W"
     },
     {
       "id": "/extraSecrets/*/values",
@@ -1621,26 +1573,6 @@
       "kinds": "/K/K"
     },
     {
-      "id": "/ingress/items/*/paths",
-      "kinds": "/K/K/W/K"
-    },
-    {
-      "id": "/ingress/items/*/paths/*/backend",
-      "kinds": "/K/K/W/K/W/K"
-    },
-    {
-      "id": "/ingress/items/*/scope",
-      "kinds": "/K/K/W/K"
-    },
-    {
-      "id": "/ingress/items/*/tls/enabled",
-      "kinds": "/K/K/W/K/K"
-    },
-    {
-      "id": "/ingress/items/*/value/*",
-      "kinds": "/K/K/W/K/W"
-    },
-    {
       "id": "/kubeVersion",
       "kinds": "/K"
     },
@@ -1653,8 +1585,20 @@
       "kinds": "/K/K/W"
     },
     {
+      "id": "/managementApi/service/ports/*/nodePort",
+      "kinds": "/K/K/K/W/K"
+    },
+    {
+      "id": "/managementUi/service/ports/*/nodePort",
+      "kinds": "/K/K/K/W/K"
+    },
+    {
       "id": "/nameOverride",
       "kinds": "/K"
+    },
+    {
+      "id": "/openPolicyAgent/service/ports/*/nodePort",
+      "kinds": "/K/K/K/W/K"
     },
     {
       "id": "/provisioning/affinity/*",

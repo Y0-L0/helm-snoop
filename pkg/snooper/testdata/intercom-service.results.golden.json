@@ -585,6 +585,10 @@
       "kinds": "/K/K/K/K"
     },
     {
+      "id": "/service/ports/http/protocol",
+      "kinds": "/K/K/K/K"
+    },
+    {
       "id": "/service/sessionAffinity/enabled",
       "kinds": "/K/K/K"
     },
@@ -671,10 +675,6 @@
       "kinds": "/K/K"
     },
     {
-      "id": "/service/ports/http/protocol",
-      "kinds": "/K/K/K/K"
-    },
-    {
       "id": "/serviceAccount/labels",
       "kinds": "/K/K"
     }
@@ -735,6 +735,10 @@
     {
       "id": "/provisioning/provisioningImage/sha256",
       "kinds": "/K/K/K"
+    },
+    {
+      "id": "/service/ports/*/nodePort",
+      "kinds": "/K/K/W/K"
     }
   ]
 }
