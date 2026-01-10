@@ -1,20 +1,24 @@
 package snooper
 
 import (
+	"fmt"
+
 	"github.com/y0-l0/helm-snoop/pkg/parser"
 	"github.com/y0-l0/helm-snoop/pkg/path"
-	chart "helm.sh/helm/v4/pkg/chart/v2"
+	loader "helm.sh/helm/v4/pkg/chart/v2/loader"
 )
 
-// Snoop analyses a Helm chart loaded via Helm's loader.
-func Snoop(chart *chart.Chart) (*Result, error) {
-	if chart == nil {
-		panic("chart is nil")
+type SnoopFunc func(string, path.Paths) (*Result, error)
+
+func Snoop(chartPath string, ignorePaths path.Paths) (*Result, error) {
+	chart, err := loader.Load(chartPath)
+	if err != nil {
+		return nil, fmt.Errorf("Failed to read the helm chart.\nerror: %w", err)
 	}
 
 	used, err := parser.GetUsages(chart)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("Failed to analyze the helm chart.\nerror: %w", err)
 	}
 
 	defined := path.Paths{}
@@ -25,5 +29,25 @@ func Snoop(chart *chart.Chart) (*Result, error) {
 	result := &Result{}
 	result.Referenced, result.DefinedNotUsed, result.UsedNotDefined = path.MergeJoinLoose(defined, used)
 
+	if len(ignorePaths) > 0 {
+		result = filterIgnoredWithMerge(result, ignorePaths)
+	}
+
 	return result, nil
+}
+
+// filterIgnoredWithMerge removes paths matching ignorePaths using MergeJoinLoose.
+func filterIgnoredWithMerge(result *Result, ignorePaths path.Paths) *Result {
+	if len(ignorePaths) == 0 {
+		return result
+	}
+
+	_, _, keptDefinedNotUsed := path.MergeJoinLoose(ignorePaths, result.DefinedNotUsed)
+	_, _, keptUsedNotDefined := path.MergeJoinLoose(ignorePaths, result.UsedNotDefined)
+
+	return &Result{
+		Referenced:     result.Referenced, // Never filtered
+		DefinedNotUsed: keptDefinedNotUsed,
+		UsedNotDefined: keptUsedNotDefined,
+	}
 }

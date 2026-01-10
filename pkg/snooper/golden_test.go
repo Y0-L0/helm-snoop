@@ -5,20 +5,16 @@ import (
 	"path/filepath"
 
 	"github.com/y0-l0/helm-snoop/pkg/parser"
-	loader "helm.sh/helm/v4/pkg/chart/v2/loader"
 )
 
 func (s *GoldenTest) TestSnoop_TestChart() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	chart, err := loader.Load(filepath.Join(s.chartsDir, "test-chart"))
+	results, err := Snoop(filepath.Join(s.chartsDir, "test-chart"), nil)
 	s.Require().NoError(err)
 
-	results, err := Snoop(chart)
-	s.Require().NoError(err)
-
-	actual := results.ToJSON()
+	actual := results.toJSON()
 	s.EqualGoldenJSON("test-chart.results.golden.json", actual)
 }
 
@@ -26,13 +22,10 @@ func (s *GoldenTest) TestSnoop_Chart_IntercomService() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	chart, err := loader.Load(filepath.Join(s.chartsDir, "intercom-service-2.23.0.tgz"))
+	results, err := Snoop(filepath.Join(s.chartsDir, "intercom-service-2.23.0.tgz"), nil)
 	s.Require().NoError(err)
 
-	results, err := Snoop(chart)
-	s.Require().NoError(err)
-
-	actual := results.ToJSON()
+	actual := results.toJSON()
 	s.EqualGoldenJSON("intercom-service.results.golden.json", actual)
 }
 
@@ -40,13 +33,10 @@ func (s *GoldenTest) TestSnoop_Chart_Guardian() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	chart, err := loader.Load(filepath.Join(s.chartsDir, "guardian-0.24.4.tgz"))
+	results, err := Snoop(filepath.Join(s.chartsDir, "guardian-0.24.4.tgz"), nil)
 	s.Require().NoError(err)
 
-	results, err := Snoop(chart)
-	s.Require().NoError(err)
-
-	actual := results.ToJSON()
+	actual := results.toJSON()
 	s.EqualGoldenJSON("guardian.results.golden.json", actual)
 }
 
