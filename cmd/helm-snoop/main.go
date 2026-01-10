@@ -4,7 +4,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/y0-l0/helm-snoop/pkg/parser"
+	"github.com/y0-l0/helm-snoop/pkg/cli"
 	"github.com/y0-l0/helm-snoop/pkg/snooper"
 )
 
@@ -16,7 +16,5 @@ var (
 )
 
 func main() {
-	// Disable strict panics for production runs; tests keep the default (true).
-	parser.Strict = false
-	osExit(snooper.Main(os.Args, stdout, stderr))
+	osExit(cli.Main(os.Args, stdout, stderr, snooper.SetupLogging))
 }
