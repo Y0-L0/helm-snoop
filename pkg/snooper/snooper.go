@@ -1,6 +1,8 @@
 package snooper
 
 import (
+	"fmt"
+
 	"github.com/y0-l0/helm-snoop/pkg/parser"
 	"github.com/y0-l0/helm-snoop/pkg/path"
 	loader "helm.sh/helm/v4/pkg/chart/v2/loader"
@@ -11,12 +13,12 @@ type SnoopFunc func(string, []string) (*Result, error)
 func Snoop(chartPath string, ignore []string) (*Result, error) {
 	chart, err := loader.Load(chartPath)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("Failed to read the helm chart.\nerror: %w", err)
 	}
 
 	used, err := parser.GetUsages(chart)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("Failed to analyze the helm chart.\nerror: %w", err)
 	}
 
 	defined := path.Paths{}
