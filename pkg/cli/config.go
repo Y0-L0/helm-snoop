@@ -18,19 +18,12 @@ type cliConfig struct {
 	jsonOutput bool
 	outWriter  io.Writer
 	snoop      snooper.SnoopFunc
-	loader     LoaderFunc
 }
 
 func (c *cliConfig) analyze() error {
 	parser.Strict = false
 
-	chart, err := c.loader(c.chartPath)
-	if err != nil {
-		fmt.Fprintf(c.outWriter, "Failed to read helm chart.\nerror: %v\n", err)
-		return errors.New("")
-	}
-
-	result, err := c.snoop(chart, c.ignoreKeys)
+	result, err := c.snoop(c.chartPath, c.ignoreKeys)
 	if err != nil {
 		fmt.Fprintf(c.outWriter, "Failed to analyze the helm chart.\nerror: %v\n", err)
 		return errors.New("")

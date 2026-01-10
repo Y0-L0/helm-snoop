@@ -16,5 +16,5 @@ var (
 )
 
 func main() {
-	osExit(cli.Main(os.Args, stdout, stderr, snooper.SetupLogging))
+	osExit(cli.Main(os.Args, stdout, stderr, snooper.SetupLogging, snooper.Snoop))
 }

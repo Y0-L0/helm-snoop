@@ -5,14 +5,9 @@ import (
 
 	"github.com/y0-l0/helm-snoop/pkg/path"
 	"github.com/y0-l0/helm-snoop/pkg/snooper"
-	chart "helm.sh/helm/v4/pkg/chart/v2"
 )
 
-func mockLoader(path string) (*chart.Chart, error) {
-	return &chart.Chart{}, nil
-}
-
-func mockSnoop(c *chart.Chart, ignore []string) (*snooper.Result, error) {
+func mockSnoop(chartPath string, ignore []string) (*snooper.Result, error) {
 	return &snooper.Result{
 		Referenced:     path.Paths{},
 		DefinedNotUsed: path.Paths{},
@@ -21,13 +16,13 @@ func mockSnoop(c *chart.Chart, ignore []string) (*snooper.Result, error) {
 }
 
 func (s *Unittest) TestHelp() {
-	command := NewParser([]string{"helm-snoop", "--help"}, snooper.SetupLogging)
+	command := NewParser([]string{"helm-snoop", "--help"}, snooper.SetupLogging, mockSnoop)
 	err := command.Execute()
 	s.Require().NoError(err)
 }
 
 func (s *Unittest) TestVersionSubcommand() {
-	command := NewParser([]string{"helm-snoop", "version"}, snooper.SetupLogging)
+	command := NewParser([]string{"helm-snoop", "version"}, snooper.SetupLogging, mockSnoop)
 	err := command.Execute()
 	s.Require().NoError(err)
 }
@@ -46,7 +41,7 @@ func (s *Unittest) TestValidArguments() {
 
 	for _, tc := range tests {
 		s.Run(tc.name, func() {
-			command := NewParserForTest(tc.args, snooper.SetupLogging, mockLoader, mockSnoop)
+			command := NewParser(tc.args, snooper.SetupLogging, mockSnoop)
 			err := command.Execute()
 			s.NoError(err)
 		})
@@ -54,7 +49,7 @@ func (s *Unittest) TestValidArguments() {
 }
 
 func (s *Unittest) TestInvalidArguments() {
-	command := NewParser([]string{"helm-snoop"}, snooper.SetupLogging)
+	command := NewParser([]string{"helm-snoop"}, snooper.SetupLogging, mockSnoop)
 	err := command.Execute()
 	s.Require().Error(err)
 }
@@ -79,7 +74,7 @@ func (s *Unittest) TestVerbosityLevels() {
 				capturedLevel = level
 			}
 
-			command := NewParserForTest(tc.args, mockSetupLogging, mockLoader, mockSnoop)
+			command := NewParser(tc.args, mockSetupLogging, mockSnoop)
 			_ = command.Execute()
 
 			s.Equal(tc.expected, capturedLevel)

@@ -3,14 +3,15 @@ package snooper
 import (
 	"github.com/y0-l0/helm-snoop/pkg/parser"
 	"github.com/y0-l0/helm-snoop/pkg/path"
-	chart "helm.sh/helm/v4/pkg/chart/v2"
+	loader "helm.sh/helm/v4/pkg/chart/v2/loader"
 )
 
-type SnoopFunc func(*chart.Chart, []string) (*Result, error)
+type SnoopFunc func(string, []string) (*Result, error)
 
-func Snoop(chart *chart.Chart, ignore []string) (*Result, error) {
-	if chart == nil {
-		panic("chart is nil")
+func Snoop(chartPath string, ignore []string) (*Result, error) {
+	chart, err := loader.Load(chartPath)
+	if err != nil {
+		return nil, err
 	}
 
 	used, err := parser.GetUsages(chart)
