@@ -1,10 +1,12 @@
 package cli
 
 import (
+	"errors"
 	"io"
 	"log/slog"
 
 	"github.com/spf13/cobra"
+	"github.com/y0-l0/helm-snoop/pkg/parser"
 	"github.com/y0-l0/helm-snoop/pkg/snooper"
 	"github.com/y0-l0/helm-snoop/pkg/version"
 )
@@ -13,13 +15,42 @@ type CliArgumentError string
 
 func (e CliArgumentError) Error() string { return string(e) }
 
+func analyze(
+	chartPath string,
+	ignoreKeys []string,
+	jsonOutput bool,
+	outWriter io.Writer,
+	snoop snooper.SnoopFunc,
+) error {
+	parser.Strict = false
+
+	result, err := snoop(chartPath, ignoreKeys)
+	if err != nil {
+		return err
+	}
+
+	if jsonOutput {
+		if err := result.ToJSON(outWriter); err != nil {
+			return errors.New("")
+		}
+	} else {
+		if err := result.ToText(outWriter); err != nil {
+			return errors.New("")
+		}
+	}
+
+	if result.HasFindings() {
+		return errors.New("")
+	}
+	return nil
+}
+
 func NewParser(args []string, setupLogging func(slog.Level), snoop snooper.SnoopFunc) *cobra.Command {
 	slog.Debug("raw cli arguments", "args", args)
 
-	config := &cliConfig{
-		snoop: snoop,
-	}
 	var verbosity int
+	var ignoreKeys []string
+	var jsonOutput bool
 
 	rootCmd := &cobra.Command{
 		Use:   "helm-snoop [FLAGS] <chart-path>",
@@ -42,10 +73,7 @@ func NewParser(args []string, setupLogging func(slog.Level), snoop snooper.Snoop
 			setupLogging(logLevel)
 		},
 		RunE: func(cmd *cobra.Command, args []string) error {
-			config.chartPath = args[0]
-			config.outWriter = cmd.OutOrStdout()
-			slog.Debug("Parsed cli arguments", "config", config)
-			return config.analyze()
+			return analyze(args[0], ignoreKeys, jsonOutput, cmd.OutOrStdout(), snoop)
 		},
 	}
 
@@ -67,7 +95,7 @@ func NewParser(args []string, setupLogging func(slog.Level), snoop snooper.Snoop
 	)
 
 	rootCmd.Flags().StringArrayVarP(
-		&config.ignoreKeys,
+		&ignoreKeys,
 		"ignore",
 		"i",
 		nil,
@@ -75,7 +103,7 @@ func NewParser(args []string, setupLogging func(slog.Level), snoop snooper.Snoop
 	)
 
 	rootCmd.Flags().BoolVar(
-		&config.jsonOutput,
+		&jsonOutput,
 		"json",
 		false,
 		"Output results in JSON format",
