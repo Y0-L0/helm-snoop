@@ -73,7 +73,11 @@ func NewParser(args []string, setupLogging func(slog.Level), snoop snooper.Snoop
 			setupLogging(logLevel)
 		},
 		RunE: func(cmd *cobra.Command, args []string) error {
-			return analyze(args[0], ignoreKeys, jsonOutput, cmd.OutOrStdout(), snoop)
+			err := analyze(args[0], ignoreKeys, jsonOutput, cmd.OutOrStdout(), snoop)
+			if err != nil {
+				cmd.SilenceUsage = true
+			}
+			return err
 		},
 	}
 
