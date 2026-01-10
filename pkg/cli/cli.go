@@ -29,7 +29,6 @@ func NewParser(args []string, setupLogging func(slog.Level), snoop snooper.Snoop
   - Values referenced in templates but not defined in values.yaml`,
 		Args:          cobra.ExactArgs(1),
 		SilenceErrors: true,
-		SilenceUsage:  true,
 		PersistentPreRun: func(cmd *cobra.Command, args []string) {
 			var logLevel slog.Level
 			switch verbosity {
@@ -95,7 +94,7 @@ func Main(args []string, stdout io.Writer, stderr io.Writer, setupLogging func(s
 	err := command.Execute()
 	if err != nil {
 		if err.Error() != "" {
-			command.PrintErrln("Error:", err.Error())
+			command.PrintErrln(err.Error())
 		}
 		return 1
 	}

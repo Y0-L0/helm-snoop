@@ -17,13 +17,13 @@ func (s *GoldenTest) TestCLI_Usage() {
 }
 
 func (s *GoldenTest) TestCLI_Missing() {
-	restore, stdout, _, code := interceptMain([]string{"helm-snoop", "does-not-exist"})
+	restore, _, stderr, code := interceptMain([]string{"helm-snoop", "does-not-exist"})
 	defer restore()
 
 	main()
 
 	s.Require().Equal(1, *code)
-	s.EqualGoldenFile("missing.golden.txt", stdout.Bytes())
+	s.EqualGoldenFile("missing.golden.txt", stderr.Bytes())
 }
 
 func (s *GoldenTest) TestCLI_TestChart() {

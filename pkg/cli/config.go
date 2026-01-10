@@ -2,15 +2,11 @@ package cli
 
 import (
 	"errors"
-	"fmt"
 	"io"
 
 	"github.com/y0-l0/helm-snoop/pkg/parser"
 	"github.com/y0-l0/helm-snoop/pkg/snooper"
-	chart "helm.sh/helm/v4/pkg/chart/v2"
 )
-
-type LoaderFunc func(string) (*chart.Chart, error)
 
 type cliConfig struct {
 	chartPath  string
@@ -25,8 +21,7 @@ func (c *cliConfig) analyze() error {
 
 	result, err := c.snoop(c.chartPath, c.ignoreKeys)
 	if err != nil {
-		fmt.Fprintf(c.outWriter, "Failed to analyze the helm chart.\nerror: %v\n", err)
-		return errors.New("")
+		return err
 	}
 
 	if c.jsonOutput {
