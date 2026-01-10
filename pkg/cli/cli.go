@@ -7,38 +7,17 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/y0-l0/helm-snoop/pkg/snooper"
 	"github.com/y0-l0/helm-snoop/pkg/version"
-	chart "helm.sh/helm/v4/pkg/chart/v2"
-	chartLoader "helm.sh/helm/v4/pkg/chart/v2/loader"
 )
 
 type CliArgumentError string
 
 func (e CliArgumentError) Error() string { return string(e) }
 
-func NewParser(args []string, setupLogging func(slog.Level)) *cobra.Command {
-	return newParser(args, setupLogging, nil, nil)
-}
-
-func NewParserForTest(args []string, setupLogging func(slog.Level), loader LoaderFunc, snoop snooper.SnoopFunc) *cobra.Command {
-	return newParser(args, setupLogging, loader, snoop)
-}
-
-func newParser(args []string, setupLogging func(slog.Level), loader LoaderFunc, snoop snooper.SnoopFunc) *cobra.Command {
+func NewParser(args []string, setupLogging func(slog.Level), snoop snooper.SnoopFunc) *cobra.Command {
 	slog.Debug("raw cli arguments", "args", args)
 
-	if loader == nil {
-		loader = LoaderFunc(func(path string) (*chart.Chart, error) {
-			return chartLoader.Load(path)
-		})
-	}
-
-	if snoop == nil {
-		snoop = snooper.Snoop
-	}
-
 	config := &cliConfig{
-		loader: loader,
-		snoop:  snoop,
+		snoop: snoop,
 	}
 	var verbosity int
 
@@ -107,8 +86,8 @@ func newParser(args []string, setupLogging func(slog.Level), loader LoaderFunc, 
 	return rootCmd
 }
 
-func Main(args []string, stdout io.Writer, stderr io.Writer, setupLogging func(slog.Level)) int {
-	command := NewParser(args, setupLogging)
+func Main(args []string, stdout io.Writer, stderr io.Writer, setupLogging func(slog.Level), snoop snooper.SnoopFunc) int {
+	command := NewParser(args, setupLogging, snoop)
 
 	command.SetOut(stdout)
 	command.SetErr(stderr)
