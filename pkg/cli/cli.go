@@ -7,6 +7,7 @@ import (
 
 	"github.com/spf13/cobra"
 	"github.com/y0-l0/helm-snoop/pkg/parser"
+	"github.com/y0-l0/helm-snoop/pkg/path"
 	"github.com/y0-l0/helm-snoop/pkg/snooper"
 	"github.com/y0-l0/helm-snoop/pkg/version"
 )
@@ -17,14 +18,14 @@ func (e CliArgumentError) Error() string { return string(e) }
 
 func analyze(
 	chartPath string,
-	ignoreKeys []string,
+	ignorePaths *cliPaths,
 	jsonOutput bool,
 	outWriter io.Writer,
 	snoop snooper.SnoopFunc,
 ) error {
 	parser.Strict = false
 
-	result, err := snoop(chartPath, ignoreKeys)
+	result, err := snoop(chartPath, path.Paths(*ignorePaths))
 	if err != nil {
 		return err
 	}
@@ -49,7 +50,7 @@ func NewParser(args []string, setupLogging func(slog.Level), snoop snooper.Snoop
 	slog.Debug("raw cli arguments", "args", args)
 
 	var verbosity int
-	var ignoreKeys []string
+	ignorePaths := &cliPaths{}
 	var jsonOutput bool
 
 	rootCmd := &cobra.Command{
@@ -73,7 +74,7 @@ func NewParser(args []string, setupLogging func(slog.Level), snoop snooper.Snoop
 			setupLogging(logLevel)
 		},
 		RunE: func(cmd *cobra.Command, args []string) error {
-			err := analyze(args[0], ignoreKeys, jsonOutput, cmd.OutOrStdout(), snoop)
+			err := analyze(args[0], ignorePaths, jsonOutput, cmd.OutOrStdout(), snoop)
 			if err != nil {
 				cmd.SilenceUsage = true
 			}
@@ -98,12 +99,17 @@ func NewParser(args []string, setupLogging func(slog.Level), snoop snooper.Snoop
 		"Increase the log level. Can be specified multiple times.",
 	)
 
-	rootCmd.Flags().StringArrayVarP(
-		&ignoreKeys,
+	rootCmd.Flags().VarP(
+		ignorePaths,
 		"ignore",
 		"i",
-		nil,
-		"Ignore specific keys (repeatable)",
+		`Ignore value paths matching patterns. Supports wildcards (*) and integers match as any key.
+Examples:
+  -i /image/tag        Ignore exact path
+  -i /config/*         Ignore all config descendants
+  -i /items/0          Ignore items[0] and items["0"]
+  -i /a/*/c            Ignore /a/<any>/c (one level)
+Repeatable.`,
 	)
 
 	rootCmd.Flags().BoolVar(

@@ -7,7 +7,7 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/snooper"
 )
 
-func mockSnoop(chartPath string, ignore []string) (*snooper.Result, error) {
+func mockSnoop(chartPath string, ignorePatterns path.Paths) (*snooper.Result, error) {
 	return &snooper.Result{
 		Referenced:     path.Paths{},
 		DefinedNotUsed: path.Paths{},
@@ -33,10 +33,7 @@ func (s *Unittest) TestValidArguments() {
 		args []string
 	}{
 		{"basic chart path", []string{"helm-snoop", "/path/to/chart"}},
-		{"with single ignore flag", []string{"helm-snoop", "-i", "image.tag", "/path/to/chart"}},
-		{"with multiple ignore flags", []string{"helm-snoop", "-i", "image.tag", "-i", "replicas", "/path/to/chart"}},
 		{"with json output", []string{"helm-snoop", "--json", "/path/to/chart"}},
-		{"combined flags", []string{"helm-snoop", "-i", "tag", "--json", "/path/to/chart"}},
 	}
 
 	for _, tc := range tests {

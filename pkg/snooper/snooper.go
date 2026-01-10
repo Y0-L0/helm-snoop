@@ -8,9 +8,9 @@ import (
 	loader "helm.sh/helm/v4/pkg/chart/v2/loader"
 )
 
-type SnoopFunc func(string, []string) (*Result, error)
+type SnoopFunc func(string, path.Paths) (*Result, error)
 
-func Snoop(chartPath string, ignore []string) (*Result, error) {
+func Snoop(chartPath string, ignorePaths path.Paths) (*Result, error) {
 	chart, err := loader.Load(chartPath)
 	if err != nil {
 		return nil, fmt.Errorf("Failed to read the helm chart.\nerror: %w", err)
@@ -29,41 +29,25 @@ func Snoop(chartPath string, ignore []string) (*Result, error) {
 	result := &Result{}
 	result.Referenced, result.DefinedNotUsed, result.UsedNotDefined = path.MergeJoinLoose(defined, used)
 
-	if len(ignore) > 0 {
-		result = filterIgnored(result, ignore)
+	if len(ignorePaths) > 0 {
+		result = filterIgnoredWithMerge(result, ignorePaths)
 	}
 
 	return result, nil
 }
 
-// filterIgnored removes paths from DefinedNotUsed and UsedNotDefined only
-func filterIgnored(result *Result, ignore []string) *Result {
-	if len(ignore) == 0 {
+// filterIgnoredWithMerge removes paths matching ignorePaths using MergeJoinLoose.
+func filterIgnoredWithMerge(result *Result, ignorePaths path.Paths) *Result {
+	if len(ignorePaths) == 0 {
 		return result
 	}
 
-	ignoreMap := make(map[string]bool, len(ignore))
-	for _, key := range ignore {
-		ignoreMap[key] = true
-	}
-
-	filteredDefinedNotUsed := make(path.Paths, 0, len(result.DefinedNotUsed))
-	for _, p := range result.DefinedNotUsed {
-		if !ignoreMap[p.ID()] {
-			filteredDefinedNotUsed = append(filteredDefinedNotUsed, p)
-		}
-	}
-
-	filteredUsedNotDefined := make(path.Paths, 0, len(result.UsedNotDefined))
-	for _, p := range result.UsedNotDefined {
-		if !ignoreMap[p.ID()] {
-			filteredUsedNotDefined = append(filteredUsedNotDefined, p)
-		}
-	}
+	_, _, keptDefinedNotUsed := path.MergeJoinLoose(ignorePaths, result.DefinedNotUsed)
+	_, _, keptUsedNotDefined := path.MergeJoinLoose(ignorePaths, result.UsedNotDefined)
 
 	return &Result{
-		Referenced:     result.Referenced,
-		DefinedNotUsed: filteredDefinedNotUsed,
-		UsedNotDefined: filteredUsedNotDefined,
+		Referenced:     result.Referenced, // Never filtered
+		DefinedNotUsed: keptDefinedNotUsed,
+		UsedNotDefined: keptUsedNotDefined,
 	}
 }
