@@ -9,7 +9,7 @@ import (
 // ==============================================================================
 
 func tplFn(ctx *evalCtx, call Call) evalResult {
-	slog.Warn("tpl partially implemented (ignoring context argument)")
+	slog.Info("tpl partially implemented (ignoring context argument)")
 	Must("tpl partially implemented (ignoring context argument)")
 
 	if len(call.Args) < 1 {
