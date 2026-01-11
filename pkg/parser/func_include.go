@@ -53,7 +53,7 @@ func includeFn(ctx *evalCtx, call Call) evalResult {
 
 	// Extract template name from literal strings
 	if len(nameResult.args) == 0 {
-		slog.Warn("include: template name must be a string literal")
+		slog.Info("include: template name must be a string literal")
 		Must("include: template name must be a string literal")
 		return evalResult{}
 	}
