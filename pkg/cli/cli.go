@@ -20,6 +20,7 @@ func analyze(
 	chartPath string,
 	ignorePaths *cliPaths,
 	jsonOutput bool,
+	showReferenced bool,
 	outWriter io.Writer,
 	snoop snooper.SnoopFunc,
 ) error {
@@ -31,11 +32,11 @@ func analyze(
 	}
 
 	if jsonOutput {
-		if err := result.ToJSON(outWriter); err != nil {
+		if err := result.ToJSON(outWriter, showReferenced); err != nil {
 			return errors.New("")
 		}
 	} else {
-		if err := result.ToText(outWriter); err != nil {
+		if err := result.ToText(outWriter, showReferenced); err != nil {
 			return errors.New("")
 		}
 	}
@@ -52,6 +53,7 @@ func NewParser(args []string, setupLogging func(slog.Level), snoop snooper.Snoop
 	var verbosity int
 	ignorePaths := &cliPaths{}
 	var jsonOutput bool
+	var showReferenced bool
 
 	rootCmd := &cobra.Command{
 		Use:   "helm-snoop [FLAGS] <chart-path>",
@@ -74,7 +76,7 @@ func NewParser(args []string, setupLogging func(slog.Level), snoop snooper.Snoop
 			setupLogging(logLevel)
 		},
 		RunE: func(cmd *cobra.Command, args []string) error {
-			err := analyze(args[0], ignorePaths, jsonOutput, cmd.OutOrStdout(), snoop)
+			err := analyze(args[0], ignorePaths, jsonOutput, showReferenced, cmd.OutOrStdout(), snoop)
 			if err != nil {
 				cmd.SilenceUsage = true
 			}
@@ -117,6 +119,13 @@ Repeatable.`,
 		"json",
 		false,
 		"Output results in JSON format",
+	)
+
+	rootCmd.Flags().BoolVar(
+		&showReferenced,
+		"referenced",
+		false,
+		"Include referenced values in output",
 	)
 
 	rootCmd.AddCommand(versionCmd)

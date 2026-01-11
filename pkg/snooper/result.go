@@ -24,10 +24,12 @@ func (r *Result) HasFindings() bool {
 	return len(r.DefinedNotUsed) > 0 || len(r.UsedNotDefined) > 0
 }
 
-func (r *Result) ToText(w io.Writer) error {
-	fmt.Fprintln(w, "Referenced:")
-	for _, p := range r.Referenced {
-		fmt.Fprintf(w, "  %s\n", p.ID())
+func (r *Result) ToText(w io.Writer, showReferenced bool) error {
+	if showReferenced {
+		fmt.Fprintln(w, "Referenced:")
+		for _, p := range r.Referenced {
+			fmt.Fprintf(w, "  %s\n", p.ID())
+		}
 	}
 
 	fmt.Fprintln(w, "Defined-not-used:")
@@ -43,11 +45,13 @@ func (r *Result) ToText(w io.Writer) error {
 	return nil
 }
 
-func (r *Result) ToJSON(w io.Writer) error {
+func (r *Result) ToJSON(w io.Writer, showReferenced bool) error {
 	resultsJSON := ResultsJSON{
-		Referenced:     r.Referenced.ToJSON(),
 		DefinedNotUsed: r.DefinedNotUsed.ToJSON(),
 		UsedNotDefined: r.UsedNotDefined.ToJSON(),
+	}
+	if showReferenced {
+		resultsJSON.Referenced = r.Referenced.ToJSON()
 	}
 
 	encoder := json.NewEncoder(w)

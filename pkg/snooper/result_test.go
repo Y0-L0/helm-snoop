@@ -104,7 +104,7 @@ func (s *Unittest) TestToText() {
 	for _, tc := range tests {
 		s.Run(tc.name, func() {
 			var buf bytes.Buffer
-			err := tc.result.ToText(&buf)
+			err := tc.result.ToText(&buf, true)
 			s.Require().NoError(err)
 
 			output := buf.String()

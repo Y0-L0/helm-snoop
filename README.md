@@ -22,7 +22,7 @@ Contributions would be wonderful:
 helm-snoop <path-to-chart>
 
 # With all optional flags
-helm-snoop -i /image/tag -i /config/* --json -vv <path-to-chart>
+helm-snoop --ignore /image/tag --ignore /config/* --json --referenced -vv <path-to-chart>
 ```
 
 Analyzes Helm charts and reports:

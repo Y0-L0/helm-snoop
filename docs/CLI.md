@@ -66,6 +66,13 @@ Output results in JSON format for machine-readable consumption (CI/CD integratio
 helm-snoop --json ./my-chart
 ```
 
+### `--referenced`
+Include referenced values in the output. By default, only findings (defined-not-used and used-not-defined) are shown.
+
+```bash
+helm-snoop --referenced ./my-chart
+```
+
 ### `-f, --values <PATH>`
 Specify path to values file (overrides default `values.yaml` in chart directory). **(NOT YET IMPLEMENTED)**
 
