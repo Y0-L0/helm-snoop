@@ -18,26 +18,37 @@ Contributions would be wonderful:
 ## 🚀 Usage
 
 ```bash
-helm-snoop <path-to-chart> [log-level]
+# Minimal
+helm-snoop <path-to-chart>
+
+# With all optional flags
+helm-snoop -i /image/tag -i /config/* --json -vv <path-to-chart>
 ```
 
-The chart-path can be a directory or .tgz file. \
-Log-level options: debug|info|warn|error
+Analyzes Helm charts and reports:
+- **Referenced:** Values paths defined and used
+- **Defined-not-used:** Keys in values.yaml never used in templates
+- **Used-not-defined:** Paths used in templates but not defined in values.yaml
 
-Analyzes a Helm chart and reports:
-- Referenced - .Values paths defined in values.yaml and used in templates
-- Defined-not-used - Unused: Keys in values.yaml that templates never use
-- Used-not-defined - Undefined: Paths that templates use but values.yaml doesn't define
+See [docs/CLI.md](docs/CLI.md) for complete documentation.
+
+## ✅ Supported Advanced Features
+
+- **Variable tracking:** Variables are tracked across references (e.g., `{{ $var := .Values.foo }}{{ $var.bar }}`)
+- **Context-aware path resolution:** Correctly resolves relative paths within `with` and `range` contexts (e.g., `.Values.config` → `with` → `.timeout` resolves to `.Values.config.timeout`)
+- **Dict/list operations:** Tracks values through `dict`, `list`, `merge`, `concat` operations
+- **Nested template definitions:** Follows `define` blocks across multiple files
+- **Include/Template functions:** Template includes are followed and analyzed
+- **Wildcard ignore patterns:** Advanced pattern matching for suppressing specific warnings
+- **Control flow:** All branches of `if/else` blocks are analyzed
 
 ## ⚠️ Current Limitations
 
-- No `tpl` function support. Dynamic template strings aren't evaluated.
-- Variables aren't tracked across references. e.g. `{{ $var := .Values.foo }}{{ $var.bar }}` doesn't resolve to `.Values.foo.bar`
-- No schema.json validation. Only compares templates against values.yaml, not against schema definitions.
-- No support for dynamic evaluation. e.g. `{{ index .Values.a .Values.b }}`
-- No wildcard matching for functions like `toYaml` or `range`. e.g. `{{ toYaml .Values.a }}` currently does not match the defined `a.b.c`. -> False positive.
-- Analyze subcharts. (not just collect template functions (`define`))
-- Respect / Include globals from subcharts. -> false positive undefined paths.
+- **Limited `tpl` function support:** Dynamic template strings have partial support
+- **No schema.json validation:** Only compares templates against values.yaml, not against schema definitions
+- **Limited dynamic evaluation:** Complex patterns like `{{ index .Values.a .Values.b }}` may not be fully resolved
+- **No subchart analysis:** Does not analyze subcharts (only collects template functions via `define`)
+- **No global values from subcharts:** May report false positives for undefined global paths from subcharts
 
 ## 🔍 The Problem
 
