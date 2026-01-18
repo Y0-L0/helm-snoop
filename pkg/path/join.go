@@ -44,7 +44,13 @@ func SortDedup(ps Paths) Paths {
 		}
 	}
 	sort.Sort(out)
-	out = slices.CompactFunc(out, func(a, b *Path) bool { return a.Compare(*b) == 0 })
+	out = slices.CompactFunc(out, func(a, b *Path) bool {
+		if a.Compare(*b) == 0 {
+			a.Contexts = append(a.Contexts, b.Contexts...)
+			return true
+		}
+		return false
+	})
 
 	// Remove paths subsumed by wildcards
 	filtered := make(Paths, 0, len(out))
@@ -150,6 +156,7 @@ func MergeJoinLoose(a, b Paths) (inter Paths, onlyA Paths, onlyB Paths) {
 			if EqualLoose(pa, pb) {
 				matchedB[j] = true
 				matched = true
+				pa.Contexts = append(pa.Contexts, pb.Contexts...)
 			}
 		}
 		if matched {

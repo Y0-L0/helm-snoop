@@ -2,63 +2,168 @@
   "referenced": [
     {
       "id": "/config/disabled",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap.yaml",
+          "line": 9,
+          "column": 16
+        }
+      ]
     },
     {
       "id": "/config/enabled",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap.yaml",
+          "line": 7,
+          "column": 15
+        }
+      ]
     },
     {
       "id": "/config/message",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap.yaml",
+          "line": 6,
+          "column": 40
+        }
+      ]
     },
     {
       "id": "/extra/fromDefine",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap.yaml",
+          "line": 3,
+          "column": 3
+        }
+      ]
     },
     {
       "id": "/fullnameOverride",
-      "kinds": "/K"
+      "kinds": "/K",
+      "contexts": [
+        {
+          "file": "templates/deployment.yaml",
+          "line": 5,
+          "column": 5
+        }
+      ]
     },
     {
       "id": "/getPipe/someKey",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap.yaml",
+          "line": 12,
+          "column": 16
+        }
+      ]
     },
     {
       "id": "/image/registry",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment.yaml",
+          "line": 16,
+          "column": 20
+        }
+      ]
     },
     {
       "id": "/image/repository",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment.yaml",
+          "line": 16,
+          "column": 49
+        }
+      ]
     },
     {
       "id": "/image/tag",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment.yaml",
+          "line": 16,
+          "column": 80
+        }
+      ]
     },
     {
       "id": "/indexPipe/nestedKey/someOtherKey",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap.yaml",
+          "line": 15,
+          "column": 35
+        }
+      ]
     },
     {
       "id": "/indexPipe/someKey",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap.yaml",
+          "line": 14,
+          "column": 19
+        }
+      ]
     },
     {
       "id": "/integerKey/1234",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap.yaml",
+          "line": 11,
+          "column": 23
+        }
+      ]
     },
     {
       "id": "/nameOverride",
-      "kinds": "/K"
+      "kinds": "/K",
+      "contexts": [
+        {
+          "file": "templates/deployment.yaml",
+          "line": 10,
+          "column": 14
+        }
+      ]
     },
     {
       "id": "/postgresql/auth/existingSecret/keyMapping/password",
-      "kinds": "/K/K/K/K/K"
+      "kinds": "/K/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/postgresql/auth/existingSecret/name",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment.yaml",
+          "line": 21,
+          "column": 85
+        }
+      ]
     }
   ],
   "definedNotUsed": [

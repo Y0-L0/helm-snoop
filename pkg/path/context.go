@@ -15,3 +15,12 @@ func (c PathContext) String() string {
 	}
 	return fmt.Sprintf("%s:%d:%d", c.FileName, c.Line, c.Column)
 }
+
+func (c PathContext) ToJSON() PathContextJSON {
+	return PathContextJSON{
+		File:     c.FileName,
+		Template: c.TemplateName,
+		Line:     c.Line,
+		Column:   c.Column,
+	}
+}

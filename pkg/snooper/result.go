@@ -28,21 +28,28 @@ func (r *Result) ToText(w io.Writer, showReferenced bool) error {
 	if showReferenced {
 		fmt.Fprintln(w, "Referenced:")
 		for _, p := range r.Referenced {
-			fmt.Fprintf(w, "  %s\n", p.ID())
+			printPathWithContext(w, p)
 		}
 	}
 
 	fmt.Fprintln(w, "Defined-not-used:")
 	for _, p := range r.DefinedNotUsed {
-		fmt.Fprintf(w, "  %s\n", p.ID())
+		printPathWithContext(w, p)
 	}
 
 	fmt.Fprintln(w, "Used-not-defined:")
 	for _, p := range r.UsedNotDefined {
-		fmt.Fprintf(w, "  %s\n", p.ID())
+		printPathWithContext(w, p)
 	}
 
 	return nil
+}
+
+func printPathWithContext(w io.Writer, p *path.Path) {
+	fmt.Fprintf(w, "  %s\n", p.ID())
+	for _, ctx := range p.Contexts {
+		fmt.Fprintf(w, "    %s\n", ctx.String())
+	}
 }
 
 func (r *Result) ToJSON(w io.Writer, showReferenced bool) error {
