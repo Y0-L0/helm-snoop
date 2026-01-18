@@ -15,8 +15,9 @@ const (
 )
 
 type Path struct {
-	tokens []string
-	kinds  []kind
+	tokens   []string
+	kinds    []kind
+	Contexts []PathContext
 }
 
 // Stable JsonPointer representation of the Path.
@@ -137,8 +138,8 @@ func (p *Path) Wildcard() *Path {
 
 func NewPath(tokens ...string) *Path {
 	p := Path{
-		make([]string, 0, len(tokens)),
-		make([]kind, 0, len(tokens)),
+		tokens: make([]string, 0, len(tokens)),
+		kinds:  make([]kind, 0, len(tokens)),
 	}
 	for _, t := range tokens {
 		p.Key(t)
