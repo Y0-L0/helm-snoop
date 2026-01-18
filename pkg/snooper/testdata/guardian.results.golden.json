@@ -2,1347 +2,3779 @@
   "referenced": [
     {
       "id": "/additionalAnnotations",
-      "kinds": "/K"
+      "kinds": "/K",
+      "contexts": [
+        {
+          "file": "templates/extraSecrets.yaml",
+          "line": 13,
+          "column": 16
+        }
+      ]
     },
     {
       "id": "/additionalLabels",
-      "kinds": "/K"
+      "kinds": "/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 22,
+          "column": 66
+        }
+      ]
     },
     {
       "id": "/authorizationApi/affinity",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 43,
+          "column": 12
+        }
+      ]
     },
     {
       "id": "/authorizationApi/config/guardianAuthzAdapterAppPersistencePort",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-authorization-api.yaml",
+          "line": 21,
+          "column": 51
+        }
+      ]
     },
     {
       "id": "/authorizationApi/config/guardianAuthzAdapterAuthenticationPort",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-authorization-api.yaml",
+          "line": 23,
+          "column": 54
+        }
+      ]
     },
     {
       "id": "/authorizationApi/config/guardianAuthzAdapterPolicyPort",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-authorization-api.yaml",
+          "line": 22,
+          "column": 46
+        }
+      ]
     },
     {
       "id": "/authorizationApi/config/guardianAuthzAdapterSettingsPort",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-authorization-api.yaml",
+          "line": 20,
+          "column": 48
+        }
+      ]
     },
     {
       "id": "/authorizationApi/config/guardianAuthzCorsAllowedOrigins",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-authorization-api.yaml",
+          "line": 32,
+          "column": 89
+        }
+      ]
     },
     {
       "id": "/authorizationApi/config/guardianAuthzLoggingFormat",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-authorization-api.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/authorizationApi/config/guardianAuthzLoggingLevel",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-authorization-api.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/authorizationApi/config/guardianAuthzLoggingStructured",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-authorization-api.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/authorizationApi/config/home",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-authorization-api.yaml",
+          "line": 18,
+          "column": 13
+        }
+      ]
     },
     {
       "id": "/authorizationApi/config/isUniventionAppCenter",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-authorization-api.yaml",
+          "line": 24,
+          "column": 32
+        }
+      ]
     },
     {
       "id": "/authorizationApi/config/oauthAdapterWellKnownUrl",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-authorization-api.yaml",
+          "line": 49,
+          "column": 20
+        }
+      ]
     },
     {
       "id": "/authorizationApi/config/opaAdapterUrl",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-authorization-api.yaml",
+          "line": 43,
+          "column": 5
+        }
+      ]
     },
     {
       "id": "/authorizationApi/config/udmDataAdapterPasswordFile",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-authorization-api.yaml",
+          "line": 27,
+          "column": 40
+        }
+      ]
     },
     {
       "id": "/authorizationApi/config/udmDataAdapterUrl",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-authorization-api.yaml",
+          "line": 14,
+          "column": 22
+        }
+      ]
     },
     {
       "id": "/authorizationApi/config/udmDataAdapterUsernameFile",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-authorization-api.yaml",
+          "line": 26,
+          "column": 40
+        }
+      ]
     },
     {
       "id": "/authorizationApi/containerSecurityContext/allowPrivilegeEscalation",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 70,
+          "column": 84
+        }
+      ]
     },
     {
       "id": "/authorizationApi/containerSecurityContext/capabilities/drop/0",
-      "kinds": "/K/K/K/K/I"
+      "kinds": "/K/K/K/K/I",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 70,
+          "column": 84
+        }
+      ]
     },
     {
       "id": "/authorizationApi/containerSecurityContext/enabled",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 70,
+          "column": 84
+        },
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 68,
+          "column": 18
+        }
+      ]
     },
     {
       "id": "/authorizationApi/containerSecurityContext/privileged",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 70,
+          "column": 84
+        }
+      ]
     },
     {
       "id": "/authorizationApi/containerSecurityContext/readOnlyRootFilesystem",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 70,
+          "column": 84
+        }
+      ]
     },
     {
       "id": "/authorizationApi/containerSecurityContext/runAsGroup",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 70,
+          "column": 84
+        }
+      ]
     },
     {
       "id": "/authorizationApi/containerSecurityContext/runAsNonRoot",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 70,
+          "column": 84
+        }
+      ]
     },
     {
       "id": "/authorizationApi/containerSecurityContext/runAsUser",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 70,
+          "column": 84
+        }
+      ]
     },
     {
       "id": "/authorizationApi/containerSecurityContext/seccompProfile/type",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 70,
+          "column": 84
+        }
+      ]
     },
     {
       "id": "/authorizationApi/extraEnvVars",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 83,
+          "column": 21
+        }
+      ]
     },
     {
       "id": "/authorizationApi/image/pullPolicy",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 73,
+          "column": 115
+        }
+      ]
     },
     {
       "id": "/authorizationApi/image/registry",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 72,
+          "column": 22
+        }
+      ]
     },
     {
       "id": "/authorizationApi/image/repository",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 72,
+          "column": 106
+        }
+      ]
     },
     {
       "id": "/authorizationApi/image/sha256",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 72,
+          "column": 207
+        }
+      ]
     },
     {
       "id": "/authorizationApi/image/tag",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 72,
+          "column": 261
+        }
+      ]
     },
     {
       "id": "/authorizationApi/nodeSelector",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 51,
+          "column": 12
+        }
+      ]
     },
     {
       "id": "/authorizationApi/podAnnotations",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 30,
+          "column": 15
+        }
+      ]
     },
     {
       "id": "/authorizationApi/podSecurityContext/enabled",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 55,
+          "column": 74
+        },
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 53,
+          "column": 14
+        }
+      ]
     },
     {
       "id": "/authorizationApi/podSecurityContext/fsGroup",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 55,
+          "column": 74
+        }
+      ]
     },
     {
       "id": "/authorizationApi/podSecurityContext/fsGroupChangePolicy",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 55,
+          "column": 74
+        }
+      ]
     },
     {
       "id": "/authorizationApi/probes/liveness/enabled",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 91,
+          "column": 18
+        }
+      ]
     },
     {
       "id": "/authorizationApi/probes/liveness/failureThreshold",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 99,
+          "column": 34
+        }
+      ]
     },
     {
       "id": "/authorizationApi/probes/liveness/initialDelaySeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 96,
+          "column": 37
+        }
+      ]
     },
     {
       "id": "/authorizationApi/probes/liveness/periodSeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 98,
+          "column": 31
+        }
+      ]
     },
     {
       "id": "/authorizationApi/probes/liveness/successThreshold",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 100,
+          "column": 34
+        }
+      ]
     },
     {
       "id": "/authorizationApi/probes/liveness/timeoutSeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 97,
+          "column": 32
+        }
+      ]
     },
     {
       "id": "/authorizationApi/probes/readiness/enabled",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 102,
+          "column": 18
+        }
+      ]
     },
     {
       "id": "/authorizationApi/probes/readiness/failureThreshold",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 110,
+          "column": 34
+        }
+      ]
     },
     {
       "id": "/authorizationApi/probes/readiness/initialDelaySeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 107,
+          "column": 37
+        }
+      ]
     },
     {
       "id": "/authorizationApi/probes/readiness/periodSeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 109,
+          "column": 31
+        }
+      ]
     },
     {
       "id": "/authorizationApi/probes/readiness/successThreshold",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 111,
+          "column": 34
+        }
+      ]
     },
     {
       "id": "/authorizationApi/probes/readiness/timeoutSeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 108,
+          "column": 32
+        }
+      ]
     },
     {
       "id": "/authorizationApi/replicaCount",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 19,
+          "column": 16
+        }
+      ]
     },
     {
       "id": "/authorizationApi/resources/limits/cpu",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 114,
+          "column": 17
+        }
+      ]
     },
     {
       "id": "/authorizationApi/resources/limits/memory",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 114,
+          "column": 17
+        }
+      ]
     },
     {
       "id": "/authorizationApi/resources/requests/cpu",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 114,
+          "column": 17
+        }
+      ]
     },
     {
       "id": "/authorizationApi/resources/requests/memory",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 114,
+          "column": 17
+        }
+      ]
     },
     {
       "id": "/authorizationApi/service/enabled",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/service-authorization-api.yaml",
+          "line": 4,
+          "column": 8
+        }
+      ]
     },
     {
       "id": "/authorizationApi/service/ports/http/containerPort",
-      "kinds": "/K/K/K/K/K"
+      "kinds": "/K/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 88,
+          "column": 33
+        }
+      ]
     },
     {
       "id": "/authorizationApi/service/ports/http/port",
-      "kinds": "/K/K/K/K/K"
+      "kinds": "/K/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/service-authorization-api.yaml",
+          "line": 28,
+          "column": 16
+        }
+      ]
     },
     {
       "id": "/authorizationApi/service/ports/http/protocol",
-      "kinds": "/K/K/K/K/K"
+      "kinds": "/K/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/service-authorization-api.yaml",
+          "line": 30,
+          "column": 20
+        }
+      ]
     },
     {
       "id": "/authorizationApi/service/sessionAffinity/enabled",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/service-authorization-api.yaml",
+          "line": 20,
+          "column": 10
+        }
+      ]
     },
     {
       "id": "/authorizationApi/service/sessionAffinity/timeoutSeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/service-authorization-api.yaml",
+          "line": 24,
+          "column": 26
+        }
+      ]
     },
     {
       "id": "/authorizationApi/service/type",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/service-authorization-api.yaml",
+          "line": 32,
+          "column": 19
+        }
+      ]
     },
     {
       "id": "/authorizationApi/tolerations",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 47,
+          "column": 12
+        }
+      ]
     },
     {
       "id": "/authorizationApi/udm/auth/existingSecret/keyMapping/password",
-      "kinds": "/K/K/K/K/K/K"
+      "kinds": "/K/K/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 55,
+          "column": 19
+        }
+      ]
     },
     {
       "id": "/authorizationApi/udm/auth/existingSecret/name",
-      "kinds": "/K/K/K/K/K"
+      "kinds": "/K/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 28,
+          "column": 23
+        }
+      ]
     },
     {
       "id": "/authorizationApi/udm/auth/username",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-authorization-api.yaml",
+          "line": 35,
+          "column": 8
+        }
+      ]
     },
     {
       "id": "/extraSecrets",
-      "kinds": "/K"
+      "kinds": "/K",
+      "contexts": [
+        {
+          "file": "templates/extraSecrets.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/extraVolumes",
-      "kinds": "/K"
+      "kinds": "/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 149,
+          "column": 12
+        }
+      ]
     },
     {
       "id": "/global/domain",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-provisioning.yaml",
+          "line": 35,
+          "column": 38
+        }
+      ]
     },
     {
       "id": "/global/imagePullPolicy",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 73,
+          "column": 115
+        }
+      ]
     },
     {
       "id": "/global/imagePullSecrets",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 59,
+          "column": 21
+        }
+      ]
     },
     {
       "id": "/global/imageRegistry",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 98,
+          "column": 22
+        }
+      ]
     },
     {
       "id": "/global/postgresql/connection/host",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/global/postgresql/connection/port",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/global/subDomains/keycloak",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-ui.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/global/subDomains/portal",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/imagePullSecrets",
-      "kinds": "/K"
+      "kinds": "/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 63,
+          "column": 21
+        }
+      ]
     },
     {
       "id": "/ingress/annotations",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 16,
+          "column": 76
+        }
+      ]
     },
     {
       "id": "/ingress/certManager/enabled",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 19,
+          "column": 12
+        }
+      ]
     },
     {
       "id": "/ingress/certManager/issuerRef/kind",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 20,
+          "column": 70
+        }
+      ]
     },
     {
       "id": "/ingress/certManager/issuerRef/name",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 20,
+          "column": 88
+        }
+      ]
     },
     {
       "id": "/ingress/enabled",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 3,
+          "column": 8
+        }
+      ]
     },
     {
       "id": "/ingress/host",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/ingressClassName",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 24,
+          "column": 98
+        }
+      ]
     },
     {
       "id": "/ingress/items/0/annotations",
-      "kinds": "/K/K/I/K"
+      "kinds": "/K/K/I/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/0/host",
-      "kinds": "/K/K/I/K"
+      "kinds": "/K/K/I/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        },
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        },
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/0/ingressClassName",
-      "kinds": "/K/K/I/K"
+      "kinds": "/K/K/I/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/0/name",
-      "kinds": "/K/K/I/K"
+      "kinds": "/K/K/I/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/0/paths/0/backend/service/name",
-      "kinds": "/K/K/I/K/I/K/K/K"
+      "kinds": "/K/K/I/K/I/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/0/paths/0/backend/service/port/number",
-      "kinds": "/K/K/I/K/I/K/K/K/K"
+      "kinds": "/K/K/I/K/I/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/0/paths/0/path",
-      "kinds": "/K/K/I/K/I/K"
+      "kinds": "/K/K/I/K/I/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/0/paths/0/pathType",
-      "kinds": "/K/K/I/K/I/K"
+      "kinds": "/K/K/I/K/I/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/0/tls/secretName",
-      "kinds": "/K/K/I/K/K"
+      "kinds": "/K/K/I/K/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/1/annotations",
-      "kinds": "/K/K/I/K"
+      "kinds": "/K/K/I/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/1/host",
-      "kinds": "/K/K/I/K"
+      "kinds": "/K/K/I/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        },
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        },
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/1/ingressClassName",
-      "kinds": "/K/K/I/K"
+      "kinds": "/K/K/I/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/1/name",
-      "kinds": "/K/K/I/K"
+      "kinds": "/K/K/I/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/1/paths/0/backend/service/name",
-      "kinds": "/K/K/I/K/I/K/K/K"
+      "kinds": "/K/K/I/K/I/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/1/paths/0/backend/service/port/number",
-      "kinds": "/K/K/I/K/I/K/K/K/K"
+      "kinds": "/K/K/I/K/I/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/1/paths/0/path",
-      "kinds": "/K/K/I/K/I/K"
+      "kinds": "/K/K/I/K/I/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/1/paths/0/pathType",
-      "kinds": "/K/K/I/K/I/K"
+      "kinds": "/K/K/I/K/I/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/1/tls/secretName",
-      "kinds": "/K/K/I/K/K"
+      "kinds": "/K/K/I/K/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/2/annotations",
-      "kinds": "/K/K/I/K"
+      "kinds": "/K/K/I/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/2/host",
-      "kinds": "/K/K/I/K"
+      "kinds": "/K/K/I/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        },
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        },
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/2/ingressClassName",
-      "kinds": "/K/K/I/K"
+      "kinds": "/K/K/I/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/2/name",
-      "kinds": "/K/K/I/K"
+      "kinds": "/K/K/I/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/2/paths/0/backend/service/name",
-      "kinds": "/K/K/I/K/I/K/K/K"
+      "kinds": "/K/K/I/K/I/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/2/paths/0/backend/service/port/number",
-      "kinds": "/K/K/I/K/I/K/K/K/K"
+      "kinds": "/K/K/I/K/I/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/2/paths/0/path",
-      "kinds": "/K/K/I/K/I/K"
+      "kinds": "/K/K/I/K/I/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/2/paths/0/pathType",
-      "kinds": "/K/K/I/K/I/K"
+      "kinds": "/K/K/I/K/I/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/items/2/tls/secretName",
-      "kinds": "/K/K/I/K/K"
+      "kinds": "/K/K/I/K/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 5,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/ingress/tls/enabled",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 26,
+          "column": 10
+        }
+      ]
     },
     {
       "id": "/ingress/tls/secretName",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/managementApi/affinity",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 41,
+          "column": 12
+        }
+      ]
     },
     {
       "id": "/managementApi/config/guardianManagementAdapterAppPersistencePort",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 22,
+          "column": 60
+        }
+      ]
     },
     {
       "id": "/managementApi/config/guardianManagementAdapterAuthenticationPort",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 29,
+          "column": 59
+        }
+      ]
     },
     {
       "id": "/managementApi/config/guardianManagementAdapterAuthorizationApiUrl",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/managementApi/config/guardianManagementAdapterCapabilityPersistencePort",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 28,
+          "column": 67
+        }
+      ]
     },
     {
       "id": "/managementApi/config/guardianManagementAdapterConditionPersistencePort",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 23,
+          "column": 66
+        }
+      ]
     },
     {
       "id": "/managementApi/config/guardianManagementAdapterContextPersistencePort",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 24,
+          "column": 64
+        }
+      ]
     },
     {
       "id": "/managementApi/config/guardianManagementAdapterNamespacePersistencePort",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 25,
+          "column": 66
+        }
+      ]
     },
     {
       "id": "/managementApi/config/guardianManagementAdapterPermissionPersistencePort",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 26,
+          "column": 67
+        }
+      ]
     },
     {
       "id": "/managementApi/config/guardianManagementAdapterResourceAuthorizationPort",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 31,
+          "column": 67
+        }
+      ]
     },
     {
       "id": "/managementApi/config/guardianManagementAdapterRolePersistencePort",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 27,
+          "column": 61
+        }
+      ]
     },
     {
       "id": "/managementApi/config/guardianManagementAdapterSettingsPort",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 21,
+          "column": 53
+        }
+      ]
     },
     {
       "id": "/managementApi/config/guardianManagementBaseUrl",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/managementApi/config/guardianManagementCorsAllowedOrigins",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/managementApi/config/guardianManagementLoggingFormat",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/managementApi/config/guardianManagementLoggingLevel",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/managementApi/config/guardianManagementLoggingStructured",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/managementApi/config/home",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 19,
+          "column": 13
+        }
+      ]
     },
     {
       "id": "/managementApi/config/isUniventionAppCenter",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 34,
+          "column": 32
+        }
+      ]
     },
     {
       "id": "/managementApi/config/oauthAdapterM2mSecretFile",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 36,
+          "column": 39
+        }
+      ]
     },
     {
       "id": "/managementApi/config/oauthAdapterWellKnownUrl",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 35,
+          "column": 38
+        }
+      ]
     },
     {
       "id": "/managementApi/config/sqlPersistenceAdapterDialect",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/managementApi/containerSecurityContext/allowPrivilegeEscalation",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 91,
+          "column": 81
+        }
+      ]
     },
     {
       "id": "/managementApi/containerSecurityContext/capabilities/drop/0",
-      "kinds": "/K/K/K/K/I"
+      "kinds": "/K/K/K/K/I",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 91,
+          "column": 81
+        }
+      ]
     },
     {
       "id": "/managementApi/containerSecurityContext/enabled",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 91,
+          "column": 81
+        },
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 89,
+          "column": 18
+        }
+      ]
     },
     {
       "id": "/managementApi/containerSecurityContext/privileged",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 91,
+          "column": 81
+        }
+      ]
     },
     {
       "id": "/managementApi/containerSecurityContext/readOnlyRootFilesystem",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 91,
+          "column": 81
+        }
+      ]
     },
     {
       "id": "/managementApi/containerSecurityContext/runAsGroup",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 91,
+          "column": 81
+        }
+      ]
     },
     {
       "id": "/managementApi/containerSecurityContext/runAsNonRoot",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 91,
+          "column": 81
+        }
+      ]
     },
     {
       "id": "/managementApi/containerSecurityContext/runAsUser",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 91,
+          "column": 81
+        }
+      ]
     },
     {
       "id": "/managementApi/containerSecurityContext/seccompProfile/type",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 91,
+          "column": 81
+        }
+      ]
     },
     {
       "id": "/managementApi/extraEnvVars",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 105,
+          "column": 21
+        }
+      ]
     },
     {
       "id": "/managementApi/image/pullPolicy",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 68,
+          "column": 112
+        }
+      ]
     },
     {
       "id": "/managementApi/image/registry",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 93,
+          "column": 22
+        }
+      ]
     },
     {
       "id": "/managementApi/image/repository",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 66,
+          "column": 103
+        }
+      ]
     },
     {
       "id": "/managementApi/image/sha256",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 66,
+          "column": 150
+        }
+      ]
     },
     {
       "id": "/managementApi/image/tag",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 66,
+          "column": 249
+        }
+      ]
     },
     {
       "id": "/managementApi/nodeSelector",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 49,
+          "column": 12
+        }
+      ]
     },
     {
       "id": "/managementApi/oauth/auth/existingSecret/keyMapping/clientSecret",
-      "kinds": "/K/K/K/K/K/K"
+      "kinds": "/K/K/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 49,
+          "column": 253
+        }
+      ]
     },
     {
       "id": "/managementApi/oauth/auth/existingSecret/name",
-      "kinds": "/K/K/K/K/K"
+      "kinds": "/K/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 25,
+          "column": 113
+        }
+      ]
     },
     {
       "id": "/managementApi/podAnnotations",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 28,
+          "column": 15
+        }
+      ]
     },
     {
       "id": "/managementApi/podSecurityContext/enabled",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 53,
+          "column": 71
+        },
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 51,
+          "column": 14
+        }
+      ]
     },
     {
       "id": "/managementApi/podSecurityContext/fsGroup",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 53,
+          "column": 71
+        }
+      ]
     },
     {
       "id": "/managementApi/podSecurityContext/fsGroupChangePolicy",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 53,
+          "column": 71
+        }
+      ]
     },
     {
       "id": "/managementApi/probes/liveness/enabled",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 113,
+          "column": 18
+        }
+      ]
     },
     {
       "id": "/managementApi/probes/liveness/failureThreshold",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 121,
+          "column": 34
+        }
+      ]
     },
     {
       "id": "/managementApi/probes/liveness/initialDelaySeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 118,
+          "column": 37
+        }
+      ]
     },
     {
       "id": "/managementApi/probes/liveness/periodSeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 120,
+          "column": 31
+        }
+      ]
     },
     {
       "id": "/managementApi/probes/liveness/successThreshold",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 122,
+          "column": 34
+        }
+      ]
     },
     {
       "id": "/managementApi/probes/liveness/timeoutSeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 119,
+          "column": 32
+        }
+      ]
     },
     {
       "id": "/managementApi/probes/readiness/enabled",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 124,
+          "column": 18
+        }
+      ]
     },
     {
       "id": "/managementApi/probes/readiness/failureThreshold",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 132,
+          "column": 34
+        }
+      ]
     },
     {
       "id": "/managementApi/probes/readiness/initialDelaySeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 129,
+          "column": 37
+        }
+      ]
     },
     {
       "id": "/managementApi/probes/readiness/periodSeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 131,
+          "column": 31
+        }
+      ]
     },
     {
       "id": "/managementApi/probes/readiness/successThreshold",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 133,
+          "column": 34
+        }
+      ]
     },
     {
       "id": "/managementApi/probes/readiness/timeoutSeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 130,
+          "column": 32
+        }
+      ]
     },
     {
       "id": "/managementApi/replicaCount",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 17,
+          "column": 16
+        }
+      ]
     },
     {
       "id": "/managementApi/resources/limits/cpu",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 136,
+          "column": 17
+        }
+      ]
     },
     {
       "id": "/managementApi/resources/limits/memory",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 136,
+          "column": 17
+        }
+      ]
     },
     {
       "id": "/managementApi/resources/requests/cpu",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 136,
+          "column": 17
+        }
+      ]
     },
     {
       "id": "/managementApi/resources/requests/memory",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 136,
+          "column": 17
+        }
+      ]
     },
     {
       "id": "/managementApi/service/enabled",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/service-management-api.yaml",
+          "line": 4,
+          "column": 8
+        }
+      ]
     },
     {
       "id": "/managementApi/service/ports/http/containerPort",
-      "kinds": "/K/K/K/K/K"
+      "kinds": "/K/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 110,
+          "column": 33
+        }
+      ]
     },
     {
       "id": "/managementApi/service/ports/http/port",
-      "kinds": "/K/K/K/K/K"
+      "kinds": "/K/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/service-management-api.yaml",
+          "line": 28,
+          "column": 16
+        }
+      ]
     },
     {
       "id": "/managementApi/service/ports/http/protocol",
-      "kinds": "/K/K/K/K/K"
+      "kinds": "/K/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 111,
+          "column": 28
+        }
+      ]
     },
     {
       "id": "/managementApi/service/sessionAffinity/enabled",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/service-management-api.yaml",
+          "line": 20,
+          "column": 10
+        }
+      ]
     },
     {
       "id": "/managementApi/service/sessionAffinity/timeoutSeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/service-management-api.yaml",
+          "line": 24,
+          "column": 26
+        }
+      ]
     },
     {
       "id": "/managementApi/service/type",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/service-management-api.yaml",
+          "line": 32,
+          "column": 19
+        }
+      ]
     },
     {
       "id": "/managementApi/tolerations",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 45,
+          "column": 12
+        }
+      ]
     },
     {
       "id": "/managementUi/affinity",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 42,
+          "column": 12
+        }
+      ]
     },
     {
       "id": "/managementUi/config/nginx/disableIPv6",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-init-management-ui.yaml",
+          "line": 22,
+          "column": 13
+        }
+      ]
     },
     {
       "id": "/managementUi/config/viteApiDataAdapterUri",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-ui.yaml",
+          "line": 21,
+          "column": 71
+        }
+      ]
     },
     {
       "id": "/managementUi/config/viteKeycloakAuthenticationAdapterClientId",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-ui.yaml",
+          "line": 24,
+          "column": 57
+        }
+      ]
     },
     {
       "id": "/managementUi/config/viteKeycloakAuthenticationAdapterRealm",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-ui.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/managementUi/config/viteKeycloakAuthenticationAdapterSsoUri",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-ui.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/managementUi/config/viteManagementUiAdapterAuthenticationPort",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-ui.yaml",
+          "line": 19,
+          "column": 58
+        }
+      ]
     },
     {
       "id": "/managementUi/config/viteManagementUiAdapterDataPort",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-ui.yaml",
+          "line": 20,
+          "column": 48
+        }
+      ]
     },
     {
       "id": "/managementUi/containerSecurityContext/allowPrivilegeEscalation",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 69,
+          "column": 80
+        }
+      ]
     },
     {
       "id": "/managementUi/containerSecurityContext/capabilities/drop/0",
-      "kinds": "/K/K/K/K/I"
+      "kinds": "/K/K/K/K/I",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 69,
+          "column": 80
+        }
+      ]
     },
     {
       "id": "/managementUi/containerSecurityContext/enabled",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 69,
+          "column": 80
+        },
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 94,
+          "column": 18
+        }
+      ]
     },
     {
       "id": "/managementUi/containerSecurityContext/privileged",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 69,
+          "column": 80
+        }
+      ]
     },
     {
       "id": "/managementUi/containerSecurityContext/readOnlyRootFilesystem",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 69,
+          "column": 80
+        }
+      ]
     },
     {
       "id": "/managementUi/containerSecurityContext/runAsGroup",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 69,
+          "column": 80
+        }
+      ]
     },
     {
       "id": "/managementUi/containerSecurityContext/runAsNonRoot",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 69,
+          "column": 80
+        }
+      ]
     },
     {
       "id": "/managementUi/containerSecurityContext/runAsUser",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 69,
+          "column": 80
+        }
+      ]
     },
     {
       "id": "/managementUi/containerSecurityContext/seccompProfile/type",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 69,
+          "column": 80
+        }
+      ]
     },
     {
       "id": "/managementUi/extraEnvVars",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 79,
+          "column": 23
+        }
+      ]
     },
     {
       "id": "/managementUi/image/pullPolicy",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 99,
+          "column": 111
+        }
+      ]
     },
     {
       "id": "/managementUi/image/registry",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 71,
+          "column": 22
+        }
+      ]
     },
     {
       "id": "/managementUi/image/repository",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 98,
+          "column": 102
+        }
+      ]
     },
     {
       "id": "/managementUi/image/sha256",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 98,
+          "column": 148
+        }
+      ]
     },
     {
       "id": "/managementUi/image/tag",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 71,
+          "column": 245
+        }
+      ]
     },
     {
       "id": "/managementUi/nodeSelector",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 50,
+          "column": 12
+        }
+      ]
     },
     {
       "id": "/managementUi/podAnnotations",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 29,
+          "column": 15
+        }
+      ]
     },
     {
       "id": "/managementUi/podSecurityContext/enabled",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 54,
+          "column": 70
+        },
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 52,
+          "column": 14
+        }
+      ]
     },
     {
       "id": "/managementUi/podSecurityContext/fsGroup",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 54,
+          "column": 70
+        }
+      ]
     },
     {
       "id": "/managementUi/podSecurityContext/runAsGroup",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 54,
+          "column": 70
+        }
+      ]
     },
     {
       "id": "/managementUi/podSecurityContext/runAsUser",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 54,
+          "column": 70
+        }
+      ]
     },
     {
       "id": "/managementUi/probes/liveness/enabled",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 123,
+          "column": 18
+        }
+      ]
     },
     {
       "id": "/managementUi/probes/liveness/failureThreshold",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 131,
+          "column": 34
+        }
+      ]
     },
     {
       "id": "/managementUi/probes/liveness/initialDelaySeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 128,
+          "column": 37
+        }
+      ]
     },
     {
       "id": "/managementUi/probes/liveness/periodSeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 130,
+          "column": 31
+        }
+      ]
     },
     {
       "id": "/managementUi/probes/liveness/successThreshold",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 132,
+          "column": 34
+        }
+      ]
     },
     {
       "id": "/managementUi/probes/liveness/timeoutSeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 129,
+          "column": 32
+        }
+      ]
     },
     {
       "id": "/managementUi/probes/readiness/enabled",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 134,
+          "column": 18
+        }
+      ]
     },
     {
       "id": "/managementUi/probes/readiness/failureThreshold",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 142,
+          "column": 34
+        }
+      ]
     },
     {
       "id": "/managementUi/probes/readiness/initialDelaySeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 139,
+          "column": 37
+        }
+      ]
     },
     {
       "id": "/managementUi/probes/readiness/periodSeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 141,
+          "column": 31
+        }
+      ]
     },
     {
       "id": "/managementUi/probes/readiness/successThreshold",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 143,
+          "column": 34
+        }
+      ]
     },
     {
       "id": "/managementUi/probes/readiness/timeoutSeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 140,
+          "column": 32
+        }
+      ]
     },
     {
       "id": "/managementUi/replicaCount",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 18,
+          "column": 16
+        }
+      ]
     },
     {
       "id": "/managementUi/resources/limits/cpu",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 74,
+          "column": 17
+        }
+      ]
     },
     {
       "id": "/managementUi/resources/limits/memory",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 74,
+          "column": 17
+        }
+      ]
     },
     {
       "id": "/managementUi/resources/requests/cpu",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 74,
+          "column": 17
+        }
+      ]
     },
     {
       "id": "/managementUi/resources/requests/memory",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 74,
+          "column": 17
+        }
+      ]
     },
     {
       "id": "/managementUi/service/enabled",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/service-management-ui.yaml",
+          "line": 4,
+          "column": 8
+        }
+      ]
     },
     {
       "id": "/managementUi/service/ports/http/containerPort",
-      "kinds": "/K/K/K/K/K"
+      "kinds": "/K/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 120,
+          "column": 33
+        }
+      ]
     },
     {
       "id": "/managementUi/service/ports/http/port",
-      "kinds": "/K/K/K/K/K"
+      "kinds": "/K/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/service-management-ui.yaml",
+          "line": 28,
+          "column": 16
+        }
+      ]
     },
     {
       "id": "/managementUi/service/ports/http/protocol",
-      "kinds": "/K/K/K/K/K"
+      "kinds": "/K/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/service-management-ui.yaml",
+          "line": 30,
+          "column": 20
+        }
+      ]
     },
     {
       "id": "/managementUi/service/sessionAffinity/enabled",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/service-management-ui.yaml",
+          "line": 20,
+          "column": 10
+        }
+      ]
     },
     {
       "id": "/managementUi/service/sessionAffinity/timeoutSeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/service-management-ui.yaml",
+          "line": 24,
+          "column": 26
+        }
+      ]
     },
     {
       "id": "/managementUi/service/type",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/service-management-ui.yaml",
+          "line": 19,
+          "column": 12
+        }
+      ]
     },
     {
       "id": "/managementUi/tolerations",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 46,
+          "column": 12
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/affinity",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 42,
+          "column": 12
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/config/isUniventionAppCenter",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-open-policy-agent.yaml",
+          "line": 19,
+          "column": 32
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/config/opaDataBundle",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-open-policy-agent.yaml",
+          "line": 20,
+          "column": 24
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/config/opaGuardianManagementUrl",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-open-policy-agent.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/config/opaPolicyBundle",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-open-policy-agent.yaml",
+          "line": 21,
+          "column": 26
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/config/opaPollingMaxDelay",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-open-policy-agent.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/config/opaPollingMinDelay",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-open-policy-agent.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/containerSecurityContext/allowPrivilegeEscalation",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 69,
+          "column": 83
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/containerSecurityContext/capabilities/drop/0",
-      "kinds": "/K/K/K/K/I"
+      "kinds": "/K/K/K/K/I",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 69,
+          "column": 83
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/containerSecurityContext/enabled",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 69,
+          "column": 83
+        },
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 67,
+          "column": 18
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/containerSecurityContext/privileged",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 69,
+          "column": 83
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/containerSecurityContext/readOnlyRootFilesystem",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 69,
+          "column": 83
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/containerSecurityContext/runAsGroup",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 69,
+          "column": 83
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/containerSecurityContext/runAsNonRoot",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 69,
+          "column": 83
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/containerSecurityContext/runAsUser",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 69,
+          "column": 83
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/containerSecurityContext/seccompProfile/type",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 69,
+          "column": 83
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/extraEnvVars",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 78,
+          "column": 21
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/image/pullPolicy",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 72,
+          "column": 114
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/image/registry",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 71,
+          "column": 22
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/image/repository",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 71,
+          "column": 105
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/image/sha256",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 71,
+          "column": 204
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/image/tag",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 71,
+          "column": 257
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/nodeSelector",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 50,
+          "column": 12
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/podAnnotations",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 29,
+          "column": 15
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/podSecurityContext/enabled",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 54,
+          "column": 73
+        },
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 52,
+          "column": 14
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/podSecurityContext/fsGroup",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 54,
+          "column": 73
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/podSecurityContext/fsGroupChangePolicy",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 54,
+          "column": 73
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/probes/liveness/enabled",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 86,
+          "column": 18
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/probes/liveness/failureThreshold",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 94,
+          "column": 34
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/probes/liveness/initialDelaySeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 91,
+          "column": 37
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/probes/liveness/periodSeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 93,
+          "column": 31
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/probes/liveness/successThreshold",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 95,
+          "column": 34
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/probes/liveness/timeoutSeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 92,
+          "column": 32
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/probes/readiness/enabled",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 97,
+          "column": 18
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/probes/readiness/failureThreshold",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 105,
+          "column": 34
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/probes/readiness/initialDelaySeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 102,
+          "column": 37
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/probes/readiness/periodSeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 104,
+          "column": 31
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/probes/readiness/successThreshold",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 106,
+          "column": 34
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/probes/readiness/timeoutSeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 103,
+          "column": 32
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/replicaCount",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 18,
+          "column": 16
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/resources/limits/cpu",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 109,
+          "column": 17
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/resources/limits/memory",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 109,
+          "column": 17
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/resources/requests/cpu",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 109,
+          "column": 17
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/resources/requests/memory",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 109,
+          "column": 17
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/service/enabled",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/service-open-policy-agent.yaml",
+          "line": 4,
+          "column": 8
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/service/ports/http/containerPort",
-      "kinds": "/K/K/K/K/K"
+      "kinds": "/K/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 83,
+          "column": 33
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/service/ports/http/port",
-      "kinds": "/K/K/K/K/K"
+      "kinds": "/K/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/service-open-policy-agent.yaml",
+          "line": 28,
+          "column": 16
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/service/ports/http/protocol",
-      "kinds": "/K/K/K/K/K"
+      "kinds": "/K/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 84,
+          "column": 28
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/service/sessionAffinity/enabled",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/service-open-policy-agent.yaml",
+          "line": 20,
+          "column": 10
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/service/sessionAffinity/timeoutSeconds",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/service-open-policy-agent.yaml",
+          "line": 24,
+          "column": 26
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/service/type",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/service-open-policy-agent.yaml",
+          "line": 19,
+          "column": 12
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/tolerations",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 46,
+          "column": 12
+        }
+      ]
     },
     {
       "id": "/postgresql/auth/database",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/postgresql/auth/existingSecret/keyMapping/password",
-      "kinds": "/K/K/K/K/K"
+      "kinds": "/K/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 53,
+          "column": 51
+        }
+      ]
     },
     {
       "id": "/postgresql/auth/existingSecret/name",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 26,
+          "column": 34
+        }
+      ]
     },
     {
       "id": "/postgresql/auth/username",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 45,
+          "column": 42
+        }
+      ]
     },
     {
       "id": "/postgresql/connection/host",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/postgresql/connection/port",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/provisioning/backoffLimit",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 200,
+          "column": 20
+        }
+      ]
     },
     {
       "id": "/provisioning/config/debug/enabled",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-provisioning.yaml",
+          "line": 34,
+          "column": 57
+        }
+      ]
     },
     {
       "id": "/provisioning/config/debug/pauseBeforeScriptStart",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-provisioning.yaml",
+          "line": 41,
+          "column": 129
+        }
+      ]
     },
     {
       "id": "/provisioning/config/nubusBaseUrl",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-provisioning.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/provisioning/containerSecurityContext/allowPrivilegeEscalation",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 53,
+          "column": 78
+        }
+      ]
     },
     {
       "id": "/provisioning/containerSecurityContext/capabilities/drop/0",
-      "kinds": "/K/K/K/K/I"
+      "kinds": "/K/K/K/K/I",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 53,
+          "column": 78
+        }
+      ]
     },
     {
       "id": "/provisioning/containerSecurityContext/enabled",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 53,
+          "column": 78
+        },
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 76,
+          "column": 16
+        }
+      ]
     },
     {
       "id": "/provisioning/containerSecurityContext/privileged",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 53,
+          "column": 78
+        }
+      ]
     },
     {
       "id": "/provisioning/containerSecurityContext/readOnlyRootFilesystem",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 53,
+          "column": 78
+        }
+      ]
     },
     {
       "id": "/provisioning/containerSecurityContext/runAsGroup",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 53,
+          "column": 78
+        }
+      ]
     },
     {
       "id": "/provisioning/containerSecurityContext/runAsNonRoot",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 53,
+          "column": 78
+        }
+      ]
     },
     {
       "id": "/provisioning/containerSecurityContext/runAsUser",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 53,
+          "column": 78
+        }
+      ]
     },
     {
       "id": "/provisioning/containerSecurityContext/seccompProfile/type",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 53,
+          "column": 78
+        }
+      ]
     },
     {
       "id": "/provisioning/enabled",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-provisioning.yaml",
+          "line": 4,
+          "column": 8
+        }
+      ]
     },
     {
       "id": "/provisioning/extraEnvVars",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 60,
+          "column": 19
+        }
+      ]
     },
     {
       "id": "/provisioning/image/registry",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 49,
+          "column": 20
+        }
+      ]
     },
     {
       "id": "/provisioning/image/repository",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 49,
+          "column": 100
+        }
+      ]
     },
     {
       "id": "/provisioning/image/sha256",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 49,
+          "column": 146
+        }
+      ]
     },
     {
       "id": "/provisioning/image/tag",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 49,
+          "column": 243
+        }
+      ]
     },
     {
       "id": "/provisioning/keycloak/auth/existingSecret/keyMapping/adminPassword",
-      "kinds": "/K/K/K/K/K/K"
+      "kinds": "/K/K/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 49,
+          "column": 253
+        }
+      ]
     },
     {
       "id": "/provisioning/keycloak/auth/existingSecret/name",
-      "kinds": "/K/K/K/K/K"
+      "kinds": "/K/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 25,
+          "column": 113
+        }
+      ]
     },
     {
       "id": "/provisioning/keycloak/auth/password",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/secret-keycloak.yaml",
+          "line": 6,
+          "column": 11
+        }
+      ]
     },
     {
       "id": "/provisioning/keycloak/auth/username",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-provisioning.yaml",
+          "line": 36,
+          "column": 30
+        }
+      ]
     },
     {
       "id": "/provisioning/keycloak/connection/host",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-provisioning.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/provisioning/keycloak/connection/port",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-provisioning.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/provisioning/keycloak/realm",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-provisioning.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/provisioning/podSecurityContext/enabled",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 45,
+          "column": 70
+        },
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 43,
+          "column": 14
+        }
+      ]
     },
     {
       "id": "/provisioning/podSecurityContext/fsGroup",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 45,
+          "column": 70
+        }
+      ]
     },
     {
       "id": "/provisioning/podSecurityContext/fsGroupChangePolicy",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 45,
+          "column": 70
+        }
+      ]
     },
     {
       "id": "/provisioning/provisioningImage/pullPolicy",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 81,
+          "column": 121
+        }
+      ]
     },
     {
       "id": "/provisioning/provisioningImage/registry",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 80,
+          "column": 20
+        }
+      ]
     },
     {
       "id": "/provisioning/provisioningImage/repository",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 80,
+          "column": 112
+        }
+      ]
     },
     {
       "id": "/provisioning/provisioningImage/tag",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 80,
+          "column": 291
+        }
+      ]
     },
     {
       "id": "/provisioning/resources/limits/cpu",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 68,
+          "column": 15
+        }
+      ]
     },
     {
       "id": "/provisioning/resources/limits/memory",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 68,
+          "column": 15
+        }
+      ]
     },
     {
       "id": "/provisioning/resources/requests/cpu",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 68,
+          "column": 15
+        }
+      ]
     },
     {
       "id": "/provisioning/resources/requests/memory",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 68,
+          "column": 15
+        }
+      ]
     },
     {
       "id": "/provisioning/restartPolicy",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 30,
+          "column": 100
+        }
+      ]
     },
     {
       "id": "/provisioning/tolerations",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 188,
+          "column": 13
+        }
+      ]
     },
     {
       "id": "/provisioning/ttlSecondsAfterFinished",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 18,
+          "column": 31
+        }
+      ]
     },
     {
       "id": "/serviceAccount/automountServiceAccountToken",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/serviceaccount.yaml",
+          "line": 16,
+          "column": 34
+        }
+      ]
     },
     {
       "id": "/serviceAccount/create",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 36,
+          "column": 14
+        }
+      ]
     }
   ],
   "definedNotUsed": [
@@ -1494,155 +3926,421 @@
   "usedNotDefined": [
     {
       "id": "/Values/enabled",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/secret-guardian-keycloak-client.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/Values/global/secrets/masterPassword",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/secret-guardian-keycloak-client.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/authorizationApi/credentialSecretName",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 79,
+          "column": 74
+        }
+      ]
     },
     {
       "id": "/authorizationApi/extraAnnotations",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-authorization-api.yaml",
+          "line": 45,
+          "column": 16
+        }
+      ]
     },
     {
       "id": "/authorizationApi/extraVolumeMounts/*",
-      "kinds": "/K/K/W"
+      "kinds": "/K/K/W",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 15,
+          "column": 22
+        }
+      ]
     },
     {
       "id": "/authorizationApi/extraVolumes/*",
-      "kinds": "/K/K/W"
+      "kinds": "/K/K/W",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 16,
+          "column": 3
+        }
+      ]
     },
     {
       "id": "/authorizationApi/service/ports/*/nodePort",
-      "kinds": "/K/K/K/W/K"
+      "kinds": "/K/K/K/W/K",
+      "contexts": [
+        {
+          "file": "templates/service-authorization-api.yaml",
+          "line": 32,
+          "column": 14
+        }
+      ]
     },
     {
       "id": "/extraSecrets/*/data/*",
-      "kinds": "/K/W/K/W"
+      "kinds": "/K/W/K/W",
+      "contexts": [
+        {
+          "file": "templates/extraSecrets.yaml",
+          "line": 19,
+          "column": 21
+        }
+      ]
     },
     {
       "id": "/extraSecrets/*/name",
-      "kinds": "/K/W/K"
+      "kinds": "/K/W/K",
+      "contexts": [
+        {
+          "file": "templates/extraSecrets.yaml",
+          "line": 8,
+          "column": 20
+        }
+      ]
     },
     {
       "id": "/extraSecrets/*/stringData/*",
-      "kinds": "/K/W/K/W"
+      "kinds": "/K/W/K/W",
+      "contexts": [
+        {
+          "file": "templates/extraSecrets.yaml",
+          "line": 25,
+          "column": 21
+        }
+      ]
     },
     {
       "id": "/extraSecrets/*/values",
-      "kinds": "/K/W/K"
+      "kinds": "/K/W/K",
+      "contexts": [
+        {
+          "file": "templates/extraSecrets.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/fullnameOverride",
-      "kinds": "/K"
+      "kinds": "/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 22,
+          "column": 69
+        }
+      ]
     },
     {
       "id": "/global/certManagerIssuer",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 20,
+          "column": 88
+        }
+      ]
     },
     {
       "id": "/global/ingressClass",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 23,
+          "column": 10
+        }
+      ]
     },
     {
       "id": "/global/keycloak/realm",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-provisioning.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/global/kubeVersion",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 10,
+          "column": 39
+        }
+      ]
     },
     {
       "id": "/global/nubusDeployment",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-management-api.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/global/restartPolicy",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 30,
+          "column": 100
+        }
+      ]
     },
     {
       "id": "/global/secrets/keep",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/secret-guardian-keycloak-client.yaml",
+          "line": 29,
+          "column": 10
+        }
+      ]
     },
     {
       "id": "/ingress/apiVersion",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/kubeVersion",
-      "kinds": "/K"
+      "kinds": "/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 10,
+          "column": 39
+        }
+      ]
     },
     {
       "id": "/managementApi/extraVolumeMounts/*",
-      "kinds": "/K/K/W"
+      "kinds": "/K/K/W",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 13,
+          "column": 27
+        }
+      ]
     },
     {
       "id": "/managementApi/extraVolumes/*",
-      "kinds": "/K/K/W"
+      "kinds": "/K/K/W",
+      "contexts": [
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 13,
+          "column": 27
+        }
+      ]
     },
     {
       "id": "/managementApi/service/ports/*/nodePort",
-      "kinds": "/K/K/K/W/K"
+      "kinds": "/K/K/K/W/K",
+      "contexts": [
+        {
+          "file": "templates/service-management-api.yaml",
+          "line": 33,
+          "column": 20
+        }
+      ]
     },
     {
       "id": "/managementUi/service/ports/*/nodePort",
-      "kinds": "/K/K/K/W/K"
+      "kinds": "/K/K/K/W/K",
+      "contexts": [
+        {
+          "file": "templates/service-management-ui.yaml",
+          "line": 33,
+          "column": 20
+        }
+      ]
     },
     {
       "id": "/nameOverride",
-      "kinds": "/K"
+      "kinds": "/K",
+      "contexts": [
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 23,
+          "column": 52
+        }
+      ]
     },
     {
       "id": "/openPolicyAgent/service/ports/*/nodePort",
-      "kinds": "/K/K/K/W/K"
+      "kinds": "/K/K/K/W/K",
+      "contexts": [
+        {
+          "file": "templates/service-open-policy-agent.yaml",
+          "line": 33,
+          "column": 20
+        }
+      ]
     },
     {
       "id": "/provisioning/affinity/*",
-      "kinds": "/K/K/W"
+      "kinds": "/K/K/W",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 184,
+          "column": 13
+        }
+      ]
     },
     {
       "id": "/provisioning/args",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 63,
+          "column": 16
+        }
+      ]
     },
     {
       "id": "/provisioning/extraAnnotations/*",
-      "kinds": "/K/K/W"
+      "kinds": "/K/K/W",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 27,
+          "column": 12
+        }
+      ]
     },
     {
       "id": "/provisioning/extraVolumeMounts/*",
-      "kinds": "/K/K/W"
+      "kinds": "/K/K/W",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 14,
+          "column": 36
+        }
+      ]
     },
     {
       "id": "/provisioning/extraVolumes/*",
-      "kinds": "/K/K/W"
+      "kinds": "/K/K/W",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 15,
+          "column": 17
+        }
+      ]
     },
     {
       "id": "/provisioning/image/pullPolicy",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 50,
+          "column": 109
+        }
+      ]
     },
     {
       "id": "/provisioning/keycloak/connection/baseUrl",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-provisioning.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/provisioning/keycloak/connection/protocol",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-provisioning.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/provisioning/keycloak/url",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/configmap-provisioning.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
     },
     {
       "id": "/provisioning/nodeSelector/*",
-      "kinds": "/K/K/W"
+      "kinds": "/K/K/W",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 180,
+          "column": 13
+        }
+      ]
     },
     {
       "id": "/provisioning/provisioningImage/sha256",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 80,
+          "column": 170
+        }
+      ]
     }
   ]
 }
