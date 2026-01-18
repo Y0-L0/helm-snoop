@@ -97,7 +97,7 @@ func (s *Unittest) TestParseFile_RangeVariables() {
 
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			actual, err := parseFile(tc.name+".tmpl", []byte(tc.template), nil)
+			actual, err := parseFile("", tc.name+".tmpl", []byte(tc.template), nil)
 			s.Require().NoError(err)
 			path.EqualPaths(s, tc.expected, actual)
 		})
@@ -156,7 +156,7 @@ func (s *Unittest) TestParseFile_RangeVariablesNested() {
 
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			actual, err := parseFile(tc.name+".tmpl", []byte(tc.template), nil)
+			actual, err := parseFile("", tc.name+".tmpl", []byte(tc.template), nil)
 			s.Require().NoError(err)
 			path.EqualPaths(s, tc.expected, actual)
 		})
@@ -221,7 +221,7 @@ func (s *Unittest) TestParseFile_RangeVariablesMixed() {
 
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			actual, err := parseFile(tc.name+".tmpl", []byte(tc.template), nil)
+			actual, err := parseFile("", tc.name+".tmpl", []byte(tc.template), nil)
 			s.Require().NoError(err)
 			path.EqualPaths(s, tc.expected, actual)
 		})

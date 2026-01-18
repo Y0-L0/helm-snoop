@@ -5,7 +5,7 @@
       "kinds": "/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 19,
           "column": 8
         }
@@ -16,7 +16,7 @@
       "kinds": "/K",
       "contexts": [
         {
-          "file": "templates/ingress.yaml",
+          "file": "intercom-service/templates/ingress.yaml",
           "line": 19,
           "column": 10
         }
@@ -27,7 +27,7 @@
       "kinds": "/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 14,
           "column": 49
         }
@@ -38,7 +38,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 66,
           "column": 80
         }
@@ -49,7 +49,7 @@
       "kinds": "/K/K/K/I",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 66,
           "column": 80
         }
@@ -60,12 +60,12 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 66,
           "column": 80
         },
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 65,
           "column": 16
         }
@@ -76,7 +76,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 66,
           "column": 80
         }
@@ -87,7 +87,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 66,
           "column": 80
         }
@@ -98,7 +98,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 66,
           "column": 80
         }
@@ -109,7 +109,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 66,
           "column": 80
         }
@@ -120,7 +120,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 66,
           "column": 80
         }
@@ -131,7 +131,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 66,
           "column": 80
         }
@@ -142,7 +142,7 @@
       "kinds": "/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 14,
           "column": 49
         }
@@ -153,7 +153,7 @@
       "kinds": "/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 14,
           "column": 82
         }
@@ -164,7 +164,7 @@
       "kinds": "/K",
       "contexts": [
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "intercom-service/templates/configmap-provisioning.yaml",
           "line": 17,
           "column": 101
         }
@@ -175,7 +175,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "intercom-service/templates/configmap-provisioning.yaml",
           "line": 50,
           "column": 38
         }
@@ -186,7 +186,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 69,
           "column": 109
         }
@@ -197,7 +197,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 35,
           "column": 24
         }
@@ -208,7 +208,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 68,
           "column": 20
         }
@@ -219,7 +219,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 49,
           "column": 112
         }
@@ -230,7 +230,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 52,
           "column": 66
         }
@@ -241,7 +241,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 23,
           "column": 52
         }
@@ -252,7 +252,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 31,
           "column": 40
         }
@@ -263,7 +263,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 30,
           "column": 10
         }
@@ -274,7 +274,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 33,
           "column": 36
         }
@@ -285,7 +285,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 32,
           "column": 98
         }
@@ -296,7 +296,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 32,
           "column": 24
         }
@@ -307,7 +307,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 25,
           "column": 29
         }
@@ -318,7 +318,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret-matrix.yaml",
+          "file": "intercom-service/templates/secret-matrix.yaml",
           "line": 7,
           "column": 11
         }
@@ -329,7 +329,7 @@
       "kinds": "/K/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 48,
           "column": 86
         }
@@ -340,7 +340,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret-matrix.yaml",
+          "file": "intercom-service/templates/secret-matrix.yaml",
           "line": 7,
           "column": 11
         }
@@ -351,7 +351,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 39,
           "column": 40
         }
@@ -362,7 +362,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 41,
           "column": 47
         }
@@ -373,7 +373,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 40,
           "column": 92
         }
@@ -384,7 +384,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 40,
           "column": 22
         }
@@ -395,7 +395,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 46,
           "column": 41
         }
@@ -406,7 +406,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 43,
           "column": 39
         }
@@ -417,7 +417,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 44,
           "column": 109
         }
@@ -428,7 +428,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 44,
           "column": 21
         }
@@ -439,7 +439,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 45,
           "column": 94
         }
@@ -450,7 +450,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 45,
           "column": 18
         }
@@ -461,7 +461,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 36,
           "column": 36
         }
@@ -472,7 +472,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 37,
           "column": 95
         }
@@ -483,7 +483,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 37,
           "column": 41
         }
@@ -494,7 +494,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret-oidc.yaml",
+          "file": "intercom-service/templates/secret-oidc.yaml",
           "line": 6,
           "column": 11
         }
@@ -505,7 +505,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 48,
           "column": 86
         }
@@ -516,7 +516,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 25,
           "column": 75
         }
@@ -527,7 +527,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "intercom-service/templates/configmap-provisioning.yaml",
           "line": 59,
           "column": 19
         }
@@ -538,7 +538,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 26,
           "column": 35
         }
@@ -549,7 +549,7 @@
       "kinds": "/K/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 48,
           "column": 86
         }
@@ -560,7 +560,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 25,
           "column": 75
         }
@@ -571,7 +571,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret-portal.yaml",
+          "file": "intercom-service/templates/secret-portal.yaml",
           "line": 6,
           "column": 11
         }
@@ -582,7 +582,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret-portal.yaml",
+          "file": "intercom-service/templates/secret-portal.yaml",
           "line": 7,
           "column": 10
         }
@@ -593,7 +593,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 52,
           "column": 92
         }
@@ -604,7 +604,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 52,
           "column": 39
         }
@@ -615,7 +615,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 22,
           "column": 22
         }
@@ -626,7 +626,7 @@
       "kinds": "/K/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 48,
           "column": 86
         }
@@ -637,7 +637,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 25,
           "column": 75
         }
@@ -648,7 +648,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret-redis.yaml",
+          "file": "intercom-service/templates/secret-redis.yaml",
           "line": 6,
           "column": 11
         }
@@ -659,7 +659,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 54,
           "column": 32
         }
@@ -670,7 +670,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 55,
           "column": 32
         }
@@ -681,7 +681,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 184,
           "column": 20
         }
@@ -692,7 +692,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 56,
           "column": 38
         }
@@ -703,7 +703,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 83,
           "column": 44
         }
@@ -714,7 +714,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 66,
           "column": 8
         }
@@ -725,7 +725,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 235,
           "column": 20
         }
@@ -736,7 +736,7 @@
       "kinds": "/K/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 264,
           "column": 28
         }
@@ -747,7 +747,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 186,
           "column": 26
         }
@@ -758,7 +758,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 48,
           "column": 86
         }
@@ -769,7 +769,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 25,
           "column": 75
         }
@@ -780,7 +780,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret-session.yaml",
+          "file": "intercom-service/templates/secret-session.yaml",
           "line": 22,
           "column": 43
         }
@@ -791,7 +791,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 24,
           "column": 58
         }
@@ -802,7 +802,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 27,
           "column": 46
         }
@@ -813,7 +813,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 28,
           "column": 39
         }
@@ -824,7 +824,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 50,
           "column": 40
         }
@@ -835,7 +835,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 48,
           "column": 38
         }
@@ -846,7 +846,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 49,
           "column": 89
         }
@@ -857,7 +857,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 49,
           "column": 21
         }
@@ -868,7 +868,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 153,
           "column": 31
         }
@@ -879,7 +879,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 152,
           "column": 21
         }
@@ -890,7 +890,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 152,
           "column": 21
         }
@@ -901,7 +901,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 152,
           "column": 21
         }
@@ -912,7 +912,7 @@
       "kinds": "/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 38,
           "column": 24
         }
@@ -923,7 +923,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/ingress.yaml",
+          "file": "intercom-service/templates/ingress.yaml",
           "line": 15,
           "column": 90
         }
@@ -934,7 +934,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 9,
           "column": 1
         }
@@ -945,7 +945,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 11,
           "column": 2
         }
@@ -956,7 +956,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/ingress.yaml",
+          "file": "intercom-service/templates/ingress.yaml",
           "line": 22,
           "column": 96
         }
@@ -967,7 +967,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/ingress.yaml",
+          "file": "intercom-service/templates/ingress.yaml",
           "line": 34,
           "column": 22
         }
@@ -978,7 +978,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/ingress.yaml",
+          "file": "intercom-service/templates/ingress.yaml",
           "line": 36,
           "column": 26
         }
@@ -989,7 +989,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/ingress.yaml",
+          "file": "intercom-service/templates/ingress.yaml",
           "line": 24,
           "column": 10
         }
@@ -1000,7 +1000,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/ingress.yaml",
+          "file": "intercom-service/templates/ingress.yaml",
           "line": 28,
           "column": 120
         }
@@ -1011,7 +1011,7 @@
       "kinds": "/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 14,
           "column": 49
         }
@@ -1022,7 +1022,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 200,
           "column": 34
         }
@@ -1033,7 +1033,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 197,
           "column": 37
         }
@@ -1044,7 +1044,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 198,
           "column": 31
         }
@@ -1055,7 +1055,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 201,
           "column": 34
         }
@@ -1066,7 +1066,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 199,
           "column": 32
         }
@@ -1077,7 +1077,7 @@
       "kinds": "/K",
       "contexts": [
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "intercom-service/templates/configmap-provisioning.yaml",
           "line": 20,
           "column": 25
         }
@@ -1088,7 +1088,7 @@
       "kinds": "/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 14,
           "column": 49
         }
@@ -1099,7 +1099,7 @@
       "kinds": "/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 14,
           "column": 49
         }
@@ -1110,12 +1110,12 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 54,
           "column": 72
         },
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 53,
           "column": 14
         }
@@ -1126,7 +1126,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 54,
           "column": 72
         }
@@ -1137,7 +1137,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 54,
           "column": 72
         }
@@ -1148,7 +1148,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "intercom-service/templates/configmap-provisioning.yaml",
           "line": 60,
           "column": 29
         }
@@ -1159,7 +1159,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "intercom-service/templates/configmap-provisioning.yaml",
           "line": 49,
           "column": 57
         }
@@ -1170,7 +1170,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "intercom-service/templates/configmap-provisioning.yaml",
           "line": 58,
           "column": 129
         }
@@ -1181,7 +1181,7 @@
       "kinds": "/K/K/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 48,
           "column": 86
         }
@@ -1192,7 +1192,7 @@
       "kinds": "/K/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 25,
           "column": 75
         }
@@ -1203,7 +1203,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret-keycloak.yaml",
+          "file": "intercom-service/templates/secret-keycloak.yaml",
           "line": 6,
           "column": 11
         }
@@ -1214,7 +1214,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "intercom-service/templates/configmap-provisioning.yaml",
           "line": 51,
           "column": 25
         }
@@ -1225,7 +1225,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "intercom-service/templates/configmap-provisioning.yaml",
           "line": 55,
           "column": 21
         }
@@ -1236,7 +1236,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "intercom-service/templates/configmap-provisioning.yaml",
           "line": 27,
           "column": 6
         }
@@ -1247,7 +1247,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "intercom-service/templates/configmap-provisioning.yaml",
           "line": 28,
           "column": 6
         }
@@ -1258,7 +1258,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 63,
           "column": 14
         }
@@ -1269,7 +1269,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 129,
           "column": 19
         }
@@ -1280,7 +1280,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 14,
           "column": 49
         }
@@ -1291,7 +1291,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 69,
           "column": 109
         }
@@ -1302,7 +1302,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 68,
           "column": 20
         }
@@ -1313,7 +1313,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 68,
           "column": 100
         }
@@ -1324,7 +1324,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 68,
           "column": 243
         }
@@ -1335,7 +1335,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 89,
           "column": 121
         }
@@ -1346,7 +1346,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 88,
           "column": 20
         }
@@ -1357,7 +1357,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 88,
           "column": 112
         }
@@ -1368,7 +1368,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 88,
           "column": 291
         }
@@ -1379,7 +1379,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 87,
           "column": 15
         }
@@ -1390,7 +1390,7 @@
       "kinds": "/K/K/K/K/I",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 87,
           "column": 15
         }
@@ -1401,7 +1401,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 87,
           "column": 15
         }
@@ -1412,7 +1412,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 87,
           "column": 15
         }
@@ -1423,7 +1423,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 87,
           "column": 15
         }
@@ -1434,7 +1434,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 87,
           "column": 15
         }
@@ -1445,7 +1445,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 87,
           "column": 15
         }
@@ -1456,7 +1456,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 87,
           "column": 15
         }
@@ -1467,7 +1467,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 87,
           "column": 15
         }
@@ -1478,7 +1478,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 208,
           "column": 34
         }
@@ -1489,7 +1489,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 206,
           "column": 31
         }
@@ -1500,7 +1500,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 209,
           "column": 34
         }
@@ -1511,7 +1511,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 207,
           "column": 32
         }
@@ -1522,7 +1522,7 @@
       "kinds": "/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 17,
           "column": 16
         }
@@ -1533,7 +1533,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 14,
           "column": 82
         }
@@ -1544,7 +1544,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 14,
           "column": 82
         }
@@ -1555,7 +1555,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 14,
           "column": 82
         }
@@ -1566,7 +1566,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 14,
           "column": 82
         }
@@ -1577,7 +1577,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/service.yaml",
+          "file": "intercom-service/templates/service.yaml",
           "line": 16,
           "column": 91
         }
@@ -1588,7 +1588,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/service.yaml",
+          "file": "intercom-service/templates/service.yaml",
           "line": 5,
           "column": 8
         }
@@ -1599,12 +1599,12 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 213,
           "column": 33
         },
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 21,
           "column": 56
         }
@@ -1615,12 +1615,12 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/service.yaml",
+          "file": "intercom-service/templates/service.yaml",
           "line": 32,
           "column": 16
         },
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 11,
           "column": 88
         }
@@ -1631,7 +1631,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 214,
           "column": 28
         }
@@ -1642,7 +1642,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/service.yaml",
+          "file": "intercom-service/templates/service.yaml",
           "line": 23,
           "column": 10
         }
@@ -1653,7 +1653,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/service.yaml",
+          "file": "intercom-service/templates/service.yaml",
           "line": 27,
           "column": 26
         }
@@ -1664,7 +1664,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/service.yaml",
+          "file": "intercom-service/templates/service.yaml",
           "line": 22,
           "column": 35
         }
@@ -1675,7 +1675,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/serviceaccount.yaml",
+          "file": "intercom-service/templates/serviceaccount.yaml",
           "line": 16,
           "column": 79
         }
@@ -1686,7 +1686,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/serviceaccount.yaml",
+          "file": "intercom-service/templates/serviceaccount.yaml",
           "line": 21,
           "column": 34
         }
@@ -1697,7 +1697,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 56,
           "column": 14
         }
@@ -1708,7 +1708,7 @@
       "kinds": "/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 60,
           "column": 41
         }
@@ -1719,7 +1719,7 @@
       "kinds": "/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 14,
           "column": 49
         }
@@ -1730,7 +1730,7 @@
       "kinds": "/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 14,
           "column": 49
         }
@@ -1741,7 +1741,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 14,
           "column": 82
         }
@@ -1804,7 +1804,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/ingress.yaml",
+          "file": "intercom-service/templates/ingress.yaml",
           "line": 22,
           "column": 96
         }
@@ -1815,7 +1815,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 9,
           "column": 29
         }
@@ -1826,7 +1826,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret.yaml",
+          "file": "intercom-service/templates/secret.yaml",
           "line": 59,
           "column": 36
         }
@@ -1837,7 +1837,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/ingress.yaml",
+          "file": "intercom-service/templates/ingress.yaml",
           "line": 1,
           "column": 1
         }
@@ -1848,7 +1848,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/NOTES.txt",
+          "file": "intercom-service/templates/NOTES.txt",
           "line": 6,
           "column": 33
         }
@@ -1859,7 +1859,7 @@
       "kinds": "/K",
       "contexts": [
         {
-          "file": "templates/ingress.yaml",
+          "file": "intercom-service/templates/ingress.yaml",
           "line": 9,
           "column": 2
         }
@@ -1870,7 +1870,7 @@
       "kinds": "/K/K/W",
       "contexts": [
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "intercom-service/templates/configmap-provisioning.yaml",
           "line": 14,
           "column": 41
         }
@@ -1881,7 +1881,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 132,
           "column": 18
         }
@@ -1892,7 +1892,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/provisioning-secret.yaml",
+          "file": "intercom-service/templates/provisioning-secret.yaml",
           "line": 15,
           "column": 6
         }
@@ -1903,7 +1903,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/provisioning-secret.yaml",
+          "file": "intercom-service/templates/provisioning-secret.yaml",
           "line": 5,
           "column": 7
         }
@@ -1914,7 +1914,7 @@
       "kinds": "/K/K/W",
       "contexts": [
         {
-          "file": "templates/configmap-ca.yaml",
+          "file": "intercom-service/templates/configmap-ca.yaml",
           "line": 15,
           "column": 104
         }
@@ -1925,7 +1925,7 @@
       "kinds": "/K/K/W",
       "contexts": [
         {
-          "file": "templates/configmap-ca.yaml",
+          "file": "intercom-service/templates/configmap-ca.yaml",
           "line": 17,
           "column": 3
         }
@@ -1936,7 +1936,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 68,
           "column": 193
         }
@@ -1947,7 +1947,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment.yaml",
+          "file": "intercom-service/templates/deployment.yaml",
           "line": 88,
           "column": 229
         }
@@ -1958,7 +1958,7 @@
       "kinds": "/K/K/W/K",
       "contexts": [
         {
-          "file": "templates/service.yaml",
+          "file": "intercom-service/templates/service.yaml",
           "line": 36,
           "column": 20
         }

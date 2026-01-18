@@ -62,7 +62,7 @@ func (s *Unittest) TestParseFile_Range() {
 
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			actual, err := parseFile(tc.name+".tmpl", []byte(tc.template), nil)
+			actual, err := parseFile("", tc.name+".tmpl", []byte(tc.template), nil)
 			s.Require().NoError(err)
 			path.EqualPaths(s, tc.expected, actual)
 		})
@@ -157,7 +157,7 @@ func (s *Unittest) TestParseFile_RangePrefix() {
 
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			actual, err := parseFile(tc.name+".tmpl", []byte(tc.template), nil)
+			actual, err := parseFile("", tc.name+".tmpl", []byte(tc.template), nil)
 			s.Require().NoError(err)
 			path.EqualPaths(s, tc.expected, actual)
 		})
@@ -205,7 +205,7 @@ func (s *Unittest) TestParseFile_RangeWithInteraction() {
 
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			actual, err := parseFile(tc.name+".tmpl", []byte(tc.template), nil)
+			actual, err := parseFile("", tc.name+".tmpl", []byte(tc.template), nil)
 			s.Require().NoError(err)
 			path.EqualPaths(s, tc.expected, actual)
 		})
@@ -261,7 +261,7 @@ func (s *Unittest) TestParseFile_RangeWithMixedContexts() {
 
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			actual, err := parseFile(tc.name+".tmpl", []byte(tc.template), nil)
+			actual, err := parseFile("", tc.name+".tmpl", []byte(tc.template), nil)
 			s.Require().NoError(err)
 			path.EqualPaths(s, tc.expected, actual)
 		})
@@ -303,7 +303,7 @@ func (s *Unittest) TestParseFile_RangeBuiltinObjects() {
 
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			actual, err := parseFile(tc.name+".tmpl", []byte(tc.template), nil)
+			actual, err := parseFile("", tc.name+".tmpl", []byte(tc.template), nil)
 			s.Require().NoError(err)
 			path.EqualPaths(s, tc.expected, actual)
 		})

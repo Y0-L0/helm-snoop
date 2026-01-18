@@ -5,7 +5,7 @@
       "kinds": "/K",
       "contexts": [
         {
-          "file": "templates/extraSecrets.yaml",
+          "file": "guardian/templates/extraSecrets.yaml",
           "line": 13,
           "column": 16
         }
@@ -16,7 +16,7 @@
       "kinds": "/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 22,
           "column": 66
         }
@@ -27,7 +27,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 43,
           "column": 12
         }
@@ -38,7 +38,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-authorization-api.yaml",
+          "file": "guardian/templates/configmap-authorization-api.yaml",
           "line": 21,
           "column": 51
         }
@@ -49,7 +49,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-authorization-api.yaml",
+          "file": "guardian/templates/configmap-authorization-api.yaml",
           "line": 23,
           "column": 54
         }
@@ -60,7 +60,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-authorization-api.yaml",
+          "file": "guardian/templates/configmap-authorization-api.yaml",
           "line": 22,
           "column": 46
         }
@@ -71,7 +71,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-authorization-api.yaml",
+          "file": "guardian/templates/configmap-authorization-api.yaml",
           "line": 20,
           "column": 48
         }
@@ -82,7 +82,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-authorization-api.yaml",
+          "file": "guardian/templates/configmap-authorization-api.yaml",
           "line": 32,
           "column": 89
         }
@@ -93,7 +93,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-authorization-api.yaml",
+          "file": "guardian/templates/configmap-authorization-api.yaml",
           "line": 1,
           "column": 1
         }
@@ -104,7 +104,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-authorization-api.yaml",
+          "file": "guardian/templates/configmap-authorization-api.yaml",
           "line": 1,
           "column": 1
         }
@@ -115,7 +115,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-authorization-api.yaml",
+          "file": "guardian/templates/configmap-authorization-api.yaml",
           "line": 1,
           "column": 1
         }
@@ -126,7 +126,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-authorization-api.yaml",
+          "file": "guardian/templates/configmap-authorization-api.yaml",
           "line": 18,
           "column": 13
         }
@@ -137,7 +137,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-authorization-api.yaml",
+          "file": "guardian/templates/configmap-authorization-api.yaml",
           "line": 24,
           "column": 32
         }
@@ -148,7 +148,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-authorization-api.yaml",
+          "file": "guardian/templates/configmap-authorization-api.yaml",
           "line": 49,
           "column": 20
         }
@@ -159,7 +159,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-authorization-api.yaml",
+          "file": "guardian/templates/configmap-authorization-api.yaml",
           "line": 43,
           "column": 5
         }
@@ -170,7 +170,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-authorization-api.yaml",
+          "file": "guardian/templates/configmap-authorization-api.yaml",
           "line": 27,
           "column": 40
         }
@@ -181,7 +181,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-authorization-api.yaml",
+          "file": "guardian/templates/configmap-authorization-api.yaml",
           "line": 14,
           "column": 22
         }
@@ -192,7 +192,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-authorization-api.yaml",
+          "file": "guardian/templates/configmap-authorization-api.yaml",
           "line": 26,
           "column": 40
         }
@@ -203,7 +203,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 70,
           "column": 84
         }
@@ -214,7 +214,7 @@
       "kinds": "/K/K/K/K/I",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 70,
           "column": 84
         }
@@ -225,12 +225,12 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 70,
           "column": 84
         },
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 68,
           "column": 18
         }
@@ -241,7 +241,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 70,
           "column": 84
         }
@@ -252,7 +252,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 70,
           "column": 84
         }
@@ -263,7 +263,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 70,
           "column": 84
         }
@@ -274,7 +274,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 70,
           "column": 84
         }
@@ -285,7 +285,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 70,
           "column": 84
         }
@@ -296,7 +296,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 70,
           "column": 84
         }
@@ -307,7 +307,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 83,
           "column": 21
         }
@@ -318,7 +318,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 73,
           "column": 115
         }
@@ -329,7 +329,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 72,
           "column": 22
         }
@@ -340,7 +340,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 72,
           "column": 106
         }
@@ -351,7 +351,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 72,
           "column": 207
         }
@@ -362,7 +362,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 72,
           "column": 261
         }
@@ -373,7 +373,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 51,
           "column": 12
         }
@@ -384,7 +384,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 30,
           "column": 15
         }
@@ -395,12 +395,12 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 55,
           "column": 74
         },
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 53,
           "column": 14
         }
@@ -411,7 +411,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 55,
           "column": 74
         }
@@ -422,7 +422,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 55,
           "column": 74
         }
@@ -433,7 +433,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 91,
           "column": 18
         }
@@ -444,7 +444,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 99,
           "column": 34
         }
@@ -455,7 +455,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 96,
           "column": 37
         }
@@ -466,7 +466,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 98,
           "column": 31
         }
@@ -477,7 +477,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 100,
           "column": 34
         }
@@ -488,7 +488,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 97,
           "column": 32
         }
@@ -499,7 +499,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 102,
           "column": 18
         }
@@ -510,7 +510,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 110,
           "column": 34
         }
@@ -521,7 +521,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 107,
           "column": 37
         }
@@ -532,7 +532,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 109,
           "column": 31
         }
@@ -543,7 +543,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 111,
           "column": 34
         }
@@ -554,7 +554,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 108,
           "column": 32
         }
@@ -565,7 +565,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 19,
           "column": 16
         }
@@ -576,7 +576,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 114,
           "column": 17
         }
@@ -587,7 +587,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 114,
           "column": 17
         }
@@ -598,7 +598,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 114,
           "column": 17
         }
@@ -609,7 +609,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 114,
           "column": 17
         }
@@ -620,7 +620,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/service-authorization-api.yaml",
+          "file": "guardian/templates/service-authorization-api.yaml",
           "line": 4,
           "column": 8
         }
@@ -631,7 +631,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 88,
           "column": 33
         }
@@ -642,7 +642,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/service-authorization-api.yaml",
+          "file": "guardian/templates/service-authorization-api.yaml",
           "line": 28,
           "column": 16
         }
@@ -653,7 +653,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/service-authorization-api.yaml",
+          "file": "guardian/templates/service-authorization-api.yaml",
           "line": 30,
           "column": 20
         }
@@ -664,7 +664,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/service-authorization-api.yaml",
+          "file": "guardian/templates/service-authorization-api.yaml",
           "line": 20,
           "column": 10
         }
@@ -675,7 +675,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/service-authorization-api.yaml",
+          "file": "guardian/templates/service-authorization-api.yaml",
           "line": 24,
           "column": 26
         }
@@ -686,7 +686,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/service-authorization-api.yaml",
+          "file": "guardian/templates/service-authorization-api.yaml",
           "line": 32,
           "column": 19
         }
@@ -697,7 +697,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 47,
           "column": 12
         }
@@ -708,7 +708,7 @@
       "kinds": "/K/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 55,
           "column": 19
         }
@@ -719,7 +719,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 28,
           "column": 23
         }
@@ -730,7 +730,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-authorization-api.yaml",
+          "file": "guardian/templates/configmap-authorization-api.yaml",
           "line": 35,
           "column": 8
         }
@@ -741,7 +741,7 @@
       "kinds": "/K",
       "contexts": [
         {
-          "file": "templates/extraSecrets.yaml",
+          "file": "guardian/templates/extraSecrets.yaml",
           "line": 1,
           "column": 1
         }
@@ -752,7 +752,7 @@
       "kinds": "/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 149,
           "column": 12
         }
@@ -763,7 +763,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "guardian/templates/configmap-provisioning.yaml",
           "line": 35,
           "column": 38
         }
@@ -774,7 +774,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 73,
           "column": 115
         }
@@ -785,7 +785,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 59,
           "column": 21
         }
@@ -796,7 +796,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 98,
           "column": 22
         }
@@ -807,7 +807,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 1,
           "column": 1
         }
@@ -818,7 +818,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 1,
           "column": 1
         }
@@ -829,7 +829,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-ui.yaml",
+          "file": "guardian/templates/configmap-management-ui.yaml",
           "line": 1,
           "column": 1
         }
@@ -840,7 +840,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 1,
           "column": 1
         }
@@ -851,7 +851,7 @@
       "kinds": "/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 63,
           "column": 21
         }
@@ -862,7 +862,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 16,
           "column": 76
         }
@@ -873,7 +873,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 19,
           "column": 12
         }
@@ -884,7 +884,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 20,
           "column": 70
         }
@@ -895,7 +895,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 20,
           "column": 88
         }
@@ -906,7 +906,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 3,
           "column": 8
         }
@@ -917,7 +917,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -928,7 +928,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 24,
           "column": 98
         }
@@ -939,7 +939,7 @@
       "kinds": "/K/K/I/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -950,17 +950,17 @@
       "kinds": "/K/K/I/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         },
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         },
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -971,7 +971,7 @@
       "kinds": "/K/K/I/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -982,7 +982,7 @@
       "kinds": "/K/K/I/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -993,7 +993,7 @@
       "kinds": "/K/K/I/K/I/K/K/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -1004,7 +1004,7 @@
       "kinds": "/K/K/I/K/I/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -1015,7 +1015,7 @@
       "kinds": "/K/K/I/K/I/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -1026,7 +1026,7 @@
       "kinds": "/K/K/I/K/I/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -1037,7 +1037,7 @@
       "kinds": "/K/K/I/K/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -1048,7 +1048,7 @@
       "kinds": "/K/K/I/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -1059,17 +1059,17 @@
       "kinds": "/K/K/I/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         },
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         },
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -1080,7 +1080,7 @@
       "kinds": "/K/K/I/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -1091,7 +1091,7 @@
       "kinds": "/K/K/I/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -1102,7 +1102,7 @@
       "kinds": "/K/K/I/K/I/K/K/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -1113,7 +1113,7 @@
       "kinds": "/K/K/I/K/I/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -1124,7 +1124,7 @@
       "kinds": "/K/K/I/K/I/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -1135,7 +1135,7 @@
       "kinds": "/K/K/I/K/I/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -1146,7 +1146,7 @@
       "kinds": "/K/K/I/K/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -1157,7 +1157,7 @@
       "kinds": "/K/K/I/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -1168,17 +1168,17 @@
       "kinds": "/K/K/I/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         },
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         },
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -1189,7 +1189,7 @@
       "kinds": "/K/K/I/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -1200,7 +1200,7 @@
       "kinds": "/K/K/I/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -1211,7 +1211,7 @@
       "kinds": "/K/K/I/K/I/K/K/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -1222,7 +1222,7 @@
       "kinds": "/K/K/I/K/I/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -1233,7 +1233,7 @@
       "kinds": "/K/K/I/K/I/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -1244,7 +1244,7 @@
       "kinds": "/K/K/I/K/I/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -1255,7 +1255,7 @@
       "kinds": "/K/K/I/K/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 5,
           "column": 11
         }
@@ -1266,7 +1266,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 26,
           "column": 10
         }
@@ -1277,7 +1277,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 1,
           "column": 1
         }
@@ -1288,7 +1288,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 41,
           "column": 12
         }
@@ -1299,7 +1299,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 22,
           "column": 60
         }
@@ -1310,7 +1310,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 29,
           "column": 59
         }
@@ -1321,7 +1321,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 1,
           "column": 1
         }
@@ -1332,7 +1332,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 28,
           "column": 67
         }
@@ -1343,7 +1343,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 23,
           "column": 66
         }
@@ -1354,7 +1354,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 24,
           "column": 64
         }
@@ -1365,7 +1365,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 25,
           "column": 66
         }
@@ -1376,7 +1376,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 26,
           "column": 67
         }
@@ -1387,7 +1387,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 31,
           "column": 67
         }
@@ -1398,7 +1398,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 27,
           "column": 61
         }
@@ -1409,7 +1409,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 21,
           "column": 53
         }
@@ -1420,7 +1420,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 1,
           "column": 1
         }
@@ -1431,7 +1431,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 1,
           "column": 1
         }
@@ -1442,7 +1442,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 1,
           "column": 1
         }
@@ -1453,7 +1453,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 1,
           "column": 1
         }
@@ -1464,7 +1464,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 1,
           "column": 1
         }
@@ -1475,7 +1475,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 19,
           "column": 13
         }
@@ -1486,7 +1486,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 34,
           "column": 32
         }
@@ -1497,7 +1497,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 36,
           "column": 39
         }
@@ -1508,7 +1508,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 35,
           "column": 38
         }
@@ -1519,7 +1519,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 1,
           "column": 1
         }
@@ -1530,7 +1530,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 91,
           "column": 81
         }
@@ -1541,7 +1541,7 @@
       "kinds": "/K/K/K/K/I",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 91,
           "column": 81
         }
@@ -1552,12 +1552,12 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 91,
           "column": 81
         },
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 89,
           "column": 18
         }
@@ -1568,7 +1568,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 91,
           "column": 81
         }
@@ -1579,7 +1579,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 91,
           "column": 81
         }
@@ -1590,7 +1590,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 91,
           "column": 81
         }
@@ -1601,7 +1601,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 91,
           "column": 81
         }
@@ -1612,7 +1612,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 91,
           "column": 81
         }
@@ -1623,7 +1623,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 91,
           "column": 81
         }
@@ -1634,7 +1634,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 105,
           "column": 21
         }
@@ -1645,7 +1645,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 68,
           "column": 112
         }
@@ -1656,7 +1656,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 93,
           "column": 22
         }
@@ -1667,7 +1667,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 66,
           "column": 103
         }
@@ -1678,7 +1678,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 66,
           "column": 150
         }
@@ -1689,7 +1689,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 66,
           "column": 249
         }
@@ -1700,7 +1700,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 49,
           "column": 12
         }
@@ -1711,7 +1711,7 @@
       "kinds": "/K/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 49,
           "column": 253
         }
@@ -1722,7 +1722,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 25,
           "column": 113
         }
@@ -1733,7 +1733,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 28,
           "column": 15
         }
@@ -1744,12 +1744,12 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 53,
           "column": 71
         },
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 51,
           "column": 14
         }
@@ -1760,7 +1760,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 53,
           "column": 71
         }
@@ -1771,7 +1771,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 53,
           "column": 71
         }
@@ -1782,7 +1782,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 113,
           "column": 18
         }
@@ -1793,7 +1793,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 121,
           "column": 34
         }
@@ -1804,7 +1804,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 118,
           "column": 37
         }
@@ -1815,7 +1815,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 120,
           "column": 31
         }
@@ -1826,7 +1826,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 122,
           "column": 34
         }
@@ -1837,7 +1837,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 119,
           "column": 32
         }
@@ -1848,7 +1848,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 124,
           "column": 18
         }
@@ -1859,7 +1859,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 132,
           "column": 34
         }
@@ -1870,7 +1870,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 129,
           "column": 37
         }
@@ -1881,7 +1881,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 131,
           "column": 31
         }
@@ -1892,7 +1892,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 133,
           "column": 34
         }
@@ -1903,7 +1903,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 130,
           "column": 32
         }
@@ -1914,7 +1914,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 17,
           "column": 16
         }
@@ -1925,7 +1925,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 136,
           "column": 17
         }
@@ -1936,7 +1936,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 136,
           "column": 17
         }
@@ -1947,7 +1947,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 136,
           "column": 17
         }
@@ -1958,7 +1958,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 136,
           "column": 17
         }
@@ -1969,7 +1969,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/service-management-api.yaml",
+          "file": "guardian/templates/service-management-api.yaml",
           "line": 4,
           "column": 8
         }
@@ -1980,7 +1980,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 110,
           "column": 33
         }
@@ -1991,7 +1991,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/service-management-api.yaml",
+          "file": "guardian/templates/service-management-api.yaml",
           "line": 28,
           "column": 16
         }
@@ -2002,7 +2002,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 111,
           "column": 28
         }
@@ -2013,7 +2013,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/service-management-api.yaml",
+          "file": "guardian/templates/service-management-api.yaml",
           "line": 20,
           "column": 10
         }
@@ -2024,7 +2024,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/service-management-api.yaml",
+          "file": "guardian/templates/service-management-api.yaml",
           "line": 24,
           "column": 26
         }
@@ -2035,7 +2035,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/service-management-api.yaml",
+          "file": "guardian/templates/service-management-api.yaml",
           "line": 32,
           "column": 19
         }
@@ -2046,7 +2046,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 45,
           "column": 12
         }
@@ -2057,7 +2057,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 42,
           "column": 12
         }
@@ -2068,7 +2068,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-init-management-ui.yaml",
+          "file": "guardian/templates/configmap-init-management-ui.yaml",
           "line": 22,
           "column": 13
         }
@@ -2079,7 +2079,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-ui.yaml",
+          "file": "guardian/templates/configmap-management-ui.yaml",
           "line": 21,
           "column": 71
         }
@@ -2090,7 +2090,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-ui.yaml",
+          "file": "guardian/templates/configmap-management-ui.yaml",
           "line": 24,
           "column": 57
         }
@@ -2101,7 +2101,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-ui.yaml",
+          "file": "guardian/templates/configmap-management-ui.yaml",
           "line": 1,
           "column": 1
         }
@@ -2112,7 +2112,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-ui.yaml",
+          "file": "guardian/templates/configmap-management-ui.yaml",
           "line": 1,
           "column": 1
         }
@@ -2123,7 +2123,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-ui.yaml",
+          "file": "guardian/templates/configmap-management-ui.yaml",
           "line": 19,
           "column": 58
         }
@@ -2134,7 +2134,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-ui.yaml",
+          "file": "guardian/templates/configmap-management-ui.yaml",
           "line": 20,
           "column": 48
         }
@@ -2145,7 +2145,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 69,
           "column": 80
         }
@@ -2156,7 +2156,7 @@
       "kinds": "/K/K/K/K/I",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 69,
           "column": 80
         }
@@ -2167,12 +2167,12 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 69,
           "column": 80
         },
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 94,
           "column": 18
         }
@@ -2183,7 +2183,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 69,
           "column": 80
         }
@@ -2194,7 +2194,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 69,
           "column": 80
         }
@@ -2205,7 +2205,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 69,
           "column": 80
         }
@@ -2216,7 +2216,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 69,
           "column": 80
         }
@@ -2227,7 +2227,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 69,
           "column": 80
         }
@@ -2238,7 +2238,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 69,
           "column": 80
         }
@@ -2249,7 +2249,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 79,
           "column": 23
         }
@@ -2260,7 +2260,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 99,
           "column": 111
         }
@@ -2271,7 +2271,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 71,
           "column": 22
         }
@@ -2282,7 +2282,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 98,
           "column": 102
         }
@@ -2293,7 +2293,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 98,
           "column": 148
         }
@@ -2304,7 +2304,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 71,
           "column": 245
         }
@@ -2315,7 +2315,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 50,
           "column": 12
         }
@@ -2326,7 +2326,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 29,
           "column": 15
         }
@@ -2337,12 +2337,12 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 54,
           "column": 70
         },
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 52,
           "column": 14
         }
@@ -2353,7 +2353,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 54,
           "column": 70
         }
@@ -2364,7 +2364,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 54,
           "column": 70
         }
@@ -2375,7 +2375,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 54,
           "column": 70
         }
@@ -2386,7 +2386,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 123,
           "column": 18
         }
@@ -2397,7 +2397,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 131,
           "column": 34
         }
@@ -2408,7 +2408,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 128,
           "column": 37
         }
@@ -2419,7 +2419,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 130,
           "column": 31
         }
@@ -2430,7 +2430,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 132,
           "column": 34
         }
@@ -2441,7 +2441,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 129,
           "column": 32
         }
@@ -2452,7 +2452,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 134,
           "column": 18
         }
@@ -2463,7 +2463,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 142,
           "column": 34
         }
@@ -2474,7 +2474,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 139,
           "column": 37
         }
@@ -2485,7 +2485,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 141,
           "column": 31
         }
@@ -2496,7 +2496,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 143,
           "column": 34
         }
@@ -2507,7 +2507,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 140,
           "column": 32
         }
@@ -2518,7 +2518,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 18,
           "column": 16
         }
@@ -2529,7 +2529,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 74,
           "column": 17
         }
@@ -2540,7 +2540,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 74,
           "column": 17
         }
@@ -2551,7 +2551,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 74,
           "column": 17
         }
@@ -2562,7 +2562,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 74,
           "column": 17
         }
@@ -2573,7 +2573,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/service-management-ui.yaml",
+          "file": "guardian/templates/service-management-ui.yaml",
           "line": 4,
           "column": 8
         }
@@ -2584,7 +2584,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 120,
           "column": 33
         }
@@ -2595,7 +2595,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/service-management-ui.yaml",
+          "file": "guardian/templates/service-management-ui.yaml",
           "line": 28,
           "column": 16
         }
@@ -2606,7 +2606,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/service-management-ui.yaml",
+          "file": "guardian/templates/service-management-ui.yaml",
           "line": 30,
           "column": 20
         }
@@ -2617,7 +2617,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/service-management-ui.yaml",
+          "file": "guardian/templates/service-management-ui.yaml",
           "line": 20,
           "column": 10
         }
@@ -2628,7 +2628,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/service-management-ui.yaml",
+          "file": "guardian/templates/service-management-ui.yaml",
           "line": 24,
           "column": 26
         }
@@ -2639,7 +2639,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/service-management-ui.yaml",
+          "file": "guardian/templates/service-management-ui.yaml",
           "line": 19,
           "column": 12
         }
@@ -2650,7 +2650,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 46,
           "column": 12
         }
@@ -2661,7 +2661,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 42,
           "column": 12
         }
@@ -2672,7 +2672,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-open-policy-agent.yaml",
+          "file": "guardian/templates/configmap-open-policy-agent.yaml",
           "line": 19,
           "column": 32
         }
@@ -2683,7 +2683,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-open-policy-agent.yaml",
+          "file": "guardian/templates/configmap-open-policy-agent.yaml",
           "line": 20,
           "column": 24
         }
@@ -2694,7 +2694,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-open-policy-agent.yaml",
+          "file": "guardian/templates/configmap-open-policy-agent.yaml",
           "line": 1,
           "column": 1
         }
@@ -2705,7 +2705,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-open-policy-agent.yaml",
+          "file": "guardian/templates/configmap-open-policy-agent.yaml",
           "line": 21,
           "column": 26
         }
@@ -2716,7 +2716,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-open-policy-agent.yaml",
+          "file": "guardian/templates/configmap-open-policy-agent.yaml",
           "line": 1,
           "column": 1
         }
@@ -2727,7 +2727,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-open-policy-agent.yaml",
+          "file": "guardian/templates/configmap-open-policy-agent.yaml",
           "line": 1,
           "column": 1
         }
@@ -2738,7 +2738,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 69,
           "column": 83
         }
@@ -2749,7 +2749,7 @@
       "kinds": "/K/K/K/K/I",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 69,
           "column": 83
         }
@@ -2760,12 +2760,12 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 69,
           "column": 83
         },
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 67,
           "column": 18
         }
@@ -2776,7 +2776,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 69,
           "column": 83
         }
@@ -2787,7 +2787,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 69,
           "column": 83
         }
@@ -2798,7 +2798,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 69,
           "column": 83
         }
@@ -2809,7 +2809,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 69,
           "column": 83
         }
@@ -2820,7 +2820,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 69,
           "column": 83
         }
@@ -2831,7 +2831,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 69,
           "column": 83
         }
@@ -2842,7 +2842,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 78,
           "column": 21
         }
@@ -2853,7 +2853,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 72,
           "column": 114
         }
@@ -2864,7 +2864,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 71,
           "column": 22
         }
@@ -2875,7 +2875,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 71,
           "column": 105
         }
@@ -2886,7 +2886,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 71,
           "column": 204
         }
@@ -2897,7 +2897,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 71,
           "column": 257
         }
@@ -2908,7 +2908,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 50,
           "column": 12
         }
@@ -2919,7 +2919,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 29,
           "column": 15
         }
@@ -2930,12 +2930,12 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 54,
           "column": 73
         },
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 52,
           "column": 14
         }
@@ -2946,7 +2946,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 54,
           "column": 73
         }
@@ -2957,7 +2957,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 54,
           "column": 73
         }
@@ -2968,7 +2968,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 86,
           "column": 18
         }
@@ -2979,7 +2979,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 94,
           "column": 34
         }
@@ -2990,7 +2990,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 91,
           "column": 37
         }
@@ -3001,7 +3001,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 93,
           "column": 31
         }
@@ -3012,7 +3012,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 95,
           "column": 34
         }
@@ -3023,7 +3023,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 92,
           "column": 32
         }
@@ -3034,7 +3034,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 97,
           "column": 18
         }
@@ -3045,7 +3045,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 105,
           "column": 34
         }
@@ -3056,7 +3056,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 102,
           "column": 37
         }
@@ -3067,7 +3067,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 104,
           "column": 31
         }
@@ -3078,7 +3078,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 106,
           "column": 34
         }
@@ -3089,7 +3089,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 103,
           "column": 32
         }
@@ -3100,7 +3100,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 18,
           "column": 16
         }
@@ -3111,7 +3111,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 109,
           "column": 17
         }
@@ -3122,7 +3122,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 109,
           "column": 17
         }
@@ -3133,7 +3133,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 109,
           "column": 17
         }
@@ -3144,7 +3144,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 109,
           "column": 17
         }
@@ -3155,7 +3155,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/service-open-policy-agent.yaml",
+          "file": "guardian/templates/service-open-policy-agent.yaml",
           "line": 4,
           "column": 8
         }
@@ -3166,7 +3166,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 83,
           "column": 33
         }
@@ -3177,7 +3177,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/service-open-policy-agent.yaml",
+          "file": "guardian/templates/service-open-policy-agent.yaml",
           "line": 28,
           "column": 16
         }
@@ -3188,7 +3188,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 84,
           "column": 28
         }
@@ -3199,7 +3199,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/service-open-policy-agent.yaml",
+          "file": "guardian/templates/service-open-policy-agent.yaml",
           "line": 20,
           "column": 10
         }
@@ -3210,7 +3210,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/service-open-policy-agent.yaml",
+          "file": "guardian/templates/service-open-policy-agent.yaml",
           "line": 24,
           "column": 26
         }
@@ -3221,7 +3221,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/service-open-policy-agent.yaml",
+          "file": "guardian/templates/service-open-policy-agent.yaml",
           "line": 19,
           "column": 12
         }
@@ -3232,7 +3232,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 46,
           "column": 12
         }
@@ -3243,7 +3243,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 1,
           "column": 1
         }
@@ -3254,7 +3254,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 53,
           "column": 51
         }
@@ -3265,7 +3265,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 26,
           "column": 34
         }
@@ -3276,7 +3276,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 45,
           "column": 42
         }
@@ -3287,7 +3287,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 1,
           "column": 1
         }
@@ -3298,7 +3298,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 1,
           "column": 1
         }
@@ -3309,7 +3309,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 200,
           "column": 20
         }
@@ -3320,7 +3320,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "guardian/templates/configmap-provisioning.yaml",
           "line": 34,
           "column": 57
         }
@@ -3331,7 +3331,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "guardian/templates/configmap-provisioning.yaml",
           "line": 41,
           "column": 129
         }
@@ -3342,7 +3342,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "guardian/templates/configmap-provisioning.yaml",
           "line": 1,
           "column": 1
         }
@@ -3353,7 +3353,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 53,
           "column": 78
         }
@@ -3364,7 +3364,7 @@
       "kinds": "/K/K/K/K/I",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 53,
           "column": 78
         }
@@ -3375,12 +3375,12 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 53,
           "column": 78
         },
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 76,
           "column": 16
         }
@@ -3391,7 +3391,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 53,
           "column": 78
         }
@@ -3402,7 +3402,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 53,
           "column": 78
         }
@@ -3413,7 +3413,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 53,
           "column": 78
         }
@@ -3424,7 +3424,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 53,
           "column": 78
         }
@@ -3435,7 +3435,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 53,
           "column": 78
         }
@@ -3446,7 +3446,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 53,
           "column": 78
         }
@@ -3457,7 +3457,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "guardian/templates/configmap-provisioning.yaml",
           "line": 4,
           "column": 8
         }
@@ -3468,7 +3468,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 60,
           "column": 19
         }
@@ -3479,7 +3479,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 49,
           "column": 20
         }
@@ -3490,7 +3490,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 49,
           "column": 100
         }
@@ -3501,7 +3501,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 49,
           "column": 146
         }
@@ -3512,7 +3512,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 49,
           "column": 243
         }
@@ -3523,7 +3523,7 @@
       "kinds": "/K/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 49,
           "column": 253
         }
@@ -3534,7 +3534,7 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 25,
           "column": 113
         }
@@ -3545,7 +3545,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret-keycloak.yaml",
+          "file": "guardian/templates/secret-keycloak.yaml",
           "line": 6,
           "column": 11
         }
@@ -3556,7 +3556,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "guardian/templates/configmap-provisioning.yaml",
           "line": 36,
           "column": 30
         }
@@ -3567,7 +3567,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "guardian/templates/configmap-provisioning.yaml",
           "line": 1,
           "column": 1
         }
@@ -3578,7 +3578,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "guardian/templates/configmap-provisioning.yaml",
           "line": 1,
           "column": 1
         }
@@ -3589,7 +3589,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "guardian/templates/configmap-provisioning.yaml",
           "line": 1,
           "column": 1
         }
@@ -3600,12 +3600,12 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 45,
           "column": 70
         },
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 43,
           "column": 14
         }
@@ -3616,7 +3616,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 45,
           "column": 70
         }
@@ -3627,7 +3627,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 45,
           "column": 70
         }
@@ -3638,7 +3638,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 81,
           "column": 121
         }
@@ -3649,7 +3649,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 80,
           "column": 20
         }
@@ -3660,7 +3660,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 80,
           "column": 112
         }
@@ -3671,7 +3671,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 80,
           "column": 291
         }
@@ -3682,7 +3682,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 68,
           "column": 15
         }
@@ -3693,7 +3693,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 68,
           "column": 15
         }
@@ -3704,7 +3704,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 68,
           "column": 15
         }
@@ -3715,7 +3715,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 68,
           "column": 15
         }
@@ -3726,7 +3726,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 30,
           "column": 100
         }
@@ -3737,7 +3737,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 188,
           "column": 13
         }
@@ -3748,7 +3748,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 18,
           "column": 31
         }
@@ -3759,7 +3759,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/serviceaccount.yaml",
+          "file": "guardian/templates/serviceaccount.yaml",
           "line": 16,
           "column": 34
         }
@@ -3770,7 +3770,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 36,
           "column": 14
         }
@@ -3929,7 +3929,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/secret-guardian-keycloak-client.yaml",
+          "file": "guardian/templates/secret-guardian-keycloak-client.yaml",
           "line": 1,
           "column": 1
         }
@@ -3940,7 +3940,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret-guardian-keycloak-client.yaml",
+          "file": "guardian/templates/secret-guardian-keycloak-client.yaml",
           "line": 1,
           "column": 1
         }
@@ -3951,7 +3951,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 79,
           "column": 74
         }
@@ -3962,7 +3962,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-authorization-api.yaml",
+          "file": "guardian/templates/configmap-authorization-api.yaml",
           "line": 45,
           "column": 16
         }
@@ -3973,7 +3973,7 @@
       "kinds": "/K/K/W",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 15,
           "column": 22
         }
@@ -3984,7 +3984,7 @@
       "kinds": "/K/K/W",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 16,
           "column": 3
         }
@@ -3995,7 +3995,7 @@
       "kinds": "/K/K/K/W/K",
       "contexts": [
         {
-          "file": "templates/service-authorization-api.yaml",
+          "file": "guardian/templates/service-authorization-api.yaml",
           "line": 32,
           "column": 14
         }
@@ -4006,7 +4006,7 @@
       "kinds": "/K/W/K/W",
       "contexts": [
         {
-          "file": "templates/extraSecrets.yaml",
+          "file": "guardian/templates/extraSecrets.yaml",
           "line": 19,
           "column": 21
         }
@@ -4017,7 +4017,7 @@
       "kinds": "/K/W/K",
       "contexts": [
         {
-          "file": "templates/extraSecrets.yaml",
+          "file": "guardian/templates/extraSecrets.yaml",
           "line": 8,
           "column": 20
         }
@@ -4028,7 +4028,7 @@
       "kinds": "/K/W/K/W",
       "contexts": [
         {
-          "file": "templates/extraSecrets.yaml",
+          "file": "guardian/templates/extraSecrets.yaml",
           "line": 25,
           "column": 21
         }
@@ -4039,7 +4039,7 @@
       "kinds": "/K/W/K",
       "contexts": [
         {
-          "file": "templates/extraSecrets.yaml",
+          "file": "guardian/templates/extraSecrets.yaml",
           "line": 1,
           "column": 1
         }
@@ -4050,7 +4050,7 @@
       "kinds": "/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 22,
           "column": 69
         }
@@ -4061,7 +4061,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 20,
           "column": 88
         }
@@ -4072,7 +4072,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 23,
           "column": 10
         }
@@ -4083,7 +4083,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "guardian/templates/configmap-provisioning.yaml",
           "line": 1,
           "column": 1
         }
@@ -4094,7 +4094,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/deployment-management-ui.yaml",
+          "file": "guardian/templates/deployment-management-ui.yaml",
           "line": 10,
           "column": 39
         }
@@ -4105,7 +4105,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "guardian/templates/configmap-management-api.yaml",
           "line": 1,
           "column": 1
         }
@@ -4116,7 +4116,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 30,
           "column": 100
         }
@@ -4127,7 +4127,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/secret-guardian-keycloak-client.yaml",
+          "file": "guardian/templates/secret-guardian-keycloak-client.yaml",
           "line": 29,
           "column": 10
         }
@@ -4138,7 +4138,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/ingresses.yaml",
+          "file": "guardian/templates/ingresses.yaml",
           "line": 1,
           "column": 1
         }
@@ -4149,7 +4149,7 @@
       "kinds": "/K",
       "contexts": [
         {
-          "file": "templates/deployment-authorization-api.yaml",
+          "file": "guardian/templates/deployment-authorization-api.yaml",
           "line": 10,
           "column": 39
         }
@@ -4160,7 +4160,7 @@
       "kinds": "/K/K/W",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 13,
           "column": 27
         }
@@ -4171,7 +4171,7 @@
       "kinds": "/K/K/W",
       "contexts": [
         {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "guardian/templates/deployment-management-api.yaml",
           "line": 13,
           "column": 27
         }
@@ -4182,7 +4182,7 @@
       "kinds": "/K/K/K/W/K",
       "contexts": [
         {
-          "file": "templates/service-management-api.yaml",
+          "file": "guardian/templates/service-management-api.yaml",
           "line": 33,
           "column": 20
         }
@@ -4193,7 +4193,7 @@
       "kinds": "/K/K/K/W/K",
       "contexts": [
         {
-          "file": "templates/service-management-ui.yaml",
+          "file": "guardian/templates/service-management-ui.yaml",
           "line": 33,
           "column": 20
         }
@@ -4204,7 +4204,7 @@
       "kinds": "/K",
       "contexts": [
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
+          "file": "guardian/templates/deployment-open-policy-agent.yaml",
           "line": 23,
           "column": 52
         }
@@ -4215,7 +4215,7 @@
       "kinds": "/K/K/K/W/K",
       "contexts": [
         {
-          "file": "templates/service-open-policy-agent.yaml",
+          "file": "guardian/templates/service-open-policy-agent.yaml",
           "line": 33,
           "column": 20
         }
@@ -4226,7 +4226,7 @@
       "kinds": "/K/K/W",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 184,
           "column": 13
         }
@@ -4237,7 +4237,7 @@
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 63,
           "column": 16
         }
@@ -4248,7 +4248,7 @@
       "kinds": "/K/K/W",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 27,
           "column": 12
         }
@@ -4259,7 +4259,7 @@
       "kinds": "/K/K/W",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 14,
           "column": 36
         }
@@ -4270,7 +4270,7 @@
       "kinds": "/K/K/W",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 15,
           "column": 17
         }
@@ -4281,7 +4281,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 50,
           "column": 109
         }
@@ -4292,7 +4292,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "guardian/templates/configmap-provisioning.yaml",
           "line": 1,
           "column": 1
         }
@@ -4303,7 +4303,7 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "guardian/templates/configmap-provisioning.yaml",
           "line": 1,
           "column": 1
         }
@@ -4314,7 +4314,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "guardian/templates/configmap-provisioning.yaml",
           "line": 1,
           "column": 1
         }
@@ -4325,7 +4325,7 @@
       "kinds": "/K/K/W",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 180,
           "column": 13
         }
@@ -4336,7 +4336,7 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
-          "file": "templates/job-provisioning.yaml",
+          "file": "guardian/templates/job-provisioning.yaml",
           "line": 80,
           "column": 170
         }

@@ -43,7 +43,7 @@ func (s *Unittest) TestParseFile_TplFunction() {
 			Strict = false
 			defer func() { Strict = oldStrict }()
 
-			actual, err := parseFile(tc.name+".tmpl", []byte(tc.template), nil)
+			actual, err := parseFile("", tc.name+".tmpl", []byte(tc.template), nil)
 			s.Require().NoError(err)
 			path.EqualPaths(s, tc.expected, actual)
 		})

@@ -33,7 +33,7 @@ func (s *Unittest) TestParseFile_Happy() {
 
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			got, err := parseFile(tc.name+".tmpl", []byte(tc.tmpl), nil)
+			got, err := parseFile("", tc.name+".tmpl", []byte(tc.tmpl), nil)
 			s.Require().NoError(err)
 			path.EqualPaths(s, tc.want, got)
 		})
@@ -55,7 +55,7 @@ func (s *Unittest) TestParseFile_NotImplemented() {
 	}
 	for _, testCase := range cases {
 		s.Run(testCase.name, func() {
-			got, err := parseFile(testCase.name+".tmpl", []byte(testCase.tmpl), nil)
+			got, err := parseFile("", testCase.name+".tmpl", []byte(testCase.tmpl), nil)
 			s.Require().NoError(err)
 			path.EqualPaths(s, testCase.want, got)
 		})
@@ -82,7 +82,7 @@ func (s *Unittest) TestParseFile_IfElse() {
 	}
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			got, err := parseFile(tc.name+".tmpl", []byte(tc.tmpl), nil)
+			got, err := parseFile("", tc.name+".tmpl", []byte(tc.tmpl), nil)
 			s.Require().NoError(err)
 			path.EqualPaths(s, tc.want, got)
 		})
