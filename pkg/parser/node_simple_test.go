@@ -50,9 +50,7 @@ func (s *Unittest) TestParseCommand_Noops() {
 				name += "_piped"
 			}
 			s.Run(name, func() {
-				got, err := parseFile("", name+".tmpl", []byte(tmpl), nil)
-				s.Require().NoError(err)
-				path.EqualPaths(s, tc.want, got)
+				path.EqualPaths(s, tc.want, s.parse(tmpl))
 			})
 		}
 	}
@@ -98,9 +96,7 @@ func (s *Unittest) TestParseCommand_Return() {
 				name += "_piped"
 			}
 			s.Run(name, func() {
-				got, err := parseFile("", tc.name+".tmpl", []byte(tmpl), nil)
-				s.Require().NoError(err)
-				path.EqualPaths(s, tc.want, got)
+				path.EqualPaths(s, tc.want, s.parse(tmpl))
 			})
 		}
 	}
@@ -158,9 +154,7 @@ func (s *Unittest) TestParseCommand_ComplexPipe() {
 
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			got, err := parseFile("", tc.name+".tmpl", []byte(tc.tmpl), nil)
-			s.Require().NoError(err)
-			path.EqualPaths(s, tc.want, got)
+			path.EqualPaths(s, tc.want, s.parse(tc.tmpl))
 		})
 	}
 }

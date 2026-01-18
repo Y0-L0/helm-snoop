@@ -33,9 +33,7 @@ func (s *Unittest) TestParseFile_Happy() {
 
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			got, err := parseFile("", tc.name+".tmpl", []byte(tc.tmpl), nil)
-			s.Require().NoError(err)
-			path.EqualPaths(s, tc.want, got)
+			path.EqualPaths(s, tc.want, s.parse(tc.tmpl))
 		})
 	}
 }
@@ -53,11 +51,9 @@ func (s *Unittest) TestParseFile_NotImplemented() {
 		{name: "range block", tmpl: `{{ range .Values.items }}{{ end }}`, want: path.Paths{}},
 		{name: "template action", tmpl: `{{ template "x" . }}`, want: path.Paths{}},
 	}
-	for _, testCase := range cases {
-		s.Run(testCase.name, func() {
-			got, err := parseFile("", testCase.name+".tmpl", []byte(testCase.tmpl), nil)
-			s.Require().NoError(err)
-			path.EqualPaths(s, testCase.want, got)
+	for _, tc := range cases {
+		s.Run(tc.name, func() {
+			path.EqualPaths(s, tc.want, s.parse(tc.tmpl))
 		})
 	}
 }
@@ -82,9 +78,7 @@ func (s *Unittest) TestParseFile_IfElse() {
 	}
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			got, err := parseFile("", tc.name+".tmpl", []byte(tc.tmpl), nil)
-			s.Require().NoError(err)
-			path.EqualPaths(s, tc.want, got)
+			path.EqualPaths(s, tc.want, s.parse(tc.tmpl))
 		})
 	}
 }

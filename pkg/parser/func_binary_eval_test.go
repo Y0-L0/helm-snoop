@@ -70,10 +70,7 @@ func (s *Unittest) TestParseCommand_BinaryEval() {
 			testName := fmt.Sprintf("%s/%s", tc.name, funcName)
 			s.Run(testName, func() {
 				tmpl := fmt.Sprintf(tc.template, funcName)
-
-				actual, err := parseFile("", funcName+".tmpl", []byte(tmpl), nil)
-				s.Require().NoError(err)
-				path.EqualPaths(s, tc.expected, actual)
+				path.EqualPaths(s, tc.expected, s.parse(tmpl))
 			})
 		}
 	}
