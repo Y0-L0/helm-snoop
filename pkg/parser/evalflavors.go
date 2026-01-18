@@ -178,7 +178,7 @@ func (e *evalCtx) evalPipeNode(node *parse.PipeNode) evalResult {
 			lastResult = e.evalCommandNode(cmd)
 		}
 		// Emit paths if not already emitted
-		e.Emit(lastResult.paths...)
+		e.Emit(node.Pos, lastResult.paths...)
 		return lastResult
 	}
 
@@ -217,7 +217,7 @@ func (e *evalCtx) evalIfNode(node *parse.IfNode) evalResult {
 	// Evaluate condition and emit paths
 	if node.Pipe != nil {
 		result := e.Eval(node.Pipe)
-		e.Emit(result.paths...)
+		e.Emit(node.Pipe.Pos, result.paths...)
 	}
 
 	// Evaluate "then" branch
@@ -294,7 +294,7 @@ func (e *evalCtx) evalTemplateNode(node *parse.TemplateNode) evalResult {
 	if node.Pipe != nil {
 		result := e.Eval(node.Pipe)
 		if result.dict == nil && result.dictLits == nil {
-			e.Emit(result.paths...)
+			e.Emit(node.Pipe.Pos, result.paths...)
 		}
 	}
 	return evalResult{}

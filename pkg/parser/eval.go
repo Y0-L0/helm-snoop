@@ -23,20 +23,23 @@ type Call struct {
 }
 
 type evalCtx struct {
-	tree       *parse.Tree
-	out        *path.Paths
-	prefixes   path.Paths
-	paramPaths map[string]*path.Path
-	paramLits  map[string]string
-	variables  map[string]*path.Path
-	idx        *TemplateIndex
-	inStack    map[string]bool
-	depth      int
-	maxDepth   int
+	tree         *parse.Tree
+	out          *path.Paths
+	prefixes     path.Paths
+	paramPaths   map[string]*path.Path
+	paramLits    map[string]string
+	variables    map[string]*path.Path
+	idx          *TemplateIndex
+	inStack      map[string]bool
+	depth        int
+	maxDepth     int
+	fileName     string
+	templateName string
+	source       string
 }
 
 // newEvalCtx constructs an evaluation context with initialized state.
-func newEvalCtx(tree *parse.Tree, out *path.Paths, idx *TemplateIndex) *evalCtx {
+func newEvalCtx(tree *parse.Tree, out *path.Paths, idx *TemplateIndex, fileName, source string) *evalCtx {
 	return &evalCtx{
 		tree:     tree,
 		out:      out,
@@ -44,13 +47,27 @@ func newEvalCtx(tree *parse.Tree, out *path.Paths, idx *TemplateIndex) *evalCtx 
 		inStack:  make(map[string]bool),
 		depth:    0,
 		maxDepth: 64,
+		fileName: fileName,
+		source:   source,
 	}
 }
 
-func (e *evalCtx) Emit(paths ...*path.Path) {
+// makeContext creates a PathContext from a parse.Pos.
+func (e *evalCtx) makeContext(pos parse.Pos) path.PathContext {
+	line, col := CalcPosition(e.source, int(pos))
+	return path.PathContext{
+		FileName:     e.fileName,
+		TemplateName: e.templateName,
+		Line:         line,
+		Column:       col,
+	}
+}
+
+func (e *evalCtx) Emit(pos parse.Pos, paths ...*path.Path) {
 	if e == nil || e.out == nil {
 		panic("Invalid state in Emit function")
 	}
+	ctx := e.makeContext(pos)
 	for _, p := range paths {
 		if p == nil {
 			panic("Invalid state in Emit function")
@@ -58,6 +75,7 @@ func (e *evalCtx) Emit(paths ...*path.Path) {
 		if p.ID() == "/" {
 			continue
 		}
+		p.Contexts = append(p.Contexts, ctx)
 		e.out.Append(p)
 	}
 }
@@ -240,7 +258,7 @@ func (e *evalCtx) evalActionNode(node *parse.ActionNode) evalResult {
 	if node.Pipe != nil {
 		result := e.Eval(node.Pipe)
 		if result.dict == nil && result.dictLits == nil {
-			e.Emit(result.paths...)
+			e.Emit(node.Pos, result.paths...)
 		}
 		return result
 	}

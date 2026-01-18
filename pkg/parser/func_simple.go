@@ -22,7 +22,7 @@ func quoteFn(ctx *evalCtx, call Call) evalResult {
 		result := ctx.Eval(arg)
 
 		// Emit paths immediately
-		ctx.Emit(result.paths...)
+		ctx.Emit(call.Node.Position(), result.paths...)
 
 		allStrings = append(allStrings, result.args...)
 	}
@@ -38,7 +38,7 @@ func unaryPassThroughFn(ctx *evalCtx, call Call) evalResult {
 
 	result := ctx.Eval(call.Args[0])
 
-	ctx.Emit(result.paths...)
+	ctx.Emit(call.Node.Position(), result.paths...)
 
 	return evalResult{args: result.args}
 }
@@ -53,7 +53,7 @@ func unarySerializeFn(ctx *evalCtx, call Call) evalResult {
 
 	for _, p := range result.paths {
 		wildcardPath := p.WithWildcard()
-		ctx.Emit(&wildcardPath)
+		ctx.Emit(call.Node.Position(), &wildcardPath)
 	}
 
 	return evalResult{args: result.args}
@@ -63,7 +63,7 @@ func unarySerializeFn(ctx *evalCtx, call Call) evalResult {
 func emitArgsNoResultFn(ctx *evalCtx, call Call) evalResult {
 	for _, arg := range call.Args {
 		result := ctx.Eval(arg)
-		ctx.Emit(result.paths...)
+		ctx.Emit(call.Node.Position(), result.paths...)
 	}
 
 	return evalResult{}
@@ -112,7 +112,7 @@ func binaryEvalFn(ctx *evalCtx, call Call) evalResult {
 	// Only evaluate the first 2 arguments
 	for _, arg := range call.Args[:2] {
 		result := ctx.Eval(arg)
-		ctx.Emit(result.paths...)
+		ctx.Emit(call.Node.Position(), result.paths...)
 	}
 
 	return evalResult{}

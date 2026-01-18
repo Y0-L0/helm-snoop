@@ -18,7 +18,7 @@ func includeFn(ctx *evalCtx, call Call) evalResult {
 
 	// 2. Extract template name from first argument
 	nameResult := ctx.Eval(call.Args[0])
-	ctx.Emit(nameResult.paths...)
+	ctx.Emit(call.Node.Position(), nameResult.paths...)
 
 	// 3. Determine context for template body
 	var templatePrefix *path.Path
@@ -38,7 +38,7 @@ func includeFn(ctx *evalCtx, call Call) evalResult {
 				dictPaths = ctxResult.dict
 				dictLits = ctxResult.dictLits
 			} else {
-				ctx.Emit(ctxResult.paths...)
+				ctx.Emit(call.Node.Position(), ctxResult.paths...)
 				if len(ctxResult.paths) > 0 {
 					// Only set prefix for non-empty paths
 					// Empty path / means root context without dict params,
