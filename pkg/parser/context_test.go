@@ -4,7 +4,7 @@ import "github.com/y0-l0/helm-snoop/pkg/path"
 
 func (s *Unittest) TestParseFile_AttachesFileName() {
 	tmpl := `{{ .Values.foo }}`
-	paths, err := parseFile("templates/test.yaml", []byte(tmpl), nil)
+	paths, err := parseFile("", "templates/test.yaml", []byte(tmpl), nil)
 	s.Require().NoError(err)
 	s.Require().Len(paths, 1)
 	s.Require().Len(paths[0].Contexts, 1)
@@ -13,7 +13,7 @@ func (s *Unittest) TestParseFile_AttachesFileName() {
 
 func (s *Unittest) TestParseFile_AttachesLine() {
 	tmpl := "line1\n{{ .Values.foo }}"
-	paths, err := parseFile("test.yaml", []byte(tmpl), nil)
+	paths, err := parseFile("", "test.yaml", []byte(tmpl), nil)
 	s.Require().NoError(err)
 	s.Require().Len(paths, 1)
 	s.Require().Len(paths[0].Contexts, 1)
@@ -22,7 +22,7 @@ func (s *Unittest) TestParseFile_AttachesLine() {
 
 func (s *Unittest) TestParseFile_MultiplePathsDifferentLines() {
 	tmpl := "{{ .Values.first }}\n{{ .Values.second }}"
-	paths, err := parseFile("test.yaml", []byte(tmpl), nil)
+	paths, err := parseFile("", "test.yaml", []byte(tmpl), nil)
 	s.Require().NoError(err)
 	path.SortDedup(paths)
 	s.Require().Len(paths, 2)

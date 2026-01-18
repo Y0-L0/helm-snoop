@@ -20,8 +20,13 @@ func GetUsages(ch *chart.Chart) (path.Paths, error) {
 	}
 	slog.Debug("Built template index", "template_count", len(idx.byName))
 
+	chartName := ""
+	if ch.Metadata != nil {
+		chartName = ch.Metadata.Name
+	}
+
 	for _, tmpl := range ch.Templates {
-		paths, err := parseFile(tmpl.Name, tmpl.Data, idx)
+		paths, err := parseFile(chartName, tmpl.Name, tmpl.Data, idx)
 		slog.Debug("Analized template file", "name", tmpl.Name, "paths", paths)
 		if err != nil {
 			return nil, err
@@ -32,7 +37,7 @@ func GetUsages(ch *chart.Chart) (path.Paths, error) {
 }
 
 // parseFile parses a file; idx enables include resolution across templates.
-func parseFile(name string, data []byte, idx *TemplateIndex) (path.Paths, error) {
+func parseFile(chartName, name string, data []byte, idx *TemplateIndex) (path.Paths, error) {
 	trees, err := parse.Parse(name, string(data), "", "", stubFuncMap)
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse template %s: %w", name, err)
@@ -40,13 +45,19 @@ func parseFile(name string, data []byte, idx *TemplateIndex) (path.Paths, error)
 	slog.Debug("Parsed template file to a map of parse.Trees", "name", name)
 	out := path.Paths{}
 	source := string(data)
+
+	fileName := name
+	if chartName != "" {
+		fileName = chartName + "/" + name
+	}
+
 	for i, tree := range trees {
 		// Skip template definitions - they should only be evaluated when called via include/template
 		if i != name {
 			continue
 		}
 		slog.Debug("Analizing parse tree", "index", i, "root", tree.Root)
-		ctx := newEvalCtx(tree, &out, idx, name, source)
+		ctx := newEvalCtx(tree, &out, idx, fileName, source)
 		ctx.Eval(tree.Root)
 	}
 	return out, nil

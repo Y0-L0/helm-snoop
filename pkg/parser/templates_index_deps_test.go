@@ -23,7 +23,7 @@ func (s *Unittest) TestTemplateIndex_DependencyInclude() {
 	s.Require().NoError(buildIndexRecursive(root, "", idx, seen))
 	s.Require().NoError(buildIndexRecursive(child, "charts/child/", idx, seen))
 
-	paths, err := parseFile("templates/cm.yaml", root.Templates[0].Data, idx)
+	paths, err := parseFile("", "templates/cm.yaml", root.Templates[0].Data, idx)
 	s.Require().NoError(err)
 
 	s.Require().Len(paths, 1)
@@ -51,7 +51,7 @@ func (s *Unittest) TestTemplateIndex_TransitiveDependencyInclude() {
 	s.Require().NoError(buildIndexRecursive(root, "", idx, seen))
 	s.Require().NoError(buildIndexRecursive(child, "charts/child/", idx, seen))
 	s.Require().NoError(buildIndexRecursive(grand, "charts/child/charts/grand/", idx, seen))
-	paths, err := parseFile("templates/cm.yaml", root.Templates[0].Data, idx)
+	paths, err := parseFile("", "templates/cm.yaml", root.Templates[0].Data, idx)
 	s.Require().NoError(err)
 	s.Require().Len(paths, 1)
 	s.Equal("/grand/y", paths[0].ID())

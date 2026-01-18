@@ -35,7 +35,7 @@ func (s *Unittest) TestParseFile_Omit() {
 
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			actual, err := parseFile(tc.name+".tmpl", []byte(tc.template), nil)
+			actual, err := parseFile("", tc.name+".tmpl", []byte(tc.template), nil)
 			s.Require().NoError(err)
 			path.EqualPaths(s, tc.expected, actual)
 		})

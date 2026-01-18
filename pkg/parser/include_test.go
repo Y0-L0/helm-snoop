@@ -28,7 +28,7 @@ data:
 	}}
 	idx, err := BuildTemplateIndex(c)
 	s.Require().NoError(err)
-	paths, err := parseFile("templates/cm.yaml", c.Templates[1].Data, idx)
+	paths, err := parseFile("", "templates/cm.yaml", c.Templates[1].Data, idx)
 	s.Require().NoError(err)
 
 	s.Require().Len(paths, 1)
@@ -68,7 +68,7 @@ data:
 	idx, err := BuildTemplateIndex(c)
 	s.Require().NoError(err)
 	s.Require().Panics(func() {
-		_, _ = parseFile("templates/cm.yaml", c.Templates[2].Data, idx)
+		_, _ = parseFile("", "templates/cm.yaml", c.Templates[2].Data, idx)
 	})
 }
 
@@ -106,7 +106,7 @@ data:
 	idx, err := BuildTemplateIndex(c)
 	s.Require().NoError(err)
 	s.Require().Panics(func() {
-		_, _ = parseFile(main.Name, main.Data, idx)
+		_, _ = parseFile("", main.Name, main.Data, idx)
 	})
 }
 
@@ -129,7 +129,7 @@ func (s *Unittest) TestInclude_RootContextClearsPrefix() {
 	idx, err := BuildTemplateIndex(c)
 	s.Require().NoError(err)
 
-	paths, err := parseFile("templates/main.yaml", c.Templates[1].Data, idx)
+	paths, err := parseFile("", "templates/main.yaml", c.Templates[1].Data, idx)
 	s.Require().NoError(err)
 
 	// Should have no paths:
@@ -158,7 +158,7 @@ func (s *Unittest) TestInclude_DotContextPreservesPrefix() {
 	idx, err := BuildTemplateIndex(c)
 	s.Require().NoError(err)
 
-	paths, err := parseFile("templates/main.yaml", c.Templates[1].Data, idx)
+	paths, err := parseFile("", "templates/main.yaml", c.Templates[1].Data, idx)
 	s.Require().NoError(err)
 
 	// Should have /config and /config/name (. preserves the config prefix)
@@ -187,7 +187,7 @@ func (s *Unittest) TestInclude_ExplicitContextSetsPrefix() {
 	idx, err := BuildTemplateIndex(c)
 	s.Require().NoError(err)
 
-	paths, err := parseFile("templates/main.yaml", c.Templates[1].Data, idx)
+	paths, err := parseFile("", "templates/main.yaml", c.Templates[1].Data, idx)
 	s.Require().NoError(err)
 
 	// Should have /database and /database/name

@@ -33,7 +33,7 @@ func (s *Unittest) TestParseCommand_Noop() {
 
 			tmpl := fmt.Sprintf(`{{ %s .Values.app.name }}`, funcName)
 
-			actual, err := parseFile(funcName+".tmpl", []byte(tmpl), nil)
+			actual, err := parseFile("", funcName+".tmpl", []byte(tmpl), nil)
 			s.Require().NoError(err)
 
 			path.EqualPaths(s, expected, actual)
@@ -49,7 +49,7 @@ func (s *Unittest) TestParseCommand_Noop_Pipe() {
 
 			tmpl := fmt.Sprintf(`{{ .Values.app.name | %s }}`, funcName)
 
-			actual, err := parseFile(funcName+".tmpl", []byte(tmpl), nil)
+			actual, err := parseFile("", funcName+".tmpl", []byte(tmpl), nil)
 			s.Require().NoError(err)
 
 			path.EqualPaths(s, expected, actual)
@@ -65,7 +65,7 @@ func (s *Unittest) TestParseCommand_Serialize() {
 
 			tmpl := fmt.Sprintf(`{{ %s .Values.app.name }}`, funcName)
 
-			actual, err := parseFile(funcName+".tmpl", []byte(tmpl), nil)
+			actual, err := parseFile("", funcName+".tmpl", []byte(tmpl), nil)
 			s.Require().NoError(err)
 
 			path.EqualPaths(s, expected, actual)
@@ -81,7 +81,7 @@ func (s *Unittest) TestParseCommand_Serialize_Pipe() {
 
 			tmpl := fmt.Sprintf(`{{ .Values.app.name | %s }}`, funcName)
 
-			actual, err := parseFile(funcName+".tmpl", []byte(tmpl), nil)
+			actual, err := parseFile("", funcName+".tmpl", []byte(tmpl), nil)
 			s.Require().NoError(err)
 
 			path.EqualPaths(s, expected, actual)
