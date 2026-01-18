@@ -39,13 +39,14 @@ func parseFile(name string, data []byte, idx *TemplateIndex) (path.Paths, error)
 	}
 	slog.Debug("Parsed template file to a map of parse.Trees", "name", name)
 	out := path.Paths{}
+	source := string(data)
 	for i, tree := range trees {
 		// Skip template definitions - they should only be evaluated when called via include/template
 		if i != name {
 			continue
 		}
 		slog.Debug("Analizing parse tree", "index", i, "root", tree.Root)
-		ctx := newEvalCtx(tree, &out, idx)
+		ctx := newEvalCtx(tree, &out, idx, name, source)
 		ctx.Eval(tree.Root)
 	}
 	return out, nil

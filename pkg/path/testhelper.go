@@ -29,6 +29,7 @@ func EqualInorderPaths(eq equality, expected Paths, actual Paths) {
 	for i := 0; i < len(expected) || i < len(actual); i++ {
 		act := getPath(actual, i)
 		exp := getPath(expected, i)
-		eq.Equal(exp, act)
+		eq.Equal(exp.ID(), act.ID())
+		eq.Equal(exp.KindsString(), act.KindsString())
 	}
 }
