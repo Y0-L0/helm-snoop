@@ -30,13 +30,8 @@ func (s *Unittest) TestParseCommand_Noop() {
 
 	for _, funcName := range passthroughFuncs {
 		s.Run(funcName, func() {
-
 			tmpl := fmt.Sprintf(`{{ %s .Values.app.name }}`, funcName)
-
-			actual, err := parseFile("", funcName+".tmpl", []byte(tmpl), nil)
-			s.Require().NoError(err)
-
-			path.EqualPaths(s, expected, actual)
+			path.EqualPaths(s, expected, s.parse(tmpl))
 		})
 	}
 }
@@ -46,13 +41,8 @@ func (s *Unittest) TestParseCommand_Noop_Pipe() {
 
 	for _, funcName := range passthroughFuncs {
 		s.Run(funcName, func() {
-
 			tmpl := fmt.Sprintf(`{{ .Values.app.name | %s }}`, funcName)
-
-			actual, err := parseFile("", funcName+".tmpl", []byte(tmpl), nil)
-			s.Require().NoError(err)
-
-			path.EqualPaths(s, expected, actual)
+			path.EqualPaths(s, expected, s.parse(tmpl))
 		})
 	}
 }
@@ -62,13 +52,8 @@ func (s *Unittest) TestParseCommand_Serialize() {
 
 	for _, funcName := range serializeFuncs {
 		s.Run(funcName, func() {
-
 			tmpl := fmt.Sprintf(`{{ %s .Values.app.name }}`, funcName)
-
-			actual, err := parseFile("", funcName+".tmpl", []byte(tmpl), nil)
-			s.Require().NoError(err)
-
-			path.EqualPaths(s, expected, actual)
+			path.EqualPaths(s, expected, s.parse(tmpl))
 		})
 	}
 }
@@ -78,13 +63,8 @@ func (s *Unittest) TestParseCommand_Serialize_Pipe() {
 
 	for _, funcName := range serializeFuncs {
 		s.Run(funcName, func() {
-
 			tmpl := fmt.Sprintf(`{{ .Values.app.name | %s }}`, funcName)
-
-			actual, err := parseFile("", funcName+".tmpl", []byte(tmpl), nil)
-			s.Require().NoError(err)
-
-			path.EqualPaths(s, expected, actual)
+			path.EqualPaths(s, expected, s.parse(tmpl))
 		})
 	}
 }
