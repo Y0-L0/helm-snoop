@@ -1,0 +1,5 @@
+=========== test-chart ===========
+
+----------- Undefined ------------
+.service.nodePort  templates/service.yaml:36:20
+

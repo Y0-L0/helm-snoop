@@ -1,0 +1,6 @@
+=========== test-chart ===========
+
+------------- Unused -------------
+.config.database.host  values.yaml:5:3
+.podLabels             values.yaml:12:1
+
