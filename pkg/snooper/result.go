@@ -16,8 +16,8 @@ type Result struct {
 
 type ResultsJSON struct {
 	Referenced     path.PathsJSON `json:"referenced"`
-	DefinedNotUsed path.PathsJSON `json:"definedNotUsed"`
-	UsedNotDefined path.PathsJSON `json:"usedNotDefined"`
+	DefinedNotUsed path.PathsJSON `json:"unused"`
+	UsedNotDefined path.PathsJSON `json:"undefined"`
 }
 
 func (r *Result) HasFindings() bool {
@@ -32,12 +32,12 @@ func (r *Result) ToText(w io.Writer, showReferenced bool) error {
 		}
 	}
 
-	fmt.Fprintln(w, "Defined-not-used:")
+	fmt.Fprintln(w, "Unused:")
 	for _, p := range r.DefinedNotUsed {
 		printPathWithContext(w, p)
 	}
 
-	fmt.Fprintln(w, "Used-not-defined:")
+	fmt.Fprintln(w, "Undefined:")
 	for _, p := range r.UsedNotDefined {
 		printPathWithContext(w, p)
 	}

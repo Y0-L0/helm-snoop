@@ -3777,7 +3777,7 @@
       ]
     }
   ],
-  "definedNotUsed": [
+  "unused": [
     {
       "id": "/authorizationApi/environment",
       "kinds": "/K/K"
@@ -3923,7 +3923,7 @@
       "kinds": "/K/K"
     }
   ],
-  "usedNotDefined": [
+  "undefined": [
     {
       "id": "/Values/enabled",
       "kinds": "/K/K",
