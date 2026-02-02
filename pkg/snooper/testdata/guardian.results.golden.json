@@ -1,7 +1,7 @@
 {
   "referenced": [
     {
-      "id": "/additionalAnnotations",
+      "id": ".additionalAnnotations",
       "kinds": "/K",
       "contexts": [
         {
@@ -12,7 +12,7 @@
       ]
     },
     {
-      "id": "/additionalLabels",
+      "id": ".additionalLabels",
       "kinds": "/K",
       "contexts": [
         {
@@ -23,7 +23,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/affinity",
+      "id": ".authorizationApi.affinity",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -34,7 +34,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/config/guardianAuthzAdapterAppPersistencePort",
+      "id": ".authorizationApi.config.guardianAuthzAdapterAppPersistencePort",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -45,7 +45,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/config/guardianAuthzAdapterAuthenticationPort",
+      "id": ".authorizationApi.config.guardianAuthzAdapterAuthenticationPort",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/config/guardianAuthzAdapterPolicyPort",
+      "id": ".authorizationApi.config.guardianAuthzAdapterPolicyPort",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -67,7 +67,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/config/guardianAuthzAdapterSettingsPort",
+      "id": ".authorizationApi.config.guardianAuthzAdapterSettingsPort",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -78,7 +78,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/config/guardianAuthzCorsAllowedOrigins",
+      "id": ".authorizationApi.config.guardianAuthzCorsAllowedOrigins",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -89,7 +89,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/config/guardianAuthzLoggingFormat",
+      "id": ".authorizationApi.config.guardianAuthzLoggingFormat",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -100,7 +100,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/config/guardianAuthzLoggingLevel",
+      "id": ".authorizationApi.config.guardianAuthzLoggingLevel",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -111,7 +111,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/config/guardianAuthzLoggingStructured",
+      "id": ".authorizationApi.config.guardianAuthzLoggingStructured",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -122,7 +122,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/config/home",
+      "id": ".authorizationApi.config.home",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -133,7 +133,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/config/isUniventionAppCenter",
+      "id": ".authorizationApi.config.isUniventionAppCenter",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -144,7 +144,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/config/oauthAdapterWellKnownUrl",
+      "id": ".authorizationApi.config.oauthAdapterWellKnownUrl",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -155,7 +155,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/config/opaAdapterUrl",
+      "id": ".authorizationApi.config.opaAdapterUrl",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -166,7 +166,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/config/udmDataAdapterPasswordFile",
+      "id": ".authorizationApi.config.udmDataAdapterPasswordFile",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -177,7 +177,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/config/udmDataAdapterUrl",
+      "id": ".authorizationApi.config.udmDataAdapterUrl",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -188,7 +188,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/config/udmDataAdapterUsernameFile",
+      "id": ".authorizationApi.config.udmDataAdapterUsernameFile",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -199,7 +199,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/containerSecurityContext/allowPrivilegeEscalation",
+      "id": ".authorizationApi.containerSecurityContext.allowPrivilegeEscalation",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -210,7 +210,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/containerSecurityContext/capabilities/drop/0",
+      "id": ".authorizationApi.containerSecurityContext.capabilities.drop.0",
       "kinds": "/K/K/K/K/I",
       "contexts": [
         {
@@ -221,7 +221,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/containerSecurityContext/enabled",
+      "id": ".authorizationApi.containerSecurityContext.enabled",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -237,7 +237,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/containerSecurityContext/privileged",
+      "id": ".authorizationApi.containerSecurityContext.privileged",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -248,7 +248,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/containerSecurityContext/readOnlyRootFilesystem",
+      "id": ".authorizationApi.containerSecurityContext.readOnlyRootFilesystem",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -259,7 +259,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/containerSecurityContext/runAsGroup",
+      "id": ".authorizationApi.containerSecurityContext.runAsGroup",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -270,7 +270,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/containerSecurityContext/runAsNonRoot",
+      "id": ".authorizationApi.containerSecurityContext.runAsNonRoot",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -281,7 +281,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/containerSecurityContext/runAsUser",
+      "id": ".authorizationApi.containerSecurityContext.runAsUser",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -292,7 +292,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/containerSecurityContext/seccompProfile/type",
+      "id": ".authorizationApi.containerSecurityContext.seccompProfile.type",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -303,7 +303,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/extraEnvVars",
+      "id": ".authorizationApi.extraEnvVars",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -314,7 +314,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/image/pullPolicy",
+      "id": ".authorizationApi.image.pullPolicy",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -325,7 +325,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/image/registry",
+      "id": ".authorizationApi.image.registry",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -336,7 +336,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/image/repository",
+      "id": ".authorizationApi.image.repository",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -347,7 +347,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/image/sha256",
+      "id": ".authorizationApi.image.sha256",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -358,7 +358,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/image/tag",
+      "id": ".authorizationApi.image.tag",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -369,7 +369,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/nodeSelector",
+      "id": ".authorizationApi.nodeSelector",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -380,7 +380,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/podAnnotations",
+      "id": ".authorizationApi.podAnnotations",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -391,7 +391,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/podSecurityContext/enabled",
+      "id": ".authorizationApi.podSecurityContext.enabled",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -407,7 +407,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/podSecurityContext/fsGroup",
+      "id": ".authorizationApi.podSecurityContext.fsGroup",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -418,7 +418,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/podSecurityContext/fsGroupChangePolicy",
+      "id": ".authorizationApi.podSecurityContext.fsGroupChangePolicy",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -429,7 +429,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/probes/liveness/enabled",
+      "id": ".authorizationApi.probes.liveness.enabled",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -440,7 +440,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/probes/liveness/failureThreshold",
+      "id": ".authorizationApi.probes.liveness.failureThreshold",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -451,7 +451,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/probes/liveness/initialDelaySeconds",
+      "id": ".authorizationApi.probes.liveness.initialDelaySeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -462,7 +462,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/probes/liveness/periodSeconds",
+      "id": ".authorizationApi.probes.liveness.periodSeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -473,7 +473,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/probes/liveness/successThreshold",
+      "id": ".authorizationApi.probes.liveness.successThreshold",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -484,7 +484,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/probes/liveness/timeoutSeconds",
+      "id": ".authorizationApi.probes.liveness.timeoutSeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -495,7 +495,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/probes/readiness/enabled",
+      "id": ".authorizationApi.probes.readiness.enabled",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -506,7 +506,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/probes/readiness/failureThreshold",
+      "id": ".authorizationApi.probes.readiness.failureThreshold",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -517,7 +517,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/probes/readiness/initialDelaySeconds",
+      "id": ".authorizationApi.probes.readiness.initialDelaySeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -528,7 +528,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/probes/readiness/periodSeconds",
+      "id": ".authorizationApi.probes.readiness.periodSeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -539,7 +539,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/probes/readiness/successThreshold",
+      "id": ".authorizationApi.probes.readiness.successThreshold",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -550,7 +550,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/probes/readiness/timeoutSeconds",
+      "id": ".authorizationApi.probes.readiness.timeoutSeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -561,7 +561,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/replicaCount",
+      "id": ".authorizationApi.replicaCount",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -572,7 +572,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/resources/limits/cpu",
+      "id": ".authorizationApi.resources.limits.cpu",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -583,7 +583,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/resources/limits/memory",
+      "id": ".authorizationApi.resources.limits.memory",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -594,7 +594,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/resources/requests/cpu",
+      "id": ".authorizationApi.resources.requests.cpu",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -605,7 +605,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/resources/requests/memory",
+      "id": ".authorizationApi.resources.requests.memory",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -616,7 +616,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/service/enabled",
+      "id": ".authorizationApi.service.enabled",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -627,7 +627,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/service/ports/http/containerPort",
+      "id": ".authorizationApi.service.ports.http.containerPort",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -638,7 +638,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/service/ports/http/port",
+      "id": ".authorizationApi.service.ports.http.port",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -649,7 +649,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/service/ports/http/protocol",
+      "id": ".authorizationApi.service.ports.http.protocol",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -660,7 +660,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/service/sessionAffinity/enabled",
+      "id": ".authorizationApi.service.sessionAffinity.enabled",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -671,7 +671,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/service/sessionAffinity/timeoutSeconds",
+      "id": ".authorizationApi.service.sessionAffinity.timeoutSeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -682,7 +682,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/service/type",
+      "id": ".authorizationApi.service.type",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -693,7 +693,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/tolerations",
+      "id": ".authorizationApi.tolerations",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -704,7 +704,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/udm/auth/existingSecret/keyMapping/password",
+      "id": ".authorizationApi.udm.auth.existingSecret.keyMapping.password",
       "kinds": "/K/K/K/K/K/K",
       "contexts": [
         {
@@ -715,7 +715,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/udm/auth/existingSecret/name",
+      "id": ".authorizationApi.udm.auth.existingSecret.name",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -726,7 +726,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/udm/auth/username",
+      "id": ".authorizationApi.udm.auth.username",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -737,7 +737,7 @@
       ]
     },
     {
-      "id": "/extraSecrets",
+      "id": ".extraSecrets",
       "kinds": "/K",
       "contexts": [
         {
@@ -748,7 +748,7 @@
       ]
     },
     {
-      "id": "/extraVolumes",
+      "id": ".extraVolumes",
       "kinds": "/K",
       "contexts": [
         {
@@ -759,7 +759,7 @@
       ]
     },
     {
-      "id": "/global/domain",
+      "id": ".global.domain",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -770,7 +770,7 @@
       ]
     },
     {
-      "id": "/global/imagePullPolicy",
+      "id": ".global.imagePullPolicy",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -781,7 +781,7 @@
       ]
     },
     {
-      "id": "/global/imagePullSecrets",
+      "id": ".global.imagePullSecrets",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -792,7 +792,7 @@
       ]
     },
     {
-      "id": "/global/imageRegistry",
+      "id": ".global.imageRegistry",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -803,7 +803,7 @@
       ]
     },
     {
-      "id": "/global/postgresql/connection/host",
+      "id": ".global.postgresql.connection.host",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -814,7 +814,7 @@
       ]
     },
     {
-      "id": "/global/postgresql/connection/port",
+      "id": ".global.postgresql.connection.port",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -825,7 +825,7 @@
       ]
     },
     {
-      "id": "/global/subDomains/keycloak",
+      "id": ".global.subDomains.keycloak",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -836,7 +836,7 @@
       ]
     },
     {
-      "id": "/global/subDomains/portal",
+      "id": ".global.subDomains.portal",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -847,7 +847,7 @@
       ]
     },
     {
-      "id": "/imagePullSecrets",
+      "id": ".imagePullSecrets",
       "kinds": "/K",
       "contexts": [
         {
@@ -858,7 +858,7 @@
       ]
     },
     {
-      "id": "/ingress/annotations",
+      "id": ".ingress.annotations",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -869,7 +869,7 @@
       ]
     },
     {
-      "id": "/ingress/certManager/enabled",
+      "id": ".ingress.certManager.enabled",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -880,7 +880,7 @@
       ]
     },
     {
-      "id": "/ingress/certManager/issuerRef/kind",
+      "id": ".ingress.certManager.issuerRef.kind",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -891,7 +891,7 @@
       ]
     },
     {
-      "id": "/ingress/certManager/issuerRef/name",
+      "id": ".ingress.certManager.issuerRef.name",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -902,7 +902,7 @@
       ]
     },
     {
-      "id": "/ingress/enabled",
+      "id": ".ingress.enabled",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -913,7 +913,7 @@
       ]
     },
     {
-      "id": "/ingress/host",
+      "id": ".ingress.host",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -924,7 +924,7 @@
       ]
     },
     {
-      "id": "/ingress/ingressClassName",
+      "id": ".ingress.ingressClassName",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -935,7 +935,7 @@
       ]
     },
     {
-      "id": "/ingress/items/0/annotations",
+      "id": ".ingress.items.0.annotations",
       "kinds": "/K/K/I/K",
       "contexts": [
         {
@@ -946,7 +946,7 @@
       ]
     },
     {
-      "id": "/ingress/items/0/host",
+      "id": ".ingress.items.0.host",
       "kinds": "/K/K/I/K",
       "contexts": [
         {
@@ -967,7 +967,7 @@
       ]
     },
     {
-      "id": "/ingress/items/0/ingressClassName",
+      "id": ".ingress.items.0.ingressClassName",
       "kinds": "/K/K/I/K",
       "contexts": [
         {
@@ -978,7 +978,7 @@
       ]
     },
     {
-      "id": "/ingress/items/0/name",
+      "id": ".ingress.items.0.name",
       "kinds": "/K/K/I/K",
       "contexts": [
         {
@@ -989,7 +989,7 @@
       ]
     },
     {
-      "id": "/ingress/items/0/paths/0/backend/service/name",
+      "id": ".ingress.items.0.paths.0.backend.service.name",
       "kinds": "/K/K/I/K/I/K/K/K",
       "contexts": [
         {
@@ -1000,7 +1000,7 @@
       ]
     },
     {
-      "id": "/ingress/items/0/paths/0/backend/service/port/number",
+      "id": ".ingress.items.0.paths.0.backend.service.port.number",
       "kinds": "/K/K/I/K/I/K/K/K/K",
       "contexts": [
         {
@@ -1011,7 +1011,7 @@
       ]
     },
     {
-      "id": "/ingress/items/0/paths/0/path",
+      "id": ".ingress.items.0.paths.0.path",
       "kinds": "/K/K/I/K/I/K",
       "contexts": [
         {
@@ -1022,7 +1022,7 @@
       ]
     },
     {
-      "id": "/ingress/items/0/paths/0/pathType",
+      "id": ".ingress.items.0.paths.0.pathType",
       "kinds": "/K/K/I/K/I/K",
       "contexts": [
         {
@@ -1033,7 +1033,7 @@
       ]
     },
     {
-      "id": "/ingress/items/0/tls/secretName",
+      "id": ".ingress.items.0.tls.secretName",
       "kinds": "/K/K/I/K/K",
       "contexts": [
         {
@@ -1044,7 +1044,7 @@
       ]
     },
     {
-      "id": "/ingress/items/1/annotations",
+      "id": ".ingress.items.1.annotations",
       "kinds": "/K/K/I/K",
       "contexts": [
         {
@@ -1055,7 +1055,7 @@
       ]
     },
     {
-      "id": "/ingress/items/1/host",
+      "id": ".ingress.items.1.host",
       "kinds": "/K/K/I/K",
       "contexts": [
         {
@@ -1076,7 +1076,7 @@
       ]
     },
     {
-      "id": "/ingress/items/1/ingressClassName",
+      "id": ".ingress.items.1.ingressClassName",
       "kinds": "/K/K/I/K",
       "contexts": [
         {
@@ -1087,7 +1087,7 @@
       ]
     },
     {
-      "id": "/ingress/items/1/name",
+      "id": ".ingress.items.1.name",
       "kinds": "/K/K/I/K",
       "contexts": [
         {
@@ -1098,7 +1098,7 @@
       ]
     },
     {
-      "id": "/ingress/items/1/paths/0/backend/service/name",
+      "id": ".ingress.items.1.paths.0.backend.service.name",
       "kinds": "/K/K/I/K/I/K/K/K",
       "contexts": [
         {
@@ -1109,7 +1109,7 @@
       ]
     },
     {
-      "id": "/ingress/items/1/paths/0/backend/service/port/number",
+      "id": ".ingress.items.1.paths.0.backend.service.port.number",
       "kinds": "/K/K/I/K/I/K/K/K/K",
       "contexts": [
         {
@@ -1120,7 +1120,7 @@
       ]
     },
     {
-      "id": "/ingress/items/1/paths/0/path",
+      "id": ".ingress.items.1.paths.0.path",
       "kinds": "/K/K/I/K/I/K",
       "contexts": [
         {
@@ -1131,7 +1131,7 @@
       ]
     },
     {
-      "id": "/ingress/items/1/paths/0/pathType",
+      "id": ".ingress.items.1.paths.0.pathType",
       "kinds": "/K/K/I/K/I/K",
       "contexts": [
         {
@@ -1142,7 +1142,7 @@
       ]
     },
     {
-      "id": "/ingress/items/1/tls/secretName",
+      "id": ".ingress.items.1.tls.secretName",
       "kinds": "/K/K/I/K/K",
       "contexts": [
         {
@@ -1153,7 +1153,7 @@
       ]
     },
     {
-      "id": "/ingress/items/2/annotations",
+      "id": ".ingress.items.2.annotations",
       "kinds": "/K/K/I/K",
       "contexts": [
         {
@@ -1164,7 +1164,7 @@
       ]
     },
     {
-      "id": "/ingress/items/2/host",
+      "id": ".ingress.items.2.host",
       "kinds": "/K/K/I/K",
       "contexts": [
         {
@@ -1185,7 +1185,7 @@
       ]
     },
     {
-      "id": "/ingress/items/2/ingressClassName",
+      "id": ".ingress.items.2.ingressClassName",
       "kinds": "/K/K/I/K",
       "contexts": [
         {
@@ -1196,7 +1196,7 @@
       ]
     },
     {
-      "id": "/ingress/items/2/name",
+      "id": ".ingress.items.2.name",
       "kinds": "/K/K/I/K",
       "contexts": [
         {
@@ -1207,7 +1207,7 @@
       ]
     },
     {
-      "id": "/ingress/items/2/paths/0/backend/service/name",
+      "id": ".ingress.items.2.paths.0.backend.service.name",
       "kinds": "/K/K/I/K/I/K/K/K",
       "contexts": [
         {
@@ -1218,7 +1218,7 @@
       ]
     },
     {
-      "id": "/ingress/items/2/paths/0/backend/service/port/number",
+      "id": ".ingress.items.2.paths.0.backend.service.port.number",
       "kinds": "/K/K/I/K/I/K/K/K/K",
       "contexts": [
         {
@@ -1229,7 +1229,7 @@
       ]
     },
     {
-      "id": "/ingress/items/2/paths/0/path",
+      "id": ".ingress.items.2.paths.0.path",
       "kinds": "/K/K/I/K/I/K",
       "contexts": [
         {
@@ -1240,7 +1240,7 @@
       ]
     },
     {
-      "id": "/ingress/items/2/paths/0/pathType",
+      "id": ".ingress.items.2.paths.0.pathType",
       "kinds": "/K/K/I/K/I/K",
       "contexts": [
         {
@@ -1251,7 +1251,7 @@
       ]
     },
     {
-      "id": "/ingress/items/2/tls/secretName",
+      "id": ".ingress.items.2.tls.secretName",
       "kinds": "/K/K/I/K/K",
       "contexts": [
         {
@@ -1262,7 +1262,7 @@
       ]
     },
     {
-      "id": "/ingress/tls/enabled",
+      "id": ".ingress.tls.enabled",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1273,7 +1273,7 @@
       ]
     },
     {
-      "id": "/ingress/tls/secretName",
+      "id": ".ingress.tls.secretName",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1284,7 +1284,7 @@
       ]
     },
     {
-      "id": "/managementApi/affinity",
+      "id": ".managementApi.affinity",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1295,7 +1295,7 @@
       ]
     },
     {
-      "id": "/managementApi/config/guardianManagementAdapterAppPersistencePort",
+      "id": ".managementApi.config.guardianManagementAdapterAppPersistencePort",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1306,7 +1306,7 @@
       ]
     },
     {
-      "id": "/managementApi/config/guardianManagementAdapterAuthenticationPort",
+      "id": ".managementApi.config.guardianManagementAdapterAuthenticationPort",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1317,7 +1317,7 @@
       ]
     },
     {
-      "id": "/managementApi/config/guardianManagementAdapterAuthorizationApiUrl",
+      "id": ".managementApi.config.guardianManagementAdapterAuthorizationApiUrl",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1328,7 +1328,7 @@
       ]
     },
     {
-      "id": "/managementApi/config/guardianManagementAdapterCapabilityPersistencePort",
+      "id": ".managementApi.config.guardianManagementAdapterCapabilityPersistencePort",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1339,7 +1339,7 @@
       ]
     },
     {
-      "id": "/managementApi/config/guardianManagementAdapterConditionPersistencePort",
+      "id": ".managementApi.config.guardianManagementAdapterConditionPersistencePort",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1350,7 +1350,7 @@
       ]
     },
     {
-      "id": "/managementApi/config/guardianManagementAdapterContextPersistencePort",
+      "id": ".managementApi.config.guardianManagementAdapterContextPersistencePort",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1361,7 +1361,7 @@
       ]
     },
     {
-      "id": "/managementApi/config/guardianManagementAdapterNamespacePersistencePort",
+      "id": ".managementApi.config.guardianManagementAdapterNamespacePersistencePort",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1372,7 +1372,7 @@
       ]
     },
     {
-      "id": "/managementApi/config/guardianManagementAdapterPermissionPersistencePort",
+      "id": ".managementApi.config.guardianManagementAdapterPermissionPersistencePort",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1383,7 +1383,7 @@
       ]
     },
     {
-      "id": "/managementApi/config/guardianManagementAdapterResourceAuthorizationPort",
+      "id": ".managementApi.config.guardianManagementAdapterResourceAuthorizationPort",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1394,7 +1394,7 @@
       ]
     },
     {
-      "id": "/managementApi/config/guardianManagementAdapterRolePersistencePort",
+      "id": ".managementApi.config.guardianManagementAdapterRolePersistencePort",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1405,7 +1405,7 @@
       ]
     },
     {
-      "id": "/managementApi/config/guardianManagementAdapterSettingsPort",
+      "id": ".managementApi.config.guardianManagementAdapterSettingsPort",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1416,7 +1416,7 @@
       ]
     },
     {
-      "id": "/managementApi/config/guardianManagementBaseUrl",
+      "id": ".managementApi.config.guardianManagementBaseUrl",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1427,7 +1427,7 @@
       ]
     },
     {
-      "id": "/managementApi/config/guardianManagementCorsAllowedOrigins",
+      "id": ".managementApi.config.guardianManagementCorsAllowedOrigins",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1438,7 +1438,7 @@
       ]
     },
     {
-      "id": "/managementApi/config/guardianManagementLoggingFormat",
+      "id": ".managementApi.config.guardianManagementLoggingFormat",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1449,7 +1449,7 @@
       ]
     },
     {
-      "id": "/managementApi/config/guardianManagementLoggingLevel",
+      "id": ".managementApi.config.guardianManagementLoggingLevel",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1460,7 +1460,7 @@
       ]
     },
     {
-      "id": "/managementApi/config/guardianManagementLoggingStructured",
+      "id": ".managementApi.config.guardianManagementLoggingStructured",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1471,7 +1471,7 @@
       ]
     },
     {
-      "id": "/managementApi/config/home",
+      "id": ".managementApi.config.home",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1482,7 +1482,7 @@
       ]
     },
     {
-      "id": "/managementApi/config/isUniventionAppCenter",
+      "id": ".managementApi.config.isUniventionAppCenter",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1493,7 +1493,7 @@
       ]
     },
     {
-      "id": "/managementApi/config/oauthAdapterM2mSecretFile",
+      "id": ".managementApi.config.oauthAdapterM2mSecretFile",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1504,7 +1504,7 @@
       ]
     },
     {
-      "id": "/managementApi/config/oauthAdapterWellKnownUrl",
+      "id": ".managementApi.config.oauthAdapterWellKnownUrl",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1515,7 +1515,7 @@
       ]
     },
     {
-      "id": "/managementApi/config/sqlPersistenceAdapterDialect",
+      "id": ".managementApi.config.sqlPersistenceAdapterDialect",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1526,7 +1526,7 @@
       ]
     },
     {
-      "id": "/managementApi/containerSecurityContext/allowPrivilegeEscalation",
+      "id": ".managementApi.containerSecurityContext.allowPrivilegeEscalation",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1537,7 +1537,7 @@
       ]
     },
     {
-      "id": "/managementApi/containerSecurityContext/capabilities/drop/0",
+      "id": ".managementApi.containerSecurityContext.capabilities.drop.0",
       "kinds": "/K/K/K/K/I",
       "contexts": [
         {
@@ -1548,7 +1548,7 @@
       ]
     },
     {
-      "id": "/managementApi/containerSecurityContext/enabled",
+      "id": ".managementApi.containerSecurityContext.enabled",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1564,7 +1564,7 @@
       ]
     },
     {
-      "id": "/managementApi/containerSecurityContext/privileged",
+      "id": ".managementApi.containerSecurityContext.privileged",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1575,7 +1575,7 @@
       ]
     },
     {
-      "id": "/managementApi/containerSecurityContext/readOnlyRootFilesystem",
+      "id": ".managementApi.containerSecurityContext.readOnlyRootFilesystem",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1586,7 +1586,7 @@
       ]
     },
     {
-      "id": "/managementApi/containerSecurityContext/runAsGroup",
+      "id": ".managementApi.containerSecurityContext.runAsGroup",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1597,7 +1597,7 @@
       ]
     },
     {
-      "id": "/managementApi/containerSecurityContext/runAsNonRoot",
+      "id": ".managementApi.containerSecurityContext.runAsNonRoot",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1608,7 +1608,7 @@
       ]
     },
     {
-      "id": "/managementApi/containerSecurityContext/runAsUser",
+      "id": ".managementApi.containerSecurityContext.runAsUser",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1619,7 +1619,7 @@
       ]
     },
     {
-      "id": "/managementApi/containerSecurityContext/seccompProfile/type",
+      "id": ".managementApi.containerSecurityContext.seccompProfile.type",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -1630,7 +1630,7 @@
       ]
     },
     {
-      "id": "/managementApi/extraEnvVars",
+      "id": ".managementApi.extraEnvVars",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1641,7 +1641,7 @@
       ]
     },
     {
-      "id": "/managementApi/image/pullPolicy",
+      "id": ".managementApi.image.pullPolicy",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1652,7 +1652,7 @@
       ]
     },
     {
-      "id": "/managementApi/image/registry",
+      "id": ".managementApi.image.registry",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1663,7 +1663,7 @@
       ]
     },
     {
-      "id": "/managementApi/image/repository",
+      "id": ".managementApi.image.repository",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1674,7 +1674,7 @@
       ]
     },
     {
-      "id": "/managementApi/image/sha256",
+      "id": ".managementApi.image.sha256",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1685,7 +1685,7 @@
       ]
     },
     {
-      "id": "/managementApi/image/tag",
+      "id": ".managementApi.image.tag",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1696,7 +1696,7 @@
       ]
     },
     {
-      "id": "/managementApi/nodeSelector",
+      "id": ".managementApi.nodeSelector",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1707,7 +1707,7 @@
       ]
     },
     {
-      "id": "/managementApi/oauth/auth/existingSecret/keyMapping/clientSecret",
+      "id": ".managementApi.oauth.auth.existingSecret.keyMapping.clientSecret",
       "kinds": "/K/K/K/K/K/K",
       "contexts": [
         {
@@ -1718,7 +1718,7 @@
       ]
     },
     {
-      "id": "/managementApi/oauth/auth/existingSecret/name",
+      "id": ".managementApi.oauth.auth.existingSecret.name",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -1729,7 +1729,7 @@
       ]
     },
     {
-      "id": "/managementApi/podAnnotations",
+      "id": ".managementApi.podAnnotations",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1740,7 +1740,7 @@
       ]
     },
     {
-      "id": "/managementApi/podSecurityContext/enabled",
+      "id": ".managementApi.podSecurityContext.enabled",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1756,7 +1756,7 @@
       ]
     },
     {
-      "id": "/managementApi/podSecurityContext/fsGroup",
+      "id": ".managementApi.podSecurityContext.fsGroup",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1767,7 +1767,7 @@
       ]
     },
     {
-      "id": "/managementApi/podSecurityContext/fsGroupChangePolicy",
+      "id": ".managementApi.podSecurityContext.fsGroupChangePolicy",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1778,7 +1778,7 @@
       ]
     },
     {
-      "id": "/managementApi/probes/liveness/enabled",
+      "id": ".managementApi.probes.liveness.enabled",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -1789,7 +1789,7 @@
       ]
     },
     {
-      "id": "/managementApi/probes/liveness/failureThreshold",
+      "id": ".managementApi.probes.liveness.failureThreshold",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -1800,7 +1800,7 @@
       ]
     },
     {
-      "id": "/managementApi/probes/liveness/initialDelaySeconds",
+      "id": ".managementApi.probes.liveness.initialDelaySeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -1811,7 +1811,7 @@
       ]
     },
     {
-      "id": "/managementApi/probes/liveness/periodSeconds",
+      "id": ".managementApi.probes.liveness.periodSeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -1822,7 +1822,7 @@
       ]
     },
     {
-      "id": "/managementApi/probes/liveness/successThreshold",
+      "id": ".managementApi.probes.liveness.successThreshold",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -1833,7 +1833,7 @@
       ]
     },
     {
-      "id": "/managementApi/probes/liveness/timeoutSeconds",
+      "id": ".managementApi.probes.liveness.timeoutSeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -1844,7 +1844,7 @@
       ]
     },
     {
-      "id": "/managementApi/probes/readiness/enabled",
+      "id": ".managementApi.probes.readiness.enabled",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -1855,7 +1855,7 @@
       ]
     },
     {
-      "id": "/managementApi/probes/readiness/failureThreshold",
+      "id": ".managementApi.probes.readiness.failureThreshold",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -1866,7 +1866,7 @@
       ]
     },
     {
-      "id": "/managementApi/probes/readiness/initialDelaySeconds",
+      "id": ".managementApi.probes.readiness.initialDelaySeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -1877,7 +1877,7 @@
       ]
     },
     {
-      "id": "/managementApi/probes/readiness/periodSeconds",
+      "id": ".managementApi.probes.readiness.periodSeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -1888,7 +1888,7 @@
       ]
     },
     {
-      "id": "/managementApi/probes/readiness/successThreshold",
+      "id": ".managementApi.probes.readiness.successThreshold",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -1899,7 +1899,7 @@
       ]
     },
     {
-      "id": "/managementApi/probes/readiness/timeoutSeconds",
+      "id": ".managementApi.probes.readiness.timeoutSeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -1910,7 +1910,7 @@
       ]
     },
     {
-      "id": "/managementApi/replicaCount",
+      "id": ".managementApi.replicaCount",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1921,7 +1921,7 @@
       ]
     },
     {
-      "id": "/managementApi/resources/limits/cpu",
+      "id": ".managementApi.resources.limits.cpu",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -1932,7 +1932,7 @@
       ]
     },
     {
-      "id": "/managementApi/resources/limits/memory",
+      "id": ".managementApi.resources.limits.memory",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -1943,7 +1943,7 @@
       ]
     },
     {
-      "id": "/managementApi/resources/requests/cpu",
+      "id": ".managementApi.resources.requests.cpu",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -1954,7 +1954,7 @@
       ]
     },
     {
-      "id": "/managementApi/resources/requests/memory",
+      "id": ".managementApi.resources.requests.memory",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -1965,7 +1965,7 @@
       ]
     },
     {
-      "id": "/managementApi/service/enabled",
+      "id": ".managementApi.service.enabled",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1976,7 +1976,7 @@
       ]
     },
     {
-      "id": "/managementApi/service/ports/http/containerPort",
+      "id": ".managementApi.service.ports.http.containerPort",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -1987,7 +1987,7 @@
       ]
     },
     {
-      "id": "/managementApi/service/ports/http/port",
+      "id": ".managementApi.service.ports.http.port",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -1998,7 +1998,7 @@
       ]
     },
     {
-      "id": "/managementApi/service/ports/http/protocol",
+      "id": ".managementApi.service.ports.http.protocol",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -2009,7 +2009,7 @@
       ]
     },
     {
-      "id": "/managementApi/service/sessionAffinity/enabled",
+      "id": ".managementApi.service.sessionAffinity.enabled",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2020,7 +2020,7 @@
       ]
     },
     {
-      "id": "/managementApi/service/sessionAffinity/timeoutSeconds",
+      "id": ".managementApi.service.sessionAffinity.timeoutSeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2031,7 +2031,7 @@
       ]
     },
     {
-      "id": "/managementApi/service/type",
+      "id": ".managementApi.service.type",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2042,7 +2042,7 @@
       ]
     },
     {
-      "id": "/managementApi/tolerations",
+      "id": ".managementApi.tolerations",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -2053,7 +2053,7 @@
       ]
     },
     {
-      "id": "/managementUi/affinity",
+      "id": ".managementUi.affinity",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -2064,7 +2064,7 @@
       ]
     },
     {
-      "id": "/managementUi/config/nginx/disableIPv6",
+      "id": ".managementUi.config.nginx.disableIPv6",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2075,7 +2075,7 @@
       ]
     },
     {
-      "id": "/managementUi/config/viteApiDataAdapterUri",
+      "id": ".managementUi.config.viteApiDataAdapterUri",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2086,7 +2086,7 @@
       ]
     },
     {
-      "id": "/managementUi/config/viteKeycloakAuthenticationAdapterClientId",
+      "id": ".managementUi.config.viteKeycloakAuthenticationAdapterClientId",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2097,7 +2097,7 @@
       ]
     },
     {
-      "id": "/managementUi/config/viteKeycloakAuthenticationAdapterRealm",
+      "id": ".managementUi.config.viteKeycloakAuthenticationAdapterRealm",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2108,7 +2108,7 @@
       ]
     },
     {
-      "id": "/managementUi/config/viteKeycloakAuthenticationAdapterSsoUri",
+      "id": ".managementUi.config.viteKeycloakAuthenticationAdapterSsoUri",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2119,7 +2119,7 @@
       ]
     },
     {
-      "id": "/managementUi/config/viteManagementUiAdapterAuthenticationPort",
+      "id": ".managementUi.config.viteManagementUiAdapterAuthenticationPort",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2130,7 +2130,7 @@
       ]
     },
     {
-      "id": "/managementUi/config/viteManagementUiAdapterDataPort",
+      "id": ".managementUi.config.viteManagementUiAdapterDataPort",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2141,7 +2141,7 @@
       ]
     },
     {
-      "id": "/managementUi/containerSecurityContext/allowPrivilegeEscalation",
+      "id": ".managementUi.containerSecurityContext.allowPrivilegeEscalation",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2152,7 +2152,7 @@
       ]
     },
     {
-      "id": "/managementUi/containerSecurityContext/capabilities/drop/0",
+      "id": ".managementUi.containerSecurityContext.capabilities.drop.0",
       "kinds": "/K/K/K/K/I",
       "contexts": [
         {
@@ -2163,7 +2163,7 @@
       ]
     },
     {
-      "id": "/managementUi/containerSecurityContext/enabled",
+      "id": ".managementUi.containerSecurityContext.enabled",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2179,7 +2179,7 @@
       ]
     },
     {
-      "id": "/managementUi/containerSecurityContext/privileged",
+      "id": ".managementUi.containerSecurityContext.privileged",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2190,7 +2190,7 @@
       ]
     },
     {
-      "id": "/managementUi/containerSecurityContext/readOnlyRootFilesystem",
+      "id": ".managementUi.containerSecurityContext.readOnlyRootFilesystem",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2201,7 +2201,7 @@
       ]
     },
     {
-      "id": "/managementUi/containerSecurityContext/runAsGroup",
+      "id": ".managementUi.containerSecurityContext.runAsGroup",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2212,7 +2212,7 @@
       ]
     },
     {
-      "id": "/managementUi/containerSecurityContext/runAsNonRoot",
+      "id": ".managementUi.containerSecurityContext.runAsNonRoot",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2223,7 +2223,7 @@
       ]
     },
     {
-      "id": "/managementUi/containerSecurityContext/runAsUser",
+      "id": ".managementUi.containerSecurityContext.runAsUser",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2234,7 +2234,7 @@
       ]
     },
     {
-      "id": "/managementUi/containerSecurityContext/seccompProfile/type",
+      "id": ".managementUi.containerSecurityContext.seccompProfile.type",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2245,7 +2245,7 @@
       ]
     },
     {
-      "id": "/managementUi/extraEnvVars",
+      "id": ".managementUi.extraEnvVars",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -2256,7 +2256,7 @@
       ]
     },
     {
-      "id": "/managementUi/image/pullPolicy",
+      "id": ".managementUi.image.pullPolicy",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2267,7 +2267,7 @@
       ]
     },
     {
-      "id": "/managementUi/image/registry",
+      "id": ".managementUi.image.registry",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2278,7 +2278,7 @@
       ]
     },
     {
-      "id": "/managementUi/image/repository",
+      "id": ".managementUi.image.repository",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2289,7 +2289,7 @@
       ]
     },
     {
-      "id": "/managementUi/image/sha256",
+      "id": ".managementUi.image.sha256",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2300,7 +2300,7 @@
       ]
     },
     {
-      "id": "/managementUi/image/tag",
+      "id": ".managementUi.image.tag",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2311,7 +2311,7 @@
       ]
     },
     {
-      "id": "/managementUi/nodeSelector",
+      "id": ".managementUi.nodeSelector",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -2322,7 +2322,7 @@
       ]
     },
     {
-      "id": "/managementUi/podAnnotations",
+      "id": ".managementUi.podAnnotations",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -2333,7 +2333,7 @@
       ]
     },
     {
-      "id": "/managementUi/podSecurityContext/enabled",
+      "id": ".managementUi.podSecurityContext.enabled",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2349,7 +2349,7 @@
       ]
     },
     {
-      "id": "/managementUi/podSecurityContext/fsGroup",
+      "id": ".managementUi.podSecurityContext.fsGroup",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2360,7 +2360,7 @@
       ]
     },
     {
-      "id": "/managementUi/podSecurityContext/runAsGroup",
+      "id": ".managementUi.podSecurityContext.runAsGroup",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2371,7 +2371,7 @@
       ]
     },
     {
-      "id": "/managementUi/podSecurityContext/runAsUser",
+      "id": ".managementUi.podSecurityContext.runAsUser",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2382,7 +2382,7 @@
       ]
     },
     {
-      "id": "/managementUi/probes/liveness/enabled",
+      "id": ".managementUi.probes.liveness.enabled",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2393,7 +2393,7 @@
       ]
     },
     {
-      "id": "/managementUi/probes/liveness/failureThreshold",
+      "id": ".managementUi.probes.liveness.failureThreshold",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2404,7 +2404,7 @@
       ]
     },
     {
-      "id": "/managementUi/probes/liveness/initialDelaySeconds",
+      "id": ".managementUi.probes.liveness.initialDelaySeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2415,7 +2415,7 @@
       ]
     },
     {
-      "id": "/managementUi/probes/liveness/periodSeconds",
+      "id": ".managementUi.probes.liveness.periodSeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2426,7 +2426,7 @@
       ]
     },
     {
-      "id": "/managementUi/probes/liveness/successThreshold",
+      "id": ".managementUi.probes.liveness.successThreshold",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2437,7 +2437,7 @@
       ]
     },
     {
-      "id": "/managementUi/probes/liveness/timeoutSeconds",
+      "id": ".managementUi.probes.liveness.timeoutSeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2448,7 +2448,7 @@
       ]
     },
     {
-      "id": "/managementUi/probes/readiness/enabled",
+      "id": ".managementUi.probes.readiness.enabled",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2459,7 +2459,7 @@
       ]
     },
     {
-      "id": "/managementUi/probes/readiness/failureThreshold",
+      "id": ".managementUi.probes.readiness.failureThreshold",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2470,7 +2470,7 @@
       ]
     },
     {
-      "id": "/managementUi/probes/readiness/initialDelaySeconds",
+      "id": ".managementUi.probes.readiness.initialDelaySeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2481,7 +2481,7 @@
       ]
     },
     {
-      "id": "/managementUi/probes/readiness/periodSeconds",
+      "id": ".managementUi.probes.readiness.periodSeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2492,7 +2492,7 @@
       ]
     },
     {
-      "id": "/managementUi/probes/readiness/successThreshold",
+      "id": ".managementUi.probes.readiness.successThreshold",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2503,7 +2503,7 @@
       ]
     },
     {
-      "id": "/managementUi/probes/readiness/timeoutSeconds",
+      "id": ".managementUi.probes.readiness.timeoutSeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2514,7 +2514,7 @@
       ]
     },
     {
-      "id": "/managementUi/replicaCount",
+      "id": ".managementUi.replicaCount",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -2525,7 +2525,7 @@
       ]
     },
     {
-      "id": "/managementUi/resources/limits/cpu",
+      "id": ".managementUi.resources.limits.cpu",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2536,7 +2536,7 @@
       ]
     },
     {
-      "id": "/managementUi/resources/limits/memory",
+      "id": ".managementUi.resources.limits.memory",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2547,7 +2547,7 @@
       ]
     },
     {
-      "id": "/managementUi/resources/requests/cpu",
+      "id": ".managementUi.resources.requests.cpu",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2558,7 +2558,7 @@
       ]
     },
     {
-      "id": "/managementUi/resources/requests/memory",
+      "id": ".managementUi.resources.requests.memory",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2569,7 +2569,7 @@
       ]
     },
     {
-      "id": "/managementUi/service/enabled",
+      "id": ".managementUi.service.enabled",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2580,7 +2580,7 @@
       ]
     },
     {
-      "id": "/managementUi/service/ports/http/containerPort",
+      "id": ".managementUi.service.ports.http.containerPort",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -2591,7 +2591,7 @@
       ]
     },
     {
-      "id": "/managementUi/service/ports/http/port",
+      "id": ".managementUi.service.ports.http.port",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -2602,7 +2602,7 @@
       ]
     },
     {
-      "id": "/managementUi/service/ports/http/protocol",
+      "id": ".managementUi.service.ports.http.protocol",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -2613,7 +2613,7 @@
       ]
     },
     {
-      "id": "/managementUi/service/sessionAffinity/enabled",
+      "id": ".managementUi.service.sessionAffinity.enabled",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2624,7 +2624,7 @@
       ]
     },
     {
-      "id": "/managementUi/service/sessionAffinity/timeoutSeconds",
+      "id": ".managementUi.service.sessionAffinity.timeoutSeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2635,7 +2635,7 @@
       ]
     },
     {
-      "id": "/managementUi/service/type",
+      "id": ".managementUi.service.type",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2646,7 +2646,7 @@
       ]
     },
     {
-      "id": "/managementUi/tolerations",
+      "id": ".managementUi.tolerations",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -2657,7 +2657,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/affinity",
+      "id": ".openPolicyAgent.affinity",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -2668,7 +2668,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/config/isUniventionAppCenter",
+      "id": ".openPolicyAgent.config.isUniventionAppCenter",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2679,7 +2679,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/config/opaDataBundle",
+      "id": ".openPolicyAgent.config.opaDataBundle",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2690,7 +2690,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/config/opaGuardianManagementUrl",
+      "id": ".openPolicyAgent.config.opaGuardianManagementUrl",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2701,7 +2701,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/config/opaPolicyBundle",
+      "id": ".openPolicyAgent.config.opaPolicyBundle",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2712,7 +2712,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/config/opaPollingMaxDelay",
+      "id": ".openPolicyAgent.config.opaPollingMaxDelay",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2723,7 +2723,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/config/opaPollingMinDelay",
+      "id": ".openPolicyAgent.config.opaPollingMinDelay",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2734,7 +2734,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/containerSecurityContext/allowPrivilegeEscalation",
+      "id": ".openPolicyAgent.containerSecurityContext.allowPrivilegeEscalation",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2745,7 +2745,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/containerSecurityContext/capabilities/drop/0",
+      "id": ".openPolicyAgent.containerSecurityContext.capabilities.drop.0",
       "kinds": "/K/K/K/K/I",
       "contexts": [
         {
@@ -2756,7 +2756,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/containerSecurityContext/enabled",
+      "id": ".openPolicyAgent.containerSecurityContext.enabled",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2772,7 +2772,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/containerSecurityContext/privileged",
+      "id": ".openPolicyAgent.containerSecurityContext.privileged",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2783,7 +2783,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/containerSecurityContext/readOnlyRootFilesystem",
+      "id": ".openPolicyAgent.containerSecurityContext.readOnlyRootFilesystem",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2794,7 +2794,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/containerSecurityContext/runAsGroup",
+      "id": ".openPolicyAgent.containerSecurityContext.runAsGroup",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2805,7 +2805,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/containerSecurityContext/runAsNonRoot",
+      "id": ".openPolicyAgent.containerSecurityContext.runAsNonRoot",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2816,7 +2816,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/containerSecurityContext/runAsUser",
+      "id": ".openPolicyAgent.containerSecurityContext.runAsUser",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2827,7 +2827,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/containerSecurityContext/seccompProfile/type",
+      "id": ".openPolicyAgent.containerSecurityContext.seccompProfile.type",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2838,7 +2838,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/extraEnvVars",
+      "id": ".openPolicyAgent.extraEnvVars",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -2849,7 +2849,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/image/pullPolicy",
+      "id": ".openPolicyAgent.image.pullPolicy",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2860,7 +2860,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/image/registry",
+      "id": ".openPolicyAgent.image.registry",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2871,7 +2871,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/image/repository",
+      "id": ".openPolicyAgent.image.repository",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2882,7 +2882,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/image/sha256",
+      "id": ".openPolicyAgent.image.sha256",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2893,7 +2893,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/image/tag",
+      "id": ".openPolicyAgent.image.tag",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2904,7 +2904,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/nodeSelector",
+      "id": ".openPolicyAgent.nodeSelector",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -2915,7 +2915,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/podAnnotations",
+      "id": ".openPolicyAgent.podAnnotations",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -2926,7 +2926,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/podSecurityContext/enabled",
+      "id": ".openPolicyAgent.podSecurityContext.enabled",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2942,7 +2942,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/podSecurityContext/fsGroup",
+      "id": ".openPolicyAgent.podSecurityContext.fsGroup",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2953,7 +2953,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/podSecurityContext/fsGroupChangePolicy",
+      "id": ".openPolicyAgent.podSecurityContext.fsGroupChangePolicy",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -2964,7 +2964,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/probes/liveness/enabled",
+      "id": ".openPolicyAgent.probes.liveness.enabled",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2975,7 +2975,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/probes/liveness/failureThreshold",
+      "id": ".openPolicyAgent.probes.liveness.failureThreshold",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2986,7 +2986,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/probes/liveness/initialDelaySeconds",
+      "id": ".openPolicyAgent.probes.liveness.initialDelaySeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -2997,7 +2997,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/probes/liveness/periodSeconds",
+      "id": ".openPolicyAgent.probes.liveness.periodSeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3008,7 +3008,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/probes/liveness/successThreshold",
+      "id": ".openPolicyAgent.probes.liveness.successThreshold",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3019,7 +3019,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/probes/liveness/timeoutSeconds",
+      "id": ".openPolicyAgent.probes.liveness.timeoutSeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3030,7 +3030,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/probes/readiness/enabled",
+      "id": ".openPolicyAgent.probes.readiness.enabled",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3041,7 +3041,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/probes/readiness/failureThreshold",
+      "id": ".openPolicyAgent.probes.readiness.failureThreshold",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3052,7 +3052,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/probes/readiness/initialDelaySeconds",
+      "id": ".openPolicyAgent.probes.readiness.initialDelaySeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3063,7 +3063,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/probes/readiness/periodSeconds",
+      "id": ".openPolicyAgent.probes.readiness.periodSeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3074,7 +3074,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/probes/readiness/successThreshold",
+      "id": ".openPolicyAgent.probes.readiness.successThreshold",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3085,7 +3085,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/probes/readiness/timeoutSeconds",
+      "id": ".openPolicyAgent.probes.readiness.timeoutSeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3096,7 +3096,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/replicaCount",
+      "id": ".openPolicyAgent.replicaCount",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -3107,7 +3107,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/resources/limits/cpu",
+      "id": ".openPolicyAgent.resources.limits.cpu",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3118,7 +3118,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/resources/limits/memory",
+      "id": ".openPolicyAgent.resources.limits.memory",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3129,7 +3129,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/resources/requests/cpu",
+      "id": ".openPolicyAgent.resources.requests.cpu",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3140,7 +3140,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/resources/requests/memory",
+      "id": ".openPolicyAgent.resources.requests.memory",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3151,7 +3151,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/service/enabled",
+      "id": ".openPolicyAgent.service.enabled",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3162,7 +3162,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/service/ports/http/containerPort",
+      "id": ".openPolicyAgent.service.ports.http.containerPort",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -3173,7 +3173,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/service/ports/http/port",
+      "id": ".openPolicyAgent.service.ports.http.port",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -3184,7 +3184,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/service/ports/http/protocol",
+      "id": ".openPolicyAgent.service.ports.http.protocol",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -3195,7 +3195,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/service/sessionAffinity/enabled",
+      "id": ".openPolicyAgent.service.sessionAffinity.enabled",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3206,7 +3206,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/service/sessionAffinity/timeoutSeconds",
+      "id": ".openPolicyAgent.service.sessionAffinity.timeoutSeconds",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3217,7 +3217,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/service/type",
+      "id": ".openPolicyAgent.service.type",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3228,7 +3228,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/tolerations",
+      "id": ".openPolicyAgent.tolerations",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -3239,7 +3239,7 @@
       ]
     },
     {
-      "id": "/postgresql/auth/database",
+      "id": ".postgresql.auth.database",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3250,7 +3250,7 @@
       ]
     },
     {
-      "id": "/postgresql/auth/existingSecret/keyMapping/password",
+      "id": ".postgresql.auth.existingSecret.keyMapping.password",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -3261,7 +3261,7 @@
       ]
     },
     {
-      "id": "/postgresql/auth/existingSecret/name",
+      "id": ".postgresql.auth.existingSecret.name",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3272,7 +3272,7 @@
       ]
     },
     {
-      "id": "/postgresql/auth/username",
+      "id": ".postgresql.auth.username",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3283,7 +3283,7 @@
       ]
     },
     {
-      "id": "/postgresql/connection/host",
+      "id": ".postgresql.connection.host",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3294,7 +3294,7 @@
       ]
     },
     {
-      "id": "/postgresql/connection/port",
+      "id": ".postgresql.connection.port",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3305,7 +3305,7 @@
       ]
     },
     {
-      "id": "/provisioning/backoffLimit",
+      "id": ".provisioning.backoffLimit",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -3316,7 +3316,7 @@
       ]
     },
     {
-      "id": "/provisioning/config/debug/enabled",
+      "id": ".provisioning.config.debug.enabled",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3327,7 +3327,7 @@
       ]
     },
     {
-      "id": "/provisioning/config/debug/pauseBeforeScriptStart",
+      "id": ".provisioning.config.debug.pauseBeforeScriptStart",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3338,7 +3338,7 @@
       ]
     },
     {
-      "id": "/provisioning/config/nubusBaseUrl",
+      "id": ".provisioning.config.nubusBaseUrl",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3349,7 +3349,7 @@
       ]
     },
     {
-      "id": "/provisioning/containerSecurityContext/allowPrivilegeEscalation",
+      "id": ".provisioning.containerSecurityContext.allowPrivilegeEscalation",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3360,7 +3360,7 @@
       ]
     },
     {
-      "id": "/provisioning/containerSecurityContext/capabilities/drop/0",
+      "id": ".provisioning.containerSecurityContext.capabilities.drop.0",
       "kinds": "/K/K/K/K/I",
       "contexts": [
         {
@@ -3371,7 +3371,7 @@
       ]
     },
     {
-      "id": "/provisioning/containerSecurityContext/enabled",
+      "id": ".provisioning.containerSecurityContext.enabled",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3387,7 +3387,7 @@
       ]
     },
     {
-      "id": "/provisioning/containerSecurityContext/privileged",
+      "id": ".provisioning.containerSecurityContext.privileged",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3398,7 +3398,7 @@
       ]
     },
     {
-      "id": "/provisioning/containerSecurityContext/readOnlyRootFilesystem",
+      "id": ".provisioning.containerSecurityContext.readOnlyRootFilesystem",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3409,7 +3409,7 @@
       ]
     },
     {
-      "id": "/provisioning/containerSecurityContext/runAsGroup",
+      "id": ".provisioning.containerSecurityContext.runAsGroup",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3420,7 +3420,7 @@
       ]
     },
     {
-      "id": "/provisioning/containerSecurityContext/runAsNonRoot",
+      "id": ".provisioning.containerSecurityContext.runAsNonRoot",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3431,7 +3431,7 @@
       ]
     },
     {
-      "id": "/provisioning/containerSecurityContext/runAsUser",
+      "id": ".provisioning.containerSecurityContext.runAsUser",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3442,7 +3442,7 @@
       ]
     },
     {
-      "id": "/provisioning/containerSecurityContext/seccompProfile/type",
+      "id": ".provisioning.containerSecurityContext.seccompProfile.type",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3453,7 +3453,7 @@
       ]
     },
     {
-      "id": "/provisioning/enabled",
+      "id": ".provisioning.enabled",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -3464,7 +3464,7 @@
       ]
     },
     {
-      "id": "/provisioning/extraEnvVars",
+      "id": ".provisioning.extraEnvVars",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -3475,7 +3475,7 @@
       ]
     },
     {
-      "id": "/provisioning/image/registry",
+      "id": ".provisioning.image.registry",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3486,7 +3486,7 @@
       ]
     },
     {
-      "id": "/provisioning/image/repository",
+      "id": ".provisioning.image.repository",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3497,7 +3497,7 @@
       ]
     },
     {
-      "id": "/provisioning/image/sha256",
+      "id": ".provisioning.image.sha256",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3508,7 +3508,7 @@
       ]
     },
     {
-      "id": "/provisioning/image/tag",
+      "id": ".provisioning.image.tag",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3519,7 +3519,7 @@
       ]
     },
     {
-      "id": "/provisioning/keycloak/auth/existingSecret/keyMapping/adminPassword",
+      "id": ".provisioning.keycloak.auth.existingSecret.keyMapping.adminPassword",
       "kinds": "/K/K/K/K/K/K",
       "contexts": [
         {
@@ -3530,7 +3530,7 @@
       ]
     },
     {
-      "id": "/provisioning/keycloak/auth/existingSecret/name",
+      "id": ".provisioning.keycloak.auth.existingSecret.name",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -3541,7 +3541,7 @@
       ]
     },
     {
-      "id": "/provisioning/keycloak/auth/password",
+      "id": ".provisioning.keycloak.auth.password",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3552,7 +3552,7 @@
       ]
     },
     {
-      "id": "/provisioning/keycloak/auth/username",
+      "id": ".provisioning.keycloak.auth.username",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3563,7 +3563,7 @@
       ]
     },
     {
-      "id": "/provisioning/keycloak/connection/host",
+      "id": ".provisioning.keycloak.connection.host",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3574,7 +3574,7 @@
       ]
     },
     {
-      "id": "/provisioning/keycloak/connection/port",
+      "id": ".provisioning.keycloak.connection.port",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3585,7 +3585,7 @@
       ]
     },
     {
-      "id": "/provisioning/keycloak/realm",
+      "id": ".provisioning.keycloak.realm",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3596,7 +3596,7 @@
       ]
     },
     {
-      "id": "/provisioning/podSecurityContext/enabled",
+      "id": ".provisioning.podSecurityContext.enabled",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3612,7 +3612,7 @@
       ]
     },
     {
-      "id": "/provisioning/podSecurityContext/fsGroup",
+      "id": ".provisioning.podSecurityContext.fsGroup",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3623,7 +3623,7 @@
       ]
     },
     {
-      "id": "/provisioning/podSecurityContext/fsGroupChangePolicy",
+      "id": ".provisioning.podSecurityContext.fsGroupChangePolicy",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3634,7 +3634,7 @@
       ]
     },
     {
-      "id": "/provisioning/provisioningImage/pullPolicy",
+      "id": ".provisioning.provisioningImage.pullPolicy",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3645,7 +3645,7 @@
       ]
     },
     {
-      "id": "/provisioning/provisioningImage/registry",
+      "id": ".provisioning.provisioningImage.registry",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3656,7 +3656,7 @@
       ]
     },
     {
-      "id": "/provisioning/provisioningImage/repository",
+      "id": ".provisioning.provisioningImage.repository",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3667,7 +3667,7 @@
       ]
     },
     {
-      "id": "/provisioning/provisioningImage/tag",
+      "id": ".provisioning.provisioningImage.tag",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -3678,7 +3678,7 @@
       ]
     },
     {
-      "id": "/provisioning/resources/limits/cpu",
+      "id": ".provisioning.resources.limits.cpu",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3689,7 +3689,7 @@
       ]
     },
     {
-      "id": "/provisioning/resources/limits/memory",
+      "id": ".provisioning.resources.limits.memory",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3700,7 +3700,7 @@
       ]
     },
     {
-      "id": "/provisioning/resources/requests/cpu",
+      "id": ".provisioning.resources.requests.cpu",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3711,7 +3711,7 @@
       ]
     },
     {
-      "id": "/provisioning/resources/requests/memory",
+      "id": ".provisioning.resources.requests.memory",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3722,7 +3722,7 @@
       ]
     },
     {
-      "id": "/provisioning/restartPolicy",
+      "id": ".provisioning.restartPolicy",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -3733,7 +3733,7 @@
       ]
     },
     {
-      "id": "/provisioning/tolerations",
+      "id": ".provisioning.tolerations",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -3744,7 +3744,7 @@
       ]
     },
     {
-      "id": "/provisioning/ttlSecondsAfterFinished",
+      "id": ".provisioning.ttlSecondsAfterFinished",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -3755,7 +3755,7 @@
       ]
     },
     {
-      "id": "/serviceAccount/automountServiceAccountToken",
+      "id": ".serviceAccount.automountServiceAccountToken",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -3766,7 +3766,7 @@
       ]
     },
     {
-      "id": "/serviceAccount/create",
+      "id": ".serviceAccount.create",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -3779,153 +3779,153 @@
   ],
   "unused": [
     {
-      "id": "/authorizationApi/environment",
+      "id": ".authorizationApi.environment",
       "kinds": "/K/K"
     },
     {
-      "id": "/authorizationApi/fullnameOverride",
+      "id": ".authorizationApi.fullnameOverride",
       "kinds": "/K/K"
     },
     {
-      "id": "/authorizationApi/nameOverride",
+      "id": ".authorizationApi.nameOverride",
       "kinds": "/K/K"
     },
     {
-      "id": "/authorizationApi/persistence/data/size",
+      "id": ".authorizationApi.persistence.data.size",
       "kinds": "/K/K/K/K"
     },
     {
-      "id": "/authorizationApi/persistence/data/storageClass",
+      "id": ".authorizationApi.persistence.data.storageClass",
       "kinds": "/K/K/K/K"
     },
     {
-      "id": "/extraEnvVars",
+      "id": ".extraEnvVars",
       "kinds": "/K"
     },
     {
-      "id": "/extraIngresses",
+      "id": ".extraIngresses",
       "kinds": "/K"
     },
     {
-      "id": "/extraVolumeMounts",
+      "id": ".extraVolumeMounts",
       "kinds": "/K"
     },
     {
-      "id": "/global/affinity",
+      "id": ".global.affinity",
       "kinds": "/K/K"
     },
     {
-      "id": "/global/environment",
+      "id": ".global.environment",
       "kinds": "/K/K"
     },
     {
-      "id": "/global/fullnameOverride",
+      "id": ".global.fullnameOverride",
       "kinds": "/K/K"
     },
     {
-      "id": "/global/nameOverride",
+      "id": ".global.nameOverride",
       "kinds": "/K/K"
     },
     {
-      "id": "/global/nodeSelector",
+      "id": ".global.nodeSelector",
       "kinds": "/K/K"
     },
     {
-      "id": "/global/podAnnotations",
+      "id": ".global.podAnnotations",
       "kinds": "/K/K"
     },
     {
-      "id": "/global/podSecurityContext",
+      "id": ".global.podSecurityContext",
       "kinds": "/K/K"
     },
     {
-      "id": "/global/replicaCount",
+      "id": ".global.replicaCount",
       "kinds": "/K/K"
     },
     {
-      "id": "/global/securityContext",
+      "id": ".global.securityContext",
       "kinds": "/K/K"
     },
     {
-      "id": "/global/tolerations",
+      "id": ".global.tolerations",
       "kinds": "/K/K"
     },
     {
-      "id": "/managementApi/environment",
+      "id": ".managementApi.environment",
       "kinds": "/K/K"
     },
     {
-      "id": "/managementApi/fullnameOverride",
+      "id": ".managementApi.fullnameOverride",
       "kinds": "/K/K"
     },
     {
-      "id": "/managementApi/nameOverride",
+      "id": ".managementApi.nameOverride",
       "kinds": "/K/K"
     },
     {
-      "id": "/managementApi/oauth/auth/clientSecret",
+      "id": ".managementApi.oauth.auth.clientSecret",
       "kinds": "/K/K/K/K"
     },
     {
-      "id": "/managementApi/persistence/data/size",
+      "id": ".managementApi.persistence.data.size",
       "kinds": "/K/K/K/K"
     },
     {
-      "id": "/managementApi/persistence/data/storageClass",
+      "id": ".managementApi.persistence.data.storageClass",
       "kinds": "/K/K/K/K"
     },
     {
-      "id": "/managementUi/environment",
+      "id": ".managementUi.environment",
       "kinds": "/K/K"
     },
     {
-      "id": "/managementUi/fullnameOverride",
+      "id": ".managementUi.fullnameOverride",
       "kinds": "/K/K"
     },
     {
-      "id": "/managementUi/nameOverride",
+      "id": ".managementUi.nameOverride",
       "kinds": "/K/K"
     },
     {
-      "id": "/managementUi/persistence/data/size",
+      "id": ".managementUi.persistence.data.size",
       "kinds": "/K/K/K/K"
     },
     {
-      "id": "/managementUi/persistence/data/storageClass",
+      "id": ".managementUi.persistence.data.storageClass",
       "kinds": "/K/K/K/K"
     },
     {
-      "id": "/openPolicyAgent/environment",
+      "id": ".openPolicyAgent.environment",
       "kinds": "/K/K"
     },
     {
-      "id": "/openPolicyAgent/fullnameOverride",
+      "id": ".openPolicyAgent.fullnameOverride",
       "kinds": "/K/K"
     },
     {
-      "id": "/openPolicyAgent/nameOverride",
+      "id": ".openPolicyAgent.nameOverride",
       "kinds": "/K/K"
     },
     {
-      "id": "/postgresql/auth/password",
+      "id": ".postgresql.auth.password",
       "kinds": "/K/K/K"
     },
     {
-      "id": "/serviceAccount/annotations",
+      "id": ".serviceAccount.annotations",
       "kinds": "/K/K"
     },
     {
-      "id": "/serviceAccount/labels",
+      "id": ".serviceAccount.labels",
       "kinds": "/K/K"
     },
     {
-      "id": "/serviceAccount/name",
+      "id": ".serviceAccount.name",
       "kinds": "/K/K"
     }
   ],
   "undefined": [
     {
-      "id": "/Values/enabled",
+      "id": ".Values.enabled",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -3936,7 +3936,7 @@
       ]
     },
     {
-      "id": "/Values/global/secrets/masterPassword",
+      "id": ".Values.global.secrets.masterPassword",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -3947,7 +3947,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/credentialSecretName",
+      "id": ".authorizationApi.credentialSecretName",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -3958,7 +3958,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/extraAnnotations",
+      "id": ".authorizationApi.extraAnnotations",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -3969,7 +3969,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/extraVolumeMounts/*",
+      "id": ".authorizationApi.extraVolumeMounts.*",
       "kinds": "/K/K/W",
       "contexts": [
         {
@@ -3980,7 +3980,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/extraVolumes/*",
+      "id": ".authorizationApi.extraVolumes.*",
       "kinds": "/K/K/W",
       "contexts": [
         {
@@ -3991,7 +3991,7 @@
       ]
     },
     {
-      "id": "/authorizationApi/service/ports/*/nodePort",
+      "id": ".authorizationApi.service.ports.*.nodePort",
       "kinds": "/K/K/K/W/K",
       "contexts": [
         {
@@ -4002,7 +4002,7 @@
       ]
     },
     {
-      "id": "/extraSecrets/*/data/*",
+      "id": ".extraSecrets.*.data.*",
       "kinds": "/K/W/K/W",
       "contexts": [
         {
@@ -4013,7 +4013,7 @@
       ]
     },
     {
-      "id": "/extraSecrets/*/name",
+      "id": ".extraSecrets.*.name",
       "kinds": "/K/W/K",
       "contexts": [
         {
@@ -4024,7 +4024,7 @@
       ]
     },
     {
-      "id": "/extraSecrets/*/stringData/*",
+      "id": ".extraSecrets.*.stringData.*",
       "kinds": "/K/W/K/W",
       "contexts": [
         {
@@ -4035,7 +4035,7 @@
       ]
     },
     {
-      "id": "/extraSecrets/*/values",
+      "id": ".extraSecrets.*.values",
       "kinds": "/K/W/K",
       "contexts": [
         {
@@ -4046,7 +4046,7 @@
       ]
     },
     {
-      "id": "/fullnameOverride",
+      "id": ".fullnameOverride",
       "kinds": "/K",
       "contexts": [
         {
@@ -4057,7 +4057,7 @@
       ]
     },
     {
-      "id": "/global/certManagerIssuer",
+      "id": ".global.certManagerIssuer",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -4068,7 +4068,7 @@
       ]
     },
     {
-      "id": "/global/ingressClass",
+      "id": ".global.ingressClass",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -4079,7 +4079,7 @@
       ]
     },
     {
-      "id": "/global/keycloak/realm",
+      "id": ".global.keycloak.realm",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -4090,7 +4090,7 @@
       ]
     },
     {
-      "id": "/global/kubeVersion",
+      "id": ".global.kubeVersion",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -4101,7 +4101,7 @@
       ]
     },
     {
-      "id": "/global/nubusDeployment",
+      "id": ".global.nubusDeployment",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -4112,7 +4112,7 @@
       ]
     },
     {
-      "id": "/global/restartPolicy",
+      "id": ".global.restartPolicy",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -4123,7 +4123,7 @@
       ]
     },
     {
-      "id": "/global/secrets/keep",
+      "id": ".global.secrets.keep",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -4134,7 +4134,7 @@
       ]
     },
     {
-      "id": "/ingress/apiVersion",
+      "id": ".ingress.apiVersion",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -4145,7 +4145,7 @@
       ]
     },
     {
-      "id": "/kubeVersion",
+      "id": ".kubeVersion",
       "kinds": "/K",
       "contexts": [
         {
@@ -4156,7 +4156,7 @@
       ]
     },
     {
-      "id": "/managementApi/extraVolumeMounts/*",
+      "id": ".managementApi.extraVolumeMounts.*",
       "kinds": "/K/K/W",
       "contexts": [
         {
@@ -4167,7 +4167,7 @@
       ]
     },
     {
-      "id": "/managementApi/extraVolumes/*",
+      "id": ".managementApi.extraVolumes.*",
       "kinds": "/K/K/W",
       "contexts": [
         {
@@ -4178,7 +4178,7 @@
       ]
     },
     {
-      "id": "/managementApi/service/ports/*/nodePort",
+      "id": ".managementApi.service.ports.*.nodePort",
       "kinds": "/K/K/K/W/K",
       "contexts": [
         {
@@ -4189,7 +4189,7 @@
       ]
     },
     {
-      "id": "/managementUi/service/ports/*/nodePort",
+      "id": ".managementUi.service.ports.*.nodePort",
       "kinds": "/K/K/K/W/K",
       "contexts": [
         {
@@ -4200,7 +4200,7 @@
       ]
     },
     {
-      "id": "/nameOverride",
+      "id": ".nameOverride",
       "kinds": "/K",
       "contexts": [
         {
@@ -4211,7 +4211,7 @@
       ]
     },
     {
-      "id": "/openPolicyAgent/service/ports/*/nodePort",
+      "id": ".openPolicyAgent.service.ports.*.nodePort",
       "kinds": "/K/K/K/W/K",
       "contexts": [
         {
@@ -4222,7 +4222,7 @@
       ]
     },
     {
-      "id": "/provisioning/affinity/*",
+      "id": ".provisioning.affinity.*",
       "kinds": "/K/K/W",
       "contexts": [
         {
@@ -4233,7 +4233,7 @@
       ]
     },
     {
-      "id": "/provisioning/args",
+      "id": ".provisioning.args",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -4244,7 +4244,7 @@
       ]
     },
     {
-      "id": "/provisioning/extraAnnotations/*",
+      "id": ".provisioning.extraAnnotations.*",
       "kinds": "/K/K/W",
       "contexts": [
         {
@@ -4255,7 +4255,7 @@
       ]
     },
     {
-      "id": "/provisioning/extraVolumeMounts/*",
+      "id": ".provisioning.extraVolumeMounts.*",
       "kinds": "/K/K/W",
       "contexts": [
         {
@@ -4266,7 +4266,7 @@
       ]
     },
     {
-      "id": "/provisioning/extraVolumes/*",
+      "id": ".provisioning.extraVolumes.*",
       "kinds": "/K/K/W",
       "contexts": [
         {
@@ -4277,7 +4277,7 @@
       ]
     },
     {
-      "id": "/provisioning/image/pullPolicy",
+      "id": ".provisioning.image.pullPolicy",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -4288,7 +4288,7 @@
       ]
     },
     {
-      "id": "/provisioning/keycloak/connection/baseUrl",
+      "id": ".provisioning.keycloak.connection.baseUrl",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -4299,7 +4299,7 @@
       ]
     },
     {
-      "id": "/provisioning/keycloak/connection/protocol",
+      "id": ".provisioning.keycloak.connection.protocol",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -4310,7 +4310,7 @@
       ]
     },
     {
-      "id": "/provisioning/keycloak/url",
+      "id": ".provisioning.keycloak.url",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -4321,7 +4321,7 @@
       ]
     },
     {
-      "id": "/provisioning/nodeSelector/*",
+      "id": ".provisioning.nodeSelector.*",
       "kinds": "/K/K/W",
       "contexts": [
         {
@@ -4332,7 +4332,7 @@
       ]
     },
     {
-      "id": "/provisioning/provisioningImage/sha256",
+      "id": ".provisioning.provisioningImage.sha256",
       "kinds": "/K/K/K",
       "contexts": [
         {

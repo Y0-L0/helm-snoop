@@ -78,12 +78,12 @@ func (s *Unittest) TestToText() {
 			},
 			[]string{
 				"Referenced:",
-				"  /ref1",
-				"  /ref2",
+				"  .ref1",
+				"  .ref2",
 				"Unused:",
-				"  /unused1",
+				"  .unused1",
 				"Undefined:",
-				"  /undefined1",
+				"  .undefined1",
 			},
 		},
 		{
