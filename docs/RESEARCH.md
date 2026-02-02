@@ -13,7 +13,7 @@ This document catalogs existing projects and discussions related to detecting un
   - Differs: We avoid regex-based detection; use AST + schema to resolve dynamic access with stricter guarantees.
 
 - helm-values-check (Go CLI)
-  - Loads charts via Helm loader; detects used keys with regex for `.Values.foo.bar` and `index .Values "a" "b"`. Reports used-not-defined and defined-not-used. No schema, no variables/scopes, no AST traversal, limited dynamic patterns.
+  - Loads charts via Helm loader; detects used keys with regex for `.Values.foo.bar` and `index .Values "a" "b"`. Reports undefined and unused. No schema, no variables/scopes, no AST traversal, limited dynamic patterns.
   - Differs: We implement AST traversal, variable alias/scoping, index/dig/default/hasKey support, schema-aware resolution, and strict mode.
 
 - helm-values-manager (Helm plugin)
@@ -48,7 +48,7 @@ This document catalogs existing projects and discussions related to detecting un
 
 - Helm Issue #6422 — “Warn about unused values in values file”
   - Proposal: warn/fail when values in values.yaml are not consumed by templates; strict mode suggested. Discussion points to using `values.schema.json` with `"additionalProperties": false` to reject unexpected keys in overrides. Acknowledges that many charts lack schemas; auto-generation is suggested but imperfect. Not implemented in Helm core.
-  - Alignment: Our `--strict` mode and schema-aware checks provide the strict-consume behavior externally, plus used-not-defined detection and dynamic access classification.
+  - Alignment: Our `--strict` mode and schema-aware checks provide the strict-consume behavior externally, plus undefined detection and dynamic access classification.
 
 - Reddit: “Identify unused Helm values”
   - Context: User deploys with ArgoCD; kubeconform validates rendered manifests but Helm silently ignores unknown/unused values. Seeks a CI step to detect unused values.

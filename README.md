@@ -27,8 +27,8 @@ helm-snoop --ignore /image/tag --ignore /config/* --json --referenced -vv <path-
 
 Analyzes Helm charts and reports:
 - **Referenced:** Values paths defined and used
-- **Defined-not-used:** Keys in values.yaml never used in templates
-- **Used-not-defined:** Paths used in templates but not defined in values.yaml
+- **Unused:** Keys in values.yaml never used in templates
+- **Undefined:** Paths used in templates but not defined in values.yaml
 
 See [docs/CLI.md](docs/CLI.md) for complete documentation.
 

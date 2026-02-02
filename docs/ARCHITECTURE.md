@@ -79,7 +79,7 @@ Utilities:
   - If argument is literal or from default `values.yaml` and parses as template → analyze it recursively.
   - If argument can be overridden by user → mark as dynamic; warn (error in `--strict`).
 - Root `.Values` usage:
-  - If templates reference bare `.Values` (or `$ .Values`) treat usage as dynamic. Suppress “defined-but-not-used” claims unless `--strict` and dynamic accesses are fully resolved.
+  - If templates reference bare `.Values` (or `$ .Values`) treat usage as dynamic. Suppress “unused” claims unless `--strict` and dynamic accesses are fully resolved.
 
 ## Variable & Scope Handling
 - Maintain a stack of scopes. Push on entering `If/With/Range` bodies and `define` bodies.
