@@ -6,6 +6,7 @@ import (
 	"log/slog"
 
 	"github.com/spf13/cobra"
+	"github.com/y0-l0/helm-snoop/pkg/color"
 	"github.com/y0-l0/helm-snoop/pkg/parser"
 	"github.com/y0-l0/helm-snoop/pkg/path"
 	"github.com/y0-l0/helm-snoop/pkg/snooper"
@@ -49,6 +50,7 @@ func NewParser(args []string, setupLogging func(slog.Level), snoop snooper.Snoop
 	slog.Debug("raw cli arguments", "args", args)
 
 	var verbosity int
+	var noColor bool
 	ignorePaths := &cliPaths{}
 	var jsonOutput bool
 	var showReferenced bool
@@ -62,6 +64,9 @@ func NewParser(args []string, setupLogging func(slog.Level), snoop snooper.Snoop
 		Args:          cobra.ExactArgs(1),
 		SilenceErrors: true,
 		PersistentPreRun: func(cmd *cobra.Command, args []string) {
+			if noColor {
+				color.Disable()
+			}
 			var logLevel slog.Level
 			switch verbosity {
 			case 0:
@@ -97,6 +102,13 @@ func NewParser(args []string, setupLogging func(slog.Level), snoop snooper.Snoop
 		"verbose",
 		"v",
 		"Increase the log level. Can be specified multiple times.",
+	)
+
+	rootCmd.PersistentFlags().BoolVar(
+		&noColor,
+		"no-color",
+		false,
+		"Disable colored output",
 	)
 
 	rootCmd.Flags().VarP(

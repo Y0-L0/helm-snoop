@@ -1,10 +1,10 @@
-=========== test-chart ===========
+================================== test-chart ==================================
 
-------------- Unused -------------
+------------------------------------ Unused ------------------------------------
 .config.database.host  values.yaml:5:3
 .podLabels             values.yaml:12:1
 
-============ Summary =============
+=================================== Summary ====================================
 
 test-chart  2 Unused  0 Undefined  
 Total       2 Unused  0 Undefined  across 1 chart(s)
