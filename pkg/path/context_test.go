@@ -42,6 +42,6 @@ func (s *Unittest) TestPath_ToJSON_Integration() {
 	bytes, err := json.Marshal(p.ToJSON())
 	s.Require().NoError(err)
 
-	expected := `{"id":"/config/database/host","kinds":"/K/K/K","contexts":[{"file":"templates/deployment.yaml","line":42,"column":10},{"file":"templates/service.yaml","template":"myhelper","line":5,"column":3}]}`
+	expected := `{"id":".config.database.host","kinds":"/K/K/K","contexts":[{"file":"templates/deployment.yaml","line":42,"column":10},{"file":"templates/service.yaml","template":"myhelper","line":5,"column":3}]}`
 	s.Equal(expected, string(bytes))
 }

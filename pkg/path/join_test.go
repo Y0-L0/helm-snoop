@@ -157,7 +157,7 @@ func (s *Unittest) TestMergeJoinLoose_OneDefinitionMatchesMultipleUsages() {
 
 	// The definition matches both usages, so it appears in inter
 	s.Equal(1, len(inter), "definition should match both usages")
-	s.Equal("/items/0", inter[0].ID())
+	s.Equal(".items.0", inter[0].ID())
 
 	// Nothing unused
 	s.Equal(0, len(onlyDef), "no definitions should be unmatched")

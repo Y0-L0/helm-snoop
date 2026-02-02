@@ -20,12 +20,12 @@ type Path struct {
 	Contexts []PathContext
 }
 
-// Stable JsonPointer representation of the Path.
-// Used for comparison and map keys.
+// ID returns a dot-notation representation of the path (e.g., ".a.b.c").
+// Used for comparison, map keys, and human-readable output.
 // Does not distinguish between map (key) and array (int) segments.
 // That requires comparing the kinds.
 func (p Path) ID() string {
-	return "/" + strings.Join(p.tokens, "/")
+	return "." + strings.Join(p.tokens, ".")
 }
 
 func (p Path) Compare(other Path) int {
@@ -61,7 +61,7 @@ func (p Path) KindsString() string {
 	return string(b)
 }
 
-var escaper = strings.NewReplacer("~", "~0", "/", "~1")
+var escaper = strings.NewReplacer("~", "~~", ".", "~.")
 
 func (p Path) WithKey(key string) Path {
 	p.tokens = append([]string(nil), p.tokens...)

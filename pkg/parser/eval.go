@@ -72,7 +72,7 @@ func (e *evalCtx) Emit(pos parse.Pos, paths ...*path.Path) {
 		if p == nil {
 			panic("Invalid state in Emit function")
 		}
-		if p.ID() == "/" {
+		if p.ID() == "." {
 			continue
 		}
 		p.Contexts = append(p.Contexts, ctx)

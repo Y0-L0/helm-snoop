@@ -27,7 +27,7 @@ func (s *Unittest) TestTemplateIndex_DependencyInclude() {
 	s.Require().NoError(err)
 
 	s.Require().Len(paths, 1)
-	s.Equal("/child/k", paths[0].ID())
+	s.Equal(".child.k", paths[0].ID())
 	s.Equal("/K/K", paths[0].KindsString())
 }
 
@@ -54,7 +54,7 @@ func (s *Unittest) TestTemplateIndex_TransitiveDependencyInclude() {
 	paths, err := parseFile("", "templates/cm.yaml", root.Templates[0].Data, idx)
 	s.Require().NoError(err)
 	s.Require().Len(paths, 1)
-	s.Equal("/grand/y", paths[0].ID())
+	s.Equal(".grand.y", paths[0].ID())
 	s.Equal("/K/K", paths[0].KindsString())
 }
 

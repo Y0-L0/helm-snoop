@@ -1,7 +1,7 @@
 {
   "referenced": [
     {
-      "id": "/config/disabled",
+      "id": ".config.disabled",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -12,7 +12,7 @@
       ]
     },
     {
-      "id": "/config/enabled",
+      "id": ".config.enabled",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -23,7 +23,7 @@
       ]
     },
     {
-      "id": "/config/message",
+      "id": ".config.message",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -34,7 +34,7 @@
       ]
     },
     {
-      "id": "/extra/fromDefine",
+      "id": ".extra.fromDefine",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -45,7 +45,7 @@
       ]
     },
     {
-      "id": "/fullnameOverride",
+      "id": ".fullnameOverride",
       "kinds": "/K",
       "contexts": [
         {
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "/getPipe/someKey",
+      "id": ".getPipe.someKey",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -67,7 +67,7 @@
       ]
     },
     {
-      "id": "/image/registry",
+      "id": ".image.registry",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -78,7 +78,7 @@
       ]
     },
     {
-      "id": "/image/repository",
+      "id": ".image.repository",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -89,7 +89,7 @@
       ]
     },
     {
-      "id": "/image/tag",
+      "id": ".image.tag",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -100,7 +100,7 @@
       ]
     },
     {
-      "id": "/indexPipe/nestedKey/someOtherKey",
+      "id": ".indexPipe.nestedKey.someOtherKey",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -111,7 +111,7 @@
       ]
     },
     {
-      "id": "/indexPipe/someKey",
+      "id": ".indexPipe.someKey",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -122,7 +122,7 @@
       ]
     },
     {
-      "id": "/integerKey/1234",
+      "id": ".integerKey.1234",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -133,7 +133,7 @@
       ]
     },
     {
-      "id": "/nameOverride",
+      "id": ".nameOverride",
       "kinds": "/K",
       "contexts": [
         {
@@ -144,7 +144,7 @@
       ]
     },
     {
-      "id": "/postgresql/auth/existingSecret/keyMapping/password",
+      "id": ".postgresql.auth.existingSecret.keyMapping.password",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -155,7 +155,7 @@
       ]
     },
     {
-      "id": "/postgresql/auth/existingSecret/name",
+      "id": ".postgresql.auth.existingSecret.name",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -168,7 +168,7 @@
   ],
   "unused": [
     {
-      "id": "/postgresql/auth/password",
+      "id": ".postgresql.auth.password",
       "kinds": "/K/K/K"
     }
   ],

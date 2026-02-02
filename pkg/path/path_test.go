@@ -1,7 +1,6 @@
-// TestWildcardKind tests creating paths with wildcard segments
 package path
 
-func (s *Unittest) TestWildcardKind() {
+func (s *Unittest) TestPathIDAndKinds() {
 	cases := []struct {
 		name          string
 		path          *Path
@@ -9,22 +8,40 @@ func (s *Unittest) TestWildcardKind() {
 		expectedKinds string
 	}{
 		{
+			name:          "empty_path",
+			path:          np(),
+			expectedID:    ".",
+			expectedKinds: "",
+		},
+		{
 			name:          "single_wildcard",
 			path:          np().Key("a").Wildcard(),
-			expectedID:    "/a/*",
+			expectedID:    ".a.*",
 			expectedKinds: "/K/W",
 		},
 		{
 			name:          "wildcard_at_end",
 			path:          np().Key("config").Key("nested").Wildcard(),
-			expectedID:    "/config/nested/*",
+			expectedID:    ".config.nested.*",
 			expectedKinds: "/K/K/W",
 		},
 		{
 			name:          "wildcard_in_middle",
 			path:          np().Key("a").Wildcard().Key("b"),
-			expectedID:    "/a/*/b",
+			expectedID:    ".a.*.b",
 			expectedKinds: "/K/W/K",
+		},
+		{
+			name:          "key_with_dot_escaped",
+			path:          np().Key("foo.bar").Key("baz"),
+			expectedID:    ".foo~.bar.baz",
+			expectedKinds: "/K/K",
+		},
+		{
+			name:          "key_with_tilde_escaped",
+			path:          np().Key("foo~bar"),
+			expectedID:    ".foo~~bar",
+			expectedKinds: "/K",
 		},
 	}
 

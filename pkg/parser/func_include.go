@@ -41,9 +41,9 @@ func includeFn(ctx *evalCtx, call Call) evalResult {
 				ctx.Emit(call.Node.Position(), ctxResult.paths...)
 				if len(ctxResult.paths) > 0 {
 					// Only set prefix for non-empty paths
-					// Empty path / means root context without dict params,
+					// Empty path means root context without dict params,
 					// so relative fields are unresolved parameter names, not .Values paths
-					if ctxResult.paths[0].ID() != "/" {
+					if ctxResult.paths[0].ID() != "." {
 						templatePrefix = ctxResult.paths[0]
 					}
 				}

@@ -8,7 +8,7 @@ func (s *Unittest) TestPathJSON_WithContext() {
 
 	j := p.ToJSON()
 
-	s.Equal("/config/name", j.ID)
+	s.Equal(".config.name", j.ID)
 	s.Equal("/K/K", j.Kinds)
 	s.Require().Len(j.Contexts, 1)
 	s.Equal("templates/deployment.yaml", j.Contexts[0].File)

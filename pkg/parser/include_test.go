@@ -32,7 +32,7 @@ data:
 	s.Require().NoError(err)
 
 	s.Require().Len(paths, 1)
-	s.Require().Equal("/foo/bar", paths[0].ID())
+	s.Require().Equal(".foo.bar", paths[0].ID())
 	s.Require().Equal("/K/K", paths[0].KindsString())
 }
 

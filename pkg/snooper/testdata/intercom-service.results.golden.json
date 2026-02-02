@@ -1,7 +1,7 @@
 {
   "referenced": [
     {
-      "id": "/additionalAnnotations",
+      "id": ".additionalAnnotations",
       "kinds": "/K",
       "contexts": [
         {
@@ -12,7 +12,7 @@
       ]
     },
     {
-      "id": "/additionalLabels",
+      "id": ".additionalLabels",
       "kinds": "/K",
       "contexts": [
         {
@@ -23,7 +23,7 @@
       ]
     },
     {
-      "id": "/affinity",
+      "id": ".affinity",
       "kinds": "/K",
       "contexts": [
         {
@@ -34,7 +34,7 @@
       ]
     },
     {
-      "id": "/containerSecurityContext/allowPrivilegeEscalation",
+      "id": ".containerSecurityContext.allowPrivilegeEscalation",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -45,7 +45,7 @@
       ]
     },
     {
-      "id": "/containerSecurityContext/capabilities/drop/0",
+      "id": ".containerSecurityContext.capabilities.drop.0",
       "kinds": "/K/K/K/I",
       "contexts": [
         {
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "id": "/containerSecurityContext/enabled",
+      "id": ".containerSecurityContext.enabled",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -72,7 +72,7 @@
       ]
     },
     {
-      "id": "/containerSecurityContext/privileged",
+      "id": ".containerSecurityContext.privileged",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -83,7 +83,7 @@
       ]
     },
     {
-      "id": "/containerSecurityContext/readOnlyRootFilesystem",
+      "id": ".containerSecurityContext.readOnlyRootFilesystem",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -94,7 +94,7 @@
       ]
     },
     {
-      "id": "/containerSecurityContext/runAsGroup",
+      "id": ".containerSecurityContext.runAsGroup",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -105,7 +105,7 @@
       ]
     },
     {
-      "id": "/containerSecurityContext/runAsNonRoot",
+      "id": ".containerSecurityContext.runAsNonRoot",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -116,7 +116,7 @@
       ]
     },
     {
-      "id": "/containerSecurityContext/runAsUser",
+      "id": ".containerSecurityContext.runAsUser",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -127,7 +127,7 @@
       ]
     },
     {
-      "id": "/containerSecurityContext/seccompProfile/type",
+      "id": ".containerSecurityContext.seccompProfile.type",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -138,7 +138,7 @@
       ]
     },
     {
-      "id": "/extraVolumeMounts",
+      "id": ".extraVolumeMounts",
       "kinds": "/K",
       "contexts": [
         {
@@ -149,7 +149,7 @@
       ]
     },
     {
-      "id": "/extraVolumes",
+      "id": ".extraVolumes",
       "kinds": "/K",
       "contexts": [
         {
@@ -160,7 +160,7 @@
       ]
     },
     {
-      "id": "/fullnameOverride",
+      "id": ".fullnameOverride",
       "kinds": "/K",
       "contexts": [
         {
@@ -171,7 +171,7 @@
       ]
     },
     {
-      "id": "/global/domain",
+      "id": ".global.domain",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -182,7 +182,7 @@
       ]
     },
     {
-      "id": "/global/imagePullPolicy",
+      "id": ".global.imagePullPolicy",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -193,7 +193,7 @@
       ]
     },
     {
-      "id": "/global/imagePullSecrets",
+      "id": ".global.imagePullSecrets",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -204,7 +204,7 @@
       ]
     },
     {
-      "id": "/global/imageRegistry",
+      "id": ".global.imageRegistry",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -215,7 +215,7 @@
       ]
     },
     {
-      "id": "/ics/default/domain",
+      "id": ".ics.default.domain",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -226,7 +226,7 @@
       ]
     },
     {
-      "id": "/ics/default/protocol",
+      "id": ".ics.default.protocol",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -237,7 +237,7 @@
       ]
     },
     {
-      "id": "/ics/enableSessionCookie",
+      "id": ".ics.enableSessionCookie",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -248,7 +248,7 @@
       ]
     },
     {
-      "id": "/ics/issuerBaseUrl",
+      "id": ".ics.issuerBaseUrl",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -259,7 +259,7 @@
       ]
     },
     {
-      "id": "/ics/keycloak/enabled",
+      "id": ".ics.keycloak.enabled",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -270,7 +270,7 @@
       ]
     },
     {
-      "id": "/ics/keycloak/realm",
+      "id": ".ics.keycloak.realm",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -281,7 +281,7 @@
       ]
     },
     {
-      "id": "/ics/keycloak/subdomain",
+      "id": ".ics.keycloak.subdomain",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -292,7 +292,7 @@
       ]
     },
     {
-      "id": "/ics/keycloak/url",
+      "id": ".ics.keycloak.url",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -303,7 +303,7 @@
       ]
     },
     {
-      "id": "/ics/logLevel",
+      "id": ".ics.logLevel",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -314,7 +314,7 @@
       ]
     },
     {
-      "id": "/ics/matrix/auth/applicationServiceSecret",
+      "id": ".ics.matrix.auth.applicationServiceSecret",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -325,7 +325,7 @@
       ]
     },
     {
-      "id": "/ics/matrix/auth/existingSecret/keyMapping/password",
+      "id": ".ics.matrix.auth.existingSecret.keyMapping.password",
       "kinds": "/K/K/K/K/K/K",
       "contexts": [
         {
@@ -336,7 +336,7 @@
       ]
     },
     {
-      "id": "/ics/matrix/auth/existingSecret/name",
+      "id": ".ics.matrix.auth.existingSecret.name",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -347,7 +347,7 @@
       ]
     },
     {
-      "id": "/ics/matrix/enabled",
+      "id": ".ics.matrix.enabled",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -358,7 +358,7 @@
       ]
     },
     {
-      "id": "/ics/matrix/serverName",
+      "id": ".ics.matrix.serverName",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -369,7 +369,7 @@
       ]
     },
     {
-      "id": "/ics/matrix/subdomain",
+      "id": ".ics.matrix.subdomain",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -380,7 +380,7 @@
       ]
     },
     {
-      "id": "/ics/matrix/url",
+      "id": ".ics.matrix.url",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -391,7 +391,7 @@
       ]
     },
     {
-      "id": "/ics/nextcloud/audience",
+      "id": ".ics.nextcloud.audience",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -402,7 +402,7 @@
       ]
     },
     {
-      "id": "/ics/nextcloud/enabled",
+      "id": ".ics.nextcloud.enabled",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -413,7 +413,7 @@
       ]
     },
     {
-      "id": "/ics/nextcloud/origin",
+      "id": ".ics.nextcloud.origin",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -424,7 +424,7 @@
       ]
     },
     {
-      "id": "/ics/nextcloud/originUrl",
+      "id": ".ics.nextcloud.originUrl",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -435,7 +435,7 @@
       ]
     },
     {
-      "id": "/ics/nextcloud/subdomain",
+      "id": ".ics.nextcloud.subdomain",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -446,7 +446,7 @@
       ]
     },
     {
-      "id": "/ics/nextcloud/url",
+      "id": ".ics.nextcloud.url",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -457,7 +457,7 @@
       ]
     },
     {
-      "id": "/ics/nordeck/mode",
+      "id": ".ics.nordeck.mode",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -468,7 +468,7 @@
       ]
     },
     {
-      "id": "/ics/nordeck/subdomain",
+      "id": ".ics.nordeck.subdomain",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -479,7 +479,7 @@
       ]
     },
     {
-      "id": "/ics/nordeck/url",
+      "id": ".ics.nordeck.url",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -490,7 +490,7 @@
       ]
     },
     {
-      "id": "/ics/oidc/clientSecret",
+      "id": ".ics.oidc.clientSecret",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -501,7 +501,7 @@
       ]
     },
     {
-      "id": "/ics/oidc/existingSecret/keyMapping/clientSecret",
+      "id": ".ics.oidc.existingSecret.keyMapping.clientSecret",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -512,7 +512,7 @@
       ]
     },
     {
-      "id": "/ics/oidc/existingSecret/name",
+      "id": ".ics.oidc.existingSecret.name",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -523,7 +523,7 @@
       ]
     },
     {
-      "id": "/ics/oidc/id",
+      "id": ".ics.oidc.id",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -534,7 +534,7 @@
       ]
     },
     {
-      "id": "/ics/originRegex",
+      "id": ".ics.originRegex",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -545,7 +545,7 @@
       ]
     },
     {
-      "id": "/ics/portal/auth/existingSecret/keyMapping/sharedSecret",
+      "id": ".ics.portal.auth.existingSecret.keyMapping.sharedSecret",
       "kinds": "/K/K/K/K/K/K",
       "contexts": [
         {
@@ -556,7 +556,7 @@
       ]
     },
     {
-      "id": "/ics/portal/auth/existingSecret/name",
+      "id": ".ics.portal.auth.existingSecret.name",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -567,7 +567,7 @@
       ]
     },
     {
-      "id": "/ics/portal/auth/sharedSecret",
+      "id": ".ics.portal.auth.sharedSecret",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -578,7 +578,7 @@
       ]
     },
     {
-      "id": "/ics/portal/enabled",
+      "id": ".ics.portal.enabled",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -589,7 +589,7 @@
       ]
     },
     {
-      "id": "/ics/portal/subdomain",
+      "id": ".ics.portal.subdomain",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -600,7 +600,7 @@
       ]
     },
     {
-      "id": "/ics/portal/url",
+      "id": ".ics.portal.url",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -611,7 +611,7 @@
       ]
     },
     {
-      "id": "/ics/proxy",
+      "id": ".ics.proxy",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -622,7 +622,7 @@
       ]
     },
     {
-      "id": "/ics/redis/auth/existingSecret/keyMapping/password",
+      "id": ".ics.redis.auth.existingSecret.keyMapping.password",
       "kinds": "/K/K/K/K/K/K",
       "contexts": [
         {
@@ -633,7 +633,7 @@
       ]
     },
     {
-      "id": "/ics/redis/auth/existingSecret/name",
+      "id": ".ics.redis.auth.existingSecret.name",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -644,7 +644,7 @@
       ]
     },
     {
-      "id": "/ics/redis/auth/password",
+      "id": ".ics.redis.auth.password",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -655,7 +655,7 @@
       ]
     },
     {
-      "id": "/ics/redis/host",
+      "id": ".ics.redis.host",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -666,7 +666,7 @@
       ]
     },
     {
-      "id": "/ics/redis/port",
+      "id": ".ics.redis.port",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -677,7 +677,7 @@
       ]
     },
     {
-      "id": "/ics/redis/ssl/customca",
+      "id": ".ics.redis.ssl.customca",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -688,7 +688,7 @@
       ]
     },
     {
-      "id": "/ics/redis/ssl/enabled",
+      "id": ".ics.redis.ssl.enabled",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -699,7 +699,7 @@
       ]
     },
     {
-      "id": "/ics/redis/ssl/mTLS/clientCert",
+      "id": ".ics.redis.ssl.mTLS.clientCert",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -710,7 +710,7 @@
       ]
     },
     {
-      "id": "/ics/redis/ssl/mTLS/clientKey",
+      "id": ".ics.redis.ssl.mTLS.clientKey",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -721,7 +721,7 @@
       ]
     },
     {
-      "id": "/ics/redis/ssl/mTLS/enabled",
+      "id": ".ics.redis.ssl.mTLS.enabled",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -732,7 +732,7 @@
       ]
     },
     {
-      "id": "/ics/redis/ssl/mTLS/existingSecret/name",
+      "id": ".ics.redis.ssl.mTLS.existingSecret.name",
       "kinds": "/K/K/K/K/K/K",
       "contexts": [
         {
@@ -743,7 +743,7 @@
       ]
     },
     {
-      "id": "/ics/redis/ssl/pathCA",
+      "id": ".ics.redis.ssl.pathCA",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -754,7 +754,7 @@
       ]
     },
     {
-      "id": "/ics/session/existingSecret/keyMapping/secret",
+      "id": ".ics.session.existingSecret.keyMapping.secret",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -765,7 +765,7 @@
       ]
     },
     {
-      "id": "/ics/session/existingSecret/name",
+      "id": ".ics.session.existingSecret.name",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -776,7 +776,7 @@
       ]
     },
     {
-      "id": "/ics/session/secret",
+      "id": ".ics.session.secret",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -787,7 +787,7 @@
       ]
     },
     {
-      "id": "/ics/sessionRollingDuration",
+      "id": ".ics.sessionRollingDuration",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -798,7 +798,7 @@
       ]
     },
     {
-      "id": "/ics/userUniqueMapper",
+      "id": ".ics.userUniqueMapper",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -809,7 +809,7 @@
       ]
     },
     {
-      "id": "/ics/usernameClaim",
+      "id": ".ics.usernameClaim",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -820,7 +820,7 @@
       ]
     },
     {
-      "id": "/ics/xwiki/audience",
+      "id": ".ics.xwiki.audience",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -831,7 +831,7 @@
       ]
     },
     {
-      "id": "/ics/xwiki/enabled",
+      "id": ".ics.xwiki.enabled",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -842,7 +842,7 @@
       ]
     },
     {
-      "id": "/ics/xwiki/subdomain",
+      "id": ".ics.xwiki.subdomain",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -853,7 +853,7 @@
       ]
     },
     {
-      "id": "/ics/xwiki/url",
+      "id": ".ics.xwiki.url",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -864,7 +864,7 @@
       ]
     },
     {
-      "id": "/image/pullPolicy",
+      "id": ".image.pullPolicy",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -875,7 +875,7 @@
       ]
     },
     {
-      "id": "/image/registry",
+      "id": ".image.registry",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -886,7 +886,7 @@
       ]
     },
     {
-      "id": "/image/repository",
+      "id": ".image.repository",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -897,7 +897,7 @@
       ]
     },
     {
-      "id": "/image/tag",
+      "id": ".image.tag",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -908,7 +908,7 @@
       ]
     },
     {
-      "id": "/imagePullSecrets",
+      "id": ".imagePullSecrets",
       "kinds": "/K",
       "contexts": [
         {
@@ -919,7 +919,7 @@
       ]
     },
     {
-      "id": "/ingress/annotations",
+      "id": ".ingress.annotations",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -930,7 +930,7 @@
       ]
     },
     {
-      "id": "/ingress/enabled",
+      "id": ".ingress.enabled",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -941,7 +941,7 @@
       ]
     },
     {
-      "id": "/ingress/host",
+      "id": ".ingress.host",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -952,7 +952,7 @@
       ]
     },
     {
-      "id": "/ingress/ingressClassName",
+      "id": ".ingress.ingressClassName",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -963,7 +963,7 @@
       ]
     },
     {
-      "id": "/ingress/path",
+      "id": ".ingress.path",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -974,7 +974,7 @@
       ]
     },
     {
-      "id": "/ingress/pathType",
+      "id": ".ingress.pathType",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -985,7 +985,7 @@
       ]
     },
     {
-      "id": "/ingress/tls/enabled",
+      "id": ".ingress.tls.enabled",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -996,7 +996,7 @@
       ]
     },
     {
-      "id": "/ingress/tls/secretName",
+      "id": ".ingress.tls.secretName",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1007,7 +1007,7 @@
       ]
     },
     {
-      "id": "/lifecycleHooks",
+      "id": ".lifecycleHooks",
       "kinds": "/K",
       "contexts": [
         {
@@ -1018,7 +1018,7 @@
       ]
     },
     {
-      "id": "/livenessProbe/failureThreshold",
+      "id": ".livenessProbe.failureThreshold",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1029,7 +1029,7 @@
       ]
     },
     {
-      "id": "/livenessProbe/initialDelaySeconds",
+      "id": ".livenessProbe.initialDelaySeconds",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1040,7 +1040,7 @@
       ]
     },
     {
-      "id": "/livenessProbe/periodSeconds",
+      "id": ".livenessProbe.periodSeconds",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1051,7 +1051,7 @@
       ]
     },
     {
-      "id": "/livenessProbe/successThreshold",
+      "id": ".livenessProbe.successThreshold",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1062,7 +1062,7 @@
       ]
     },
     {
-      "id": "/livenessProbe/timeoutSeconds",
+      "id": ".livenessProbe.timeoutSeconds",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1073,7 +1073,7 @@
       ]
     },
     {
-      "id": "/nameOverride",
+      "id": ".nameOverride",
       "kinds": "/K",
       "contexts": [
         {
@@ -1084,7 +1084,7 @@
       ]
     },
     {
-      "id": "/nodeSelector",
+      "id": ".nodeSelector",
       "kinds": "/K",
       "contexts": [
         {
@@ -1095,7 +1095,7 @@
       ]
     },
     {
-      "id": "/podAnnotations",
+      "id": ".podAnnotations",
       "kinds": "/K",
       "contexts": [
         {
@@ -1106,7 +1106,7 @@
       ]
     },
     {
-      "id": "/podSecurityContext/enabled",
+      "id": ".podSecurityContext.enabled",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1122,7 +1122,7 @@
       ]
     },
     {
-      "id": "/podSecurityContext/fsGroup",
+      "id": ".podSecurityContext.fsGroup",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1133,7 +1133,7 @@
       ]
     },
     {
-      "id": "/podSecurityContext/fsGroupChangePolicy",
+      "id": ".podSecurityContext.fsGroupChangePolicy",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1144,7 +1144,7 @@
       ]
     },
     {
-      "id": "/provisioning/config/clientBaseUrl",
+      "id": ".provisioning.config.clientBaseUrl",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1155,7 +1155,7 @@
       ]
     },
     {
-      "id": "/provisioning/config/debug/enabled",
+      "id": ".provisioning.config.debug.enabled",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -1166,7 +1166,7 @@
       ]
     },
     {
-      "id": "/provisioning/config/debug/pauseBeforeScriptStart",
+      "id": ".provisioning.config.debug.pauseBeforeScriptStart",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -1177,7 +1177,7 @@
       ]
     },
     {
-      "id": "/provisioning/config/keycloak/auth/existingSecret/keyMapping/password",
+      "id": ".provisioning.config.keycloak.auth.existingSecret.keyMapping.password",
       "kinds": "/K/K/K/K/K/K/K",
       "contexts": [
         {
@@ -1188,7 +1188,7 @@
       ]
     },
     {
-      "id": "/provisioning/config/keycloak/auth/existingSecret/name",
+      "id": ".provisioning.config.keycloak.auth.existingSecret.name",
       "kinds": "/K/K/K/K/K/K",
       "contexts": [
         {
@@ -1199,7 +1199,7 @@
       ]
     },
     {
-      "id": "/provisioning/config/keycloak/auth/password",
+      "id": ".provisioning.config.keycloak.auth.password",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -1210,7 +1210,7 @@
       ]
     },
     {
-      "id": "/provisioning/config/keycloak/auth/username",
+      "id": ".provisioning.config.keycloak.auth.username",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -1221,7 +1221,7 @@
       ]
     },
     {
-      "id": "/provisioning/config/keycloak/connection/host",
+      "id": ".provisioning.config.keycloak.connection.host",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -1232,7 +1232,7 @@
       ]
     },
     {
-      "id": "/provisioning/config/keycloak/connection/port",
+      "id": ".provisioning.config.keycloak.connection.port",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -1243,7 +1243,7 @@
       ]
     },
     {
-      "id": "/provisioning/config/keycloak/realm",
+      "id": ".provisioning.config.keycloak.realm",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -1254,7 +1254,7 @@
       ]
     },
     {
-      "id": "/provisioning/enabled",
+      "id": ".provisioning.enabled",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1265,7 +1265,7 @@
       ]
     },
     {
-      "id": "/provisioning/extraEnvVars",
+      "id": ".provisioning.extraEnvVars",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1276,7 +1276,7 @@
       ]
     },
     {
-      "id": "/provisioning/extraVolumeMounts",
+      "id": ".provisioning.extraVolumeMounts",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1287,7 +1287,7 @@
       ]
     },
     {
-      "id": "/provisioning/image/pullPolicy",
+      "id": ".provisioning.image.pullPolicy",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1298,7 +1298,7 @@
       ]
     },
     {
-      "id": "/provisioning/image/registry",
+      "id": ".provisioning.image.registry",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1309,7 +1309,7 @@
       ]
     },
     {
-      "id": "/provisioning/image/repository",
+      "id": ".provisioning.image.repository",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1320,7 +1320,7 @@
       ]
     },
     {
-      "id": "/provisioning/image/tag",
+      "id": ".provisioning.image.tag",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1331,7 +1331,7 @@
       ]
     },
     {
-      "id": "/provisioning/provisioningImage/pullPolicy",
+      "id": ".provisioning.provisioningImage.pullPolicy",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1342,7 +1342,7 @@
       ]
     },
     {
-      "id": "/provisioning/provisioningImage/registry",
+      "id": ".provisioning.provisioningImage.registry",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1353,7 +1353,7 @@
       ]
     },
     {
-      "id": "/provisioning/provisioningImage/repository",
+      "id": ".provisioning.provisioningImage.repository",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1364,7 +1364,7 @@
       ]
     },
     {
-      "id": "/provisioning/provisioningImage/tag",
+      "id": ".provisioning.provisioningImage.tag",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1375,7 +1375,7 @@
       ]
     },
     {
-      "id": "/provisioning/securityContext/allowPrivilegeEscalation",
+      "id": ".provisioning.securityContext.allowPrivilegeEscalation",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1386,7 +1386,7 @@
       ]
     },
     {
-      "id": "/provisioning/securityContext/capabilities/drop/0",
+      "id": ".provisioning.securityContext.capabilities.drop.0",
       "kinds": "/K/K/K/K/I",
       "contexts": [
         {
@@ -1397,7 +1397,7 @@
       ]
     },
     {
-      "id": "/provisioning/securityContext/enabled",
+      "id": ".provisioning.securityContext.enabled",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1408,7 +1408,7 @@
       ]
     },
     {
-      "id": "/provisioning/securityContext/privileged",
+      "id": ".provisioning.securityContext.privileged",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1419,7 +1419,7 @@
       ]
     },
     {
-      "id": "/provisioning/securityContext/readOnlyRootFilesystem",
+      "id": ".provisioning.securityContext.readOnlyRootFilesystem",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1430,7 +1430,7 @@
       ]
     },
     {
-      "id": "/provisioning/securityContext/runAsGroup",
+      "id": ".provisioning.securityContext.runAsGroup",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1441,7 +1441,7 @@
       ]
     },
     {
-      "id": "/provisioning/securityContext/runAsNonRoot",
+      "id": ".provisioning.securityContext.runAsNonRoot",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1452,7 +1452,7 @@
       ]
     },
     {
-      "id": "/provisioning/securityContext/runAsUser",
+      "id": ".provisioning.securityContext.runAsUser",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1463,7 +1463,7 @@
       ]
     },
     {
-      "id": "/provisioning/securityContext/seccompProfile/type",
+      "id": ".provisioning.securityContext.seccompProfile.type",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -1474,7 +1474,7 @@
       ]
     },
     {
-      "id": "/readinessProbe/failureThreshold",
+      "id": ".readinessProbe.failureThreshold",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1485,7 +1485,7 @@
       ]
     },
     {
-      "id": "/readinessProbe/initialDelaySeconds",
+      "id": ".readinessProbe.initialDelaySeconds",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1496,7 +1496,7 @@
       ]
     },
     {
-      "id": "/readinessProbe/successThreshold",
+      "id": ".readinessProbe.successThreshold",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1507,7 +1507,7 @@
       ]
     },
     {
-      "id": "/readinessProbe/timeoutSeconds",
+      "id": ".readinessProbe.timeoutSeconds",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1518,7 +1518,7 @@
       ]
     },
     {
-      "id": "/replicaCount",
+      "id": ".replicaCount",
       "kinds": "/K",
       "contexts": [
         {
@@ -1529,7 +1529,7 @@
       ]
     },
     {
-      "id": "/resources/limits/cpu",
+      "id": ".resources.limits.cpu",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1540,7 +1540,7 @@
       ]
     },
     {
-      "id": "/resources/limits/memory",
+      "id": ".resources.limits.memory",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1551,7 +1551,7 @@
       ]
     },
     {
-      "id": "/resources/requests/cpu",
+      "id": ".resources.requests.cpu",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1562,7 +1562,7 @@
       ]
     },
     {
-      "id": "/resources/requests/memory",
+      "id": ".resources.requests.memory",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1573,7 +1573,7 @@
       ]
     },
     {
-      "id": "/service/annotations",
+      "id": ".service.annotations",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1584,7 +1584,7 @@
       ]
     },
     {
-      "id": "/service/enabled",
+      "id": ".service.enabled",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1595,7 +1595,7 @@
       ]
     },
     {
-      "id": "/service/ports/http/containerPort",
+      "id": ".service.ports.http.containerPort",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -1611,7 +1611,7 @@
       ]
     },
     {
-      "id": "/service/ports/http/port",
+      "id": ".service.ports.http.port",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -1627,7 +1627,7 @@
       ]
     },
     {
-      "id": "/service/ports/http/protocol",
+      "id": ".service.ports.http.protocol",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -1638,7 +1638,7 @@
       ]
     },
     {
-      "id": "/service/sessionAffinity/enabled",
+      "id": ".service.sessionAffinity.enabled",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1649,7 +1649,7 @@
       ]
     },
     {
-      "id": "/service/sessionAffinity/timeoutSeconds",
+      "id": ".service.sessionAffinity.timeoutSeconds",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1660,7 +1660,7 @@
       ]
     },
     {
-      "id": "/service/type",
+      "id": ".service.type",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1671,7 +1671,7 @@
       ]
     },
     {
-      "id": "/serviceAccount/annotations",
+      "id": ".serviceAccount.annotations",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1682,7 +1682,7 @@
       ]
     },
     {
-      "id": "/serviceAccount/automountServiceAccountToken",
+      "id": ".serviceAccount.automountServiceAccountToken",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1693,7 +1693,7 @@
       ]
     },
     {
-      "id": "/serviceAccount/create",
+      "id": ".serviceAccount.create",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1704,7 +1704,7 @@
       ]
     },
     {
-      "id": "/terminationGracePeriodSeconds",
+      "id": ".terminationGracePeriodSeconds",
       "kinds": "/K",
       "contexts": [
         {
@@ -1715,7 +1715,7 @@
       ]
     },
     {
-      "id": "/tolerations",
+      "id": ".tolerations",
       "kinds": "/K",
       "contexts": [
         {
@@ -1726,7 +1726,7 @@
       ]
     },
     {
-      "id": "/topologySpreadConstraints",
+      "id": ".topologySpreadConstraints",
       "kinds": "/K",
       "contexts": [
         {
@@ -1737,7 +1737,7 @@
       ]
     },
     {
-      "id": "/updateStrategy/type",
+      "id": ".updateStrategy.type",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1750,57 +1750,57 @@
   ],
   "unused": [
     {
-      "id": "/global/subDomains/keycloak",
+      "id": ".global.subDomains.keycloak",
       "kinds": "/K/K/K"
     },
     {
-      "id": "/global/subDomains/portal",
+      "id": ".global.subDomains.portal",
       "kinds": "/K/K/K"
     },
     {
-      "id": "/ics/nordeck/enabled",
+      "id": ".ics.nordeck.enabled",
       "kinds": "/K/K/K"
     },
     {
-      "id": "/ics/redis/auth/username",
+      "id": ".ics.redis.auth.username",
       "kinds": "/K/K/K/K"
     },
     {
-      "id": "/livenessProbe/enabled",
+      "id": ".livenessProbe.enabled",
       "kinds": "/K/K"
     },
     {
-      "id": "/podLabels",
+      "id": ".podLabels",
       "kinds": "/K"
     },
     {
-      "id": "/provisioning/config/keycloak/connection/protocol",
+      "id": ".provisioning.config.keycloak.connection.protocol",
       "kinds": "/K/K/K/K/K"
     },
     {
-      "id": "/provisioning/image/imagePullSecrets",
+      "id": ".provisioning.image.imagePullSecrets",
       "kinds": "/K/K/K"
     },
     {
-      "id": "/provisioning/provisioningImage/imagePullSecrets",
+      "id": ".provisioning.provisioningImage.imagePullSecrets",
       "kinds": "/K/K/K"
     },
     {
-      "id": "/readinessProbe/enabled",
+      "id": ".readinessProbe.enabled",
       "kinds": "/K/K"
     },
     {
-      "id": "/readinessProbe/periodSeconds",
+      "id": ".readinessProbe.periodSeconds",
       "kinds": "/K/K"
     },
     {
-      "id": "/serviceAccount/labels",
+      "id": ".serviceAccount.labels",
       "kinds": "/K/K"
     }
   ],
   "undefined": [
     {
-      "id": "/global/ingressClass",
+      "id": ".global.ingressClass",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1811,7 +1811,7 @@
       ]
     },
     {
-      "id": "/global/kubeVersion",
+      "id": ".global.kubeVersion",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1822,7 +1822,7 @@
       ]
     },
     {
-      "id": "/ics/redis/username",
+      "id": ".ics.redis.username",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1833,7 +1833,7 @@
       ]
     },
     {
-      "id": "/ingress/apiVersion",
+      "id": ".ingress.apiVersion",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1844,7 +1844,7 @@
       ]
     },
     {
-      "id": "/ingress/tls",
+      "id": ".ingress.tls",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1855,7 +1855,7 @@
       ]
     },
     {
-      "id": "/kubeVersion",
+      "id": ".kubeVersion",
       "kinds": "/K",
       "contexts": [
         {
@@ -1866,7 +1866,7 @@
       ]
     },
     {
-      "id": "/provisioning/additionalAnnotations/*",
+      "id": ".provisioning.additionalAnnotations.*",
       "kinds": "/K/K/W",
       "contexts": [
         {
@@ -1877,7 +1877,7 @@
       ]
     },
     {
-      "id": "/provisioning/args",
+      "id": ".provisioning.args",
       "kinds": "/K/K",
       "contexts": [
         {
@@ -1888,7 +1888,7 @@
       ]
     },
     {
-      "id": "/provisioning/config/keycloak/credentialSecret/key",
+      "id": ".provisioning.config.keycloak.credentialSecret.key",
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
@@ -1899,7 +1899,7 @@
       ]
     },
     {
-      "id": "/provisioning/config/keycloak/password",
+      "id": ".provisioning.config.keycloak.password",
       "kinds": "/K/K/K/K",
       "contexts": [
         {
@@ -1910,7 +1910,7 @@
       ]
     },
     {
-      "id": "/provisioning/extraAnnotations/*",
+      "id": ".provisioning.extraAnnotations.*",
       "kinds": "/K/K/W",
       "contexts": [
         {
@@ -1921,7 +1921,7 @@
       ]
     },
     {
-      "id": "/provisioning/extraLabels/*",
+      "id": ".provisioning.extraLabels.*",
       "kinds": "/K/K/W",
       "contexts": [
         {
@@ -1932,7 +1932,7 @@
       ]
     },
     {
-      "id": "/provisioning/image/sha256",
+      "id": ".provisioning.image.sha256",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1943,7 +1943,7 @@
       ]
     },
     {
-      "id": "/provisioning/provisioningImage/sha256",
+      "id": ".provisioning.provisioningImage.sha256",
       "kinds": "/K/K/K",
       "contexts": [
         {
@@ -1954,7 +1954,7 @@
       ]
     },
     {
-      "id": "/service/ports/*/nodePort",
+      "id": ".service.ports.*.nodePort",
       "kinds": "/K/K/W/K",
       "contexts": [
         {
