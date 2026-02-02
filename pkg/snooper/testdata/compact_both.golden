@@ -2,7 +2,10 @@
 
 ------------- Unused -------------
 .redis.auth.username  values.yaml:8:5
-
 ----------- Undefined ------------
 .provisioning.extraLabels  templates/configmap.yaml:17:3
 
+============ Summary =============
+
+my-chart  1 Unused  1 Undefined  
+Total     1 Unused  1 Undefined  across 1 chart(s)

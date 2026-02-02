@@ -3,3 +3,7 @@
 ----------- Undefined ------------
 .service.nodePort  templates/service.yaml:36:20
 
+============ Summary =============
+
+test-chart  0 Unused  1 Undefined  
+Total       0 Unused  1 Undefined  across 1 chart(s)

@@ -4,18 +4,12 @@ import (
 	"fmt"
 	"io"
 	"strings"
+	"text/tabwriter"
 
 	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
 const headerWidth = 34
-
-// FormatCompact writes the compact view output for multiple chart results.
-func FormatCompact(w io.Writer, results []*Result) {
-	for _, result := range results {
-		result.ToText(w)
-	}
-}
 
 func formatChartCompact(w io.Writer, result *Result) {
 	// Chart header
@@ -26,15 +20,31 @@ func formatChartCompact(w io.Writer, result *Result) {
 	if len(result.Unused) > 0 {
 		fmt.Fprintln(w, centerHeader("Unused", "-"))
 		formatPathsCompact(w, result.Unused)
-		fmt.Fprintln(w)
 	}
 
 	// Undefined section (only if non-empty)
 	if len(result.Undefined) > 0 {
 		fmt.Fprintln(w, centerHeader("Undefined", "-"))
 		formatPathsCompact(w, result.Undefined)
-		fmt.Fprintln(w)
 	}
+
+	fmt.Fprintln(w)
+}
+
+func formatSummary(w io.Writer, results Results) {
+	fmt.Fprintln(w, centerHeader("Summary", "="))
+	fmt.Fprintln(w)
+
+	tw := tabwriter.NewWriter(w, 0, 0, 2, ' ', 0)
+	totalUnused := 0
+	totalUndefined := 0
+	for _, r := range results {
+		totalUnused += len(r.Unused)
+		totalUndefined += len(r.Undefined)
+		fmt.Fprintf(tw, "%s\t%d Unused\t%d Undefined\t\n", r.ChartName, len(r.Unused), len(r.Undefined))
+	}
+	fmt.Fprintf(tw, "Total\t%d Unused\t%d Undefined\tacross %d chart(s)\n", totalUnused, totalUndefined, len(results))
+	tw.Flush()
 }
 
 func formatPathsCompact(w io.Writer, paths path.Paths) {
