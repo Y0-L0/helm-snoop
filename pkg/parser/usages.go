@@ -47,9 +47,6 @@ func parseFile(chartName, name string, data []byte, idx *TemplateIndex) (path.Pa
 	source := string(data)
 
 	fileName := name
-	if chartName != "" {
-		fileName = chartName + "/" + name
-	}
 
 	for i, tree := range trees {
 		// Skip template definitions - they should only be evaluated when called via include/template
