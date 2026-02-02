@@ -166,11 +166,11 @@
       ]
     }
   ],
-  "definedNotUsed": [
+  "unused": [
     {
       "id": "/postgresql/auth/password",
       "kinds": "/K/K/K"
     }
   ],
-  "usedNotDefined": []
+  "undefined": []
 }

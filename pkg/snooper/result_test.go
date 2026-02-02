@@ -80,9 +80,9 @@ func (s *Unittest) TestToText() {
 				"Referenced:",
 				"  /ref1",
 				"  /ref2",
-				"Defined-not-used:",
+				"Unused:",
 				"  /unused1",
-				"Used-not-defined:",
+				"Undefined:",
 				"  /undefined1",
 			},
 		},
@@ -95,8 +95,8 @@ func (s *Unittest) TestToText() {
 			},
 			[]string{
 				"Referenced:",
-				"Defined-not-used:",
-				"Used-not-defined:",
+				"Unused:",
+				"Undefined:",
 			},
 		},
 	}

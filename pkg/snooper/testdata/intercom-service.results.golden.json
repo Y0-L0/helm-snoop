@@ -1748,7 +1748,7 @@
       ]
     }
   ],
-  "definedNotUsed": [
+  "unused": [
     {
       "id": "/global/subDomains/keycloak",
       "kinds": "/K/K/K"
@@ -1798,7 +1798,7 @@
       "kinds": "/K/K"
     }
   ],
-  "usedNotDefined": [
+  "undefined": [
     {
       "id": "/global/ingressClass",
       "kinds": "/K/K",
