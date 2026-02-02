@@ -52,8 +52,8 @@ func (s *GoldenTest) EqualGoldenJSON(name string, actual ResultsJSON) {
 
 	// Compare each field separately for clearer diffs
 	s.Equal(expected.Referenced, actual.Referenced, "Referenced paths mismatch")
-	s.Equal(expected.UsedNotDefined, actual.UsedNotDefined, "UsedNotDefined paths mismatch")
-	s.Equal(expected.DefinedNotUsed, actual.DefinedNotUsed, "DefinedNotUsed paths mismatch")
+	s.Equal(expected.Undefined, actual.Undefined, "Undefined paths mismatch")
+	s.Equal(expected.Unused, actual.Unused, "Unused paths mismatch")
 }
 
 func disableStrictParsing() func() {

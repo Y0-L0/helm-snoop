@@ -6,8 +6,8 @@ import (
 
 func np() *path.Path { return &path.Path{} }
 
-func (s *Unittest) TestFilterIgnoredWithMerge_DefinedNotUsed() {
-	definedNotUsed := path.Paths{
+func (s *Unittest) TestFilterIgnoredWithMerge_Unused() {
+	unused := path.Paths{
 		np().Key("image").Key("tag"),
 		np().Key("config").Key("nested").Key("value"),
 		np().Key("config").Key("other"),
@@ -23,19 +23,19 @@ func (s *Unittest) TestFilterIgnoredWithMerge_DefinedNotUsed() {
 	}
 
 	result := &Result{
-		Referenced:     path.Paths{np().Key("ref")},
-		DefinedNotUsed: definedNotUsed,
-		UsedNotDefined: path.Paths{},
+		Referenced: path.Paths{np().Key("ref")},
+		Unused:     unused,
+		Undefined:  path.Paths{},
 	}
 
 	filtered := filterIgnoredWithMerge(result, ignorePatterns)
 
 	s.Require().Equal(result.Referenced, filtered.Referenced)
-	s.Require().Equal(path.Paths{np().Key("replicas")}, filtered.DefinedNotUsed)
+	s.Require().Equal(path.Paths{np().Key("replicas")}, filtered.Unused)
 }
 
-func (s *Unittest) TestFilterIgnoredWithMerge_UsedNotDefined() {
-	usedNotDefined := path.Paths{
+func (s *Unittest) TestFilterIgnoredWithMerge_Undefined() {
+	undefined := path.Paths{
 		np().Key("a").Key("b").Key("c"),
 		np().Key("a").Key("x").Key("c"),
 		np().Key("a").Key("b").Key("d").Key("c"),
@@ -47,9 +47,9 @@ func (s *Unittest) TestFilterIgnoredWithMerge_UsedNotDefined() {
 	}
 
 	result := &Result{
-		Referenced:     path.Paths{np().Key("ref")},
-		DefinedNotUsed: path.Paths{},
-		UsedNotDefined: usedNotDefined,
+		Referenced: path.Paths{np().Key("ref")},
+		Unused:     path.Paths{},
+		Undefined:  undefined,
 	}
 
 	filtered := filterIgnoredWithMerge(result, ignorePatterns)
@@ -59,11 +59,11 @@ func (s *Unittest) TestFilterIgnoredWithMerge_UsedNotDefined() {
 		np().Key("a").Key("b").Key("d").Key("c"),
 		np().Key("other"),
 	}
-	s.Require().Equal(expected, filtered.UsedNotDefined)
+	s.Require().Equal(expected, filtered.Undefined)
 }
 
 func (s *Unittest) TestFilterIgnoredWithMerge_MultiplePatterns() {
-	definedNotUsed := path.Paths{
+	unused := path.Paths{
 		np().Key("image").Key("tag"),
 		np().Key("replicas"),
 		np().Key("config").Key("value"),
@@ -76,9 +76,9 @@ func (s *Unittest) TestFilterIgnoredWithMerge_MultiplePatterns() {
 	}
 
 	result := &Result{
-		Referenced:     path.Paths{np().Key("ref")},
-		DefinedNotUsed: definedNotUsed,
-		UsedNotDefined: path.Paths{},
+		Referenced: path.Paths{np().Key("ref")},
+		Unused:     unused,
+		Undefined:  path.Paths{},
 	}
 
 	filtered := filterIgnoredWithMerge(result, ignorePatterns)
@@ -87,11 +87,11 @@ func (s *Unittest) TestFilterIgnoredWithMerge_MultiplePatterns() {
 		np().Key("other").Key("field"),
 		np().Key("replicas"),
 	}
-	s.Require().Equal(expected, filtered.DefinedNotUsed)
+	s.Require().Equal(expected, filtered.Unused)
 }
 
 func (s *Unittest) TestFilterIgnoredWithMerge_NoMatches() {
-	definedNotUsed := path.Paths{
+	unused := path.Paths{
 		np().Key("image").Key("tag"),
 		np().Key("replicas"),
 	}
@@ -101,36 +101,36 @@ func (s *Unittest) TestFilterIgnoredWithMerge_NoMatches() {
 	}
 
 	result := &Result{
-		Referenced:     path.Paths{np().Key("ref")},
-		DefinedNotUsed: definedNotUsed,
-		UsedNotDefined: path.Paths{},
+		Referenced: path.Paths{np().Key("ref")},
+		Unused:     unused,
+		Undefined:  path.Paths{},
 	}
 
 	filtered := filterIgnoredWithMerge(result, ignorePatterns)
 
-	s.Require().Equal(definedNotUsed, filtered.DefinedNotUsed)
+	s.Require().Equal(unused, filtered.Unused)
 }
 
 func (s *Unittest) TestFilterIgnoredWithMerge_EmptyIgnore() {
-	definedNotUsed := path.Paths{np().Key("image").Key("tag")}
+	unused := path.Paths{np().Key("image").Key("tag")}
 
 	result := &Result{
-		Referenced:     path.Paths{np().Key("ref")},
-		DefinedNotUsed: definedNotUsed,
-		UsedNotDefined: path.Paths{},
+		Referenced: path.Paths{np().Key("ref")},
+		Unused:     unused,
+		Undefined:  path.Paths{},
 	}
 
 	filtered := filterIgnoredWithMerge(result, path.Paths{})
 
-	s.Require().Equal(definedNotUsed, filtered.DefinedNotUsed)
+	s.Require().Equal(unused, filtered.Unused)
 }
 
 func (s *Unittest) TestFilterIgnoredWithMerge_BothLists() {
-	definedNotUsed := path.Paths{
+	unused := path.Paths{
 		np().Key("unused1"),
 		np().Key("unused2"),
 	}
-	usedNotDefined := path.Paths{
+	undefined := path.Paths{
 		np().Key("undefined1"),
 		np().Key("undefined2"),
 	}
@@ -141,16 +141,16 @@ func (s *Unittest) TestFilterIgnoredWithMerge_BothLists() {
 	}
 
 	result := &Result{
-		Referenced:     path.Paths{np().Key("ref")},
-		DefinedNotUsed: definedNotUsed,
-		UsedNotDefined: usedNotDefined,
+		Referenced: path.Paths{np().Key("ref")},
+		Unused:     unused,
+		Undefined:  undefined,
 	}
 
 	filtered := filterIgnoredWithMerge(result, ignorePatterns)
 
 	s.Require().Equal(result.Referenced, filtered.Referenced)
-	s.Require().Equal(path.Paths{np().Key("unused2")}, filtered.DefinedNotUsed)
-	s.Require().Equal(path.Paths{np().Key("undefined2")}, filtered.UsedNotDefined)
+	s.Require().Equal(path.Paths{np().Key("unused2")}, filtered.Unused)
+	s.Require().Equal(path.Paths{np().Key("undefined2")}, filtered.Undefined)
 }
 
 func (s *Unittest) TestFilterIgnoredWithMerge_ReferencedNeverFiltered() {
@@ -165,9 +165,9 @@ func (s *Unittest) TestFilterIgnoredWithMerge_ReferencedNeverFiltered() {
 	}
 
 	result := &Result{
-		Referenced:     referenced,
-		DefinedNotUsed: path.Paths{},
-		UsedNotDefined: path.Paths{},
+		Referenced: referenced,
+		Unused:     path.Paths{},
+		Undefined:  path.Paths{},
 	}
 
 	filtered := filterIgnoredWithMerge(result, ignorePatterns)

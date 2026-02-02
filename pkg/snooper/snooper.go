@@ -27,7 +27,7 @@ func Snoop(chartPath string, ignorePaths path.Paths) (*Result, error) {
 	}
 
 	result := &Result{}
-	result.Referenced, result.DefinedNotUsed, result.UsedNotDefined = path.MergeJoinLoose(defined, used)
+	result.Referenced, result.Unused, result.Undefined = path.MergeJoinLoose(defined, used)
 
 	if len(ignorePaths) > 0 {
 		result = filterIgnoredWithMerge(result, ignorePaths)
@@ -42,12 +42,12 @@ func filterIgnoredWithMerge(result *Result, ignorePaths path.Paths) *Result {
 		return result
 	}
 
-	_, _, keptDefinedNotUsed := path.MergeJoinLoose(ignorePaths, result.DefinedNotUsed)
-	_, _, keptUsedNotDefined := path.MergeJoinLoose(ignorePaths, result.UsedNotDefined)
+	_, _, keptUnused := path.MergeJoinLoose(ignorePaths, result.Unused)
+	_, _, keptUndefined := path.MergeJoinLoose(ignorePaths, result.Undefined)
 
 	return &Result{
-		Referenced:     result.Referenced, // Never filtered
-		DefinedNotUsed: keptDefinedNotUsed,
-		UsedNotDefined: keptUsedNotDefined,
+		Referenced: result.Referenced, // Never filtered
+		Unused:     keptUnused,
+		Undefined:  keptUndefined,
 	}
 }

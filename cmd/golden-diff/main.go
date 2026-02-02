@@ -55,11 +55,11 @@ func compareResults(r1, r2 *snooper.ResultsJSON) {
 	fmt.Println("=== Referenced Paths ===")
 	comparePaths(r1.Referenced, r2.Referenced)
 
-	fmt.Println("\n=== DefinedNotUsed Paths ===")
-	comparePaths(r1.DefinedNotUsed, r2.DefinedNotUsed)
+	fmt.Println("\n=== Unused Paths ===")
+	comparePaths(r1.Unused, r2.Unused)
 
-	fmt.Println("\n=== UsedNotDefined Paths ===")
-	comparePaths(r1.UsedNotDefined, r2.UsedNotDefined)
+	fmt.Println("\n=== Undefined Paths ===")
+	comparePaths(r1.Undefined, r2.Undefined)
 }
 
 func comparePaths(paths1, paths2 path.PathsJSON) {

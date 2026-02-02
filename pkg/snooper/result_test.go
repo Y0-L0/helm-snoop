@@ -13,43 +13,43 @@ func (s *Unittest) TestHasFindings() {
 		want   bool
 	}{
 		{
-			"has DefinedNotUsed findings",
+			"has Unused findings",
 			&Result{
-				DefinedNotUsed: path.Paths{path.NewPath("unused")},
-				UsedNotDefined: path.Paths{},
+				Unused:    path.Paths{path.NewPath("unused")},
+				Undefined: path.Paths{},
 			},
 			true,
 		},
 		{
-			"has UsedNotDefined findings",
+			"has Undefined findings",
 			&Result{
-				DefinedNotUsed: path.Paths{},
-				UsedNotDefined: path.Paths{path.NewPath("undefined")},
+				Unused:    path.Paths{},
+				Undefined: path.Paths{path.NewPath("undefined")},
 			},
 			true,
 		},
 		{
 			"has both types of findings",
 			&Result{
-				DefinedNotUsed: path.Paths{path.NewPath("unused")},
-				UsedNotDefined: path.Paths{path.NewPath("undefined")},
+				Unused:    path.Paths{path.NewPath("unused")},
+				Undefined: path.Paths{path.NewPath("undefined")},
 			},
 			true,
 		},
 		{
 			"no findings",
 			&Result{
-				DefinedNotUsed: path.Paths{},
-				UsedNotDefined: path.Paths{},
+				Unused:    path.Paths{},
+				Undefined: path.Paths{},
 			},
 			false,
 		},
 		{
 			"only Referenced (no findings)",
 			&Result{
-				Referenced:     path.Paths{path.NewPath("used")},
-				DefinedNotUsed: path.Paths{},
-				UsedNotDefined: path.Paths{},
+				Referenced: path.Paths{path.NewPath("used")},
+				Unused:     path.Paths{},
+				Undefined:  path.Paths{},
 			},
 			false,
 		},
@@ -72,9 +72,9 @@ func (s *Unittest) TestToText() {
 		{
 			"all sections populated",
 			&Result{
-				Referenced:     path.Paths{path.NewPath("ref1"), path.NewPath("ref2")},
-				DefinedNotUsed: path.Paths{path.NewPath("unused1")},
-				UsedNotDefined: path.Paths{path.NewPath("undefined1")},
+				Referenced: path.Paths{path.NewPath("ref1"), path.NewPath("ref2")},
+				Unused:     path.Paths{path.NewPath("unused1")},
+				Undefined:  path.Paths{path.NewPath("undefined1")},
 			},
 			[]string{
 				"Referenced:",
@@ -89,9 +89,9 @@ func (s *Unittest) TestToText() {
 		{
 			"empty result",
 			&Result{
-				Referenced:     path.Paths{},
-				DefinedNotUsed: path.Paths{},
-				UsedNotDefined: path.Paths{},
+				Referenced: path.Paths{},
+				Unused:     path.Paths{},
+				Undefined:  path.Paths{},
 			},
 			[]string{
 				"Referenced:",
