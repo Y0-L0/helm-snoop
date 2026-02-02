@@ -14,7 +14,7 @@ This document defines an MVP-first path to validate the approach, followed by a 
    3. Flatten `values.yaml` and compute:
       1. Referenced keys (direct only).
       2. Defined keys.
-      3. Report “used-not-defined” and “defined-not-used” as plain text.
+      3. Report “undefined” and “unused” as plain text.
 
 3. Stage 2: Static functions and helpers (still static)
    1. Extend extraction to handle simple function forms that wrap value reads without changing the accessed path:
@@ -31,7 +31,7 @@ This document defines an MVP-first path to validate the approach, followed by a 
    3. Fixture C (Helpers): use `include` with static helper templates; verify union of used keys across files.
 
 5. MVP reporting
-   1. Text-only output with three sections: Referenced, Defined-not-used, Used-not-defined.
+   1. Text-only output with three sections: Referenced, Unused, Undefined.
    2. Include filename:line when available for referenced sites.
 
 ## Alternative Validation Approaches

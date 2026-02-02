@@ -75,7 +75,7 @@ When functions like `concat` or `default` are used with control flow, they retur
 
 **Never** both emit and return paths in the same function. This would cause:
 - Duplicate path tracking
-- False positives in "Defined-not-used" detection
+- False positives in "Unused" detection
 - Incorrect analysis results
 
 **Bad Example:**

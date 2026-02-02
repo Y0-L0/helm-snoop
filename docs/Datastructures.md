@@ -80,7 +80,7 @@ Bidirectional matching for joining definitions with usages.
 
 **Key distinction**: Subsumption vs Loose
 - `/foo/*` and `/foo/bar` match loosely (for joining)
-- But are NOT redundant (both needed in "used not defined" reports)
+- But are NOT redundant (both needed in "undefined" reports)
   - `/foo/*` = need ANY children
   - `/foo/bar` = need THIS SPECIFIC field
 

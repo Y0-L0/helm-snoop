@@ -12,6 +12,6 @@ JSON Structure for Results
   - { "id": "/a/b/1/c", "kinds": "K/K/I/K" }
   - K = key (map field), I = index (array index), A = any (unknown/invariant)
 - Results JSON:
-  - { "referenced": [<PathJSON>...], "definedNotUsed": [...], "usedNotDefined": [...] }
+  - { "referenced": [<PathJSON>...], "unused": [...], "undefined": [...] }
 - Arrays are sorted deterministically for stable diffs.
 
