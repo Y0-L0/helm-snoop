@@ -36,7 +36,7 @@ func analyze(
 			return errors.New("")
 		}
 	} else {
-		result.ToText(outWriter)
+		snooper.Results{result}.ToText(outWriter)
 	}
 
 	if result.HasFindings() {

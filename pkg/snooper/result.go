@@ -14,6 +14,15 @@ type Result struct {
 	Undefined  path.Paths
 }
 
+type Results []*Result
+
+func (rs Results) ToText(w io.Writer) {
+	for _, r := range rs {
+		formatChartCompact(w, r)
+	}
+	formatSummary(w, rs)
+}
+
 type ResultsJSON struct {
 	Referenced path.PathsJSON `json:"referenced"`
 	Unused     path.PathsJSON `json:"unused"`
