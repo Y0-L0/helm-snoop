@@ -13,9 +13,9 @@ func (s *Unittest) TestIgnorePaths_SinglePath() {
 	mockSnoop := func(chartPath string, ignorePaths path.Paths) (*snooper.Result, error) {
 		capturedPaths = ignorePaths
 		return &snooper.Result{
-			Referenced:     path.Paths{},
-			DefinedNotUsed: path.Paths{},
-			UsedNotDefined: path.Paths{},
+			Referenced: path.Paths{},
+			Unused:     path.Paths{},
+			Undefined:  path.Paths{},
 		}, nil
 	}
 
@@ -38,9 +38,9 @@ func (s *Unittest) TestIgnorePaths_MultipleWithAllKinds() {
 	mockSnoop := func(chartPath string, ignorePaths path.Paths) (*snooper.Result, error) {
 		capturedPaths = ignorePaths
 		return &snooper.Result{
-			Referenced:     path.Paths{},
-			DefinedNotUsed: path.Paths{},
-			UsedNotDefined: path.Paths{},
+			Referenced: path.Paths{},
+			Unused:     path.Paths{},
+			Undefined:  path.Paths{},
 		}, nil
 	}
 
@@ -123,9 +123,9 @@ func (s *Unittest) TestIgnorePaths_NoIgnoreList() {
 	mockSnoop := func(chartPath string, ignorePaths path.Paths) (*snooper.Result, error) {
 		capturedPaths = ignorePaths
 		return &snooper.Result{
-			Referenced:     path.Paths{},
-			DefinedNotUsed: path.Paths{},
-			UsedNotDefined: path.Paths{},
+			Referenced: path.Paths{},
+			Unused:     path.Paths{},
+			Undefined:  path.Paths{},
 		}, nil
 	}
 

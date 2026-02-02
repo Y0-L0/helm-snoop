@@ -9,9 +9,9 @@ import (
 
 func mockSnoop(chartPath string, ignorePatterns path.Paths) (*snooper.Result, error) {
 	return &snooper.Result{
-		Referenced:     path.Paths{},
-		DefinedNotUsed: path.Paths{},
-		UsedNotDefined: path.Paths{},
+		Referenced: path.Paths{},
+		Unused:     path.Paths{},
+		Undefined:  path.Paths{},
 	}, nil
 }
 

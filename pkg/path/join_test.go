@@ -159,9 +159,9 @@ func (s *Unittest) TestMergeJoinLoose_OneDefinitionMatchesMultipleUsages() {
 	s.Equal(1, len(inter), "definition should match both usages")
 	s.Equal("/items/0", inter[0].ID())
 
-	// Nothing defined but not used
+	// Nothing unused
 	s.Equal(0, len(onlyDef), "no definitions should be unmatched")
 
-	// Both usages matched the definition, so nothing used but not defined
+	// Both usages matched the definition, so nothing undefined
 	s.Equal(0, len(onlyUsage), "both usages should match the definition")
 }
