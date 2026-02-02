@@ -1,0 +1,13 @@
+============ chart-a =============
+
+------------- Unused -------------
+.podLabels  values.yaml:11:1
+
+----------- Undefined ------------
+.service.nodePort  templates/service.yaml:36:20
+
+============ chart-b =============
+
+------------- Unused -------------
+.global.domain  values.yaml:2:3
+

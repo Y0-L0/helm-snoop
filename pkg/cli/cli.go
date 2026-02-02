@@ -36,9 +36,7 @@ func analyze(
 			return errors.New("")
 		}
 	} else {
-		if err := result.ToText(outWriter, showReferenced); err != nil {
-			return errors.New("")
-		}
+		result.ToText(outWriter)
 	}
 
 	if result.HasFindings() {

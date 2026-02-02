@@ -1,0 +1,8 @@
+============ my-chart ============
+
+------------- Unused -------------
+.redis.auth.username  values.yaml:8:5
+
+----------- Undefined ------------
+.provisioning.extraLabels  templates/configmap.yaml:17:3
+
