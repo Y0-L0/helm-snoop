@@ -3,6 +3,7 @@ package parser
 import (
 	"log/slog"
 
+	"github.com/y0-l0/helm-snoop/internal/assert"
 	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
@@ -47,7 +48,7 @@ func dictFn(ctx *evalCtx, call Call) evalResult {
 func indexFn(ctx *evalCtx, call Call) evalResult {
 	if len(call.Args) < 2 {
 		slog.Warn("index: need at least 2 args", "count", len(call.Args))
-		Must("index: need at least 2 args")
+		assert.Must("index: need at least 2 args")
 		return evalResult{}
 	}
 
@@ -92,7 +93,7 @@ func indexFn(ctx *evalCtx, call Call) evalResult {
 func getFn(ctx *evalCtx, call Call) evalResult {
 	if len(call.Args) != 2 {
 		slog.Warn("get: need exactly 2 args", "count", len(call.Args))
-		Must("get: need exactly 2 args")
+		assert.Must("get: need exactly 2 args")
 		return evalResult{}
 	}
 
@@ -110,7 +111,7 @@ func getFn(ctx *evalCtx, call Call) evalResult {
 	// Fall back to conservative
 	if len(keyResult.args) != 1 {
 		slog.Warn("get: key must be exactly one literal", "count", len(keyResult.args))
-		Must("get: key must be exactly one literal")
+		assert.Must("get: key must be exactly one literal")
 		return evalResult{}
 	}
 

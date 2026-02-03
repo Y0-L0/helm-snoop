@@ -1,6 +1,10 @@
 package parser
 
-import "log/slog"
+import (
+	"log/slog"
+
+	"github.com/y0-l0/helm-snoop/internal/assert"
+)
 
 // tmplFunc is the signature for all analyzer template functions.
 // Functions receive a context and Call (with unevaluated args), then return evalResult.
@@ -362,7 +366,7 @@ func getTemplateFunction(name string) tmplFunc {
 func makeNotImplementedFn(name string) tmplFunc {
 	return func(_ *evalCtx, _ Call) evalResult {
 		slog.Warn("template function not implemented", "name", name)
-		Must("template function not implemented: " + name)
+		assert.Must("template function not implemented: " + name)
 		return evalResult{}
 	}
 }

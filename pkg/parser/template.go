@@ -5,6 +5,7 @@ import (
 	"log/slog"
 	"text/template/parse"
 
+	"github.com/y0-l0/helm-snoop/internal/assert"
 	chart "helm.sh/helm/v4/pkg/chart/v2"
 )
 
@@ -34,7 +35,7 @@ func (ti *TemplateIndex) get(name string) (TemplateDef, bool) {
 func (ti *TemplateIndex) add(name string, def TemplateDef) {
 	if _, exists := ti.byName[name]; exists {
 		slog.Warn("duplicate template name", "name", name)
-		Must("duplicate template name: " + name)
+		assert.Must("duplicate template name: " + name)
 	}
 	ti.byName[name] = def
 }
