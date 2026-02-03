@@ -1,0 +1,36 @@
+=============================== intercom-service ===============================
+
+------------------------------------ Unused ------------------------------------
+.global.subDomains.keycloak                        values.yaml:9:5
+.global.subDomains.portal                          values.yaml:10:5
+.ics.nordeck.enabled                               values.yaml:232:5
+.ics.redis.auth.username                           values.yaml:325:7
+.livenessProbe.enabled                             values.yaml:422:3
+.podLabels                                         values.yaml:440:1
+.provisioning.config.keycloak.connection.protocol  values.yaml:614:9
+.provisioning.image.imagePullSecrets               values.yaml:586:5
+.provisioning.provisioningImage.imagePullSecrets   values.yaml:596:5
+.readinessProbe.enabled                            values.yaml:457:3
+.readinessProbe.periodSeconds                      values.yaml:463:3
+.serviceAccount.labels                             values.yaml:545:3
+---------------------------------- Undefined -----------------------------------
+.global.ingressClass                                templates/ingress.yaml:22:96
+.global.kubeVersion                                 templates/deployment.yaml:9:29
+.ics.redis.username                                 templates/secret.yaml:59:36
+.ingress.apiVersion                                 templates/ingress.yaml:1:1
+.ingress.tls                                        templates/NOTES.txt:6:33
+.kubeVersion                                        templates/ingress.yaml:9:2
+.provisioning.additionalAnnotations.*               templates/configmap-provisioning.yaml:14:41
+.provisioning.args                                  templates/deployment.yaml:132:18
+.provisioning.config.keycloak.credentialSecret.key  templates/provisioning-secret.yaml:15:6
+.provisioning.config.keycloak.password              templates/provisioning-secret.yaml:5:7
+.provisioning.extraAnnotations.*                    templates/configmap-ca.yaml:15:104
+.provisioning.extraLabels.*                         templates/configmap-ca.yaml:17:3
+.provisioning.image.sha256                          templates/deployment.yaml:68:193
+.provisioning.provisioningImage.sha256              templates/deployment.yaml:88:229
+.service.ports.*.nodePort                           templates/service.yaml:36:20
+
+=================================== Summary ====================================
+
+intercom-service  12 Unused  15 Undefined  
+Total             12 Unused  15 Undefined  across 1 chart(s)

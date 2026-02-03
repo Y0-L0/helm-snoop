@@ -7,7 +7,7 @@ import (
 	"github.com/y0-l0/helm-snoop/internal/assert"
 )
 
-func (s *GoldenTest) TestSnoop_TestChart() {
+func (s *GoldenTest) TestSnoop_json_TestChart() {
 	restore := disableStrictParsing()
 	defer restore()
 
@@ -18,7 +18,7 @@ func (s *GoldenTest) TestSnoop_TestChart() {
 	s.EqualGoldenJSON("test-chart.results.golden.json", actual)
 }
 
-func (s *GoldenTest) TestSnoop_Chart_IntercomService() {
+func (s *GoldenTest) TestSnoop_json_IntercomService() {
 	restore := disableStrictParsing()
 	defer restore()
 
@@ -29,7 +29,7 @@ func (s *GoldenTest) TestSnoop_Chart_IntercomService() {
 	s.EqualGoldenJSON("intercom-service.results.golden.json", actual)
 }
 
-func (s *GoldenTest) TestSnoop_Chart_Guardian() {
+func (s *GoldenTest) TestSnoop_json_Guardian() {
 	restore := disableStrictParsing()
 	defer restore()
 
@@ -54,6 +54,33 @@ func (s *GoldenTest) EqualGoldenJSON(name string, actual ResultsJSON) {
 	s.Equal(expected.Referenced, actual.Referenced, "Referenced paths mismatch")
 	s.Equal(expected.Undefined, actual.Undefined, "Undefined paths mismatch")
 	s.Equal(expected.Unused, actual.Unused, "Unused paths mismatch")
+}
+
+func (s *GoldenTest) TestSnoop_txt_TestChart() {
+	restore := disableStrictParsing()
+	defer restore()
+
+	result, err := Snoop(filepath.Join(s.chartsDir, "test-chart"), nil)
+	s.Require().NoError(err)
+	s.compactGoldenTest("test-chart.results", Results{result})
+}
+
+func (s *GoldenTest) TestSnoop_txt_IntercomService() {
+	restore := disableStrictParsing()
+	defer restore()
+
+	result, err := Snoop(filepath.Join(s.chartsDir, "intercom-service-2.23.0.tgz"), nil)
+	s.Require().NoError(err)
+	s.compactGoldenTest("intercom-service.results", Results{result})
+}
+
+func (s *GoldenTest) TestSnoop_txt_Guardian() {
+	restore := disableStrictParsing()
+	defer restore()
+
+	result, err := Snoop(filepath.Join(s.chartsDir, "guardian-0.24.4.tgz"), nil)
+	s.Require().NoError(err)
+	s.compactGoldenTest("guardian.results", Results{result})
 }
 
 func (s *GoldenTest) TestSnoop_UnusedHaveValuesContext() {
