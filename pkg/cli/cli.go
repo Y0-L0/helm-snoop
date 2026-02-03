@@ -6,8 +6,8 @@ import (
 	"log/slog"
 
 	"github.com/spf13/cobra"
+	"github.com/y0-l0/helm-snoop/internal/assert"
 	"github.com/y0-l0/helm-snoop/pkg/color"
-	"github.com/y0-l0/helm-snoop/pkg/parser"
 	"github.com/y0-l0/helm-snoop/pkg/path"
 	"github.com/y0-l0/helm-snoop/pkg/snooper"
 	"github.com/y0-l0/helm-snoop/pkg/version"
@@ -25,7 +25,7 @@ func analyze(
 	outWriter io.Writer,
 	snoop snooper.SnoopFunc,
 ) error {
-	parser.Strict = false
+	assert.Strict = false
 
 	result, err := snoop(chartPath, path.Paths(*ignorePaths))
 	if err != nil {

@@ -3,6 +3,7 @@ package parser
 import (
 	"log/slog"
 
+	"github.com/y0-l0/helm-snoop/internal/assert"
 	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
@@ -102,7 +103,7 @@ func concatFn(ctx *evalCtx, call Call) evalResult {
 func binaryEvalFn(ctx *evalCtx, call Call) evalResult {
 	if len(call.Args) != 2 {
 		slog.Warn("binary function requires exactly 2 arguments", "count", len(call.Args))
-		Must("binary function requires exactly 2 arguments")
+		assert.Must("binary function requires exactly 2 arguments")
 	}
 
 	if len(call.Args) < 2 {

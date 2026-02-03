@@ -1,6 +1,7 @@
 package parser
 
 import (
+	"github.com/y0-l0/helm-snoop/internal/assert"
 	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
@@ -39,9 +40,9 @@ func (s *Unittest) TestParseFile_TplFunction() {
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
 			// Disable strict mode for tpl tests since it's only partially implemented
-			oldStrict := Strict
-			Strict = false
-			defer func() { Strict = oldStrict }()
+			oldStrict := assert.Strict
+			assert.Strict = false
+			defer func() { assert.Strict = oldStrict }()
 
 			actual, err := parseFile("", tc.name+".tmpl", []byte(tc.template), nil)
 			s.Require().NoError(err)

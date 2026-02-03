@@ -2,6 +2,8 @@ package parser
 
 import (
 	"log/slog"
+
+	"github.com/y0-l0/helm-snoop/internal/assert"
 )
 
 // ==============================================================================
@@ -10,7 +12,7 @@ import (
 
 func tplFn(ctx *evalCtx, call Call) evalResult {
 	slog.Info("tpl partially implemented (ignoring context argument)")
-	Must("tpl partially implemented (ignoring context argument)")
+	assert.Must("tpl partially implemented (ignoring context argument)")
 
 	if len(call.Args) < 1 {
 		return evalResult{}

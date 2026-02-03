@@ -5,6 +5,7 @@ import (
 	"log/slog"
 	"text/template/parse"
 
+	"github.com/y0-l0/helm-snoop/internal/assert"
 	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
@@ -237,7 +238,7 @@ func (e *evalCtx) Eval(n parse.Node) evalResult {
 
 	default:
 		slog.Warn("unsupported node type in Eval", "type", node.Type(), "nodeString", fmt.Sprintf("%T", n))
-		Must("unsupported node type in Eval")
+		assert.Must("unsupported node type in Eval")
 		return evalResult{}
 	}
 }

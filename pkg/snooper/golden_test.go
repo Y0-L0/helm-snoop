@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"path/filepath"
 
-	"github.com/y0-l0/helm-snoop/pkg/parser"
+	"github.com/y0-l0/helm-snoop/internal/assert"
 )
 
 func (s *GoldenTest) TestSnoop_TestChart() {
@@ -57,8 +57,8 @@ func (s *GoldenTest) EqualGoldenJSON(name string, actual ResultsJSON) {
 }
 
 func disableStrictParsing() func() {
-	oldStrict := parser.Strict
-	parser.Strict = false
+	oldStrict := assert.Strict
+	assert.Strict = false
 
-	return func() { parser.Strict = oldStrict }
+	return func() { assert.Strict = oldStrict }
 }
