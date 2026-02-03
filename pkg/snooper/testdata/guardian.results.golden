@@ -1,0 +1,83 @@
+=================================== guardian ===================================
+
+------------------------------------ Unused ------------------------------------
+.authorizationApi.environment                    values.yaml:151:3
+.authorizationApi.fullnameOverride               values.yaml:152:3
+.authorizationApi.nameOverride                   values.yaml:153:3
+.authorizationApi.persistence.data.size          values.yaml:297:7
+.authorizationApi.persistence.data.storageClass  values.yaml:296:7
+.extraEnvVars                                    values.yaml:826:1
+.extraIngresses                                  values.yaml:131:1
+.extraVolumeMounts                               values.yaml:832:1
+.global.affinity                                 values.yaml:4:3
+.global.environment                              values.yaml:5:3
+.global.fullnameOverride                         values.yaml:6:3
+.global.nameOverride                             values.yaml:7:3
+.global.nodeSelector                             values.yaml:8:3
+.global.podAnnotations                           values.yaml:9:3
+.global.podSecurityContext                       values.yaml:10:3
+.global.replicaCount                             values.yaml:11:3
+.global.securityContext                          values.yaml:12:3
+.global.tolerations                              values.yaml:13:3
+.managementApi.environment                       values.yaml:310:3
+.managementApi.fullnameOverride                  values.yaml:311:3
+.managementApi.nameOverride                      values.yaml:312:3
+.managementApi.oauth.auth.clientSecret           values.yaml:401:7
+.managementApi.persistence.data.size             values.yaml:453:7
+.managementApi.persistence.data.storageClass     values.yaml:452:7
+.managementUi.environment                        values.yaml:465:3
+.managementUi.fullnameOverride                   values.yaml:466:3
+.managementUi.nameOverride                       values.yaml:467:3
+.managementUi.persistence.data.size              values.yaml:570:7
+.managementUi.persistence.data.storageClass      values.yaml:569:7
+.openPolicyAgent.environment                     values.yaml:582:3
+.openPolicyAgent.fullnameOverride                values.yaml:583:3
+.openPolicyAgent.nameOverride                    values.yaml:584:3
+.postgresql.auth.password                        values.yaml:791:5
+.serviceAccount.annotations                      values.yaml:840:3
+.serviceAccount.labels                           values.yaml:849:3
+.serviceAccount.name                             values.yaml:843:3
+---------------------------------- Undefined -----------------------------------
+.Values.enabled                             templates/secret-guardian-keycloak-client.yaml:1:1
+.Values.global.secrets.masterPassword       templates/secret-guardian-keycloak-client.yaml:1:1
+.authorizationApi.credentialSecretName      templates/deployment-authorization-api.yaml:79:74
+.authorizationApi.extraAnnotations          templates/configmap-authorization-api.yaml:45:16
+.authorizationApi.extraVolumeMounts.*       templates/deployment-authorization-api.yaml:15:22
+.authorizationApi.extraVolumes.*            templates/deployment-authorization-api.yaml:16:3
+.authorizationApi.service.ports.*.nodePort  templates/service-authorization-api.yaml:32:14
+.extraSecrets.*.data.*                      templates/extraSecrets.yaml:19:21
+.extraSecrets.*.name                        templates/extraSecrets.yaml:8:20
+.extraSecrets.*.stringData.*                templates/extraSecrets.yaml:25:21
+.extraSecrets.*.values                      templates/extraSecrets.yaml:1:1
+.fullnameOverride                           templates/deployment-open-policy-agent.yaml:22:69
+.global.certManagerIssuer                   templates/ingresses.yaml:20:88
+.global.ingressClass                        templates/ingresses.yaml:23:10
+.global.keycloak.realm                      templates/configmap-provisioning.yaml:1:1
+.global.kubeVersion                         templates/deployment-management-ui.yaml:10:39
+.global.nubusDeployment                     templates/configmap-management-api.yaml:1:1
+.global.restartPolicy                       templates/job-provisioning.yaml:30:100
+.global.secrets.keep                        templates/secret-guardian-keycloak-client.yaml:29:10
+.ingress.apiVersion                         templates/ingresses.yaml:1:1
+.kubeVersion                                templates/deployment-authorization-api.yaml:10:39
+.managementApi.extraVolumeMounts.*          templates/deployment-management-api.yaml:13:27
+.managementApi.extraVolumes.*               templates/deployment-management-api.yaml:13:27
+.managementApi.service.ports.*.nodePort     templates/service-management-api.yaml:33:20
+.managementUi.service.ports.*.nodePort      templates/service-management-ui.yaml:33:20
+.nameOverride                               templates/deployment-open-policy-agent.yaml:23:52
+.openPolicyAgent.service.ports.*.nodePort   templates/service-open-policy-agent.yaml:33:20
+.provisioning.affinity.*                    templates/job-provisioning.yaml:184:13
+.provisioning.args                          templates/job-provisioning.yaml:63:16
+.provisioning.extraAnnotations.*            templates/job-provisioning.yaml:27:12
+.provisioning.extraVolumeMounts.*           templates/job-provisioning.yaml:14:36
+.provisioning.extraVolumes.*                templates/job-provisioning.yaml:15:17
+.provisioning.image.pullPolicy              templates/job-provisioning.yaml:50:109
+.provisioning.keycloak.connection.baseUrl   templates/configmap-provisioning.yaml:1:1
+.provisioning.keycloak.connection.protocol  templates/configmap-provisioning.yaml:1:1
+.provisioning.keycloak.url                  templates/configmap-provisioning.yaml:1:1
+.provisioning.nodeSelector.*                templates/job-provisioning.yaml:180:13
+.provisioning.provisioningImage.sha256      templates/job-provisioning.yaml:80:170
+
+=================================== Summary ====================================
+
+guardian  36 Unused  38 Undefined  
+Total     36 Unused  38 Undefined  across 1 chart(s)
