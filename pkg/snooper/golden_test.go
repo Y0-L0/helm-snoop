@@ -56,6 +56,22 @@ func (s *GoldenTest) EqualGoldenJSON(name string, actual ResultsJSON) {
 	s.Equal(expected.Unused, actual.Unused, "Unused paths mismatch")
 }
 
+func (s *GoldenTest) TestSnoop_UnusedHaveValuesContext() {
+	restore := disableStrictParsing()
+	defer restore()
+
+	results, err := Snoop(filepath.Join(s.chartsDir, "test-chart"), nil)
+	s.Require().NoError(err)
+
+	for _, p := range results.Unused {
+		s.Require().NotEmpty(p.Contexts, "unused path %s should have a context", p.ID())
+		s.Equal("values.yaml", p.Contexts[0].FileName,
+			"unused path %s context should point to values.yaml", p.ID())
+		s.Greater(p.Contexts[0].Line, 0,
+			"unused path %s should have a positive line number", p.ID())
+	}
+}
+
 func disableStrictParsing() func() {
 	oldStrict := assert.Strict
 	assert.Strict = false
