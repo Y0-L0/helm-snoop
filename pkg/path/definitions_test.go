@@ -1,12 +1,6 @@
 package path
 
-import (
-	"log/slog"
-
-	"gopkg.in/yaml.v3"
-)
-
-func (s *Unittest) TestParseYaml() {
+func (s *Unittest) TestGetDefinitions() {
 	testCases := []struct {
 		name     string
 		expected Paths
@@ -68,37 +62,33 @@ nestedMap:
 
 	for _, tc := range testCases {
 		s.Run(tc.name, func() {
-			var values interface{}
-			err := yaml.Unmarshal([]byte(tc.values), &values)
+			out, err := GetDefinitions([]byte(tc.values), "values.yaml")
 			s.Require().NoError(err)
-			slog.Debug("complete test values.yaml", "yaml", values)
-
-			out := Paths{}
-			GetDefinitions(Path{}, values, &out)
 
 			EqualPaths(s, Paths(tc.expected), Paths(out))
 		})
 	}
 }
 
-func (s *Unittest) TestFlattenValues_NonStringKeys() {
-	values := map[interface{}]interface{}{
-		"stringKey": "value1",
-		123:         "value2", // non-string key
+func (s *Unittest) TestGetDefinitions_WithContext() {
+	values := "config:\n  database:\n    host: localhost\nitems:\n  - name: foo\n"
+
+	out, err := GetDefinitions([]byte(values), "values.yaml")
+	s.Require().NoError(err)
+
+	byID := map[string]PathContext{}
+	for _, p := range out {
+		s.Require().Len(p.Contexts, 1)
+		byID[p.ID()] = p.Contexts[0]
 	}
 
-	out := Paths{}
-	GetDefinitions(Path{}, values, &out)
-
-	expected := Paths{
-		np().Key("stringKey"),
-		np().Key("123"),
-	}
-
-	EqualPaths(s, Paths(expected), Paths(out))
+	s.Equal(PathContext{FileName: "values.yaml", Line: 3, Column: 5},
+		byID[".config.database.host"])
+	s.Equal(PathContext{FileName: "values.yaml", Line: 5, Column: 5},
+		byID[".items.0.name"])
 }
 
-func (s *Unittest) TestFlattenValues_EmptyCollections() {
+func (s *Unittest) TestGetDefinitions_EmptyCollections() {
 	testCases := []struct {
 		name     string
 		expected Paths
@@ -109,18 +99,14 @@ func (s *Unittest) TestFlattenValues_EmptyCollections() {
 			expected: Paths{
 				np().Key("podAnnotations"),
 			},
-			values: `
-podAnnotations: {}
-`,
+			values: "podAnnotations: {}\n",
 		},
 		{
 			name: "empty_list",
 			expected: Paths{
 				np().Key("items"),
 			},
-			values: `
-items: []
-`,
+			values: "items: []\n",
 		},
 		{
 			name: "nested_empty_collections",
@@ -138,14 +124,28 @@ config:
 
 	for _, tc := range testCases {
 		s.Run(tc.name, func() {
-			var values interface{}
-			err := yaml.Unmarshal([]byte(tc.values), &values)
+			out, err := GetDefinitions([]byte(tc.values), "values.yaml")
 			s.Require().NoError(err)
-
-			out := Paths{}
-			GetDefinitions(Path{}, values, &out)
 
 			EqualPaths(s, Paths(tc.expected), Paths(out))
 		})
 	}
+}
+
+func (s *Unittest) TestGetDefinitions_EmptyCollectionContexts() {
+	values := "podAnnotations: {}\nitems: []\n"
+
+	out, err := GetDefinitions([]byte(values), "values.yaml")
+	s.Require().NoError(err)
+
+	byID := map[string]PathContext{}
+	for _, p := range out {
+		s.Require().Len(p.Contexts, 1)
+		byID[p.ID()] = p.Contexts[0]
+	}
+
+	s.Equal(PathContext{FileName: "values.yaml", Line: 1, Column: 1},
+		byID[".podAnnotations"])
+	s.Equal(PathContext{FileName: "values.yaml", Line: 2, Column: 1},
+		byID[".items"])
 }

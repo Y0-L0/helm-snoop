@@ -5,6 +5,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 7,
+          "column": 3
+        },
+        {
           "file": "templates/configmap.yaml",
           "line": 9,
           "column": 16
@@ -15,6 +20,11 @@
       "id": ".config.enabled",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 6,
+          "column": 3
+        },
         {
           "file": "templates/configmap.yaml",
           "line": 7,
@@ -27,6 +37,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 5,
+          "column": 3
+        },
+        {
           "file": "templates/configmap.yaml",
           "line": 6,
           "column": 40
@@ -37,6 +52,11 @@
       "id": ".extra.fromDefine",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 21,
+          "column": 3
+        },
         {
           "file": "templates/configmap.yaml",
           "line": 3,
@@ -49,6 +69,11 @@
       "kinds": "/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 5,
           "column": 5
@@ -59,6 +84,11 @@
       "id": ".getPipe.someKey",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 13,
+          "column": 3
+        },
         {
           "file": "templates/configmap.yaml",
           "line": 12,
@@ -71,6 +101,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 24,
+          "column": 3
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 16,
           "column": 20
@@ -81,6 +116,11 @@
       "id": ".image.repository",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 25,
+          "column": 3
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 16,
@@ -93,6 +133,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 26,
+          "column": 3
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 16,
           "column": 80
@@ -103,6 +148,11 @@
       "id": ".indexPipe.nestedKey.someOtherKey",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 18,
+          "column": 5
+        },
         {
           "file": "templates/configmap.yaml",
           "line": 15,
@@ -115,6 +165,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 16,
+          "column": 3
+        },
+        {
           "file": "templates/configmap.yaml",
           "line": 14,
           "column": 19
@@ -125,6 +180,11 @@
       "id": ".integerKey.1234",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 10,
+          "column": 3
+        },
         {
           "file": "templates/configmap.yaml",
           "line": 11,
@@ -137,6 +197,11 @@
       "kinds": "/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 2,
+          "column": 1
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 10,
           "column": 14
@@ -147,6 +212,11 @@
       "id": ".postgresql.auth.existingSecret.keyMapping.password",
       "kinds": "/K/K/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 35,
+          "column": 9
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 1,
@@ -159,6 +229,11 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 33,
+          "column": 7
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 21,
           "column": 85
@@ -169,7 +244,14 @@
   "unused": [
     {
       "id": ".postgresql.auth.password",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 31,
+          "column": 5
+        }
+      ]
     }
   ],
   "undefined": []

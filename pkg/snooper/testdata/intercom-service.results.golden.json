@@ -5,6 +5,11 @@
       "kinds": "/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 35,
+          "column": 1
+        },
+        {
           "file": "templates/secret.yaml",
           "line": 19,
           "column": 8
@@ -15,6 +20,11 @@
       "id": ".additionalLabels",
       "kinds": "/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 38,
+          "column": 1
+        },
         {
           "file": "templates/ingress.yaml",
           "line": 19,
@@ -27,6 +37,11 @@
       "kinds": "/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 43,
+          "column": 1
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 14,
           "column": 49
@@ -37,6 +52,11 @@
       "id": ".containerSecurityContext.allowPrivilegeEscalation",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 50,
+          "column": 3
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 66,
@@ -49,6 +69,11 @@
       "kinds": "/K/K/K/I",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 54,
+          "column": 5
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 66,
           "column": 80
@@ -59,6 +84,11 @@
       "id": ".containerSecurityContext.enabled",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 58,
+          "column": 3
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 66,
@@ -76,6 +106,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 48,
+          "column": 3
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 66,
           "column": 80
@@ -86,6 +121,11 @@
       "id": ".containerSecurityContext.readOnlyRootFilesystem",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 72,
+          "column": 3
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 66,
@@ -98,6 +138,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 64,
+          "column": 3
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 66,
           "column": 80
@@ -108,6 +153,11 @@
       "id": ".containerSecurityContext.runAsNonRoot",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 75,
+          "column": 3
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 66,
@@ -120,6 +170,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 61,
+          "column": 3
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 66,
           "column": 80
@@ -130,6 +185,11 @@
       "id": ".containerSecurityContext.seccompProfile.type",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 69,
+          "column": 5
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 66,
@@ -142,6 +202,11 @@
       "kinds": "/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 81,
+          "column": 1
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 14,
           "column": 49
@@ -152,6 +217,11 @@
       "id": ".extraVolumes",
       "kinds": "/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 78,
+          "column": 1
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 14,
@@ -164,6 +234,11 @@
       "kinds": "/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 84,
+          "column": 1
+        },
+        {
           "file": "templates/configmap-provisioning.yaml",
           "line": 17,
           "column": 101
@@ -174,6 +249,11 @@
       "id": ".global.domain",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 7,
+          "column": 3
+        },
         {
           "file": "templates/configmap-provisioning.yaml",
           "line": 50,
@@ -186,6 +266,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 31,
+          "column": 3
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 69,
           "column": 109
@@ -196,6 +281,11 @@
       "id": ".global.imagePullSecrets",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 18,
+          "column": 3
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 35,
@@ -208,6 +298,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 5,
+          "column": 3
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 68,
           "column": 20
@@ -218,6 +313,11 @@
       "id": ".ics.default.domain",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 162,
+          "column": 5
+        },
         {
           "file": "templates/secret.yaml",
           "line": 49,
@@ -230,6 +330,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 166,
+          "column": 5
+        },
+        {
           "file": "templates/secret.yaml",
           "line": 52,
           "column": 66
@@ -240,6 +345,11 @@
       "id": ".ics.enableSessionCookie",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 136,
+          "column": 3
+        },
         {
           "file": "templates/secret.yaml",
           "line": 23,
@@ -252,6 +362,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 122,
+          "column": 3
+        },
+        {
           "file": "templates/secret.yaml",
           "line": 31,
           "column": 40
@@ -262,6 +377,11 @@
       "id": ".ics.keycloak.enabled",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 187,
+          "column": 5
+        },
         {
           "file": "templates/secret.yaml",
           "line": 30,
@@ -274,6 +394,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 198,
+          "column": 5
+        },
+        {
           "file": "templates/secret.yaml",
           "line": 33,
           "column": 36
@@ -284,6 +409,11 @@
       "id": ".ics.keycloak.subdomain",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 191,
+          "column": 5
+        },
         {
           "file": "templates/secret.yaml",
           "line": 32,
@@ -296,6 +426,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 195,
+          "column": 5
+        },
+        {
           "file": "templates/secret.yaml",
           "line": 32,
           "column": 24
@@ -306,6 +441,11 @@
       "id": ".ics.logLevel",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 145,
+          "column": 3
+        },
         {
           "file": "templates/secret.yaml",
           "line": 25,
@@ -318,6 +458,11 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 219,
+          "column": 7
+        },
+        {
           "file": "templates/secret-matrix.yaml",
           "line": 7,
           "column": 11
@@ -328,6 +473,11 @@
       "id": ".ics.matrix.auth.existingSecret.keyMapping.password",
       "kinds": "/K/K/K/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 227,
+          "column": 11
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 48,
@@ -340,6 +490,11 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 223,
+          "column": 9
+        },
+        {
           "file": "templates/secret-matrix.yaml",
           "line": 7,
           "column": 11
@@ -350,6 +505,11 @@
       "id": ".ics.matrix.enabled",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 203,
+          "column": 5
+        },
         {
           "file": "templates/secret.yaml",
           "line": 39,
@@ -362,6 +522,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 214,
+          "column": 5
+        },
+        {
           "file": "templates/secret.yaml",
           "line": 41,
           "column": 47
@@ -372,6 +537,11 @@
       "id": ".ics.matrix.subdomain",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 207,
+          "column": 5
+        },
         {
           "file": "templates/secret.yaml",
           "line": 40,
@@ -384,6 +554,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 211,
+          "column": 5
+        },
+        {
           "file": "templates/secret.yaml",
           "line": 40,
           "column": 22
@@ -394,6 +569,11 @@
       "id": ".ics.nextcloud.audience",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 295,
+          "column": 5
+        },
         {
           "file": "templates/secret.yaml",
           "line": 46,
@@ -406,6 +586,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 276,
+          "column": 5
+        },
+        {
           "file": "templates/secret.yaml",
           "line": 43,
           "column": 39
@@ -416,6 +601,11 @@
       "id": ".ics.nextcloud.origin",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 280,
+          "column": 5
+        },
         {
           "file": "templates/secret.yaml",
           "line": 44,
@@ -428,6 +618,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 284,
+          "column": 5
+        },
+        {
           "file": "templates/secret.yaml",
           "line": 44,
           "column": 21
@@ -438,6 +633,11 @@
       "id": ".ics.nextcloud.subdomain",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 288,
+          "column": 5
+        },
         {
           "file": "templates/secret.yaml",
           "line": 45,
@@ -450,6 +650,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 292,
+          "column": 5
+        },
+        {
           "file": "templates/secret.yaml",
           "line": 45,
           "column": 18
@@ -460,6 +665,11 @@
       "id": ".ics.nordeck.mode",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 235,
+          "column": 5
+        },
         {
           "file": "templates/secret.yaml",
           "line": 36,
@@ -472,6 +682,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 239,
+          "column": 5
+        },
+        {
           "file": "templates/secret.yaml",
           "line": 37,
           "column": 95
@@ -482,6 +697,11 @@
       "id": ".ics.nordeck.url",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 243,
+          "column": 5
+        },
         {
           "file": "templates/secret.yaml",
           "line": 37,
@@ -494,6 +714,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 175,
+          "column": 5
+        },
+        {
           "file": "templates/secret-oidc.yaml",
           "line": 6,
           "column": 11
@@ -504,6 +729,11 @@
       "id": ".ics.oidc.existingSecret.keyMapping.clientSecret",
       "kinds": "/K/K/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 182,
+          "column": 9
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 48,
@@ -516,6 +746,11 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 178,
+          "column": 7
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 25,
           "column": 75
@@ -526,6 +761,11 @@
       "id": ".ics.oidc.id",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 171,
+          "column": 5
+        },
         {
           "file": "templates/configmap-provisioning.yaml",
           "line": 59,
@@ -538,6 +778,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 128,
+          "column": 3
+        },
+        {
           "file": "templates/secret.yaml",
           "line": 26,
           "column": 35
@@ -548,6 +793,11 @@
       "id": ".ics.portal.auth.existingSecret.keyMapping.sharedSecret",
       "kinds": "/K/K/K/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 271,
+          "column": 11
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 48,
@@ -560,6 +810,11 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 267,
+          "column": 9
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 25,
           "column": 75
@@ -570,6 +825,11 @@
       "id": ".ics.portal.auth.sharedSecret",
       "kinds": "/K/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 263,
+          "column": 7
+        },
         {
           "file": "templates/secret-portal.yaml",
           "line": 6,
@@ -582,6 +842,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 248,
+          "column": 5
+        },
+        {
           "file": "templates/secret-portal.yaml",
           "line": 7,
           "column": 10
@@ -592,6 +857,11 @@
       "id": ".ics.portal.subdomain",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 252,
+          "column": 5
+        },
         {
           "file": "templates/secret.yaml",
           "line": 52,
@@ -604,6 +874,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 256,
+          "column": 5
+        },
+        {
           "file": "templates/secret.yaml",
           "line": 52,
           "column": 39
@@ -614,6 +889,11 @@
       "id": ".ics.proxy",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 131,
+          "column": 3
+        },
         {
           "file": "templates/secret.yaml",
           "line": 22,
@@ -626,6 +906,11 @@
       "kinds": "/K/K/K/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 337,
+          "column": 11
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 48,
           "column": 86
@@ -636,6 +921,11 @@
       "id": ".ics.redis.auth.existingSecret.name",
       "kinds": "/K/K/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 333,
+          "column": 9
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 25,
@@ -648,6 +938,11 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 329,
+          "column": 7
+        },
+        {
           "file": "templates/secret-redis.yaml",
           "line": 6,
           "column": 11
@@ -658,6 +953,11 @@
       "id": ".ics.redis.host",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 317,
+          "column": 5
+        },
         {
           "file": "templates/secret.yaml",
           "line": 54,
@@ -670,6 +970,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 320,
+          "column": 5
+        },
+        {
           "file": "templates/secret.yaml",
           "line": 55,
           "column": 32
@@ -680,6 +985,11 @@
       "id": ".ics.redis.ssl.customca",
       "kinds": "/K/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 347,
+          "column": 7
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 184,
@@ -692,6 +1002,11 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 341,
+          "column": 7
+        },
+        {
           "file": "templates/secret.yaml",
           "line": 56,
           "column": 38
@@ -702,6 +1017,11 @@
       "id": ".ics.redis.ssl.mTLS.clientCert",
       "kinds": "/K/K/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 356,
+          "column": 9
+        },
         {
           "file": "templates/secret.yaml",
           "line": 83,
@@ -714,6 +1034,11 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 359,
+          "column": 9
+        },
+        {
           "file": "templates/secret.yaml",
           "line": 66,
           "column": 8
@@ -724,6 +1049,11 @@
       "id": ".ics.redis.ssl.mTLS.enabled",
       "kinds": "/K/K/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 353,
+          "column": 9
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 235,
@@ -736,6 +1066,11 @@
       "kinds": "/K/K/K/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 363,
+          "column": 11
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 264,
           "column": 28
@@ -746,6 +1081,11 @@
       "id": ".ics.redis.ssl.pathCA",
       "kinds": "/K/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 344,
+          "column": 7
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 186,
@@ -758,6 +1098,11 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 119,
+          "column": 9
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 48,
           "column": 86
@@ -768,6 +1113,11 @@
       "id": ".ics.session.existingSecret.name",
       "kinds": "/K/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 115,
+          "column": 7
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 25,
@@ -780,6 +1130,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 112,
+          "column": 5
+        },
+        {
           "file": "templates/secret-session.yaml",
           "line": 22,
           "column": 43
@@ -790,6 +1145,11 @@
       "id": ".ics.sessionRollingDuration",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 142,
+          "column": 3
+        },
         {
           "file": "templates/secret.yaml",
           "line": 24,
@@ -802,6 +1162,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 151,
+          "column": 3
+        },
+        {
           "file": "templates/secret.yaml",
           "line": 27,
           "column": 46
@@ -812,6 +1177,11 @@
       "id": ".ics.usernameClaim",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 155,
+          "column": 3
+        },
         {
           "file": "templates/secret.yaml",
           "line": 28,
@@ -824,6 +1194,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 312,
+          "column": 5
+        },
+        {
           "file": "templates/secret.yaml",
           "line": 50,
           "column": 40
@@ -834,6 +1209,11 @@
       "id": ".ics.xwiki.enabled",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 300,
+          "column": 5
+        },
         {
           "file": "templates/secret.yaml",
           "line": 48,
@@ -846,6 +1226,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 304,
+          "column": 5
+        },
+        {
           "file": "templates/secret.yaml",
           "line": 49,
           "column": 89
@@ -856,6 +1241,11 @@
       "id": ".ics.xwiki.url",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 308,
+          "column": 5
+        },
         {
           "file": "templates/secret.yaml",
           "line": 49,
@@ -868,6 +1258,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 93,
+          "column": 3
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 153,
           "column": 31
@@ -878,6 +1273,11 @@
       "id": ".image.registry",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 89,
+          "column": 3
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 152,
@@ -890,6 +1290,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 92,
+          "column": 3
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 152,
           "column": 21
@@ -900,6 +1305,11 @@
       "id": ".image.tag",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 96,
+          "column": 3
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 152,
@@ -912,6 +1322,11 @@
       "kinds": "/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 104,
+          "column": 1
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 38,
           "column": 24
@@ -922,6 +1337,11 @@
       "id": ".ingress.annotations",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 378,
+          "column": 3
+        },
         {
           "file": "templates/ingress.yaml",
           "line": 15,
@@ -934,6 +1354,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 370,
+          "column": 3
+        },
+        {
           "file": "templates/secret.yaml",
           "line": 9,
           "column": 1
@@ -944,6 +1369,11 @@
       "id": ".ingress.host",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 381,
+          "column": 3
+        },
         {
           "file": "templates/secret.yaml",
           "line": 11,
@@ -956,6 +1386,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 373,
+          "column": 3
+        },
+        {
           "file": "templates/ingress.yaml",
           "line": 22,
           "column": 96
@@ -966,6 +1401,11 @@
       "id": ".ingress.path",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 384,
+          "column": 3
+        },
         {
           "file": "templates/ingress.yaml",
           "line": 34,
@@ -978,6 +1418,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 396,
+          "column": 3
+        },
+        {
           "file": "templates/ingress.yaml",
           "line": 36,
           "column": 26
@@ -988,6 +1433,11 @@
       "id": ".ingress.tls.enabled",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 403,
+          "column": 5
+        },
         {
           "file": "templates/ingress.yaml",
           "line": 24,
@@ -1000,6 +1450,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 407,
+          "column": 5
+        },
+        {
           "file": "templates/ingress.yaml",
           "line": 28,
           "column": 120
@@ -1010,6 +1465,11 @@
       "id": ".lifecycleHooks",
       "kinds": "/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 410,
+          "column": 1
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 14,
@@ -1022,6 +1482,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 424,
+          "column": 3
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 200,
           "column": 34
@@ -1032,6 +1497,11 @@
       "id": ".livenessProbe.initialDelaySeconds",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 426,
+          "column": 3
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 197,
@@ -1044,6 +1514,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 428,
+          "column": 3
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 198,
           "column": 31
@@ -1054,6 +1529,11 @@
       "id": ".livenessProbe.successThreshold",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 430,
+          "column": 3
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 201,
@@ -1066,6 +1546,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 432,
+          "column": 3
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 199,
           "column": 32
@@ -1076,6 +1561,11 @@
       "id": ".nameOverride",
       "kinds": "/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 413,
+          "column": 1
+        },
         {
           "file": "templates/configmap-provisioning.yaml",
           "line": 20,
@@ -1088,6 +1578,11 @@
       "kinds": "/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 417,
+          "column": 1
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 14,
           "column": 49
@@ -1099,6 +1594,11 @@
       "kinds": "/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 436,
+          "column": 1
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 14,
           "column": 49
@@ -1109,6 +1609,11 @@
       "id": ".podSecurityContext.enabled",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 446,
+          "column": 3
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 54,
@@ -1126,6 +1631,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 449,
+          "column": 3
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 54,
           "column": 72
@@ -1136,6 +1646,11 @@
       "id": ".podSecurityContext.fsGroupChangePolicy",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 452,
+          "column": 3
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 54,
@@ -1148,6 +1663,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 606,
+          "column": 5
+        },
+        {
           "file": "templates/configmap-provisioning.yaml",
           "line": 60,
           "column": 29
@@ -1158,6 +1678,11 @@
       "id": ".provisioning.config.debug.enabled",
       "kinds": "/K/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 635,
+          "column": 7
+        },
         {
           "file": "templates/configmap-provisioning.yaml",
           "line": 49,
@@ -1170,6 +1695,11 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 637,
+          "column": 7
+        },
+        {
           "file": "templates/configmap-provisioning.yaml",
           "line": 58,
           "column": 129
@@ -1180,6 +1710,11 @@
       "id": ".provisioning.config.keycloak.auth.existingSecret.keyMapping.password",
       "kinds": "/K/K/K/K/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 630,
+          "column": 13
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 48,
@@ -1192,6 +1727,11 @@
       "kinds": "/K/K/K/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 626,
+          "column": 11
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 25,
           "column": 75
@@ -1202,6 +1742,11 @@
       "id": ".provisioning.config.keycloak.auth.password",
       "kinds": "/K/K/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 623,
+          "column": 9
+        },
         {
           "file": "templates/secret-keycloak.yaml",
           "line": 6,
@@ -1214,6 +1759,11 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 621,
+          "column": 9
+        },
+        {
           "file": "templates/configmap-provisioning.yaml",
           "line": 51,
           "column": 25
@@ -1224,6 +1774,11 @@
       "id": ".provisioning.config.keycloak.connection.host",
       "kinds": "/K/K/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 616,
+          "column": 9
+        },
         {
           "file": "templates/configmap-provisioning.yaml",
           "line": 55,
@@ -1236,6 +1791,11 @@
       "kinds": "/K/K/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 618,
+          "column": 9
+        },
+        {
           "file": "templates/configmap-provisioning.yaml",
           "line": 27,
           "column": 6
@@ -1246,6 +1806,11 @@
       "id": ".provisioning.config.keycloak.realm",
       "kinds": "/K/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 610,
+          "column": 7
+        },
         {
           "file": "templates/configmap-provisioning.yaml",
           "line": 28,
@@ -1258,6 +1823,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 583,
+          "column": 3
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 63,
           "column": 14
@@ -1268,6 +1838,11 @@
       "id": ".provisioning.extraEnvVars",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 647,
+          "column": 3
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 129,
@@ -1280,6 +1855,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 640,
+          "column": 3
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 14,
           "column": 49
@@ -1290,6 +1870,11 @@
       "id": ".provisioning.image.pullPolicy",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 593,
+          "column": 5
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 69,
@@ -1302,6 +1887,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 588,
+          "column": 5
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 68,
           "column": 20
@@ -1312,6 +1902,11 @@
       "id": ".provisioning.image.repository",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 589,
+          "column": 5
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 68,
@@ -1324,6 +1919,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 590,
+          "column": 5
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 68,
           "column": 243
@@ -1334,6 +1934,11 @@
       "id": ".provisioning.provisioningImage.pullPolicy",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 601,
+          "column": 5
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 89,
@@ -1346,6 +1951,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 598,
+          "column": 5
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 88,
           "column": 20
@@ -1356,6 +1966,11 @@
       "id": ".provisioning.provisioningImage.repository",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 599,
+          "column": 5
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 88,
@@ -1368,6 +1983,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 600,
+          "column": 5
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 88,
           "column": 291
@@ -1378,6 +1998,11 @@
       "id": ".provisioning.securityContext.allowPrivilegeEscalation",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 652,
+          "column": 5
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 87,
@@ -1390,6 +2015,11 @@
       "kinds": "/K/K/K/K/I",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 656,
+          "column": 7
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 87,
           "column": 15
@@ -1400,6 +2030,11 @@
       "id": ".provisioning.securityContext.enabled",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 660,
+          "column": 5
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 87,
@@ -1412,6 +2047,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 650,
+          "column": 5
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 87,
           "column": 15
@@ -1422,6 +2062,11 @@
       "id": ".provisioning.securityContext.readOnlyRootFilesystem",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 674,
+          "column": 5
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 87,
@@ -1434,6 +2079,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 666,
+          "column": 5
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 87,
           "column": 15
@@ -1444,6 +2094,11 @@
       "id": ".provisioning.securityContext.runAsNonRoot",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 677,
+          "column": 5
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 87,
@@ -1456,6 +2111,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 663,
+          "column": 5
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 87,
           "column": 15
@@ -1466,6 +2126,11 @@
       "id": ".provisioning.securityContext.seccompProfile.type",
       "kinds": "/K/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 671,
+          "column": 7
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 87,
@@ -1478,6 +2143,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 461,
+          "column": 3
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 208,
           "column": 34
@@ -1488,6 +2158,11 @@
       "id": ".readinessProbe.initialDelaySeconds",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 459,
+          "column": 3
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 206,
@@ -1500,6 +2175,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 465,
+          "column": 3
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 209,
           "column": 34
@@ -1510,6 +2190,11 @@
       "id": ".readinessProbe.timeoutSeconds",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 467,
+          "column": 3
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 207,
@@ -1522,6 +2207,11 @@
       "kinds": "/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 470,
+          "column": 1
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 17,
           "column": 16
@@ -1532,6 +2222,11 @@
       "id": ".resources.limits.cpu",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 485,
+          "column": 5
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 14,
@@ -1544,6 +2239,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 483,
+          "column": 5
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 14,
           "column": 82
@@ -1554,6 +2254,11 @@
       "id": ".resources.requests.cpu",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 480,
+          "column": 5
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 14,
@@ -1566,6 +2271,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 478,
+          "column": 5
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 14,
           "column": 82
@@ -1576,6 +2286,11 @@
       "id": ".service.annotations",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 492,
+          "column": 3
+        },
         {
           "file": "templates/service.yaml",
           "line": 16,
@@ -1588,6 +2303,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 495,
+          "column": 3
+        },
+        {
           "file": "templates/service.yaml",
           "line": 5,
           "column": 8
@@ -1598,6 +2318,11 @@
       "id": ".service.ports.http.containerPort",
       "kinds": "/K/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 515,
+          "column": 7
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 213,
@@ -1615,6 +2340,11 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 517,
+          "column": 7
+        },
+        {
           "file": "templates/service.yaml",
           "line": 32,
           "column": 16
@@ -1631,6 +2361,11 @@
       "kinds": "/K/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 519,
+          "column": 7
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 214,
           "column": 28
@@ -1641,6 +2376,11 @@
       "id": ".service.sessionAffinity.enabled",
       "kinds": "/K/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 526,
+          "column": 5
+        },
         {
           "file": "templates/service.yaml",
           "line": 23,
@@ -1653,6 +2393,11 @@
       "kinds": "/K/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 529,
+          "column": 5
+        },
+        {
           "file": "templates/service.yaml",
           "line": 27,
           "column": 26
@@ -1663,6 +2408,11 @@
       "id": ".service.type",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 508,
+          "column": 3
+        },
         {
           "file": "templates/service.yaml",
           "line": 22,
@@ -1675,6 +2425,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 535,
+          "column": 3
+        },
+        {
           "file": "templates/serviceaccount.yaml",
           "line": 16,
           "column": 79
@@ -1685,6 +2440,11 @@
       "id": ".serviceAccount.automountServiceAccountToken",
       "kinds": "/K/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 539,
+          "column": 3
+        },
         {
           "file": "templates/serviceaccount.yaml",
           "line": 21,
@@ -1697,6 +2457,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 542,
+          "column": 3
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 56,
           "column": 14
@@ -1707,6 +2472,11 @@
       "id": ".terminationGracePeriodSeconds",
       "kinds": "/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 549,
+          "column": 1
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 60,
@@ -1719,6 +2489,11 @@
       "kinds": "/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 553,
+          "column": 1
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 14,
           "column": 49
@@ -1729,6 +2504,11 @@
       "id": ".topologySpreadConstraints",
       "kinds": "/K",
       "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 562,
+          "column": 1
+        },
         {
           "file": "templates/deployment.yaml",
           "line": 14,
@@ -1741,6 +2521,11 @@
       "kinds": "/K/K",
       "contexts": [
         {
+          "file": "values.yaml",
+          "line": 577,
+          "column": 3
+        },
+        {
           "file": "templates/deployment.yaml",
           "line": 14,
           "column": 82
@@ -1751,51 +2536,135 @@
   "unused": [
     {
       "id": ".global.subDomains.keycloak",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 9,
+          "column": 5
+        }
+      ]
     },
     {
       "id": ".global.subDomains.portal",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 10,
+          "column": 5
+        }
+      ]
     },
     {
       "id": ".ics.nordeck.enabled",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 232,
+          "column": 5
+        }
+      ]
     },
     {
       "id": ".ics.redis.auth.username",
-      "kinds": "/K/K/K/K"
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 325,
+          "column": 7
+        }
+      ]
     },
     {
       "id": ".livenessProbe.enabled",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 422,
+          "column": 3
+        }
+      ]
     },
     {
       "id": ".podLabels",
-      "kinds": "/K"
+      "kinds": "/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 440,
+          "column": 1
+        }
+      ]
     },
     {
       "id": ".provisioning.config.keycloak.connection.protocol",
-      "kinds": "/K/K/K/K/K"
+      "kinds": "/K/K/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 614,
+          "column": 9
+        }
+      ]
     },
     {
       "id": ".provisioning.image.imagePullSecrets",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 586,
+          "column": 5
+        }
+      ]
     },
     {
       "id": ".provisioning.provisioningImage.imagePullSecrets",
-      "kinds": "/K/K/K"
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 596,
+          "column": 5
+        }
+      ]
     },
     {
       "id": ".readinessProbe.enabled",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 457,
+          "column": 3
+        }
+      ]
     },
     {
       "id": ".readinessProbe.periodSeconds",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 463,
+          "column": 3
+        }
+      ]
     },
     {
       "id": ".serviceAccount.labels",
-      "kinds": "/K/K"
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 545,
+          "column": 3
+        }
+      ]
     }
   ],
   "undefined": [

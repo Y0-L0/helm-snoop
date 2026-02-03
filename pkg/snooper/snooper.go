@@ -5,6 +5,7 @@ import (
 
 	"github.com/y0-l0/helm-snoop/pkg/parser"
 	"github.com/y0-l0/helm-snoop/pkg/path"
+	"helm.sh/helm/v4/pkg/chart/common"
 	loader "helm.sh/helm/v4/pkg/chart/v2/loader"
 )
 
@@ -21,9 +22,10 @@ func Snoop(chartPath string, ignorePaths path.Paths) (*Result, error) {
 		return nil, fmt.Errorf("Failed to analyze the helm chart.\nerror: %w", err)
 	}
 
-	defined := path.Paths{}
-	if chart.Values != nil {
-		path.GetDefinitions(path.Path{}, chart.Values, &defined)
+	rawValues := findRawFile(chart.Raw, "values.yaml")
+	defined, err := path.GetDefinitions(rawValues, "values.yaml")
+	if err != nil {
+		return nil, fmt.Errorf("Failed to parse values.yaml.\nerror: %w", err)
 	}
 
 	result := &Result{ChartName: chart.Name()}
@@ -34,6 +36,16 @@ func Snoop(chartPath string, ignorePaths path.Paths) (*Result, error) {
 	}
 
 	return result, nil
+}
+
+// findRawFile returns the raw bytes of a file from the chart's Raw slice, or nil if not found.
+func findRawFile(raw []*common.File, name string) []byte {
+	for _, f := range raw {
+		if f.Name == name {
+			return f.Data
+		}
+	}
+	return nil
 }
 
 // filterIgnoredWithMerge removes paths matching ignorePaths using MergeJoinLoose.
