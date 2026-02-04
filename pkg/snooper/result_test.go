@@ -92,11 +92,11 @@ func (s *GoldenTest) TestCompactEmpty() {
 
 func (s *GoldenTest) TestCompactUnusedOnly() {
 	unused1 := path.NewPath("config", "database", "host")
-	unused1.Contexts = []path.PathContext{
+	unused1.Contexts = path.Contexts{
 		{FileName: "values.yaml", Line: 5, Column: 3},
 	}
 	unused2 := path.NewPath("podLabels")
-	unused2.Contexts = []path.PathContext{
+	unused2.Contexts = path.Contexts{
 		{FileName: "values.yaml", Line: 12, Column: 1},
 	}
 
@@ -110,7 +110,7 @@ func (s *GoldenTest) TestCompactUnusedOnly() {
 
 func (s *GoldenTest) TestCompactUndefinedOnly() {
 	undef1 := path.NewPath("service", "nodePort")
-	undef1.Contexts = []path.PathContext{
+	undef1.Contexts = path.Contexts{
 		{FileName: "templates/service.yaml", Line: 36, Column: 20},
 	}
 
@@ -124,12 +124,12 @@ func (s *GoldenTest) TestCompactUndefinedOnly() {
 
 func (s *GoldenTest) TestCompactBothSections() {
 	unused := path.NewPath("redis", "auth", "username")
-	unused.Contexts = []path.PathContext{
+	unused.Contexts = path.Contexts{
 		{FileName: "values.yaml", Line: 8, Column: 5},
 	}
 
 	undef := path.NewPath("provisioning", "extraLabels")
-	undef.Contexts = []path.PathContext{
+	undef.Contexts = path.Contexts{
 		{FileName: "templates/configmap.yaml", Line: 17, Column: 3},
 	}
 
@@ -143,16 +143,16 @@ func (s *GoldenTest) TestCompactBothSections() {
 
 func (s *GoldenTest) TestCompactMultipleCharts() {
 	unused1 := path.NewPath("podLabels")
-	unused1.Contexts = []path.PathContext{
+	unused1.Contexts = path.Contexts{
 		{FileName: "values.yaml", Line: 11, Column: 1},
 	}
 	undef1 := path.NewPath("service", "nodePort")
-	undef1.Contexts = []path.PathContext{
+	undef1.Contexts = path.Contexts{
 		{FileName: "templates/service.yaml", Line: 36, Column: 20},
 	}
 
 	unused2 := path.NewPath("global", "domain")
-	unused2.Contexts = []path.PathContext{
+	unused2.Contexts = path.Contexts{
 		{FileName: "values.yaml", Line: 2, Column: 3},
 	}
 

@@ -32,7 +32,8 @@ func subsumes(a, b *Path) bool {
 }
 
 // SortDedup returns a new slice sorted by Path.Compare and deduplicated.
-// Removes exact duplicates and paths subsumed by wildcards (e.g., /foo when /foo/* exists).
+// Merges contexts from exact duplicates and subsumed paths (e.g., /foo into /foo/*).
+// Deduplicates contexts on each resulting path.
 func SortDedup(ps Paths) Paths {
 	if len(ps) == 0 {
 		return nil
@@ -44,20 +45,24 @@ func SortDedup(ps Paths) Paths {
 		}
 	}
 	sort.Sort(out)
-	out = slices.CompactFunc(out, func(a, b *Path) bool {
-		if a.Compare(*b) == 0 {
-			a.Contexts = append(a.Contexts, b.Contexts...)
-			return true
-		}
-		return false
-	})
 
-	// Remove paths subsumed by wildcards
-	filtered := make(Paths, 0, len(out))
+	// Merge exact duplicates: collect contexts from all copies
+	deduped := make(Paths, 0, len(out))
 	for _, p := range out {
+		if n := len(deduped); n > 0 && deduped[n-1].Compare(*p) == 0 {
+			deduped[n-1].Contexts = append(deduped[n-1].Contexts, p.Contexts...)
+		} else {
+			deduped = append(deduped, p)
+		}
+	}
+
+	// Remove paths subsumed by wildcards, merging their contexts
+	filtered := make(Paths, 0, len(deduped))
+	for _, p := range deduped {
 		subsumed := false
-		for _, other := range out {
+		for _, other := range deduped {
 			if subsumes(other, p) {
+				other.Contexts = append(other.Contexts, p.Contexts...)
 				subsumed = true
 				break
 			}
@@ -65,6 +70,11 @@ func SortDedup(ps Paths) Paths {
 		if !subsumed {
 			filtered = append(filtered, p)
 		}
+	}
+
+	// Deduplicate contexts on each path
+	for _, p := range filtered {
+		p.Contexts = p.Contexts.Deduplicate()
 	}
 
 	return filtered

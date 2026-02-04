@@ -17,7 +17,7 @@ const (
 type Path struct {
 	tokens   []string
 	kinds    []kind
-	Contexts []PathContext
+	Contexts Contexts
 }
 
 // ID returns a dot-notation representation of the path (e.g., ".a.b.c").

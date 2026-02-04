@@ -13,6 +13,11 @@
           "file": "templates/configmap.yaml",
           "line": 9,
           "column": 16
+        },
+        {
+          "file": "templates/configmap.yaml",
+          "line": 10,
+          "column": 21
         }
       ]
     },
@@ -29,6 +34,11 @@
           "file": "templates/configmap.yaml",
           "line": 7,
           "column": 15
+        },
+        {
+          "file": "templates/configmap.yaml",
+          "line": 8,
+          "column": 20
         }
       ]
     },
@@ -189,6 +199,11 @@
           "file": "templates/configmap.yaml",
           "line": 11,
           "column": 23
+        },
+        {
+          "file": "templates/configmap.yaml",
+          "line": 13,
+          "column": 25
         }
       ]
     },
@@ -237,6 +252,11 @@
           "file": "templates/deployment.yaml",
           "line": 21,
           "column": 85
+        },
+        {
+          "file": "templates/deployment.yaml",
+          "line": 21,
+          "column": 116
         }
       ]
     }
