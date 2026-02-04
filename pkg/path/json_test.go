@@ -2,7 +2,7 @@ package path
 
 func (s *Unittest) TestPathJSON_WithContext() {
 	p := NewPath("config", "name")
-	p.Contexts = []PathContext{
+	p.Contexts = Contexts{
 		{FileName: "templates/deployment.yaml", Line: 42, Column: 10},
 	}
 
@@ -18,7 +18,7 @@ func (s *Unittest) TestPathJSON_WithContext() {
 
 func (s *Unittest) TestPathJSON_WithTemplateContext() {
 	p := NewPath("foo")
-	p.Contexts = []PathContext{
+	p.Contexts = Contexts{
 		{FileName: "templates/_helpers.tpl", TemplateName: "mychart.name", Line: 5, Column: 3},
 	}
 

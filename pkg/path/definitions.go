@@ -50,7 +50,7 @@ func (d *defCtx) eval(path Path, node *yaml.Node) {
 			keyNode := node.Content[i]
 			valNode := node.Content[i+1]
 			childPath := path.WithKey(keyNode.Value)
-			childPath.Contexts = []PathContext{{FileName: d.fileName, Line: keyNode.Line, Column: keyNode.Column}}
+			childPath.Contexts = Contexts{{FileName: d.fileName, Line: keyNode.Line, Column: keyNode.Column}}
 			d.eval(childPath, valNode)
 		}
 	case yaml.SequenceNode:

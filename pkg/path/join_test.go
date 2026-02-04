@@ -44,6 +44,54 @@ func (s *Unittest) TestSortDedup_WildcardSubsumption() {
 	EqualInorderPaths(s, expected, got)
 }
 
+func (s *Unittest) TestSortDedup_MergesContexts() {
+	ctxA := PathContext{FileName: "templates/deployment.yaml", Line: 10, Column: 5}
+	ctxB := PathContext{FileName: "templates/service.yaml", Line: 20, Column: 3}
+
+	p1 := NewPath("a", "b")
+	p1.Contexts = Contexts{ctxA}
+	p2 := NewPath("a", "b") // duplicate
+	p2.Contexts = Contexts{ctxB}
+
+	got := SortDedup(Paths{p1, p2})
+
+	s.Require().Len(got, 1)
+	s.Equal(".a.b", got[0].ID())
+	s.Equal(Contexts{ctxA, ctxB}, got[0].Contexts)
+}
+
+func (s *Unittest) TestSortDedup_WildcardSubsumption_MergesContexts() {
+	ctxFoo := PathContext{FileName: "templates/deployment.yaml", Line: 5, Column: 1}
+	ctxFooWild := PathContext{FileName: "templates/service.yaml", Line: 10, Column: 1}
+
+	pFoo := NewPath("foo")
+	pFoo.Contexts = Contexts{ctxFoo}
+	pFooWild := np().Key("foo").Wildcard()
+	pFooWild.Contexts = Contexts{ctxFooWild}
+
+	got := SortDedup(Paths{pFoo, pFooWild})
+
+	// /foo should be subsumed by /foo/*, but its context should be merged
+	s.Require().Len(got, 1)
+	s.Equal(".foo.*", got[0].ID())
+	s.Equal(Contexts{ctxFooWild, ctxFoo}, got[0].Contexts)
+}
+
+func (s *Unittest) TestSortDedup_DeduplicatesContexts() {
+	ctx := PathContext{FileName: "values.yaml", Line: 5, Column: 3}
+
+	p1 := NewPath("a")
+	p1.Contexts = Contexts{ctx}
+	p2 := NewPath("a") // duplicate with same context
+	p2.Contexts = Contexts{ctx}
+
+	got := SortDedup(Paths{p1, p2})
+
+	s.Require().Len(got, 1)
+	// Same context should be deduplicated
+	s.Equal(Contexts{ctx}, got[0].Contexts)
+}
+
 func (s *Unittest) assertMergeJoin(a, b Paths, expInter, expOnlyA, expOnlyB Paths) {
 	// Copies to assert non-mutation of inputs
 	origA := append(Paths(nil), a...)

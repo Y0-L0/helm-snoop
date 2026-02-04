@@ -32,9 +32,48 @@ func (s *Unittest) TestPathContext_StringEmptyTemplate() {
 	s.Equal("templates/deployment.yaml:42:10", ctx.String())
 }
 
+func (s *Unittest) TestContexts_Deduplicate_Empty() {
+	s.Nil(Contexts(nil).Deduplicate())
+	s.Nil(Contexts{}.Deduplicate())
+}
+
+func (s *Unittest) TestContexts_Deduplicate_NoDuplicates() {
+	cs := Contexts{
+		{FileName: "values.yaml", Line: 5, Column: 3},
+		{FileName: "templates/deployment.yaml", Line: 10, Column: 7},
+	}
+	s.Equal(cs, cs.Deduplicate())
+}
+
+func (s *Unittest) TestContexts_Deduplicate_RemovesDuplicates() {
+	cs := Contexts{
+		{FileName: "values.yaml", Line: 5, Column: 3},
+		{FileName: "templates/deployment.yaml", Line: 10, Column: 7},
+		{FileName: "values.yaml", Line: 5, Column: 3}, // duplicate
+	}
+	s.Equal(Contexts{
+		{FileName: "values.yaml", Line: 5, Column: 3},
+		{FileName: "templates/deployment.yaml", Line: 10, Column: 7},
+	}, cs.Deduplicate())
+}
+
+func (s *Unittest) TestContexts_Deduplicate_PreservesOrder() {
+	cs := Contexts{
+		{FileName: "b.yaml", Line: 1, Column: 1},
+		{FileName: "a.yaml", Line: 1, Column: 1},
+		{FileName: "b.yaml", Line: 1, Column: 1}, // duplicate
+		{FileName: "c.yaml", Line: 1, Column: 1},
+	}
+	s.Equal(Contexts{
+		{FileName: "b.yaml", Line: 1, Column: 1},
+		{FileName: "a.yaml", Line: 1, Column: 1},
+		{FileName: "c.yaml", Line: 1, Column: 1},
+	}, cs.Deduplicate())
+}
+
 func (s *Unittest) TestPath_ToJSON_Integration() {
 	p := NewPath("config", "database", "host")
-	p.Contexts = []PathContext{
+	p.Contexts = Contexts{
 		{FileName: "templates/deployment.yaml", Line: 42, Column: 10},
 		{FileName: "templates/service.yaml", TemplateName: "myhelper", Line: 5, Column: 3},
 	}
