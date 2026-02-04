@@ -46,13 +46,16 @@ func formatSummary(w io.Writer, results Results) {
 }
 
 func formatPathsCompact(w io.Writer, paths path.Paths) {
-	tw := tabwriter.NewWriter(w, 0, 0, 2, ' ', 0)
+	tw := tabwriter.NewWriter(w, 0, 0, 2, ' ', tabwriter.StripEscape)
 	for _, p := range paths {
-		location := ""
-		if len(p.Contexts) > 0 {
-			location = p.Contexts[0].String()
+		if len(p.Contexts) == 0 {
+			fmt.Fprintf(tw, "%s\n", color.Red(p.ID()))
+			continue
 		}
-		fmt.Fprintf(tw, "%s\t%s\n", color.Red(p.ID()), color.Dim(location))
+		fmt.Fprintf(tw, "%s\t%s\n", color.Red(p.ID()), color.Dim(p.Contexts[0].String()))
+		for _, ctx := range p.Contexts[1:] {
+			fmt.Fprintf(tw, "%s\t%s\n", color.Red(""), color.Dim(ctx.String()))
+		}
 	}
 	tw.Flush()
 }

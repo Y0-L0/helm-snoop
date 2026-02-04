@@ -15,20 +15,49 @@
 .serviceAccount.labels                             values.yaml:545:3
 ---------------------------------- Undefined -----------------------------------
 .global.ingressClass                                templates/ingress.yaml:22:96
+                                                    templates/ingress.yaml:21:10
 .global.kubeVersion                                 templates/deployment.yaml:9:29
+                                                    templates/ingress.yaml:9:2
 .ics.redis.username                                 templates/secret.yaml:59:36
+                                                    templates/secret.yaml:58:10
 .ingress.apiVersion                                 templates/ingress.yaml:1:1
 .ingress.tls                                        templates/NOTES.txt:6:33
 .kubeVersion                                        templates/ingress.yaml:9:2
+                                                    templates/deployment.yaml:9:29
 .provisioning.additionalAnnotations.*               templates/configmap-provisioning.yaml:14:41
+                                                    templates/configmap-provisioning.yaml:14:8
+                                                    templates/configmap-provisioning.yaml:39:10
+                                                    templates/configmap-provisioning.yaml:13:182
+                                                    templates/configmap-provisioning.yaml:13:157
+                                                    templates/configmap-provisioning.yaml:41:12
 .provisioning.args                                  templates/deployment.yaml:132:18
+                                                    templates/deployment.yaml:131:16
 .provisioning.config.keycloak.credentialSecret.key  templates/provisioning-secret.yaml:15:6
 .provisioning.config.keycloak.password              templates/provisioning-secret.yaml:5:7
+                                                    templates/provisioning-secret.yaml:15:120
 .provisioning.extraAnnotations.*                    templates/configmap-ca.yaml:15:104
+                                                    templates/configmap-ca.yaml:17:3
+                                                    templates/configmap-provisioning.yaml:14:41
+                                                    templates/configmap-provisioning.yaml:14:8
+                                                    templates/configmap-provisioning.yaml:13:157
+                                                    templates/configmap-provisioning.yaml:14:10
+                                                    templates/configmap-ca.yaml:15:54
+                                                    templates/configmap-provisioning.yaml:13:182
+                                                    templates/configmap-ca.yaml:15:79
+                                                    templates/configmap-ca.yaml:17:10
+                                                    templates/configmap-provisioning.yaml:16:12
 .provisioning.extraLabels.*                         templates/configmap-ca.yaml:17:3
+                                                    templates/configmap-ca.yaml:15:104
+                                                    templates/configmap-ca.yaml:15:79
+                                                    templates/configmap-ca.yaml:15:54
+                                                    templates/configmap-provisioning.yaml:13:65
+                                                    templates/configmap-ca.yaml:14:12
 .provisioning.image.sha256                          templates/deployment.yaml:68:193
+                                                    templates/deployment.yaml:68:146
 .provisioning.provisioningImage.sha256              templates/deployment.yaml:88:229
+                                                    templates/deployment.yaml:88:170
 .service.ports.*.nodePort                           templates/service.yaml:36:20
+                                                    templates/service.yaml:35:14
 
 =================================== Summary ====================================
 

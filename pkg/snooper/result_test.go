@@ -141,6 +141,22 @@ func (s *GoldenTest) TestCompactBothSections() {
 	s.compactGoldenTest("compact_both", results)
 }
 
+func (s *GoldenTest) TestCompactMultipleContexts() {
+	undef := path.NewPath("service", "nodePort")
+	undef.Contexts = path.Contexts{
+		{FileName: "templates/service.yaml", Line: 36, Column: 20},
+		{FileName: "templates/deployment.yaml", Line: 12, Column: 8},
+		{FileName: "templates/ingress.yaml", Line: 5, Column: 15},
+	}
+
+	results := Results{{
+		ChartName: "test-chart",
+		Unused:    path.Paths{},
+		Undefined: path.Paths{undef},
+	}}
+	s.compactGoldenTest("compact_multiple_contexts", results)
+}
+
 func (s *GoldenTest) TestCompactMultipleCharts() {
 	unused1 := path.NewPath("podLabels")
 	unused1.Contexts = path.Contexts{
