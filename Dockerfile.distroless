@@ -1,0 +1,6 @@
+FROM gcr.io/distroless/static:nonroot
+
+ARG TARGETPLATFORM
+COPY ${TARGETPLATFORM}/helm-snoop /helm-snoop
+USER nonroot:nonroot
+ENTRYPOINT ["/helm-snoop"]
