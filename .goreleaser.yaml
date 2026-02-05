@@ -18,10 +18,10 @@ builds:
       - arm64
     ldflags:
       - -s -w
-      - -X github.com/y0-l0/helm-snoop/pkg/version.Version={{.Version}}
-      - -X github.com/y0-l0/helm-snoop/pkg/version.Commit={{.Commit}}
-      - -X github.com/y0-l0/helm-snoop/pkg/version.TreeState={{if .IsGitDirty}}dirty{{else}}clean{{end}}
-      - -X github.com/y0-l0/helm-snoop/pkg/version.BuildDate={{.Date}}
+      - -X github.com/y0-l0/helm-snoop/pkg/version.version={{.Version}}
+      - -X github.com/y0-l0/helm-snoop/pkg/version.commit={{.Commit}}
+      - -X github.com/y0-l0/helm-snoop/pkg/version.treeState={{if .IsGitDirty}}dirty{{else}}clean{{end}}
+      - -X github.com/y0-l0/helm-snoop/pkg/version.commitDate={{.CommitDate}}
 
 archives:
   - formats: [tar.gz]
