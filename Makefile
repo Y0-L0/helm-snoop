@@ -1,4 +1,8 @@
-.PHONY: dep-update fmt test coverage complete
+.PHONY: build dep-update fmt test coverage complete
+
+# Build binary for the local OS/arch using GoReleaser (snapshot mode)
+build:
+	goreleaser build --clean --snapshot --single-target
 
 dep-update:
 	go get -t -u=patch ./...
