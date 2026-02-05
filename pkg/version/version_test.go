@@ -10,10 +10,11 @@ func (s *Unittest) TestBuildInfo() {
 
 	output := buf.String()
 
-	expectedFields := []string{"Version:", "Commit:", "TreeState:", "BuildDate:", "GoVersion:", "Platform:"}
+	expectedFields := []string{"Version:", "Commit:", "TreeState:", "CommitDate:", "GoVersion:", "Platform:"}
 	for _, field := range expectedFields {
 		s.Contains(output, field)
 	}
 
-	s.Contains(output, "Version:    dev")
+	// When running via go test, ReadBuildInfo sets Main.Version to "(devel)".
+	s.Contains(output, "Version:    (devel)")
 }
