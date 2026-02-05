@@ -32,56 +32,28 @@ checksum:
 snapshot:
   version_template: "{{ .Tag }}-next"
 
-dockers:
-  - id: helm-snoop-amd64
+dockers_v2:
+  - images:
+      - ghcr.io/y0-l0/helm-snoop
     dockerfile: Dockerfile.distroless
-    use: buildx
-    goos: linux
-    goarch: amd64
-    image_templates:
-      - ghcr.io/y0-l0/helm-snoop:{{ .Version }}-amd64
-    build_flag_templates:
-      - --platform=linux/amd64
-      - --label=org.opencontainers.image.title={{ .ProjectName }}
-      - --label=org.opencontainers.image.version={{ .Version }}
-      - --label=org.opencontainers.image.revision={{ .ShortCommit }}
-      - --label=org.opencontainers.image.created={{ .Date }}
+    tags:
+      - "{{ .Version }}"
+      - latest
+    labels:
+      org.opencontainers.image.title: "{{ .ProjectName }}"
+      org.opencontainers.image.version: "{{ .Version }}"
+      org.opencontainers.image.revision: "{{ .ShortCommit }}"
+      org.opencontainers.image.created: "{{ .Date }}"
 
-  - id: helm-snoop-arm64
-    dockerfile: Dockerfile.distroless
-    use: buildx
-    goos: linux
-    goarch: arm64
-    image_templates:
-      - ghcr.io/y0-l0/helm-snoop:{{ .Version }}-arm64
-    build_flag_templates:
-      - --platform=linux/arm64
-      - --label=org.opencontainers.image.title={{ .ProjectName }}
-      - --label=org.opencontainers.image.version={{ .Version }}
-      - --label=org.opencontainers.image.revision={{ .ShortCommit }}
-      - --label=org.opencontainers.image.created={{ .Date }}
-
-docker_manifests:
-  - name_template: ghcr.io/y0-l0/helm-snoop:{{ .Version }}
-    image_templates:
-      - ghcr.io/y0-l0/helm-snoop:{{ .Version }}-amd64
-      - ghcr.io/y0-l0/helm-snoop:{{ .Version }}-arm64
-
-  - name_template: ghcr.io/y0-l0/helm-snoop:latest
-    image_templates:
-      - ghcr.io/y0-l0/helm-snoop:{{ .Version }}-amd64
-      - ghcr.io/y0-l0/helm-snoop:{{ .Version }}-arm64
-
-brews:
+homebrew_casks:
   - repository:
       owner: y0-l0
       name: homebrew-tap
       token: "{{ .Env.HOMEBREW_TAP_TOKEN }}"
+    directory: Casks
     homepage: https://github.com/y0-l0/helm-snoop
     description: Detect unused and undefined values in Helm charts
     license: MIT
-    install: |
-      bin.install "helm-snoop"
 
 changelog:
   sort: asc
