@@ -1,14 +1,13 @@
-name: goreleaser-snapshot
+name: goreleaser-release
 
 on:
   push:
-    branches:
-      - "**"
-    tags-ignore:
-      - "**"
+    tags:
+      - "v*"
 
 permissions:
-  contents: read
+  contents: write
+  packages: write
 
 jobs:
   goreleaser:
@@ -24,15 +23,18 @@ jobs:
         with:
           go-version: "1.25"
 
-      - name: Run GoReleaser (snapshot)
+      - name: Login to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v6
         with:
           distribution: goreleaser
           version: "~> v2"
-          args: release --clean --snapshot
-
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: snapshot-artifacts
-          path: dist/*
+          args: release --clean
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
