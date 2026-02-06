@@ -25,6 +25,12 @@ type info struct {
 func resolve() info {
 	i := info{version, commit, treeState, commitDate}
 
+	// If ldflags were set (e.g. by GoReleaser), use them as-is
+	if version != "dev" {
+		return i
+	}
+
+	// Fallback to debug.ReadBuildInfo() for go install / go run
 	bi, ok := debug.ReadBuildInfo()
 	if !ok {
 		return i
