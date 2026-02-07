@@ -28,7 +28,6 @@ image:
 # PostgreSQL configuration with existingSecret pattern
 postgresql:
   auth:
-    password: mypassword
     existingSecret:
       name: my-custom-postgres-secret
       keyMapping:

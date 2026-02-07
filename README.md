@@ -4,18 +4,34 @@ helm-snoop keeps your config and docs in your values.yaml
 and (in the future) schema.json
 in sync with the code in your helm template files. \
 It parses the values.yaml and template files of helm charts
-and finds undeclared and unused values.
+and finds undefined and unused values.
 
-**Alpha Status:** Expect false positives, false negatives, and breaking changes
+**Beta Status:** Expect some false positives and breaking changes
 as the project matures.
 
-Contributions would be wonderful:
-- Architecture input, especially from Helm codebase experts
-- Testing and user feedback
-- Code quality and idiomatic Go (inexperienced gopher here!)
-- Code for the CLI or `tpl` implementation
+## 🚀 Getting Started
 
-## 🚀 Usage
+### 🐳 Try it out
+
+```bash
+docker run --rm -v $(pwd):/chart ghcr.io/y0-l0/helm-snoop:latest /chart
+```
+
+### 📦 Installation
+
+**Homebrew (macOS/Linux):**
+```bash
+brew install y0-l0/tap/helm-snoop
+```
+
+**Binary (Linux amd64):**
+```bash
+VERSION=0.1.1
+curl -fsSL "https://github.com/y0-l0/helm-snoop/releases/download/v${VERSION}/helm-snoop_${VERSION}_linux_amd64.tar.gz" | tar -xz
+sudo mv helm-snoop /usr/local/bin/
+```
+
+## 💻 Usage
 
 ```bash
 # Minimal
@@ -26,13 +42,12 @@ helm-snoop --ignore /image/tag --ignore /config/* --json --referenced -vv <path-
 ```
 
 Analyzes Helm charts and reports:
-- **Referenced:** Values paths defined and used
 - **Unused:** Keys in values.yaml never used in templates
 - **Undefined:** Paths used in templates but not defined in values.yaml
 
 See [docs/CLI.md](docs/CLI.md) for complete documentation.
 
-## ✅ Supported Advanced Features
+### ✅ Features
 
 - **Variable tracking:** Variables are tracked across references (e.g., `{{ $var := .Values.foo }}{{ $var.bar }}`)
 - **Context-aware path resolution:** Correctly resolves relative paths within `with` and `range` contexts (e.g., `.Values.config` → `with` → `.timeout` resolves to `.Values.config.timeout`)
@@ -42,7 +57,7 @@ See [docs/CLI.md](docs/CLI.md) for complete documentation.
 - **Wildcard ignore patterns:** Advanced pattern matching for suppressing specific warnings
 - **Control flow:** All branches of `if/else` blocks are analyzed
 
-## ⚠️ Current Limitations
+### ⚠️ Limitations
 
 - **Limited `tpl` function support:** Dynamic template strings have partial support
 - **No schema.json validation:** Only compares templates against values.yaml, not against schema definitions
@@ -50,7 +65,9 @@ See [docs/CLI.md](docs/CLI.md) for complete documentation.
 - **No subchart analysis:** Does not analyze subcharts (only collects template functions via `define`)
 - **No global values from subcharts:** May report false positives for undefined global paths from subcharts
 
-## 🔍 The Problem
+## 🔍 Background
+
+### 🎯 The Problem
 
 Golang doesn't compile with undefined or unused variables. Helm has no such checks.
 
@@ -71,7 +88,7 @@ All of these could be detected by a Helm Chart linter using static analysis:
 
 helm-snoop is (trying to become) that linter.
 
-## 🔗 Related Tools
+### 🔗 Related Tools
 
 **helm-unused-values** Similar PoC implementation, appears unfinished and inactive since some time.
 
@@ -80,3 +97,10 @@ helm-snoop is (trying to become) that linter.
 **JSON Schema for values.yaml** Validates user input, which is valuable. However, it suffers from the same sync problem: if your schema.json is out of sync with your template implementation, users can't configure those out-of-sync properties.
 
 For detailed comparison, see [docs/RESEARCH.md](docs/RESEARCH.md)
+
+## 🤝 Contributing
+
+Contributions would be wonderful:
+- Architecture input, especially from Helm codebase experts
+- Testing and user feedback
+- Code quality and idiomatic Go (inexperienced gopher here!)
