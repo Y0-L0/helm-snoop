@@ -37,6 +37,44 @@ func (s *GoldenTest) TestCLI_TestChart() {
 	s.EqualGoldenFile("test-chart.golden.txt", stdout.Bytes())
 }
 
+func (s *GoldenTest) TestCLI_TgzArchive() {
+	tgzPath := filepath.Join(s.chartsDir, "guardian-0.24.4.tgz")
+	restore, stdout, _, code := interceptMain([]string{"helm-snoop", tgzPath})
+	defer restore()
+
+	main()
+
+	// Exit code 1 is expected: the chart has findings (unused/undefined values)
+	s.Require().Equal(1, *code)
+	s.Contains(stdout.String(), "guardian")
+}
+
+func (s *GoldenTest) TestCLI_FileResolvesToChartRoot() {
+	filePath := filepath.Join(s.chartsDir, "test-chart", "values.yaml")
+	restore, stdout, stderr, code := interceptMain([]string{"helm-snoop", filePath})
+	defer restore()
+
+	main()
+
+	s.Require().Equal(0, *code, stderr.String())
+	s.EqualGoldenFile("test-chart.golden.txt", stdout.Bytes())
+}
+
+func (s *GoldenTest) TestCLI_MultipleFilesDeduplication() {
+	chartDir := filepath.Join(s.chartsDir, "test-chart")
+	restore, stdout, stderr, code := interceptMain([]string{
+		"helm-snoop",
+		filepath.Join(chartDir, "values.yaml"),
+		filepath.Join(chartDir, "templates", "configmap.yaml"),
+	})
+	defer restore()
+
+	main()
+
+	s.Require().Equal(0, *code, stderr.String())
+	s.EqualGoldenFile("test-chart.golden.txt", stdout.Bytes())
+}
+
 func interceptMain(args []string) (restore func(), outBuf *bytes.Buffer, errBuf *bytes.Buffer, code *int) {
 	oldExit, oldOut, oldErr := osExit, stdout, stderr
 	outBuf, errBuf = &bytes.Buffer{}, &bytes.Buffer{}
