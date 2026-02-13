@@ -1,0 +1,37 @@
+- id: helm-snoop
+  name: helm-snoop
+  description: Detect unused and undefined values in Helm charts (requires helm-snoop on PATH)
+  entry: >-
+    bash -c '
+    e=0; declare -A roots;
+    for f; do
+      d=$(dirname "$f");
+      while [ "$d" != "/" ] && [ ! -f "$d/Chart.yaml" ]; do d=$(dirname "$d"); done;
+      [ -f "$d/Chart.yaml" ] && roots["$(cd "$d" && pwd)"]=1;
+    done;
+    for c in "${!roots[@]}"; do
+      helm-snoop --no-color "$c" || e=1;
+    done;
+    exit $e' --
+  language: system
+  files: (Chart\.yaml|values\.yaml|values/.*\.yaml|templates/.*)$
+  pass_filenames: true
+
+- id: helm-snoop-docker
+  name: helm-snoop (docker)
+  description: Detect unused and undefined values in Helm charts (via Docker)
+  entry: >-
+    bash -c '
+    e=0; declare -A roots;
+    for f; do
+      d=$(dirname "$f");
+      while [ "$d" != "/" ] && [ ! -f "$d/Chart.yaml" ]; do d=$(dirname "$d"); done;
+      [ -f "$d/Chart.yaml" ] && roots["$(cd "$d" && pwd)"]=1;
+    done;
+    for c in "${!roots[@]}"; do
+      docker run --rm -v "$c:/chart:ro" ghcr.io/y0-l0/helm-snoop:latest --no-color /chart || e=1;
+    done;
+    exit $e' --
+  language: system
+  files: (Chart\.yaml|values\.yaml|values/.*\.yaml|templates/.*)$
+  pass_filenames: true
