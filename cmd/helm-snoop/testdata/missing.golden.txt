@@ -1,2 +1,1 @@
-Failed to read the helm chart.
-error: stat does-not-exist: no such file or directory
+no Chart.yaml found in any parent of does-not-exist

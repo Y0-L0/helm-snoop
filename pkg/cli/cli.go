@@ -1,6 +1,7 @@
 package cli
 
 import (
+	"bytes"
 	"errors"
 	"fmt"
 	"io"
@@ -20,12 +21,31 @@ type CliArgumentError string
 
 func (e CliArgumentError) Error() string { return string(e) }
 
-// resolveChartRoot walks up from filePath to find the nearest directory
-// containing Chart.yaml, returning that directory's absolute path.
+// gzipMagic is the gzip file signature (RFC 1952).
+var gzipMagic = []byte{0x1F, 0x8B, 0x08}
+
+// isGzipFile checks the first bytes of a file for the gzip magic number.
+func isGzipFile(path string) bool {
+	f, err := os.Open(path)
+	if err != nil {
+		return false
+	}
+	defer f.Close()
+	buf := make([]byte, 3)
+	n, _ := f.Read(buf)
+	return n == 3 && bytes.Equal(buf, gzipMagic)
+}
+
+// resolveChartRoot finds the chart root for a given path.
+// Archives are returned as-is; other paths walk up to find Chart.yaml.
 func resolveChartRoot(filePath string) (string, error) {
 	dir, err := filepath.Abs(filePath)
 	if err != nil {
 		return "", fmt.Errorf("resolving absolute path for %s: %w", filePath, err)
+	}
+
+	if isGzipFile(dir) {
+		return dir, nil
 	}
 
 	for {
@@ -38,6 +58,23 @@ func resolveChartRoot(filePath string) (string, error) {
 		}
 		dir = parent
 	}
+}
+
+// resolveUniqueChartRoots resolves each path to its chart root and deduplicates.
+func resolveUniqueChartRoots(paths []string) ([]string, error) {
+	seen := map[string]struct{}{}
+	var roots []string
+	for _, p := range paths {
+		root, err := resolveChartRoot(p)
+		if err != nil {
+			return nil, err
+		}
+		if _, ok := seen[root]; !ok {
+			seen[root] = struct{}{}
+			roots = append(roots, root)
+		}
+	}
+	return roots, nil
 }
 
 func analyze(
@@ -79,12 +116,16 @@ func NewParser(args []string, setupLogging func(slog.Level), snoop snooper.Snoop
 	var showReferenced bool
 
 	rootCmd := &cobra.Command{
-		Use:   "helm-snoop [FLAGS] <chart-path>",
+		Use:   "helm-snoop [FLAGS] <chart-path or file>...",
 		Short: "Analyze Helm charts for unused and undefined values",
 		Long: `helm-snoop analyzes Helm charts to identify:
   - Values defined but never used in templates
-  - Values referenced in templates but not defined in values.yaml`,
-		Args:          cobra.ExactArgs(1),
+  - Values referenced in templates but not defined in values.yaml
+
+Examples:
+  helm-snoop ./my-chart/
+  helm-snoop ./my-other-chart/values.yaml`,
+		Args:          cobra.MinimumNArgs(1),
 		SilenceErrors: true,
 		PersistentPreRun: func(cmd *cobra.Command, args []string) {
 			if noColor {
@@ -102,11 +143,19 @@ func NewParser(args []string, setupLogging func(slog.Level), snoop snooper.Snoop
 			setupLogging(logLevel)
 		},
 		RunE: func(cmd *cobra.Command, args []string) error {
-			err := analyze(args[0], ignorePaths, jsonOutput, showReferenced, cmd.OutOrStdout(), snoop)
+			chartRoots, err := resolveUniqueChartRoots(args)
 			if err != nil {
-				cmd.SilenceUsage = true
+				return err
 			}
-			return err
+
+			cmd.SilenceUsage = true
+			var firstErr error
+			for _, root := range chartRoots {
+				if err := analyze(root, ignorePaths, jsonOutput, showReferenced, cmd.OutOrStdout(), snoop); err != nil {
+					firstErr = err
+				}
+			}
+			return firstErr
 		},
 	}
 

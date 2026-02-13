@@ -17,6 +17,19 @@ func mockSnoop(chartPath string, ignorePatterns path.Paths) (*snooper.Result, er
 	}, nil
 }
 
+type trackingSnoop struct {
+	calls []string
+}
+
+func (t *trackingSnoop) snoop(chartPath string, ignorePatterns path.Paths) (*snooper.Result, error) {
+	t.calls = append(t.calls, chartPath)
+	return &snooper.Result{
+		Referenced: path.Paths{},
+		Unused:     path.Paths{},
+		Undefined:  path.Paths{},
+	}, nil
+}
+
 func testdataDir() string {
 	// cli_test.go lives in pkg/cli/, testdata is at repo root
 	wd, _ := os.Getwd()
@@ -55,6 +68,14 @@ func (s *Unittest) TestResolveChartRootNonexistentPath() {
 	s.Require().Error(err)
 }
 
+func (s *Unittest) TestResolveChartRootArchivePassthrough() {
+	// A valid chart archive is returned as-is (loader accepts it directly)
+	chartRoot := filepath.Join(testdataDir(), "test-chart")
+	got, err := resolveChartRoot(chartRoot)
+	s.Require().NoError(err)
+	s.Equal(chartRoot, got)
+}
+
 func (s *Unittest) TestHelp() {
 	command := NewParser([]string{"helm-snoop", "--help"}, snooper.SetupLogging, mockSnoop)
 	err := command.Execute()
@@ -68,12 +89,13 @@ func (s *Unittest) TestVersionSubcommand() {
 }
 
 func (s *Unittest) TestValidArguments() {
+	chartPath := filepath.Join(testdataDir(), "test-chart")
 	tests := []struct {
 		name string
 		args []string
 	}{
-		{"basic chart path", []string{"helm-snoop", "/path/to/chart"}},
-		{"with json output", []string{"helm-snoop", "--json", "/path/to/chart"}},
+		{"basic chart path", []string{"helm-snoop", chartPath}},
+		{"with json output", []string{"helm-snoop", "--json", chartPath}},
 	}
 
 	for _, tc := range tests {
@@ -97,11 +119,11 @@ func (s *Unittest) TestVerbosityLevels() {
 		args     []string
 		expected slog.Level
 	}{
-		{"no verbosity", []string{"helm-snoop", "/path"}, slog.LevelWarn},
-		{"single v", []string{"helm-snoop", "-v", "/path"}, slog.LevelInfo},
-		{"double v", []string{"helm-snoop", "-vv", "/path"}, slog.LevelDebug},
-		{"triple v", []string{"helm-snoop", "-vvv", "/path"}, slog.LevelDebug},
-		{"separate v flags", []string{"helm-snoop", "-v", "-v", "/path"}, slog.LevelDebug},
+		{"no verbosity", []string{"helm-snoop", "../../testdata/test-chart"}, slog.LevelWarn},
+		{"single v", []string{"helm-snoop", "-v", "../../testdata/test-chart"}, slog.LevelInfo},
+		{"double v", []string{"helm-snoop", "-vv", "../../testdata/test-chart"}, slog.LevelDebug},
+		{"triple v", []string{"helm-snoop", "-vvv", "../../testdata/test-chart"}, slog.LevelDebug},
+		{"separate v flags", []string{"helm-snoop", "-v", "-v", "../../testdata/test-chart"}, slog.LevelDebug},
 	}
 
 	for _, tc := range tests {
@@ -117,4 +139,28 @@ func (s *Unittest) TestVerbosityLevels() {
 			s.Equal(tc.expected, capturedLevel)
 		})
 	}
+}
+
+func (s *Unittest) TestFileArgResolvesToChartRoot() {
+	tracker := &trackingSnoop{}
+	chartFile := filepath.Join(testdataDir(), "test-chart", "values.yaml")
+	command := NewParser([]string{"helm-snoop", chartFile}, snooper.SetupLogging, tracker.snoop)
+	err := command.Execute()
+	s.Require().NoError(err)
+	s.Require().Len(tracker.calls, 1)
+	s.Equal(filepath.Join(testdataDir(), "test-chart"), tracker.calls[0])
+}
+
+func (s *Unittest) TestMultipleArgsDeduplication() {
+	tracker := &trackingSnoop{}
+	chartDir := filepath.Join(testdataDir(), "test-chart")
+	command := NewParser([]string{
+		"helm-snoop",
+		filepath.Join(chartDir, "values.yaml"),
+		filepath.Join(chartDir, "templates", "configmap.yaml"),
+		filepath.Join(chartDir, "templates", "deployment.yaml"),
+	}, snooper.SetupLogging, tracker.snoop)
+	err := command.Execute()
+	s.Require().NoError(err)
+	s.Require().Len(tracker.calls, 1, "expected deduplication to single chart")
 }

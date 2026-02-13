@@ -20,7 +20,7 @@ func (s *Unittest) TestIgnorePaths_SinglePath() {
 	}
 
 	command := NewParser(
-		[]string{"helm-snoop", "-i", "/image/tag", "/path/to/chart"},
+		[]string{"helm-snoop", "-i", "/image/tag", "../../testdata/test-chart"},
 		snooper.SetupLogging,
 		mockSnoop,
 	)
@@ -51,7 +51,7 @@ func (s *Unittest) TestIgnorePaths_MultipleWithAllKinds() {
 			"-i", "/items/0", // any kind (integer)
 			"-i", "/config/*", // wildcard kind (terminal)
 			"-i", "/a/*/c", // wildcard kind (interior)
-			"/path/to/chart",
+			"../../testdata/test-chart",
 		},
 		snooper.SetupLogging,
 		mockSnoop,
@@ -105,7 +105,7 @@ func (s *Unittest) TestIgnorePaths_InvalidPaths() {
 			}
 
 			command := NewParser(
-				[]string{"helm-snoop", "-i", tc.path, "/path/to/chart"},
+				[]string{"helm-snoop", "-i", tc.path, "../../testdata/test-chart"},
 				snooper.SetupLogging,
 				mockSnoop,
 			)
@@ -130,7 +130,7 @@ func (s *Unittest) TestIgnorePaths_NoIgnoreList() {
 	}
 
 	command := NewParser(
-		[]string{"helm-snoop", "/path/to/chart"},
+		[]string{"helm-snoop", "../../testdata/test-chart"},
 		snooper.SetupLogging,
 		mockSnoop,
 	)
