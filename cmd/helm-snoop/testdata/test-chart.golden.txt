@@ -1,9 +1,7 @@
 ================================== test-chart ==================================
 
------------------------------------- Unused ------------------------------------
-.postgresql.auth.password  values.yaml:31:5
 
 =================================== Summary ====================================
 
-test-chart  1 Unused  0 Undefined  
-Total       1 Unused  0 Undefined  across 1 chart(s)
+test-chart  0 Unused  0 Undefined  
+Total       0 Unused  0 Undefined  across 1 chart(s)

@@ -33,7 +33,7 @@ func (s *GoldenTest) TestCLI_TestChart() {
 
 	main()
 
-	s.Require().Equal(1, *code, stderr.String())
+	s.Require().Equal(0, *code, stderr.String())
 	s.EqualGoldenFile("test-chart.golden.txt", stdout.Bytes())
 }
 

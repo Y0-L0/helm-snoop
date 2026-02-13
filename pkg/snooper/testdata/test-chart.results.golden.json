@@ -229,7 +229,7 @@
       "contexts": [
         {
           "file": "values.yaml",
-          "line": 35,
+          "line": 34,
           "column": 9
         },
         {
@@ -245,7 +245,7 @@
       "contexts": [
         {
           "file": "values.yaml",
-          "line": 33,
+          "line": 32,
           "column": 7
         },
         {
@@ -261,18 +261,6 @@
       ]
     }
   ],
-  "unused": [
-    {
-      "id": ".postgresql.auth.password",
-      "kinds": "/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 31,
-          "column": 5
-        }
-      ]
-    }
-  ],
+  "unused": [],
   "undefined": []
 }
