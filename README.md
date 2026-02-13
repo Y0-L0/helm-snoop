@@ -47,6 +47,23 @@ Analyzes Helm charts and reports:
 
 See [docs/CLI.md](docs/CLI.md) for complete documentation.
 
+### 🪝 pre-commit / prek
+
+Add to your `.pre-commit-config.yaml`:
+
+```yaml
+repos:
+  - repo: https://github.com/y0-l0/helm-snoop
+    rev: v0.1.1
+    hooks:
+      - id: helm-snoop        # requires helm-snoop on PATH
+      # - id: helm-snoop-docker  # uses Docker instead
+```
+
+Two hooks are available: `helm-snoop` (requires the binary on `$PATH`) and
+`helm-snoop-docker` (runs via `ghcr.io/y0-l0/helm-snoop`). Changed files are
+resolved to their parent chart directories automatically.
+
 ### ✅ Features
 
 - **Variable tracking:** Variables are tracked across references (e.g., `{{ $var := .Values.foo }}{{ $var.bar }}`)

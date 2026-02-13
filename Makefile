@@ -1,4 +1,4 @@
-.PHONY: build dep-update fmt test coverage complete
+.PHONY: build dep-update fmt test coverage complete test-pre-commit-hook
 
 # Build binary for the local OS/arch using GoReleaser (snapshot mode)
 build:
@@ -35,6 +35,10 @@ complete: fmt
 	go run ./cmd/helm-snoop/... testdata/test-chart/ || status=$$?; \
 	$(MAKE) coverage -- $(filter-out $@,$(MAKECMDGOALS)) TF="$(TF)" || status=$$?; \
 	exit $$status
+
+# Test the pre-commit hook definition against the sample chart
+test-pre-commit-hook:
+	prek try-repo . helm-snoop helm-snoop-docker --files testdata/test-chart/Chart.yaml testdata/test-chart/values.yaml testdata/test-chart/templates/configmap.yaml testdata/test-chart/templates/deployment.yaml testdata/test-chart/templates/_defs.tpl testdata/test-chart/templates/_names.tpl testdata/test-chart/templates/_secrets.tpl
 
 # Swallow unknown extra make goals (used to pass args like -v, -run, etc.)
 %:
