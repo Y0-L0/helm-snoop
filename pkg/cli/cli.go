@@ -2,8 +2,11 @@ package cli
 
 import (
 	"errors"
+	"fmt"
 	"io"
 	"log/slog"
+	"os"
+	filepath "path/filepath"
 
 	"github.com/spf13/cobra"
 	"github.com/y0-l0/helm-snoop/internal/assert"
@@ -16,6 +19,26 @@ import (
 type CliArgumentError string
 
 func (e CliArgumentError) Error() string { return string(e) }
+
+// resolveChartRoot walks up from filePath to find the nearest directory
+// containing Chart.yaml, returning that directory's absolute path.
+func resolveChartRoot(filePath string) (string, error) {
+	dir, err := filepath.Abs(filePath)
+	if err != nil {
+		return "", fmt.Errorf("resolving absolute path for %s: %w", filePath, err)
+	}
+
+	for {
+		if _, err := os.Stat(filepath.Join(dir, "Chart.yaml")); err == nil {
+			return dir, nil
+		}
+		parent := filepath.Dir(dir)
+		if parent == dir {
+			return "", fmt.Errorf("no Chart.yaml found in any parent of %s", filePath)
+		}
+		dir = parent
+	}
+}
 
 func analyze(
 	chartPath string,

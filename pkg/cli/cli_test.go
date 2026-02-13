@@ -2,6 +2,8 @@ package cli
 
 import (
 	"log/slog"
+	"os"
+	filepath "path/filepath"
 
 	"github.com/y0-l0/helm-snoop/pkg/path"
 	"github.com/y0-l0/helm-snoop/pkg/snooper"
@@ -13,6 +15,44 @@ func mockSnoop(chartPath string, ignorePatterns path.Paths) (*snooper.Result, er
 		Unused:     path.Paths{},
 		Undefined:  path.Paths{},
 	}, nil
+}
+
+func testdataDir() string {
+	// cli_test.go lives in pkg/cli/, testdata is at repo root
+	wd, _ := os.Getwd()
+	return filepath.Join(wd, "..", "..", "testdata")
+}
+
+func (s *Unittest) TestResolveChartRootFromFile() {
+	chartRoot := filepath.Join(testdataDir(), "test-chart")
+	got, err := resolveChartRoot(filepath.Join(chartRoot, "values.yaml"))
+	s.Require().NoError(err)
+	s.Equal(chartRoot, got)
+}
+
+func (s *Unittest) TestResolveChartRootFromNestedFile() {
+	chartRoot := filepath.Join(testdataDir(), "test-chart")
+	got, err := resolveChartRoot(filepath.Join(chartRoot, "templates", "configmap.yaml"))
+	s.Require().NoError(err)
+	s.Equal(chartRoot, got)
+}
+
+func (s *Unittest) TestResolveChartRootFromChartDir() {
+	chartRoot := filepath.Join(testdataDir(), "test-chart")
+	got, err := resolveChartRoot(chartRoot)
+	s.Require().NoError(err)
+	s.Equal(chartRoot, got)
+}
+
+func (s *Unittest) TestResolveChartRootNoChartYaml() {
+	_, err := resolveChartRoot(os.TempDir())
+	s.Require().Error(err)
+	s.Contains(err.Error(), "no Chart.yaml found")
+}
+
+func (s *Unittest) TestResolveChartRootNonexistentPath() {
+	_, err := resolveChartRoot("/nonexistent/path/to/file.yaml")
+	s.Require().Error(err)
 }
 
 func (s *Unittest) TestHelp() {
