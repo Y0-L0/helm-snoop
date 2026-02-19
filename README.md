@@ -26,7 +26,7 @@ brew install y0-l0/tap/helm-snoop
 
 **Binary (Linux amd64):**
 ```bash
-VERSION=0.1.1
+VERSION=0.2.0
 curl -fsSL "https://github.com/y0-l0/helm-snoop/releases/download/v${VERSION}/helm-snoop_${VERSION}_linux_amd64.tar.gz" | tar -xz
 sudo mv helm-snoop /usr/local/bin/
 ```
@@ -54,7 +54,7 @@ Add to your `.pre-commit-config.yaml`:
 ```yaml
 repos:
   - repo: https://github.com/y0-l0/helm-snoop
-    rev: v0.1.1
+    rev: v0.2.0
     hooks:
       - id: helm-snoop        # requires helm-snoop on PATH
       # - id: helm-snoop-docker  # uses Docker instead
