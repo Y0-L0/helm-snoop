@@ -1,6 +1,6 @@
 module github.com/y0-l0/helm-snoop
 
-go 1.25
+go 1.26.0
 
 require (
 	github.com/Masterminds/sprig/v3 v3.3.0
