@@ -1,4 +1,4 @@
-.PHONY: build dep-update fmt test coverage complete test-pre-commit-hook
+.PHONY: build dep-update fmt test coverage complete test-pre-commit-hook release
 
 # Build binary for the local OS/arch using GoReleaser (snapshot mode)
 build:
@@ -39,6 +39,17 @@ complete: fmt
 # Test the pre-commit hook definition against the sample chart
 test-pre-commit-hook:
 	prek try-repo . helm-snoop helm-snoop-docker --files testdata/test-chart/Chart.yaml testdata/test-chart/values.yaml testdata/test-chart/templates/configmap.yaml testdata/test-chart/templates/deployment.yaml testdata/test-chart/templates/_defs.tpl testdata/test-chart/templates/_names.tpl testdata/test-chart/templates/_secrets.tpl
+
+# Cut a release: update version in docs, commit, tag, and push.
+# Usage: make release TAG=v0.2.0 TITLE="My release title"
+release:
+	@ver="$${TAG#v}"; \
+	sed -i "s/^VERSION=.*/VERSION=$$ver/" README.md && \
+	sed -i "s/rev: .*/rev: $(TAG)/" README.md && \
+	git add README.md && \
+	git commit -m "docs: Update version to $(TAG) — $(TITLE)" && \
+	git tag -a "$(TAG)" -m "$(TITLE)" && \
+	git push origin HEAD "$(TAG)"
 
 # Swallow unknown extra make goals (used to pass args like -v, -run, etc.)
 %:
