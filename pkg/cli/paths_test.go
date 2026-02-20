@@ -1,6 +1,8 @@
 package cli
 
 import (
+	filepath "path/filepath"
+
 	"github.com/y0-l0/helm-snoop/pkg/path"
 	"github.com/y0-l0/helm-snoop/pkg/snooper"
 )
@@ -139,4 +141,94 @@ func (s *Unittest) TestIgnorePaths_NoIgnoreList() {
 	s.Require().NoError(err)
 
 	path.EqualPaths(s, path.Paths{}, capturedPaths)
+}
+
+func (s *Unittest) TestValuesFiles_SingleFile() {
+	var capturedFiles []string
+
+	mockSnoop := func(chartPath string, ignorePaths path.Paths, valuesFiles []string) (*snooper.Result, error) {
+		capturedFiles = valuesFiles
+		return &snooper.Result{
+			Referenced: path.Paths{},
+			Unused:     path.Paths{},
+			Undefined:  path.Paths{},
+		}, nil
+	}
+
+	extraValues := filepath.Join(testdataDir(), "test-chart", "values.yaml")
+	command := NewParser(
+		[]string{"helm-snoop", "-f", extraValues, "../../testdata/test-chart"},
+		snooper.SetupLogging,
+		mockSnoop,
+	)
+
+	err := command.Execute()
+	s.Require().NoError(err)
+	s.Require().Equal([]string{extraValues}, capturedFiles)
+}
+
+func (s *Unittest) TestValuesFiles_MultipleFiles() {
+	var capturedFiles []string
+
+	mockSnoop := func(chartPath string, ignorePaths path.Paths, valuesFiles []string) (*snooper.Result, error) {
+		capturedFiles = valuesFiles
+		return &snooper.Result{
+			Referenced: path.Paths{},
+			Unused:     path.Paths{},
+			Undefined:  path.Paths{},
+		}, nil
+	}
+
+	f1 := filepath.Join(testdataDir(), "test-chart", "values.yaml")
+	f2 := filepath.Join(testdataDir(), "test-chart", "values.yaml") // reuse same file for simplicity
+	command := NewParser(
+		[]string{"helm-snoop", "-f", f1, "-f", f2, "../../testdata/test-chart"},
+		snooper.SetupLogging,
+		mockSnoop,
+	)
+
+	err := command.Execute()
+	s.Require().NoError(err)
+	s.Require().Equal([]string{f1, f2}, capturedFiles)
+}
+
+func (s *Unittest) TestValuesFiles_NoFlag() {
+	var capturedFiles []string
+
+	mockSnoop := func(chartPath string, ignorePaths path.Paths, valuesFiles []string) (*snooper.Result, error) {
+		capturedFiles = valuesFiles
+		return &snooper.Result{
+			Referenced: path.Paths{},
+			Unused:     path.Paths{},
+			Undefined:  path.Paths{},
+		}, nil
+	}
+
+	command := NewParser(
+		[]string{"helm-snoop", "../../testdata/test-chart"},
+		snooper.SetupLogging,
+		mockSnoop,
+	)
+
+	err := command.Execute()
+	s.Require().NoError(err)
+	s.Require().Empty(capturedFiles)
+}
+
+func (s *Unittest) TestValuesFiles_MissingFile() {
+	missing := "/nonexistent/overlay-values.yaml"
+
+	mockSnoop := func(chartPath string, ignorePaths path.Paths, valuesFiles []string) (*snooper.Result, error) {
+		return snooper.Snoop(chartPath, ignorePaths, valuesFiles)
+	}
+
+	command := NewParser(
+		[]string{"helm-snoop", "-f", missing, "../../testdata/test-chart"},
+		snooper.SetupLogging,
+		mockSnoop,
+	)
+
+	err := command.Execute()
+	s.Require().Error(err)
+	s.Require().Contains(err.Error(), missing)
 }

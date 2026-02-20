@@ -25,18 +25,18 @@ helm-snoop version
 Ignore findings for specific path patterns. Supports wildcards and advanced matching. Suppresses both output and exit code impact. Can be specified multiple times.
 
 ```bash
-helm-snoop -i /image/tag -i /config/* ./my-chart
+helm-snoop --ignore .image.tag --ignore .config.* ./my-chart
 ```
 
 **Pattern Syntax:**
-- Must start with `/` (JSON Pointer style)
+- Must start with `.` (dot notation, matching the output format)
 - Supports wildcards with `*`
 - Integer segments match both array indices and string keys
 - Examples:
-  - `/image/tag` - Exact match
-  - `/config/*` - All descendants under config
-  - `/items/0` - Matches both `items[0]` and `items["0"]`
-  - `/a/*/c` - Interior wildcard (one level)
+  - `.image.tag` - Exact match
+  - `.config.*` - All descendants under config
+  - `.items.0` - Matches both `items[0]` and `items["0"]`
+  - `.a.*.c` - Interior wildcard (one level)
 
 See [ignore-patterns.md](ignore-patterns.md) for complete pattern documentation.
 
@@ -74,10 +74,11 @@ helm-snoop --referenced ./my-chart
 ```
 
 ### `-f, --values <PATH>`
-Specify path to values file (overrides default `values.yaml` in chart directory). **(NOT YET IMPLEMENTED)**
+Add an additional values file to the analysis. The file's definitions are merged with the chart's `values.yaml`: values defined in it are treated as defined (suppressing Undefined findings) and values not used in templates are reported as Unused. Can be specified multiple times.
 
 ```bash
-helm-snoop -f ./custom-values.yaml ./my-chart
+helm-snoop --values ./override-values.yaml ./my-chart
+helm-snoop --values ./env-values.yaml --values ./secrets-values.yaml ./my-chart
 ```
 
 ### `-v`

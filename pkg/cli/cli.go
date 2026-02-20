@@ -80,6 +80,7 @@ func resolveUniqueChartRoots(paths []string) ([]string, error) {
 func analyze(
 	chartPath string,
 	ignorePaths *cliPaths,
+	valuesFiles []string,
 	jsonOutput bool,
 	showReferenced bool,
 	outWriter io.Writer,
@@ -87,7 +88,7 @@ func analyze(
 ) error {
 	assert.Strict = false
 
-	result, err := snoop(chartPath, path.Paths(*ignorePaths), nil)
+	result, err := snoop(chartPath, path.Paths(*ignorePaths), valuesFiles)
 	if err != nil {
 		return err
 	}
@@ -112,6 +113,7 @@ func NewParser(args []string, setupLogging func(slog.Level), snoop snooper.Snoop
 	var verbosity int
 	var noColor bool
 	ignorePaths := &cliPaths{}
+	var valuesFiles []string
 	var jsonOutput bool
 	var showReferenced bool
 
@@ -151,7 +153,7 @@ Examples:
 			cmd.SilenceUsage = true
 			var firstErr error
 			for _, root := range chartRoots {
-				if err := analyze(root, ignorePaths, jsonOutput, showReferenced, cmd.OutOrStdout(), snoop); err != nil {
+				if err := analyze(root, ignorePaths, valuesFiles, jsonOutput, showReferenced, cmd.OutOrStdout(), snoop); err != nil {
 					firstErr = err
 				}
 			}
@@ -194,6 +196,14 @@ Examples:
   -i .items.0          Ignore items[0] and items["0"]
   -i .a.*.c            Ignore .a.<any>.c (one level)
 Repeatable. Paths match the dot-notation output format for easy copy-paste.`,
+	)
+
+	rootCmd.Flags().StringArrayVarP(
+		&valuesFiles,
+		"values",
+		"f",
+		nil,
+		"Additional values files to include in the analysis. Repeatable.",
 	)
 
 	rootCmd.Flags().BoolVar(
