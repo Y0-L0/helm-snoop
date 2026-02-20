@@ -37,6 +37,9 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Debug git state
+        run: git status --porcelain && git describe --tags --long --dirty --abbrev=12
+
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v6
         with:
