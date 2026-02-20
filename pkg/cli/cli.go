@@ -87,7 +87,7 @@ func analyze(
 ) error {
 	assert.Strict = false
 
-	result, err := snoop(chartPath, path.Paths(*ignorePaths))
+	result, err := snoop(chartPath, path.Paths(*ignorePaths), nil)
 	if err != nil {
 		return err
 	}
