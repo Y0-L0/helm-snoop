@@ -34,18 +34,43 @@ sudo mv helm-snoop /usr/local/bin/
 ## 💻 Usage
 
 ```bash
-# Minimal
-helm-snoop <path-to-chart>
+# Analyze a chart directory or archive
+helm-snoop ./my-chart/
+helm-snoop ./my-chart-0.1.0.tgz
 
-# With all optional flags
-helm-snoop --ignore /image/tag --ignore /config/* --json --referenced -vv <path-to-chart>
+# Include additional values files
+helm-snoop --values ./env-values.yaml --values ./secrets-values.yaml ./my-chart/
+
+# Suppress specific findings
+helm-snoop --ignore .image.tag --ignore .config.* ./my-chart/
+
+# JSON output
+helm-snoop --json ./my-chart
 ```
 
 Analyzes Helm charts and reports:
-- **Unused:** Keys in values.yaml never used in templates
-- **Undefined:** Paths used in templates but not defined in values.yaml
+- **Unused:** Keys defined in values files but never referenced in templates
+- **Undefined:** Paths referenced in templates but not defined in any values file
 
-See [docs/CLI.md](docs/CLI.md) for complete documentation.
+See [docs/CLI.md](docs/CLI.md) for the complete cli flag documentation.
+
+### ✅ Features
+
+- **Variable tracking:** Variables are tracked across references (e.g., `{{ $var := .Values.foo }}{{ $var.bar }}`)
+- **Context-aware path resolution:** Correctly resolves relative paths within `with` and `range` contexts (e.g., `.Values.config` → `with` → `.timeout` resolves to `.Values.config.timeout`)
+- **Dict/list operations:** Tracks values through `dict`, `list`, `merge`, `concat` operations
+- **Nested template definitions:** Follows `define` blocks across multiple files
+- **Include/Template functions:** Template includes are followed and analyzed
+- **Wildcard ignore patterns:** Advanced pattern matching for suppressing specific warnings
+- **Control flow:** All branches of `if/else` blocks are analyzed
+
+### ⚠️ Limitations
+
+- **Limited `tpl` function support:** Dynamic template strings have partial support
+- **No schema.json validation:** Only compares templates against values.yaml, not against schema definitions
+- **Limited dynamic evaluation:** Complex patterns like `{{ index .Values.a .Values.b }}` may not be fully resolved
+- **No subchart analysis:** Does not analyze subcharts (only collects template functions via `define`)
+- **No global values from subcharts:** May report false positives for undefined global paths from subcharts
 
 ### 🪝 pre-commit / prek
 
@@ -66,24 +91,6 @@ resolved to their parent chart directories automatically.
 
 In monorepos with multiple charts, consider adding the hook once per chart with
 a scoped `files` regex. This keeps flags like `-i` within the chart boundaries.
-
-### ✅ Features
-
-- **Variable tracking:** Variables are tracked across references (e.g., `{{ $var := .Values.foo }}{{ $var.bar }}`)
-- **Context-aware path resolution:** Correctly resolves relative paths within `with` and `range` contexts (e.g., `.Values.config` → `with` → `.timeout` resolves to `.Values.config.timeout`)
-- **Dict/list operations:** Tracks values through `dict`, `list`, `merge`, `concat` operations
-- **Nested template definitions:** Follows `define` blocks across multiple files
-- **Include/Template functions:** Template includes are followed and analyzed
-- **Wildcard ignore patterns:** Advanced pattern matching for suppressing specific warnings
-- **Control flow:** All branches of `if/else` blocks are analyzed
-
-### ⚠️ Limitations
-
-- **Limited `tpl` function support:** Dynamic template strings have partial support
-- **No schema.json validation:** Only compares templates against values.yaml, not against schema definitions
-- **Limited dynamic evaluation:** Complex patterns like `{{ index .Values.a .Values.b }}` may not be fully resolved
-- **No subchart analysis:** Does not analyze subcharts (only collects template functions via `define`)
-- **No global values from subcharts:** May report false positives for undefined global paths from subcharts
 
 ## 🔍 Background
 
