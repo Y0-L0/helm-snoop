@@ -11,7 +11,7 @@ func (s *GoldenTest) TestSnoop_json_TestChart() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop(filepath.Join(s.chartsDir, "test-chart"), nil)
+	results, err := Snoop(filepath.Join(s.chartsDir, "test-chart"), nil, nil)
 	s.Require().NoError(err)
 
 	actual := results.toJSON()
@@ -22,7 +22,7 @@ func (s *GoldenTest) TestSnoop_json_IntercomService() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop(filepath.Join(s.chartsDir, "intercom-service-2.23.0.tgz"), nil)
+	results, err := Snoop(filepath.Join(s.chartsDir, "intercom-service-2.23.0.tgz"), nil, nil)
 	s.Require().NoError(err)
 
 	actual := results.toJSON()
@@ -33,7 +33,7 @@ func (s *GoldenTest) TestSnoop_json_Guardian() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop(filepath.Join(s.chartsDir, "guardian-0.24.4.tgz"), nil)
+	results, err := Snoop(filepath.Join(s.chartsDir, "guardian-0.24.4.tgz"), nil, nil)
 	s.Require().NoError(err)
 
 	actual := results.toJSON()
@@ -60,7 +60,7 @@ func (s *GoldenTest) TestSnoop_txt_TestChart() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	result, err := Snoop(filepath.Join(s.chartsDir, "test-chart"), nil)
+	result, err := Snoop(filepath.Join(s.chartsDir, "test-chart"), nil, nil)
 	s.Require().NoError(err)
 	s.compactGoldenTest("test-chart.results", Results{result})
 }
@@ -69,7 +69,7 @@ func (s *GoldenTest) TestSnoop_txt_IntercomService() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	result, err := Snoop(filepath.Join(s.chartsDir, "intercom-service-2.23.0.tgz"), nil)
+	result, err := Snoop(filepath.Join(s.chartsDir, "intercom-service-2.23.0.tgz"), nil, nil)
 	s.Require().NoError(err)
 	s.compactGoldenTest("intercom-service.results", Results{result})
 }
@@ -78,7 +78,7 @@ func (s *GoldenTest) TestSnoop_txt_Guardian() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	result, err := Snoop(filepath.Join(s.chartsDir, "guardian-0.24.4.tgz"), nil)
+	result, err := Snoop(filepath.Join(s.chartsDir, "guardian-0.24.4.tgz"), nil, nil)
 	s.Require().NoError(err)
 	s.compactGoldenTest("guardian.results", Results{result})
 }
@@ -87,7 +87,7 @@ func (s *GoldenTest) TestSnoop_UnusedHaveValuesContext() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop(filepath.Join(s.chartsDir, "test-chart"), nil)
+	results, err := Snoop(filepath.Join(s.chartsDir, "test-chart"), nil, nil)
 	s.Require().NoError(err)
 
 	for _, p := range results.Unused {

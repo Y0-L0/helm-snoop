@@ -10,7 +10,7 @@ func np() *path.Path { return &path.Path{} }
 func (s *Unittest) TestIgnorePaths_SinglePath() {
 	var capturedPaths path.Paths
 
-	mockSnoop := func(chartPath string, ignorePaths path.Paths) (*snooper.Result, error) {
+	mockSnoop := func(chartPath string, ignorePaths path.Paths, valuesFiles []string) (*snooper.Result, error) {
 		capturedPaths = ignorePaths
 		return &snooper.Result{
 			Referenced: path.Paths{},
@@ -35,7 +35,7 @@ func (s *Unittest) TestIgnorePaths_SinglePath() {
 func (s *Unittest) TestIgnorePaths_MultipleWithAllKinds() {
 	var capturedPaths path.Paths
 
-	mockSnoop := func(chartPath string, ignorePaths path.Paths) (*snooper.Result, error) {
+	mockSnoop := func(chartPath string, ignorePaths path.Paths, valuesFiles []string) (*snooper.Result, error) {
 		capturedPaths = ignorePaths
 		return &snooper.Result{
 			Referenced: path.Paths{},
@@ -99,7 +99,7 @@ func (s *Unittest) TestIgnorePaths_InvalidPaths() {
 
 	for _, tc := range tests {
 		s.Run(tc.name, func() {
-			mockSnoop := func(chartPath string, ignorePaths path.Paths) (*snooper.Result, error) {
+			mockSnoop := func(chartPath string, ignorePaths path.Paths, valuesFiles []string) (*snooper.Result, error) {
 				s.T().Fatal("snoop should not be called with invalid path")
 				return nil, nil
 			}
@@ -120,7 +120,7 @@ func (s *Unittest) TestIgnorePaths_InvalidPaths() {
 func (s *Unittest) TestIgnorePaths_NoIgnoreList() {
 	var capturedPaths path.Paths
 
-	mockSnoop := func(chartPath string, ignorePaths path.Paths) (*snooper.Result, error) {
+	mockSnoop := func(chartPath string, ignorePaths path.Paths, valuesFiles []string) (*snooper.Result, error) {
 		capturedPaths = ignorePaths
 		return &snooper.Result{
 			Referenced: path.Paths{},
