@@ -6,66 +6,78 @@ func (s *Unittest) TestParsePath_ValidPaths() {
 		input string
 		want  *Path
 	}{
-		// Valid exact paths
+		// Valid exact paths — with leading dot (matches ID() output)
 		{
-			name:  "simple key path",
-			input: "/image/tag",
+			name:  "simple key path with leading dot",
+			input: ".image.tag",
 			want:  np().Key("image").Key("tag"),
 		},
 		{
-			name:  "single segment",
-			input: "/replicas",
+			name:  "single segment with leading dot",
+			input: ".replicas",
 			want:  np().Key("replicas"),
 		},
 		{
-			name:  "deep nested path",
-			input: "/config/nested/deep/value",
+			name:  "deep nested path with leading dot",
+			input: ".config.nested.deep.value",
 			want:  np().Key("config").Key("nested").Key("deep").Key("value"),
+		},
+
+		// Without leading dot (also accepted)
+		{
+			name:  "simple key path without leading dot",
+			input: "image.tag",
+			want:  np().Key("image").Key("tag"),
+		},
+		{
+			name:  "single segment without leading dot",
+			input: "replicas",
+			want:  np().Key("replicas"),
 		},
 
 		// Integer handling (anyKind)
 		{
 			name:  "integer as anyKind",
-			input: "/items/0",
+			input: ".items.0",
 			want:  np().Key("items").Any("0"),
 		},
 		{
 			name:  "multiple integers",
-			input: "/config/1/nested/2",
+			input: ".config.1.nested.2",
 			want:  np().Key("config").Any("1").Key("nested").Any("2"),
 		},
 		{
 			name:  "large integer",
-			input: "/items/12345",
+			input: ".items.12345",
 			want:  np().Key("items").Any("12345"),
 		},
 
 		// Wildcard handling
 		{
 			name:  "terminal wildcard",
-			input: "/config/*",
+			input: ".config.*",
 			want:  np().Key("config").Wildcard(),
 		},
 		{
 			name:  "interior wildcard",
-			input: "/a/*/c",
+			input: ".a.*.c",
 			want:  np().Key("a").Wildcard().Key("c"),
 		},
 		{
 			name:  "multiple interior wildcards",
-			input: "/a/*/c/*/e",
+			input: ".a.*.c.*.e",
 			want:  np().Key("a").Wildcard().Key("c").Wildcard().Key("e"),
 		},
 		{
 			name:  "wildcard with integer",
-			input: "/items/*/value",
+			input: ".items.*.value",
 			want:  np().Key("items").Wildcard().Key("value"),
 		},
 
 		// Mixed patterns
 		{
 			name:  "key then integer then wildcard",
-			input: "/config/0/*",
+			input: ".config.0.*",
 			want:  np().Key("config").Any("0").Wildcard(),
 		},
 	}
@@ -86,9 +98,9 @@ func (s *Unittest) TestParsePath_ErrorCases() {
 		errContains string
 	}{
 		{
-			name:        "no leading slash",
-			input:       "image/tag",
-			errContains: "must start with /",
+			name:        "slash notation rejected",
+			input:       "/image/tag",
+			errContains: "dot notation",
 		},
 		{
 			name:        "empty pattern",
@@ -96,24 +108,24 @@ func (s *Unittest) TestParsePath_ErrorCases() {
 			errContains: "empty pattern",
 		},
 		{
-			name:        "only slash",
-			input:       "/",
+			name:        "only dot",
+			input:       ".",
 			errContains: "empty pattern",
 		},
 		{
-			name:        "double slash",
-			input:       "/config//value",
+			name:        "double dot",
+			input:       ".config..value",
 			errContains: "empty segment",
 		},
 		{
-			name:        "trailing slash",
-			input:       "/config/",
-			errContains: "trailing slash",
+			name:        "trailing dot",
+			input:       ".config.",
+			errContains: "trailing dot",
 		},
 		{
-			name:        "multiple slashes",
-			input:       "///",
-			errContains: "trailing slash",
+			name:        "multiple dots",
+			input:       "...",
+			errContains: "empty segment",
 		},
 	}
 

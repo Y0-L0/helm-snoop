@@ -20,7 +20,7 @@ func (s *Unittest) TestIgnorePaths_SinglePath() {
 	}
 
 	command := NewParser(
-		[]string{"helm-snoop", "-i", "/image/tag", "../../testdata/test-chart"},
+		[]string{"helm-snoop", "-i", ".image.tag", "../../testdata/test-chart"},
 		snooper.SetupLogging,
 		mockSnoop,
 	)
@@ -47,10 +47,10 @@ func (s *Unittest) TestIgnorePaths_MultipleWithAllKinds() {
 	command := NewParser(
 		[]string{
 			"helm-snoop",
-			"-i", "/image/tag", // key kind
-			"-i", "/items/0", // any kind (integer)
-			"-i", "/config/*", // wildcard kind (terminal)
-			"-i", "/a/*/c", // wildcard kind (interior)
+			"-i", ".image.tag", // key kind
+			"-i", ".items.0", // any kind (integer)
+			"-i", ".config.*", // wildcard kind (terminal)
+			"-i", ".a.*.c", // wildcard kind (interior)
 			"../../testdata/test-chart",
 		},
 		snooper.SetupLogging,
@@ -76,14 +76,14 @@ func (s *Unittest) TestIgnorePaths_InvalidPaths() {
 		errContains string
 	}{
 		{
-			name:        "no leading slash",
-			path:        "image/tag",
-			errContains: "must start with /",
+			name:        "slash notation rejected",
+			path:        "/image/tag",
+			errContains: "dot notation",
 		},
 		{
-			name:        "trailing slash",
-			path:        "/config/",
-			errContains: "trailing slash",
+			name:        "trailing dot",
+			path:        ".config.",
+			errContains: "trailing dot",
 		},
 		{
 			name:        "empty path",
@@ -91,8 +91,8 @@ func (s *Unittest) TestIgnorePaths_InvalidPaths() {
 			errContains: "empty pattern",
 		},
 		{
-			name:        "double slash",
-			path:        "/config//value",
+			name:        "double dot",
+			path:        ".config..value",
 			errContains: "empty segment",
 		},
 	}

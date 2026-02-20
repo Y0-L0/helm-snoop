@@ -189,11 +189,11 @@ Examples:
 		"i",
 		`Ignore value paths matching patterns. Supports wildcards (*) and integers match as any key.
 Examples:
-  -i /image/tag        Ignore exact path
-  -i /config/*         Ignore all config descendants
-  -i /items/0          Ignore items[0] and items["0"]
-  -i /a/*/c            Ignore /a/<any>/c (one level)
-Repeatable.`,
+  -i .image.tag        Ignore exact path
+  -i .config.*         Ignore all config descendants
+  -i .items.0          Ignore items[0] and items["0"]
+  -i .a.*.c            Ignore .a.<any>.c (one level)
+Repeatable. Paths match the dot-notation output format for easy copy-paste.`,
 	)
 
 	rootCmd.Flags().BoolVar(

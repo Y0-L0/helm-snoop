@@ -64,6 +64,9 @@ Two hooks are available: `helm-snoop` (requires the binary on `$PATH`) and
 `helm-snoop-docker` (runs via `ghcr.io/y0-l0/helm-snoop`). Changed files are
 resolved to their parent chart directories automatically.
 
+In monorepos with multiple charts, consider adding the hook once per chart with
+a scoped `files` regex. This keeps flags like `-i` within the chart boundaries.
+
 ### ✅ Features
 
 - **Variable tracking:** Variables are tracked across references (e.g., `{{ $var := .Values.foo }}{{ $var.bar }}`)
