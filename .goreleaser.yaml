@@ -1,7 +1,8 @@
 version: 2
 
 builds:
-  - main: ./cmd/helm-snoop
+  - id: helm-snoop
+    main: ./cmd/helm-snoop
     binary: helm-snoop
     env:
       - CGO_ENABLED=0
@@ -17,6 +18,20 @@ builds:
       - -X github.com/y0-l0/helm-snoop/pkg/version.commit={{.Commit}}
       - -X github.com/y0-l0/helm-snoop/pkg/version.treeState={{if .IsGitDirty}}dirty{{else}}clean{{end}}
       - -X github.com/y0-l0/helm-snoop/pkg/version.commitDate={{.CommitDate}}
+
+nfpms:
+  - id: linux-packages
+    package_name: helm-snoop
+    ids:
+      - helm-snoop
+    vendor: stadimeter
+    homepage: https://github.com/y0-l0/helm-snoop
+    maintainer: "y0-l0 <jojo.dev@lohmer.com>"
+    description: Detect unused and undefined values in Helm charts
+    license: AGPL-3.0
+    formats:
+      - deb
+    bindir: /usr/bin
 
 archives:
   - formats: [tar.gz]
@@ -49,7 +64,19 @@ homebrew_casks:
     directory: Casks
     homepage: https://github.com/y0-l0/helm-snoop
     description: Detect unused and undefined values in Helm charts
-    license: MIT
+    license: AGPL-3.0
+
+publishers:
+  - name: fury
+    ids:
+      - linux-packages
+    checksum: false
+    signature: false
+    dir: "{{ dir .ArtifactPath }}"
+    cmd: >-
+      curl --silent --show-error --fail
+      -F package=@{{ .ArtifactName }}
+      https://{{ .Env.FURY_TOKEN }}@push.fury.io/{{ .Env.FURY_ACCOUNT }}/
 
 changelog:
   sort: asc
