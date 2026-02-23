@@ -24,6 +24,13 @@ docker run --rm -v $(pwd):/chart ghcr.io/y0-l0/helm-snoop:latest /chart
 brew install y0-l0/tap/helm-snoop
 ```
 
+**APT (Debian/Ubuntu):**
+```bash
+echo "deb [trusted=yes] https://apt.fury.io/stadimeter/ /" \
+  | sudo tee /etc/apt/sources.list.d/fury.list
+sudo apt update && sudo apt install helm-snoop
+```
+
 **Binary (Linux amd64):**
 ```bash
 VERSION=0.2.3
