@@ -75,16 +75,20 @@ func includeFn(ctx *evalCtx, call Call) evalResult {
 		return evalResult{}
 	}
 
-	// 6. Check for circular includes using inStack
-	if ctx.inStack[templateName] {
-		panic(fmt.Sprintf("include: circular dependency on template %q", templateName))
+	// 6. Check for recursive includes using per-template depth counter.
+	const maxRecursionDepth = 10
+	if ctx.inStack[templateName] >= maxRecursionDepth {
+		slog.Debug("include: recursion depth limit reached, stopping analysis", "name", templateName, "depth", ctx.inStack[templateName])
+		return evalResult{}
 	}
 
-	// 7. Mark template as in-stack before evaluation
-	ctx.inStack[templateName] = true
+	// 7. Increment depth counter before evaluation, decrement on return.
+	ctx.inStack[templateName]++
 	defer func() {
-		// Clean up stack after evaluation (even if panic occurs)
-		delete(ctx.inStack, templateName)
+		ctx.inStack[templateName]--
+		if ctx.inStack[templateName] == 0 {
+			delete(ctx.inStack, templateName)
+		}
 	}()
 
 	slog.Debug("include: evaluating template body", "name", templateName, "file", tmplDef.file)

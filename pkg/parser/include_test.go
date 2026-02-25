@@ -36,8 +36,9 @@ data:
 	s.Require().Equal("/K/K", paths[0].KindsString())
 }
 
-// Recursive includes should panic in Strict mode to prevent infinite loops.
-func (s *Unittest) TestInclude_RecursionPanics() {
+// Circular includes should terminate gracefully (not panic) once the per-template
+// recursion depth limit is reached.
+func (s *Unittest) TestInclude_RecursionTerminatesGracefully() {
 	c := &chart.Chart{Templates: []*common.File{
 		{
 			Name: "templates/_a.yaml",
@@ -67,7 +68,7 @@ data:
 	}}
 	idx, err := BuildTemplateIndex(c)
 	s.Require().NoError(err)
-	s.Require().Panics(func() {
+	s.Require().NotPanics(func() {
 		_, _ = parseFile("", "templates/cm.yaml", c.Templates[2].Data, idx)
 	})
 }
