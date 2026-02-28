@@ -33,6 +33,7 @@ func GetUsages(ch *chart.Chart) (path.Paths, error) {
 		}
 		result = append(result, paths...)
 	}
+
 	return result, nil
 }
 

@@ -30,7 +30,7 @@ func isGzipFile(path string) bool {
 	if err != nil {
 		return false
 	}
-	defer f.Close()
+	defer f.Close() //nolint:errcheck
 	buf := make([]byte, 3)
 	n, _ := f.Read(buf)
 	return n == 3 && bytes.Equal(buf, gzipMagic)

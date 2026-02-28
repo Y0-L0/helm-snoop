@@ -31,7 +31,7 @@ type evalCtx struct {
 	paramLits    map[string]string
 	variables    map[string]*path.Path
 	idx          *TemplateIndex
-	inStack      map[string]bool
+	inStack      map[string]int
 	depth        int
 	maxDepth     int
 	fileName     string
@@ -45,9 +45,9 @@ func newEvalCtx(tree *parse.Tree, out *path.Paths, idx *TemplateIndex, fileName,
 		tree:     tree,
 		out:      out,
 		idx:      idx,
-		inStack:  make(map[string]bool),
+		inStack:  make(map[string]int),
 		depth:    0,
-		maxDepth: 64,
+		maxDepth: 1024,
 		fileName: fileName,
 		source:   source,
 	}
