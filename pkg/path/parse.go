@@ -34,9 +34,7 @@ func ParsePath(pattern string) (*Path, error) {
 	}
 
 	// Strip optional leading dot to match ID() output format
-	if strings.HasPrefix(pattern, ".") {
-		pattern = pattern[1:]
-	}
+	pattern = strings.TrimPrefix(pattern, ".")
 
 	// Nothing left after stripping dot
 	if pattern == "" {

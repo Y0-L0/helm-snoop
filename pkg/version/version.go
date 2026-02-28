@@ -5,6 +5,7 @@ import (
 	"io"
 	"runtime"
 	"runtime/debug"
+	"strings"
 )
 
 // Set via ldflags by GoReleaser / CI.
@@ -60,10 +61,12 @@ func resolve() info {
 func BuildInfo(w io.Writer) {
 	i := resolve()
 
-	fmt.Fprintf(w, "Version:    %s\n", i.version)
-	fmt.Fprintf(w, "Commit:     %s\n", i.commit)
-	fmt.Fprintf(w, "TreeState:  %s\n", i.treeState)
-	fmt.Fprintf(w, "CommitDate: %s\n", i.commitDate)
-	fmt.Fprintf(w, "GoVersion:  %s\n", runtime.Version())
-	fmt.Fprintf(w, "Platform:   %s/%s\n", runtime.GOOS, runtime.GOARCH)
+	var sb strings.Builder
+	fmt.Fprintf(&sb, "Version:    %s\n", i.version)
+	fmt.Fprintf(&sb, "Commit:     %s\n", i.commit)
+	fmt.Fprintf(&sb, "TreeState:  %s\n", i.treeState)
+	fmt.Fprintf(&sb, "CommitDate: %s\n", i.commitDate)
+	fmt.Fprintf(&sb, "GoVersion:  %s\n", runtime.Version())
+	fmt.Fprintf(&sb, "Platform:   %s/%s\n", runtime.GOOS, runtime.GOARCH)
+	io.WriteString(w, sb.String()) //nolint:errcheck
 }

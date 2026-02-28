@@ -15,12 +15,12 @@ type SnoopFunc func(string, path.Paths, []string) (*Result, error)
 func Snoop(chartPath string, ignorePaths path.Paths, valuesFiles []string) (*Result, error) {
 	chart, err := loader.Load(chartPath)
 	if err != nil {
-		return nil, fmt.Errorf("Failed to read the helm chart.\nerror: %w", err)
+		return nil, fmt.Errorf("failed to read the helm chart.\nerror: %w", err)
 	}
 
 	used, err := parser.GetUsages(chart)
 	if err != nil {
-		return nil, fmt.Errorf("Failed to analyze the helm chart.\nerror: %w", err)
+		return nil, fmt.Errorf("failed to analyze the helm chart.\nerror: %w", err)
 	}
 
 	defined, err := loadDefinitions(chart.Raw, valuesFiles)
@@ -53,17 +53,17 @@ func findRawFile(raw []*common.File, name string) []byte {
 func loadDefinitions(raw []*common.File, extraFiles []string) (path.Paths, error) {
 	defined, err := path.GetDefinitions(findRawFile(raw, "values.yaml"), "values.yaml")
 	if err != nil {
-		return nil, fmt.Errorf("Failed to parse values.yaml.\nerror: %w", err)
+		return nil, fmt.Errorf("failed to parse values.yaml.\nerror: %w", err)
 	}
 
 	for _, f := range extraFiles {
 		data, err := os.ReadFile(f)
 		if err != nil {
-			return nil, fmt.Errorf("Failed to read values file %s.\nerror: %w", f, err)
+			return nil, fmt.Errorf("failed to read values file %s.\nerror: %w", f, err)
 		}
 		extra, err := path.GetDefinitions(data, f)
 		if err != nil {
-			return nil, fmt.Errorf("Failed to parse values file %s.\nerror: %w", f, err)
+			return nil, fmt.Errorf("failed to parse values file %s.\nerror: %w", f, err)
 		}
 		defined = append(defined, extra...)
 	}
