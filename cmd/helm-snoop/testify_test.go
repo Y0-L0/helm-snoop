@@ -13,6 +13,7 @@ var update = flag.Bool("update", false, "update golden files")
 
 type GoldenTest struct {
 	testsuite.LoggingSuite
+
 	chartsDir string
 	update    bool
 }

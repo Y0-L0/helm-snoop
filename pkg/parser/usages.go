@@ -9,7 +9,7 @@ import (
 	chart "helm.sh/helm/v4/pkg/chart/v2"
 )
 
-// getUsages walks all chart templates and returns a flat list of observed .Values paths.
+// GetUsages walks all chart templates and returns a flat list of observed .Values paths.
 func GetUsages(ch *chart.Chart) (path.Paths, error) {
 	result := make(path.Paths, 0)
 

@@ -11,15 +11,15 @@ import (
 
 	"github.com/spf13/cobra"
 	"github.com/y0-l0/helm-snoop/internal/assert"
-	"github.com/y0-l0/helm-snoop/pkg/color"
+	"github.com/y0-l0/helm-snoop/pkg/termcolor"
 	"github.com/y0-l0/helm-snoop/pkg/path"
 	"github.com/y0-l0/helm-snoop/pkg/snooper"
 	"github.com/y0-l0/helm-snoop/pkg/version"
 )
 
-type CliArgumentError string
+type ArgumentError string
 
-func (e CliArgumentError) Error() string { return string(e) }
+func (e ArgumentError) Error() string { return string(e) }
 
 // gzipMagic is the gzip file signature (RFC 1952).
 var gzipMagic = []byte{0x1F, 0x8B, 0x08}
@@ -131,7 +131,7 @@ Examples:
 		SilenceErrors: true,
 		PersistentPreRun: func(cmd *cobra.Command, args []string) {
 			if noColor {
-				color.Disable()
+				termcolor.Disable()
 			}
 			var logLevel slog.Level
 			switch verbosity {
