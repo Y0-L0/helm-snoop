@@ -20,6 +20,17 @@ type Path struct {
 	Contexts Contexts
 }
 
+func NewPath(tokens ...string) *Path {
+	p := Path{
+		tokens: make([]string, 0, len(tokens)),
+		kinds:  make([]kind, 0, len(tokens)),
+	}
+	for _, t := range tokens {
+		p.Key(t)
+	}
+	return &p
+}
+
 // ID returns a dot-notation representation of the path (e.g., ".a.b.c").
 // Used for comparison, map keys, and human-readable output.
 // Does not distinguish between map (key) and array (int) segments.
@@ -134,17 +145,6 @@ func (p *Path) Wildcard() *Path {
 	p.tokens = append(p.tokens, "*")
 	p.kinds = append(p.kinds, wildcardKind)
 	return p
-}
-
-func NewPath(tokens ...string) *Path {
-	p := Path{
-		tokens: make([]string, 0, len(tokens)),
-		kinds:  make([]kind, 0, len(tokens)),
-	}
-	for _, t := range tokens {
-		p.Key(t)
-	}
-	return &p
 }
 
 // Join returns a new Path by appending other's tokens and kinds to this path.

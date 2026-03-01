@@ -18,6 +18,7 @@ func TestUnit(t *testing.T) { suite.Run(t, new(Unittest)) }
 // GoldenTest is the golden test suite (CLI and Results goldens live elsewhere).
 type GoldenTest struct {
 	testsuite.LoggingSuite
+
 	chartsDir string
 	update    bool
 }
