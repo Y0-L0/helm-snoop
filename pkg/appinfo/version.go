@@ -24,7 +24,7 @@ type info struct {
 	commitDate string
 }
 
-func resolve() info {
+func resolve(readBuildInfo func() (*debug.BuildInfo, bool)) info {
 	i := info{version, commit, treeState, commitDate}
 
 	// If ldflags were set (e.g. by GoReleaser), use them as-is
@@ -33,7 +33,7 @@ func resolve() info {
 	}
 
 	// Fallback to debug.ReadBuildInfo() for go install / go run
-	bi, ok := debug.ReadBuildInfo()
+	bi, ok := readBuildInfo()
 	if !ok {
 		return i
 	}
@@ -60,7 +60,7 @@ func resolve() info {
 
 // Write writes version information to the provided writer.
 func Write(w io.Writer) {
-	i := resolve()
+	i := resolve(debug.ReadBuildInfo)
 
 	var sb strings.Builder
 	fmt.Fprintf(&sb, "Version:    %s\n", i.version)
