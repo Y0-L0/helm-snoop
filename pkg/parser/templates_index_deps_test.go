@@ -15,7 +15,10 @@ func (s *Unittest) TestTemplateIndex_DependencyInclude() {
 		{Name: "templates/_defs.tpl", Data: []byte(`{{ define "child.tpl.x" }}{{ .Values.child.k }}{{ end }}`)},
 	}
 	root.Templates = []*common.File{
-		{Name: "templates/cm.yaml", Data: []byte("apiVersion: v1\nkind: ConfigMap\ndata:\n  v: {{ include \"child.tpl.x\" . }}\n")},
+		{
+			Name: "templates/cm.yaml",
+			Data: []byte("apiVersion: v1\nkind: ConfigMap\ndata:\n  v: {{ include \"child.tpl.x\" . }}\n"),
+		},
 	}
 	// Manually build index for root and child (simulate deps)
 	idx := &TemplateIndex{byName: make(map[string]TemplateDef)}
@@ -43,7 +46,10 @@ func (s *Unittest) TestTemplateIndex_TransitiveDependencyInclude() {
 	}
 	child.Templates = []*common.File{{Name: "templates/other.yaml", Data: []byte("# no defines")}}
 	root.Templates = []*common.File{
-		{Name: "templates/cm.yaml", Data: []byte("apiVersion: v1\nkind: ConfigMap\ndata:\n  v: {{ include \"grand.tpl.y\" . }}\n")},
+		{
+			Name: "templates/cm.yaml",
+			Data: []byte("apiVersion: v1\nkind: ConfigMap\ndata:\n  v: {{ include \"grand.tpl.y\" . }}\n"),
+		},
 	}
 	// Manually build index for root, child, and grand (simulate transitive deps)
 	idx := &TemplateIndex{byName: make(map[string]TemplateDef)}

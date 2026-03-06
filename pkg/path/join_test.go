@@ -45,8 +45,8 @@ func (s *Unittest) TestSortDedup_WildcardSubsumption() {
 }
 
 func (s *Unittest) TestSortDedup_MergesContexts() {
-	ctxA := PathContext{FileName: "templates/deployment.yaml", Line: 10, Column: 5}
-	ctxB := PathContext{FileName: "templates/service.yaml", Line: 20, Column: 3}
+	ctxA := Context{FileName: "templates/deployment.yaml", Line: 10, Column: 5}
+	ctxB := Context{FileName: "templates/service.yaml", Line: 20, Column: 3}
 
 	p1 := NewPath("a", "b")
 	p1.Contexts = Contexts{ctxA}
@@ -61,8 +61,8 @@ func (s *Unittest) TestSortDedup_MergesContexts() {
 }
 
 func (s *Unittest) TestSortDedup_WildcardSubsumption_MergesContexts() {
-	ctxFoo := PathContext{FileName: "templates/deployment.yaml", Line: 5, Column: 1}
-	ctxFooWild := PathContext{FileName: "templates/service.yaml", Line: 10, Column: 1}
+	ctxFoo := Context{FileName: "templates/deployment.yaml", Line: 5, Column: 1}
+	ctxFooWild := Context{FileName: "templates/service.yaml", Line: 10, Column: 1}
 
 	pFoo := NewPath("foo")
 	pFoo.Contexts = Contexts{ctxFoo}
@@ -78,7 +78,7 @@ func (s *Unittest) TestSortDedup_WildcardSubsumption_MergesContexts() {
 }
 
 func (s *Unittest) TestSortDedup_DeduplicatesContexts() {
-	ctx := PathContext{FileName: "values.yaml", Line: 5, Column: 3}
+	ctx := Context{FileName: "values.yaml", Line: 5, Column: 3}
 
 	p1 := NewPath("a")
 	p1.Contexts = Contexts{ctx}
@@ -149,7 +149,7 @@ func (s *Unittest) TestMergeJoinSet_EmptySides() {
 	s.assertMergeJoin(b, a, expInter, expOnlyB, expOnlyA)
 }
 
-// Loose join tests with anyKind
+// Loose join tests with anyKind.
 func (s *Unittest) assertMergeJoinLoose(a, b Paths, expInter, expOnlyA, expOnlyB Paths) {
 	origA := append(Paths(nil), a...)
 	origB := append(Paths(nil), b...)
@@ -204,12 +204,12 @@ func (s *Unittest) TestMergeJoinLoose_OneDefinitionMatchesMultipleUsages() {
 	inter, onlyDef, onlyUsage := MergeJoinLoose(definitions, usages)
 
 	// The definition matches both usages, so it appears in inter
-	s.Equal(1, len(inter), "definition should match both usages")
+	s.Len(inter, 1, "definition should match both usages")
 	s.Equal(".items.0", inter[0].ID())
 
 	// Nothing unused
-	s.Equal(0, len(onlyDef), "no definitions should be unmatched")
+	s.Empty(onlyDef, "no definitions should be unmatched")
 
 	// Both usages matched the definition, so nothing undefined
-	s.Equal(0, len(onlyUsage), "both usages should match the definition")
+	s.Empty(onlyUsage, "both usages should match the definition")
 }

@@ -8,7 +8,7 @@ import (
 	"golang.org/x/term"
 )
 
-// ANSI escape codes
+// ANSI escape codes.
 const (
 	reset = "\033[0m"
 	bold  = "\033[1m"
@@ -72,7 +72,7 @@ func Header(text, char string) string {
 // termWidth returns the current terminal width in columns.
 // Prefers TTY size, falls back to $COLUMNS, then 80.
 func termWidth() int {
-	fd := int(os.Stdout.Fd())
+	fd := int(os.Stdout.Fd()) //nolint:gosec // G115: file descriptors are always small.
 	if term.IsTerminal(fd) {
 		if w, _, err := term.GetSize(fd); err == nil && w > 0 {
 			return w

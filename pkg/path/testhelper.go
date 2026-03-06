@@ -6,7 +6,7 @@ import (
 )
 
 type equality interface {
-	Equal(interface{}, interface{}, ...interface{}) bool
+	Equal(any, any, ...any) bool
 }
 
 func getPath(paths Paths, i int) *Path {

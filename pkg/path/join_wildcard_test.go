@@ -51,7 +51,7 @@ func (s *Unittest) TestMergeJoinLoose_MultipleWildcardsMatchDifferentDescendants
 	s.assertMergeJoinLoose(a, b, expInter, nil, Paths{np().Key("c").Key("w")})
 }
 
-// Interior wildcard tests - must match exactly one segment
+// Interior wildcard tests - must match exactly one segment.
 func (s *Unittest) TestMergeJoinLoose_InteriorWildcardMatchesOneSegment() {
 	a := Paths{np().Key("a").Wildcard().Key("c")}
 	b := Paths{np().Key("a").Key("b").Key("c")}
@@ -64,7 +64,7 @@ func (s *Unittest) TestMergeJoinLoose_InteriorWildcardDoesNotMatchMultipleSegmen
 	s.assertMergeJoinLoose(a, b, nil, a, b)
 }
 
-// Multiple wildcards
+// Multiple wildcards.
 func (s *Unittest) TestMergeJoinLoose_InteriorAndTerminalWildcard() {
 	a := Paths{np().Key("a").Wildcard().Key("c").Wildcard()}
 	b := Paths{np().Key("a").Key("b").Key("c").Key("d")}
@@ -89,7 +89,7 @@ func (s *Unittest) TestMergeJoinLoose_TwoInteriorWildcardsWrongLength() {
 	s.assertMergeJoinLoose(a, b, nil, a, b)
 }
 
-// Edge cases
+// Edge cases.
 func (s *Unittest) TestMergeJoinLoose_RootTerminalWildcard() {
 	a := Paths{np().Wildcard()}
 	b := Paths{np().Key("a"), np().Key("a").Key("b")}

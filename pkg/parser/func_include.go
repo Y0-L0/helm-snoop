@@ -9,6 +9,7 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
+//nolint:gocognit,nestif // TODO: refactor to reduce complexity
 func includeFn(ctx *evalCtx, call Call) evalResult {
 	// 1. Validate arguments - include requires at least 1 argument (template name)
 	if len(call.Args) < 1 {
@@ -78,7 +79,13 @@ func includeFn(ctx *evalCtx, call Call) evalResult {
 	// 6. Check for recursive includes using per-template depth counter.
 	const maxRecursionDepth = 10
 	if ctx.inStack[templateName] >= maxRecursionDepth {
-		slog.Debug("include: recursion depth limit reached, stopping analysis", "name", templateName, "depth", ctx.inStack[templateName])
+		slog.Debug(
+			"include: recursion depth limit reached, stopping analysis",
+			"name",
+			templateName,
+			"depth",
+			ctx.inStack[templateName],
+		)
 		return evalResult{}
 	}
 
@@ -95,13 +102,14 @@ func includeFn(ctx *evalCtx, call Call) evalResult {
 
 	// 8. Evaluate template body with context
 	var restore func()
-	if isRootContext {
+	switch {
+	case isRootContext:
 		restore = ctx.WithPrefixes(nil)
-	} else if dictPaths != nil || dictLits != nil {
+	case dictPaths != nil || dictLits != nil:
 		restore = ctx.WithDictParams(dictPaths, dictLits)
-	} else if templatePrefix != nil {
+	case templatePrefix != nil:
 		restore = ctx.WithPrefixes(path.Paths{templatePrefix})
-	} else {
+	default:
 		restore = func() {}
 	}
 

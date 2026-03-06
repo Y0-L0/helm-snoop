@@ -11,7 +11,7 @@ import (
 // FLAVOR 1: COMPLEX VALUE PRODUCERS
 // ==============================================================================
 
-// dictFn builds both conservative union AND structure tracking
+// dictFn builds both conservative union AND structure tracking.
 func dictFn(ctx *evalCtx, call Call) evalResult {
 	dict := make(map[string]*path.Path)
 	dictLits := make(map[string]string)
@@ -44,7 +44,7 @@ func dictFn(ctx *evalCtx, call Call) evalResult {
 	}
 }
 
-// indexFn builds child paths by appending keys
+// indexFn builds child paths by appending keys.
 func indexFn(ctx *evalCtx, call Call) evalResult {
 	if len(call.Args) < 2 {
 		slog.Warn("index: need at least 2 args", "count", len(call.Args))
@@ -89,7 +89,7 @@ func indexFn(ctx *evalCtx, call Call) evalResult {
 	return evalResult{paths: modifiedPaths}
 }
 
-// getFn is like index but with exactly 2 args
+// getFn is like index but with exactly 2 args.
 func getFn(ctx *evalCtx, call Call) evalResult {
 	if len(call.Args) != 2 {
 		slog.Warn("get: need exactly 2 args", "count", len(call.Args))

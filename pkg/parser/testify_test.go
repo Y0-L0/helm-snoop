@@ -4,6 +4,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/suite"
+
 	"github.com/y0-l0/helm-snoop/internal/testsuite"
 	"github.com/y0-l0/helm-snoop/pkg/path"
 )

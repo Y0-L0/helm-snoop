@@ -5,8 +5,9 @@ import (
 	"log/slog"
 	"text/template/parse"
 
-	"github.com/y0-l0/helm-snoop/internal/assert"
 	chart "helm.sh/helm/v4/pkg/chart/v2"
+
+	"github.com/y0-l0/helm-snoop/internal/assert"
 )
 
 // TemplateDef captures a defined template's origin and parse tree root.
@@ -55,6 +56,8 @@ func BuildTemplateIndex(ch *chart.Chart) (*TemplateIndex, error) {
 
 // buildIndexRecursive adds define'd templates from chart and its transitive dependencies.
 // prefix indicates the synthetic path prefix for dependency files (e.g., charts/<dep>/...).
+//
+//nolint:gocognit // TODO: refactor to reduce cognitive complexity
 func buildIndexRecursive(ch *chart.Chart, prefix string, idx *TemplateIndex, seen map[*chart.Chart]bool) error {
 	if ch == nil {
 		return nil

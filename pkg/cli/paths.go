@@ -10,7 +10,7 @@ import (
 // cliPaths is a path.Paths that implements pflag.Value for CLI parsing.
 type cliPaths path.Paths
 
-// String returns a string representation of the paths (for pflag)
+// String returns a string representation of the paths (for pflag).
 func (p *cliPaths) String() string {
 	if p == nil || len(*p) == 0 {
 		return ""
@@ -22,7 +22,7 @@ func (p *cliPaths) String() string {
 	return "[" + strings.Join(ids, ", ") + "]"
 }
 
-// Set parses and validates a single path (called by pflag)
+// Set parses and validates a single path (called by pflag).
 func (p *cliPaths) Set(value string) error {
 	parsedPath, err := path.ParsePath(value)
 	if err != nil {
@@ -33,7 +33,7 @@ func (p *cliPaths) Set(value string) error {
 	return nil
 }
 
-// Type returns the type name for help text
+// Type returns the type name for help text.
 func (p *cliPaths) Type() string {
 	return "ignorePath"
 }

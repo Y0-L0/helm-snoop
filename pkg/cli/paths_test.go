@@ -1,6 +1,7 @@
 package cli
 
 import (
+	"errors"
 	filepath "path/filepath"
 
 	"github.com/y0-l0/helm-snoop/pkg/path"
@@ -12,7 +13,7 @@ func np() *path.Path { return &path.Path{} }
 func (s *Unittest) TestIgnorePaths_SinglePath() {
 	var capturedPaths path.Paths
 
-	mockSnoop := func(chartPath string, ignorePaths path.Paths, valuesFiles []string) (*snooper.Result, error) {
+	mockSnoop := func(_ string, ignorePaths path.Paths, _ []string) (*snooper.Result, error) {
 		capturedPaths = ignorePaths
 		return &snooper.Result{
 			Referenced: path.Paths{},
@@ -37,7 +38,7 @@ func (s *Unittest) TestIgnorePaths_SinglePath() {
 func (s *Unittest) TestIgnorePaths_MultipleWithAllKinds() {
 	var capturedPaths path.Paths
 
-	mockSnoop := func(chartPath string, ignorePaths path.Paths, valuesFiles []string) (*snooper.Result, error) {
+	mockSnoop := func(_ string, ignorePaths path.Paths, _ []string) (*snooper.Result, error) {
 		capturedPaths = ignorePaths
 		return &snooper.Result{
 			Referenced: path.Paths{},
@@ -101,9 +102,9 @@ func (s *Unittest) TestIgnorePaths_InvalidPaths() {
 
 	for _, tc := range tests {
 		s.Run(tc.name, func() {
-			mockSnoop := func(chartPath string, ignorePaths path.Paths, valuesFiles []string) (*snooper.Result, error) {
+			mockSnoop := func(_ string, _ path.Paths, _ []string) (*snooper.Result, error) {
 				s.T().Fatal("snoop should not be called with invalid path")
-				return nil, nil
+				return nil, errors.New("unreachable")
 			}
 
 			command := NewParser(
@@ -122,7 +123,7 @@ func (s *Unittest) TestIgnorePaths_InvalidPaths() {
 func (s *Unittest) TestIgnorePaths_NoIgnoreList() {
 	var capturedPaths path.Paths
 
-	mockSnoop := func(chartPath string, ignorePaths path.Paths, valuesFiles []string) (*snooper.Result, error) {
+	mockSnoop := func(_ string, ignorePaths path.Paths, _ []string) (*snooper.Result, error) {
 		capturedPaths = ignorePaths
 		return &snooper.Result{
 			Referenced: path.Paths{},
@@ -146,7 +147,7 @@ func (s *Unittest) TestIgnorePaths_NoIgnoreList() {
 func (s *Unittest) TestValuesFiles_SingleFile() {
 	var capturedFiles []string
 
-	mockSnoop := func(chartPath string, ignorePaths path.Paths, valuesFiles []string) (*snooper.Result, error) {
+	mockSnoop := func(_ string, _ path.Paths, valuesFiles []string) (*snooper.Result, error) {
 		capturedFiles = valuesFiles
 		return &snooper.Result{
 			Referenced: path.Paths{},
@@ -170,7 +171,7 @@ func (s *Unittest) TestValuesFiles_SingleFile() {
 func (s *Unittest) TestValuesFiles_MultipleFiles() {
 	var capturedFiles []string
 
-	mockSnoop := func(chartPath string, ignorePaths path.Paths, valuesFiles []string) (*snooper.Result, error) {
+	mockSnoop := func(_ string, _ path.Paths, valuesFiles []string) (*snooper.Result, error) {
 		capturedFiles = valuesFiles
 		return &snooper.Result{
 			Referenced: path.Paths{},
@@ -195,7 +196,7 @@ func (s *Unittest) TestValuesFiles_MultipleFiles() {
 func (s *Unittest) TestValuesFiles_NoFlag() {
 	var capturedFiles []string
 
-	mockSnoop := func(chartPath string, ignorePaths path.Paths, valuesFiles []string) (*snooper.Result, error) {
+	mockSnoop := func(_ string, _ path.Paths, valuesFiles []string) (*snooper.Result, error) {
 		capturedFiles = valuesFiles
 		return &snooper.Result{
 			Referenced: path.Paths{},
@@ -218,14 +219,10 @@ func (s *Unittest) TestValuesFiles_NoFlag() {
 func (s *Unittest) TestValuesFiles_MissingFile() {
 	missing := "/nonexistent/overlay-values.yaml"
 
-	mockSnoop := func(chartPath string, ignorePaths path.Paths, valuesFiles []string) (*snooper.Result, error) {
-		return snooper.Snoop(chartPath, ignorePaths, valuesFiles)
-	}
-
 	command := NewParser(
 		[]string{"helm-snoop", "-f", missing, "../../testdata/test-chart"},
 		snooper.SetupLogging,
-		mockSnoop,
+		snooper.Snoop,
 	)
 
 	err := command.Execute()

@@ -4,8 +4,8 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
-// TestParseFile_RangeVariables tests range variable tracking
-// Phase 1: Basic range variable usage
+// TestParseFile_RangeVariables tests range variable tracking.
+// Phase 1: Basic range variable usage.
 func (s *Unittest) TestParseFile_RangeVariables() {
 	cases := []struct {
 		name     string
@@ -104,8 +104,8 @@ func (s *Unittest) TestParseFile_RangeVariables() {
 	}
 }
 
-// TestParseFile_RangeVariablesNested tests nested range with variables
-// Phase 2: Complex scenarios
+// TestParseFile_RangeVariablesNested tests nested range with variables.
+// Phase 2: Complex scenarios.
 func (s *Unittest) TestParseFile_RangeVariablesNested() {
 	cases := []struct {
 		name     string
@@ -163,8 +163,8 @@ func (s *Unittest) TestParseFile_RangeVariablesNested() {
 	}
 }
 
-// TestParseFile_RangeVariablesMixed tests range variables with other features
-// Phase 2 continued: Mixed usage
+// TestParseFile_RangeVariablesMixed tests range variables with other features.
+// Phase 2 continued: Mixed usage.
 func (s *Unittest) TestParseFile_RangeVariablesMixed() {
 	cases := []struct {
 		name     string

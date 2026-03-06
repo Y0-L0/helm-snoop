@@ -47,7 +47,7 @@ func (p Path) Compare(other Path) int {
 }
 
 // KindsString returns a slash-separated string encoding of the path segment kinds.
-// Example: "K/K/I/K" for /a/b/1/c
+// Example: "K/K/I/K" for /a/b/1/c.
 func (p Path) KindsString() string {
 	if len(p.kinds) == 0 {
 		return ""
@@ -72,11 +72,13 @@ func (p Path) KindsString() string {
 	return string(b)
 }
 
-var escaper = strings.NewReplacer("~", "~~", ".", "~.")
+func escape(s string) string {
+	return strings.NewReplacer("~", "~~", ".", "~.").Replace(s)
+}
 
 func (p Path) WithKey(key string) Path {
 	p.tokens = append([]string(nil), p.tokens...)
-	p.tokens = append(p.tokens, escaper.Replace(key))
+	p.tokens = append(p.tokens, escape(key))
 
 	p.kinds = append([]kind(nil), p.kinds...)
 	p.kinds = append(p.kinds, keyKind)
@@ -87,14 +89,14 @@ func (p Path) WithKey(key string) Path {
 // Key is a mutator: it appends a map key segment to the receiver Path in place.
 // Prefer the immutable-style WithKey in traversal code to avoid slice aliasing across siblings.
 func (p *Path) Key(key string) *Path {
-	p.tokens = append(p.tokens, escaper.Replace(key))
+	p.tokens = append(p.tokens, escape(key))
 	p.kinds = append(p.kinds, keyKind)
 	return p
 }
 
 func (p Path) WithIdx(key string) Path {
 	p.tokens = append([]string(nil), p.tokens...)
-	p.tokens = append(p.tokens, escaper.Replace(key))
+	p.tokens = append(p.tokens, escape(key))
 
 	p.kinds = append([]kind(nil), p.kinds...)
 	p.kinds = append(p.kinds, indexKind)
@@ -105,14 +107,14 @@ func (p Path) WithIdx(key string) Path {
 // Idx is a mutator: it appends an index segment to the receiver Path in place.
 // Prefer the immutable-style WithIdx in traversal code to avoid slice aliasing across siblings.
 func (p *Path) Idx(key string) *Path {
-	p.tokens = append(p.tokens, escaper.Replace(key))
+	p.tokens = append(p.tokens, escape(key))
 	p.kinds = append(p.kinds, indexKind)
 	return p
 }
 
 func (p Path) WithAny(token string) Path {
 	p.tokens = append([]string(nil), p.tokens...)
-	p.tokens = append(p.tokens, escaper.Replace(token))
+	p.tokens = append(p.tokens, escape(token))
 
 	p.kinds = append([]kind(nil), p.kinds...)
 	p.kinds = append(p.kinds, anyKind)
@@ -133,7 +135,7 @@ func (p Path) WithWildcard() Path {
 // Any is a mutator: it appends an unknown-kind segment to the receiver Path in place.
 // Prefer the immutable-style WithAny in traversal code to avoid slice aliasing across siblings.
 func (p *Path) Any(token string) *Path {
-	p.tokens = append(p.tokens, escaper.Replace(token))
+	p.tokens = append(p.tokens, escape(token))
 	p.kinds = append(p.kinds, anyKind)
 	return p
 }
@@ -161,7 +163,7 @@ func (p Path) Join(other Path) Path {
 	return result
 }
 
-// newPath helper for test Path construction
+// newPath helper for test Path construction.
 func np() *Path {
 	return &Path{}
 }

@@ -5,31 +5,31 @@ import (
 	"io"
 	"text/tabwriter"
 
-	"github.com/y0-l0/helm-snoop/pkg/termcolor"
 	"github.com/y0-l0/helm-snoop/pkg/path"
+	"github.com/y0-l0/helm-snoop/pkg/termcolor"
 )
 
 func formatChartCompact(w io.Writer, result *Result) {
 	// Chart header
-	fmt.Fprintf(w, "%s\n\n", termcolor.Header(result.ChartName, "=")) //nolint:errcheck
+	fmt.Fprintf(w, "%s\n\n", termcolor.Header(result.ChartName, "="))
 
 	// Unused section (only if non-empty)
 	if len(result.Unused) > 0 {
-		fmt.Fprintln(w, termcolor.Header("Unused", "-")) //nolint:errcheck
+		fmt.Fprintln(w, termcolor.Header("Unused", "-"))
 		formatPathsCompact(w, result.Unused)
 	}
 
 	// Undefined section (only if non-empty)
 	if len(result.Undefined) > 0 {
-		fmt.Fprintln(w, termcolor.Header("Undefined", "-")) //nolint:errcheck
+		fmt.Fprintln(w, termcolor.Header("Undefined", "-"))
 		formatPathsCompact(w, result.Undefined)
 	}
 
-	fmt.Fprintln(w) //nolint:errcheck
+	fmt.Fprintln(w)
 }
 
 func formatSummary(w io.Writer, results Results) {
-	fmt.Fprintf(w, "%s\n\n", termcolor.Header("Summary", "=")) //nolint:errcheck
+	fmt.Fprintf(w, "%s\n\n", termcolor.Header("Summary", "="))
 
 	tw := tabwriter.NewWriter(w, 0, 0, 2, ' ', 0)
 	totalUnused := 0
@@ -37,23 +37,23 @@ func formatSummary(w io.Writer, results Results) {
 	for _, r := range results {
 		totalUnused += len(r.Unused)
 		totalUndefined += len(r.Undefined)
-		fmt.Fprintf(tw, "%s\t%d Unused\t%d Undefined\t\n", r.ChartName, len(r.Unused), len(r.Undefined)) //nolint:errcheck
+		fmt.Fprintf(tw, "%s\t%d Unused\t%d Undefined\t\n", r.ChartName, len(r.Unused), len(r.Undefined))
 	}
-	fmt.Fprintf(tw, "Total\t%d Unused\t%d Undefined\tacross %d chart(s)\n", totalUnused, totalUndefined, len(results)) //nolint:errcheck
-	tw.Flush()                                                                                                         //nolint:errcheck
+	fmt.Fprintf(tw, "Total\t%d Unused\t%d Undefined\tacross %d chart(s)\n", totalUnused, totalUndefined, len(results))
+	tw.Flush()
 }
 
 func formatPathsCompact(w io.Writer, paths path.Paths) {
 	tw := tabwriter.NewWriter(w, 0, 0, 2, ' ', tabwriter.StripEscape)
 	for _, p := range paths {
 		if len(p.Contexts) == 0 {
-			fmt.Fprintf(tw, "%s\n", termcolor.Red(p.ID())) //nolint:errcheck
+			fmt.Fprintf(tw, "%s\n", termcolor.Red(p.ID()))
 			continue
 		}
-		fmt.Fprintf(tw, "%s\t%s\n", termcolor.Red(p.ID()), termcolor.Dim(p.Contexts[0].String())) //nolint:errcheck
+		fmt.Fprintf(tw, "%s\t%s\n", termcolor.Red(p.ID()), termcolor.Dim(p.Contexts[0].String()))
 		for _, ctx := range p.Contexts[1:] {
-			fmt.Fprintf(tw, "%s\t%s\n", termcolor.Red(""), termcolor.Dim(ctx.String())) //nolint:errcheck
+			fmt.Fprintf(tw, "%s\t%s\n", termcolor.Red(""), termcolor.Dim(ctx.String()))
 		}
 	}
-	tw.Flush() //nolint:errcheck
+	tw.Flush()
 }

@@ -9,7 +9,7 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/snooper"
 )
 
-func mockSnoop(chartPath string, ignorePatterns path.Paths, valuesFiles []string) (*snooper.Result, error) {
+func mockSnoop(_ string, _ path.Paths, _ []string) (*snooper.Result, error) {
 	return &snooper.Result{
 		Referenced: path.Paths{},
 		Unused:     path.Paths{},
@@ -21,7 +21,7 @@ type trackingSnoop struct {
 	calls []string
 }
 
-func (t *trackingSnoop) snoop(chartPath string, ignorePatterns path.Paths, valuesFiles []string) (*snooper.Result, error) {
+func (t *trackingSnoop) snoop(chartPath string, _ path.Paths, _ []string) (*snooper.Result, error) {
 	t.calls = append(t.calls, chartPath)
 	return &snooper.Result{
 		Referenced: path.Paths{},

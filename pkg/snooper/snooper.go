@@ -4,10 +4,11 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/y0-l0/helm-snoop/pkg/parser"
-	"github.com/y0-l0/helm-snoop/pkg/path"
 	"helm.sh/helm/v4/pkg/chart/common"
 	loader "helm.sh/helm/v4/pkg/chart/v2/loader"
+
+	"github.com/y0-l0/helm-snoop/pkg/parser"
+	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
 type SnoopFunc func(string, path.Paths, []string) (*Result, error)

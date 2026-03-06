@@ -65,7 +65,7 @@ nestedMap:
 			out, err := GetDefinitions([]byte(tc.values), "values.yaml")
 			s.Require().NoError(err)
 
-			EqualPaths(s, Paths(tc.expected), Paths(out))
+			EqualPaths(s, tc.expected, out)
 		})
 	}
 }
@@ -76,15 +76,15 @@ func (s *Unittest) TestGetDefinitions_WithContext() {
 	out, err := GetDefinitions([]byte(values), "values.yaml")
 	s.Require().NoError(err)
 
-	byID := map[string]PathContext{}
+	byID := map[string]Context{}
 	for _, p := range out {
 		s.Require().Len(p.Contexts, 1)
 		byID[p.ID()] = p.Contexts[0]
 	}
 
-	s.Equal(PathContext{FileName: "values.yaml", Line: 3, Column: 5},
+	s.Equal(Context{FileName: "values.yaml", Line: 3, Column: 5},
 		byID[".config.database.host"])
-	s.Equal(PathContext{FileName: "values.yaml", Line: 5, Column: 5},
+	s.Equal(Context{FileName: "values.yaml", Line: 5, Column: 5},
 		byID[".items.0.name"])
 }
 
@@ -127,7 +127,7 @@ config:
 			out, err := GetDefinitions([]byte(tc.values), "values.yaml")
 			s.Require().NoError(err)
 
-			EqualPaths(s, Paths(tc.expected), Paths(out))
+			EqualPaths(s, tc.expected, out)
 		})
 	}
 }
@@ -138,14 +138,14 @@ func (s *Unittest) TestGetDefinitions_EmptyCollectionContexts() {
 	out, err := GetDefinitions([]byte(values), "values.yaml")
 	s.Require().NoError(err)
 
-	byID := map[string]PathContext{}
+	byID := map[string]Context{}
 	for _, p := range out {
 		s.Require().Len(p.Contexts, 1)
 		byID[p.ID()] = p.Contexts[0]
 	}
 
-	s.Equal(PathContext{FileName: "values.yaml", Line: 1, Column: 1},
+	s.Equal(Context{FileName: "values.yaml", Line: 1, Column: 1},
 		byID[".podAnnotations"])
-	s.Equal(PathContext{FileName: "values.yaml", Line: 2, Column: 1},
+	s.Equal(Context{FileName: "values.yaml", Line: 2, Column: 1},
 		byID[".items"])
 }

@@ -68,5 +68,5 @@ func BuildInfo(w io.Writer) {
 	fmt.Fprintf(&sb, "CommitDate: %s\n", i.commitDate)
 	fmt.Fprintf(&sb, "GoVersion:  %s\n", runtime.Version())
 	fmt.Fprintf(&sb, "Platform:   %s/%s\n", runtime.GOOS, runtime.GOARCH)
-	io.WriteString(w, sb.String()) //nolint:errcheck
+	io.WriteString(w, sb.String()) //nolint:errcheck // best-effort write to stdout.
 }

@@ -5,7 +5,7 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
-// TestParseFile_TplFunction tests basic tpl function support
+// TestParseFile_TplFunction tests basic tpl function support.
 func (s *Unittest) TestParseFile_TplFunction() {
 	cases := []struct {
 		name     string

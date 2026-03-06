@@ -19,7 +19,7 @@ func (s *Unittest) TestFuncMap_AllEntriesAreTemplFunc() {
 // Compare our func map keys with sprig + Helm extras.
 // This ensures we don't introduce unknown function names inadvertently.
 // expectedFuncKeys builds the canonical key set by mirroring Helm's funcMap construction:
-// sprig.TxtFuncMap() - {"env", "expandenv"} + Helm extras
+// sprig.TxtFuncMap() - {"env", "expandenv"} + Helm extras.
 func expectedFuncKeys() []string {
 	// Start with sprig's text template functions
 	f := sprig.TxtFuncMap()

@@ -4,7 +4,7 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
-// TestParseFile_With tests with statement evaluation
+// TestParseFile_With tests with statement evaluation.
 func (s *Unittest) TestParseFile_With() {
 	cases := []struct {
 		name     string
@@ -63,7 +63,7 @@ func (s *Unittest) TestParseFile_With() {
 }
 
 // TestParseFile_WithPrefix tests that with blocks change the context
-// so that .foo inside "with .Values.config" refers to .Values.config.foo
+// so that .foo inside "with .Values.config" refers to .Values.config.foo.
 func (s *Unittest) TestParseFile_WithPrefix() {
 	cases := []struct {
 		name     string
