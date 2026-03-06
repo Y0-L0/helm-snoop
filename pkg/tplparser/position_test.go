@@ -1,4 +1,4 @@
-package parser
+package tplparser
 
 func (s *Unittest) TestCalcPosition_SingleLine() {
 	line, col := CalcPosition("hello", 2)

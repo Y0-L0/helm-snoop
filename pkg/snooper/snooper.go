@@ -7,7 +7,7 @@ import (
 	"helm.sh/helm/v4/pkg/chart/common"
 	loader "helm.sh/helm/v4/pkg/chart/v2/loader"
 
-	"github.com/y0-l0/helm-snoop/pkg/parser"
+	"github.com/y0-l0/helm-snoop/pkg/tplparser"
 	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
@@ -19,7 +19,7 @@ func Snoop(chartPath string, ignorePaths vpath.Paths, valuesFiles []string) (*Re
 		return nil, fmt.Errorf("failed to read the helm chart.\nerror: %w", err)
 	}
 
-	used, err := parser.GetUsages(chart)
+	used, err := tplparser.GetUsages(chart)
 	if err != nil {
 		return nil, fmt.Errorf("failed to analyze the helm chart.\nerror: %w", err)
 	}

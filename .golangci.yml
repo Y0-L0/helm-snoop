@@ -217,7 +217,7 @@ linters:
       - path: 'pkg/vpath/'
         linters:
           - recvcheck
-      - path: 'pkg/parser/evalflavors\.go'
+      - path: 'pkg/tplparser/evalflavors\.go'
         linters:
           - unparam
       - path: 'cmd/golden-diff/'
