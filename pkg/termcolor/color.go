@@ -1,3 +1,4 @@
+// Package termcolor provides terminal color formatting helpers.
 package termcolor
 
 import (

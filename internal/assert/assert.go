@@ -1,3 +1,4 @@
+// Package assert provides assertion helpers for development builds.
 package assert
 
 import "log/slog"

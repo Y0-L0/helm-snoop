@@ -1,3 +1,4 @@
+// Package vpath defines the value path functionality used to track Helm template references.
 package vpath
 
 import (

@@ -1,3 +1,4 @@
+// Package main implements a CLI tool for comparing golden test output files.
 package main
 
 import (
