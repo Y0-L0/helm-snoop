@@ -1,13 +1,13 @@
 package parser
 
-import "github.com/y0-l0/helm-snoop/pkg/path"
+import "github.com/y0-l0/helm-snoop/pkg/vpath"
 
 // quote/upper/lower simply wrap a value; default X Y reads only Y when X is literal.
 func (s *Unittest) TestParseCommand_Noops() {
 	cases := []struct {
 		name string
 		tmpl []string
-		want path.Paths
+		want vpath.Paths
 	}{
 		{
 			name: "quote",
@@ -15,7 +15,7 @@ func (s *Unittest) TestParseCommand_Noops() {
 				`{{ quote .Values.app.name }}`,
 				`{{ .Values.app.name | quote }}`,
 			},
-			want: path.Paths{path.NewPath("app", "name")},
+			want: vpath.Paths{vpath.NewPath("app", "name")},
 		},
 		{
 			name: "upper",
@@ -23,7 +23,7 @@ func (s *Unittest) TestParseCommand_Noops() {
 				`{{ upper .Values.ns }}`,
 				`{{ .Values.ns | upper }}`,
 			},
-			want: path.Paths{path.NewPath("ns")},
+			want: vpath.Paths{vpath.NewPath("ns")},
 		},
 		{
 			name: "lower",
@@ -31,7 +31,7 @@ func (s *Unittest) TestParseCommand_Noops() {
 				`{{ lower .Values.Kind }}`,
 				`{{ .Values.Kind | lower }}`,
 			},
-			want: path.Paths{path.NewPath("Kind")},
+			want: vpath.Paths{vpath.NewPath("Kind")},
 		},
 		{
 			name: "default literal + value",
@@ -39,7 +39,7 @@ func (s *Unittest) TestParseCommand_Noops() {
 				`{{ default "x" .Values.cfg.path }}`,
 				`{{ "x" | default .Values.cfg.path }}`,
 			},
-			want: path.Paths{path.NewPath("cfg", "path")},
+			want: vpath.Paths{vpath.NewPath("cfg", "path")},
 		},
 	}
 
@@ -50,7 +50,7 @@ func (s *Unittest) TestParseCommand_Noops() {
 				name += "_piped"
 			}
 			s.Run(name, func() {
-				path.EqualPaths(s, tc.want, s.parse(tmpl))
+				vpath.EqualPaths(s, tc.want, s.parse(tmpl))
 			})
 		}
 	}
@@ -61,7 +61,7 @@ func (s *Unittest) TestParseCommand_Return() {
 	cases := []struct {
 		name string
 		tmpl []string
-		want path.Paths
+		want vpath.Paths
 	}{
 		{
 			name: "get wrapper",
@@ -69,7 +69,7 @@ func (s *Unittest) TestParseCommand_Return() {
 				`{{ get .Values.app "name"}}`,
 				`{{ "name" | get .Values.app }}`,
 			},
-			want: path.Paths{path.NewPath("app").Any("name")},
+			want: vpath.Paths{vpath.NewPath("app").Any("name")},
 		},
 		{
 			name: "index one",
@@ -77,7 +77,7 @@ func (s *Unittest) TestParseCommand_Return() {
 				`{{ index .Values.cfg.path "firstIndex" }}`,
 				`{{ "firstIndex" | index .Values.cfg.path }}`,
 			},
-			want: path.Paths{path.NewPath("cfg", "path").Any("firstIndex")},
+			want: vpath.Paths{vpath.NewPath("cfg", "path").Any("firstIndex")},
 		},
 		{
 			name: "index two",
@@ -85,7 +85,7 @@ func (s *Unittest) TestParseCommand_Return() {
 				`{{ index .Values.cfg.path "firstIndex" "secondIndex" }}`,
 				`{{ "secondIndex" | index .Values.cfg.path "firstIndex" }}`,
 			},
-			want: path.Paths{path.NewPath("cfg", "path").Any("firstIndex").Any("secondIndex")},
+			want: vpath.Paths{vpath.NewPath("cfg", "path").Any("firstIndex").Any("secondIndex")},
 		},
 	}
 
@@ -96,7 +96,7 @@ func (s *Unittest) TestParseCommand_Return() {
 				name += "_piped"
 			}
 			s.Run(name, func() {
-				path.EqualPaths(s, tc.want, s.parse(tmpl))
+				vpath.EqualPaths(s, tc.want, s.parse(tmpl))
 			})
 		}
 	}
@@ -108,53 +108,53 @@ func (s *Unittest) TestParseCommand_ComplexPipe() {
 	cases := []struct {
 		name string
 		tmpl string
-		want path.Paths
+		want vpath.Paths
 	}{
 		{
 			name: "index then quote",
 			tmpl: `{{ index .Values.cfg.path "firstIndex" | quote }}`,
-			want: path.Paths{path.NewPath("cfg", "path").Any("firstIndex")},
+			want: vpath.Paths{vpath.NewPath("cfg", "path").Any("firstIndex")},
 		},
 		{
 			name: "get then upper",
 			tmpl: `{{ get .Values.app "name" | upper }}`,
-			want: path.Paths{path.NewPath("app").Any("name")},
+			want: vpath.Paths{vpath.NewPath("app").Any("name")},
 		},
 		{
 			name: "default then lower",
 			tmpl: `{{ default "fallback" .Values.config | lower }}`,
-			want: path.Paths{path.NewPath("config")},
+			want: vpath.Paths{vpath.NewPath("config")},
 		},
 		{
 			name: "index two keys then quote",
 			tmpl: `{{ index .Values.nested "key1" "key2" | quote }}`,
-			want: path.Paths{path.NewPath("nested").Any("key1").Any("key2")},
+			want: vpath.Paths{vpath.NewPath("nested").Any("key1").Any("key2")},
 		},
 		{
 			name: "triple pipe",
 			tmpl: `{{ .Values.data | quote | upper | lower }}`,
-			want: path.Paths{path.NewPath("data")},
+			want: vpath.Paths{vpath.NewPath("data")},
 		},
 		{
 			name: "complex triple pipe",
 			tmpl: `{{ index .Values.foo "bar" | quote | upper }}`,
-			want: path.Paths{path.NewPath("foo").Any("bar")},
+			want: vpath.Paths{vpath.NewPath("foo").Any("bar")},
 		},
 		{
 			name: "default chain preserves all",
 			tmpl: `{{ .Values.a | default .Values.b | default .Values.c }}`,
-			want: path.Paths{path.NewPath("a"), path.NewPath("b"), path.NewPath("c")},
+			want: vpath.Paths{vpath.NewPath("a"), vpath.NewPath("b"), vpath.NewPath("c")},
 		},
 		{
 			name: "default with piped value",
 			tmpl: `{{ .Values.primary | default .Values.fallback }}`,
-			want: path.Paths{path.NewPath("primary"), path.NewPath("fallback")},
+			want: vpath.Paths{vpath.NewPath("primary"), vpath.NewPath("fallback")},
 		},
 	}
 
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			path.EqualPaths(s, tc.want, s.parse(tc.tmpl))
+			vpath.EqualPaths(s, tc.want, s.parse(tc.tmpl))
 		})
 	}
 }

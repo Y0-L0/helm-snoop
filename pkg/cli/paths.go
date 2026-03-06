@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/y0-l0/helm-snoop/pkg/path"
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
-// cliPaths is a path.Paths that implements pflag.Value for CLI parsing.
-type cliPaths path.Paths
+// cliPaths is a vpath.Paths that implements pflag.Value for CLI parsing.
+type cliPaths vpath.Paths
 
 // String returns a string representation of the paths (for pflag).
 func (p *cliPaths) String() string {
@@ -24,7 +24,7 @@ func (p *cliPaths) String() string {
 
 // Set parses and validates a single path (called by pflag).
 func (p *cliPaths) Set(value string) error {
-	parsedPath, err := path.ParsePath(value)
+	parsedPath, err := vpath.ParsePath(value)
 	if err != nil {
 		return fmt.Errorf("invalid ignore path %q: %w", value, err)
 	}

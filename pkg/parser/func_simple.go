@@ -4,7 +4,7 @@ import (
 	"log/slog"
 
 	"github.com/y0-l0/helm-snoop/internal/assert"
-	"github.com/y0-l0/helm-snoop/pkg/path"
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
 func noopStrings(_ *evalCtx, _ Call) evalResult {
@@ -72,7 +72,7 @@ func omitPickFn(ctx *evalCtx, call Call) evalResult {
 
 // concatFn evaluates all args and returns all paths (for concat which merges lists).
 func concatFn(ctx *evalCtx, call Call) evalResult {
-	var allPaths path.Paths
+	var allPaths vpath.Paths
 
 	for _, arg := range call.Args {
 		result := ctx.Eval(arg)

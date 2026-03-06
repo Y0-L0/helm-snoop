@@ -1,7 +1,7 @@
 package parser
 
 import (
-	"github.com/y0-l0/helm-snoop/pkg/path"
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
 // TestParseFile_RangeVariables tests range variable tracking.
@@ -10,27 +10,27 @@ func (s *Unittest) TestParseFile_RangeVariables() {
 	cases := []struct {
 		name     string
 		template string
-		expected path.Paths
+		expected vpath.Paths
 	}{
 		// Single variable assignment
 		{
 			name:     "single_variable_field_access",
 			template: `{{ range $item := .Values.items }}{{ $item.name }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("items").Wildcard().Key("name"),
 			},
 		},
 		{
 			name:     "single_variable_nested_field_access",
 			template: `{{ range $item := .Values.items }}{{ $item.config.enabled }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("items").Wildcard().Key("config").Key("enabled"),
 			},
 		},
 		{
 			name:     "single_variable_multiple_fields",
 			template: `{{ range $item := .Values.items }}{{ $item.name }}{{ $item.value }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("items").Wildcard().Key("name"),
 				np().Key("items").Wildcard().Key("value"),
 			},
@@ -40,14 +40,14 @@ func (s *Unittest) TestParseFile_RangeVariables() {
 		{
 			name:     "key_value_variables_value_access",
 			template: `{{ range $key, $value := .Values.ports }}{{ $value.port }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("ports").Wildcard().Key("port"),
 			},
 		},
 		{
 			name:     "key_value_variables_multiple_fields",
 			template: `{{ range $k, $v := .Values.ports }}{{ $v.port }}{{ $v.protocol }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("ports").Wildcard().Key("port"),
 				np().Key("ports").Wildcard().Key("protocol"),
 			},
@@ -55,7 +55,7 @@ func (s *Unittest) TestParseFile_RangeVariables() {
 		{
 			name:     "key_value_variables_nested_access",
 			template: `{{ range $k, $v := .Values.service.ports }}{{ $v.config.enabled }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("service").Key("ports").Wildcard().Key("config").Key("enabled"),
 			},
 		},
@@ -64,24 +64,24 @@ func (s *Unittest) TestParseFile_RangeVariables() {
 		{
 			name:     "key_variable_not_tracked",
 			template: `{{ range $key, $value := .Values.ports }}{{ $key }}{{ end }}`,
-			expected: path.Paths{},
+			expected: vpath.Paths{},
 		},
 
 		// Mixed: variable and direct .Values access
 		{
 			name:     "variable_and_direct_values",
 			template: `{{ range $item := .Values.items }}{{ $item.name }}{{ .Values.global }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("items").Wildcard().Key("name"),
-				path.NewPath("global"),
+				vpath.NewPath("global"),
 			},
 		},
 		{
 			name:     "variable_and_root_context",
 			template: `{{ range $item := .Values.items }}{{ $item.name }}{{ $.Values.root }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("items").Wildcard().Key("name"),
-				path.NewPath("root"),
+				vpath.NewPath("root"),
 			},
 		},
 
@@ -89,7 +89,7 @@ func (s *Unittest) TestParseFile_RangeVariables() {
 		{
 			name:     "bare_variable_reference",
 			template: `{{ range $item := .Values.items }}{{ $item }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("items").Wildcard(),
 			},
 		},
@@ -99,7 +99,7 @@ func (s *Unittest) TestParseFile_RangeVariables() {
 		s.Run(tc.name, func() {
 			actual, err := parseFile("", tc.name+".tmpl", []byte(tc.template), nil)
 			s.Require().NoError(err)
-			path.EqualPaths(s, tc.expected, actual)
+			vpath.EqualPaths(s, tc.expected, actual)
 		})
 	}
 }
@@ -110,14 +110,14 @@ func (s *Unittest) TestParseFile_RangeVariablesNested() {
 	cases := []struct {
 		name     string
 		template string
-		expected path.Paths
+		expected vpath.Paths
 	}{
 		// Nested ranges with different variable names
 		{
 			name: "nested_ranges_different_vars",
 			template: `{{ range $outer := .Values.items }}{{ $outer.name }}` +
 				`{{ range $inner := .Values.protocols }}{{ $inner.type }}{{ end }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("items").Wildcard().Key("name"),
 				np().Key("protocols").Wildcard().Key("type"),
 			},
@@ -126,7 +126,7 @@ func (s *Unittest) TestParseFile_RangeVariablesNested() {
 			name: "nested_ranges_outer_var_accessible",
 			template: `{{ range $outer := .Values.items }}` +
 				`{{ range $inner := .Values.protocols }}{{ $outer.name }}{{ $inner.type }}{{ end }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("items").Wildcard().Key("name"),
 				np().Key("protocols").Wildcard().Key("type"),
 			},
@@ -137,7 +137,7 @@ func (s *Unittest) TestParseFile_RangeVariablesNested() {
 			name: "nested_ranges_same_var_name_shadowing",
 			template: `{{ range $item := .Values.outer }}{{ $item.name }}` +
 				`{{ range $item := .Values.inner }}{{ $item.name }}{{ end }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("outer").Wildcard().Key("name"),
 				np().Key("inner").Wildcard().Key("name"),
 			},
@@ -147,7 +147,7 @@ func (s *Unittest) TestParseFile_RangeVariablesNested() {
 			template: `{{ range $item := .Values.outer }}` +
 				`{{ range $item := .Values.inner }}{{ $item.value }}{{ end }}` +
 				`{{ $item.name }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("inner").Wildcard().Key("value"),
 				np().Key("outer").Wildcard().Key("name"),
 			},
@@ -158,7 +158,7 @@ func (s *Unittest) TestParseFile_RangeVariablesNested() {
 		s.Run(tc.name, func() {
 			actual, err := parseFile("", tc.name+".tmpl", []byte(tc.template), nil)
 			s.Require().NoError(err)
-			path.EqualPaths(s, tc.expected, actual)
+			vpath.EqualPaths(s, tc.expected, actual)
 		})
 	}
 }
@@ -169,13 +169,13 @@ func (s *Unittest) TestParseFile_RangeVariablesMixed() {
 	cases := []struct {
 		name     string
 		template string
-		expected path.Paths
+		expected vpath.Paths
 	}{
 		// Variables with if statements
 		{
 			name:     "variable_in_if_condition",
 			template: `{{ range $item := .Values.items }}{{ if $item.enabled }}yes{{ end }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("items").Wildcard().Key("enabled"),
 			},
 		},
@@ -183,8 +183,8 @@ func (s *Unittest) TestParseFile_RangeVariablesMixed() {
 			name: "variable_in_if_body",
 			template: `{{ range $item := .Values.items }}` +
 				`{{ if .Values.global }}{{ $item.name }}{{ end }}{{ end }}`,
-			expected: path.Paths{
-				path.NewPath("global"),
+			expected: vpath.Paths{
+				vpath.NewPath("global"),
 				np().Key("items").Wildcard().Key("name"),
 			},
 		},
@@ -194,9 +194,9 @@ func (s *Unittest) TestParseFile_RangeVariablesMixed() {
 			name: "range_variable_not_in_else",
 			template: `{{ range $item := .Values.items }}{{ $item.name }}` +
 				`{{ else }}{{ .Values.fallback }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("items").Wildcard().Key("name"),
-				path.NewPath("fallback"),
+				vpath.NewPath("fallback"),
 			},
 		},
 
@@ -204,7 +204,7 @@ func (s *Unittest) TestParseFile_RangeVariablesMixed() {
 		{
 			name:     "no_variable_uses_dot_context",
 			template: `{{ range .Values.items }}{{ .name }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("items").Wildcard().Key("name"),
 			},
 		},
@@ -212,7 +212,7 @@ func (s *Unittest) TestParseFile_RangeVariablesMixed() {
 			name: "no_variable_and_with_variable_mixed",
 			template: `{{ range .Values.outer }}{{ .name }}{{ end }}` +
 				`{{ range $item := .Values.inner }}{{ $item.value }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("outer").Wildcard().Key("name"),
 				np().Key("inner").Wildcard().Key("value"),
 			},
@@ -223,7 +223,7 @@ func (s *Unittest) TestParseFile_RangeVariablesMixed() {
 		s.Run(tc.name, func() {
 			actual, err := parseFile("", tc.name+".tmpl", []byte(tc.template), nil)
 			s.Require().NoError(err)
-			path.EqualPaths(s, tc.expected, actual)
+			vpath.EqualPaths(s, tc.expected, actual)
 		})
 	}
 }

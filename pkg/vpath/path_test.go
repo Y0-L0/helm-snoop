@@ -1,4 +1,4 @@
-package path
+package vpath
 
 func (s *Unittest) TestPathIDAndKinds() {
 	cases := []struct {

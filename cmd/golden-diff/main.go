@@ -6,8 +6,8 @@ import (
 	"os"
 	"sort"
 
-	"github.com/y0-l0/helm-snoop/pkg/path"
 	"github.com/y0-l0/helm-snoop/pkg/snooper"
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
 func main() {
@@ -63,10 +63,10 @@ func compareResults(r1, r2 *snooper.ResultsJSON) {
 }
 
 //nolint:gocognit // TODO: refactor to reduce cognitive complexity
-func comparePaths(paths1, paths2 path.EntriesJSON) {
+func comparePaths(paths1, paths2 vpath.PathsJSON) {
 	// Convert to maps for easy lookup
-	map1 := make(map[string]path.EntryJSON)
-	map2 := make(map[string]path.EntryJSON)
+	map1 := make(map[string]vpath.PathJSON)
+	map2 := make(map[string]vpath.PathJSON)
 
 	for _, p := range paths1 {
 		map1[p.ID] = p
@@ -76,7 +76,7 @@ func comparePaths(paths1, paths2 path.EntriesJSON) {
 	}
 
 	// Find paths only in file1
-	onlyIn1 := []path.EntryJSON{}
+	onlyIn1 := []vpath.PathJSON{}
 	for id, p := range map1 {
 		if _, found := map2[id]; !found {
 			onlyIn1 = append(onlyIn1, p)
@@ -87,7 +87,7 @@ func comparePaths(paths1, paths2 path.EntriesJSON) {
 	})
 
 	// Find paths only in file2
-	onlyIn2 := []path.EntryJSON{}
+	onlyIn2 := []vpath.PathJSON{}
 	for id, p := range map2 {
 		if _, found := map1[id]; !found {
 			onlyIn2 = append(onlyIn2, p)
@@ -98,7 +98,7 @@ func comparePaths(paths1, paths2 path.EntriesJSON) {
 	})
 
 	// Find common paths (and check for kind differences)
-	common := []path.EntryJSON{}
+	common := []vpath.PathJSON{}
 	kindDiffs := []struct {
 		id     string
 		kinds1 string

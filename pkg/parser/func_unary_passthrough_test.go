@@ -3,7 +3,7 @@ package parser
 import (
 	"fmt"
 
-	"github.com/y0-l0/helm-snoop/pkg/path"
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
 var passthroughFuncs = []string{
@@ -26,45 +26,45 @@ var serializeFuncs = []string{
 }
 
 func (s *Unittest) TestParseCommand_Noop() {
-	expected := path.Paths{path.NewPath("app", "name")}
+	expected := vpath.Paths{vpath.NewPath("app", "name")}
 
 	for _, funcName := range passthroughFuncs {
 		s.Run(funcName, func() {
 			tmpl := fmt.Sprintf(`{{ %s .Values.app.name }}`, funcName)
-			path.EqualPaths(s, expected, s.parse(tmpl))
+			vpath.EqualPaths(s, expected, s.parse(tmpl))
 		})
 	}
 }
 
 func (s *Unittest) TestParseCommand_Noop_Pipe() {
-	expected := path.Paths{path.NewPath("app", "name")}
+	expected := vpath.Paths{vpath.NewPath("app", "name")}
 
 	for _, funcName := range passthroughFuncs {
 		s.Run(funcName, func() {
 			tmpl := fmt.Sprintf(`{{ .Values.app.name | %s }}`, funcName)
-			path.EqualPaths(s, expected, s.parse(tmpl))
+			vpath.EqualPaths(s, expected, s.parse(tmpl))
 		})
 	}
 }
 
 func (s *Unittest) TestParseCommand_Serialize() {
-	expected := path.Paths{np().Key("app").Key("name").Wildcard()}
+	expected := vpath.Paths{np().Key("app").Key("name").Wildcard()}
 
 	for _, funcName := range serializeFuncs {
 		s.Run(funcName, func() {
 			tmpl := fmt.Sprintf(`{{ %s .Values.app.name }}`, funcName)
-			path.EqualPaths(s, expected, s.parse(tmpl))
+			vpath.EqualPaths(s, expected, s.parse(tmpl))
 		})
 	}
 }
 
 func (s *Unittest) TestParseCommand_Serialize_Pipe() {
-	expected := path.Paths{np().Key("app").Key("name").Wildcard()}
+	expected := vpath.Paths{np().Key("app").Key("name").Wildcard()}
 
 	for _, funcName := range serializeFuncs {
 		s.Run(funcName, func() {
 			tmpl := fmt.Sprintf(`{{ .Values.app.name | %s }}`, funcName)
-			path.EqualPaths(s, expected, s.parse(tmpl))
+			vpath.EqualPaths(s, expected, s.parse(tmpl))
 		})
 	}
 }

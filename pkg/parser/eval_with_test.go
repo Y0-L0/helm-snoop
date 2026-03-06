@@ -1,7 +1,7 @@
 package parser
 
 import (
-	"github.com/y0-l0/helm-snoop/pkg/path"
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
 // TestParseFile_With tests with statement evaluation.
@@ -9,55 +9,55 @@ func (s *Unittest) TestParseFile_With() {
 	cases := []struct {
 		name     string
 		template string
-		expected path.Paths
+		expected vpath.Paths
 	}{
 		{
 			name:     "with_values_path",
 			template: `{{ with .Values.config }}{{ end }}`,
-			expected: path.Paths{},
+			expected: vpath.Paths{},
 		},
 		{
 			name:     "with_body_accesses_values",
 			template: `{{ with .Values.config }}{{ .Values.name }}{{ end }}`,
-			expected: path.Paths{path.NewPath("name")},
+			expected: vpath.Paths{vpath.NewPath("name")},
 		},
 		{
 			name:     "with_else",
 			template: `{{ with .Values.config }}{{ else }}{{ .Values.defaultConfig }}{{ end }}`,
-			expected: path.Paths{path.NewPath("defaultConfig")},
+			expected: vpath.Paths{vpath.NewPath("defaultConfig")},
 		},
 		{
 			name: "with_body_and_else_both_access_values",
 			template: `{{ with .Values.config }}{{ .Values.enabled }}` +
 				`{{ else }}{{ .Values.disabled }}{{ end }}`,
-			expected: path.Paths{
-				path.NewPath("enabled"),
-				path.NewPath("disabled"),
+			expected: vpath.Paths{
+				vpath.NewPath("enabled"),
+				vpath.NewPath("disabled"),
 			},
 		},
 		{
 			name: "nested_with",
 			template: `{{ with .Values.outer }}{{ with .Values.inner }}` +
 				`{{ .Values.leaf }}{{ end }}{{ end }}`,
-			expected: path.Paths{
-				path.NewPath("leaf"),
+			expected: vpath.Paths{
+				vpath.NewPath("leaf"),
 			},
 		},
 		{
 			name:     "with_variable_assignment",
 			template: `{{ with $cfg := .Values.config }}{{ .Values.name }}{{ end }}`,
-			expected: path.Paths{path.NewPath("name")},
+			expected: vpath.Paths{vpath.NewPath("name")},
 		},
 		{
 			name:     "with_dot_context",
 			template: `{{ with . }}{{ .Values.name }}{{ end }}`,
-			expected: path.Paths{path.NewPath("name")},
+			expected: vpath.Paths{vpath.NewPath("name")},
 		},
 	}
 
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			path.EqualPaths(s, tc.expected, s.parse(tc.template))
+			vpath.EqualPaths(s, tc.expected, s.parse(tc.template))
 		})
 	}
 }
@@ -68,28 +68,28 @@ func (s *Unittest) TestParseFile_WithPrefix() {
 	cases := []struct {
 		name     string
 		template string
-		expected path.Paths
+		expected vpath.Paths
 	}{
 		{
 			name:     "with_changes_dot_context",
 			template: `{{ with .Values.config }}{{ .name }}{{ end }}`,
-			expected: path.Paths{
-				path.NewPath("config", "name"),
+			expected: vpath.Paths{
+				vpath.NewPath("config", "name"),
 			},
 		},
 		{
 			name:     "with_nested_field_access",
 			template: `{{ with .Values.database }}{{ .host }}{{ .port }}{{ end }}`,
-			expected: path.Paths{
-				path.NewPath("database", "host"),
-				path.NewPath("database", "port"),
+			expected: vpath.Paths{
+				vpath.NewPath("database", "host"),
+				vpath.NewPath("database", "port"),
 			},
 		},
 		{
 			name:     "with_deep_field_access",
 			template: `{{ with .Values.app }}{{ .config.timeout }}{{ end }}`,
-			expected: path.Paths{
-				path.NewPath("app", "config", "timeout"),
+			expected: vpath.Paths{
+				vpath.NewPath("app", "config", "timeout"),
 			},
 		},
 		{
@@ -100,31 +100,31 @@ func (s *Unittest) TestParseFile_WithPrefix() {
 					{{ .field2 }}
 				{{ end }}
 			{{ end }}`,
-			expected: path.Paths{
-				path.NewPath("outer", "field1"),
-				path.NewPath("outer", "inner", "field2"),
+			expected: vpath.Paths{
+				vpath.NewPath("outer", "field1"),
+				vpath.NewPath("outer", "inner", "field2"),
 			},
 		},
 		{
 			name: "with_else_preserves_original_context",
 			template: `{{ with .Values.config }}{{ .name }}` +
 				`{{ else }}{{ .Values.default }}{{ end }}`,
-			expected: path.Paths{
-				path.NewPath("config", "name"),
-				path.NewPath("default"),
+			expected: vpath.Paths{
+				vpath.NewPath("config", "name"),
+				vpath.NewPath("default"),
 			},
 		},
 		{
 			name:     "with_dollar_accesses_root_context",
 			template: `{{ with .Values.config }}{{ $.Values.fallback }}{{ end }}`,
-			expected: path.Paths{
-				path.NewPath("fallback"),
+			expected: vpath.Paths{
+				vpath.NewPath("fallback"),
 			},
 		},
 		{
 			name:     "with_concat",
 			template: `{{ with concat .Values.config .Values.fallback }}{{ .timeout }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("config").Key("timeout"),
 				np().Key("fallback").Key("timeout"),
 			},
@@ -133,7 +133,7 @@ func (s *Unittest) TestParseFile_WithPrefix() {
 
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			path.EqualPaths(s, tc.expected, s.parse(tc.template))
+			vpath.EqualPaths(s, tc.expected, s.parse(tc.template))
 		})
 	}
 }
@@ -145,43 +145,43 @@ func (s *Unittest) TestParseFile_WithBuiltinObjects() {
 	cases := []struct {
 		name     string
 		template string
-		expected path.Paths
+		expected vpath.Paths
 	}{
 		{
 			name:     "chart_not_tracked_in_with",
 			template: `{{ with .Values.config }}{{ .Chart.AppVersion }}{{ end }}`,
-			expected: path.Paths{},
+			expected: vpath.Paths{},
 		},
 		{
 			name:     "release_not_tracked_in_with",
 			template: `{{ with .Values.config }}{{ .Release.Name }}{{ end }}`,
-			expected: path.Paths{},
+			expected: vpath.Paths{},
 		},
 		{
 			name:     "chart_and_release_not_tracked",
 			template: `{{ with .Values.config }}{{ .Chart.AppVersion }}{{ .Release.Name }}{{ .Release.Service }}{{ end }}`,
-			expected: path.Paths{},
+			expected: vpath.Paths{},
 		},
 		{
 			name:     "files_not_tracked_in_with",
 			template: `{{ with .Values.config }}{{ .Files.Get "foo.txt" }}{{ end }}`,
-			expected: path.Paths{},
+			expected: vpath.Paths{},
 		},
 		{
 			name:     "capabilities_not_tracked_in_with",
 			template: `{{ with .Values.config }}{{ .Capabilities.APIVersions }}{{ end }}`,
-			expected: path.Paths{},
+			expected: vpath.Paths{},
 		},
 		{
 			name:     "template_not_tracked_in_with",
 			template: `{{ with .Values.config }}{{ .Template.Name }}{{ end }}`,
-			expected: path.Paths{},
+			expected: vpath.Paths{},
 		},
 	}
 
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			path.EqualPaths(s, tc.expected, s.parse(tc.template))
+			vpath.EqualPaths(s, tc.expected, s.parse(tc.template))
 		})
 	}
 }
@@ -190,14 +190,14 @@ func (s *Unittest) TestParseFile_WithDotToYaml() {
 	cases := []struct {
 		name     string
 		template string
-		expected path.Paths
+		expected vpath.Paths
 	}{
 		{
 			name: "with_dot_toYaml",
 			template: `{{ with .Values.authorizationApi.podAnnotations }}
 {{ toYaml . }}
 {{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("authorizationApi").Key("podAnnotations").Wildcard(),
 			},
 		},
@@ -206,7 +206,7 @@ func (s *Unittest) TestParseFile_WithDotToYaml() {
 			template: `{{ with .Values.config }}
 {{ . | toYaml }}
 {{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("config").Wildcard(),
 			},
 		},
@@ -215,7 +215,7 @@ func (s *Unittest) TestParseFile_WithDotToYaml() {
 			template: `{{ with .Values.provisioning.resources }}
   {{- toYaml . | nindent 10 }}
 {{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("provisioning").Key("resources").Wildcard(),
 			},
 		},
@@ -223,7 +223,7 @@ func (s *Unittest) TestParseFile_WithDotToYaml() {
 
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			path.EqualPaths(s, tc.expected, s.parse(tc.template))
+			vpath.EqualPaths(s, tc.expected, s.parse(tc.template))
 		})
 	}
 }

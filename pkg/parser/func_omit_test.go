@@ -1,41 +1,41 @@
 package parser
 
 import (
-	"github.com/y0-l0/helm-snoop/pkg/path"
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
 func (s *Unittest) TestParseFile_Omit() {
 	cases := []struct {
 		name     string
 		template string
-		expected path.Paths
+		expected vpath.Paths
 	}{
 		{
 			name:     "omit_simple",
 			template: `{{ omit .Values.config "enabled" }}`,
-			expected: path.Paths{
-				path.NewPath("config"),
+			expected: vpath.Paths{
+				vpath.NewPath("config"),
 			},
 		},
 		{
 			name:     "omit_piped_to_toYaml",
 			template: `{{ omit .Values.containerSecurityContext "enabled" | toYaml }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("containerSecurityContext").Wildcard(),
 			},
 		},
 		{
 			name:     "omit_multiple_keys",
 			template: `{{ omit .Values.config "enabled" "debug" "verbose" }}`,
-			expected: path.Paths{
-				path.NewPath("config"),
+			expected: vpath.Paths{
+				vpath.NewPath("config"),
 			},
 		},
 	}
 
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			path.EqualPaths(s, tc.expected, s.parse(tc.template))
+			vpath.EqualPaths(s, tc.expected, s.parse(tc.template))
 		})
 	}
 }

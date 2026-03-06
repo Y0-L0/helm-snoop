@@ -8,12 +8,12 @@ import (
 	loader "helm.sh/helm/v4/pkg/chart/v2/loader"
 
 	"github.com/y0-l0/helm-snoop/pkg/parser"
-	"github.com/y0-l0/helm-snoop/pkg/path"
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
-type SnoopFunc func(string, path.Paths, []string) (*Result, error)
+type SnoopFunc func(string, vpath.Paths, []string) (*Result, error)
 
-func Snoop(chartPath string, ignorePaths path.Paths, valuesFiles []string) (*Result, error) {
+func Snoop(chartPath string, ignorePaths vpath.Paths, valuesFiles []string) (*Result, error) {
 	chart, err := loader.Load(chartPath)
 	if err != nil {
 		return nil, fmt.Errorf("failed to read the helm chart.\nerror: %w", err)
@@ -30,7 +30,7 @@ func Snoop(chartPath string, ignorePaths path.Paths, valuesFiles []string) (*Res
 	}
 
 	result := &Result{ChartName: chart.Name()}
-	result.Referenced, result.Unused, result.Undefined = path.MergeJoinLoose(defined, used)
+	result.Referenced, result.Unused, result.Undefined = vpath.MergeJoinLoose(defined, used)
 
 	if len(ignorePaths) > 0 {
 		result = filterIgnoredWithMerge(result, ignorePaths)
@@ -51,8 +51,8 @@ func findRawFile(raw []*common.File, name string) []byte {
 
 // loadDefinitions collects all defined value paths from the chart's values.yaml
 // and any additional values files provided on the command line.
-func loadDefinitions(raw []*common.File, extraFiles []string) (path.Paths, error) {
-	defined, err := path.GetDefinitions(findRawFile(raw, "values.yaml"), "values.yaml")
+func loadDefinitions(raw []*common.File, extraFiles []string) (vpath.Paths, error) {
+	defined, err := vpath.GetDefinitions(findRawFile(raw, "values.yaml"), "values.yaml")
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse values.yaml.\nerror: %w", err)
 	}
@@ -62,7 +62,7 @@ func loadDefinitions(raw []*common.File, extraFiles []string) (path.Paths, error
 		if err != nil {
 			return nil, fmt.Errorf("failed to read values file %s.\nerror: %w", f, err)
 		}
-		extra, err := path.GetDefinitions(data, f)
+		extra, err := vpath.GetDefinitions(data, f)
 		if err != nil {
 			return nil, fmt.Errorf("failed to parse values file %s.\nerror: %w", f, err)
 		}
@@ -73,13 +73,13 @@ func loadDefinitions(raw []*common.File, extraFiles []string) (path.Paths, error
 }
 
 // filterIgnoredWithMerge removes paths matching ignorePaths using MergeJoinLoose.
-func filterIgnoredWithMerge(result *Result, ignorePaths path.Paths) *Result {
+func filterIgnoredWithMerge(result *Result, ignorePaths vpath.Paths) *Result {
 	if len(ignorePaths) == 0 {
 		return result
 	}
 
-	_, _, keptUnused := path.MergeJoinLoose(ignorePaths, result.Unused)
-	_, _, keptUndefined := path.MergeJoinLoose(ignorePaths, result.Undefined)
+	_, _, keptUnused := vpath.MergeJoinLoose(ignorePaths, result.Unused)
+	_, _, keptUndefined := vpath.MergeJoinLoose(ignorePaths, result.Undefined)
 
 	return &Result{
 		ChartName:  result.ChartName,

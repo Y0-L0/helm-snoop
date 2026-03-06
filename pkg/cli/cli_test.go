@@ -5,15 +5,15 @@ import (
 	"os"
 	filepath "path/filepath"
 
-	"github.com/y0-l0/helm-snoop/pkg/path"
 	"github.com/y0-l0/helm-snoop/pkg/snooper"
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
-func mockSnoop(_ string, _ path.Paths, _ []string) (*snooper.Result, error) {
+func mockSnoop(_ string, _ vpath.Paths, _ []string) (*snooper.Result, error) {
 	return &snooper.Result{
-		Referenced: path.Paths{},
-		Unused:     path.Paths{},
-		Undefined:  path.Paths{},
+		Referenced: vpath.Paths{},
+		Unused:     vpath.Paths{},
+		Undefined:  vpath.Paths{},
 	}, nil
 }
 
@@ -21,12 +21,12 @@ type trackingSnoop struct {
 	calls []string
 }
 
-func (t *trackingSnoop) snoop(chartPath string, _ path.Paths, _ []string) (*snooper.Result, error) {
+func (t *trackingSnoop) snoop(chartPath string, _ vpath.Paths, _ []string) (*snooper.Result, error) {
 	t.calls = append(t.calls, chartPath)
 	return &snooper.Result{
-		Referenced: path.Paths{},
-		Unused:     path.Paths{},
-		Undefined:  path.Paths{},
+		Referenced: vpath.Paths{},
+		Unused:     vpath.Paths{},
+		Undefined:  vpath.Paths{},
 	}, nil
 }
 

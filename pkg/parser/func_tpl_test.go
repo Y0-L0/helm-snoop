@@ -2,7 +2,7 @@ package parser
 
 import (
 	"github.com/y0-l0/helm-snoop/internal/assert"
-	"github.com/y0-l0/helm-snoop/pkg/path"
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
 // TestParseFile_TplFunction tests basic tpl function support.
@@ -10,20 +10,20 @@ func (s *Unittest) TestParseFile_TplFunction() {
 	cases := []struct {
 		name     string
 		template string
-		expected path.Paths
+		expected vpath.Paths
 	}{
 		{
 			name:     "tpl_with_simple_values_path",
 			template: `{{ tpl .Values.postgresql.auth.username . }}`,
-			expected: path.Paths{
-				path.NewPath("postgresql", "auth", "username"),
+			expected: vpath.Paths{
+				vpath.NewPath("postgresql", "auth", "username"),
 			},
 		},
 		{
 			name: "tpl_in_range_context",
 			template: `{{ range .Values.imagePullSecrets }}` +
 				`{{ tpl . $ }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("imagePullSecrets").Wildcard(),
 			},
 		},
@@ -31,8 +31,8 @@ func (s *Unittest) TestParseFile_TplFunction() {
 			name: "tpl_in_with_context",
 			template: `{{ with .Values.config }}` +
 				`{{ tpl .template . }}{{ end }}`,
-			expected: path.Paths{
-				path.NewPath("config", "template"),
+			expected: vpath.Paths{
+				vpath.NewPath("config", "template"),
 			},
 		},
 	}
@@ -46,7 +46,7 @@ func (s *Unittest) TestParseFile_TplFunction() {
 
 			actual, err := parseFile("", tc.name+".tmpl", []byte(tc.template), nil)
 			s.Require().NoError(err)
-			path.EqualPaths(s, tc.expected, actual)
+			vpath.EqualPaths(s, tc.expected, actual)
 		})
 	}
 }

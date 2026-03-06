@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"text/template/parse"
 
-	"github.com/y0-l0/helm-snoop/pkg/path"
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
 // isBuiltinObject checks if a field name is a Helm built-in object.
@@ -31,7 +31,7 @@ func (e *evalCtx) evalParamPaths(firstField string, restFields []string) (evalRe
 	for _, field := range restFields {
 		p = p.WithKey(field)
 	}
-	return evalResult{paths: []*path.Path{&p}}, true
+	return evalResult{paths: []*vpath.Path{&p}}, true
 }
 
 func (e *evalCtx) evalParamLits(firstField string, restFields []string) (evalResult, bool) {
@@ -73,8 +73,8 @@ func (e *evalCtx) evalFieldNode(node *parse.FieldNode) evalResult {
 			// Just ".Values" with no path
 			return evalResult{}
 		}
-		p := path.NewPath(restFields...)
-		return evalResult{paths: []*path.Path{p}}
+		p := vpath.NewPath(restFields...)
+		return evalResult{paths: []*vpath.Path{p}}
 	}
 
 	if isBuiltinObject(firstField) {
@@ -87,7 +87,7 @@ func (e *evalCtx) evalFieldNode(node *parse.FieldNode) evalResult {
 		return evalResult{}
 	}
 
-	p := path.NewPath(node.Ident...)
+	p := vpath.NewPath(node.Ident...)
 	prefixed := e.addPrefixes(p)
 	return evalResult{paths: prefixed}
 }
@@ -104,7 +104,7 @@ func (e *evalCtx) evalChainNode(node *parse.ChainNode) evalResult {
 		return baseResult
 	}
 
-	var modifiedPaths []*path.Path
+	var modifiedPaths []*vpath.Path
 	for _, basePath := range baseResult.paths {
 		p := *basePath
 		for _, field := range node.Field {
@@ -238,9 +238,9 @@ func (e *evalCtx) evalIfNode(node *parse.IfNode) evalResult {
 // Paths are only emitted when actually accessed via . inside the body.
 // If the range expression returns multiple paths (e.g., from concat),
 // all paths are set as prefixes and field access generates paths for each.
-// Variable declarations bind the value variable to the wildcard path.
+// Variable declarations bind the value variable to the wildcard vpath.
 func (e *evalCtx) evalRangeNode(node *parse.RangeNode) evalResult {
-	var rangePrefixes path.Paths
+	var rangePrefixes vpath.Paths
 	if node.Pipe != nil {
 		result := e.Eval(node.Pipe)
 		for _, p := range result.paths {
@@ -267,9 +267,9 @@ func (e *evalCtx) evalRangeNode(node *parse.RangeNode) evalResult {
 // Paths are only emitted when actually accessed via . inside the body.
 // If the with expression returns multiple paths (e.g., from concat or default),
 // all paths are set as prefixes and field access generates paths for each.
-// Variable declarations bind the variable to the path.
+// Variable declarations bind the variable to the vpath.
 func (e *evalCtx) evalWithNode(node *parse.WithNode) evalResult {
-	var withPrefixes path.Paths
+	var withPrefixes vpath.Paths
 	if node.Pipe != nil {
 		result := e.Eval(node.Pipe)
 		withPrefixes = result.paths
@@ -314,15 +314,15 @@ func (e *evalCtx) evalVariableNode(node *parse.VariableNode) evalResult {
 	// Handle bare $ (root context)
 	if firstIdent == "$" {
 		if len(node.Ident) == 1 {
-			return evalResult{paths: path.Paths{path.NewPath()}}
+			return evalResult{paths: vpath.Paths{vpath.NewPath()}}
 		}
 
 		if node.Ident[1] == "Values" {
 			if len(node.Ident) < 3 {
 				return evalResult{}
 			}
-			p := path.NewPath(node.Ident[2:]...)
-			return evalResult{paths: path.Paths{p}}
+			p := vpath.NewPath(node.Ident[2:]...)
+			return evalResult{paths: vpath.Paths{p}}
 		}
 
 		return evalResult{}
@@ -334,13 +334,13 @@ func (e *evalCtx) evalVariableNode(node *parse.VariableNode) evalResult {
 	if e.variables != nil {
 		if basePath, ok := e.variables[varName]; ok {
 			if len(node.Ident) == 1 {
-				return evalResult{paths: []*path.Path{basePath}}
+				return evalResult{paths: []*vpath.Path{basePath}}
 			}
 			p := *basePath
 			for _, field := range node.Ident[1:] {
 				p = p.WithKey(field)
 			}
-			return evalResult{paths: []*path.Path{&p}}
+			return evalResult{paths: []*vpath.Path{&p}}
 		}
 	}
 

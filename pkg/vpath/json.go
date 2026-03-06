@@ -1,4 +1,4 @@
-package path
+package vpath
 
 type ContextJSON struct {
 	File     string `json:"file"`
@@ -7,16 +7,16 @@ type ContextJSON struct {
 	Column   int    `json:"column"`
 }
 
-// EntryJSON is a compact, stable JSON representation of a Path.
-type EntryJSON struct {
+// PathJSON is a compact, stable JSON representation of a Path.
+type PathJSON struct {
 	ID       string        `json:"id"`
 	Kinds    string        `json:"kinds"`
 	Contexts []ContextJSON `json:"contexts,omitempty"`
 }
 
-type EntriesJSON []EntryJSON
+type PathsJSON []PathJSON
 
-func (p Path) ToJSON() EntryJSON {
+func (p Path) ToJSON() PathJSON {
 	var contexts []ContextJSON
 	if len(p.Contexts) > 0 {
 		contexts = make([]ContextJSON, len(p.Contexts))
@@ -24,15 +24,15 @@ func (p Path) ToJSON() EntryJSON {
 			contexts[i] = c.ToJSON()
 		}
 	}
-	return EntryJSON{ID: p.ID(), Kinds: p.KindsString(), Contexts: contexts}
+	return PathJSON{ID: p.ID(), Kinds: p.KindsString(), Contexts: contexts}
 }
 
 // ToJSON converts Paths into its compact JSON representation.
 // Uses SortDedup to produce a sorted, deduplicated representation (non-mutating).
-func (ps Paths) ToJSON() EntriesJSON {
+func (ps Paths) ToJSON() PathsJSON {
 	sorted := SortDedup(ps)
 
-	out := make(EntriesJSON, 0, len(sorted))
+	out := make(PathsJSON, 0, len(sorted))
 	for _, p := range sorted {
 		out = append(out, p.ToJSON())
 	}

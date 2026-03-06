@@ -1,4 +1,4 @@
-package path
+package vpath
 
 func (s *Unittest) TestPathJSON_WithContext() {
 	p := NewPath("config", "name")

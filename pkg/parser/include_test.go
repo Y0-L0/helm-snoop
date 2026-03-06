@@ -6,7 +6,7 @@ import (
 	"helm.sh/helm/v4/pkg/chart/common"
 	chart "helm.sh/helm/v4/pkg/chart/v2"
 
-	"github.com/y0-l0/helm-snoop/pkg/path"
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
 // include "tpl.a" . should traverse the defined template and collect its .Values usage.
@@ -137,8 +137,8 @@ func (s *Unittest) TestInclude_RootContextClearsPrefix() {
 	// - with .Values.ics doesn't emit (only emits when body uses it)
 	// - include passes $ (root context), clearing the prefix
 	// - .name inside template with no prefix emits nothing
-	expected := path.Paths{}
-	path.EqualPaths(s, expected, paths)
+	expected := vpath.Paths{}
+	vpath.EqualPaths(s, expected, paths)
 }
 
 // Test that include with . argument preserves the current prefix.
@@ -163,11 +163,11 @@ func (s *Unittest) TestInclude_DotContextPreservesPrefix() {
 	s.Require().NoError(err)
 
 	// Should have /config and /config/name (. preserves the config prefix)
-	expected := path.Paths{
-		path.NewPath("config"),
-		path.NewPath("config", "name"),
+	expected := vpath.Paths{
+		vpath.NewPath("config"),
+		vpath.NewPath("config", "name"),
 	}
-	path.EqualPaths(s, expected, paths)
+	vpath.EqualPaths(s, expected, paths)
 }
 
 // Test that include with .Values.foo sets foo as the prefix.
@@ -192,11 +192,11 @@ func (s *Unittest) TestInclude_ExplicitContextSetsPrefix() {
 	s.Require().NoError(err)
 
 	// Should have /database and /database/name
-	expected := path.Paths{
-		path.NewPath("database"),
-		path.NewPath("database", "name"),
+	expected := vpath.Paths{
+		vpath.NewPath("database"),
+		vpath.NewPath("database", "name"),
 	}
-	path.EqualPaths(s, expected, paths)
+	vpath.EqualPaths(s, expected, paths)
 }
 
 // Test that dict with "context" -> $ followed by .context.Release.Name
@@ -223,8 +223,8 @@ func (s *Unittest) TestInclude_DictWithRootContextAndBuiltinObjects() {
 	// - dict creates "context" -> $ (root context)
 	// - .context.Release.Name accesses built-in Release object
 	// - Built-in objects should never be tracked
-	expected := path.Paths{}
-	path.EqualPaths(s, expected, paths)
+	expected := vpath.Paths{}
+	vpath.EqualPaths(s, expected, paths)
 }
 
 // Test that template definitions are NOT evaluated standalone.
@@ -262,8 +262,8 @@ Example usage:
 
 	// Should only have /labels from the main template
 	// Should NOT have /context or /customLabels from standalone template def analysis
-	expected := path.Paths{
-		path.NewPath("labels"),
+	expected := vpath.Paths{
+		vpath.NewPath("labels"),
 	}
-	path.EqualPaths(s, expected, paths)
+	vpath.EqualPaths(s, expected, paths)
 }
