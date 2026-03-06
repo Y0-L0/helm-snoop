@@ -1,5 +1,13 @@
 # helm-snoop
 
+[![CI](https://github.com/y0-l0/helm-snoop/actions/workflows/test.yaml/badge.svg)](https://github.com/y0-l0/helm-snoop/actions/workflows/test.yaml)
+[![codecov](https://codecov.io/gh/y0-l0/helm-snoop/branch/main/graph/badge.svg)](https://codecov.io/gh/y0-l0/helm-snoop)
+[![Go Report Card](https://goreportcard.com/badge/github.com/y0-l0/helm-snoop)](https://goreportcard.com/report/github.com/y0-l0/helm-snoop)
+[![Release](https://img.shields.io/github/v/release/y0-l0/helm-snoop)](https://github.com/y0-l0/helm-snoop/releases/latest)
+[![License: AGPL-3.0](https://img.shields.io/github/license/y0-l0/helm-snoop)](LICENSE)
+[![Homebrew](https://img.shields.io/badge/homebrew-available-orange?logo=homebrew)](https://github.com/y0-l0/homebrew-tap)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://pre-commit.com)
+
 helm-snoop keeps your config and docs in your values.yaml
 and (in the future) schema.json
 in sync with the code in your helm template files. \
