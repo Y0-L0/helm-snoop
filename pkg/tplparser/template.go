@@ -52,6 +52,39 @@ func (ti *TemplateIndex) add(name string, def TemplateDef) {
 	assert.Must("duplicate template name: " + name)
 }
 
+// addFromFile indexes all define'd templates from a parsed template file.
+func (ti *TemplateIndex) addFromFile(fileName, chartName, prefix string, trees map[string]*parse.Tree) {
+	for name, tree := range trees {
+		if name == fileName || tree == nil || tree.Root == nil {
+			continue
+		}
+		ti.add(name, TemplateDef{
+			name:      name,
+			file:      prefix + fileName,
+			chartName: chartName,
+			prefix:    prefix,
+			root:      tree.Root,
+			tree:      tree,
+		})
+	}
+}
+
+// indexChart parses and indexes all define'd templates in a single chart.
+func (ti *TemplateIndex) indexChart(ch *chart.Chart, prefix string) error {
+	chartName := ""
+	if ch.Metadata != nil {
+		chartName = ch.Metadata.Name
+	}
+	for _, tmpl := range ch.Templates {
+		trees, err := parse.Parse(tmpl.Name, string(tmpl.Data), "", "", stubFuncMap)
+		if err != nil {
+			return err
+		}
+		ti.addFromFile(tmpl.Name, chartName, prefix, trees)
+	}
+	return nil
+}
+
 // empty reports whether the index is empty.
 func (ti *TemplateIndex) empty() bool { return len(ti.byName) == 0 }
 
@@ -66,47 +99,14 @@ func BuildTemplateIndex(ch *chart.Chart) (*TemplateIndex, error) {
 }
 
 // buildIndexRecursive adds define'd templates from chart and its transitive dependencies.
-// prefix indicates the synthetic path prefix for dependency files (e.g., charts/<dep>/...).
-//
-//nolint:gocognit // TODO: refactor to reduce cognitive complexity
 func buildIndexRecursive(ch *chart.Chart, prefix string, idx *TemplateIndex, seen map[*chart.Chart]bool) error {
-	if ch == nil {
-		return nil
-	}
-	if seen[ch] {
+	if ch == nil || seen[ch] {
 		return nil
 	}
 	seen[ch] = true
-	chartName := ""
-	if ch.Metadata != nil {
-		chartName = ch.Metadata.Name
+	if err := idx.indexChart(ch, prefix); err != nil {
+		return err
 	}
-	for _, tmpl := range ch.Templates {
-		trees, err := parse.Parse(tmpl.Name, string(tmpl.Data), "", "", stubFuncMap)
-		if err != nil {
-			return err
-		}
-		for name, tree := range trees {
-			if name == tmpl.Name {
-				continue
-			}
-			if tree == nil || tree.Root == nil {
-				continue
-			}
-			idx.add(
-				name,
-				TemplateDef{
-					name:      name,
-					file:      prefix + tmpl.Name,
-					chartName: chartName,
-					prefix:    prefix,
-					root:      tree.Root,
-					tree:      tree,
-				},
-			)
-		}
-	}
-	// Recurse into direct dependencies (Helm v4 exposes this as a method)
 	for _, dep := range ch.Dependencies() {
 		depName := "unknown"
 		if dep != nil && dep.Metadata != nil && dep.Metadata.Name != "" {
