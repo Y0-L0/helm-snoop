@@ -6,7 +6,7 @@
 [![Release](https://img.shields.io/github/v/release/y0-l0/helm-snoop)](https://github.com/y0-l0/helm-snoop/releases/latest)
 [![License: AGPL-3.0](https://img.shields.io/github/license/y0-l0/helm-snoop)](LICENSE)
 [![Homebrew](https://img.shields.io/badge/homebrew-available-orange?logo=homebrew)](https://github.com/y0-l0/homebrew-tap)
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://pre-commit.com)
+[![pre-commit hook](https://img.shields.io/badge/pre--commit-hook%20available-blue?logo=pre-commit)](https://github.com/y0-l0/helm-snoop#-pre-commit--prek)
 
 helm-snoop keeps your config and docs in your values.yaml
 and (in the future) schema.json
