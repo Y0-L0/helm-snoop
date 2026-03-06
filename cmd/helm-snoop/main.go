@@ -1,3 +1,4 @@
+// Package main implements the helm-snoop CLI entrypoint.
 package main
 
 import (

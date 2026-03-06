@@ -1,3 +1,4 @@
+// Package snooper analyzes Helm charts for unused and undefined value paths.
 package snooper
 
 import (

@@ -1,3 +1,4 @@
+// Package cli defines the helm-snoop command-line interface.
 package cli
 
 import (

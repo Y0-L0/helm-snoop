@@ -208,8 +208,6 @@ linters:
       - std-error-handling
       - common-false-positives
     rules:
-      - text: 'should have a package comment'
-        linters: [ revive ]
       - text: 'exported \S+ \S+ should have comment( \(or a comment on this block\))? or be unexported'
         linters: [ revive ]
       - path: 'pkg/vpath/'
@@ -221,16 +219,7 @@ linters:
       - path: 'cmd/golden-diff/'
         linters:
           - gosec
-      - path: 'internal/testsuite/'
-        linters:
-          - gosec
       - path: '_test\.go'
         linters:
-          - bodyclose
           - dupl
-          - errcheck
-          - funlen
-          - goconst
           - reassign
-          - gosec
-          - noctx

@@ -1,3 +1,4 @@
+// Package tplparser extracts value path usages from Helm templates.
 package tplparser
 
 import (
