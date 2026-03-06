@@ -64,7 +64,32 @@ func (s *Unittest) TestTemplateIndex_TransitiveDependencyInclude() {
 	s.Equal("/K/K", paths[0].KindsString())
 }
 
-// Duplicate template names across dependencies should panic during index build.
+// Same library chart at different dependency paths → no panic (shared dependency).
+func (s *Unittest) TestTemplateIndex_SharedLibraryDep() {
+	root := &chart.Chart{Metadata: &chart.Metadata{Name: "root"}}
+	common1 := &chart.Chart{Metadata: &chart.Metadata{Name: "common"}}
+	common2 := &chart.Chart{Metadata: &chart.Metadata{Name: "common"}}
+
+	common1.Templates = []*common.File{
+		{Name: "templates/_helpers.tpl", Data: []byte(`{{ define "common.fullname" }}x{{ end }}`)},
+	}
+	common2.Templates = []*common.File{
+		{Name: "templates/_helpers.tpl", Data: []byte(`{{ define "common.fullname" }}y{{ end }}`)},
+	}
+
+	idx := &TemplateIndex{byName: make(map[string]TemplateDef)}
+	seen := make(map[*chart.Chart]bool)
+	s.Require().NotPanics(func() {
+		_ = buildIndexRecursive(root, "", idx, seen)
+		_ = buildIndexRecursive(common1, "charts/common/", idx, seen)
+		_ = buildIndexRecursive(common2, "charts/mariadb/charts/common/", idx, seen)
+	})
+	def, ok := idx.get("common.fullname")
+	s.Require().True(ok)
+	s.Equal("charts/mariadb/charts/common/templates/_helpers.tpl", def.file)
+}
+
+// Duplicate template names across dependencies with different chart names should panic.
 func (s *Unittest) TestTemplateIndex_DuplicateNamesAcrossDeps() {
 	root := &chart.Chart{Metadata: &chart.Metadata{Name: "root"}}
 	d1 := &chart.Chart{Metadata: &chart.Metadata{Name: "d1"}}
