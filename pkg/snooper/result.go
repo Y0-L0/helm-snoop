@@ -4,14 +4,14 @@ import (
 	"encoding/json"
 	"io"
 
-	"github.com/y0-l0/helm-snoop/pkg/path"
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
 type Result struct {
 	ChartName  string
-	Referenced path.Paths
-	Unused     path.Paths
-	Undefined  path.Paths
+	Referenced vpath.Paths
+	Unused     vpath.Paths
+	Undefined  vpath.Paths
 }
 
 type Results []*Result
@@ -24,9 +24,9 @@ func (rs Results) ToText(w io.Writer) {
 }
 
 type ResultsJSON struct {
-	Referenced path.EntriesJSON `json:"referenced"`
-	Unused     path.EntriesJSON `json:"unused"`
-	Undefined  path.EntriesJSON `json:"undefined"`
+	Referenced vpath.PathsJSON `json:"referenced"`
+	Unused     vpath.PathsJSON `json:"unused"`
+	Undefined  vpath.PathsJSON `json:"undefined"`
 }
 
 func (r *Result) HasFindings() bool {

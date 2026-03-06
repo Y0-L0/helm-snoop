@@ -12,10 +12,10 @@ import (
 	"github.com/spf13/cobra"
 
 	"github.com/y0-l0/helm-snoop/internal/assert"
-	"github.com/y0-l0/helm-snoop/pkg/path"
 	"github.com/y0-l0/helm-snoop/pkg/snooper"
 	"github.com/y0-l0/helm-snoop/pkg/termcolor"
 	"github.com/y0-l0/helm-snoop/pkg/version"
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
 type ArgumentError string
@@ -36,7 +36,7 @@ func isGzipFile(path string) bool {
 	return n == 3 && bytes.Equal(buf, gzipMagic)
 }
 
-// resolveChartRoot finds the chart root for a given path.
+// resolveChartRoot finds the chart root for a given vpath.
 // Archives are returned as-is; other paths walk up to find Chart.yaml.
 func resolveChartRoot(filePath string) (string, error) {
 	dir, err := filepath.Abs(filePath)
@@ -88,7 +88,7 @@ func analyze(
 ) error {
 	assert.Strict = false //nolint:reassign // strict mode is for dev/test only.
 
-	result, err := snoop(chartPath, path.Paths(*ignorePaths), valuesFiles)
+	result, err := snoop(chartPath, vpath.Paths(*ignorePaths), valuesFiles)
 	if err != nil {
 		return err
 	}

@@ -1,6 +1,6 @@
 package parser
 
-import "github.com/y0-l0/helm-snoop/pkg/path"
+import "github.com/y0-l0/helm-snoop/pkg/vpath"
 
 func (s *Unittest) TestParseFile_AttachesFileName() {
 	tmpl := `{{ .Values.foo }}`
@@ -24,7 +24,7 @@ func (s *Unittest) TestParseFile_MultiplePathsDifferentLines() {
 	tmpl := "{{ .Values.first }}\n{{ .Values.second }}"
 	paths, err := parseFile("", "test.yaml", []byte(tmpl), nil)
 	s.Require().NoError(err)
-	path.SortDedup(paths)
+	vpath.SortDedup(paths)
 	s.Require().Len(paths, 2)
 
 	s.Equal("test.yaml", paths[0].Contexts[0].FileName)

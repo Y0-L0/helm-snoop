@@ -6,7 +6,7 @@ import (
 	"text/template/parse"
 
 	"github.com/y0-l0/helm-snoop/internal/assert"
-	"github.com/y0-l0/helm-snoop/pkg/path"
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
 //nolint:gocognit,nestif // TODO: refactor to reduce complexity
@@ -23,8 +23,8 @@ func includeFn(ctx *evalCtx, call Call) evalResult {
 	ctx.Emit(call.Node.Position(), nameResult.paths...)
 
 	// 3. Determine context for template body
-	var templatePrefix *path.Path
-	var dictPaths map[string]*path.Path
+	var templatePrefix *vpath.Path
+	var dictPaths map[string]*vpath.Path
 	var dictLits map[string]string
 	isRootContext := false
 
@@ -108,7 +108,7 @@ func includeFn(ctx *evalCtx, call Call) evalResult {
 	case dictPaths != nil || dictLits != nil:
 		restore = ctx.WithDictParams(dictPaths, dictLits)
 	case templatePrefix != nil:
-		restore = ctx.WithPrefixes(path.Paths{templatePrefix})
+		restore = ctx.WithPrefixes(vpath.Paths{templatePrefix})
 	default:
 		restore = func() {}
 	}

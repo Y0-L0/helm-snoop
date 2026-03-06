@@ -5,8 +5,8 @@ import (
 	"io"
 	"text/tabwriter"
 
-	"github.com/y0-l0/helm-snoop/pkg/path"
 	"github.com/y0-l0/helm-snoop/pkg/termcolor"
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
 func formatChartCompact(w io.Writer, result *Result) {
@@ -43,7 +43,7 @@ func formatSummary(w io.Writer, results Results) {
 	tw.Flush()
 }
 
-func formatPathsCompact(w io.Writer, paths path.Paths) {
+func formatPathsCompact(w io.Writer, paths vpath.Paths) {
 	tw := tabwriter.NewWriter(w, 0, 0, 2, ' ', tabwriter.StripEscape)
 	for _, p := range paths {
 		if len(p.Contexts) == 0 {

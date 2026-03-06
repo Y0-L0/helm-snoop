@@ -3,7 +3,7 @@ package parser
 import (
 	"fmt"
 
-	"github.com/y0-l0/helm-snoop/pkg/path"
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
 // binaryEvalFuncs are functions that take 2 arguments
@@ -41,27 +41,27 @@ func (s *Unittest) TestParseCommand_BinaryEval() {
 	testCases := []struct {
 		name     string
 		template string
-		expected path.Paths
+		expected vpath.Paths
 	}{
 		{
 			name:     "values_in_first_arg",
 			template: `{{ %s .Values.app.name "literal" }}`,
-			expected: path.Paths{path.NewPath("app", "name")},
+			expected: vpath.Paths{vpath.NewPath("app", "name")},
 		},
 		{
 			name:     "values_in_second_arg",
 			template: `{{ %s "literal" .Values.app.name }}`,
-			expected: path.Paths{path.NewPath("app", "name")},
+			expected: vpath.Paths{vpath.NewPath("app", "name")},
 		},
 		{
 			name:     "values_in_both_args",
 			template: `{{ %s .Values.app.name .Values.app.version }}`,
-			expected: path.Paths{path.NewPath("app", "name"), path.NewPath("app", "version")},
+			expected: vpath.Paths{vpath.NewPath("app", "name"), vpath.NewPath("app", "version")},
 		},
 		{
 			name:     "piped_form",
 			template: `{{ .Values.app.name | %s "literal" }}`,
-			expected: path.Paths{path.NewPath("app", "name")},
+			expected: vpath.Paths{vpath.NewPath("app", "name")},
 		},
 	}
 
@@ -70,7 +70,7 @@ func (s *Unittest) TestParseCommand_BinaryEval() {
 			testName := fmt.Sprintf("%s/%s", tc.name, funcName)
 			s.Run(testName, func() {
 				tmpl := fmt.Sprintf(tc.template, funcName)
-				path.EqualPaths(s, tc.expected, s.parse(tmpl))
+				vpath.EqualPaths(s, tc.expected, s.parse(tmpl))
 			})
 		}
 	}

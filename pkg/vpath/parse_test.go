@@ -1,4 +1,4 @@
-package path
+package vpath
 
 func (s *Unittest) TestParsePath_ValidPaths() {
 	tests := []struct {

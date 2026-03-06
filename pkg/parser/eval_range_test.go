@@ -1,12 +1,12 @@
 package parser
 
 import (
-	"github.com/y0-l0/helm-snoop/pkg/path"
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
 // Helper for building paths in tests.
-func np() *path.Path {
-	return &path.Path{}
+func np() *vpath.Path {
+	return &vpath.Path{}
 }
 
 // TestParseFile_Range tests range statement evaluation.
@@ -14,55 +14,55 @@ func (s *Unittest) TestParseFile_Range() {
 	cases := []struct {
 		name     string
 		template string
-		expected path.Paths
+		expected vpath.Paths
 	}{
 		{
 			name:     "range_over_values_path",
 			template: `{{ range .Values.items }}{{ end }}`,
-			expected: path.Paths{},
+			expected: vpath.Paths{},
 		},
 		{
 			name:     "range_body_accesses_values",
 			template: `{{ range .Values.items }}{{ .Values.name }}{{ end }}`,
-			expected: path.Paths{path.NewPath("name")},
+			expected: vpath.Paths{vpath.NewPath("name")},
 		},
 		{
 			name:     "range_with_else",
 			template: `{{ range .Values.items }}{{ else }}{{ .Values.fallback }}{{ end }}`,
-			expected: path.Paths{path.NewPath("fallback")},
+			expected: vpath.Paths{vpath.NewPath("fallback")},
 		},
 		{
 			name: "range_body_and_else_both_access_values",
 			template: `{{ range .Values.items }}{{ .Values.itemName }}` +
 				`{{ else }}{{ .Values.defaultName }}{{ end }}`,
-			expected: path.Paths{
-				path.NewPath("itemName"),
-				path.NewPath("defaultName"),
+			expected: vpath.Paths{
+				vpath.NewPath("itemName"),
+				vpath.NewPath("defaultName"),
 			},
 		},
 		{
 			name: "nested_range",
 			template: `{{ range .Values.outer }}{{ range .Values.inner }}` +
 				`{{ .Values.leaf }}{{ end }}{{ end }}`,
-			expected: path.Paths{
-				path.NewPath("leaf"),
+			expected: vpath.Paths{
+				vpath.NewPath("leaf"),
 			},
 		},
 		{
 			name:     "range_with_variable_assignment",
 			template: `{{ range $item := .Values.items }}{{ .Values.name }}{{ end }}`,
-			expected: path.Paths{path.NewPath("name")},
+			expected: vpath.Paths{vpath.NewPath("name")},
 		},
 		{
 			name:     "range_with_index_and_value",
 			template: `{{ range $index, $item := .Values.items }}{{ .Values.name }}{{ end }}`,
-			expected: path.Paths{path.NewPath("name")},
+			expected: vpath.Paths{vpath.NewPath("name")},
 		},
 	}
 
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			path.EqualPaths(s, tc.expected, s.parse(tc.template))
+			vpath.EqualPaths(s, tc.expected, s.parse(tc.template))
 		})
 	}
 }
@@ -73,19 +73,19 @@ func (s *Unittest) TestParseFile_RangePrefix() {
 	cases := []struct {
 		name     string
 		template string
-		expected path.Paths
+		expected vpath.Paths
 	}{
 		{
 			name:     "range_changes_dot_context",
 			template: `{{ range .Values.items }}{{ .name }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("items").Wildcard().Key("name"),
 			},
 		},
 		{
 			name:     "range_multiple_field_access",
 			template: `{{ range .Values.users }}{{ .id }}{{ .email }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("users").Wildcard().Key("id"),
 				np().Key("users").Wildcard().Key("email"),
 			},
@@ -93,7 +93,7 @@ func (s *Unittest) TestParseFile_RangePrefix() {
 		{
 			name:     "range_deep_field_access",
 			template: `{{ range .Values.services }}{{ .metadata.name }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("services").Wildcard().Key("metadata").Key("name"),
 			},
 		},
@@ -105,7 +105,7 @@ func (s *Unittest) TestParseFile_RangePrefix() {
 					{{ .email }}
 				{{ end }}
 			{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("teams").Wildcard().Key("name"),
 				np().Key("teams").Wildcard().Key("members").Wildcard().Key("email"),
 			},
@@ -114,22 +114,22 @@ func (s *Unittest) TestParseFile_RangePrefix() {
 			name: "range_else_preserves_original_context",
 			template: `{{ range .Values.items }}{{ .name }}` +
 				`{{ else }}{{ .Values.emptyMessage }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("items").Wildcard().Key("name"),
-				path.NewPath("emptyMessage"),
+				vpath.NewPath("emptyMessage"),
 			},
 		},
 		{
 			name:     "range_dollar_accesses_root_context",
 			template: `{{ range .Values.items }}{{ $.Values.config }}{{ end }}`,
-			expected: path.Paths{
-				path.NewPath("config"),
+			expected: vpath.Paths{
+				vpath.NewPath("config"),
 			},
 		},
 		{
 			name:     "range_over_concat",
 			template: `{{ range concat .Values.ingress.items .Values.extraIngresses }}{{ .host }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("ingress").Key("items").Wildcard().Key("host"),
 				np().Key("extraIngresses").Wildcard().Key("host"),
 			},
@@ -137,7 +137,7 @@ func (s *Unittest) TestParseFile_RangePrefix() {
 		{
 			name:     "range_over_concat_with_parens",
 			template: `{{ range (concat .Values.ingress.items .Values.extraIngresses) }}{{ .host }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("ingress").Key("items").Wildcard().Key("host"),
 				np().Key("extraIngresses").Wildcard().Key("host"),
 			},
@@ -146,16 +146,16 @@ func (s *Unittest) TestParseFile_RangePrefix() {
 		// {
 		// 	name:     "range_with_variable_still_tracks_field_access",
 		// 	template: `{{ range $item := .Values.items }}{{ $item.name }}{{ end }}`,
-		// 	expected: path.Paths{
-		// 		path.NewPath("items"),
-		// 		path.NewPath("items", "*", "name"),
+		// 	expected: vpath.Paths{
+		// 		vpath.NewPath("items"),
+		// 		vpath.NewPath("items", "*", "name"),
 		// 	},
 		// },
 	}
 
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			path.EqualPaths(s, tc.expected, s.parse(tc.template))
+			vpath.EqualPaths(s, tc.expected, s.parse(tc.template))
 		})
 	}
 }
@@ -165,43 +165,43 @@ func (s *Unittest) TestParseFile_RangeWithInteraction() {
 	cases := []struct {
 		name     string
 		template string
-		expected path.Paths
+		expected vpath.Paths
 	}{
 		{
 			name: "range_inside_if",
 			template: `{{ if .Values.enabled }}{{ range .Values.items }}` +
 				`{{ .Values.name }}{{ end }}{{ end }}`,
-			expected: path.Paths{
-				path.NewPath("enabled"),
-				path.NewPath("name"),
+			expected: vpath.Paths{
+				vpath.NewPath("enabled"),
+				vpath.NewPath("name"),
 			},
 		},
 		{
 			name: "with_inside_range",
 			template: `{{ range .Values.items }}{{ with .Values.config }}` +
 				`{{ .Values.setting }}{{ end }}{{ end }}`,
-			expected: path.Paths{
-				path.NewPath("setting"),
+			expected: vpath.Paths{
+				vpath.NewPath("setting"),
 			},
 		},
 		{
 			name:     "range_with_function_call",
 			template: `{{ range .Values.items }}{{ .Values.name | upper }}{{ end }}`,
-			expected: path.Paths{path.NewPath("name")},
+			expected: vpath.Paths{vpath.NewPath("name")},
 		},
 		{
 			name: "with_with_function_call",
 			template: `{{ with .Values.config | default .Values.fallback }}` +
 				`{{ .Values.name }}{{ end }}`,
-			expected: path.Paths{
-				path.NewPath("name"),
+			expected: vpath.Paths{
+				vpath.NewPath("name"),
 			},
 		},
 	}
 
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			path.EqualPaths(s, tc.expected, s.parse(tc.template))
+			vpath.EqualPaths(s, tc.expected, s.parse(tc.template))
 		})
 	}
 }
@@ -211,22 +211,22 @@ func (s *Unittest) TestParseFile_RangeWithMixedContexts() {
 	cases := []struct {
 		name     string
 		template string
-		expected path.Paths
+		expected vpath.Paths
 	}{
 		{
 			name:     "with_explicit_values_overrides_context",
 			template: `{{ with .Values.config }}{{ .name }}{{ .Values.global }}{{ end }}`,
-			expected: path.Paths{
-				path.NewPath("config", "name"),
-				path.NewPath("global"),
+			expected: vpath.Paths{
+				vpath.NewPath("config", "name"),
+				vpath.NewPath("global"),
 			},
 		},
 		{
 			name:     "range_explicit_values_overrides_context",
 			template: `{{ range .Values.items }}{{ .name }}{{ .Values.count }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("items").Wildcard().Key("name"),
-				path.NewPath("count"),
+				vpath.NewPath("count"),
 			},
 		},
 		{
@@ -236,7 +236,7 @@ func (s *Unittest) TestParseFile_RangeWithMixedContexts() {
 					{{ .timeout }}
 				{{ end }}
 			{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("items").Wildcard().Key("config").Key("timeout"),
 			},
 		},
@@ -247,7 +247,7 @@ func (s *Unittest) TestParseFile_RangeWithMixedContexts() {
 					{{ .port }}
 				{{ end }}
 			{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("app").Key("services").Wildcard().Key("port"),
 			},
 		},
@@ -255,7 +255,7 @@ func (s *Unittest) TestParseFile_RangeWithMixedContexts() {
 
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			path.EqualPaths(s, tc.expected, s.parse(tc.template))
+			vpath.EqualPaths(s, tc.expected, s.parse(tc.template))
 		})
 	}
 }
@@ -267,27 +267,27 @@ func (s *Unittest) TestParseFile_RangeBuiltinObjects() {
 	cases := []struct {
 		name     string
 		template string
-		expected path.Paths
+		expected vpath.Paths
 	}{
 		{
 			name:     "chart_not_tracked_in_range",
 			template: `{{ range .Values.items }}{{ .Chart.AppVersion }}{{ end }}`,
-			expected: path.Paths{},
+			expected: vpath.Paths{},
 		},
 		{
 			name:     "release_not_tracked_in_range",
 			template: `{{ range .Values.items }}{{ .Release.Name }}{{ end }}`,
-			expected: path.Paths{},
+			expected: vpath.Paths{},
 		},
 		{
 			name:     "chart_and_release_not_tracked",
 			template: `{{ range .Values.items }}{{ .Chart.AppVersion }}{{ .Release.Name }}{{ end }}`,
-			expected: path.Paths{},
+			expected: vpath.Paths{},
 		},
 		{
 			name:     "builtin_with_relative_paths",
 			template: `{{ range .Values.items }}{{ .name }}{{ .Chart.AppVersion }}{{ end }}`,
-			expected: path.Paths{
+			expected: vpath.Paths{
 				np().Key("items").Wildcard().Key("name"),
 			},
 		},
@@ -295,7 +295,7 @@ func (s *Unittest) TestParseFile_RangeBuiltinObjects() {
 
 	for _, tc := range cases {
 		s.Run(tc.name, func() {
-			path.EqualPaths(s, tc.expected, s.parse(tc.template))
+			vpath.EqualPaths(s, tc.expected, s.parse(tc.template))
 		})
 	}
 }

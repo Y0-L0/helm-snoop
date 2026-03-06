@@ -4,7 +4,7 @@ import (
 	"log/slog"
 
 	"github.com/y0-l0/helm-snoop/internal/assert"
-	"github.com/y0-l0/helm-snoop/pkg/path"
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
 // ==============================================================================
@@ -13,9 +13,9 @@ import (
 
 // dictFn builds both conservative union AND structure tracking.
 func dictFn(ctx *evalCtx, call Call) evalResult {
-	dict := make(map[string]*path.Path)
+	dict := make(map[string]*vpath.Path)
 	dictLits := make(map[string]string)
-	var allPaths []*path.Path
+	var allPaths []*vpath.Path
 
 	for i := 0; i+1 < len(call.Args); i += 2 {
 		keyResult := ctx.Eval(call.Args[i])
@@ -56,7 +56,7 @@ func indexFn(ctx *evalCtx, call Call) evalResult {
 
 	// Check for dict structure
 	if baseResult.dict != nil {
-		var resolvedPaths []*path.Path
+		var resolvedPaths []*vpath.Path
 
 		for _, arg := range call.Args[1:] {
 			keyResult := ctx.Eval(arg)
@@ -77,7 +77,7 @@ func indexFn(ctx *evalCtx, call Call) evalResult {
 		keys = append(keys, keyResult.args...)
 	}
 
-	var modifiedPaths []*path.Path
+	var modifiedPaths []*vpath.Path
 	for _, base := range baseResult.paths {
 		p := *base
 		for _, key := range keys {
@@ -103,7 +103,7 @@ func getFn(ctx *evalCtx, call Call) evalResult {
 	// Check for dict structure
 	if baseResult.dict != nil && len(keyResult.args) == 1 {
 		if p, ok := baseResult.dict[keyResult.args[0]]; ok {
-			return evalResult{paths: []*path.Path{p}}
+			return evalResult{paths: []*vpath.Path{p}}
 		}
 		return evalResult{}
 	}
@@ -115,7 +115,7 @@ func getFn(ctx *evalCtx, call Call) evalResult {
 		return evalResult{}
 	}
 
-	var modifiedPaths []*path.Path
+	var modifiedPaths []*vpath.Path
 	for _, base := range baseResult.paths {
 		p := *base
 		p = p.WithAny(keyResult.args[0])
@@ -127,7 +127,7 @@ func getFn(ctx *evalCtx, call Call) evalResult {
 
 // defaultFn unions all argument paths and returns them.
 func defaultFn(ctx *evalCtx, call Call) evalResult {
-	var allPaths path.Paths
+	var allPaths vpath.Paths
 	for _, arg := range call.Args {
 		result := ctx.Eval(arg)
 		allPaths = append(allPaths, result.paths...)

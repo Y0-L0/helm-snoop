@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/suite"
 
 	"github.com/y0-l0/helm-snoop/internal/testsuite"
-	"github.com/y0-l0/helm-snoop/pkg/path"
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
 type Unittest struct {
@@ -15,7 +15,7 @@ type Unittest struct {
 
 func TestUnit(t *testing.T) { suite.Run(t, new(Unittest)) }
 
-func (s *Unittest) parse(tmpl string) path.Paths {
+func (s *Unittest) parse(tmpl string) vpath.Paths {
 	paths, err := parseFile("", "test.yaml", []byte(tmpl), nil)
 	s.Require().NoError(err)
 	return paths

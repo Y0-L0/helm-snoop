@@ -4,21 +4,21 @@ import (
 	"errors"
 	filepath "path/filepath"
 
-	"github.com/y0-l0/helm-snoop/pkg/path"
 	"github.com/y0-l0/helm-snoop/pkg/snooper"
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
-func np() *path.Path { return &path.Path{} }
+func np() *vpath.Path { return &vpath.Path{} }
 
 func (s *Unittest) TestIgnorePaths_SinglePath() {
-	var capturedPaths path.Paths
+	var capturedPaths vpath.Paths
 
-	mockSnoop := func(_ string, ignorePaths path.Paths, _ []string) (*snooper.Result, error) {
+	mockSnoop := func(_ string, ignorePaths vpath.Paths, _ []string) (*snooper.Result, error) {
 		capturedPaths = ignorePaths
 		return &snooper.Result{
-			Referenced: path.Paths{},
-			Unused:     path.Paths{},
-			Undefined:  path.Paths{},
+			Referenced: vpath.Paths{},
+			Unused:     vpath.Paths{},
+			Undefined:  vpath.Paths{},
 		}, nil
 	}
 
@@ -31,19 +31,19 @@ func (s *Unittest) TestIgnorePaths_SinglePath() {
 	err := command.Execute()
 	s.Require().NoError(err)
 
-	expected := path.Paths{np().Key("image").Key("tag")}
-	path.EqualPaths(s, expected, capturedPaths)
+	expected := vpath.Paths{np().Key("image").Key("tag")}
+	vpath.EqualPaths(s, expected, capturedPaths)
 }
 
 func (s *Unittest) TestIgnorePaths_MultipleWithAllKinds() {
-	var capturedPaths path.Paths
+	var capturedPaths vpath.Paths
 
-	mockSnoop := func(_ string, ignorePaths path.Paths, _ []string) (*snooper.Result, error) {
+	mockSnoop := func(_ string, ignorePaths vpath.Paths, _ []string) (*snooper.Result, error) {
 		capturedPaths = ignorePaths
 		return &snooper.Result{
-			Referenced: path.Paths{},
-			Unused:     path.Paths{},
-			Undefined:  path.Paths{},
+			Referenced: vpath.Paths{},
+			Unused:     vpath.Paths{},
+			Undefined:  vpath.Paths{},
 		}, nil
 	}
 
@@ -63,13 +63,13 @@ func (s *Unittest) TestIgnorePaths_MultipleWithAllKinds() {
 	err := command.Execute()
 	s.Require().NoError(err)
 
-	expected := path.Paths{
+	expected := vpath.Paths{
 		np().Key("image").Key("tag"),
 		np().Key("items").Any("0"),
 		np().Key("config").Wildcard(),
 		np().Key("a").Wildcard().Key("c"),
 	}
-	path.EqualPaths(s, expected, capturedPaths)
+	vpath.EqualPaths(s, expected, capturedPaths)
 }
 
 func (s *Unittest) TestIgnorePaths_InvalidPaths() {
@@ -102,7 +102,7 @@ func (s *Unittest) TestIgnorePaths_InvalidPaths() {
 
 	for _, tc := range tests {
 		s.Run(tc.name, func() {
-			mockSnoop := func(_ string, _ path.Paths, _ []string) (*snooper.Result, error) {
+			mockSnoop := func(_ string, _ vpath.Paths, _ []string) (*snooper.Result, error) {
 				s.T().Fatal("snoop should not be called with invalid path")
 				return nil, errors.New("unreachable")
 			}
@@ -121,14 +121,14 @@ func (s *Unittest) TestIgnorePaths_InvalidPaths() {
 }
 
 func (s *Unittest) TestIgnorePaths_NoIgnoreList() {
-	var capturedPaths path.Paths
+	var capturedPaths vpath.Paths
 
-	mockSnoop := func(_ string, ignorePaths path.Paths, _ []string) (*snooper.Result, error) {
+	mockSnoop := func(_ string, ignorePaths vpath.Paths, _ []string) (*snooper.Result, error) {
 		capturedPaths = ignorePaths
 		return &snooper.Result{
-			Referenced: path.Paths{},
-			Unused:     path.Paths{},
-			Undefined:  path.Paths{},
+			Referenced: vpath.Paths{},
+			Unused:     vpath.Paths{},
+			Undefined:  vpath.Paths{},
 		}, nil
 	}
 
@@ -141,18 +141,18 @@ func (s *Unittest) TestIgnorePaths_NoIgnoreList() {
 	err := command.Execute()
 	s.Require().NoError(err)
 
-	path.EqualPaths(s, path.Paths{}, capturedPaths)
+	vpath.EqualPaths(s, vpath.Paths{}, capturedPaths)
 }
 
 func (s *Unittest) TestValuesFiles_SingleFile() {
 	var capturedFiles []string
 
-	mockSnoop := func(_ string, _ path.Paths, valuesFiles []string) (*snooper.Result, error) {
+	mockSnoop := func(_ string, _ vpath.Paths, valuesFiles []string) (*snooper.Result, error) {
 		capturedFiles = valuesFiles
 		return &snooper.Result{
-			Referenced: path.Paths{},
-			Unused:     path.Paths{},
-			Undefined:  path.Paths{},
+			Referenced: vpath.Paths{},
+			Unused:     vpath.Paths{},
+			Undefined:  vpath.Paths{},
 		}, nil
 	}
 
@@ -171,12 +171,12 @@ func (s *Unittest) TestValuesFiles_SingleFile() {
 func (s *Unittest) TestValuesFiles_MultipleFiles() {
 	var capturedFiles []string
 
-	mockSnoop := func(_ string, _ path.Paths, valuesFiles []string) (*snooper.Result, error) {
+	mockSnoop := func(_ string, _ vpath.Paths, valuesFiles []string) (*snooper.Result, error) {
 		capturedFiles = valuesFiles
 		return &snooper.Result{
-			Referenced: path.Paths{},
-			Unused:     path.Paths{},
-			Undefined:  path.Paths{},
+			Referenced: vpath.Paths{},
+			Unused:     vpath.Paths{},
+			Undefined:  vpath.Paths{},
 		}, nil
 	}
 
@@ -196,12 +196,12 @@ func (s *Unittest) TestValuesFiles_MultipleFiles() {
 func (s *Unittest) TestValuesFiles_NoFlag() {
 	var capturedFiles []string
 
-	mockSnoop := func(_ string, _ path.Paths, valuesFiles []string) (*snooper.Result, error) {
+	mockSnoop := func(_ string, _ vpath.Paths, valuesFiles []string) (*snooper.Result, error) {
 		capturedFiles = valuesFiles
 		return &snooper.Result{
-			Referenced: path.Paths{},
-			Unused:     path.Paths{},
-			Undefined:  path.Paths{},
+			Referenced: vpath.Paths{},
+			Unused:     vpath.Paths{},
+			Undefined:  vpath.Paths{},
 		}, nil
 	}
 

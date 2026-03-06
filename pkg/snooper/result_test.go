@@ -5,7 +5,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/y0-l0/helm-snoop/pkg/path"
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
 func (s *Unittest) TestHasFindings() {
@@ -17,41 +17,41 @@ func (s *Unittest) TestHasFindings() {
 		{
 			"has Unused findings",
 			&Result{
-				Unused:    path.Paths{path.NewPath("unused")},
-				Undefined: path.Paths{},
+				Unused:    vpath.Paths{vpath.NewPath("unused")},
+				Undefined: vpath.Paths{},
 			},
 			true,
 		},
 		{
 			"has Undefined findings",
 			&Result{
-				Unused:    path.Paths{},
-				Undefined: path.Paths{path.NewPath("undefined")},
+				Unused:    vpath.Paths{},
+				Undefined: vpath.Paths{vpath.NewPath("undefined")},
 			},
 			true,
 		},
 		{
 			"has both types of findings",
 			&Result{
-				Unused:    path.Paths{path.NewPath("unused")},
-				Undefined: path.Paths{path.NewPath("undefined")},
+				Unused:    vpath.Paths{vpath.NewPath("unused")},
+				Undefined: vpath.Paths{vpath.NewPath("undefined")},
 			},
 			true,
 		},
 		{
 			"no findings",
 			&Result{
-				Unused:    path.Paths{},
-				Undefined: path.Paths{},
+				Unused:    vpath.Paths{},
+				Undefined: vpath.Paths{},
 			},
 			false,
 		},
 		{
 			"only Referenced (no findings)",
 			&Result{
-				Referenced: path.Paths{path.NewPath("used")},
-				Unused:     path.Paths{},
-				Undefined:  path.Paths{},
+				Referenced: vpath.Paths{vpath.NewPath("used")},
+				Unused:     vpath.Paths{},
+				Undefined:  vpath.Paths{},
 			},
 			false,
 		},
@@ -84,66 +84,66 @@ func (s *GoldenTest) compactGoldenTest(name string, results Results) {
 func (s *GoldenTest) TestCompactEmpty() {
 	results := Results{{
 		ChartName: "test-chart",
-		Unused:    path.Paths{},
-		Undefined: path.Paths{},
+		Unused:    vpath.Paths{},
+		Undefined: vpath.Paths{},
 	}}
 	s.compactGoldenTest("compact_empty", results)
 }
 
 func (s *GoldenTest) TestCompactUnusedOnly() {
-	unused1 := path.NewPath("config", "database", "host")
-	unused1.Contexts = path.Contexts{
+	unused1 := vpath.NewPath("config", "database", "host")
+	unused1.Contexts = vpath.Contexts{
 		{FileName: "values.yaml", Line: 5, Column: 3},
 	}
-	unused2 := path.NewPath("podLabels")
-	unused2.Contexts = path.Contexts{
+	unused2 := vpath.NewPath("podLabels")
+	unused2.Contexts = vpath.Contexts{
 		{FileName: "values.yaml", Line: 12, Column: 1},
 	}
 
 	results := Results{{
 		ChartName: "test-chart",
-		Unused:    path.Paths{unused1, unused2},
-		Undefined: path.Paths{},
+		Unused:    vpath.Paths{unused1, unused2},
+		Undefined: vpath.Paths{},
 	}}
 	s.compactGoldenTest("compact_unused_only", results)
 }
 
 func (s *GoldenTest) TestCompactUndefinedOnly() {
-	undef1 := path.NewPath("service", "nodePort")
-	undef1.Contexts = path.Contexts{
+	undef1 := vpath.NewPath("service", "nodePort")
+	undef1.Contexts = vpath.Contexts{
 		{FileName: "templates/service.yaml", Line: 36, Column: 20},
 	}
 
 	results := Results{{
 		ChartName: "test-chart",
-		Unused:    path.Paths{},
-		Undefined: path.Paths{undef1},
+		Unused:    vpath.Paths{},
+		Undefined: vpath.Paths{undef1},
 	}}
 	s.compactGoldenTest("compact_undefined_only", results)
 }
 
 func (s *GoldenTest) TestCompactBothSections() {
-	unused := path.NewPath("redis", "auth", "username")
-	unused.Contexts = path.Contexts{
+	unused := vpath.NewPath("redis", "auth", "username")
+	unused.Contexts = vpath.Contexts{
 		{FileName: "values.yaml", Line: 8, Column: 5},
 	}
 
-	undef := path.NewPath("provisioning", "extraLabels")
-	undef.Contexts = path.Contexts{
+	undef := vpath.NewPath("provisioning", "extraLabels")
+	undef.Contexts = vpath.Contexts{
 		{FileName: "templates/configmap.yaml", Line: 17, Column: 3},
 	}
 
 	results := Results{{
 		ChartName: "my-chart",
-		Unused:    path.Paths{unused},
-		Undefined: path.Paths{undef},
+		Unused:    vpath.Paths{unused},
+		Undefined: vpath.Paths{undef},
 	}}
 	s.compactGoldenTest("compact_both", results)
 }
 
 func (s *GoldenTest) TestCompactMultipleContexts() {
-	undef := path.NewPath("service", "nodePort")
-	undef.Contexts = path.Contexts{
+	undef := vpath.NewPath("service", "nodePort")
+	undef.Contexts = vpath.Contexts{
 		{FileName: "templates/service.yaml", Line: 36, Column: 20},
 		{FileName: "templates/deployment.yaml", Line: 12, Column: 8},
 		{FileName: "templates/ingress.yaml", Line: 5, Column: 15},
@@ -151,37 +151,37 @@ func (s *GoldenTest) TestCompactMultipleContexts() {
 
 	results := Results{{
 		ChartName: "test-chart",
-		Unused:    path.Paths{},
-		Undefined: path.Paths{undef},
+		Unused:    vpath.Paths{},
+		Undefined: vpath.Paths{undef},
 	}}
 	s.compactGoldenTest("compact_multiple_contexts", results)
 }
 
 func (s *GoldenTest) TestCompactMultipleCharts() {
-	unused1 := path.NewPath("podLabels")
-	unused1.Contexts = path.Contexts{
+	unused1 := vpath.NewPath("podLabels")
+	unused1.Contexts = vpath.Contexts{
 		{FileName: "values.yaml", Line: 11, Column: 1},
 	}
-	undef1 := path.NewPath("service", "nodePort")
-	undef1.Contexts = path.Contexts{
+	undef1 := vpath.NewPath("service", "nodePort")
+	undef1.Contexts = vpath.Contexts{
 		{FileName: "templates/service.yaml", Line: 36, Column: 20},
 	}
 
-	unused2 := path.NewPath("global", "domain")
-	unused2.Contexts = path.Contexts{
+	unused2 := vpath.NewPath("global", "domain")
+	unused2.Contexts = vpath.Contexts{
 		{FileName: "values.yaml", Line: 2, Column: 3},
 	}
 
 	results := Results{
 		{
 			ChartName: "chart-a",
-			Unused:    path.Paths{unused1},
-			Undefined: path.Paths{undef1},
+			Unused:    vpath.Paths{unused1},
+			Undefined: vpath.Paths{undef1},
 		},
 		{
 			ChartName: "chart-b",
-			Unused:    path.Paths{unused2},
-			Undefined: path.Paths{},
+			Unused:    vpath.Paths{unused2},
+			Undefined: vpath.Paths{},
 		},
 	}
 	s.compactGoldenTest("compact_multiple_charts", results)

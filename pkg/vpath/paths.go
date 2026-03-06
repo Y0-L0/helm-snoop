@@ -1,4 +1,4 @@
-package path
+package vpath
 
 type Paths []*Path
 

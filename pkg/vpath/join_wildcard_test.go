@@ -1,4 +1,4 @@
-package path
+package vpath
 
 func (s *Unittest) TestMergeJoinLoose_WildcardMatchesDirectChild() {
 	a := Paths{np().Key("a").Wildcard()}

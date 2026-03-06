@@ -7,7 +7,7 @@ import (
 	"text/template/parse"
 
 	"github.com/y0-l0/helm-snoop/internal/assert"
-	"github.com/y0-l0/helm-snoop/pkg/path"
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
 // Call represents an invocation of a template function during analysis.
@@ -26,11 +26,11 @@ type Call struct {
 
 type evalCtx struct {
 	tree         *parse.Tree
-	out          *path.Paths
-	prefixes     path.Paths
-	paramPaths   map[string]*path.Path
+	out          *vpath.Paths
+	prefixes     vpath.Paths
+	paramPaths   map[string]*vpath.Path
 	paramLits    map[string]string
-	variables    map[string]*path.Path
+	variables    map[string]*vpath.Path
 	idx          *TemplateIndex
 	inStack      map[string]int
 	depth        int
@@ -41,7 +41,7 @@ type evalCtx struct {
 }
 
 // newEvalCtx constructs an evaluation context with initialized state.
-func newEvalCtx(tree *parse.Tree, out *path.Paths, idx *TemplateIndex, fileName, source string) *evalCtx {
+func newEvalCtx(tree *parse.Tree, out *vpath.Paths, idx *TemplateIndex, fileName, source string) *evalCtx {
 	return &evalCtx{
 		tree:     tree,
 		out:      out,
@@ -55,9 +55,9 @@ func newEvalCtx(tree *parse.Tree, out *path.Paths, idx *TemplateIndex, fileName,
 }
 
 // makeContext creates a Context from a [parse.Pos].
-func (e *evalCtx) makeContext(pos parse.Pos) path.Context {
+func (e *evalCtx) makeContext(pos parse.Pos) vpath.Context {
 	line, col := CalcPosition(e.source, int(pos))
-	return path.Context{
+	return vpath.Context{
 		FileName:     e.fileName,
 		TemplateName: e.templateName,
 		Line:         line,
@@ -65,7 +65,7 @@ func (e *evalCtx) makeContext(pos parse.Pos) path.Context {
 	}
 }
 
-func (e *evalCtx) Emit(pos parse.Pos, paths ...*path.Path) {
+func (e *evalCtx) Emit(pos parse.Pos, paths ...*vpath.Path) {
 	if e == nil || e.out == nil {
 		panic("Invalid state in Emit function")
 	}
@@ -85,12 +85,12 @@ func (e *evalCtx) Emit(pos parse.Pos, paths ...*path.Path) {
 // addPrefixes generates paths for all context prefixes if any are set.
 // Used when creating relative paths inside with/range blocks.
 // Returns a slice with the original path if no prefixes are set.
-func (e *evalCtx) addPrefixes(p *path.Path) path.Paths {
+func (e *evalCtx) addPrefixes(p *vpath.Path) vpath.Paths {
 	if !e.hasPrefix() {
-		return path.Paths{p}
+		return vpath.Paths{p}
 	}
 
-	var result path.Paths
+	var result vpath.Paths
 	for _, prefix := range e.prefixes {
 		prefixed := prefix.Join(*p)
 		result = append(result, &prefixed)
@@ -101,7 +101,7 @@ func (e *evalCtx) addPrefixes(p *path.Path) path.Paths {
 // WithPrefixes sets context prefixes and returns a cleanup function.
 // Used by with/range to change the meaning of "." in nested scopes.
 // If prefixes is nil or empty, no prefix is set (no-op that still returns a valid cleanup function).
-func (e *evalCtx) WithPrefixes(prefixes path.Paths) func() {
+func (e *evalCtx) WithPrefixes(prefixes vpath.Paths) func() {
 	oldPrefixes := e.prefixes
 	e.prefixes = prefixes
 	return func() {
@@ -115,7 +115,7 @@ func (e *evalCtx) hasPrefix() bool {
 }
 
 // WithDictParams sets dict parameter mappings and returns a cleanup function.
-func (e *evalCtx) WithDictParams(paths map[string]*path.Path, lits map[string]string) func() {
+func (e *evalCtx) WithDictParams(paths map[string]*vpath.Path, lits map[string]string) func() {
 	oldPaths := e.paramPaths
 	oldLits := e.paramLits
 	e.paramPaths = paths
@@ -147,7 +147,7 @@ func extractVariableDecls(pipe *parse.PipeNode) []string {
 
 // WithVariables sets up context for range/with blocks and returns a restore function.
 // useLastVar: true for range (binds value not key), false for with.
-func (e *evalCtx) WithVariables(pipe *parse.PipeNode, prefixes path.Paths, useLastVar bool) func() {
+func (e *evalCtx) WithVariables(pipe *parse.PipeNode, prefixes vpath.Paths, useLastVar bool) func() {
 	varNames := extractVariableDecls(pipe)
 
 	if len(varNames) == 0 || len(prefixes) == 0 {
@@ -162,7 +162,7 @@ func (e *evalCtx) WithVariables(pipe *parse.PipeNode, prefixes path.Paths, useLa
 	}
 
 	oldVars := e.variables
-	newVars := make(map[string]*path.Path)
+	newVars := make(map[string]*vpath.Path)
 	maps.Copy(newVars, oldVars)
 	newVars[varName] = prefixes[0]
 	e.variables = newVars
@@ -208,10 +208,10 @@ func (e *evalCtx) Eval(n parse.Node) evalResult {
 		return e.evalTemplateNode(node)
 	case *parse.DotNode:
 		if e.hasPrefix() {
-			return evalResult{paths: e.addPrefixes(&path.Path{})}
+			return evalResult{paths: e.addPrefixes(&vpath.Path{})}
 		}
 		// Outside with/range, return empty path (root context)
-		return evalResult{paths: path.Paths{path.NewPath()}}
+		return evalResult{paths: vpath.Paths{vpath.NewPath()}}
 	case *parse.ChainNode:
 		return e.evalChainNode(node)
 

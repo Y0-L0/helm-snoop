@@ -1,7 +1,7 @@
 package parser
 
 import (
-	"github.com/y0-l0/helm-snoop/pkg/path"
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
 type evalResult struct {
@@ -10,13 +10,13 @@ type evalResult struct {
 	args []string
 
 	// paths contains the union of all .Values paths discovered during evaluation.
-	paths []*path.Path
+	paths []*vpath.Path
 
 	// dict provides structure tracking for dict literals.
 	// Maps literal keys to their corresponding .Values paths.
 	// Only populated by the dict function; nil otherwise.
 	// Functions like index, get, and include can use this for precise resolution.
-	dict map[string]*path.Path
+	dict map[string]*vpath.Path
 
 	// dictLits tracks literal values in dict (not paths).
 	dictLits map[string]string
