@@ -30,7 +30,10 @@ jobs:
         uses: golangci/golangci-lint-action@v7
 
       - name: Run tests
-        run: go test -coverprofile=coverage.out ./...
+        run: >-
+          go test ./...
+          -coverpkg=github.com/y0-l0/helm-snoop/cmd/helm-snoop,github.com/y0-l0/helm-snoop/internal/...,github.com/y0-l0/helm-snoop/pkg/...
+          -coverprofile=coverage.out
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5

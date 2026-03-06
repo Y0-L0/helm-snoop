@@ -24,7 +24,9 @@ test: fmt
 coverage: fmt
 	@status=0; \
 	rm -f coverage.html || true; \
-	go test $(TF) $(filter-out $@ --,$(MAKECMDGOALS)) ./... -coverpkg=./... -coverprofile=coverage.out || status=$$?; \
+	go test $(TF) $(filter-out $@ --,$(MAKECMDGOALS)) ./... \
+		-coverpkg=github.com/y0-l0/helm-snoop/cmd/helm-snoop,github.com/y0-l0/helm-snoop/internal/...,github.com/y0-l0/helm-snoop/pkg/... \
+		-coverprofile=coverage.out || status=$$?; \
 	if [ -f coverage.out ]; then go tool cover -html=coverage.out -o coverage.html || status=$$?; fi; \
 	exit $$status
 
