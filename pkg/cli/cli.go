@@ -12,9 +12,9 @@ import (
 	"github.com/spf13/cobra"
 
 	"github.com/y0-l0/helm-snoop/internal/assert"
+	"github.com/y0-l0/helm-snoop/pkg/appinfo"
 	"github.com/y0-l0/helm-snoop/pkg/snooper"
 	"github.com/y0-l0/helm-snoop/pkg/termcolor"
-	"github.com/y0-l0/helm-snoop/pkg/version"
 	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
@@ -175,7 +175,7 @@ Examples:
 		Use:   "version",
 		Short: "Print version information",
 		Run: func(cmd *cobra.Command, _ []string) {
-			version.BuildInfo(cmd.OutOrStdout())
+			appinfo.Write(cmd.OutOrStdout())
 		},
 	}
 

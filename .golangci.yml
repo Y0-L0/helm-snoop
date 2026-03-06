@@ -208,8 +208,6 @@ linters:
       - std-error-handling
       - common-false-positives
     rules:
-      - text: 'avoid package names that conflict with Go standard library package names'
-        linters: [ revive ]
       - text: 'should have a package comment'
         linters: [ revive ]
       - text: 'exported \S+ \S+ should have comment( \(or a comment on this block\))? or be unexported'
