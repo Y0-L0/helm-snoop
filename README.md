@@ -2,6 +2,9 @@
 
 [![CI](https://github.com/y0-l0/helm-snoop/actions/workflows/test.yaml/badge.svg)](https://github.com/y0-l0/helm-snoop/actions/workflows/test.yaml)
 [![codecov](https://codecov.io/gh/y0-l0/helm-snoop/branch/main/graph/badge.svg)](https://codecov.io/gh/y0-l0/helm-snoop)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Y0-L0_helm-snoop&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=Y0-L0_helm-snoop)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Y0-L0_helm-snoop&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=Y0-L0_helm-snoop)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Y0-L0_helm-snoop&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Y0-L0_helm-snoop)
 [![Go Report Card](https://goreportcard.com/badge/github.com/y0-l0/helm-snoop)](https://goreportcard.com/report/github.com/y0-l0/helm-snoop)
 [![Release](https://img.shields.io/github/v/release/y0-l0/helm-snoop)](https://github.com/y0-l0/helm-snoop/releases/latest)
 [![License: AGPL-3.0](https://img.shields.io/github/license/y0-l0/helm-snoop)](LICENSE)
