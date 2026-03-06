@@ -1,4 +1,4 @@
-package parser
+package tplparser
 
 import (
 	"helm.sh/helm/v4/pkg/chart/common"

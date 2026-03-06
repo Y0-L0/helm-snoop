@@ -1,4 +1,4 @@
-package parser
+package tplparser
 
 import (
 	"github.com/y0-l0/helm-snoop/internal/assert"

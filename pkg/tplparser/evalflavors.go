@@ -1,4 +1,4 @@
-package parser
+package tplparser
 
 import (
 	"log/slog"
