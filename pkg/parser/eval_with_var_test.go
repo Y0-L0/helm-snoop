@@ -4,8 +4,8 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
-// TestParseFile_WithVariables tests with variable tracking
-// Phase 3: With block variables
+// TestParseFile_WithVariables tests with variable tracking.
+// Phase 3: With block variables.
 func (s *Unittest) TestParseFile_WithVariables() {
 	cases := []struct {
 		name     string

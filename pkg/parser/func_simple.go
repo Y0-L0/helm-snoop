@@ -15,7 +15,7 @@ func noopStrings(_ *evalCtx, _ Call) evalResult {
 // FLAVOR 2: SIMPLE VALUE PRODUCERS (emit paths immediately)
 // ==============================================================================
 
-// unaryPassThroughFn emits the arg path if present, returns literal strings
+// unaryPassThroughFn emits the arg path if present, returns literal strings.
 func unaryPassThroughFn(ctx *evalCtx, call Call) evalResult {
 	if len(call.Args) == 0 {
 		return evalResult{}
@@ -28,7 +28,7 @@ func unaryPassThroughFn(ctx *evalCtx, call Call) evalResult {
 	return evalResult{args: result.args}
 }
 
-// unarySerializeFn emits the arg path with a terminal wildcard (for toYaml, toJson, etc.)
+// unarySerializeFn emits the arg path with a terminal wildcard (for toYaml, toJson, etc.).
 func unarySerializeFn(ctx *evalCtx, call Call) evalResult {
 	if len(call.Args) == 0 {
 		return evalResult{}
@@ -44,7 +44,7 @@ func unarySerializeFn(ctx *evalCtx, call Call) evalResult {
 	return evalResult{args: result.args}
 }
 
-// emitArgsNoResultFn evaluates all args and emits any .Values paths found
+// emitArgsNoResultFn evaluates all args and emits any .Values paths found.
 func emitArgsNoResultFn(ctx *evalCtx, call Call) evalResult {
 	for _, arg := range call.Args {
 		result := ctx.Eval(arg)
@@ -54,8 +54,8 @@ func emitArgsNoResultFn(ctx *evalCtx, call Call) evalResult {
 	return evalResult{}
 }
 
-// omitPickFn handles omit/pick functions - evaluates all args but returns only the first arg's paths
-// This allows the result to be piped to other functions like toYaml
+// omitPickFn handles omit/pick functions - evaluates all args but returns only the first arg's paths.
+// This allows the result to be piped to other functions like toYaml.
 func omitPickFn(ctx *evalCtx, call Call) evalResult {
 	if len(call.Args) == 0 {
 		return evalResult{}
@@ -70,7 +70,7 @@ func omitPickFn(ctx *evalCtx, call Call) evalResult {
 	return evalResult{paths: result.paths, args: result.args}
 }
 
-// concatFn evaluates all args and returns all paths (for concat which merges lists)
+// concatFn evaluates all args and returns all paths (for concat which merges lists).
 func concatFn(ctx *evalCtx, call Call) evalResult {
 	var allPaths path.Paths
 
@@ -82,8 +82,8 @@ func concatFn(ctx *evalCtx, call Call) evalResult {
 	return evalResult{paths: allPaths}
 }
 
-// binaryEvalFn evaluates the first 2 args and emits any .Values paths found
-// Used for comparison, string manipulation, and type checking functions
+// binaryEvalFn evaluates the first 2 args and emits any .Values paths found.
+// Used for comparison, string manipulation, and type checking functions.
 func binaryEvalFn(ctx *evalCtx, call Call) evalResult {
 	if len(call.Args) != 2 {
 		slog.Warn("binary function requires exactly 2 arguments", "count", len(call.Args))

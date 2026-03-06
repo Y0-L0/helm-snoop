@@ -7,7 +7,7 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
-// isBuiltinObject checks if a field name is a Helm built-in object
+// isBuiltinObject checks if a field name is a Helm built-in object.
 func isBuiltinObject(field string) bool {
 	return field == "Release" || field == "Chart" ||
 		field == "Files" || field == "Capabilities" ||
@@ -51,7 +51,7 @@ func (e *evalCtx) evalParamLits(firstField string, restFields []string) (evalRes
 	return evalResult{args: []string{litVal}}, true
 }
 
-// evalFieldNode evaluates field access like .Values.foo.bar
+// evalFieldNode evaluates field access like .Values.foo.bar.
 func (e *evalCtx) evalFieldNode(node *parse.FieldNode) evalResult {
 	if len(node.Ident) == 0 {
 		return evalResult{}
@@ -92,7 +92,7 @@ func (e *evalCtx) evalFieldNode(node *parse.FieldNode) evalResult {
 	return evalResult{paths: prefixed}
 }
 
-// evalChainNode evaluates (.foo).bar.baz
+// evalChainNode evaluates (.foo).bar.baz.
 func (e *evalCtx) evalChainNode(node *parse.ChainNode) evalResult {
 	if node.Node == nil {
 		return evalResult{}
@@ -119,7 +119,7 @@ func (e *evalCtx) evalChainNode(node *parse.ChainNode) evalResult {
 	}
 }
 
-// evalCommandNode evaluates a command (either a function call or single field/literal)
+// evalCommandNode evaluates a command (either a function call or single field/literal).
 func (e *evalCtx) evalCommandNode(node *parse.CommandNode) evalResult {
 	if len(node.Args) == 0 {
 		return evalResult{}

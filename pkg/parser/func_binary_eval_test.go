@@ -36,7 +36,7 @@ var binaryEvalFuncs = []string{
 }
 
 // TestParseCommand_BinaryEval tests functions that take 2 args (or 1 + piped)
-// and should find .Values paths in both arguments
+// and should find .Values paths in both arguments.
 func (s *Unittest) TestParseCommand_BinaryEval() {
 	testCases := []struct {
 		name     string

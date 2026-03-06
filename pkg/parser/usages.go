@@ -5,8 +5,9 @@ import (
 	"log/slog"
 	"text/template/parse"
 
-	"github.com/y0-l0/helm-snoop/pkg/path"
 	chart "helm.sh/helm/v4/pkg/chart/v2"
+
+	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
 // GetUsages walks all chart templates and returns a flat list of observed .Values paths.
@@ -38,7 +39,7 @@ func GetUsages(ch *chart.Chart) (path.Paths, error) {
 }
 
 // parseFile parses a file; idx enables include resolution across templates.
-func parseFile(chartName, name string, data []byte, idx *TemplateIndex) (path.Paths, error) {
+func parseFile(_, name string, data []byte, idx *TemplateIndex) (path.Paths, error) {
 	trees, err := parse.Parse(name, string(data), "", "", stubFuncMap)
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse template %s: %w", name, err)

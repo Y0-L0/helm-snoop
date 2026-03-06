@@ -14,10 +14,10 @@ type tmplFunc func(ctx *evalCtx, call Call) evalResult
 var funcMap map[string]tmplFunc
 
 // stubFuncMap lists all known function names for the parser (stubs only).
-var stubFuncMap map[string]interface{}
+var stubFuncMap map[string]any
 
-// stub parser function for the stubFuncMap
-var parseStub = func(...interface{}) interface{} { return nil }
+// stub parser function for the stubFuncMap.
+var parseStub = func(...any) any { return nil }
 
 func init() {
 	// Build evaluation registry with concrete handlers.
@@ -348,7 +348,7 @@ func init() {
 	}
 
 	// Build parse stubs from eval keys
-	stubFuncMap = make(map[string]interface{}, len(funcMap))
+	stubFuncMap = make(map[string]any, len(funcMap))
 	for name := range funcMap {
 		stubFuncMap[name] = parseStub
 	}

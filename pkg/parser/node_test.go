@@ -38,7 +38,7 @@ func (s *Unittest) TestParseFile_Happy() {
 	}
 }
 
-// with/range/template are now supported
+// with/range/template are now supported.
 func (s *Unittest) TestParseFile_NotImplemented() {
 	// All previously unsupported features are now implemented
 	// This test now verifies they don't panic

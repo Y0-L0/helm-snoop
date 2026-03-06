@@ -3,6 +3,7 @@ package parser
 import (
 	"fmt"
 	"log/slog"
+	"maps"
 	"text/template/parse"
 
 	"github.com/y0-l0/helm-snoop/internal/assert"
@@ -53,10 +54,10 @@ func newEvalCtx(tree *parse.Tree, out *path.Paths, idx *TemplateIndex, fileName,
 	}
 }
 
-// makeContext creates a PathContext from a parse.Pos.
-func (e *evalCtx) makeContext(pos parse.Pos) path.PathContext {
+// makeContext creates a Context from a [parse.Pos].
+func (e *evalCtx) makeContext(pos parse.Pos) path.Context {
 	line, col := CalcPosition(e.source, int(pos))
-	return path.PathContext{
+	return path.Context{
 		FileName:     e.fileName,
 		TemplateName: e.templateName,
 		Line:         line,
@@ -162,9 +163,7 @@ func (e *evalCtx) WithVariables(pipe *parse.PipeNode, prefixes path.Paths, useLa
 
 	oldVars := e.variables
 	newVars := make(map[string]*path.Path)
-	for k, v := range oldVars {
-		newVars[k] = v
-	}
+	maps.Copy(newVars, oldVars)
 	newVars[varName] = prefixes[0]
 	e.variables = newVars
 

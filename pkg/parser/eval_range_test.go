@@ -4,12 +4,12 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/path"
 )
 
-// Helper for building paths in tests
+// Helper for building paths in tests.
 func np() *path.Path {
 	return &path.Path{}
 }
 
-// TestParseFile_Range tests range statement evaluation
+// TestParseFile_Range tests range statement evaluation.
 func (s *Unittest) TestParseFile_Range() {
 	cases := []struct {
 		name     string
@@ -68,7 +68,7 @@ func (s *Unittest) TestParseFile_Range() {
 }
 
 // TestParseFile_RangePrefix tests that range blocks change the context
-// so that .foo inside "range .Values.items" refers to items[*].foo
+// so that .foo inside "range .Values.items" refers to items[*].foo.
 func (s *Unittest) TestParseFile_RangePrefix() {
 	cases := []struct {
 		name     string
@@ -160,7 +160,7 @@ func (s *Unittest) TestParseFile_RangePrefix() {
 	}
 }
 
-// TestParseFile_RangeWithInteraction tests range and with together with other features
+// TestParseFile_RangeWithInteraction tests range and with together with other features.
 func (s *Unittest) TestParseFile_RangeWithInteraction() {
 	cases := []struct {
 		name     string
@@ -206,7 +206,7 @@ func (s *Unittest) TestParseFile_RangeWithInteraction() {
 	}
 }
 
-// TestParseFile_RangeWithMixedContexts tests interaction between range/with and explicit .Values
+// TestParseFile_RangeWithMixedContexts tests interaction between range/with and explicit .Values.
 func (s *Unittest) TestParseFile_RangeWithMixedContexts() {
 	cases := []struct {
 		name     string

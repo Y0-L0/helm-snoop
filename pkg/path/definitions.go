@@ -3,8 +3,9 @@ package path
 import (
 	"strconv"
 
-	"github.com/y0-l0/helm-snoop/internal/assert"
 	"gopkg.in/yaml.v3"
+
+	"github.com/y0-l0/helm-snoop/internal/assert"
 )
 
 // GetDefinitions unmarshals raw YAML and returns all leaf definition paths

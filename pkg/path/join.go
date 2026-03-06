@@ -22,7 +22,7 @@ func subsumes(a, b *Path) bool {
 	}
 
 	// Check all tokens match (excluding wildcard)
-	for i := 0; i < bLen; i++ {
+	for i := range bLen {
 		if a.tokens[i] != b.tokens[i] || a.kinds[i] != b.kinds[i] {
 			return false
 		}
@@ -103,39 +103,40 @@ func equalLenLoose(a, b *Path) (int, bool) {
 		bEffective--
 	}
 
-	if aHasTerminal && bHasTerminal {
+	switch {
+	case aHasTerminal && bHasTerminal:
 		if aEffective < bEffective {
 			return aEffective, true
 		}
 		return bEffective, true
-	} else if aHasTerminal {
+	case aHasTerminal:
 		if bEffective < aEffective {
 			return 0, false
 		}
 		return aEffective, true
-	} else if bHasTerminal {
+	case bHasTerminal:
 		if aEffective < bEffective {
 			return 0, false
 		}
 		return bEffective, true
+	default:
+		if aEffective != bEffective {
+			return 0, false
+		}
+		return aEffective, true
 	}
-
-	if aEffective != bEffective {
-		return 0, false
-	}
-	return aEffective, true
 }
 
 // EqualLoose returns true if paths match with:
 // - Exact tokens and loose kind matching (anyKind matches anything), OR
-// - Wildcard matching: terminal /* matches descendants, interior /* matches one segment
+// - Wildcard matching: terminal /* matches descendants, interior /* matches one segment.
 func EqualLoose(a, b *Path) bool {
 	compareLen, ok := equalLenLoose(a, b)
 	if !ok {
 		return false
 	}
 
-	for i := 0; i < compareLen; i++ {
+	for i := range compareLen {
 		// If either position is a wildcard, automatic match
 		if a.kinds[i] == wildcardKind || b.kinds[i] == wildcardKind {
 			continue

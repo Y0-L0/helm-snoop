@@ -8,7 +8,7 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/snooper"
 )
 
-// injectable process controls for testing main() without exiting the test binary
+// injectable process controls for testing main() without exiting the test binary.
 var (
 	osExit           = os.Exit
 	stdout io.Writer = os.Stdout

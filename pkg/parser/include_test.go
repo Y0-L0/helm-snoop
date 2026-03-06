@@ -79,7 +79,7 @@ func (s *Unittest) TestInclude_MaxDepthPanics() {
 
 	var lines []string
 	var defs []*common.File
-	for i := 0; i < 66; i++ {
+	for i := range 66 {
 		name := fmt.Sprintf("tpl.%d", i)
 		lines = append(lines, fmt.Sprintf(
 			`{{ define "%s" }}{{ include "tpl.%d" . }}{{ end }}`,
@@ -141,7 +141,7 @@ func (s *Unittest) TestInclude_RootContextClearsPrefix() {
 	path.EqualPaths(s, expected, paths)
 }
 
-// Test that include with . argument preserves the current prefix
+// Test that include with . argument preserves the current prefix.
 func (s *Unittest) TestInclude_DotContextPreservesPrefix() {
 	c := &chart.Chart{Templates: []*common.File{
 		{
@@ -170,7 +170,7 @@ func (s *Unittest) TestInclude_DotContextPreservesPrefix() {
 	path.EqualPaths(s, expected, paths)
 }
 
-// Test that include with .Values.foo sets foo as the prefix
+// Test that include with .Values.foo sets foo as the prefix.
 func (s *Unittest) TestInclude_ExplicitContextSetsPrefix() {
 	c := &chart.Chart{Templates: []*common.File{
 		{
@@ -200,7 +200,7 @@ func (s *Unittest) TestInclude_ExplicitContextSetsPrefix() {
 }
 
 // Test that dict with "context" -> $ followed by .context.Release.Name
-// should recognize Release as a built-in object and not track it
+// should recognize Release as a built-in object and not track it.
 func (s *Unittest) TestInclude_DictWithRootContextAndBuiltinObjects() {
 	helperTpl := `{{ define "test.tpl" }}{{ .context.Release.Name }}{{ end }}`
 	mainTpl := `{{ range .Values.items }}{{ include "test.tpl" (dict "context" $) }}{{ end }}`
@@ -227,8 +227,8 @@ func (s *Unittest) TestInclude_DictWithRootContextAndBuiltinObjects() {
 	path.EqualPaths(s, expected, paths)
 }
 
-// Test that template definitions are NOT evaluated standalone
-// Template definitions should only be evaluated when called via include/template
+// Test that template definitions are NOT evaluated standalone.
+// Template definitions should only be evaluated when called via include/template.
 func (s *Unittest) TestInclude_TemplateDefsNotEvaluatedStandalone() {
 	// This matches the guardian _labels.tpl pattern with example usage in a comment
 	helperTpl := `{{/*

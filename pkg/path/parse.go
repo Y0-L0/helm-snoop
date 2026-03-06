@@ -1,6 +1,7 @@
 package path
 
 import (
+	"errors"
 	"fmt"
 	"strconv"
 	"strings"
@@ -25,7 +26,7 @@ import (
 func ParsePath(pattern string) (*Path, error) {
 	// Validate empty
 	if pattern == "" {
-		return nil, fmt.Errorf("empty pattern")
+		return nil, errors.New("empty pattern")
 	}
 
 	// Reject old slash notation for a clear error message
@@ -38,7 +39,7 @@ func ParsePath(pattern string) (*Path, error) {
 
 	// Nothing left after stripping dot
 	if pattern == "" {
-		return nil, fmt.Errorf("empty pattern")
+		return nil, errors.New("empty pattern")
 	}
 
 	segments := splitOnDots(pattern)
@@ -53,21 +54,22 @@ func ParsePath(pattern string) (*Path, error) {
 		// Check empty segment (double dot or trailing dot)
 		if segment == "" {
 			if i == len(segments)-1 {
-				return nil, fmt.Errorf("pattern must not have trailing dot")
+				return nil, errors.New("pattern must not have trailing dot")
 			}
 			return nil, fmt.Errorf("empty segment at position %d", i)
 		}
 
-		// Determine kind
-		if segment == "*" {
+		// Determine kind.
+		switch {
+		case segment == "*":
 			p.tokens = append(p.tokens, segment)
 			p.kinds = append(p.kinds, wildcardKind)
-		} else if isInteger(segment) {
-			// Integer → anyKind
+		case isInteger(segment):
+			// Integer → anyKind.
 			p.tokens = append(p.tokens, segment)
 			p.kinds = append(p.kinds, anyKind)
-		} else {
-			// Regular key
+		default:
+			// Regular key.
 			p.tokens = append(p.tokens, segment)
 			p.kinds = append(p.kinds, keyKind)
 		}
@@ -84,16 +86,17 @@ func splitOnDots(s string) []string {
 	var current strings.Builder
 	i := 0
 	for i < len(s) {
-		if s[i] == '~' && i+1 < len(s) {
+		switch {
+		case s[i] == '~' && i+1 < len(s):
 			// Consume escape sequence (~~ or ~.)
 			current.WriteByte(s[i])
 			current.WriteByte(s[i+1])
 			i += 2
-		} else if s[i] == '.' {
+		case s[i] == '.':
 			segments = append(segments, current.String())
 			current.Reset()
 			i++
-		} else {
+		default:
 			current.WriteByte(s[i])
 			i++
 		}
@@ -102,7 +105,7 @@ func splitOnDots(s string) []string {
 	return segments
 }
 
-// isInteger returns true if s represents a non-negative integer
+// isInteger returns true if s represents a non-negative integer.
 func isInteger(s string) bool {
 	if s == "" {
 		return false

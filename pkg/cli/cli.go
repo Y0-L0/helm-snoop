@@ -10,10 +10,11 @@ import (
 	filepath "path/filepath"
 
 	"github.com/spf13/cobra"
+
 	"github.com/y0-l0/helm-snoop/internal/assert"
-	"github.com/y0-l0/helm-snoop/pkg/termcolor"
 	"github.com/y0-l0/helm-snoop/pkg/path"
 	"github.com/y0-l0/helm-snoop/pkg/snooper"
+	"github.com/y0-l0/helm-snoop/pkg/termcolor"
 	"github.com/y0-l0/helm-snoop/pkg/version"
 )
 
@@ -21,16 +22,15 @@ type ArgumentError string
 
 func (e ArgumentError) Error() string { return string(e) }
 
-// gzipMagic is the gzip file signature (RFC 1952).
-var gzipMagic = []byte{0x1F, 0x8B, 0x08}
-
 // isGzipFile checks the first bytes of a file for the gzip magic number.
 func isGzipFile(path string) bool {
 	f, err := os.Open(path)
 	if err != nil {
 		return false
 	}
-	defer f.Close() //nolint:errcheck
+	defer f.Close()
+	// gzip file signature (RFC 1952).
+	gzipMagic := []byte{0x1F, 0x8B, 0x08}
 	buf := make([]byte, 3)
 	n, _ := f.Read(buf)
 	return n == 3 && bytes.Equal(buf, gzipMagic)
@@ -86,7 +86,7 @@ func analyze(
 	outWriter io.Writer,
 	snoop snooper.SnoopFunc,
 ) error {
-	assert.Strict = false
+	assert.Strict = false //nolint:reassign // strict mode is for dev/test only.
 
 	result, err := snoop(chartPath, path.Paths(*ignorePaths), valuesFiles)
 	if err != nil {
@@ -129,7 +129,7 @@ Examples:
   helm-snoop ./my-other-chart/values.yaml`,
 		Args:          cobra.MinimumNArgs(1),
 		SilenceErrors: true,
-		PersistentPreRun: func(cmd *cobra.Command, args []string) {
+		PersistentPreRun: func(_ *cobra.Command, _ []string) {
 			if noColor {
 				termcolor.Disable()
 			}
@@ -153,7 +153,15 @@ Examples:
 			cmd.SilenceUsage = true
 			var firstErr error
 			for _, root := range chartRoots {
-				if err := analyze(root, ignorePaths, valuesFiles, jsonOutput, showReferenced, cmd.OutOrStdout(), snoop); err != nil {
+				if err := analyze(
+					root,
+					ignorePaths,
+					valuesFiles,
+					jsonOutput,
+					showReferenced,
+					cmd.OutOrStdout(),
+					snoop,
+				); err != nil {
 					firstErr = err
 				}
 			}
@@ -166,7 +174,7 @@ Examples:
 	versionCmd := &cobra.Command{
 		Use:   "version",
 		Short: "Print version information",
-		Run: func(cmd *cobra.Command, args []string) {
+		Run: func(cmd *cobra.Command, _ []string) {
 			version.BuildInfo(cmd.OutOrStdout())
 		},
 	}
@@ -224,7 +232,13 @@ Repeatable. Paths match the dot-notation output format for easy copy-paste.`,
 	return rootCmd
 }
 
-func Main(args []string, stdout io.Writer, stderr io.Writer, setupLogging func(slog.Level), snoop snooper.SnoopFunc) int {
+func Main(
+	args []string,
+	stdout io.Writer,
+	stderr io.Writer,
+	setupLogging func(slog.Level),
+	snoop snooper.SnoopFunc,
+) int {
 	command := NewParser(args, setupLogging, snoop)
 
 	command.SetOut(stdout)

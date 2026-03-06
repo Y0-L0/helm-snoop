@@ -24,9 +24,9 @@ func (rs Results) ToText(w io.Writer) {
 }
 
 type ResultsJSON struct {
-	Referenced path.PathsJSON `json:"referenced"`
-	Unused     path.PathsJSON `json:"unused"`
-	Undefined  path.PathsJSON `json:"undefined"`
+	Referenced path.EntriesJSON `json:"referenced"`
+	Unused     path.EntriesJSON `json:"unused"`
+	Undefined  path.EntriesJSON `json:"undefined"`
 }
 
 func (r *Result) HasFindings() bool {
@@ -52,7 +52,7 @@ func (r *Result) ToJSON(w io.Writer, showReferenced bool) error {
 	return encoder.Encode(resultsJSON)
 }
 
-// toJSON for backward compatibility with tests
+// toJSON for backward compatibility with tests.
 func (r *Result) toJSON() ResultsJSON {
 	return ResultsJSON{
 		Referenced: r.Referenced.ToJSON(),

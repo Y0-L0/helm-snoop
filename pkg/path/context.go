@@ -5,15 +5,15 @@ import (
 	"slices"
 )
 
-type PathContext struct {
+type Context struct {
 	FileName     string
 	TemplateName string
 	Line         int
 	Column       int
 }
 
-// Contexts is a slice of PathContext with helper methods.
-type Contexts []PathContext
+// Contexts is a slice of Context with helper methods.
+type Contexts []Context
 
 // Deduplicate removes duplicate entries, preserving order.
 func (cs Contexts) Deduplicate() Contexts {
@@ -29,15 +29,15 @@ func (cs Contexts) Deduplicate() Contexts {
 	return out
 }
 
-func (c PathContext) String() string {
+func (c Context) String() string {
 	if c.TemplateName != "" {
 		return fmt.Sprintf("%s:%d:%d (%s)", c.FileName, c.Line, c.Column, c.TemplateName)
 	}
 	return fmt.Sprintf("%s:%d:%d", c.FileName, c.Line, c.Column)
 }
 
-func (c PathContext) ToJSON() PathContextJSON {
-	return PathContextJSON{
+func (c Context) ToJSON() ContextJSON {
+	return ContextJSON{
 		File:     c.FileName,
 		Template: c.TemplateName,
 		Line:     c.Line,
