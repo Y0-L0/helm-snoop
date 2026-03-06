@@ -5,10 +5,6 @@ on:
     tags:
       - "v*"
 
-permissions:
-  contents: write
-  packages: write
-
 jobs:
   test:
     uses: ./.github/workflows/test.yaml
@@ -16,6 +12,9 @@ jobs:
   goreleaser:
     needs: test
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
