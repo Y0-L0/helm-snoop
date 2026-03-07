@@ -46,21 +46,38 @@ func SortDedup(ps Paths) Paths {
 	}
 	sort.Sort(out)
 
-	// Merge exact duplicates: collect contexts from all copies
-	deduped := make(Paths, 0, len(out))
-	for _, p := range out {
-		if n := len(deduped); n > 0 && deduped[n-1].Compare(*p) == 0 {
-			deduped[n-1].Contexts = append(deduped[n-1].Contexts, p.Contexts...)
+	deduped := mergeDuplicates(out)
+	filtered := removeSubsumed(deduped)
+
+	for _, p := range filtered {
+		p.Contexts = p.Contexts.Deduplicate()
+	}
+	return filtered
+}
+
+// mergeDuplicates collapses sorted paths with identical tokens+kinds.
+// Merges contexts; Consumed wins over Checked.
+func mergeDuplicates(sorted Paths) Paths {
+	out := make(Paths, 0, len(sorted))
+	for _, p := range sorted {
+		if n := len(out); n > 0 && out[n-1].Compare(*p) == 0 {
+			out[n-1].Contexts = append(out[n-1].Contexts, p.Contexts...)
+			if p.Usage < out[n-1].Usage {
+				out[n-1].Usage = p.Usage
+			}
 		} else {
-			deduped = append(deduped, p)
+			out = append(out, p)
 		}
 	}
+	return out
+}
 
-	// Remove paths subsumed by wildcards, merging their contexts
-	filtered := make(Paths, 0, len(deduped))
-	for _, p := range deduped {
+// removeSubsumed drops paths subsumed by wildcards (e.g., /foo into /foo/*).
+func removeSubsumed(ps Paths) Paths {
+	out := make(Paths, 0, len(ps))
+	for _, p := range ps {
 		subsumed := false
-		for _, other := range deduped {
+		for _, other := range ps {
 			if subsumes(other, p) {
 				other.Contexts = append(other.Contexts, p.Contexts...)
 				subsumed = true
@@ -68,16 +85,10 @@ func SortDedup(ps Paths) Paths {
 			}
 		}
 		if !subsumed {
-			filtered = append(filtered, p)
+			out = append(out, p)
 		}
 	}
-
-	// Deduplicate contexts on each path
-	for _, p := range filtered {
-		p.Contexts = p.Contexts.Deduplicate()
-	}
-
-	return filtered
+	return out
 }
 
 // CompareTokens compares two paths by tokens only, ignoring kinds.
