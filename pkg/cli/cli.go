@@ -78,36 +78,6 @@ func resolveUniqueChartRoots(paths []string) ([]string, error) {
 	return roots, nil
 }
 
-func analyze(
-	chartPath string,
-	ignorePaths *cliPaths,
-	valuesFiles []string,
-	jsonOutput bool,
-	showReferenced bool,
-	outWriter io.Writer,
-	snoop snooper.SnoopFunc,
-) error {
-	assert.Strict = false //nolint:reassign // strict mode is for dev/test only.
-
-	result, err := snoop(chartPath, vpath.Paths(*ignorePaths), valuesFiles)
-	if err != nil {
-		return err
-	}
-
-	if jsonOutput {
-		if err := result.ToJSON(outWriter, showReferenced); err != nil {
-			return errors.New("")
-		}
-	} else {
-		snooper.Results{result}.ToText(outWriter)
-	}
-
-	if result.HasFindings() {
-		return errors.New("")
-	}
-	return nil
-}
-
 func NewParser(args []string, setupLogging func(slog.Level), snoop snooper.SnoopFunc) *cobra.Command {
 	slog.Debug("raw cli arguments", "args", args)
 
@@ -152,21 +122,22 @@ Examples:
 			}
 
 			cmd.SilenceUsage = true
-			var firstErr error
-			for _, root := range chartRoots {
-				if err := analyze(
-					root,
-					ignorePaths,
-					valuesFiles,
-					jsonOutput,
-					showReferenced,
-					cmd.OutOrStdout(),
-					snoop,
-				); err != nil {
-					firstErr = err
-				}
+			assert.Strict = false //nolint:reassign // strict mode is for dev/test only.
+
+			results, err := snoop(chartRoots, vpath.Paths(*ignorePaths), valuesFiles)
+			if err != nil {
+				return err
 			}
-			return firstErr
+
+			if !jsonOutput {
+				results.ToText(cmd.OutOrStdout())
+				return results.HasFindings()
+			}
+
+			if err := results.ToJSON(cmd.OutOrStdout(), showReferenced); err != nil {
+				return errors.New("")
+			}
+			return results.HasFindings()
 		},
 	}
 

@@ -71,7 +71,7 @@ func (s *GoldenTest) compactGoldenTest(name string, results Results) {
 
 	goldenPath := filepath.Join("testdata", name+".golden")
 	if s.update {
-		err := os.WriteFile(goldenPath, buf.Bytes(), 0644) //nolint:gosec // test golden file update
+		err := os.WriteFile(goldenPath, buf.Bytes(), 0o644) //nolint:gosec // test golden file update
 		s.Require().NoError(err)
 		return
 	}

@@ -12,10 +12,12 @@ import (
 
 // TemplateDef captures a defined template's origin and parse tree root.
 type TemplateDef struct {
-	name string
-	file string
-	root *parse.ListNode
-	tree *parse.Tree
+	name      string
+	file      string
+	chartName string // name of the chart that defines this template
+	prefix    string // dependency path prefix (e.g., "charts/mariadb/charts/common/")
+	root      *parse.ListNode
+	tree      *parse.Tree
 }
 
 // TemplateIndex provides lookup of defined templates by name across a chart.
@@ -32,13 +34,55 @@ func (ti *TemplateIndex) get(name string) (TemplateDef, bool) {
 	return d, ok
 }
 
-// add inserts a template definition, panicking on duplicates.
+// add inserts a template definition; see helm-dependency-nightmare.md.
 func (ti *TemplateIndex) add(name string, def TemplateDef) {
-	if _, exists := ti.byName[name]; exists {
-		slog.Warn("duplicate template name", "name", name)
-		assert.Must("duplicate template name: " + name)
-	}
+	previous, exists := ti.byName[name]
 	ti.byName[name] = def
+	if !exists {
+		return
+	}
+	if previous.chartName != "" && previous.chartName == def.chartName && previous.prefix != def.prefix {
+		slog.Info("duplicate template from shared dependency (last definition wins)",
+			"name", name, "chart", def.chartName,
+			"kept", def.file, "overwritten", previous.file)
+		return
+	}
+	slog.Warn("duplicate template name", "name", name,
+		"first", previous.file, "second", def.file)
+	assert.Must("duplicate template name: " + name)
+}
+
+// addFromFile indexes all define'd templates from a parsed template file.
+func (ti *TemplateIndex) addFromFile(fileName, chartName, prefix string, trees map[string]*parse.Tree) {
+	for name, tree := range trees {
+		if name == fileName || tree == nil || tree.Root == nil {
+			continue
+		}
+		ti.add(name, TemplateDef{
+			name:      name,
+			file:      prefix + fileName,
+			chartName: chartName,
+			prefix:    prefix,
+			root:      tree.Root,
+			tree:      tree,
+		})
+	}
+}
+
+// indexChart parses and indexes all define'd templates in a single chart.
+func (ti *TemplateIndex) indexChart(ch *chart.Chart, prefix string) error {
+	chartName := ""
+	if ch.Metadata != nil {
+		chartName = ch.Metadata.Name
+	}
+	for _, tmpl := range ch.Templates {
+		trees, err := parse.Parse(tmpl.Name, string(tmpl.Data), "", "", stubFuncMap)
+		if err != nil {
+			return err
+		}
+		ti.addFromFile(tmpl.Name, chartName, prefix, trees)
+	}
+	return nil
 }
 
 // empty reports whether the index is empty.
@@ -55,33 +99,14 @@ func BuildTemplateIndex(ch *chart.Chart) (*TemplateIndex, error) {
 }
 
 // buildIndexRecursive adds define'd templates from chart and its transitive dependencies.
-// prefix indicates the synthetic path prefix for dependency files (e.g., charts/<dep>/...).
-//
-//nolint:gocognit // TODO: refactor to reduce cognitive complexity
 func buildIndexRecursive(ch *chart.Chart, prefix string, idx *TemplateIndex, seen map[*chart.Chart]bool) error {
-	if ch == nil {
-		return nil
-	}
-	if seen[ch] {
+	if ch == nil || seen[ch] {
 		return nil
 	}
 	seen[ch] = true
-	for _, tmpl := range ch.Templates {
-		trees, err := parse.Parse(tmpl.Name, string(tmpl.Data), "", "", stubFuncMap)
-		if err != nil {
-			return err
-		}
-		for name, tree := range trees {
-			if name == tmpl.Name {
-				continue
-			}
-			if tree == nil || tree.Root == nil {
-				continue
-			}
-			idx.add(name, TemplateDef{name: name, file: prefix + tmpl.Name, root: tree.Root, tree: tree})
-		}
+	if err := idx.indexChart(ch, prefix); err != nil {
+		return err
 	}
-	// Recurse into direct dependencies (Helm v4 exposes this as a method)
 	for _, dep := range ch.Dependencies() {
 		depName := "unknown"
 		if dep != nil && dep.Metadata != nil && dep.Metadata.Name != "" {

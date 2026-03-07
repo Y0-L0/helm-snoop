@@ -28,6 +28,20 @@ func unaryPassThroughFn(ctx *evalCtx, call Call) evalResult {
 	return evalResult{args: result.args}
 }
 
+// unaryCheckedPassThroughFn is like unaryPassThroughFn but marks paths as Checked.
+func unaryCheckedPassThroughFn(ctx *evalCtx, call Call) evalResult {
+	if len(call.Args) == 0 {
+		return evalResult{}
+	}
+
+	result := ctx.Eval(call.Args[0])
+
+	markChecked(result.paths)
+	ctx.Emit(call.Node.Position(), result.paths...)
+
+	return evalResult{args: result.args}
+}
+
 // unarySerializeFn emits the arg path with a terminal wildcard (for toYaml, toJson, etc.).
 func unarySerializeFn(ctx *evalCtx, call Call) evalResult {
 	if len(call.Args) == 0 {
@@ -48,6 +62,17 @@ func unarySerializeFn(ctx *evalCtx, call Call) evalResult {
 func emitArgsNoResultFn(ctx *evalCtx, call Call) evalResult {
 	for _, arg := range call.Args {
 		result := ctx.Eval(arg)
+		ctx.Emit(call.Node.Position(), result.paths...)
+	}
+
+	return evalResult{}
+}
+
+// emitCheckedNoResultFn is like emitArgsNoResultFn but marks paths as Checked.
+func emitCheckedNoResultFn(ctx *evalCtx, call Call) evalResult {
+	for _, arg := range call.Args {
+		result := ctx.Eval(arg)
+		markChecked(result.paths)
 		ctx.Emit(call.Node.Position(), result.paths...)
 	}
 

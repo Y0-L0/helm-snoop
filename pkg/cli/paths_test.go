@@ -13,13 +13,9 @@ func np() *vpath.Path { return &vpath.Path{} }
 func (s *Unittest) TestIgnorePaths_SinglePath() {
 	var capturedPaths vpath.Paths
 
-	mockSnoop := func(_ string, ignorePaths vpath.Paths, _ []string) (*snooper.Result, error) {
+	mockSnoop := func(_ []string, ignorePaths vpath.Paths, _ []string) (snooper.Results, error) {
 		capturedPaths = ignorePaths
-		return &snooper.Result{
-			Referenced: vpath.Paths{},
-			Unused:     vpath.Paths{},
-			Undefined:  vpath.Paths{},
-		}, nil
+		return snooper.Results{{}}, nil
 	}
 
 	command := NewParser(
@@ -38,13 +34,9 @@ func (s *Unittest) TestIgnorePaths_SinglePath() {
 func (s *Unittest) TestIgnorePaths_MultipleWithAllKinds() {
 	var capturedPaths vpath.Paths
 
-	mockSnoop := func(_ string, ignorePaths vpath.Paths, _ []string) (*snooper.Result, error) {
+	mockSnoop := func(_ []string, ignorePaths vpath.Paths, _ []string) (snooper.Results, error) {
 		capturedPaths = ignorePaths
-		return &snooper.Result{
-			Referenced: vpath.Paths{},
-			Unused:     vpath.Paths{},
-			Undefined:  vpath.Paths{},
-		}, nil
+		return snooper.Results{{}}, nil
 	}
 
 	command := NewParser(
@@ -102,7 +94,7 @@ func (s *Unittest) TestIgnorePaths_InvalidPaths() {
 
 	for _, tc := range tests {
 		s.Run(tc.name, func() {
-			mockSnoop := func(_ string, _ vpath.Paths, _ []string) (*snooper.Result, error) {
+			mockSnoop := func(_ []string, _ vpath.Paths, _ []string) (snooper.Results, error) {
 				s.T().Fatal("snoop should not be called with invalid path")
 				return nil, errors.New("unreachable")
 			}
@@ -123,13 +115,9 @@ func (s *Unittest) TestIgnorePaths_InvalidPaths() {
 func (s *Unittest) TestIgnorePaths_NoIgnoreList() {
 	var capturedPaths vpath.Paths
 
-	mockSnoop := func(_ string, ignorePaths vpath.Paths, _ []string) (*snooper.Result, error) {
+	mockSnoop := func(_ []string, ignorePaths vpath.Paths, _ []string) (snooper.Results, error) {
 		capturedPaths = ignorePaths
-		return &snooper.Result{
-			Referenced: vpath.Paths{},
-			Unused:     vpath.Paths{},
-			Undefined:  vpath.Paths{},
-		}, nil
+		return snooper.Results{{}}, nil
 	}
 
 	command := NewParser(
@@ -147,13 +135,9 @@ func (s *Unittest) TestIgnorePaths_NoIgnoreList() {
 func (s *Unittest) TestValuesFiles_SingleFile() {
 	var capturedFiles []string
 
-	mockSnoop := func(_ string, _ vpath.Paths, valuesFiles []string) (*snooper.Result, error) {
+	mockSnoop := func(_ []string, _ vpath.Paths, valuesFiles []string) (snooper.Results, error) {
 		capturedFiles = valuesFiles
-		return &snooper.Result{
-			Referenced: vpath.Paths{},
-			Unused:     vpath.Paths{},
-			Undefined:  vpath.Paths{},
-		}, nil
+		return snooper.Results{{}}, nil
 	}
 
 	extraValues := filepath.Join(testdataDir(), "test-chart", "values.yaml")
@@ -171,13 +155,9 @@ func (s *Unittest) TestValuesFiles_SingleFile() {
 func (s *Unittest) TestValuesFiles_MultipleFiles() {
 	var capturedFiles []string
 
-	mockSnoop := func(_ string, _ vpath.Paths, valuesFiles []string) (*snooper.Result, error) {
+	mockSnoop := func(_ []string, _ vpath.Paths, valuesFiles []string) (snooper.Results, error) {
 		capturedFiles = valuesFiles
-		return &snooper.Result{
-			Referenced: vpath.Paths{},
-			Unused:     vpath.Paths{},
-			Undefined:  vpath.Paths{},
-		}, nil
+		return snooper.Results{{}}, nil
 	}
 
 	f1 := filepath.Join(testdataDir(), "test-chart", "values.yaml")
@@ -196,13 +176,9 @@ func (s *Unittest) TestValuesFiles_MultipleFiles() {
 func (s *Unittest) TestValuesFiles_NoFlag() {
 	var capturedFiles []string
 
-	mockSnoop := func(_ string, _ vpath.Paths, valuesFiles []string) (*snooper.Result, error) {
+	mockSnoop := func(_ []string, _ vpath.Paths, valuesFiles []string) (snooper.Results, error) {
 		capturedFiles = valuesFiles
-		return &snooper.Result{
-			Referenced: vpath.Paths{},
-			Unused:     vpath.Paths{},
-			Undefined:  vpath.Paths{},
-		}, nil
+		return snooper.Results{{}}, nil
 	}
 
 	command := NewParser(
@@ -227,5 +203,5 @@ func (s *Unittest) TestValuesFiles_MissingFile() {
 
 	err := command.Execute()
 	s.Require().Error(err)
-	s.Require().Contains(err.Error(), missing)
+	s.Contains(err.Error(), missing)
 }

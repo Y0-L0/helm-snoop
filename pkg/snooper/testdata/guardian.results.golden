@@ -38,15 +38,13 @@
 .serviceAccount.labels                           values.yaml:849:3
 .serviceAccount.name                             values.yaml:843:3
 ---------------------------------- Undefined -----------------------------------
-.Values.enabled                             templates/secret-guardian-keycloak-client.yaml:1:1
-.Values.global.secrets.masterPassword       templates/secret-guardian-keycloak-client.yaml:1:1
-.authorizationApi.credentialSecretName      templates/deployment-authorization-api.yaml:79:74
-                                            templates/deployment-authorization-api.yaml:77:18
+.authorizationApi.credentialSecretName      templates/deployment-authorization-api.yaml:77:18
+                                            templates/deployment-authorization-api.yaml:79:74
 .authorizationApi.extraAnnotations          templates/configmap-authorization-api.yaml:45:16
 .authorizationApi.extraVolumeMounts.*       templates/deployment-authorization-api.yaml:15:22
                                             templates/deployment-authorization-api.yaml:16:3
-                                            templates/deployment-authorization-api.yaml:122:20
                                             templates/deployment-authorization-api.yaml:14:52
+                                            templates/deployment-authorization-api.yaml:122:20
                                             templates/deployment-authorization-api.yaml:14:27
 .authorizationApi.extraVolumes.*            templates/deployment-authorization-api.yaml:16:3
                                             templates/deployment-authorization-api.yaml:15:22
@@ -55,6 +53,7 @@
                                             templates/deployment-authorization-api.yaml:14:27
 .authorizationApi.service.ports.*.nodePort  templates/service-authorization-api.yaml:32:14
                                             templates/service-authorization-api.yaml:33:20
+.enabled                                    templates/secret-guardian-keycloak-client.yaml:1:1
 .extraSecrets.*.data.*                      templates/extraSecrets.yaml:19:21
                                             templates/extraSecrets.yaml:16:8
 .extraSecrets.*.name                        templates/extraSecrets.yaml:8:20
@@ -62,13 +61,12 @@
                                             templates/extraSecrets.yaml:22:8
 .extraSecrets.*.values                      templates/extraSecrets.yaml:1:1
 .fullnameOverride                           templates/deployment-open-policy-agent.yaml:22:69
-                                            templates/service-management-ui.yaml:24:63
-                                            templates/configmap-provisioning.yaml:25:58
                                             templates/deployment-management-api.yaml:21:14
                                             templates/configmap-authorization-api.yaml:20:47
+                                            templates/configmap-provisioning.yaml:25:58
                                             templates/configmap-init-management-ui.yaml:27:34
-                                            templates/job-provisioning.yaml:21:80
                                             templates/serviceaccount.yaml:1:1
+                                            templates/job-provisioning.yaml:21:80
                                             templates/service-open-policy-agent.yaml:24:50
                                             templates/deployment-authorization-api.yaml:23:6
                                             templates/configmap-management-api.yaml:21:44
@@ -76,6 +74,7 @@
                                             templates/service-authorization-api.yaml:24:47
                                             templates/configmap-open-policy-agent.yaml:21:66
                                             templates/ingresses.yaml:15:26
+                                            templates/service-management-ui.yaml:24:63
                                             templates/service-management-api.yaml:24:59
                                             templates/configmap-management-ui.yaml:20:99
 .global.certManagerIssuer                   templates/ingresses.yaml:20:88
@@ -90,17 +89,18 @@
                                             templates/deployment-management-api.yaml:8:41
                                             templates/deployment-open-policy-agent.yaml:10:39
 .global.nubusDeployment                     templates/configmap-management-api.yaml:1:1
-                                            templates/configmap-authorization-api.yaml:1:1
-                                            templates/configmap-open-policy-agent.yaml:1:1
+                                            templates/configmap-management-ui.yaml:22:93
                                             templates/configmap-provisioning.yaml:1:1
+                                            templates/ingresses.yaml:1:1
+                                            templates/configmap-open-policy-agent.yaml:1:1
                                             templates/configmap-management-ui.yaml:1:1
                                             templates/configmap-authorization-api.yaml:36:3
-                                            templates/ingresses.yaml:1:1
                                             templates/configmap-authorization-api.yaml:18:51
                                             templates/configmap-authorization-api.yaml:43:67
-                                            templates/configmap-management-ui.yaml:22:93
+                                            templates/configmap-authorization-api.yaml:1:1
 .global.restartPolicy                       templates/job-provisioning.yaml:30:100
 .global.secrets.keep                        templates/secret-guardian-keycloak-client.yaml:29:10
+.global.secrets.masterPassword              templates/secret-guardian-keycloak-client.yaml:1:1
 .ingress.apiVersion                         templates/ingresses.yaml:1:1
 .kubeVersion                                templates/deployment-authorization-api.yaml:10:39
                                             templates/deployment-management-api.yaml:8:41

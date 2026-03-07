@@ -1,4 +1,5 @@
 {
+  "chartName": "guardian",
   "referenced": [
     {
       "id": ".additionalAnnotations",
@@ -10,8 +11,8 @@
           "column": 1
         },
         {
-          "file": "templates/extraSecrets.yaml",
-          "line": 13,
+          "file": "templates/secret-guardian-keycloak-client.yaml",
+          "line": 33,
           "column": 16
         },
         {
@@ -20,8 +21,58 @@
           "column": 16
         },
         {
-          "file": "templates/service-authorization-api.yaml",
+          "file": "templates/deployment-management-ui.yaml",
           "line": 14,
+          "column": 16
+        },
+        {
+          "file": "templates/configmap-authorization-api.yaml",
+          "line": 14,
+          "column": 16
+        },
+        {
+          "file": "templates/service-management-ui.yaml",
+          "line": 14,
+          "column": 16
+        },
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 15,
+          "column": 12
+        },
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 15,
+          "column": 16
+        },
+        {
+          "file": "templates/configmap-provisioning.yaml",
+          "line": 14,
+          "column": 16
+        },
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 14,
+          "column": 16
+        },
+        {
+          "file": "templates/service-management-api.yaml",
+          "line": 14,
+          "column": 16
+        },
+        {
+          "file": "templates/ingresses.yaml",
+          "line": 16,
+          "column": 76
+        },
+        {
+          "file": "templates/configmap-management-ui.yaml",
+          "line": 14,
+          "column": 16
+        },
+        {
+          "file": "templates/extraSecrets.yaml",
+          "line": 13,
           "column": 16
         },
         {
@@ -30,8 +81,13 @@
           "column": 16
         },
         {
-          "file": "templates/configmap-authorization-api.yaml",
+          "file": "templates/service-authorization-api.yaml",
           "line": 14,
+          "column": 16
+        },
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 13,
           "column": 16
         },
         {
@@ -50,13 +106,8 @@
           "column": 16
         },
         {
-          "file": "templates/configmap-open-policy-agent.yaml",
-          "line": 14,
-          "column": 16
-        },
-        {
-          "file": "templates/configmap-management-ui.yaml",
-          "line": 14,
+          "file": "templates/configmap-provisioning.yaml",
+          "line": 30,
           "column": 16
         },
         {
@@ -65,63 +116,13 @@
           "column": 16
         },
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
-          "line": 14,
-          "column": 16
-        },
-        {
-          "file": "templates/deployment-management-api.yaml",
-          "line": 13,
-          "column": 16
-        },
-        {
-          "file": "templates/secret-guardian-keycloak-client.yaml",
-          "line": 33,
-          "column": 16
-        },
-        {
-          "file": "templates/deployment-management-ui.yaml",
-          "line": 14,
-          "column": 16
-        },
-        {
-          "file": "templates/service-management-ui.yaml",
+          "file": "templates/configmap-open-policy-agent.yaml",
           "line": 14,
           "column": 16
         },
         {
           "file": "templates/secret-keycloak.yaml",
           "line": 17,
-          "column": 16
-        },
-        {
-          "file": "templates/ingresses.yaml",
-          "line": 16,
-          "column": 76
-        },
-        {
-          "file": "templates/ingresses.yaml",
-          "line": 15,
-          "column": 12
-        },
-        {
-          "file": "templates/configmap-provisioning.yaml",
-          "line": 30,
-          "column": 16
-        },
-        {
-          "file": "templates/service-management-api.yaml",
-          "line": 14,
-          "column": 16
-        },
-        {
-          "file": "templates/deployment-authorization-api.yaml",
-          "line": 15,
-          "column": 16
-        },
-        {
-          "file": "templates/configmap-provisioning.yaml",
-          "line": 14,
           "column": 16
         }
       ]
@@ -136,34 +137,14 @@
           "column": 1
         },
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
-          "line": 22,
-          "column": 66
+          "file": "templates/configmap-provisioning.yaml",
+          "line": 25,
+          "column": 55
         },
         {
-          "file": "templates/configmap-authorization-api.yaml",
-          "line": 20,
-          "column": 44
-        },
-        {
-          "file": "templates/service-management-ui.yaml",
-          "line": 24,
-          "column": 60
-        },
-        {
-          "file": "templates/service-management-api.yaml",
-          "line": 24,
-          "column": 56
-        },
-        {
-          "file": "templates/deployment-management-api.yaml",
+          "file": "templates/configmap-open-policy-agent.yaml",
           "line": 21,
-          "column": 11
-        },
-        {
-          "file": "templates/secret-guardian-keycloak-client.yaml",
-          "line": 27,
-          "column": 60
+          "column": 63
         },
         {
           "file": "templates/deployment-management-ui.yaml",
@@ -171,19 +152,24 @@
           "column": 73
         },
         {
+          "file": "templates/secret-guardian-keycloak-client.yaml",
+          "line": 27,
+          "column": 60
+        },
+        {
+          "file": "templates/configmap-authorization-api.yaml",
+          "line": 20,
+          "column": 44
+        },
+        {
+          "file": "templates/service-open-policy-agent.yaml",
+          "line": 24,
+          "column": 47
+        },
+        {
           "file": "templates/secret-keycloak.yaml",
           "line": 17,
           "column": 6
-        },
-        {
-          "file": "templates/configmap-provisioning.yaml",
-          "line": 25,
-          "column": 55
-        },
-        {
-          "file": "templates/serviceaccount.yaml",
-          "line": 1,
-          "column": 1
         },
         {
           "file": "templates/configmap-management-api.yaml",
@@ -196,19 +182,9 @@
           "column": 23
         },
         {
-          "file": "templates/configmap-init-management-ui.yaml",
-          "line": 27,
-          "column": 31
-        },
-        {
-          "file": "templates/configmap-open-policy-agent.yaml",
-          "line": 21,
-          "column": 63
-        },
-        {
-          "file": "templates/service-authorization-api.yaml",
+          "file": "templates/service-management-ui.yaml",
           "line": 24,
-          "column": 44
+          "column": 60
         },
         {
           "file": "templates/deployment-authorization-api.yaml",
@@ -216,9 +192,34 @@
           "column": 3
         },
         {
-          "file": "templates/service-open-policy-agent.yaml",
+          "file": "templates/configmap-management-ui.yaml",
+          "line": 20,
+          "column": 96
+        },
+        {
+          "file": "templates/serviceaccount.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 22,
+          "column": 66
+        },
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 21,
+          "column": 11
+        },
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 21,
+          "column": 77
+        },
+        {
+          "file": "templates/service-management-api.yaml",
           "line": 24,
-          "column": 47
+          "column": 56
         },
         {
           "file": "templates/extraSecrets.yaml",
@@ -226,14 +227,14 @@
           "column": 1
         },
         {
-          "file": "templates/configmap-management-ui.yaml",
-          "line": 20,
-          "column": 96
+          "file": "templates/service-authorization-api.yaml",
+          "line": 24,
+          "column": 44
         },
         {
-          "file": "templates/job-provisioning.yaml",
-          "line": 21,
-          "column": 77
+          "file": "templates/configmap-init-management-ui.yaml",
+          "line": 27,
+          "column": 31
         }
       ]
     },
@@ -329,12 +330,12 @@
         {
           "file": "templates/configmap-authorization-api.yaml",
           "line": 32,
-          "column": 89
+          "column": 17
         },
         {
           "file": "templates/configmap-authorization-api.yaml",
           "line": 32,
-          "column": 17
+          "column": 89
         }
       ]
     },
@@ -430,12 +431,12 @@
         {
           "file": "templates/configmap-authorization-api.yaml",
           "line": 49,
-          "column": 20
+          "column": 85
         },
         {
           "file": "templates/configmap-authorization-api.yaml",
           "line": 49,
-          "column": 85
+          "column": 20
         }
       ]
     },
@@ -450,13 +451,13 @@
         },
         {
           "file": "templates/configmap-authorization-api.yaml",
-          "line": 43,
-          "column": 5
+          "line": 41,
+          "column": 23
         },
         {
           "file": "templates/configmap-authorization-api.yaml",
-          "line": 41,
-          "column": 23
+          "line": 43,
+          "column": 5
         }
       ]
     },
@@ -508,13 +509,13 @@
         },
         {
           "file": "templates/configmap-authorization-api.yaml",
-          "line": 26,
-          "column": 40
+          "line": 49,
+          "column": 6
         },
         {
           "file": "templates/configmap-authorization-api.yaml",
-          "line": 49,
-          "column": 6
+          "line": 26,
+          "column": 40
         }
       ]
     },
@@ -743,12 +744,12 @@
         {
           "file": "templates/deployment-authorization-api.yaml",
           "line": 72,
-          "column": 207
+          "column": 156
         },
         {
           "file": "templates/deployment-authorization-api.yaml",
           "line": 72,
-          "column": 156
+          "column": 207
         }
       ]
     },
@@ -1183,14 +1184,14 @@
           "column": 9
         },
         {
-          "file": "templates/service-authorization-api.yaml",
-          "line": 30,
-          "column": 20
-        },
-        {
           "file": "templates/deployment-authorization-api.yaml",
           "line": 89,
           "column": 28
+        },
+        {
+          "file": "templates/service-authorization-api.yaml",
+          "line": 30,
+          "column": 20
         }
       ]
     },
@@ -1290,13 +1291,13 @@
         },
         {
           "file": "templates/deployment-authorization-api.yaml",
-          "line": 28,
-          "column": 23
+          "line": 27,
+          "column": 11
         },
         {
           "file": "templates/deployment-authorization-api.yaml",
-          "line": 27,
-          "column": 11
+          "line": 28,
+          "column": 23
         }
       ]
     },
@@ -1311,13 +1312,13 @@
         },
         {
           "file": "templates/configmap-authorization-api.yaml",
-          "line": 35,
-          "column": 8
+          "line": 49,
+          "column": 78
         },
         {
           "file": "templates/configmap-authorization-api.yaml",
-          "line": 49,
-          "column": 78
+          "line": 35,
+          "column": 8
         }
       ]
     },
@@ -1332,6 +1333,11 @@
         },
         {
           "file": "templates/extraSecrets.yaml",
+          "line": 11,
+          "column": 49
+        },
+        {
+          "file": "templates/extraSecrets.yaml",
           "line": 1,
           "column": 1
         },
@@ -1339,11 +1345,6 @@
           "file": "templates/extraSecrets.yaml",
           "line": 11,
           "column": 75
-        },
-        {
-          "file": "templates/extraSecrets.yaml",
-          "line": 11,
-          "column": 49
         }
       ]
     },
@@ -1378,9 +1379,14 @@
           "column": 3
         },
         {
+          "file": "templates/configmap-management-ui.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
           "file": "templates/configmap-provisioning.yaml",
-          "line": 35,
-          "column": 38
+          "line": 1,
+          "column": 1
         },
         {
           "file": "templates/configmap-management-api.yaml",
@@ -1388,19 +1394,14 @@
           "column": 1
         },
         {
+          "file": "templates/configmap-provisioning.yaml",
+          "line": 35,
+          "column": 38
+        },
+        {
           "file": "templates/configmap-management-ui.yaml",
           "line": 22,
           "column": 131
-        },
-        {
-          "file": "templates/configmap-management-ui.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
-          "file": "templates/configmap-provisioning.yaml",
-          "line": 1,
-          "column": 1
         }
       ]
     },
@@ -1419,26 +1420,6 @@
           "column": 115
         },
         {
-          "file": "templates/deployment-management-ui.yaml",
-          "line": 72,
-          "column": 111
-        },
-        {
-          "file": "templates/deployment-open-policy-agent.yaml",
-          "line": 72,
-          "column": 114
-        },
-        {
-          "file": "templates/deployment-management-ui.yaml",
-          "line": 99,
-          "column": 111
-        },
-        {
-          "file": "templates/deployment-management-api.yaml",
-          "line": 68,
-          "column": 112
-        },
-        {
           "file": "templates/job-provisioning.yaml",
           "line": 81,
           "column": 121
@@ -1452,6 +1433,26 @@
           "file": "templates/deployment-management-api.yaml",
           "line": 94,
           "column": 112
+        },
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 68,
+          "column": 112
+        },
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 72,
+          "column": 111
+        },
+        {
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 99,
+          "column": 111
+        },
+        {
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 72,
+          "column": 114
         }
       ]
     },
@@ -1475,13 +1476,13 @@
           "column": 21
         },
         {
-          "file": "templates/job-provisioning.yaml",
-          "line": 37,
+          "file": "templates/deployment-management-api.yaml",
+          "line": 58,
           "column": 21
         },
         {
-          "file": "templates/deployment-management-api.yaml",
-          "line": 58,
+          "file": "templates/job-provisioning.yaml",
+          "line": 37,
           "column": 21
         },
         {
@@ -1495,13 +1496,13 @@
           "column": 14
         },
         {
-          "file": "templates/job-provisioning.yaml",
-          "line": 34,
+          "file": "templates/deployment-management-api.yaml",
+          "line": 55,
           "column": 14
         },
         {
-          "file": "templates/deployment-management-api.yaml",
-          "line": 55,
+          "file": "templates/job-provisioning.yaml",
+          "line": 34,
           "column": 14
         },
         {
@@ -1531,13 +1532,13 @@
           "column": 22
         },
         {
-          "file": "templates/deployment-open-policy-agent.yaml",
-          "line": 71,
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 72,
           "column": 22
         },
         {
-          "file": "templates/deployment-management-api.yaml",
-          "line": 66,
+          "file": "templates/deployment-open-policy-agent.yaml",
+          "line": 71,
           "column": 22
         },
         {
@@ -1546,8 +1547,8 @@
           "column": 22
         },
         {
-          "file": "templates/deployment-management-ui.yaml",
-          "line": 71,
+          "file": "templates/deployment-management-api.yaml",
+          "line": 66,
           "column": 22
         },
         {
@@ -1556,8 +1557,8 @@
           "column": 20
         },
         {
-          "file": "templates/deployment-authorization-api.yaml",
-          "line": 72,
+          "file": "templates/deployment-management-ui.yaml",
+          "line": 71,
           "column": 22
         },
         {
@@ -1625,12 +1626,12 @@
           "column": 5
         },
         {
-          "file": "templates/configmap-management-api.yaml",
+          "file": "templates/configmap-provisioning.yaml",
           "line": 1,
           "column": 1
         },
         {
-          "file": "templates/configmap-provisioning.yaml",
+          "file": "templates/configmap-management-api.yaml",
           "line": 1,
           "column": 1
         },
@@ -6717,40 +6718,18 @@
   ],
   "undefined": [
     {
-      "id": ".Values.enabled",
-      "kinds": "/K/K",
-      "contexts": [
-        {
-          "file": "templates/secret-guardian-keycloak-client.yaml",
-          "line": 1,
-          "column": 1
-        }
-      ]
-    },
-    {
-      "id": ".Values.global.secrets.masterPassword",
-      "kinds": "/K/K/K/K",
-      "contexts": [
-        {
-          "file": "templates/secret-guardian-keycloak-client.yaml",
-          "line": 1,
-          "column": 1
-        }
-      ]
-    },
-    {
       "id": ".authorizationApi.credentialSecretName",
       "kinds": "/K/K",
       "contexts": [
         {
           "file": "templates/deployment-authorization-api.yaml",
-          "line": 79,
-          "column": 74
+          "line": 77,
+          "column": 18
         },
         {
           "file": "templates/deployment-authorization-api.yaml",
-          "line": 77,
-          "column": 18
+          "line": 79,
+          "column": 74
         }
       ]
     },
@@ -6781,13 +6760,13 @@
         },
         {
           "file": "templates/deployment-authorization-api.yaml",
-          "line": 122,
-          "column": 20
+          "line": 14,
+          "column": 52
         },
         {
           "file": "templates/deployment-authorization-api.yaml",
-          "line": 14,
-          "column": 52
+          "line": 122,
+          "column": 20
         },
         {
           "file": "templates/deployment-authorization-api.yaml",
@@ -6840,6 +6819,17 @@
           "file": "templates/service-authorization-api.yaml",
           "line": 33,
           "column": 20
+        }
+      ]
+    },
+    {
+      "id": ".enabled",
+      "kinds": "/K",
+      "contexts": [
+        {
+          "file": "templates/secret-guardian-keycloak-client.yaml",
+          "line": 1,
+          "column": 1
         }
       ]
     },
@@ -6907,16 +6897,6 @@
           "column": 69
         },
         {
-          "file": "templates/service-management-ui.yaml",
-          "line": 24,
-          "column": 63
-        },
-        {
-          "file": "templates/configmap-provisioning.yaml",
-          "line": 25,
-          "column": 58
-        },
-        {
           "file": "templates/deployment-management-api.yaml",
           "line": 21,
           "column": 14
@@ -6927,19 +6907,24 @@
           "column": 47
         },
         {
+          "file": "templates/configmap-provisioning.yaml",
+          "line": 25,
+          "column": 58
+        },
+        {
           "file": "templates/configmap-init-management-ui.yaml",
           "line": 27,
           "column": 34
         },
         {
-          "file": "templates/job-provisioning.yaml",
-          "line": 21,
-          "column": 80
-        },
-        {
           "file": "templates/serviceaccount.yaml",
           "line": 1,
           "column": 1
+        },
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 21,
+          "column": 80
         },
         {
           "file": "templates/service-open-policy-agent.yaml",
@@ -6975,6 +6960,11 @@
           "file": "templates/ingresses.yaml",
           "line": 15,
           "column": 26
+        },
+        {
+          "file": "templates/service-management-ui.yaml",
+          "line": 24,
+          "column": 63
         },
         {
           "file": "templates/service-management-api.yaml",
@@ -7077,17 +7067,22 @@
           "column": 1
         },
         {
-          "file": "templates/configmap-authorization-api.yaml",
+          "file": "templates/configmap-management-ui.yaml",
+          "line": 22,
+          "column": 93
+        },
+        {
+          "file": "templates/configmap-provisioning.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/ingresses.yaml",
           "line": 1,
           "column": 1
         },
         {
           "file": "templates/configmap-open-policy-agent.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
-          "file": "templates/configmap-provisioning.yaml",
           "line": 1,
           "column": 1
         },
@@ -7102,11 +7097,6 @@
           "column": 3
         },
         {
-          "file": "templates/ingresses.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
           "file": "templates/configmap-authorization-api.yaml",
           "line": 18,
           "column": 51
@@ -7117,9 +7107,9 @@
           "column": 67
         },
         {
-          "file": "templates/configmap-management-ui.yaml",
-          "line": 22,
-          "column": 93
+          "file": "templates/configmap-authorization-api.yaml",
+          "line": 1,
+          "column": 1
         }
       ]
     },
@@ -7142,6 +7132,17 @@
           "file": "templates/secret-guardian-keycloak-client.yaml",
           "line": 29,
           "column": 10
+        }
+      ]
+    },
+    {
+      "id": ".global.secrets.masterPassword",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/secret-guardian-keycloak-client.yaml",
+          "line": 1,
+          "column": 1
         }
       ]
     },

@@ -1,50 +1,137 @@
 // Package main implements a CLI tool for comparing golden test output files.
+//
+// It compares current .golden.json files against their committed versions in git,
+// similar to how `git diff` shows changes against the last commit.
 package main
 
 import (
+	"context"
 	"encoding/json"
+	"flag"
 	"fmt"
 	"os"
+	"os/exec"
+	"path/filepath"
 	"sort"
+	"strings"
 
 	"github.com/y0-l0/helm-snoop/pkg/snooper"
 	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
 func main() {
-	if len(os.Args) != 3 {
-		fmt.Fprintf(os.Stderr, "Usage: %s <file1.json> <file2.json>\n", os.Args[0])
-		fmt.Fprintf(os.Stderr, "Example: %s old.json new.json\n", os.Args[0])
-		os.Exit(1)
+	fs := flag.NewFlagSet(os.Args[0], flag.ExitOnError)
+	commit := fs.String("commit", "HEAD", "git commit to compare against")
+	fs.Usage = func() {
+		fmt.Fprintf(os.Stderr, "Usage: %s [flags] [file.golden.json ...]\n\n", os.Args[0])
+		fmt.Fprintf(os.Stderr, "Compares current .golden.json files against their versions in git.\n")
+		fmt.Fprintf(os.Stderr, "With no files specified, diffs all modified .golden.json files.\n\n")
+		fmt.Fprintf(os.Stderr, "Flags:\n")
+		fs.PrintDefaults()
+	}
+	_ = fs.Parse(os.Args[1:])
+
+	files := fs.Args()
+	if len(files) == 0 {
+		var err error
+		files, err = findModifiedGoldenFiles(*commit)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Error finding modified golden files: %v\n", err)
+			os.Exit(1)
+		}
+		if len(files) == 0 {
+			fmt.Println("No modified .golden.json files found.")
+			return
+		}
 	}
 
-	file1 := os.Args[1]
-	file2 := os.Args[2]
+	for i, file := range files {
+		if i > 0 {
+			fmt.Println("\n" + strings.Repeat("─", 60))
+		}
 
-	results1, err := loadGoldenFile(file1)
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error loading %s: %v\n", file1, err)
-		os.Exit(1)
+		oldResults, err := loadGoldenFileFromGit(*commit, file)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Warning: cannot load %s from %s: %v (treating as empty)\n", file, *commit, err)
+			oldResults = &snooper.ResultJSON{}
+		}
+
+		newResults, err := loadGoldenFile(file)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Error loading %s: %v\n", file, err)
+			os.Exit(1)
+		}
+
+		fmt.Printf("Comparing %s: %s vs working tree\n\n", file, *commit)
+		compareResults(oldResults, newResults)
 	}
-
-	results2, err := loadGoldenFile(file2)
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error loading %s: %v\n", file2, err)
-		os.Exit(1)
-	}
-
-	fmt.Printf("Comparing:\n  [1] %s\n  [2] %s\n\n", file1, file2)
-
-	compareResults(results1, results2)
 }
 
-func loadGoldenFile(path string) (*snooper.ResultsJSON, error) {
+// findModifiedGoldenFiles returns .golden.json files that differ from the given commit.
+func findModifiedGoldenFiles(commit string) ([]string, error) {
+	// Get both staged and unstaged changes.
+	out, err := exec.CommandContext(context.Background(), "git", "diff", "--name-only", commit, "--", "*.golden.json").
+		Output()
+	if err != nil {
+		return nil, fmt.Errorf("git diff: %w", err)
+	}
+
+	var files []string
+	for line := range strings.SplitSeq(strings.TrimSpace(string(out)), "\n") {
+		if line != "" {
+			files = append(files, line)
+		}
+	}
+	return files, nil
+}
+
+// loadGoldenFileFromGit loads a golden file from a specific git commit.
+func loadGoldenFileFromGit(commit, path string) (*snooper.ResultJSON, error) {
+	// Convert to repo-relative path for git show.
+	relPath, err := gitRelativePath(path)
+	if err != nil {
+		return nil, err
+	}
+
+	out, err := exec.CommandContext(context.Background(), "git", "show", commit+":"+relPath).Output()
+	if err != nil {
+		return nil, fmt.Errorf("git show %s:%s: %w", commit, relPath, err)
+	}
+
+	var results snooper.ResultJSON
+	if err := json.Unmarshal(out, &results); err != nil {
+		return nil, err
+	}
+	return &results, nil
+}
+
+// gitRelativePath converts a file path to be relative to the git repo root.
+func gitRelativePath(path string) (string, error) {
+	absPath, err := filepath.Abs(path)
+	if err != nil {
+		return "", err
+	}
+
+	out, err := exec.CommandContext(context.Background(), "git", "rev-parse", "--show-toplevel").Output()
+	if err != nil {
+		return "", fmt.Errorf("git rev-parse: %w", err)
+	}
+	root := strings.TrimSpace(string(out))
+
+	rel, err := filepath.Rel(root, absPath)
+	if err != nil {
+		return "", err
+	}
+	return rel, nil
+}
+
+func loadGoldenFile(path string) (*snooper.ResultJSON, error) {
 	data, err := os.ReadFile(path)
 	if err != nil {
 		return nil, err
 	}
 
-	var results snooper.ResultsJSON
+	var results snooper.ResultJSON
 	if err := json.Unmarshal(data, &results); err != nil {
 		return nil, err
 	}
@@ -52,7 +139,7 @@ func loadGoldenFile(path string) (*snooper.ResultsJSON, error) {
 	return &results, nil
 }
 
-func compareResults(r1, r2 *snooper.ResultsJSON) {
+func compareResults(r1, r2 *snooper.ResultJSON) {
 	fmt.Println("=== Referenced Paths ===")
 	comparePaths(r1.Referenced, r2.Referenced)
 

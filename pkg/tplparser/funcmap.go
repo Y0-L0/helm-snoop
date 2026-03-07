@@ -81,11 +81,11 @@ func init() {
 		// =================================================================
 		// SPRIG: LOGIC FUNCTIONS
 		// =================================================================
-		"all": emitArgsNoResultFn,
-		"and": emitArgsNoResultFn,
-		"any": emitArgsNoResultFn,
-		"not": emitArgsNoResultFn,
-		"or":  emitArgsNoResultFn,
+		"all": emitCheckedNoResultFn,
+		"and": emitCheckedNoResultFn,
+		"any": emitCheckedNoResultFn,
+		"not": emitCheckedNoResultFn,
+		"or":  emitCheckedNoResultFn,
 
 		// =================================================================
 		// SPRIG: STRING FUNCTIONS
@@ -187,7 +187,7 @@ func init() {
 		// SPRIG: DEFAULTS AND CONDITIONALS
 		// =================================================================
 		"coalesce": defaultFn, // Same behavior as default for analysis
-		"empty":    emitArgsNoResultFn,
+		"empty":    emitCheckedNoResultFn,
 		"required": emitArgsNoResultFn,
 		"ternary":  emitArgsNoResultFn,
 
@@ -198,17 +198,17 @@ func init() {
 		"chunk":       unaryPassThroughFn,
 		"compact":     unaryPassThroughFn,
 		"concat":      concatFn,
-		"first":       unaryPassThroughFn,
+		"first":       unaryCheckedPassThroughFn,
 		"initial":     unaryPassThroughFn,
-		"last":        unaryPassThroughFn,
-		"list":        emitArgsNoResultFn,
+		"last":        unaryCheckedPassThroughFn,
+		"list":        emitCheckedNoResultFn,
 		"mustAppend":  emitArgsNoResultFn,
 		"mustChunk":   unaryPassThroughFn,
 		"mustCompact": unaryPassThroughFn,
-		"mustFirst":   unaryPassThroughFn,
+		"mustFirst":   unaryCheckedPassThroughFn,
 		"mustHas":     binaryEvalFn,
 		"mustInitial": unaryPassThroughFn,
-		"mustLast":    unaryPassThroughFn,
+		"mustLast":    unaryCheckedPassThroughFn,
 		"mustPrepend": emitArgsNoResultFn,
 		"mustPush":    emitArgsNoResultFn,
 		"mustReverse": unaryPassThroughFn,
@@ -327,7 +327,7 @@ func init() {
 		// SPRIG: REFLECTION/TYPE FUNCTIONS
 		// =================================================================
 		"hello":  noopStrings,
-		"len":    emitArgsNoResultFn,
+		"len":    emitCheckedNoResultFn,
 		"tuple":  emitArgsNoResultFn,
 		"typeOf": unaryPassThroughFn,
 
