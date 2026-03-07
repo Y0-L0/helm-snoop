@@ -188,12 +188,50 @@ func MergeJoinLoose(a, b Paths) (inter Paths, onlyA Paths, onlyB Paths) {
 		}
 	}
 
-	// Collect unmatched paths from b
 	for j, pb := range b {
 		if !matchedB[j] {
 			onlyB = append(onlyB, pb)
 		}
 	}
 
+	// A Checked path like {{ if .Values.global }} is not truly undefined
+	// when a child (e.g., global.imageRegistry) exists in definitions.
+	onlyB = excludeCheckedPrefixes(onlyB, a)
+
 	return inter, onlyA, onlyB
+}
+
+func excludeCheckedPrefixes(unmatched, definitions Paths) Paths {
+	if len(unmatched) == 0 {
+		return unmatched
+	}
+	kept := make(Paths, 0, len(unmatched))
+	for _, p := range unmatched {
+		if p.Usage == Checked && p.IsParentOfAny(definitions) {
+			continue
+		}
+		kept = append(kept, p)
+	}
+	return kept
+}
+
+// IsParentOfAny returns true if p is a strict prefix of any path in paths.
+func (p *Path) IsParentOfAny(paths Paths) bool {
+	return slices.ContainsFunc(paths, p.IsParentOf)
+}
+
+// IsParentOf returns true if p is a strict prefix of other.
+func (p *Path) IsParentOf(other *Path) bool {
+	if len(p.tokens) == 0 || len(p.tokens) >= len(other.tokens) {
+		return false
+	}
+	for i := range p.tokens {
+		if p.tokens[i] != other.tokens[i] {
+			return false
+		}
+		if !equalKindLoose(p.kinds[i], other.kinds[i]) {
+			return false
+		}
+	}
+	return true
 }
