@@ -1,4 +1,5 @@
 {
+  "chartName": "test-chart",
   "referenced": [
     {
       "id": ".config.disabled",

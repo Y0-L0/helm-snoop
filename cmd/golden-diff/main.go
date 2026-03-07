@@ -38,13 +38,13 @@ func main() {
 	compareResults(results1, results2)
 }
 
-func loadGoldenFile(path string) (*snooper.ResultsJSON, error) {
+func loadGoldenFile(path string) (*snooper.ResultJSON, error) {
 	data, err := os.ReadFile(path)
 	if err != nil {
 		return nil, err
 	}
 
-	var results snooper.ResultsJSON
+	var results snooper.ResultJSON
 	if err := json.Unmarshal(data, &results); err != nil {
 		return nil, err
 	}
@@ -52,7 +52,7 @@ func loadGoldenFile(path string) (*snooper.ResultsJSON, error) {
 	return &results, nil
 }
 
-func compareResults(r1, r2 *snooper.ResultsJSON) {
+func compareResults(r1, r2 *snooper.ResultJSON) {
 	fmt.Println("=== Referenced Paths ===")
 	comparePaths(r1.Referenced, r2.Referenced)
 

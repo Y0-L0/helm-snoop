@@ -11,9 +11,21 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
-type SnoopFunc func(string, vpath.Paths, []string) (*Result, error)
+type SnoopFunc func([]string, vpath.Paths, []string) (Results, error)
 
-func Snoop(chartPath string, ignorePaths vpath.Paths, valuesFiles []string) (*Result, error) {
+func Snoop(chartPaths []string, ignorePaths vpath.Paths, valuesFiles []string) (Results, error) {
+	var results Results
+	for _, chartPath := range chartPaths {
+		result, err := snoopChart(chartPath, ignorePaths, valuesFiles)
+		if err != nil {
+			return nil, err
+		}
+		results = append(results, result)
+	}
+	return results, nil
+}
+
+func snoopChart(chartPath string, ignorePaths vpath.Paths, valuesFiles []string) (*Result, error) {
 	chart, err := loader.Load(chartPath)
 	if err != nil {
 		return nil, fmt.Errorf("failed to read the helm chart.\nerror: %w", err)

@@ -1,33 +1,45 @@
 package cli
 
 import (
+	"bytes"
 	"log/slog"
 	"os"
 	filepath "path/filepath"
+	"strings"
 
 	"github.com/y0-l0/helm-snoop/pkg/snooper"
 	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
-func mockSnoop(_ string, _ vpath.Paths, _ []string) (*snooper.Result, error) {
-	return &snooper.Result{
-		Referenced: vpath.Paths{},
-		Unused:     vpath.Paths{},
-		Undefined:  vpath.Paths{},
-	}, nil
+func mockSnoop(chartPaths []string, _ vpath.Paths, _ []string) (snooper.Results, error) {
+	var results snooper.Results
+	for _, p := range chartPaths {
+		results = append(results, &snooper.Result{
+			ChartName:  filepath.Base(p),
+			Referenced: vpath.Paths{},
+			Unused:     vpath.Paths{},
+			Undefined:  vpath.Paths{},
+		})
+	}
+	return results, nil
 }
 
 type trackingSnoop struct {
 	calls []string
 }
 
-func (t *trackingSnoop) snoop(chartPath string, _ vpath.Paths, _ []string) (*snooper.Result, error) {
-	t.calls = append(t.calls, chartPath)
-	return &snooper.Result{
-		Referenced: vpath.Paths{},
-		Unused:     vpath.Paths{},
-		Undefined:  vpath.Paths{},
-	}, nil
+func (t *trackingSnoop) snoop(chartPaths []string, _ vpath.Paths, _ []string) (snooper.Results, error) {
+	t.calls = append(t.calls, chartPaths...)
+	var results snooper.Results
+	for _, p := range chartPaths {
+		results = append(results, &snooper.Result{
+			ChartName:  filepath.Base(p),
+			Referenced: vpath.Paths{},
+			Unused:     vpath.Paths{},
+			Undefined:  vpath.Paths{},
+		})
+	}
+	return results, nil
 }
 
 func testdataDir() string {
@@ -149,6 +161,45 @@ func (s *Unittest) TestFileArgResolvesToChartRoot() {
 	s.Require().NoError(err)
 	s.Require().Len(tracker.calls, 1)
 	s.Equal(filepath.Join(testdataDir(), "test-chart"), tracker.calls[0])
+}
+
+func (s *Unittest) TestMultipleChartsSingleSummary() {
+	chartA := filepath.Join(testdataDir(), "test-chart")
+	chartB := s.T().TempDir()
+	err := os.WriteFile(
+		filepath.Join(chartB, "Chart.yaml"),
+		[]byte("name: temp-chart"),
+		0o600,
+	)
+	s.Require().NoError(err)
+
+	findingsSnoop := func(chartPaths []string, _ vpath.Paths, _ []string) (snooper.Results, error) {
+		var results snooper.Results
+		for _, chartPath := range chartPaths {
+			unused := vpath.NewPath("someUnused")
+			unused.Contexts = vpath.Contexts{{FileName: "values.yaml", Line: 1, Column: 1}}
+			results = append(results, &snooper.Result{
+				ChartName:  filepath.Base(chartPath),
+				Referenced: vpath.Paths{},
+				Unused:     vpath.Paths{unused},
+				Undefined:  vpath.Paths{},
+			})
+		}
+		return results, nil
+	}
+
+	var stdout, stderr bytes.Buffer
+	code := Main(
+		[]string{"helm-snoop", chartA, chartB},
+		&stdout, &stderr,
+		snooper.SetupLogging, findingsSnoop,
+	)
+
+	s.Equal(1, code, "expected exit code 1 for findings")
+	out := stdout.String()
+	summaryCount := strings.Count(out, "Summary")
+	s.Equal(1, summaryCount, "summary should appear exactly once, got:\n%s", out)
+	s.Contains(out, "across 2 chart(s)")
 }
 
 func (s *Unittest) TestMultipleArgsDeduplication() {
