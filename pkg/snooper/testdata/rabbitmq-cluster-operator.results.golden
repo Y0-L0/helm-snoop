@@ -1,0 +1,100 @@
+========================== rabbitmq-cluster-operator ===========================
+
+------------------------------------ Unused ------------------------------------
+.clusterOperator.containerSecurityContext.allowPrivilegeEscalation      values.yaml:220:5
+.clusterOperator.containerSecurityContext.capabilities.drop.0           values.yaml:223:7
+.clusterOperator.containerSecurityContext.privileged                    values.yaml:216:5
+.clusterOperator.containerSecurityContext.readOnlyRootFilesystem        values.yaml:218:5
+.clusterOperator.containerSecurityContext.runAsGroup                    values.yaml:212:5
+.clusterOperator.containerSecurityContext.runAsNonRoot                  values.yaml:214:5
+.clusterOperator.containerSecurityContext.runAsUser                     values.yaml:210:5
+.clusterOperator.containerSecurityContext.seLinuxOptions                values.yaml:208:5
+.clusterOperator.containerSecurityContext.seccompProfile.type           values.yaml:226:7
+.clusterOperator.image.digest                                           values.yaml:93:5
+.clusterOperator.image.pullSecrets                                      values.yaml:105:5
+.clusterOperator.image.registry                                         values.yaml:87:5
+.clusterOperator.image.repository                                       values.yaml:89:5
+.clusterOperator.image.tag                                              values.yaml:91:5
+.clusterOperator.metrics.podMonitor.namespace                           values.yaml:472:7
+.clusterOperator.metrics.service.annotations.prometheus~.io/port        values.yaml:418:9
+.clusterOperator.metrics.service.annotations.prometheus~.io/scrape      values.yaml:417:9
+.clusterOperator.metrics.serviceMonitor.labels                          values.yaml:460:7
+.clusterOperator.podSecurityContext.fsGroup                             values.yaml:201:5
+.clusterOperator.podSecurityContext.fsGroupChangePolicy                 values.yaml:195:5
+.clusterOperator.podSecurityContext.supplementalGroups                  values.yaml:199:5
+.clusterOperator.podSecurityContext.sysctls                             values.yaml:197:5
+.clusterOperator.serviceAccount.name                                    values.yaml:376:5
+.credentialUpdaterImage.digest                                          values.yaml:71:3
+.credentialUpdaterImage.pullSecrets                                     values.yaml:79:3
+.extraDeploy                                                            values.yaml:35:1
+.global.compatibility.openshift.adaptSecurityContext                    values.yaml:20:7
+.global.defaultStorageClass                                             values.yaml:12:3
+.global.storageClass                                                    values.yaml:14:3
+.kubeVersion                                                            values.yaml:23:1
+.msgTopologyOperator.containerSecurityContext.allowPrivilegeEscalation  values.yaml:642:5
+.msgTopologyOperator.containerSecurityContext.capabilities.drop.0       values.yaml:645:7
+.msgTopologyOperator.containerSecurityContext.privileged                values.yaml:638:5
+.msgTopologyOperator.containerSecurityContext.readOnlyRootFilesystem    values.yaml:640:5
+.msgTopologyOperator.containerSecurityContext.runAsGroup                values.yaml:634:5
+.msgTopologyOperator.containerSecurityContext.runAsNonRoot              values.yaml:636:5
+.msgTopologyOperator.containerSecurityContext.runAsUser                 values.yaml:632:5
+.msgTopologyOperator.containerSecurityContext.seLinuxOptions            values.yaml:630:5
+.msgTopologyOperator.containerSecurityContext.seccompProfile.type       values.yaml:648:7
+.msgTopologyOperator.image.digest                                       values.yaml:505:5
+.msgTopologyOperator.image.pullSecrets                                  values.yaml:517:5
+.msgTopologyOperator.image.registry                                     values.yaml:499:5
+.msgTopologyOperator.image.repository                                   values.yaml:501:5
+.msgTopologyOperator.image.tag                                          values.yaml:503:5
+.msgTopologyOperator.metrics.service.annotations.prometheus~.io/port    values.yaml:883:9
+.msgTopologyOperator.metrics.service.annotations.prometheus~.io/scrape  values.yaml:882:9
+.msgTopologyOperator.metrics.serviceMonitor.labels                      values.yaml:921:7
+.msgTopologyOperator.podSecurityContext.fsGroup                         values.yaml:623:5
+.msgTopologyOperator.podSecurityContext.fsGroupChangePolicy             values.yaml:617:5
+.msgTopologyOperator.podSecurityContext.supplementalGroups              values.yaml:621:5
+.msgTopologyOperator.podSecurityContext.sysctls                         values.yaml:619:5
+.msgTopologyOperator.serviceAccount.name                                values.yaml:841:5
+.rabbitmqImage.digest                                                   values.yaml:51:3
+.rabbitmqImage.pullSecrets                                              values.yaml:59:3
+---------------------------------- Undefined -----------------------------------
+.clusterOperator.containerSecurityContext                        templates/cluster-operator/deployment.yaml:137:84
+.clusterOperator.image                                           templates/cluster-operator/deployment.yaml:115:43
+                                                                 templates/cluster-operator/deployment.yaml:94:6
+.clusterOperator.metrics.service.annotations                     templates/cluster-operator/metrics-service.yaml:10:10
+                                                                 templates/cluster-operator/metrics-service.yaml:11:80
+.clusterOperator.metrics.serviceMonitor.additionalLabels.*       templates/cluster-operator/servicemonitor.yaml:1:1
+                                                                 templates/cluster-operator/servicemonitor.yaml:8:12
+.clusterOperator.podSecurityContext                              templates/cluster-operator/deployment.yaml:134:40
+.clusterOperator.rbac.clusterRole.customRules.*.apiGroups.*      templates/cluster-operator/clusterrole.yaml:14:32
+.clusterOperator.rbac.clusterRole.customRules.*.resources.*      templates/cluster-operator/clusterrole.yaml:15:32
+.clusterOperator.rbac.clusterRole.customRules.*.verbs.*          templates/cluster-operator/clusterrole.yaml:16:24
+.clusterOperator.rbac.clusterRole.extraRules.*.apiGroups.*       templates/cluster-operator/clusterrole.yaml:21:32
+.clusterOperator.rbac.clusterRole.extraRules.*.resources.*       templates/cluster-operator/clusterrole.yaml:22:32
+.clusterOperator.rbac.clusterRole.extraRules.*.verbs.*           templates/cluster-operator/clusterrole.yaml:23:24
+.containerSecurityContext.*                                      templates/cluster-operator/deployment.yaml:1:1
+                                                                 templates/messaging-topology-operator/deployment.yaml:1:1
+.extraDeploy.*.*                                                 templates/extra-list.yaml:1:1
+.msgTopologyOperator.containerSecurityContext                    templates/messaging-topology-operator/deployment.yaml:140:70
+.msgTopologyOperator.image                                       templates/messaging-topology-operator/deployment.yaml:105:17
+.msgTopologyOperator.metrics.service.annotations                 templates/messaging-topology-operator/metrics-service.yaml:10:10
+                                                                 templates/messaging-topology-operator/metrics-service.yaml:11:80
+.msgTopologyOperator.metrics.serviceMonitor.additionalLabels.*   templates/messaging-topology-operator/servicemonitor.yaml:1:1
+                                                                 templates/messaging-topology-operator/servicemonitor.yaml:8:12
+.msgTopologyOperator.podSecurityContext                          templates/messaging-topology-operator/deployment.yaml:134:83
+.msgTopologyOperator.rbac.clusterRole.customRules.*.apiGroups.*  templates/messaging-topology-operator/clusterrole.yaml:14:32
+.msgTopologyOperator.rbac.clusterRole.customRules.*.resources.*  templates/messaging-topology-operator/clusterrole.yaml:15:32
+.msgTopologyOperator.rbac.clusterRole.customRules.*.verbs.*      templates/messaging-topology-operator/clusterrole.yaml:16:24
+.msgTopologyOperator.rbac.clusterRole.extraRules.*.apiGroups.*   templates/messaging-topology-operator/clusterrole.yaml:21:32
+.msgTopologyOperator.rbac.clusterRole.extraRules.*.resources.*   templates/messaging-topology-operator/clusterrole.yaml:22:32
+.msgTopologyOperator.rbac.clusterRole.extraRules.*.verbs.*       templates/messaging-topology-operator/clusterrole.yaml:23:24
+.podSecurityContext.*                                            templates/messaging-topology-operator/deployment.yaml:169:1
+                                                                 templates/cluster-operator/deployment.yaml:1:1
+                                                                 templates/messaging-topology-operator/deployment.yaml:167:129
+.rabbitmqImage                                                   templates/cluster-operator/deployment.yaml:94:6
+                                                                 templates/cluster-operator/deployment.yaml:115:43
+.targetPlatform                                                  templates/messaging-topology-operator/deployment.yaml:156:138
+                                                                 templates/cluster-operator/deployment.yaml:156:27
+
+=================================== Summary ====================================
+
+rabbitmq-cluster-operator  54 Unused  27 Undefined  
+Total                      54 Unused  27 Undefined  across 1 chart(s)
