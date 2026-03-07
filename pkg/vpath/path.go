@@ -14,10 +14,20 @@ const (
 	wildcardKind kind = 'W'
 )
 
+// UsageKind describes how a value path is referenced in a template.
+// Lower values are stronger; Consumed wins over Checked during dedup.
+type UsageKind int
+
+const (
+	Consumed UsageKind = iota // value is accessed ({{ .Values.foo }})
+	Checked                   // value only appears in a condition ({{ if .Values.foo }})
+)
+
 type Path struct {
 	tokens   []string
 	kinds    []kind
 	Contexts Contexts
+	Usage    UsageKind
 }
 
 func NewPath(tokens ...string) *Path {
