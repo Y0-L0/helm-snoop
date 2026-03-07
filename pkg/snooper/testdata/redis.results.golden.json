@@ -9857,22 +9857,6 @@
       ]
     },
     {
-      "id": ".image",
-      "kinds": "/K",
-      "contexts": [
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 43,
-          "column": 25
-        },
-        {
-          "file": "templates/job.yaml",
-          "line": 41,
-          "column": 29
-        }
-      ]
-    },
-    {
       "id": ".image.imagePullPolicy",
       "kinds": "/K/K",
       "contexts": [
