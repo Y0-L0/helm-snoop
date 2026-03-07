@@ -4043,17 +4043,6 @@
       ]
     },
     {
-      "id": ".ingress.tls",
-      "kinds": "/K/K",
-      "contexts": [
-        {
-          "file": "templates/NOTES.txt",
-          "line": 6,
-          "column": 33
-        }
-      ]
-    },
-    {
       "id": ".kubeVersion",
       "kinds": "/K",
       "contexts": [

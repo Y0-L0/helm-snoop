@@ -213,3 +213,39 @@ func (s *Unittest) TestMergeJoinLoose_OneDefinitionMatchesMultipleUsages() {
 	// Both usages matched the definition, so nothing undefined
 	s.Empty(onlyUsage, "both usages should match the definition")
 }
+
+// TestMergeJoinLoose_CheckedPrefix verifies that Checked (condition-only) paths
+// are excluded from onlyB when they are a strict prefix of a path in a,
+// while Consumed paths and non-prefix Checked paths are kept.
+func (s *Unittest) TestMergeJoinLoose_CheckedPrefix() {
+	definitions := Paths{
+		np().Key("global").Key("imageRegistry"),
+		np().Key("image").Key("registry"),
+	}
+
+	checkedGlobal := np().Key("global")
+	checkedGlobal.Usage = Checked // if condition: prefix of global.imageRegistry → filtered
+
+	consumedImage := np().Key("image")
+	consumedImage.Usage = Consumed // direct access: prefix but Consumed → kept
+
+	checkedTarget := np().Key("targetPlatform")
+	checkedTarget.Usage = Checked // if condition: not a prefix of anything → kept
+
+	usages := Paths{checkedGlobal, consumedImage, checkedTarget}
+
+	inter, onlyDef, onlyUsage := MergeJoinLoose(definitions, usages)
+
+	// No exact matches between definitions and usages
+	s.Empty(inter)
+
+	// Both definitions are unused
+	EqualInorderPaths(s, definitions, onlyDef)
+
+	// global is Checked + prefix → filtered out
+	// image is Consumed → kept
+	// targetPlatform is Checked but not a prefix → kept
+	s.Require().Len(onlyUsage, 2)
+	s.Equal(".image", onlyUsage[0].ID())
+	s.Equal(".targetPlatform", onlyUsage[1].ID())
+}
