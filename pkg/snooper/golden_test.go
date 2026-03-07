@@ -86,6 +86,27 @@ func (s *GoldenTest) TestSnoop_txt_Guardian() {
 	s.compactGoldenTest("guardian.results", results)
 }
 
+func (s *GoldenTest) TestSnoop_json_Redis() {
+	restore := disableStrictParsing()
+	defer restore()
+
+	results, err := Snoop([]string{filepath.Join(s.chartsDir, "redis-0.25.6.tgz")}, nil, nil)
+	s.Require().NoError(err)
+	s.Require().Len(results, 1)
+
+	actual := results[0].toJSON()
+	s.EqualGoldenJSON("redis.results.golden.json", actual)
+}
+
+func (s *GoldenTest) TestSnoop_txt_Redis() {
+	restore := disableStrictParsing()
+	defer restore()
+
+	results, err := Snoop([]string{filepath.Join(s.chartsDir, "redis-0.25.6.tgz")}, nil, nil)
+	s.Require().NoError(err)
+	s.compactGoldenTest("redis.results", results)
+}
+
 func (s *GoldenTest) TestSnoop_UnusedHaveValuesContext() {
 	restore := disableStrictParsing()
 	defer restore()
