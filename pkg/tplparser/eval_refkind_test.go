@@ -66,6 +66,22 @@ func (s *Unittest) TestRefKind_ListMarkedChecked() {
 	s.Equal(vpath.Checked, paths[0].Usage)
 }
 
+func (s *Unittest) TestRefKind_FirstMarkedChecked() {
+	paths := s.parse(`{{ first .Values.items }}`)
+
+	s.Require().Len(paths, 1)
+	s.Equal(".items", paths[0].ID())
+	s.Equal(vpath.Checked, paths[0].Usage)
+}
+
+func (s *Unittest) TestRefKind_LastMarkedChecked() {
+	paths := s.parse(`{{ last .Values.items }}`)
+
+	s.Require().Len(paths, 1)
+	s.Equal(".items", paths[0].ID())
+	s.Equal(vpath.Checked, paths[0].Usage)
+}
+
 func (s *Unittest) TestRefKind_AndBodyRemainsConsumed() {
 	paths := s.parse(`{{ if and .Values.a .Values.b }}{{ .Values.name }}{{ end }}`)
 

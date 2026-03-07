@@ -29,8 +29,6 @@ func unaryPassThroughFn(ctx *evalCtx, call Call) evalResult {
 }
 
 // unaryCheckedPassThroughFn is like unaryPassThroughFn but marks paths as Checked.
-//
-//nolint:unused // wired in next commit
 func unaryCheckedPassThroughFn(ctx *evalCtx, call Call) evalResult {
 	if len(call.Args) == 0 {
 		return evalResult{}
