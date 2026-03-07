@@ -7,6 +7,12 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
+func markChecked(paths []*vpath.Path) {
+	for _, p := range paths {
+		p.Usage = vpath.Checked
+	}
+}
+
 // isBuiltinObject checks if a field name is a Helm built-in object.
 func isBuiltinObject(field string) bool {
 	return field == "Release" || field == "Chart" ||
@@ -212,11 +218,10 @@ func (e *evalCtx) evalPipeNode(node *parse.PipeNode) evalResult {
 }
 
 // evalIfNode evaluates an if/else control flow node.
-// Control flow nodes emit their condition paths directly (not wrapped in ActionNode).
 func (e *evalCtx) evalIfNode(node *parse.IfNode) evalResult {
-	// Evaluate condition and emit paths
 	if node.Pipe != nil {
 		result := e.Eval(node.Pipe)
+		markChecked(result.paths)
 		e.Emit(node.Pipe.Pos, result.paths...)
 	}
 
