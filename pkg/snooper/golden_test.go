@@ -107,6 +107,27 @@ func (s *GoldenTest) TestSnoop_txt_Redis() {
 	s.compactGoldenTest("redis.results", results)
 }
 
+func (s *GoldenTest) TestSnoop_json_RabbitmqClusterOperator() {
+	restore := disableStrictParsing()
+	defer restore()
+
+	results, err := Snoop([]string{filepath.Join(s.chartsDir, "rabbitmq-cluster-operator-0.2.1.tgz")}, nil, nil)
+	s.Require().NoError(err)
+	s.Require().Len(results, 1)
+
+	actual := results[0].toJSON()
+	s.EqualGoldenJSON("rabbitmq-cluster-operator.results.golden.json", actual)
+}
+
+func (s *GoldenTest) TestSnoop_txt_RabbitmqClusterOperator() {
+	restore := disableStrictParsing()
+	defer restore()
+
+	results, err := Snoop([]string{filepath.Join(s.chartsDir, "rabbitmq-cluster-operator-0.2.1.tgz")}, nil, nil)
+	s.Require().NoError(err)
+	s.compactGoldenTest("rabbitmq-cluster-operator.results", results)
+}
+
 func (s *GoldenTest) TestSnoop_UnusedHaveValuesContext() {
 	restore := disableStrictParsing()
 	defer restore()
