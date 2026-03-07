@@ -71,8 +71,6 @@ func emitArgsNoResultFn(ctx *evalCtx, call Call) evalResult {
 }
 
 // emitCheckedNoResultFn is like emitArgsNoResultFn but marks paths as Checked.
-//
-//nolint:unused,unparam // wired in next commit
 func emitCheckedNoResultFn(ctx *evalCtx, call Call) evalResult {
 	for _, arg := range call.Args {
 		result := ctx.Eval(arg)

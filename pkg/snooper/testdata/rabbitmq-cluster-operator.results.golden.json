@@ -6764,38 +6764,6 @@
       ]
     },
     {
-      "id": ".clusterOperator.image",
-      "kinds": "/K/K",
-      "contexts": [
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 115,
-          "column": 43
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 94,
-          "column": 6
-        }
-      ]
-    },
-    {
-      "id": ".clusterOperator.metrics.service.annotations",
-      "kinds": "/K/K/K/K",
-      "contexts": [
-        {
-          "file": "templates/cluster-operator/metrics-service.yaml",
-          "line": 10,
-          "column": 10
-        },
-        {
-          "file": "templates/cluster-operator/metrics-service.yaml",
-          "line": 11,
-          "column": 80
-        }
-      ]
-    },
-    {
       "id": ".clusterOperator.metrics.serviceMonitor.additionalLabels.*",
       "kinds": "/K/K/K/K/W",
       "contexts": [
@@ -6927,33 +6895,6 @@
       ]
     },
     {
-      "id": ".msgTopologyOperator.image",
-      "kinds": "/K/K",
-      "contexts": [
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 105,
-          "column": 17
-        }
-      ]
-    },
-    {
-      "id": ".msgTopologyOperator.metrics.service.annotations",
-      "kinds": "/K/K/K/K",
-      "contexts": [
-        {
-          "file": "templates/messaging-topology-operator/metrics-service.yaml",
-          "line": 10,
-          "column": 10
-        },
-        {
-          "file": "templates/messaging-topology-operator/metrics-service.yaml",
-          "line": 11,
-          "column": 80
-        }
-      ]
-    },
-    {
       "id": ".msgTopologyOperator.metrics.serviceMonitor.additionalLabels.*",
       "kinds": "/K/K/K/K/W",
       "contexts": [
@@ -7064,22 +7005,6 @@
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 167,
           "column": 129
-        }
-      ]
-    },
-    {
-      "id": ".rabbitmqImage",
-      "kinds": "/K",
-      "contexts": [
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 94,
-          "column": 6
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 115,
-          "column": 43
         }
       ]
     },

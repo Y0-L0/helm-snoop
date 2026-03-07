@@ -20,8 +20,6 @@
                                  templates/service.yaml:39:22
                                  templates/master-service.yaml:26:22
                                  templates/sentinel-master-service.yaml:27:22
-.image                           templates/statefulset.yaml:43:25
-                                 templates/job.yaml:41:29
 .image.imagePullPolicy           templates/statefulset.yaml:88:8
                                  templates/job.yaml:83:50
 .metrics.image.imagePullPolicy   templates/statefulset.yaml:88:8
@@ -33,5 +31,5 @@
 
 =================================== Summary ====================================
 
-redis  0 Unused  11 Undefined  
-Total  0 Unused  11 Undefined  across 1 chart(s)
+redis  0 Unused  10 Undefined  
+Total  0 Unused  10 Undefined  across 1 chart(s)
