@@ -181,7 +181,7 @@ linters:
       max-func-lines: 0
 
     nolintlint:
-      allow-no-explanation: [ gocognit, golines ]
+      allow-no-explanation: [ gocognit, goconst, golines ]
       require-explanation: true
       require-specific: true
 

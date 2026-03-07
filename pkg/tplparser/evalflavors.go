@@ -33,6 +33,14 @@ func (e *evalCtx) evalParamPaths(firstField string, restFields []string) (evalRe
 		return evalResult{}, true
 	}
 
+	// Strip .param.Values.foo → .foo when param is bound to root ($).
+	if basePath.ID() == "." && len(restFields) > 0 && restFields[0] == "Values" { //nolint:goconst
+		restFields = restFields[1:]
+		if len(restFields) == 0 {
+			return evalResult{}, true
+		}
+	}
+
 	p := *basePath
 	for _, field := range restFields {
 		p = p.WithKey(field)

@@ -11,7 +11,17 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/headless-service.yaml",
           "line": 1,
           "column": 1
         },
@@ -21,23 +31,13 @@
           "column": 43
         },
         {
-          "file": "templates/headless-service.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 794,
+          "column": 13
         },
         {
           "file": "templates/sentinel-master-deployment.yaml",
           "line": 35,
-          "column": 13
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 794,
           "column": 13
         }
       ]
@@ -52,7 +52,17 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/headless-service.yaml",
           "line": 1,
           "column": 1
         },
@@ -62,29 +72,44 @@
           "column": 43
         },
         {
-          "file": "templates/headless-service.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
-        },
-        {
           "file": "templates/statefulset.yaml",
           "line": 304,
           "column": 20
         },
         {
-          "file": "templates/service.yaml",
-          "line": 9,
-          "column": 57
+          "file": "templates/statefulset.yaml",
+          "line": 404,
+          "column": 52
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 27,
+          "line": 737,
+          "column": 48
+        },
+        {
+          "file": "templates/service.yaml",
+          "line": 14,
+          "column": 40
+        },
+        {
+          "file": "templates/servicemonitor.yaml",
+          "line": 43,
+          "column": 44
+        },
+        {
+          "file": "templates/master-service.yaml",
+          "line": 1,
+          "column": 13
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 436,
           "column": 46
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 15,
+          "column": 19
         },
         {
           "file": "templates/sentinel-master-rbac.yaml",
@@ -98,73 +123,23 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 737,
-          "column": 48
-        },
-        {
-          "file": "templates/sentinel-master-deployment.yaml",
-          "line": 1,
-          "column": 77
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 75,
-          "column": 22
-        },
-        {
-          "file": "templates/master-service.yaml",
-          "line": 1,
-          "column": 13
-        },
-        {
-          "file": "templates/sentinel-master-service.yaml",
-          "line": 1,
-          "column": 77
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 15,
-          "column": 19
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 183,
-          "column": 27
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 231,
-          "column": 48
-        },
-        {
-          "file": "templates/sentinel-service.yaml",
-          "line": 1,
-          "column": 38
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 436,
+          "line": 27,
           "column": 46
         },
         {
-          "file": "templates/statefulset.yaml",
-          "line": 293,
-          "column": 54
+          "file": "templates/service.yaml",
+          "line": 9,
+          "column": 57
+        },
+        {
+          "file": "templates/service.yaml",
+          "line": 31,
+          "column": 42
         },
         {
           "file": "templates/statefulset.yaml",
           "line": 53,
           "column": 46
-        },
-        {
-          "file": "templates/service.yaml",
-          "line": 14,
-          "column": 40
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 404,
-          "column": 52
         },
         {
           "file": "templates/statefulset.yaml",
@@ -177,9 +152,9 @@
           "column": 52
         },
         {
-          "file": "templates/headless-service.yaml",
-          "line": 33,
-          "column": 42
+          "file": "templates/sentinel-service.yaml",
+          "line": 1,
+          "column": 38
         },
         {
           "file": "templates/networkpolicy.yaml",
@@ -187,34 +162,19 @@
           "column": 17
         },
         {
-          "file": "templates/headless-service.yaml",
-          "line": 39,
-          "column": 12
-        },
-        {
-          "file": "templates/servicemonitor.yaml",
-          "line": 43,
-          "column": 44
-        },
-        {
-          "file": "templates/service.yaml",
-          "line": 44,
-          "column": 40
-        },
-        {
-          "file": "templates/job.yaml",
+          "file": "templates/sentinel-master-deployment.yaml",
           "line": 1,
-          "column": 8
+          "column": 77
         },
         {
-          "file": "templates/prestop-configmap.yaml",
+          "file": "templates/statefulset.yaml",
+          "line": 75,
+          "column": 22
+        },
+        {
+          "file": "templates/sentinel-master-service.yaml",
           "line": 1,
-          "column": 38
-        },
-        {
-          "file": "templates/networkpolicy.yaml",
-          "line": 148,
-          "column": 12
+          "column": 77
         },
         {
           "file": "templates/networkpolicy.yaml",
@@ -222,19 +182,59 @@
           "column": 12
         },
         {
+          "file": "templates/networkpolicy.yaml",
+          "line": 112,
+          "column": 17
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 183,
+          "column": 27
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 231,
+          "column": 48
+        },
+        {
           "file": "templates/statefulset.yaml",
           "line": 354,
           "column": 247
         },
         {
-          "file": "templates/service.yaml",
-          "line": 31,
+          "file": "templates/headless-service.yaml",
+          "line": 33,
           "column": 42
         },
         {
+          "file": "templates/statefulset.yaml",
+          "line": 293,
+          "column": 54
+        },
+        {
           "file": "templates/networkpolicy.yaml",
-          "line": 112,
-          "column": 17
+          "line": 148,
+          "column": 12
+        },
+        {
+          "file": "templates/prestop-configmap.yaml",
+          "line": 1,
+          "column": 38
+        },
+        {
+          "file": "templates/job.yaml",
+          "line": 1,
+          "column": 8
+        },
+        {
+          "file": "templates/headless-service.yaml",
+          "line": 39,
+          "column": 12
+        },
+        {
+          "file": "templates/service.yaml",
+          "line": 44,
+          "column": 40
         }
       ]
     },
@@ -248,7 +248,17 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/headless-service.yaml",
           "line": 1,
           "column": 1
         },
@@ -258,14 +268,9 @@
           "column": 43
         },
         {
-          "file": "templates/headless-service.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/sentinel-master-deployment.yaml",
+          "line": 141,
+          "column": 4
         },
         {
           "file": "templates/statefulset.yaml",
@@ -274,28 +279,18 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 780,
-          "column": 16
+          "line": 119,
+          "column": 3
         },
         {
-          "file": "templates/statefulset.yaml",
-          "line": 315,
-          "column": 46
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 91,
-          "column": 219
+          "file": "templates/prestop-configmap.yaml",
+          "line": 160,
+          "column": 51
         },
         {
           "file": "templates/secret.yaml",
           "line": 1,
           "column": 68
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 427,
-          "column": 20
         },
         {
           "file": "templates/job.yaml",
@@ -314,6 +309,51 @@
         },
         {
           "file": "templates/statefulset.yaml",
+          "line": 427,
+          "column": 20
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 719,
+          "column": 18
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 780,
+          "column": 16
+        },
+        {
+          "file": "templates/sentinel-master-deployment.yaml",
+          "line": 103,
+          "column": 79
+        },
+        {
+          "file": "templates/sentinel-master-deployment.yaml",
+          "line": 49,
+          "column": 42
+        },
+        {
+          "file": "templates/job.yaml",
+          "line": 96,
+          "column": 10
+        },
+        {
+          "file": "templates/configmap.yaml",
+          "line": 36,
+          "column": 12
+        },
+        {
+          "file": "templates/sentinel-master-deployment.yaml",
+          "line": 140,
+          "column": 14
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 91,
+          "column": 219
+        },
+        {
+          "file": "templates/statefulset.yaml",
           "line": 447,
           "column": 20
         },
@@ -323,34 +363,14 @@
           "column": 16
         },
         {
-          "file": "templates/configmap.yaml",
-          "line": 36,
-          "column": 12
-        },
-        {
-          "file": "templates/job.yaml",
-          "line": 96,
-          "column": 10
-        },
-        {
           "file": "templates/job.yaml",
           "line": 98,
           "column": 14
         },
         {
-          "file": "templates/sentinel-master-deployment.yaml",
-          "line": 103,
-          "column": 79
-        },
-        {
           "file": "templates/statefulset.yaml",
-          "line": 719,
-          "column": 18
-        },
-        {
-          "file": "templates/sentinel-master-deployment.yaml",
-          "line": 49,
-          "column": 42
+          "line": 315,
+          "column": 46
         },
         {
           "file": "templates/job.yaml",
@@ -366,11 +386,6 @@
           "file": "templates/statefulset.yaml",
           "line": 673,
           "column": 44
-        },
-        {
-          "file": "templates/sentinel-master-deployment.yaml",
-          "line": 140,
-          "column": 14
         }
       ]
     },
@@ -384,14 +399,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -399,9 +414,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -480,14 +495,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -495,9 +510,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/sentinel-master-deployment.yaml",
@@ -601,14 +616,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -616,9 +631,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -652,14 +667,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -667,9 +682,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/sentinel-master-deployment.yaml",
@@ -778,14 +793,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -793,9 +808,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/sentinel-master-deployment.yaml",
@@ -844,14 +859,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -859,9 +874,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/sentinel-master-deployment.yaml",
@@ -905,14 +920,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -920,9 +935,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/secret.yaml",
@@ -941,14 +956,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -956,9 +971,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -1017,14 +1032,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -1032,9 +1047,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -1053,14 +1068,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -1068,9 +1083,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -1089,14 +1104,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -1104,9 +1119,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -1125,14 +1140,14 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -1140,9 +1155,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -1236,14 +1251,14 @@
           "column": 7
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -1251,9 +1266,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/job.yaml",
@@ -1272,14 +1287,14 @@
           "column": 7
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -1287,9 +1302,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/job.yaml",
@@ -1308,14 +1323,14 @@
           "column": 7
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -1323,9 +1338,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/job.yaml",
@@ -1344,14 +1359,14 @@
           "column": 7
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -1359,9 +1374,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/job.yaml",
@@ -1380,14 +1395,14 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -1395,9 +1410,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/job.yaml",
@@ -1421,14 +1436,14 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -1436,9 +1451,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/sentinel-service.yaml",
@@ -1517,14 +1532,14 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -1532,9 +1547,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/sentinel-master-rbac.yaml",
@@ -1653,14 +1668,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -1668,9 +1683,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -1714,14 +1729,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -1729,9 +1744,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -1785,14 +1800,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -1800,9 +1815,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -1826,14 +1841,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -1841,9 +1856,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -1877,14 +1892,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -1892,9 +1907,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -1923,14 +1938,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -1938,9 +1953,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -1969,14 +1984,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -1984,9 +1999,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -2015,14 +2030,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -2030,9 +2045,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -2061,14 +2076,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -2076,9 +2091,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -2107,14 +2122,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -2122,9 +2137,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -2153,14 +2168,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -2168,9 +2183,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -2199,14 +2214,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -2214,9 +2229,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -2245,14 +2260,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -2260,9 +2275,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -2281,14 +2296,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -2296,9 +2311,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -2322,14 +2337,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -2337,9 +2352,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -2358,14 +2373,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -2373,9 +2388,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -2399,14 +2414,14 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -2414,9 +2429,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -2450,14 +2465,14 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -2465,9 +2480,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -2496,14 +2511,14 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -2511,9 +2526,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -2532,14 +2547,14 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -2547,9 +2562,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         }
       ]
     },
@@ -2563,14 +2578,14 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -2578,9 +2593,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         }
       ]
     },
@@ -2594,14 +2609,14 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -2609,9 +2624,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -2635,14 +2650,14 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -2650,9 +2665,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -2676,14 +2691,14 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -2691,9 +2706,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/sentinel-master-rbac.yaml",
@@ -2792,14 +2807,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -2807,9 +2822,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         }
       ]
     },
@@ -2823,14 +2838,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -2838,9 +2853,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -2874,14 +2889,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -2889,9 +2904,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/job.yaml",
@@ -2915,14 +2930,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -2930,9 +2945,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/job.yaml",
@@ -2956,14 +2971,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -2971,9 +2986,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -2997,14 +3012,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -3012,9 +3027,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -3038,14 +3053,14 @@
           "column": 7
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -3053,9 +3068,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -3074,14 +3089,14 @@
           "column": 7
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -3089,9 +3104,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -3110,14 +3125,14 @@
           "column": 7
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -3125,9 +3140,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -3146,14 +3161,14 @@
           "column": 7
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -3161,9 +3176,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -3182,14 +3197,14 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -3197,9 +3212,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -3283,14 +3298,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -3298,9 +3313,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -3319,14 +3334,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -3334,9 +3349,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -3355,14 +3370,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -3370,9 +3385,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -3391,14 +3406,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -3406,9 +3421,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -3427,14 +3442,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -3442,9 +3457,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -3463,14 +3478,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -3478,9 +3493,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -3499,14 +3514,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -3514,9 +3529,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -3550,14 +3565,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -3565,9 +3580,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -3591,14 +3606,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -3606,9 +3621,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -3627,14 +3642,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -3642,9 +3657,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -3663,14 +3678,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -3678,9 +3693,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -3699,14 +3714,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -3714,9 +3729,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -3735,14 +3750,14 @@
           "column": 7
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -3750,9 +3765,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -3771,14 +3786,14 @@
           "column": 7
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -3786,9 +3801,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -3807,14 +3822,14 @@
           "column": 7
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -3822,9 +3837,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -3843,14 +3858,14 @@
           "column": 7
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -3858,9 +3873,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -3879,14 +3894,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -3894,9 +3909,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/metrics-service.yaml",
@@ -3915,14 +3930,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -3930,9 +3945,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/metrics-service.yaml",
@@ -3956,14 +3971,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -3971,9 +3986,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/metrics-service.yaml",
@@ -3997,14 +4012,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -4012,9 +4027,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/metrics-service.yaml",
@@ -4038,14 +4053,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -4053,9 +4068,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/metrics-service.yaml",
@@ -4079,14 +4094,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -4094,9 +4109,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/networkpolicy.yaml",
@@ -4120,14 +4135,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -4135,9 +4150,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/metrics-service.yaml",
@@ -4181,14 +4196,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -4196,9 +4211,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/servicemonitor.yaml",
@@ -4217,14 +4232,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -4232,9 +4247,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/servicemonitor.yaml",
@@ -4253,14 +4268,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -4268,9 +4283,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/servicemonitor.yaml",
@@ -4294,14 +4309,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -4309,9 +4324,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/servicemonitor.yaml",
@@ -4335,14 +4350,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -4350,9 +4365,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/servicemonitor.yaml",
@@ -4376,14 +4391,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -4391,9 +4406,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         }
       ]
     },
@@ -4407,14 +4422,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -4422,9 +4437,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/servicemonitor.yaml",
@@ -4443,14 +4458,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -4458,9 +4473,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/servicemonitor.yaml",
@@ -4484,14 +4499,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -4499,9 +4514,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/servicemonitor.yaml",
@@ -4525,14 +4540,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -4540,9 +4555,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/servicemonitor.yaml",
@@ -4561,14 +4576,14 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -4576,9 +4591,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/servicemonitor.yaml",
@@ -4677,14 +4692,14 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -4692,9 +4707,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         }
       ]
     },
@@ -4708,14 +4723,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -4723,9 +4738,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/networkpolicy.yaml",
@@ -4754,14 +4769,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -4769,9 +4784,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/networkpolicy.yaml",
@@ -4790,14 +4805,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -4805,9 +4820,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/networkpolicy.yaml",
@@ -4826,14 +4841,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -4841,9 +4856,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/networkpolicy.yaml",
@@ -4862,14 +4877,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -4877,9 +4892,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/networkpolicy.yaml",
@@ -4898,14 +4913,14 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -4913,9 +4928,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/sentinel-master-deployment.yaml",
@@ -4939,14 +4954,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -4954,9 +4969,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/pdb.yaml",
@@ -4975,14 +4990,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -4990,9 +5005,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/pdb.yaml",
@@ -5016,14 +5031,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -5031,9 +5046,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/pdb.yaml",
@@ -5057,14 +5072,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -5072,9 +5087,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -5093,14 +5108,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -5108,9 +5123,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -5129,14 +5144,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -5144,9 +5159,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -5175,14 +5190,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -5190,9 +5205,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -5221,14 +5236,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -5236,9 +5251,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -5257,14 +5272,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -5272,9 +5287,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -5293,14 +5308,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -5308,9 +5323,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -5334,14 +5349,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -5349,9 +5364,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -5375,14 +5390,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -5390,9 +5405,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -5411,14 +5426,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -5426,9 +5441,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -5447,14 +5462,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -5462,9 +5477,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -5483,14 +5498,14 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -5498,9 +5513,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -5529,14 +5544,14 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -5544,9 +5559,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -5570,14 +5585,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -5585,9 +5600,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -5616,14 +5631,14 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -5631,9 +5646,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -5652,14 +5667,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -5667,9 +5682,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -5688,14 +5703,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -5703,9 +5718,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -5724,14 +5739,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -5739,9 +5754,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -5760,14 +5775,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -5775,9 +5790,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -5796,14 +5811,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -5811,9 +5826,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -5832,14 +5847,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -5847,9 +5862,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -5868,14 +5883,14 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -5883,9 +5898,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/job.yaml",
@@ -5934,14 +5949,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -5949,9 +5964,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -5970,14 +5985,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -5985,9 +6000,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -6006,14 +6021,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -6021,9 +6036,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -6042,14 +6057,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -6057,9 +6072,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -6078,14 +6093,14 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -6093,9 +6108,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -6114,14 +6129,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -6129,9 +6144,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -6155,14 +6170,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -6170,9 +6185,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -6196,14 +6211,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -6211,9 +6226,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -6242,14 +6257,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -6257,9 +6272,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -6278,14 +6293,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -6293,9 +6308,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -6459,14 +6474,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -6474,9 +6489,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -6500,14 +6515,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -6515,9 +6530,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -6536,14 +6551,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -6551,9 +6566,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -6572,14 +6587,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -6587,9 +6602,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -6608,14 +6623,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -6623,9 +6638,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -6644,14 +6659,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -6659,9 +6674,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -6680,14 +6695,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -6695,9 +6710,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -6716,14 +6731,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -6731,9 +6746,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -6752,14 +6767,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -6767,9 +6782,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -6788,14 +6803,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -6803,9 +6818,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -6824,14 +6839,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -6839,9 +6854,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -6860,14 +6875,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -6875,9 +6890,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -6946,14 +6961,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -6961,9 +6976,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/sentinel-master-service.yaml",
@@ -6992,14 +7007,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -7007,9 +7022,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/sentinel-master-deployment.yaml",
@@ -7028,14 +7043,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -7043,9 +7058,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/sentinel-master-rbac.yaml",
@@ -7099,14 +7114,14 @@
           "column": 7
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -7114,9 +7129,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/sentinel-master-deployment.yaml",
@@ -7135,14 +7150,14 @@
           "column": 7
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -7150,9 +7165,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/sentinel-master-deployment.yaml",
@@ -7171,14 +7186,14 @@
           "column": 7
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -7186,9 +7201,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/sentinel-master-deployment.yaml",
@@ -7207,14 +7222,14 @@
           "column": 9
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -7222,9 +7237,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/sentinel-master-deployment.yaml",
@@ -7243,14 +7258,14 @@
           "column": 9
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -7258,9 +7273,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/sentinel-master-deployment.yaml",
@@ -7279,14 +7294,14 @@
           "column": 9
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -7294,9 +7309,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/sentinel-master-deployment.yaml",
@@ -7315,14 +7330,14 @@
           "column": 9
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -7330,9 +7345,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/sentinel-master-deployment.yaml",
@@ -7351,14 +7366,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -7366,9 +7381,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/sentinel-master-service.yaml",
@@ -7387,14 +7402,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -7402,9 +7417,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -7423,14 +7438,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -7438,9 +7453,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/networkpolicy.yaml",
@@ -7544,14 +7559,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -7559,9 +7574,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -7580,14 +7595,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -7595,9 +7610,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -7616,14 +7631,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -7631,9 +7646,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -7652,14 +7667,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -7667,9 +7682,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -7688,14 +7703,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -7703,9 +7718,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -7724,14 +7739,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -7739,9 +7754,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -7760,14 +7775,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -7775,9 +7790,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -7796,14 +7811,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -7811,9 +7826,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -7832,14 +7847,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -7847,9 +7862,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/prestop-configmap.yaml",
@@ -7868,14 +7883,14 @@
           "column": 7
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -7883,9 +7898,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -7904,14 +7919,14 @@
           "column": 7
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -7919,9 +7934,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -7940,14 +7955,14 @@
           "column": 7
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -7955,9 +7970,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -7976,14 +7991,14 @@
           "column": 7
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -7991,9 +8006,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -8012,14 +8027,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -8027,9 +8042,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/sentinel-service.yaml",
@@ -8048,14 +8063,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -8063,9 +8078,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/sentinel-service.yaml",
@@ -8084,14 +8099,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -8099,9 +8114,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/service.yaml",
@@ -8120,14 +8135,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -8135,9 +8150,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -8186,14 +8201,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -8201,9 +8216,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -8222,14 +8237,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -8237,9 +8252,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/service.yaml",
@@ -8273,14 +8288,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -8288,9 +8303,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -8469,14 +8484,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -8484,9 +8499,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/service.yaml",
@@ -8535,14 +8550,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -8550,9 +8565,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/serviceaccount.yaml",
@@ -8571,14 +8586,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -8586,9 +8601,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/serviceaccount.yaml",
@@ -8612,14 +8627,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -8627,9 +8642,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -8668,14 +8683,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -8683,9 +8698,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/sentinel-master-deployment.yaml",
@@ -8729,14 +8744,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -8744,9 +8759,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -8765,14 +8780,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -8780,9 +8795,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -8801,14 +8816,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -8816,9 +8831,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -8837,14 +8852,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -8852,9 +8867,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -8873,14 +8888,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -8888,9 +8903,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -8909,14 +8924,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -8924,9 +8939,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -8945,14 +8960,14 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -8960,9 +8975,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -8981,14 +8996,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -8996,9 +9011,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/configmap.yaml",
@@ -9022,14 +9037,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -9037,9 +9052,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -9083,14 +9098,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -9098,9 +9113,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -9139,14 +9154,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -9154,9 +9169,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -9195,14 +9210,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -9210,9 +9225,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -9241,14 +9256,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -9256,9 +9271,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -9287,14 +9302,14 @@
           "column": 5
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -9302,9 +9317,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -9343,14 +9358,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -9358,9 +9373,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -9499,14 +9514,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -9514,9 +9529,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -9535,14 +9550,14 @@
           "column": 3
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -9550,9 +9565,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -9646,14 +9661,14 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -9661,9 +9676,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -9687,14 +9702,14 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
+        },
+        {
           "file": "templates/job.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
         },
         {
           "file": "templates/headless-service.yaml",
@@ -9702,9 +9717,9 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
         },
         {
           "file": "templates/statefulset.yaml",
@@ -9716,32 +9731,6 @@
   ],
   "unused": [],
   "undefined": [
-    {
-      "id": ".Values.auth.acl.enabled",
-      "kinds": "/K/K/K/K",
-      "contexts": [
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 119,
-          "column": 3
-        },
-        {
-          "file": "templates/prestop-configmap.yaml",
-          "line": 160,
-          "column": 51
-        },
-        {
-          "file": "templates/sentinel-master-deployment.yaml",
-          "line": 141,
-          "column": 4
-        },
-        {
-          "file": "templates/job.yaml",
-          "line": 1,
-          "column": 1
-        }
-      ]
-    },
     {
       "id": ".extraObjects.*.*",
       "kinds": "/K/W/W",

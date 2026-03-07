@@ -227,6 +227,34 @@ func (s *Unittest) TestInclude_DictWithRootContextAndBuiltinObjects() {
 	vpath.EqualPaths(s, expected, paths)
 }
 
+// Test that dict with "context" -> $ followed by .context.Values.foo
+// strips the Values prefix and tracks the path correctly.
+func (s *Unittest) TestInclude_DictWithRootContextAndValues() {
+	helperTpl := `{{ define "test.tpl" }}{{ if .context.Values.auth.acl.enabled }}acl{{ end }}{{ end }}`
+	mainTpl := `{{ include "test.tpl" (dict "type" "init" "context" $) }}`
+
+	c := &chart.Chart{Templates: []*common.File{
+		{
+			Name: "templates/_helpers.yaml",
+			Data: []byte(helperTpl),
+		},
+		{
+			Name: "templates/main.yaml",
+			Data: []byte(mainTpl),
+		},
+	}}
+
+	paths, err := GetUsages(c)
+	s.Require().NoError(err)
+
+	// .context.Values.auth.acl.enabled should resolve to .auth.acl.enabled
+	// (Values prefix stripped because context is bound to root $)
+	expected := vpath.Paths{
+		np().Key("auth").Key("acl").Key("enabled"),
+	}
+	vpath.EqualPaths(s, expected, paths)
+}
+
 // Test that template definitions are NOT evaluated standalone.
 // Template definitions should only be evaluated when called via include/template.
 func (s *Unittest) TestInclude_TemplateDefsNotEvaluatedStandalone() {
