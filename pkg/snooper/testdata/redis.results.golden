@@ -1,10 +1,6 @@
 ==================================== redis =====================================
 
 ---------------------------------- Undefined -----------------------------------
-.Values.auth.acl.enabled         templates/statefulset.yaml:119:3
-                                 templates/prestop-configmap.yaml:160:51
-                                 templates/sentinel-master-deployment.yaml:141:4
-                                 templates/job.yaml:1:1
 .extraObjects.*.*                templates/extraobjects.yaml:1:1
 .extraPorts.*.containerPort      templates/statefulset.yaml:310:33
 .extraPorts.*.name               templates/sentinel-master-service.yaml:27:22
@@ -37,5 +33,5 @@
 
 =================================== Summary ====================================
 
-redis  0 Unused  12 Undefined  
-Total  0 Unused  12 Undefined  across 1 chart(s)
+redis  0 Unused  11 Undefined  
+Total  0 Unused  11 Undefined  across 1 chart(s)
