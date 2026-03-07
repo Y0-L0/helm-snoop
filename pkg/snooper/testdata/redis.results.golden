@@ -1,0 +1,41 @@
+==================================== redis =====================================
+
+---------------------------------- Undefined -----------------------------------
+.Values.auth.acl.enabled         templates/statefulset.yaml:119:3
+                                 templates/prestop-configmap.yaml:160:51
+                                 templates/sentinel-master-deployment.yaml:141:4
+                                 templates/job.yaml:1:1
+.extraObjects.*.*                templates/extraobjects.yaml:1:1
+.extraPorts.*.containerPort      templates/statefulset.yaml:310:33
+.extraPorts.*.name               templates/sentinel-master-service.yaml:27:22
+                                 templates/sentinel-master-service.yaml:28:16
+                                 templates/service.yaml:40:16
+                                 templates/master-service.yaml:26:22
+                                 templates/master-service.yaml:27:16
+                                 templates/statefulset.yaml:311:24
+                                 templates/headless-service.yaml:30:22
+                                 templates/service.yaml:39:22
+                                 templates/headless-service.yaml:31:16
+.extraPorts.*.port               templates/headless-service.yaml:29:16
+                                 templates/master-service.yaml:25:16
+                                 templates/service.yaml:38:16
+                                 templates/sentinel-master-service.yaml:26:16
+.extraPorts.*.targetPort         templates/headless-service.yaml:30:22
+                                 templates/service.yaml:39:22
+                                 templates/master-service.yaml:26:22
+                                 templates/sentinel-master-service.yaml:27:22
+.image                           templates/statefulset.yaml:43:25
+                                 templates/job.yaml:41:29
+.image.imagePullPolicy           templates/statefulset.yaml:88:8
+                                 templates/job.yaml:83:50
+.metrics.image.imagePullPolicy   templates/statefulset.yaml:88:8
+.sentinel.image.imagePullPolicy  templates/statefulset.yaml:88:8
+.sentinel.image.registry         templates/statefulset.yaml:77:45
+.targetPlatform                  templates/statefulset.yaml:163:13
+                                 templates/job.yaml:1:1
+                                 templates/sentinel-master-deployment.yaml:1:1
+
+=================================== Summary ====================================
+
+redis  0 Unused  12 Undefined  
+Total  0 Unused  12 Undefined  across 1 chart(s)
