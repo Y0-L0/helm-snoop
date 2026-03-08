@@ -11,25 +11,15 @@ import (
 
 // include "tpl.a" . should traverse the defined template and collect its .Values usage.
 func (s *Unittest) TestInclude_TraversesDefinedTemplate() {
-	c := &chart.Chart{Templates: []*common.File{
-		{
-			Name: "templates/_defs.yaml",
-			Data: []byte(`{{ define "tpl.a" }}{{ .Values.foo.bar }}{{ end }}`),
-		},
-		{
-			Name: "templates/cm.yaml",
-			Data: []byte(`
+	paths := s.parseChart(
+		testFile{"templates/_defs.yaml", `{{ define "tpl.a" }}{{ .Values.foo.bar }}{{ end }}`},
+		testFile{"templates/cm.yaml", `
 kind: ConfigMap
 metadata: { name: x }
 data:
   a: {{ include "tpl.a" . }}
-`),
-		},
-	}}
-	idx, err := BuildTemplateIndex(c)
-	s.Require().NoError(err)
-	paths, err := parseFile("", "templates/cm.yaml", c.Templates[1].Data, idx)
-	s.Require().NoError(err)
+`},
+	)
 
 	s.Require().Len(paths, 1)
 	s.Require().Equal(".foo.bar", paths[0].ID())
@@ -114,24 +104,10 @@ data:
 // Test that include with $ argument clears the prefix even when called
 // from within a with block.
 func (s *Unittest) TestInclude_RootContextClearsPrefix() {
-	c := &chart.Chart{Templates: []*common.File{
-		{
-			Name: "templates/_helpers.yaml",
-			// Use relative path .name which should be prefixed by current context
-			Data: []byte(`{{ define "test.tpl" }}{{ .name }}{{ end }}`),
-		},
-		{
-			Name: "templates/main.yaml",
-			// Call from within `with .Values.ics` but pass $ (root context)
-			Data: []byte(`{{ with .Values.ics }}{{ include "test.tpl" $ }}{{ end }}`),
-		},
-	}}
-
-	idx, err := BuildTemplateIndex(c)
-	s.Require().NoError(err)
-
-	paths, err := parseFile("", "templates/main.yaml", c.Templates[1].Data, idx)
-	s.Require().NoError(err)
+	paths := s.parseChart(
+		testFile{"templates/_helpers.yaml", `{{ define "test.tpl" }}{{ .name }}{{ end }}`},
+		testFile{"templates/main.yaml", `{{ with .Values.ics }}{{ include "test.tpl" $ }}{{ end }}`},
+	)
 
 	// Should have no paths:
 	// - with .Values.ics doesn't emit (only emits when body uses it)
@@ -143,24 +119,10 @@ func (s *Unittest) TestInclude_RootContextClearsPrefix() {
 
 // Test that include with . argument preserves the current prefix.
 func (s *Unittest) TestInclude_DotContextPreservesPrefix() {
-	c := &chart.Chart{Templates: []*common.File{
-		{
-			Name: "templates/_helpers.yaml",
-			// Use relative path .name which should be prefixed by current context
-			Data: []byte(`{{ define "test.tpl" }}{{ .name }}{{ end }}`),
-		},
-		{
-			Name: "templates/main.yaml",
-			// Call from within `with .Values.config` and pass . (current context)
-			Data: []byte(`{{ with .Values.config }}{{ include "test.tpl" . }}{{ end }}`),
-		},
-	}}
-
-	idx, err := BuildTemplateIndex(c)
-	s.Require().NoError(err)
-
-	paths, err := parseFile("", "templates/main.yaml", c.Templates[1].Data, idx)
-	s.Require().NoError(err)
+	paths := s.parseChart(
+		testFile{"templates/_helpers.yaml", `{{ define "test.tpl" }}{{ .name }}{{ end }}`},
+		testFile{"templates/main.yaml", `{{ with .Values.config }}{{ include "test.tpl" . }}{{ end }}`},
+	)
 
 	// Should have /config and /config/name (. preserves the config prefix)
 	expected := vpath.Paths{
@@ -172,24 +134,10 @@ func (s *Unittest) TestInclude_DotContextPreservesPrefix() {
 
 // Test that include with .Values.foo sets foo as the prefix.
 func (s *Unittest) TestInclude_ExplicitContextSetsPrefix() {
-	c := &chart.Chart{Templates: []*common.File{
-		{
-			Name: "templates/_helpers.yaml",
-			// Use relative path .name which should be prefixed by current context
-			Data: []byte(`{{ define "test.tpl" }}{{ .name }}{{ end }}`),
-		},
-		{
-			Name: "templates/main.yaml",
-			// Call include with explicit .Values.database context
-			Data: []byte(`{{ include "test.tpl" .Values.database }}`),
-		},
-	}}
-
-	idx, err := BuildTemplateIndex(c)
-	s.Require().NoError(err)
-
-	paths, err := parseFile("", "templates/main.yaml", c.Templates[1].Data, idx)
-	s.Require().NoError(err)
+	paths := s.parseChart(
+		testFile{"templates/_helpers.yaml", `{{ define "test.tpl" }}{{ .name }}{{ end }}`},
+		testFile{"templates/main.yaml", `{{ include "test.tpl" .Values.database }}`},
+	)
 
 	// Should have /database and /database/name
 	expected := vpath.Paths{
