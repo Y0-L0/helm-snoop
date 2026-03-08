@@ -22,8 +22,7 @@ data:
 	)
 
 	s.Require().Len(paths, 1)
-	s.Require().Equal(".foo.bar", paths[0].ID())
-	s.Require().Equal("/K/K", paths[0].KindsString())
+	vpath.EqualPath(s, vpath.NewPath("foo", "bar"), paths[0])
 }
 
 // Circular includes should terminate gracefully (not panic) once the per-template

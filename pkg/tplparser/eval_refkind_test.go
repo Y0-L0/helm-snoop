@@ -6,90 +6,74 @@ func (s *Unittest) TestRefKind_IfConditionMarkedChecked() {
 	paths := s.parse(`{{ if .Values.enabled }}yes{{ end }}`)
 
 	s.Require().Len(paths, 1)
-	s.Equal(".enabled", paths[0].ID())
-	s.Equal(vpath.Checked, paths[0].Usage)
+	vpath.EqualPath(s, vpath.NewCheckedPath("enabled"), paths[0])
 }
 
 func (s *Unittest) TestRefKind_IfBodyRemainsConsumed() {
 	paths := s.parse(`{{ if .Values.enabled }}{{ .Values.name }}{{ end }}`)
 
 	s.Require().Len(paths, 2)
-	s.Equal(".enabled", paths[0].ID())
-	s.Equal(vpath.Checked, paths[0].Usage)
-	s.Equal(".name", paths[1].ID())
-	s.Equal(vpath.Consumed, paths[1].Usage)
+	vpath.EqualPath(s, vpath.NewCheckedPath("enabled"), paths[0])
+	vpath.EqualPath(s, vpath.NewPath("name"), paths[1])
 }
 
 func (s *Unittest) TestRefKind_ElseIfConditionMarkedChecked() {
 	paths := s.parse(`{{ if .Values.a }}x{{ else if .Values.b }}y{{ end }}`)
 
 	s.Require().Len(paths, 2)
-	s.Equal(".a", paths[0].ID())
-	s.Equal(vpath.Checked, paths[0].Usage)
-	s.Equal(".b", paths[1].ID())
-	s.Equal(vpath.Checked, paths[1].Usage)
+	vpath.EqualPath(s, vpath.NewCheckedPath("a"), paths[0])
+	vpath.EqualPath(s, vpath.NewCheckedPath("b"), paths[1])
 }
 
 func (s *Unittest) TestRefKind_AndArgsMarkedChecked() {
 	paths := s.parse(`{{ if and .Values.a .Values.a.name }}yes{{ end }}`)
 
 	s.Require().Len(paths, 2)
-	s.Equal(".a", paths[0].ID())
-	s.Equal(vpath.Checked, paths[0].Usage)
-	s.Equal(".a.name", paths[1].ID())
-	s.Equal(vpath.Checked, paths[1].Usage)
+	vpath.EqualPath(s, vpath.NewCheckedPath("a"), paths[0])
+	vpath.EqualPath(s, vpath.NewCheckedPath("a", "name"), paths[1])
 }
 
 func (s *Unittest) TestRefKind_OrArgsMarkedChecked() {
 	paths := s.parse(`{{ if or .Values.a .Values.b }}yes{{ end }}`)
 
 	s.Require().Len(paths, 2)
-	s.Equal(".a", paths[0].ID())
-	s.Equal(vpath.Checked, paths[0].Usage)
-	s.Equal(".b", paths[1].ID())
-	s.Equal(vpath.Checked, paths[1].Usage)
+	vpath.EqualPath(s, vpath.NewCheckedPath("a"), paths[0])
+	vpath.EqualPath(s, vpath.NewCheckedPath("b"), paths[1])
 }
 
 func (s *Unittest) TestRefKind_LenMarkedChecked() {
 	paths := s.parse(`{{ len .Values.items }}`)
 
 	s.Require().Len(paths, 1)
-	s.Equal(".items", paths[0].ID())
-	s.Equal(vpath.Checked, paths[0].Usage)
+	vpath.EqualPath(s, vpath.NewCheckedPath("items"), paths[0])
 }
 
 func (s *Unittest) TestRefKind_ListMarkedChecked() {
 	paths := s.parse(`{{ list .Values.a }}`)
 
 	s.Require().Len(paths, 1)
-	s.Equal(".a", paths[0].ID())
-	s.Equal(vpath.Checked, paths[0].Usage)
+	vpath.EqualPath(s, vpath.NewCheckedPath("a"), paths[0])
 }
 
 func (s *Unittest) TestRefKind_FirstMarkedChecked() {
 	paths := s.parse(`{{ first .Values.items }}`)
 
 	s.Require().Len(paths, 1)
-	s.Equal(".items", paths[0].ID())
-	s.Equal(vpath.Checked, paths[0].Usage)
+	vpath.EqualPath(s, vpath.NewCheckedPath("items"), paths[0])
 }
 
 func (s *Unittest) TestRefKind_LastMarkedChecked() {
 	paths := s.parse(`{{ last .Values.items }}`)
 
 	s.Require().Len(paths, 1)
-	s.Equal(".items", paths[0].ID())
-	s.Equal(vpath.Checked, paths[0].Usage)
+	vpath.EqualPath(s, vpath.NewCheckedPath("items"), paths[0])
 }
 
 func (s *Unittest) TestRefKind_AndBodyRemainsConsumed() {
 	paths := s.parse(`{{ if and .Values.a .Values.b }}{{ .Values.name }}{{ end }}`)
 
 	s.Require().Len(paths, 3)
-	s.Equal(".a", paths[0].ID())
-	s.Equal(vpath.Checked, paths[0].Usage)
-	s.Equal(".b", paths[1].ID())
-	s.Equal(vpath.Checked, paths[1].Usage)
-	s.Equal(".name", paths[2].ID())
-	s.Equal(vpath.Consumed, paths[2].Usage)
+	vpath.EqualPath(s, vpath.NewCheckedPath("a"), paths[0])
+	vpath.EqualPath(s, vpath.NewCheckedPath("b"), paths[1])
+	vpath.EqualPath(s, vpath.NewPath("name"), paths[2])
 }
