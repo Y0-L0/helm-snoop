@@ -134,7 +134,7 @@ Examples:
 				return results.HasFindings()
 			}
 
-			if err := results.ToJSON(cmd.OutOrStdout(), showReferenced); err != nil {
+			if results.ToJSON(cmd.OutOrStdout(), showReferenced) != nil {
 				return errors.New("")
 			}
 			return results.HasFindings()
