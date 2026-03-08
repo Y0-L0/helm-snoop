@@ -323,34 +323,43 @@ func (e *evalCtx) evalVariableNode(node *parse.VariableNode) evalResult {
 
 	// Handle bare $ (root context)
 	if firstIdent == "$" {
-		if len(node.Ident) == 1 {
-			return evalResult{paths: vpath.Paths{vpath.NewPath()}}
-		}
-
-		if node.Ident[1] == "Values" {
-			if len(node.Ident) < 3 {
-				return evalResult{}
-			}
-			p := vpath.NewPath(node.Ident[2:]...)
-			return evalResult{paths: vpath.Paths{p}}
-		}
-
-		return evalResult{}
+		return evalRootVariable(node.Ident)
 	}
 
-	// Check for range/with variables: strip $ prefix
-	varName := firstIdent[1:]
+	// Named variable: strip $ prefix and look up
+	return e.evalNamedVariable(firstIdent[1:], node.Ident[1:])
+}
 
+// evalRootVariable handles $.Values.foo paths.
+func evalRootVariable(ident []string) evalResult {
+	if len(ident) == 1 {
+		return evalResult{paths: vpath.Paths{vpath.NewPath()}}
+	}
+	if ident[1] != "Values" || len(ident) < 3 {
+		return evalResult{}
+	}
+	p := vpath.NewPath(ident[2:]...)
+	return evalResult{paths: vpath.Paths{p}}
+}
+
+// evalNamedVariable resolves range/with variables and action-assigned variables.
+func (e *evalCtx) evalNamedVariable(varName string, fields []string) evalResult {
 	if e.variables != nil {
 		if basePath, ok := e.variables[varName]; ok {
-			if len(node.Ident) == 1 {
+			if len(fields) == 0 {
 				return evalResult{paths: []*vpath.Path{basePath}}
 			}
 			p := *basePath
-			for _, field := range node.Ident[1:] {
+			for _, field := range fields {
 				p = p.WithKey(field)
 			}
 			return evalResult{paths: []*vpath.Path{&p}}
+		}
+	}
+
+	if e.varResults != nil {
+		if result, ok := e.varResults[varName]; ok {
+			return result.resolveFields(fields)
 		}
 	}
 

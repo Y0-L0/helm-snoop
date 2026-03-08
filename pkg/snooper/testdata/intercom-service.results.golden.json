@@ -1122,8 +1122,8 @@
         },
         {
           "file": "templates/deployment.yaml",
-          "line": 26,
-          "column": 11
+          "line": 27,
+          "column": 33
         },
         {
           "file": "templates/secret-matrix.yaml",
@@ -1433,8 +1433,8 @@
         },
         {
           "file": "templates/deployment.yaml",
-          "line": 26,
-          "column": 11
+          "line": 27,
+          "column": 33
         },
         {
           "file": "templates/secret-oidc.yaml",
@@ -1512,8 +1512,8 @@
         },
         {
           "file": "templates/deployment.yaml",
-          "line": 26,
-          "column": 11
+          "line": 27,
+          "column": 33
         },
         {
           "file": "templates/secret-portal.yaml",
@@ -1654,8 +1654,8 @@
         },
         {
           "file": "templates/deployment.yaml",
-          "line": 26,
-          "column": 11
+          "line": 27,
+          "column": 33
         },
         {
           "file": "templates/secret-redis.yaml",
@@ -1931,8 +1931,8 @@
         },
         {
           "file": "templates/deployment.yaml",
-          "line": 26,
-          "column": 11
+          "line": 27,
+          "column": 33
         },
         {
           "file": "templates/secret-session.yaml",
@@ -2475,17 +2475,17 @@
         {
           "file": "templates/configmap-provisioning.yaml",
           "line": 20,
-          "column": 25
+          "column": 86
         },
         {
           "file": "templates/deployment.yaml",
-          "line": 22,
-          "column": 8
+          "line": 25,
+          "column": 24
         },
         {
           "file": "templates/secret.yaml",
-          "line": 24,
-          "column": 33
+          "line": 25,
+          "column": 28
         },
         {
           "file": "templates/provisioning-secret.yaml",
@@ -2495,17 +2495,17 @@
         {
           "file": "templates/ingress.yaml",
           "line": 22,
-          "column": 23
+          "column": 84
         },
         {
           "file": "templates/serviceaccount.yaml",
-          "line": 21,
-          "column": 85
+          "line": 1,
+          "column": 1
         },
         {
           "file": "templates/service.yaml",
-          "line": 24,
-          "column": 3
+          "line": 26,
+          "column": 9
         },
         {
           "file": "templates/configmap-ca.yaml",
@@ -2729,8 +2729,8 @@
         },
         {
           "file": "templates/deployment.yaml",
-          "line": 26,
-          "column": 11
+          "line": 27,
+          "column": 33
         }
       ]
     },

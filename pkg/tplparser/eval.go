@@ -32,6 +32,7 @@ type evalCtx struct {
 	paramDict    map[string]evalResult // Dict parameter structure (.key → nested result)
 	paramLits    map[string]string
 	variables    map[string]*vpath.Path
+	varResults   map[string]evalResult // Action-assigned variables ($ctx := ...)
 	idx          *TemplateIndex
 	inStack      map[string]int
 	depth        int
@@ -255,13 +256,28 @@ func (e *evalCtx) evalListNode(node *parse.ListNode) evalResult {
 }
 
 // evalActionNode evaluates an action node ({{ ... }}).
+// When the pipe declares a variable ($ctx := ...), the result is stored
+// so downstream variable references can recover dict structure.
 func (e *evalCtx) evalActionNode(node *parse.ActionNode) evalResult {
 	if node.Pipe != nil {
 		result := e.Eval(node.Pipe)
-		if !result.hasDict() {
+
+		varNames := extractVariableDecls(node.Pipe)
+		if len(varNames) > 0 {
+			e.storeVarResult(varNames[0], result)
+		} else if !result.hasDict() {
 			e.Emit(node.Pos, result.paths...)
 		}
+
 		return result
 	}
 	return evalResult{}
+}
+
+// storeVarResult stores an evalResult for an action-assigned variable.
+func (e *evalCtx) storeVarResult(name string, result evalResult) {
+	if e.varResults == nil {
+		e.varResults = make(map[string]evalResult)
+	}
+	e.varResults[name] = result
 }
