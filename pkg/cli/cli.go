@@ -14,6 +14,7 @@ import (
 
 	"github.com/y0-l0/helm-snoop/internal/assert"
 	"github.com/y0-l0/helm-snoop/pkg/appinfo"
+	"github.com/y0-l0/helm-snoop/pkg/config"
 	"github.com/y0-l0/helm-snoop/pkg/snooper"
 	"github.com/y0-l0/helm-snoop/pkg/termcolor"
 	"github.com/y0-l0/helm-snoop/pkg/vpath"
@@ -85,6 +86,8 @@ func NewParser(args []string, setupLogging func(slog.Level), snoop snooper.Snoop
 	var noColor bool
 	ignorePaths := &cliPaths{}
 	var valuesFiles []string
+	var configPath string
+	var noConfig bool
 	var jsonOutput bool
 	var showReferenced bool
 
@@ -124,13 +127,14 @@ Examples:
 			cmd.SilenceUsage = true
 			assert.Strict = false //nolint:reassign // strict mode is for dev/test only.
 
-			charts := make([]snooper.ChartSettings, len(chartRoots))
-			for i, root := range chartRoots {
-				charts[i] = snooper.ChartSettings{
-					Path:        root,
-					Ignore:      vpath.Paths(*ignorePaths),
-					ValuesFiles: valuesFiles,
-				}
+			charts, err := config.Resolve(chartRoots, config.Options{
+				ConfigPath:  configPath,
+				NoConfig:    noConfig,
+				Ignore:      vpath.Paths(*ignorePaths),
+				ValuesFiles: valuesFiles,
+			})
+			if err != nil {
+				return err
 			}
 
 			results, err := snoop(charts)
@@ -193,6 +197,20 @@ Repeatable. Paths match the dot-notation output format for easy copy-paste.`,
 		"f",
 		nil,
 		"Additional values files to include in the analysis. Repeatable.",
+	)
+
+	rootCmd.Flags().StringVar(
+		&configPath,
+		"config",
+		"",
+		"Path to .helm-snoop.yaml config file (default: auto-discover)",
+	)
+
+	rootCmd.Flags().BoolVar(
+		&noConfig,
+		"no-config",
+		false,
+		"Skip config file loading",
 	)
 
 	rootCmd.Flags().BoolVar(

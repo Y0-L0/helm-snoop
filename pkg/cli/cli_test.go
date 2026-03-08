@@ -215,3 +215,102 @@ func (s *Unittest) TestMultipleArgsDeduplication() {
 	s.Require().NoError(err)
 	s.Require().Len(tracker.calls, 1, "expected deduplication to single chart")
 }
+
+func (s *Unittest) TestConfigFlag() {
+	var captured []snooper.ChartSettings
+
+	mockSnoop := func(charts []snooper.ChartSettings) (snooper.Results, error) {
+		captured = charts
+		return snooper.Results{{}}, nil
+	}
+
+	dir := s.T().TempDir()
+	configPath := filepath.Join(dir, ".helm-snoop.yaml")
+	s.Require().NoError(os.WriteFile(configPath, []byte(`
+version: 0
+global:
+  ignore:
+    - .from.config
+`), 0o600))
+
+	chartPath := filepath.Join(testdataDir(), "test-chart")
+	command := NewParser(
+		[]string{"helm-snoop", "--config", configPath, chartPath},
+		snooper.SetupLogging,
+		mockSnoop,
+	)
+
+	err := command.Execute()
+	s.Require().NoError(err)
+	s.Require().Len(captured, 1)
+
+	var ids []string
+	for _, p := range captured[0].Ignore {
+		ids = append(ids, p.ID())
+	}
+	s.Contains(ids, ".from.config")
+}
+
+func (s *Unittest) TestNoConfigFlag() {
+	var captured []snooper.ChartSettings
+
+	mockSnoop := func(charts []snooper.ChartSettings) (snooper.Results, error) {
+		captured = charts
+		return snooper.Results{{}}, nil
+	}
+
+	chartPath := filepath.Join(testdataDir(), "test-chart")
+	command := NewParser(
+		[]string{"helm-snoop", "--no-config", chartPath},
+		snooper.SetupLogging,
+		mockSnoop,
+	)
+
+	err := command.Execute()
+	s.Require().NoError(err)
+	s.Require().Len(captured, 1)
+	s.Empty(captured[0].Ignore)
+	s.Empty(captured[0].ValuesFiles)
+	s.Nil(captured[0].ExtraValues)
+}
+
+func (s *Unittest) TestConfigAndCLIFlagsMerge() {
+	var captured []snooper.ChartSettings
+
+	mockSnoop := func(charts []snooper.ChartSettings) (snooper.Results, error) {
+		captured = charts
+		return snooper.Results{{}}, nil
+	}
+
+	dir := s.T().TempDir()
+	configPath := filepath.Join(dir, ".helm-snoop.yaml")
+	s.Require().NoError(os.WriteFile(configPath, []byte(`
+version: 0
+global:
+  ignore:
+    - .from.config
+`), 0o600))
+
+	chartPath := filepath.Join(testdataDir(), "test-chart")
+	command := NewParser(
+		[]string{
+			"helm-snoop",
+			"--config", configPath,
+			"-i", ".from.cli",
+			chartPath,
+		},
+		snooper.SetupLogging,
+		mockSnoop,
+	)
+
+	err := command.Execute()
+	s.Require().NoError(err)
+	s.Require().Len(captured, 1)
+
+	var ids []string
+	for _, p := range captured[0].Ignore {
+		ids = append(ids, p.ID())
+	}
+	s.Contains(ids, ".from.config")
+	s.Contains(ids, ".from.cli")
+}
