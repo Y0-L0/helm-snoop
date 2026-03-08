@@ -125,6 +125,68 @@ func getFn(ctx *evalCtx, call Call) evalResult {
 	return evalResult{paths: modifiedPaths}
 }
 
+// mergeFn merges dict structures from all arguments (first key wins).
+func mergeFn(ctx *evalCtx, call Call) evalResult {
+	return mergeArgs(ctx, call, false)
+}
+
+// mergeOverwriteFn merges dict structures (last key wins).
+func mergeOverwriteFn(ctx *evalCtx, call Call) evalResult {
+	return mergeArgs(ctx, call, true)
+}
+
+func mergeArgs(ctx *evalCtx, call Call, overwrite bool) evalResult {
+	results := make([]evalResult, len(call.Args))
+	var allPaths []*vpath.Path
+	hasDict := false
+
+	for i, arg := range call.Args {
+		results[i] = ctx.Eval(arg)
+		allPaths = append(allPaths, results[i].paths...)
+		hasDict = hasDict || results[i].dict != nil || results[i].dictLits != nil
+	}
+
+	if !hasDict {
+		return evalResult{paths: allPaths}
+	}
+
+	merged := make(map[string]*vpath.Path)
+	mergedLits := make(map[string]string)
+	for _, r := range results {
+		mergeDictInto(merged, r.dict, overwrite)
+		mergeLitsInto(mergedLits, r.dictLits, overwrite)
+	}
+
+	return evalResult{
+		paths:    allPaths,
+		dict:     orNil(merged),
+		dictLits: orNil(mergedLits),
+	}
+}
+
+func mergeDictInto(dst map[string]*vpath.Path, src map[string]*vpath.Path, overwrite bool) {
+	for k, v := range src {
+		if _, exists := dst[k]; !exists || overwrite {
+			dst[k] = v
+		}
+	}
+}
+
+func mergeLitsInto(dst map[string]string, src map[string]string, overwrite bool) {
+	for k, v := range src {
+		if _, exists := dst[k]; !exists || overwrite {
+			dst[k] = v
+		}
+	}
+}
+
+func orNil[M ~map[K]V, K comparable, V any](m M) M {
+	if len(m) == 0 {
+		return nil
+	}
+	return m
+}
+
 // defaultFn unions all argument paths and returns them.
 func defaultFn(ctx *evalCtx, call Call) evalResult {
 	var allPaths vpath.Paths
