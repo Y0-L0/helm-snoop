@@ -16,6 +16,12 @@ func getPath(paths Paths, i int) *Path {
 	return &Path{}
 }
 
+func EqualPath(eq equality, expected *Path, actual *Path) {
+	eq.Equal(expected.ID(), actual.ID())
+	eq.Equal(expected.KindsString(), actual.KindsString())
+	eq.Equal(expected.Usage, actual.Usage)
+}
+
 func EqualPaths(eq equality, expected Paths, actual Paths) {
 	slog.Debug("Asserting equal Paths", "expected", expected, "actual", actual)
 	sort.Sort(expected)
