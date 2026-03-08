@@ -44,7 +44,7 @@ func snoopChart(cs ChartSettings) (*Result, error) {
 		return nil, fmt.Errorf("failed to analyze the helm chart.\nerror: %w", err)
 	}
 
-	defined, err := loadDefinitions(chart.Raw, cs.ValuesFiles)
+	defined, err := loadDefinitions(chart.Raw, cs.ValuesFiles, cs.ExtraValues)
 	if err != nil {
 		return nil, err
 	}
@@ -69,9 +69,13 @@ func findRawFile(raw []*common.File, name string) []byte {
 	return nil
 }
 
-// loadDefinitions collects all defined value paths from the chart's values.yaml
-// and any additional values files provided on the command line.
-func loadDefinitions(raw []*common.File, extraFiles []string) (vpath.Paths, error) {
+// loadDefinitions collects all defined value paths from the chart's values.yaml,
+// additional values files, and inline extra values.
+func loadDefinitions(
+	raw []*common.File,
+	extraFiles []string,
+	extraValues map[string]any,
+) (vpath.Paths, error) {
 	defined, err := vpath.GetDefinitions(findRawFile(raw, "values.yaml"), "values.yaml")
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse values.yaml.\nerror: %w", err)
@@ -87,6 +91,10 @@ func loadDefinitions(raw []*common.File, extraFiles []string) (vpath.Paths, erro
 			return nil, fmt.Errorf("failed to parse values file %s.\nerror: %w", f, err)
 		}
 		defined = append(defined, extra...)
+	}
+
+	if len(extraValues) > 0 {
+		defined = append(defined, vpath.GetDefinitionsFromMap(extraValues, "extraValues")...)
 	}
 
 	return defined, nil
