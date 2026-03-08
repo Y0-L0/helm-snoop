@@ -31,8 +31,7 @@ type evalCtx struct {
 	prefixes     vpath.Paths
 	paramDict    map[string]evalResult // Dict parameter structure (.key → nested result)
 	paramLits    map[string]string
-	variables    map[string]*vpath.Path
-	varResults   map[string]evalResult // Action-assigned variables ($ctx := ...)
+	variables    map[string]evalResult
 	idx          *TemplateIndex
 	inStack      map[string]int
 	depth        int
@@ -164,9 +163,9 @@ func (e *evalCtx) WithVariables(pipe *parse.PipeNode, prefixes vpath.Paths, useL
 	}
 
 	oldVars := e.variables
-	newVars := make(map[string]*vpath.Path)
+	newVars := make(map[string]evalResult)
 	maps.Copy(newVars, oldVars)
-	newVars[varName] = prefixes[0]
+	newVars[varName] = evalResult{paths: vpath.Paths{prefixes[0]}}
 	e.variables = newVars
 
 	return func() {
@@ -276,8 +275,8 @@ func (e *evalCtx) evalActionNode(node *parse.ActionNode) evalResult {
 
 // storeVarResult stores an evalResult for an action-assigned variable.
 func (e *evalCtx) storeVarResult(name string, result evalResult) {
-	if e.varResults == nil {
-		e.varResults = make(map[string]evalResult)
+	if e.variables == nil {
+		e.variables = make(map[string]evalResult)
 	}
-	e.varResults[name] = result
+	e.variables[name] = result
 }
