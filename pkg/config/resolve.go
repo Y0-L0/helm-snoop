@@ -139,7 +139,10 @@ func resolvePaths(paths []string, configDir string) []string {
 	return out
 }
 
+const configFileName = ".helm-snoop.yaml"
+
 // loadConfigFile returns the config file contents and path.
+// If explicit is set, reads that file. Otherwise walks up from CWD.
 // Returns (nil, "", nil) if no config file is found.
 func loadConfigFile(explicit string) ([]byte, string, error) {
 	if explicit != "" {
@@ -153,5 +156,35 @@ func loadConfigFile(explicit string) ([]byte, string, error) {
 		}
 		return data, abs, nil
 	}
-	return nil, "", nil
+
+	path, err := discover(".")
+	if err != nil || path == "" {
+		return nil, "", err
+	}
+
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return nil, "", fmt.Errorf("reading config file: %w", err)
+	}
+	return data, path, nil
+}
+
+// discover walks up from startDir looking for .helm-snoop.yaml.
+// Returns the absolute path if found, or ("", nil) if not found.
+func discover(startDir string) (string, error) {
+	dir, err := filepath.Abs(startDir)
+	if err != nil {
+		return "", err
+	}
+	for {
+		candidate := filepath.Join(dir, configFileName)
+		if _, err := os.Stat(candidate); err == nil {
+			return candidate, nil
+		}
+		parent := filepath.Dir(dir)
+		if parent == dir {
+			return "", nil
+		}
+		dir = parent
+	}
 }
