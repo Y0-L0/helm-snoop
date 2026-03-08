@@ -149,3 +149,97 @@ func (s *Unittest) TestGetDefinitions_EmptyCollectionContexts() {
 	s.Equal(Context{FileName: "values.yaml", Line: 2, Column: 1},
 		byID[".items"])
 }
+
+func (s *Unittest) TestGetDefinitionsFromMap() {
+	testCases := []struct {
+		name     string
+		m        map[string]any
+		expected Paths
+	}{
+		{
+			name: "nested map",
+			m: map[string]any{
+				"image": map[string]any{
+					"repository": "nginx",
+					"tag":        "latest",
+				},
+			},
+			expected: Paths{
+				np().Key("image").Key("repository"),
+				np().Key("image").Key("tag"),
+			},
+		},
+		{
+			name:     "nil map",
+			m:        nil,
+			expected: nil,
+		},
+		{
+			name:     "empty map",
+			m:        map[string]any{},
+			expected: nil,
+		},
+		{
+			name: "scalar values",
+			m: map[string]any{
+				"replicas": 3,
+				"enabled":  true,
+				"name":     "test",
+			},
+			expected: Paths{
+				np().Key("enabled"),
+				np().Key("name"),
+				np().Key("replicas"),
+			},
+		},
+		{
+			name: "sequence",
+			m: map[string]any{
+				"items": []any{"a", "b"},
+			},
+			expected: Paths{
+				np().Key("items").Idx("0"),
+				np().Key("items").Idx("1"),
+			},
+		},
+		{
+			name: "empty nested collections",
+			m: map[string]any{
+				"annotations": map[string]any{},
+				"items":       []any{},
+			},
+			expected: Paths{
+				np().Key("annotations"),
+				np().Key("items"),
+			},
+		},
+	}
+
+	for _, tc := range testCases {
+		s.Run(tc.name, func() {
+			out := GetDefinitionsFromMap(tc.m, "test-source")
+			EqualPaths(s, tc.expected, out)
+		})
+	}
+}
+
+func (s *Unittest) TestGetDefinitionsFromMap_HasSourceContext() {
+	m := map[string]any{
+		"key": "value",
+	}
+	out := GetDefinitionsFromMap(m, "my-config.yaml:global.extraValues")
+	s.Require().Len(out, 1)
+	s.Require().Len(out[0].Contexts, 1)
+	s.Equal("my-config.yaml:global.extraValues", out[0].Contexts[0].FileName)
+}
+
+func (s *Unittest) TestFormatMapSource() {
+	s.Equal(
+		"config.yaml:global.extraValues",
+		FormatMapSource("config.yaml", ""),
+	)
+	s.Equal(
+		"config.yaml:charts.my-chart.extraValues",
+		FormatMapSource("config.yaml", "my-chart"),
+	)
+}
