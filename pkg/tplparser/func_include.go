@@ -24,7 +24,7 @@ func includeFn(ctx *evalCtx, call Call) evalResult {
 
 	// 3. Determine context for template body
 	var templatePrefix *vpath.Path
-	var dictPaths map[string]*vpath.Path
+	var dictParams map[string]evalResult
 	var dictLits map[string]string
 	isRootContext := false
 
@@ -36,8 +36,8 @@ func includeFn(ctx *evalCtx, call Call) evalResult {
 		} else {
 			ctxResult := ctx.Eval(ctxArg)
 
-			if ctxResult.dict != nil || ctxResult.dictLits != nil {
-				dictPaths = ctxResult.dict
+			if ctxResult.hasDict() {
+				dictParams = ctxResult.dict
 				dictLits = ctxResult.dictLits
 			} else {
 				ctx.Emit(call.Node.Position(), ctxResult.paths...)
@@ -105,8 +105,8 @@ func includeFn(ctx *evalCtx, call Call) evalResult {
 	switch {
 	case isRootContext:
 		restore = ctx.WithPrefixes(nil)
-	case dictPaths != nil || dictLits != nil:
-		restore = ctx.WithDictParams(dictPaths, dictLits)
+	case dictParams != nil || dictLits != nil:
+		restore = ctx.WithDictParams(dictParams, dictLits)
 	case templatePrefix != nil:
 		restore = ctx.WithPrefixes(vpath.Paths{templatePrefix})
 	default:

@@ -21,10 +21,10 @@ func isBuiltinObject(field string) bool {
 }
 
 func (e *evalCtx) evalParamPaths(firstField string, restFields []string) (evalResult, bool) {
-	if e.paramPaths == nil {
+	if e.paramDict == nil {
 		return evalResult{}, false
 	}
-	basePath, ok := e.paramPaths[firstField]
+	base, ok := e.paramDict[firstField]
 	if !ok {
 		return evalResult{}, false
 	}
@@ -34,18 +34,15 @@ func (e *evalCtx) evalParamPaths(firstField string, restFields []string) (evalRe
 	}
 
 	// Strip .param.Values.foo → .foo when param is bound to root ($).
-	if basePath.ID() == "." && len(restFields) > 0 && restFields[0] == "Values" { //nolint:goconst
+	if len(base.paths) > 0 && base.paths[0].ID() == "." && len(restFields) > 0 &&
+		restFields[0] == "Values" { //nolint:goconst
 		restFields = restFields[1:]
 		if len(restFields) == 0 {
 			return evalResult{}, true
 		}
 	}
 
-	p := *basePath
-	for _, field := range restFields {
-		p = p.WithKey(field)
-	}
-	return evalResult{paths: []*vpath.Path{&p}}, true
+	return base.resolveFields(restFields), true
 }
 
 func (e *evalCtx) evalParamLits(firstField string, restFields []string) (evalResult, bool) {
@@ -306,7 +303,7 @@ func (e *evalCtx) evalWithNode(node *parse.WithNode) evalResult {
 func (e *evalCtx) evalTemplateNode(node *parse.TemplateNode) evalResult {
 	if node.Pipe != nil {
 		result := e.Eval(node.Pipe)
-		if result.dict == nil && result.dictLits == nil {
+		if !result.hasDict() {
 			e.Emit(node.Pipe.Pos, result.paths...)
 		}
 	}

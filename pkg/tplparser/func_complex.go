@@ -13,7 +13,7 @@ import (
 
 // dictFn builds both conservative union AND structure tracking.
 func dictFn(ctx *evalCtx, call Call) evalResult {
-	dict := make(map[string]*vpath.Path)
+	dict := make(map[string]evalResult)
 	dictLits := make(map[string]string)
 	var allPaths []*vpath.Path
 
@@ -28,8 +28,8 @@ func dictFn(ctx *evalCtx, call Call) evalResult {
 		}
 		key := keyResult.args[0]
 
-		if len(valResult.paths) > 0 {
-			dict[key] = valResult.paths[0]
+		if len(valResult.paths) > 0 || valResult.dict != nil {
+			dict[key] = valResult
 		}
 
 		if len(valResult.args) > 0 {
@@ -39,8 +39,8 @@ func dictFn(ctx *evalCtx, call Call) evalResult {
 
 	return evalResult{
 		paths:    allPaths,
-		dict:     dict,
-		dictLits: dictLits,
+		dict:     orNil(dict),
+		dictLits: orNil(dictLits),
 	}
 }
 
@@ -56,18 +56,15 @@ func indexFn(ctx *evalCtx, call Call) evalResult {
 
 	// Check for dict structure
 	if baseResult.dict != nil {
-		var resolvedPaths []*vpath.Path
-
+		// Resolve through dict for each key arg, chaining results.
+		result := baseResult
 		for _, arg := range call.Args[1:] {
 			keyResult := ctx.Eval(arg)
-			for _, key := range keyResult.args {
-				if p, ok := baseResult.dict[key]; ok {
-					resolvedPaths = append(resolvedPaths, p)
-				}
+			if len(keyResult.args) == 1 {
+				result = result.resolveFields(keyResult.args)
 			}
 		}
-
-		return evalResult{paths: resolvedPaths}
+		return result
 	}
 
 	// Fall back to conservative: append keys to all paths
@@ -102,10 +99,7 @@ func getFn(ctx *evalCtx, call Call) evalResult {
 
 	// Check for dict structure
 	if baseResult.dict != nil && len(keyResult.args) == 1 {
-		if p, ok := baseResult.dict[keyResult.args[0]]; ok {
-			return evalResult{paths: []*vpath.Path{p}}
-		}
-		return evalResult{}
+		return baseResult.resolveFields(keyResult.args)
 	}
 
 	// Fall back to conservative
@@ -143,14 +137,14 @@ func mergeArgs(ctx *evalCtx, call Call, overwrite bool) evalResult {
 	for i, arg := range call.Args {
 		results[i] = ctx.Eval(arg)
 		allPaths = append(allPaths, results[i].paths...)
-		hasDict = hasDict || results[i].dict != nil || results[i].dictLits != nil
+		hasDict = hasDict || results[i].hasDict()
 	}
 
 	if !hasDict {
 		return evalResult{paths: allPaths}
 	}
 
-	merged := make(map[string]*vpath.Path)
+	merged := make(map[string]evalResult)
 	mergedLits := make(map[string]string)
 	for _, r := range results {
 		mergeDictInto(merged, r.dict, overwrite)
@@ -164,7 +158,7 @@ func mergeArgs(ctx *evalCtx, call Call, overwrite bool) evalResult {
 	}
 }
 
-func mergeDictInto(dst map[string]*vpath.Path, src map[string]*vpath.Path, overwrite bool) {
+func mergeDictInto(dst map[string]evalResult, src map[string]evalResult, overwrite bool) {
 	for k, v := range src {
 		if _, exists := dst[k]; !exists || overwrite {
 			dst[k] = v

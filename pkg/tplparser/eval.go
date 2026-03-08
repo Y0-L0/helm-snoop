@@ -29,7 +29,7 @@ type evalCtx struct {
 	tree         *parse.Tree
 	out          *vpath.Paths
 	prefixes     vpath.Paths
-	paramPaths   map[string]*vpath.Path
+	paramDict    map[string]evalResult // Dict parameter structure (.key → nested result)
 	paramLits    map[string]string
 	variables    map[string]*vpath.Path
 	idx          *TemplateIndex
@@ -116,13 +116,13 @@ func (e *evalCtx) hasPrefix() bool {
 }
 
 // WithDictParams sets dict parameter mappings and returns a cleanup function.
-func (e *evalCtx) WithDictParams(paths map[string]*vpath.Path, lits map[string]string) func() {
-	oldPaths := e.paramPaths
+func (e *evalCtx) WithDictParams(dict map[string]evalResult, lits map[string]string) func() {
+	oldDict := e.paramDict
 	oldLits := e.paramLits
-	e.paramPaths = paths
+	e.paramDict = dict
 	e.paramLits = lits
 	return func() {
-		e.paramPaths = oldPaths
+		e.paramDict = oldDict
 		e.paramLits = oldLits
 	}
 }
@@ -258,7 +258,7 @@ func (e *evalCtx) evalListNode(node *parse.ListNode) evalResult {
 func (e *evalCtx) evalActionNode(node *parse.ActionNode) evalResult {
 	if node.Pipe != nil {
 		result := e.Eval(node.Pipe)
-		if result.dict == nil && result.dictLits == nil {
+		if !result.hasDict() {
 			e.Emit(node.Pos, result.paths...)
 		}
 		return result

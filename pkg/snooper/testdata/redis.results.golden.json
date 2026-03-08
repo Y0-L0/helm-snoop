@@ -813,6 +813,11 @@
           "column": 43
         },
         {
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 18
+        },
+        {
           "file": "templates/sentinel-master-deployment.yaml",
           "line": 1,
           "column": 1
@@ -826,11 +831,6 @@
           "file": "templates/statefulset.yaml",
           "line": 131,
           "column": 11
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 18
         },
         {
           "file": "templates/statefulset.yaml",
@@ -2859,8 +2859,18 @@
         },
         {
           "file": "templates/statefulset.yaml",
+          "line": 79,
+          "column": 51
+        },
+        {
+          "file": "templates/statefulset.yaml",
           "line": 80,
           "column": 13
+        },
+        {
+          "file": "templates/job.yaml",
+          "line": 77,
+          "column": 120
         },
         {
           "file": "templates/job.yaml",
