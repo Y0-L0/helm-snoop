@@ -28,33 +28,16 @@ data:
 // Circular includes should terminate gracefully (not panic) once the per-template
 // recursion depth limit is reached.
 func (s *Unittest) TestInclude_RecursionTerminatesGracefully() {
-	c := &chart.Chart{Templates: []*common.File{
-		{
-			Name: "templates/_a.yaml",
-			Data: []byte(`
-{{ define "tpl.a" }}
-{{ include "tpl.b" . }}
-{{ end }}
-`),
-		},
-		{
-			Name: "templates/_b.yaml",
-			Data: []byte(`
-{{ define "tpl.b" }}
-{{ include "tpl.a" . }}
-{{ end }}
-`),
-		},
-		{
-			Name: "templates/cm.yaml",
-			Data: []byte(`
+	c := buildChart(
+		testFile{"templates/_a.yaml", "{{ define \"tpl.a\" }}{{ include \"tpl.b\" . }}{{ end }}"},
+		testFile{"templates/_b.yaml", "{{ define \"tpl.b\" }}{{ include \"tpl.a\" . }}{{ end }}"},
+		testFile{"templates/cm.yaml", `
 kind: ConfigMap
 metadata: { name: x }
 data:
   a: {{ include "tpl.a" . }}
-`),
-		},
-	}}
+`},
+	)
 	idx, err := BuildTemplateIndex(c)
 	s.Require().NoError(err)
 	s.Require().NotPanics(func() {
@@ -149,19 +132,13 @@ func (s *Unittest) TestInclude_ExplicitContextSetsPrefix() {
 // Test that dict with "context" -> $ followed by .context.Release.Name
 // should recognize Release as a built-in object and not track it.
 func (s *Unittest) TestInclude_DictWithRootContextAndBuiltinObjects() {
-	helperTpl := `{{ define "test.tpl" }}{{ .context.Release.Name }}{{ end }}`
-	mainTpl := `{{ range .Values.items }}{{ include "test.tpl" (dict "context" $) }}{{ end }}`
-
-	c := &chart.Chart{Templates: []*common.File{
-		{
-			Name: "templates/_helpers.yaml",
-			Data: []byte(helperTpl),
+	c := buildChart(
+		testFile{"templates/_helpers.yaml", `{{ define "test.tpl" }}{{ .context.Release.Name }}{{ end }}`},
+		testFile{
+			"templates/main.yaml",
+			`{{ range .Values.items }}{{ include "test.tpl" (dict "context" $) }}{{ end }}`,
 		},
-		{
-			Name: "templates/main.yaml",
-			Data: []byte(mainTpl),
-		},
-	}}
+	)
 
 	paths, err := GetUsages(c)
 	s.Require().NoError(err)
@@ -177,19 +154,13 @@ func (s *Unittest) TestInclude_DictWithRootContextAndBuiltinObjects() {
 // Test that dict with "context" -> $ followed by .context.Values.foo
 // strips the Values prefix and tracks the path correctly.
 func (s *Unittest) TestInclude_DictWithRootContextAndValues() {
-	helperTpl := `{{ define "test.tpl" }}{{ if .context.Values.auth.acl.enabled }}acl{{ end }}{{ end }}`
-	mainTpl := `{{ include "test.tpl" (dict "type" "init" "context" $) }}`
-
-	c := &chart.Chart{Templates: []*common.File{
-		{
-			Name: "templates/_helpers.yaml",
-			Data: []byte(helperTpl),
+	c := buildChart(
+		testFile{
+			"templates/_helpers.yaml",
+			`{{ define "test.tpl" }}{{ if .context.Values.auth.acl.enabled }}acl{{ end }}{{ end }}`,
 		},
-		{
-			Name: "templates/main.yaml",
-			Data: []byte(mainTpl),
-		},
-	}}
+		testFile{"templates/main.yaml", `{{ include "test.tpl" (dict "type" "init" "context" $) }}`},
+	)
 
 	paths, err := GetUsages(c)
 	s.Require().NoError(err)
@@ -221,16 +192,10 @@ Example usage:
 	mainTpl := `{{ include "test.tpl" (dict "customLabels" .Values.labels "context" .) }}
 {{ include "test.tpl" . }}`
 
-	c := &chart.Chart{Templates: []*common.File{
-		{
-			Name: "templates/_helpers.yaml",
-			Data: []byte(helperTpl),
-		},
-		{
-			Name: "templates/main.yaml",
-			Data: []byte(mainTpl),
-		},
-	}}
+	c := buildChart(
+		testFile{"templates/_helpers.yaml", helperTpl},
+		testFile{"templates/main.yaml", mainTpl},
+	)
 
 	paths, err := GetUsages(c)
 	s.Require().NoError(err)
