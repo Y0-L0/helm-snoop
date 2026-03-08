@@ -6750,8 +6750,18 @@
       "contexts": [
         {
           "file": "templates/deployment-authorization-api.yaml",
+          "line": 14,
+          "column": 52
+        },
+        {
+          "file": "templates/deployment-authorization-api.yaml",
           "line": 15,
           "column": 22
+        },
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 14,
+          "column": 27
         },
         {
           "file": "templates/deployment-authorization-api.yaml",
@@ -6760,18 +6770,8 @@
         },
         {
           "file": "templates/deployment-authorization-api.yaml",
-          "line": 14,
-          "column": 52
-        },
-        {
-          "file": "templates/deployment-authorization-api.yaml",
           "line": 122,
           "column": 20
-        },
-        {
-          "file": "templates/deployment-authorization-api.yaml",
-          "line": 14,
-          "column": 27
         }
       ]
     },
@@ -6779,6 +6779,16 @@
       "id": ".authorizationApi.extraVolumes.*",
       "kinds": "/K/K/W",
       "contexts": [
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 14,
+          "column": 52
+        },
+        {
+          "file": "templates/deployment-authorization-api.yaml",
+          "line": 14,
+          "column": 27
+        },
         {
           "file": "templates/deployment-authorization-api.yaml",
           "line": 16,
@@ -6793,16 +6803,6 @@
           "file": "templates/deployment-authorization-api.yaml",
           "line": 137,
           "column": 16
-        },
-        {
-          "file": "templates/deployment-authorization-api.yaml",
-          "line": 14,
-          "column": 52
-        },
-        {
-          "file": "templates/deployment-authorization-api.yaml",
-          "line": 14,
-          "column": 27
         }
       ]
     },
@@ -7195,22 +7195,22 @@
         {
           "file": "templates/deployment-management-api.yaml",
           "line": 13,
-          "column": 27
-        },
-        {
-          "file": "templates/deployment-management-api.yaml",
-          "line": 14,
-          "column": 8
+          "column": 2
         },
         {
           "file": "templates/deployment-management-api.yaml",
           "line": 13,
-          "column": 2
+          "column": 27
         },
         {
           "file": "templates/deployment-management-api.yaml",
           "line": 12,
           "column": 32
+        },
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 14,
+          "column": 8
         },
         {
           "file": "templates/deployment-management-api.yaml",
@@ -7226,7 +7226,17 @@
         {
           "file": "templates/deployment-management-api.yaml",
           "line": 13,
+          "column": 2
+        },
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 13,
           "column": 27
+        },
+        {
+          "file": "templates/deployment-management-api.yaml",
+          "line": 12,
+          "column": 32
         },
         {
           "file": "templates/deployment-management-api.yaml",
@@ -7237,16 +7247,6 @@
           "file": "templates/deployment-management-api.yaml",
           "line": 156,
           "column": 16
-        },
-        {
-          "file": "templates/deployment-management-api.yaml",
-          "line": 12,
-          "column": 32
-        },
-        {
-          "file": "templates/deployment-management-api.yaml",
-          "line": 13,
-          "column": 2
         }
       ]
     },
@@ -7449,22 +7449,22 @@
         {
           "file": "templates/job-provisioning.yaml",
           "line": 14,
-          "column": 36
-        },
-        {
-          "file": "templates/job-provisioning.yaml",
-          "line": 15,
-          "column": 17
+          "column": 11
         },
         {
           "file": "templates/job-provisioning.yaml",
           "line": 14,
-          "column": 11
+          "column": 36
         },
         {
           "file": "templates/job-provisioning.yaml",
           "line": 13,
           "column": 41
+        },
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 15,
+          "column": 17
         },
         {
           "file": "templates/job-provisioning.yaml",
@@ -7484,6 +7484,16 @@
       "contexts": [
         {
           "file": "templates/job-provisioning.yaml",
+          "line": 14,
+          "column": 11
+        },
+        {
+          "file": "templates/job-provisioning.yaml",
+          "line": 13,
+          "column": 41
+        },
+        {
+          "file": "templates/job-provisioning.yaml",
           "line": 15,
           "column": 17
         },
@@ -7494,18 +7504,8 @@
         },
         {
           "file": "templates/job-provisioning.yaml",
-          "line": 14,
-          "column": 11
-        },
-        {
-          "file": "templates/job-provisioning.yaml",
           "line": 197,
           "column": 16
-        },
-        {
-          "file": "templates/job-provisioning.yaml",
-          "line": 13,
-          "column": 41
         }
       ]
     },

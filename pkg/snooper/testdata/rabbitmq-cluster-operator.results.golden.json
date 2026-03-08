@@ -28,23 +28,23 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 121,
           "column": 22
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 120,
-          "column": 153
+          "column": 128
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 42,
           "column": 14
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 128
         }
       ]
     },
@@ -59,6 +59,11 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 121,
           "column": 22
         },
@@ -66,11 +71,6 @@
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 120,
           "column": 128
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -106,6 +106,11 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 121,
           "column": 22
         },
@@ -113,11 +118,6 @@
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 120,
           "column": 128
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -179,6 +179,11 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 121,
           "column": 22
         },
@@ -186,11 +191,6 @@
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 119,
           "column": 18
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -210,23 +210,23 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 121,
           "column": 22
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 120,
-          "column": 153
+          "column": 128
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 126,
           "column": 18
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 128
         }
       ]
     },
@@ -241,6 +241,11 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 121,
           "column": 22
         },
@@ -248,11 +253,6 @@
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 134,
           "column": 18
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -272,6 +272,11 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 121,
           "column": 22
         },
@@ -279,11 +284,6 @@
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 120,
           "column": 128
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -303,6 +303,11 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 121,
           "column": 22
         },
@@ -315,11 +320,6 @@
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 107,
           "column": 20
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
         }
       ]
     },
@@ -334,6 +334,11 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 121,
           "column": 22
         },
@@ -341,11 +346,6 @@
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 111,
           "column": 20
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -365,6 +365,11 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 121,
           "column": 22
         },
@@ -377,11 +382,6 @@
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 146,
           "column": 18
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
         }
       ]
     },
@@ -396,6 +396,11 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 121,
           "column": 22
         },
@@ -403,11 +408,6 @@
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 156,
           "column": 14
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -427,6 +427,11 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 121,
           "column": 22
         },
@@ -439,11 +444,6 @@
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 120,
           "column": 128
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
         }
       ]
     },
@@ -474,13 +474,13 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 121,
-          "column": 22
+          "line": 120,
+          "column": 153
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
+          "line": 121,
+          "column": 22
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -505,6 +505,11 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 121,
           "column": 22
         },
@@ -517,11 +522,6 @@
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 143,
           "column": 18
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
         }
       ]
     },
@@ -536,13 +536,13 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 121,
-          "column": 22
+          "line": 120,
+          "column": 153
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
+          "line": 121,
+          "column": 22
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -567,13 +567,13 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 121,
-          "column": 22
+          "line": 120,
+          "column": 153
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
+          "line": 121,
+          "column": 22
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -593,13 +593,13 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 121,
-          "column": 22
+          "line": 120,
+          "column": 153
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
+          "line": 121,
+          "column": 22
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -619,13 +619,13 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 121,
-          "column": 22
+          "line": 120,
+          "column": 153
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
+          "line": 121,
+          "column": 22
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -645,13 +645,13 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 121,
-          "column": 22
+          "line": 120,
+          "column": 153
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
+          "line": 121,
+          "column": 22
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -671,13 +671,13 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 121,
-          "column": 22
+          "line": 120,
+          "column": 153
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
+          "line": 121,
+          "column": 22
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -1615,6 +1615,11 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 121,
           "column": 22
         },
@@ -1622,11 +1627,6 @@
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 120,
           "column": 128
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -1709,6 +1709,11 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 121,
           "column": 22
         },
@@ -1716,11 +1721,6 @@
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 120,
           "column": 128
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -1881,6 +1881,11 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 121,
           "column": 22
         },
@@ -1888,11 +1893,6 @@
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 120,
           "column": 128
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -1912,6 +1912,11 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 121,
           "column": 22
         },
@@ -1919,11 +1924,6 @@
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 120,
           "column": 128
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
         }
       ]
     },
@@ -1938,6 +1938,11 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 121,
           "column": 22
         },
@@ -1945,11 +1950,6 @@
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 120,
           "column": 128
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
         }
       ]
     },
@@ -1964,6 +1964,11 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 121,
           "column": 22
         },
@@ -1971,11 +1976,6 @@
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 120,
           "column": 128
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
         }
       ]
     },
@@ -1990,6 +1990,11 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 121,
           "column": 22
         },
@@ -1997,11 +2002,6 @@
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 120,
           "column": 128
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
         }
       ]
     },
@@ -2016,6 +2016,11 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 121,
           "column": 22
         },
@@ -2023,11 +2028,6 @@
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 120,
           "column": 128
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
         }
       ]
     },
@@ -2169,6 +2169,11 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 121,
           "column": 22
         },
@@ -2181,11 +2186,6 @@
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 153,
           "column": 16
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
         }
       ]
     },
@@ -2200,13 +2200,13 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 121,
-          "column": 22
+          "line": 120,
+          "column": 153
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
+          "line": 121,
+          "column": 22
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -2231,13 +2231,13 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 121,
-          "column": 22
+          "line": 120,
+          "column": 153
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
+          "line": 121,
+          "column": 22
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -2257,13 +2257,13 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 121,
-          "column": 22
+          "line": 120,
+          "column": 153
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
+          "line": 121,
+          "column": 22
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -2283,13 +2283,13 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 121,
-          "column": 22
+          "line": 120,
+          "column": 153
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
+          "line": 121,
+          "column": 22
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -2309,13 +2309,13 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 121,
-          "column": 22
+          "line": 120,
+          "column": 153
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
+          "line": 121,
+          "column": 22
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -2335,13 +2335,13 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 121,
-          "column": 22
+          "line": 120,
+          "column": 153
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
+          "line": 121,
+          "column": 22
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -2382,23 +2382,23 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 121,
           "column": 22
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 120,
-          "column": 153
+          "column": 128
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 48,
           "column": 14
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 128
         }
       ]
     },
@@ -2413,6 +2413,11 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 121,
           "column": 22
         },
@@ -2420,11 +2425,6 @@
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 120,
           "column": 128
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -2532,6 +2532,11 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 121,
           "column": 22
         },
@@ -2558,12 +2563,27 @@
         {
           "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
           "line": 162,
+          "column": 1
+        },
+        {
+          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
+          "line": 162,
           "column": 26
+        },
+        {
+          "file": "templates/messaging-topology-operator/clusterrole.yaml",
+          "line": 383,
+          "column": 10
         },
         {
           "file": "templates/messaging-topology-operator/clusterrole.yaml",
           "line": 385,
           "column": 11
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 124,
+          "column": 31
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
@@ -2632,8 +2652,8 @@
         },
         {
           "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 162,
-          "column": 1
+          "line": 160,
+          "column": 5
         },
         {
           "file": "templates/cluster-operator/podmonitor.yaml",
@@ -2653,7 +2673,7 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 31
+          "column": 6
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
@@ -2669,11 +2689,6 @@
           "file": "templates/messaging-topology-operator/clusterrolebinding.yaml",
           "line": 31,
           "column": 10
-        },
-        {
-          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 160,
-          "column": 5
         },
         {
           "file": "templates/messaging-topology-operator/clusterrolebinding.yaml",
@@ -2694,11 +2709,6 @@
           "file": "templates/messaging-topology-operator/role.yaml",
           "line": 9,
           "column": 10
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 6
         },
         {
           "file": "templates/messaging-topology-operator/metrics-service.yaml",
@@ -2813,16 +2823,6 @@
         {
           "file": "templates/cluster-operator/aggregate-cluster-roles.yaml",
           "line": 14,
-          "column": 10
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
-        },
-        {
-          "file": "templates/messaging-topology-operator/clusterrole.yaml",
-          "line": 383,
           "column": 10
         },
         {
@@ -3081,6 +3081,11 @@
         {
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 59,
+          "column": 2
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 59,
           "column": 24
         },
         {
@@ -3102,17 +3107,17 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
+          "column": 31
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 124,
           "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
           "column": 6
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 31
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
@@ -3133,6 +3138,11 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
+          "column": 31
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 124,
           "column": 56
         },
         {
@@ -3144,11 +3154,6 @@
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
           "column": 6
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 31
         }
       ]
     },
@@ -3180,17 +3185,17 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
+          "column": 31
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 124,
           "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
           "column": 6
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 31
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
@@ -3253,22 +3258,22 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 56
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
           "column": 31
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 18
+          "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
           "column": 6
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 124,
+          "column": 18
         }
       ]
     },
@@ -3284,6 +3289,11 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
+          "column": 31
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 124,
           "column": 56
         },
         {
@@ -3295,11 +3305,6 @@
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 131,
           "column": 18
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 31
         }
       ]
     },
@@ -3315,6 +3320,11 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
+          "column": 31
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 124,
           "column": 56
         },
         {
@@ -3326,11 +3336,6 @@
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
           "column": 6
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 31
         }
       ]
     },
@@ -3447,12 +3452,12 @@
         },
         {
           "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 13,
+          "line": 10,
           "column": 11
         },
         {
           "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 10,
+          "line": 13,
           "column": 11
         }
       ]
@@ -3510,22 +3515,22 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
+          "column": 31
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 124,
           "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 31
+          "column": 6
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 101,
           "column": 20
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 6
         }
       ]
     },
@@ -3541,6 +3546,11 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
+          "column": 31
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 124,
           "column": 56
         },
         {
@@ -3552,11 +3562,6 @@
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
           "column": 6
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 31
         }
       ]
     },
@@ -3572,17 +3577,17 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
+          "column": 31
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 124,
           "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 109,
           "column": 20
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 31
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
@@ -3603,6 +3608,11 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
+          "column": 31
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 124,
           "column": 56
         },
         {
@@ -3614,11 +3624,6 @@
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 155,
           "column": 20
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 31
         }
       ]
     },
@@ -3634,22 +3639,22 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
+          "column": 31
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 124,
           "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 31
+          "column": 6
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 166,
           "column": 16
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 6
         }
       ]
     },
@@ -3686,17 +3691,17 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
+          "column": 31
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 124,
           "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 33,
           "column": 14
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 31
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
@@ -3754,6 +3759,11 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
+          "column": 31
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 124,
           "column": 56
         },
         {
@@ -3765,11 +3775,6 @@
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 68,
           "column": 16
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 31
         }
       ]
     },
@@ -3785,6 +3790,11 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
+          "column": 31
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 124,
           "column": 56
         },
         {
@@ -3796,11 +3806,6 @@
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 148,
           "column": 18
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 31
         }
       ]
     },
@@ -3816,12 +3821,12 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 56
+          "column": 31
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 31
+          "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
@@ -3847,12 +3852,12 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 56
+          "column": 31
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 31
+          "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
@@ -3873,12 +3878,12 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 56
+          "column": 31
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 31
+          "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
@@ -3899,12 +3904,12 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 56
+          "column": 31
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 31
+          "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
@@ -3925,12 +3930,12 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 56
+          "column": 31
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 31
+          "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
@@ -3951,12 +3956,12 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 56
+          "column": 31
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 31
+          "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
@@ -4782,17 +4787,17 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
+          "column": 31
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 124,
           "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
           "column": 6
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 31
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
@@ -4876,6 +4881,11 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
+          "column": 31
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 124,
           "column": 56
         },
         {
@@ -4887,11 +4897,6 @@
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
           "column": 6
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 31
         }
       ]
     },
@@ -5033,12 +5038,12 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 56
+          "column": 31
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 31
+          "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
@@ -5064,12 +5069,12 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 56
+          "column": 31
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 31
+          "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
@@ -5090,12 +5095,12 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 56
+          "column": 31
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 31
+          "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
@@ -5116,12 +5121,12 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 56
+          "column": 31
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 31
+          "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
@@ -5142,12 +5147,12 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 56
+          "column": 31
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 31
+          "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
@@ -5168,12 +5173,12 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 56
+          "column": 31
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 31
+          "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
@@ -5632,6 +5637,11 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
+          "column": 31
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 124,
           "column": 56
         },
         {
@@ -5643,11 +5653,6 @@
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
           "column": 6
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 31
         }
       ]
     },
@@ -5679,17 +5684,17 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
+          "column": 31
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 124,
           "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
           "column": 6
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 31
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
@@ -5710,17 +5715,17 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
+          "column": 31
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 124,
           "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
           "column": 6
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 31
         }
       ]
     },
@@ -5736,17 +5741,17 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
+          "column": 31
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 124,
           "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
           "column": 6
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 31
         }
       ]
     },
@@ -5762,17 +5767,17 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
+          "column": 31
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 124,
           "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
           "column": 6
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 31
         }
       ]
     },
@@ -5788,17 +5793,17 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
+          "column": 31
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 124,
           "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
           "column": 6
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 31
         }
       ]
     },
@@ -5814,17 +5819,17 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
+          "column": 31
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 124,
           "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
           "column": 6
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 31
         }
       ]
     },
@@ -5861,17 +5866,17 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
+          "column": 31
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 124,
           "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
           "column": 6
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 31
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
@@ -5892,12 +5897,12 @@
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 56
+          "column": 31
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
-          "column": 31
+          "column": 56
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
