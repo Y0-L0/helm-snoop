@@ -11,11 +11,11 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
-func mockSnoop(chartPaths []string, _ vpath.Paths, _ []string) (snooper.Results, error) {
+func mockSnoop(charts []snooper.ChartSettings) (snooper.Results, error) {
 	var results snooper.Results
-	for _, p := range chartPaths {
+	for _, c := range charts {
 		results = append(results, &snooper.Result{
-			ChartName:  filepath.Base(p),
+			ChartName:  filepath.Base(c.Path),
 			Referenced: vpath.Paths{},
 			Unused:     vpath.Paths{},
 			Undefined:  vpath.Paths{},
@@ -28,12 +28,12 @@ type trackingSnoop struct {
 	calls []string
 }
 
-func (t *trackingSnoop) snoop(chartPaths []string, _ vpath.Paths, _ []string) (snooper.Results, error) {
-	t.calls = append(t.calls, chartPaths...)
+func (t *trackingSnoop) snoop(charts []snooper.ChartSettings) (snooper.Results, error) {
 	var results snooper.Results
-	for _, p := range chartPaths {
+	for _, c := range charts {
+		t.calls = append(t.calls, c.Path)
 		results = append(results, &snooper.Result{
-			ChartName:  filepath.Base(p),
+			ChartName:  filepath.Base(c.Path),
 			Referenced: vpath.Paths{},
 			Unused:     vpath.Paths{},
 			Undefined:  vpath.Paths{},
@@ -173,13 +173,13 @@ func (s *Unittest) TestMultipleChartsSingleSummary() {
 	)
 	s.Require().NoError(err)
 
-	findingsSnoop := func(chartPaths []string, _ vpath.Paths, _ []string) (snooper.Results, error) {
+	findingsSnoop := func(charts []snooper.ChartSettings) (snooper.Results, error) {
 		var results snooper.Results
-		for _, chartPath := range chartPaths {
+		for _, c := range charts {
 			unused := vpath.NewPath("someUnused")
 			unused.Contexts = vpath.Contexts{{FileName: "values.yaml", Line: 1, Column: 1}}
 			results = append(results, &snooper.Result{
-				ChartName:  filepath.Base(chartPath),
+				ChartName:  filepath.Base(c.Path),
 				Referenced: vpath.Paths{},
 				Unused:     vpath.Paths{unused},
 				Undefined:  vpath.Paths{},

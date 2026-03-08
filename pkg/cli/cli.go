@@ -124,7 +124,16 @@ Examples:
 			cmd.SilenceUsage = true
 			assert.Strict = false //nolint:reassign // strict mode is for dev/test only.
 
-			results, err := snoop(chartRoots, vpath.Paths(*ignorePaths), valuesFiles)
+			charts := make([]snooper.ChartSettings, len(chartRoots))
+			for i, root := range chartRoots {
+				charts[i] = snooper.ChartSettings{
+					Path:        root,
+					Ignore:      vpath.Paths(*ignorePaths),
+					ValuesFiles: valuesFiles,
+				}
+			}
+
+			results, err := snoop(charts)
 			if err != nil {
 				return err
 			}
