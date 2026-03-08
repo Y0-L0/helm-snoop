@@ -11,12 +11,20 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
-type SnoopFunc func([]string, vpath.Paths, []string) (Results, error)
+// ChartSettings holds resolved per-chart configuration for analysis.
+type ChartSettings struct {
+	Path        string
+	Ignore      vpath.Paths
+	ValuesFiles []string
+	ExtraValues map[string]any
+}
 
-func Snoop(chartPaths []string, ignorePaths vpath.Paths, valuesFiles []string) (Results, error) {
+type SnoopFunc func([]ChartSettings) (Results, error)
+
+func Snoop(charts []ChartSettings) (Results, error) {
 	var results Results
-	for _, chartPath := range chartPaths {
-		result, err := snoopChart(chartPath, ignorePaths, valuesFiles)
+	for _, chart := range charts {
+		result, err := snoopChart(chart)
 		if err != nil {
 			return nil, err
 		}
@@ -25,8 +33,8 @@ func Snoop(chartPaths []string, ignorePaths vpath.Paths, valuesFiles []string) (
 	return results, nil
 }
 
-func snoopChart(chartPath string, ignorePaths vpath.Paths, valuesFiles []string) (*Result, error) {
-	chart, err := loader.Load(chartPath)
+func snoopChart(cs ChartSettings) (*Result, error) {
+	chart, err := loader.Load(cs.Path)
 	if err != nil {
 		return nil, fmt.Errorf("failed to read the helm chart.\nerror: %w", err)
 	}
@@ -36,7 +44,7 @@ func snoopChart(chartPath string, ignorePaths vpath.Paths, valuesFiles []string)
 		return nil, fmt.Errorf("failed to analyze the helm chart.\nerror: %w", err)
 	}
 
-	defined, err := loadDefinitions(chart.Raw, valuesFiles)
+	defined, err := loadDefinitions(chart.Raw, cs.ValuesFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -44,8 +52,8 @@ func snoopChart(chartPath string, ignorePaths vpath.Paths, valuesFiles []string)
 	result := &Result{ChartName: chart.Name()}
 	result.Referenced, result.Unused, result.Undefined = vpath.MergeJoinLoose(defined, used)
 
-	if len(ignorePaths) > 0 {
-		result = filterIgnoredWithMerge(result, ignorePaths)
+	if len(cs.Ignore) > 0 {
+		result = filterIgnoredWithMerge(result, cs.Ignore)
 	}
 
 	return result, nil
