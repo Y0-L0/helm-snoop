@@ -32,7 +32,18 @@ func includeFn(ctx *evalCtx, call Call) evalResult {
 		ctxArg := call.Args[1]
 
 		if varNode, ok := ctxArg.(*parse.VariableNode); ok && len(varNode.Ident) > 0 && varNode.Ident[0] == "$" {
-			isRootContext = true
+			// Check if this variable carries stored results (from $ctx := ...)
+			ctxResult := ctx.evalVariableNode(varNode)
+			switch {
+			case ctxResult.hasDict():
+				dictParams = ctxResult.dict
+				dictLits = ctxResult.dictLits
+			case len(ctxResult.paths) > 0 && ctxResult.paths[0].ID() != ".":
+				ctx.Emit(call.Node.Position(), ctxResult.paths...)
+				templatePrefix = ctxResult.paths[0]
+			default:
+				isRootContext = true
+			}
 		} else {
 			ctxResult := ctx.Eval(ctxArg)
 

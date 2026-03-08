@@ -136,9 +136,9 @@
           "column": 5
         },
         {
-          "file": "templates/cluster-operator/networkpolicy.yaml",
-          "line": 60,
-          "column": 20
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 151,
+          "column": 33
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -146,9 +146,41 @@
           "column": 42
         },
         {
+          "file": "templates/cluster-operator/networkpolicy.yaml",
+          "line": 60,
+          "column": 20
+        }
+      ]
+    },
+    {
+      "id": ".clusterOperator.containerSecurityContext.allowPrivilegeEscalation",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 220,
+          "column": 5
+        },
+        {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 151,
-          "column": 33
+          "line": 1,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "id": ".clusterOperator.containerSecurityContext.capabilities.drop.0",
+      "kinds": "/K/K/K/K/I",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 223,
+          "column": 7
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 1,
+          "column": 1
         }
       ]
     },
@@ -163,8 +195,125 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 69,
           "column": 18
+        }
+      ]
+    },
+    {
+      "id": ".clusterOperator.containerSecurityContext.privileged",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 216,
+          "column": 5
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "id": ".clusterOperator.containerSecurityContext.readOnlyRootFilesystem",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 218,
+          "column": 5
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "id": ".clusterOperator.containerSecurityContext.runAsGroup",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 212,
+          "column": 5
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "id": ".clusterOperator.containerSecurityContext.runAsNonRoot",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 214,
+          "column": 5
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "id": ".clusterOperator.containerSecurityContext.runAsUser",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 210,
+          "column": 5
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "id": ".clusterOperator.containerSecurityContext.seLinuxOptions",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 208,
+          "column": 5
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "id": ".clusterOperator.containerSecurityContext.seccompProfile.type",
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 226,
+          "column": 7
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 1,
+          "column": 1
         }
       ]
     },
@@ -189,13 +338,13 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 119,
-          "column": 18
+          "line": 120,
+          "column": 128
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 128
+          "line": 119,
+          "column": 18
         }
       ]
     },
@@ -251,13 +400,13 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 134,
-          "column": 18
+          "line": 120,
+          "column": 128
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 128
+          "line": 134,
+          "column": 18
         }
       ]
     },
@@ -282,13 +431,13 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 128
+          "line": 103,
+          "column": 20
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 103,
-          "column": 20
+          "line": 120,
+          "column": 128
         }
       ]
     },
@@ -344,13 +493,13 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 111,
-          "column": 20
+          "line": 120,
+          "column": 128
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 128
+          "line": 111,
+          "column": 20
         }
       ]
     },
@@ -406,13 +555,13 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 156,
-          "column": 14
+          "line": 120,
+          "column": 128
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 128
+          "line": 156,
+          "column": 14
         }
       ]
     },
@@ -460,6 +609,87 @@
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 68,
           "column": 31
+        }
+      ]
+    },
+    {
+      "id": ".clusterOperator.image.tag",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 91,
+          "column": 5
+        },
+        {
+          "file": "templates/cluster-operator/pdb.yaml",
+          "line": 16,
+          "column": 97
+        },
+        {
+          "file": "templates/cluster-operator/rolebinding.yaml",
+          "line": 18,
+          "column": 68
+        },
+        {
+          "file": "templates/messaging-topology-operator/clusterrolebinding.yaml",
+          "line": 17,
+          "column": 4
+        },
+        {
+          "file": "templates/cluster-operator/podmonitor.yaml",
+          "line": 13,
+          "column": 18
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 17,
+          "column": 12
+        },
+        {
+          "file": "templates/issuer.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/cluster-operator/networkpolicy.yaml",
+          "line": 16,
+          "column": 32
+        },
+        {
+          "file": "templates/cluster-operator/aggregate-cluster-roles.yaml",
+          "line": 15,
+          "column": 67
+        },
+        {
+          "file": "templates/cluster-operator/servicemonitor.yaml",
+          "line": 12,
+          "column": 9
+        },
+        {
+          "file": "templates/cluster-operator/sa.yaml",
+          "line": 13,
+          "column": 4
+        },
+        {
+          "file": "templates/cluster-operator/clusterrolebinding.yaml",
+          "line": 18,
+          "column": 53
+        },
+        {
+          "file": "templates/cluster-operator/clusterrole.yaml",
+          "line": 16,
+          "column": 28
+        },
+        {
+          "file": "templates/cluster-operator/role.yaml",
+          "line": 27,
+          "column": 13
+        },
+        {
+          "file": "templates/cluster-operator/metrics-service.yaml",
+          "line": 12,
+          "column": 78
         }
       ]
     },
@@ -734,17 +964,17 @@
         },
         {
           "file": "templates/cluster-operator/podmonitor.yaml",
+          "line": 33,
+          "column": 23
+        },
+        {
+          "file": "templates/cluster-operator/podmonitor.yaml",
           "line": 32,
           "column": 14
         },
         {
           "file": "templates/cluster-operator/podmonitor.yaml",
           "line": 58,
-          "column": 23
-        },
-        {
-          "file": "templates/cluster-operator/podmonitor.yaml",
-          "line": 33,
           "column": 23
         },
         {
@@ -770,8 +1000,8 @@
         },
         {
           "file": "templates/cluster-operator/podmonitor.yaml",
-          "line": 51,
-          "column": 14
+          "line": 52,
+          "column": 20
         },
         {
           "file": "templates/cluster-operator/podmonitor.yaml",
@@ -780,8 +1010,8 @@
         },
         {
           "file": "templates/cluster-operator/podmonitor.yaml",
-          "line": 52,
-          "column": 20
+          "line": 51,
+          "column": 14
         }
       ]
     },
@@ -885,13 +1115,13 @@
         },
         {
           "file": "templates/cluster-operator/podmonitor.yaml",
-          "line": 1,
-          "column": 1
+          "line": 39,
+          "column": 23
         },
         {
           "file": "templates/cluster-operator/podmonitor.yaml",
-          "line": 39,
-          "column": 23
+          "line": 1,
+          "column": 1
         },
         {
           "file": "templates/cluster-operator/podmonitor.yaml",
@@ -921,17 +1151,17 @@
         },
         {
           "file": "templates/cluster-operator/podmonitor.yaml",
-          "line": 54,
-          "column": 14
-        },
-        {
-          "file": "templates/cluster-operator/podmonitor.yaml",
           "line": 55,
           "column": 25
         },
         {
           "file": "templates/cluster-operator/podmonitor.yaml",
           "line": 35,
+          "column": 14
+        },
+        {
+          "file": "templates/cluster-operator/podmonitor.yaml",
+          "line": 54,
           "column": 14
         }
       ]
@@ -968,13 +1198,13 @@
         },
         {
           "file": "templates/cluster-operator/metrics-service.yaml",
-          "line": 19,
-          "column": 10
+          "line": 20,
+          "column": 17
         },
         {
           "file": "templates/cluster-operator/metrics-service.yaml",
-          "line": 20,
-          "column": 17
+          "line": 19,
+          "column": 10
         }
       ]
     },
@@ -1089,13 +1319,13 @@
         },
         {
           "file": "templates/cluster-operator/metrics-service.yaml",
-          "line": 40,
-          "column": 20
+          "line": 39,
+          "column": 156
         },
         {
           "file": "templates/cluster-operator/metrics-service.yaml",
-          "line": 39,
-          "column": 156
+          "line": 40,
+          "column": 20
         }
       ]
     },
@@ -1126,13 +1356,13 @@
         },
         {
           "file": "templates/cluster-operator/metrics-service.yaml",
-          "line": 28,
-          "column": 10
+          "line": 29,
+          "column": 23
         },
         {
           "file": "templates/cluster-operator/metrics-service.yaml",
-          "line": 29,
-          "column": 23
+          "line": 28,
+          "column": 10
         }
       ]
     },
@@ -1168,31 +1398,6 @@
         },
         {
           "file": "templates/cluster-operator/metrics-service.yaml",
-          "line": 16,
-          "column": 80
-        },
-        {
-          "file": "templates/cluster-operator/metrics-service.yaml",
-          "line": 22,
-          "column": 10
-        },
-        {
-          "file": "templates/cluster-operator/metrics-service.yaml",
-          "line": 15,
-          "column": 12
-        },
-        {
-          "file": "templates/cluster-operator/metrics-service.yaml",
-          "line": 16,
-          "column": 15
-        },
-        {
-          "file": "templates/cluster-operator/metrics-service.yaml",
-          "line": 39,
-          "column": 24
-        },
-        {
-          "file": "templates/cluster-operator/metrics-service.yaml",
           "line": 25,
           "column": 16
         },
@@ -1205,6 +1410,31 @@
           "file": "templates/cluster-operator/metrics-service.yaml",
           "line": 41,
           "column": 19
+        },
+        {
+          "file": "templates/cluster-operator/metrics-service.yaml",
+          "line": 39,
+          "column": 24
+        },
+        {
+          "file": "templates/cluster-operator/metrics-service.yaml",
+          "line": 22,
+          "column": 10
+        },
+        {
+          "file": "templates/cluster-operator/metrics-service.yaml",
+          "line": 16,
+          "column": 80
+        },
+        {
+          "file": "templates/cluster-operator/metrics-service.yaml",
+          "line": 16,
+          "column": 15
+        },
+        {
+          "file": "templates/cluster-operator/metrics-service.yaml",
+          "line": 15,
+          "column": 12
         }
       ]
     },
@@ -1235,13 +1465,13 @@
         },
         {
           "file": "templates/cluster-operator/servicemonitor.yaml",
-          "line": 38,
-          "column": 14
+          "line": 39,
+          "column": 23
         },
         {
           "file": "templates/cluster-operator/servicemonitor.yaml",
-          "line": 39,
-          "column": 23
+          "line": 38,
+          "column": 14
         }
       ]
     },
@@ -1351,13 +1581,13 @@
         },
         {
           "file": "templates/cluster-operator/servicemonitor.yaml",
-          "line": 29,
-          "column": 14
+          "line": 30,
+          "column": 16
         },
         {
           "file": "templates/cluster-operator/servicemonitor.yaml",
-          "line": 30,
-          "column": 16
+          "line": 29,
+          "column": 14
         }
       ]
     },
@@ -1662,13 +1892,13 @@
         },
         {
           "file": "templates/cluster-operator/pdb.yaml",
-          "line": 16,
-          "column": 10
+          "line": 17,
+          "column": 22
         },
         {
           "file": "templates/cluster-operator/pdb.yaml",
-          "line": 17,
-          "column": 22
+          "line": 16,
+          "column": 10
         }
       ]
     },
@@ -1683,8 +1913,8 @@
         },
         {
           "file": "templates/cluster-operator/pdb.yaml",
-          "line": 13,
-          "column": 10
+          "line": 14,
+          "column": 20
         },
         {
           "file": "templates/cluster-operator/pdb.yaml",
@@ -1693,8 +1923,8 @@
         },
         {
           "file": "templates/cluster-operator/pdb.yaml",
-          "line": 14,
-          "column": 20
+          "line": 13,
+          "column": 10
         }
       ]
     },
@@ -1719,13 +1949,13 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 128
+          "line": 24,
+          "column": 14
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 24,
-          "column": 14
+          "line": 120,
+          "column": 128
         }
       ]
     },
@@ -1739,8 +1969,8 @@
           "column": 3
         },
         {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 17,
+          "file": "templates/cluster-operator/networkpolicy.yaml",
+          "line": 13,
           "column": 78
         },
         {
@@ -1749,13 +1979,13 @@
           "column": 78
         },
         {
-          "file": "templates/cluster-operator/networkpolicy.yaml",
-          "line": 13,
+          "file": "templates/cluster-operator/metrics-service.yaml",
+          "line": 47,
           "column": 78
         },
         {
-          "file": "templates/cluster-operator/metrics-service.yaml",
-          "line": 47,
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 17,
           "column": 78
         }
       ]
@@ -1771,8 +2001,77 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
           "line": 54,
           "column": 14
+        }
+      ]
+    },
+    {
+      "id": ".clusterOperator.podSecurityContext.fsGroup",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 201,
+          "column": 5
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "id": ".clusterOperator.podSecurityContext.fsGroupChangePolicy",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 195,
+          "column": 5
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "id": ".clusterOperator.podSecurityContext.supplementalGroups",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 199,
+          "column": 5
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "id": ".clusterOperator.podSecurityContext.sysctls",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 197,
+          "column": 5
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 1,
+          "column": 1
         }
       ]
     },
@@ -1787,13 +2086,13 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 51,
-          "column": 14
+          "line": 52,
+          "column": 73
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 52,
-          "column": 73
+          "line": 51,
+          "column": 14
         }
       ]
     },
@@ -1839,16 +2138,6 @@
           "column": 5
         },
         {
-          "file": "templates/cluster-operator/role.yaml",
-          "line": 1,
-          "column": 8
-        },
-        {
-          "file": "templates/cluster-operator/rolebinding.yaml",
-          "line": 1,
-          "column": 8
-        },
-        {
           "file": "templates/NOTES.txt",
           "line": 19,
           "column": 8
@@ -1860,6 +2149,16 @@
         },
         {
           "file": "templates/cluster-operator/aggregate-cluster-roles.yaml",
+          "line": 1,
+          "column": 8
+        },
+        {
+          "file": "templates/cluster-operator/role.yaml",
+          "line": 1,
+          "column": 8
+        },
+        {
+          "file": "templates/cluster-operator/rolebinding.yaml",
           "line": 1,
           "column": 8
         },
@@ -2116,13 +2415,13 @@
         },
         {
           "file": "templates/cluster-operator/sa.yaml",
-          "line": 10,
-          "column": 80
+          "line": 9,
+          "column": 10
         },
         {
           "file": "templates/cluster-operator/sa.yaml",
-          "line": 9,
-          "column": 10
+          "line": 10,
+          "column": 80
         }
       ]
     },
@@ -2361,13 +2660,13 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 59,
-          "column": 41
+          "line": 58,
+          "column": 14
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 58,
-          "column": 14
+          "line": 59,
+          "column": 41
         }
       ]
     },
@@ -2423,13 +2722,13 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 128
+          "line": 39,
+          "column": 14
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 39,
-          "column": 14
+          "line": 120,
+          "column": 128
         }
       ]
     },
@@ -2464,14 +2763,9 @@
           "column": 3
         },
         {
-          "file": "templates/cluster-operator/clusterrolebinding.yaml",
-          "line": 2,
-          "column": 8
-        },
-        {
           "file": "templates/NOTES.txt",
-          "line": 27,
-          "column": 4
+          "line": 29,
+          "column": 8
         },
         {
           "file": "templates/cluster-operator/networkpolicy.yaml",
@@ -2479,14 +2773,19 @@
           "column": 16
         },
         {
-          "file": "templates/NOTES.txt",
-          "line": 20,
-          "column": 8
-        },
-        {
           "file": "templates/cluster-operator/deployment.yaml",
           "line": 90,
           "column": 20
+        },
+        {
+          "file": "templates/cluster-operator/clusterrolebinding.yaml",
+          "line": 2,
+          "column": 8
+        },
+        {
+          "file": "templates/NOTES.txt",
+          "line": 20,
+          "column": 8
         }
       ]
     },
@@ -2500,19 +2799,19 @@
           "column": 3
         },
         {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 91,
-          "column": 17
+          "file": "templates/cluster-operator/networkpolicy.yaml",
+          "line": 50,
+          "column": 24
         },
         {
           "file": "templates/cluster-operator/clusterrolebinding.yaml",
-          "line": 21,
-          "column": 5
+          "line": 28,
+          "column": 30
         },
         {
-          "file": "templates/cluster-operator/networkpolicy.yaml",
-          "line": 43,
-          "column": 13
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 93,
+          "column": 25
         }
       ]
     },
@@ -2526,22 +2825,47 @@
           "column": 1
         },
         {
+          "file": "templates/messaging-topology-operator/networkpolicy.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/messaging-topology-operator/role.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/cluster-operator/clusterrole.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/messaging-topology-operator/clusterrolebinding.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/cluster-operator/pdb.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/cluster-operator/role.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/messaging-topology-operator/servicemonitor.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
           "file": "templates/cluster-operator/rolebinding.yaml",
           "line": 1,
           "column": 1
         },
         {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 153
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 121,
-          "column": 22
-        },
-        {
-          "file": "templates/cluster-operator/networkpolicy.yaml",
+          "file": "templates/messaging-topology-operator/podmonitor.yaml",
           "line": 1,
           "column": 1
         },
@@ -2551,12 +2875,7 @@
           "column": 1
         },
         {
-          "file": "templates/cluster-operator/clusterrolebinding.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
-          "file": "templates/cluster-operator/servicemonitor.yaml",
+          "file": "templates/cluster-operator/networkpolicy.yaml",
           "line": 1,
           "column": 1
         },
@@ -2571,16 +2890,6 @@
           "column": 26
         },
         {
-          "file": "templates/messaging-topology-operator/clusterrole.yaml",
-          "line": 383,
-          "column": 10
-        },
-        {
-          "file": "templates/messaging-topology-operator/clusterrole.yaml",
-          "line": 385,
-          "column": 11
-        },
-        {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 124,
           "column": 31
@@ -2591,7 +2900,22 @@
           "column": 56
         },
         {
-          "file": "templates/messaging-topology-operator/networkpolicy.yaml",
+          "file": "templates/messaging-topology-operator/aggregate-cluster-roles.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/messaging-topology-operator/clusterrole.yaml",
+          "line": 383,
+          "column": 10
+        },
+        {
+          "file": "templates/messaging-topology-operator/clusterrole.yaml",
+          "line": 385,
+          "column": 11
+        },
+        {
+          "file": "templates/cluster-operator/servicemonitor.yaml",
           "line": 1,
           "column": 1
         },
@@ -2601,47 +2925,7 @@
           "column": 1
         },
         {
-          "file": "templates/cluster-operator/role.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
-          "file": "templates/cluster-operator/pdb.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
-          "file": "templates/messaging-topology-operator/role.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
-          "file": "templates/cluster-operator/clusterrole.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
-          "file": "templates/messaging-topology-operator/aggregate-cluster-roles.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
-          "file": "templates/messaging-topology-operator/servicemonitor.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
-          "file": "templates/messaging-topology-operator/clusterrolebinding.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
-          "file": "templates/messaging-topology-operator/podmonitor.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
-          "file": "templates/messaging-topology-operator/certificate.yaml",
+          "file": "templates/cluster-operator/clusterrolebinding.yaml",
           "line": 1,
           "column": 1
         },
@@ -2651,24 +2935,19 @@
           "column": 1
         },
         {
-          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 160,
-          "column": 5
-        },
-        {
-          "file": "templates/cluster-operator/podmonitor.yaml",
-          "line": 12,
-          "column": 10
-        },
-        {
           "file": "templates/messaging-topology-operator/certificate.yaml",
-          "line": 9,
-          "column": 10
+          "line": 1,
+          "column": 1
         },
         {
-          "file": "templates/messaging-topology-operator/sa.yaml",
-          "line": 10,
-          "column": 80
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 153
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 121,
+          "column": 22
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
@@ -2676,49 +2955,24 @@
           "column": 6
         },
         {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 9,
+          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
+          "line": 16,
           "column": 10
         },
         {
-          "file": "templates/messaging-topology-operator/sa.yaml",
-          "line": 9,
-          "column": 10
+          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
+          "line": 160,
+          "column": 5
         },
         {
-          "file": "templates/messaging-topology-operator/clusterrolebinding.yaml",
-          "line": 31,
-          "column": 10
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 120,
+          "column": 128
         },
         {
-          "file": "templates/messaging-topology-operator/clusterrolebinding.yaml",
-          "line": 9,
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 8,
           "column": 10
-        },
-        {
-          "file": "templates/messaging-topology-operator/podmonitor.yaml",
-          "line": 12,
-          "column": 10
-        },
-        {
-          "file": "templates/messaging-topology-operator/servicemonitor.yaml",
-          "line": 12,
-          "column": 10
-        },
-        {
-          "file": "templates/messaging-topology-operator/role.yaml",
-          "line": 9,
-          "column": 10
-        },
-        {
-          "file": "templates/messaging-topology-operator/metrics-service.yaml",
-          "line": 10,
-          "column": 10
-        },
-        {
-          "file": "templates/messaging-topology-operator/metrics-service.yaml",
-          "line": 11,
-          "column": 80
         },
         {
           "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
@@ -2726,28 +2980,18 @@
           "column": 12
         },
         {
-          "file": "templates/messaging-topology-operator/aggregate-cluster-roles.yaml",
-          "line": 14,
+          "file": "templates/cluster-operator/clusterrolebinding.yaml",
+          "line": 31,
           "column": 10
         },
         {
-          "file": "templates/cluster-operator/metrics-service.yaml",
-          "line": 10,
-          "column": 10
-        },
-        {
-          "file": "templates/cluster-operator/metrics-service.yaml",
-          "line": 11,
-          "column": 80
-        },
-        {
-          "file": "templates/cluster-operator/pdb.yaml",
+          "file": "templates/cluster-operator/clusterrolebinding.yaml",
           "line": 9,
           "column": 10
         },
         {
-          "file": "templates/cluster-operator/role.yaml",
-          "line": 9,
+          "file": "templates/cluster-operator/podmonitor.yaml",
+          "line": 12,
           "column": 10
         },
         {
@@ -2756,82 +3000,17 @@
           "column": 10
         },
         {
-          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 16,
-          "column": 10
-        },
-        {
-          "file": "templates/cluster-operator/rolebinding.yaml",
+          "file": "templates/messaging-topology-operator/sa.yaml",
           "line": 9,
           "column": 10
         },
         {
-          "file": "templates/messaging-topology-operator/pdb.yaml",
+          "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 9,
           "column": 10
         },
         {
-          "file": "templates/cluster-operator/sa.yaml",
-          "line": 9,
-          "column": 10
-        },
-        {
-          "file": "templates/messaging-topology-operator/clusterrole.yaml",
-          "line": 8,
-          "column": 10
-        },
-        {
-          "file": "templates/cluster-operator/sa.yaml",
-          "line": 10,
-          "column": 80
-        },
-        {
-          "file": "templates/messaging-topology-operator/networkpolicy.yaml",
-          "line": 9,
-          "column": 10
-        },
-        {
-          "file": "templates/messaging-topology-operator/clusterrole.yaml",
-          "line": 382,
-          "column": 8
-        },
-        {
-          "file": "templates/messaging-topology-operator/webhook-service.yaml",
-          "line": 10,
-          "column": 80
-        },
-        {
-          "file": "templates/cluster-operator/networkpolicy.yaml",
-          "line": 9,
-          "column": 10
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 120,
-          "column": 128
-        },
-        {
-          "file": "templates/messaging-topology-operator/webhook-service.yaml",
-          "line": 9,
-          "column": 10
-        },
-        {
-          "file": "templates/cluster-operator/servicemonitor.yaml",
-          "line": 12,
-          "column": 10
-        },
-        {
-          "file": "templates/cluster-operator/aggregate-cluster-roles.yaml",
-          "line": 14,
-          "column": 10
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 8,
-          "column": 10
-        },
-        {
-          "file": "templates/cluster-operator/clusterrolebinding.yaml",
+          "file": "templates/messaging-topology-operator/clusterrolebinding.yaml",
           "line": 31,
           "column": 10
         },
@@ -2841,8 +3020,128 @@
           "column": 10
         },
         {
-          "file": "templates/cluster-operator/clusterrolebinding.yaml",
+          "file": "templates/cluster-operator/role.yaml",
           "line": 9,
+          "column": 10
+        },
+        {
+          "file": "templates/messaging-topology-operator/clusterrolebinding.yaml",
+          "line": 9,
+          "column": 10
+        },
+        {
+          "file": "templates/cluster-operator/pdb.yaml",
+          "line": 9,
+          "column": 10
+        },
+        {
+          "file": "templates/cluster-operator/rolebinding.yaml",
+          "line": 9,
+          "column": 10
+        },
+        {
+          "file": "templates/messaging-topology-operator/metrics-service.yaml",
+          "line": 10,
+          "column": 10
+        },
+        {
+          "file": "templates/cluster-operator/sa.yaml",
+          "line": 9,
+          "column": 10
+        },
+        {
+          "file": "templates/messaging-topology-operator/metrics-service.yaml",
+          "line": 11,
+          "column": 80
+        },
+        {
+          "file": "templates/messaging-topology-operator/networkpolicy.yaml",
+          "line": 9,
+          "column": 10
+        },
+        {
+          "file": "templates/cluster-operator/sa.yaml",
+          "line": 10,
+          "column": 80
+        },
+        {
+          "file": "templates/cluster-operator/aggregate-cluster-roles.yaml",
+          "line": 14,
+          "column": 10
+        },
+        {
+          "file": "templates/messaging-topology-operator/webhook-service.yaml",
+          "line": 9,
+          "column": 10
+        },
+        {
+          "file": "templates/messaging-topology-operator/webhook-service.yaml",
+          "line": 10,
+          "column": 80
+        },
+        {
+          "file": "templates/messaging-topology-operator/clusterrole.yaml",
+          "line": 382,
+          "column": 8
+        },
+        {
+          "file": "templates/cluster-operator/servicemonitor.yaml",
+          "line": 12,
+          "column": 10
+        },
+        {
+          "file": "templates/messaging-topology-operator/clusterrole.yaml",
+          "line": 8,
+          "column": 10
+        },
+        {
+          "file": "templates/cluster-operator/networkpolicy.yaml",
+          "line": 9,
+          "column": 10
+        },
+        {
+          "file": "templates/messaging-topology-operator/servicemonitor.yaml",
+          "line": 12,
+          "column": 10
+        },
+        {
+          "file": "templates/messaging-topology-operator/pdb.yaml",
+          "line": 9,
+          "column": 10
+        },
+        {
+          "file": "templates/messaging-topology-operator/certificate.yaml",
+          "line": 9,
+          "column": 10
+        },
+        {
+          "file": "templates/messaging-topology-operator/role.yaml",
+          "line": 9,
+          "column": 10
+        },
+        {
+          "file": "templates/cluster-operator/metrics-service.yaml",
+          "line": 11,
+          "column": 80
+        },
+        {
+          "file": "templates/messaging-topology-operator/sa.yaml",
+          "line": 10,
+          "column": 80
+        },
+        {
+          "file": "templates/cluster-operator/metrics-service.yaml",
+          "line": 10,
+          "column": 10
+        },
+        {
+          "file": "templates/messaging-topology-operator/aggregate-cluster-roles.yaml",
+          "line": 14,
+          "column": 10
+        },
+        {
+          "file": "templates/messaging-topology-operator/podmonitor.yaml",
+          "line": 12,
           "column": 10
         }
       ]
@@ -2857,84 +3156,19 @@
           "column": 1
         },
         {
-          "file": "templates/messaging-topology-operator/networkpolicy.yaml",
-          "line": 13,
-          "column": 78
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 49,
-          "column": 108
-        },
-        {
-          "file": "templates/messaging-topology-operator/networkpolicy.yaml",
-          "line": 70,
-          "column": 6
+          "file": "templates/messaging-topology-operator/metrics-service.yaml",
+          "line": 44,
+          "column": 53
         },
         {
           "file": "templates/cluster-operator/networkpolicy.yaml",
-          "line": 69,
-          "column": 67
-        },
-        {
-          "file": "templates/cluster-operator/networkpolicy.yaml",
-          "line": 13,
-          "column": 78
-        },
-        {
-          "file": "templates/cluster-operator/metrics-service.yaml",
-          "line": 45,
-          "column": 17
-        },
-        {
-          "file": "templates/cluster-operator/metrics-service.yaml",
-          "line": 47,
-          "column": 78
-        },
-        {
-          "file": "templates/cluster-operator/podmonitor.yaml",
-          "line": 52,
+          "line": 72,
           "column": 11
         },
         {
-          "file": "templates/messaging-topology-operator/webhook-service.yaml",
-          "line": 47,
-          "column": 2
-        },
-        {
           "file": "templates/cluster-operator/servicemonitor.yaml",
-          "line": 48,
-          "column": 63
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 17,
-          "column": 78
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
           "line": 49,
-          "column": 91
-        },
-        {
-          "file": "templates/messaging-topology-operator/servicemonitor.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
-          "file": "templates/cluster-operator/pdb.yaml",
-          "line": 19,
-          "column": 78
-        },
-        {
-          "file": "templates/messaging-topology-operator/metrics-service.yaml",
-          "line": 41,
-          "column": 56
-        },
-        {
-          "file": "templates/messaging-topology-operator/podmonitor.yaml",
-          "line": 1,
-          "column": 1
+          "column": 6
         },
         {
           "file": "templates/messaging-topology-operator/pdb.yaml",
@@ -2942,25 +3176,74 @@
           "column": 1
         },
         {
-          "file": "templates/cluster-operator/pdb.yaml",
+          "file": "templates/messaging-topology-operator/servicemonitor.yaml",
           "line": 1,
           "column": 1
-        }
-      ]
-    },
-    {
-      "id": ".credentialUpdaterImage.registry",
-      "kinds": "/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 65,
-          "column": 3
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 56,
-          "column": 110
+          "line": 51,
+          "column": 53
+        },
+        {
+          "file": "templates/messaging-topology-operator/networkpolicy.yaml",
+          "line": 72,
+          "column": 34
+        },
+        {
+          "file": "templates/messaging-topology-operator/podmonitor.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/cluster-operator/podmonitor.yaml",
+          "line": 54,
+          "column": 40
+        },
+        {
+          "file": "templates/cluster-operator/pdb.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/cluster-operator/metrics-service.yaml",
+          "line": 45,
+          "column": 137
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 52,
+          "column": 4
+        },
+        {
+          "file": "templates/messaging-topology-operator/webhook-service.yaml",
+          "line": 49,
+          "column": 5
+        },
+        {
+          "file": "templates/messaging-topology-operator/networkpolicy.yaml",
+          "line": 13,
+          "column": 78
+        },
+        {
+          "file": "templates/cluster-operator/networkpolicy.yaml",
+          "line": 13,
+          "column": 78
+        },
+        {
+          "file": "templates/cluster-operator/metrics-service.yaml",
+          "line": 47,
+          "column": 78
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 17,
+          "column": 78
+        },
+        {
+          "file": "templates/cluster-operator/pdb.yaml",
+          "line": 19,
+          "column": 78
         }
       ]
     },
@@ -2975,8 +3258,13 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 57,
-          "column": 3
+          "line": 62,
+          "column": 23
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 63,
+          "column": 40
         }
       ]
     },
@@ -3032,14 +3320,14 @@
           "column": 1
         },
         {
-          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 46,
-          "column": 186
-        },
-        {
           "file": "templates/cluster-operator/podmonitor.yaml",
           "line": 10,
           "column": 15
+        },
+        {
+          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
+          "line": 46,
+          "column": 186
         }
       ]
     },
@@ -3053,9 +3341,9 @@
           "column": 3
         },
         {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 114,
-          "column": 3
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 102,
+          "column": 136
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
@@ -3063,9 +3351,9 @@
           "column": 4
         },
         {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 102,
-          "column": 136
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 114,
+          "column": 3
         }
       ]
     },
@@ -3090,8 +3378,13 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 59,
-          "column": 61
+          "line": 62,
+          "column": 2
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 62,
+          "column": 23
         }
       ]
     },
@@ -3147,13 +3440,13 @@
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 85,
-          "column": 18
+          "line": 124,
+          "column": 6
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 6
+          "line": 85,
+          "column": 18
         }
       ]
     },
@@ -3214,11 +3507,6 @@
           "column": 5
         },
         {
-          "file": "templates/messaging-topology-operator/networkpolicy.yaml",
-          "line": 65,
-          "column": 20
-        },
-        {
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 89,
           "column": 42
@@ -3227,6 +3515,43 @@
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 121,
           "column": 33
+        },
+        {
+          "file": "templates/messaging-topology-operator/networkpolicy.yaml",
+          "line": 65,
+          "column": 20
+        }
+      ]
+    },
+    {
+      "id": ".msgTopologyOperator.containerSecurityContext.allowPrivilegeEscalation",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 642,
+          "column": 5
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "id": ".msgTopologyOperator.containerSecurityContext.capabilities.drop.0",
+      "kinds": "/K/K/K/K/I",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 645,
+          "column": 7
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 1,
+          "column": 1
         }
       ]
     },
@@ -3241,8 +3566,125 @@
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 75,
           "column": 18
+        }
+      ]
+    },
+    {
+      "id": ".msgTopologyOperator.containerSecurityContext.privileged",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 638,
+          "column": 5
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "id": ".msgTopologyOperator.containerSecurityContext.readOnlyRootFilesystem",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 640,
+          "column": 5
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "id": ".msgTopologyOperator.containerSecurityContext.runAsGroup",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 634,
+          "column": 5
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "id": ".msgTopologyOperator.containerSecurityContext.runAsNonRoot",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 636,
+          "column": 5
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "id": ".msgTopologyOperator.containerSecurityContext.runAsUser",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 632,
+          "column": 5
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "id": ".msgTopologyOperator.containerSecurityContext.seLinuxOptions",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 630,
+          "column": 5
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 1,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "id": ".msgTopologyOperator.containerSecurityContext.seccompProfile.type",
+      "kinds": "/K/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 648,
+          "column": 7
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 1,
+          "column": 1
         }
       ]
     },
@@ -3298,13 +3740,13 @@
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 6
+          "line": 131,
+          "column": 18
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 131,
-          "column": 18
+          "line": 124,
+          "column": 6
         }
       ]
     },
@@ -3329,13 +3771,13 @@
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 139,
-          "column": 18
+          "line": 124,
+          "column": 6
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 6
+          "line": 139,
+          "column": 18
         }
       ]
     },
@@ -3350,13 +3792,13 @@
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 64,
-          "column": 14
+          "line": 65,
+          "column": 21
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 65,
-          "column": 21
+          "line": 64,
+          "column": 14
         }
       ]
     },
@@ -3370,12 +3812,12 @@
           "column": 3
         },
         {
-          "file": "templates/messaging-topology-operator/clusterrole.yaml",
+          "file": "templates/messaging-topology-operator/webhook-service.yaml",
           "line": 1,
           "column": 8
         },
         {
-          "file": "templates/messaging-topology-operator/metrics-service.yaml",
+          "file": "templates/messaging-topology-operator/clusterrole.yaml",
           "line": 1,
           "column": 8
         },
@@ -3385,17 +3827,7 @@
           "column": 8
         },
         {
-          "file": "templates/messaging-topology-operator/webhook-service.yaml",
-          "line": 1,
-          "column": 8
-        },
-        {
-          "file": "templates/messaging-topology-operator/certificate.yaml",
-          "line": 1,
-          "column": 8
-        },
-        {
-          "file": "templates/messaging-topology-operator/pdb.yaml",
+          "file": "templates/messaging-topology-operator/podmonitor.yaml",
           "line": 1,
           "column": 8
         },
@@ -3405,12 +3837,12 @@
           "column": 8
         },
         {
-          "file": "templates/messaging-topology-operator/aggregate-cluster-roles.yaml",
+          "file": "templates/messaging-topology-operator/clusterrolebinding.yaml",
           "line": 1,
           "column": 8
         },
         {
-          "file": "templates/messaging-topology-operator/clusterrolebinding.yaml",
+          "file": "templates/messaging-topology-operator/pdb.yaml",
           "line": 1,
           "column": 8
         },
@@ -3420,12 +3852,7 @@
           "column": 8
         },
         {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 1,
-          "column": 8
-        },
-        {
-          "file": "templates/messaging-topology-operator/role.yaml",
+          "file": "templates/messaging-topology-operator/certificate.yaml",
           "line": 1,
           "column": 8
         },
@@ -3435,7 +3862,22 @@
           "column": 13
         },
         {
-          "file": "templates/messaging-topology-operator/podmonitor.yaml",
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 1,
+          "column": 8
+        },
+        {
+          "file": "templates/messaging-topology-operator/aggregate-cluster-roles.yaml",
+          "line": 1,
+          "column": 8
+        },
+        {
+          "file": "templates/messaging-topology-operator/role.yaml",
+          "line": 1,
+          "column": 8
+        },
+        {
+          "file": "templates/messaging-topology-operator/metrics-service.yaml",
           "line": 1,
           "column": 8
         }
@@ -3474,7 +3916,17 @@
         {
           "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
           "line": 70,
+          "column": 107
+        },
+        {
+          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
+          "line": 70,
           "column": 173
+        },
+        {
+          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
+          "line": 8,
+          "column": 42
         },
         {
           "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
@@ -3483,23 +3935,13 @@
         },
         {
           "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 70,
-          "column": 107
+          "line": 34,
+          "column": 17
         },
         {
           "file": "templates/messaging-topology-operator/certificate.yaml",
           "line": 1,
           "column": 76
-        },
-        {
-          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 34,
-          "column": 17
-        },
-        {
-          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 8,
-          "column": 42
         }
       ]
     },
@@ -3524,13 +3966,13 @@
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 6
+          "line": 101,
+          "column": 20
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 101,
-          "column": 20
+          "line": 124,
+          "column": 6
         }
       ]
     },
@@ -3586,13 +4028,13 @@
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 109,
-          "column": 20
+          "line": 124,
+          "column": 6
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 6
+          "line": 109,
+          "column": 20
         }
       ]
     },
@@ -3617,13 +4059,13 @@
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 6
+          "line": 155,
+          "column": 20
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 155,
-          "column": 20
+          "line": 124,
+          "column": 6
         }
       ]
     },
@@ -3668,14 +4110,14 @@
           "column": 3
         },
         {
-          "file": "templates/messaging-topology-operator/certificate.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
           "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
           "line": 46,
           "column": 15
+        },
+        {
+          "file": "templates/messaging-topology-operator/certificate.yaml",
+          "line": 1,
+          "column": 1
         }
       ]
     },
@@ -3700,13 +4142,13 @@
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 33,
-          "column": 14
+          "line": 124,
+          "column": 6
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 6
+          "line": 33,
+          "column": 14
         }
       ]
     },
@@ -3744,6 +4186,92 @@
           "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 74,
           "column": 31
+        }
+      ]
+    },
+    {
+      "id": ".msgTopologyOperator.image.tag",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 503,
+          "column": 5
+        },
+        {
+          "file": "templates/messaging-topology-operator/pdb.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/messaging-topology-operator/rolebinding.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/messaging-topology-operator/metrics-service.yaml",
+          "line": 21,
+          "column": 12
+        },
+        {
+          "file": "templates/messaging-topology-operator/aggregate-cluster-roles.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/messaging-topology-operator/podmonitor.yaml",
+          "line": 23,
+          "column": 29
+        },
+        {
+          "file": "templates/messaging-topology-operator/servicemonitor.yaml",
+          "line": 23,
+          "column": 33
+        },
+        {
+          "file": "templates/messaging-topology-operator/certificate.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 30,
+          "column": 64
+        },
+        {
+          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
+          "line": 21,
+          "column": 28
+        },
+        {
+          "file": "templates/messaging-topology-operator/role.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/messaging-topology-operator/clusterrole.yaml",
+          "line": 38,
+          "column": 5
+        },
+        {
+          "file": "templates/messaging-topology-operator/clusterrolebinding.yaml",
+          "line": 30,
+          "column": 28
+        },
+        {
+          "file": "templates/messaging-topology-operator/sa.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/messaging-topology-operator/webhook-service.yaml",
+          "line": 23,
+          "column": 12
+        },
+        {
+          "file": "templates/messaging-topology-operator/networkpolicy.yaml",
+          "line": 37,
+          "column": 39
         }
       ]
     },
@@ -4181,13 +4709,13 @@
         },
         {
           "file": "templates/messaging-topology-operator/metrics-service.yaml",
-          "line": 20,
-          "column": 17
+          "line": 19,
+          "column": 10
         },
         {
           "file": "templates/messaging-topology-operator/metrics-service.yaml",
-          "line": 19,
-          "column": 10
+          "line": 20,
+          "column": 17
         }
       ]
     },
@@ -4201,11 +4729,6 @@
           "column": 7
         },
         {
-          "file": "templates/messaging-topology-operator/metrics-service.yaml",
-          "line": 1,
-          "column": 8
-        },
-        {
           "file": "templates/messaging-topology-operator/servicemonitor.yaml",
           "line": 1,
           "column": 8
@@ -4214,6 +4737,11 @@
           "file": "templates/messaging-topology-operator/networkpolicy.yaml",
           "line": 64,
           "column": 16
+        },
+        {
+          "file": "templates/messaging-topology-operator/metrics-service.yaml",
+          "line": 1,
+          "column": 8
         }
       ]
     },
@@ -4265,13 +4793,13 @@
         },
         {
           "file": "templates/messaging-topology-operator/metrics-service.yaml",
-          "line": 25,
-          "column": 90
+          "line": 26,
+          "column": 22
         },
         {
           "file": "templates/messaging-topology-operator/metrics-service.yaml",
-          "line": 26,
-          "column": 22
+          "line": 25,
+          "column": 90
         }
       ]
     },
@@ -4302,13 +4830,13 @@
         },
         {
           "file": "templates/messaging-topology-operator/metrics-service.yaml",
-          "line": 39,
-          "column": 164
+          "line": 40,
+          "column": 20
         },
         {
           "file": "templates/messaging-topology-operator/metrics-service.yaml",
-          "line": 40,
-          "column": 20
+          "line": 39,
+          "column": 164
         }
       ]
     },
@@ -4339,13 +4867,13 @@
         },
         {
           "file": "templates/messaging-topology-operator/metrics-service.yaml",
-          "line": 28,
-          "column": 10
+          "line": 29,
+          "column": 23
         },
         {
           "file": "templates/messaging-topology-operator/metrics-service.yaml",
-          "line": 29,
-          "column": 23
+          "line": 28,
+          "column": 10
         }
       ]
     },
@@ -4381,8 +4909,8 @@
         },
         {
           "file": "templates/messaging-topology-operator/metrics-service.yaml",
-          "line": 22,
-          "column": 10
+          "line": 39,
+          "column": 89
         },
         {
           "file": "templates/messaging-topology-operator/metrics-service.yaml",
@@ -4391,18 +4919,8 @@
         },
         {
           "file": "templates/messaging-topology-operator/metrics-service.yaml",
-          "line": 41,
-          "column": 19
-        },
-        {
-          "file": "templates/messaging-topology-operator/metrics-service.yaml",
-          "line": 39,
-          "column": 89
-        },
-        {
-          "file": "templates/messaging-topology-operator/metrics-service.yaml",
-          "line": 39,
-          "column": 24
+          "line": 16,
+          "column": 84
         },
         {
           "file": "templates/messaging-topology-operator/metrics-service.yaml",
@@ -4411,13 +4929,23 @@
         },
         {
           "file": "templates/messaging-topology-operator/metrics-service.yaml",
-          "line": 16,
-          "column": 84
+          "line": 41,
+          "column": 19
         },
         {
           "file": "templates/messaging-topology-operator/metrics-service.yaml",
           "line": 16,
           "column": 15
+        },
+        {
+          "file": "templates/messaging-topology-operator/metrics-service.yaml",
+          "line": 22,
+          "column": 10
+        },
+        {
+          "file": "templates/messaging-topology-operator/metrics-service.yaml",
+          "line": 39,
+          "column": 24
         }
       ]
     },
@@ -4448,13 +4976,13 @@
         },
         {
           "file": "templates/messaging-topology-operator/servicemonitor.yaml",
-          "line": 35,
-          "column": 23
+          "line": 34,
+          "column": 14
         },
         {
           "file": "templates/messaging-topology-operator/servicemonitor.yaml",
-          "line": 34,
-          "column": 14
+          "line": 35,
+          "column": 23
         }
       ]
     },
@@ -4469,13 +4997,13 @@
         },
         {
           "file": "templates/messaging-topology-operator/servicemonitor.yaml",
-          "line": 31,
-          "column": 14
+          "line": 32,
+          "column": 20
         },
         {
           "file": "templates/messaging-topology-operator/servicemonitor.yaml",
-          "line": 32,
-          "column": 20
+          "line": 31,
+          "column": 14
         }
       ]
     },
@@ -4833,13 +5361,13 @@
         },
         {
           "file": "templates/messaging-topology-operator/pdb.yaml",
-          "line": 16,
-          "column": 10
+          "line": 17,
+          "column": 22
         },
         {
           "file": "templates/messaging-topology-operator/pdb.yaml",
-          "line": 17,
-          "column": 22
+          "line": 16,
+          "column": 10
         }
       ]
     },
@@ -4854,8 +5382,8 @@
         },
         {
           "file": "templates/messaging-topology-operator/pdb.yaml",
-          "line": 13,
-          "column": 10
+          "line": 16,
+          "column": 61
         },
         {
           "file": "templates/messaging-topology-operator/pdb.yaml",
@@ -4864,8 +5392,8 @@
         },
         {
           "file": "templates/messaging-topology-operator/pdb.yaml",
-          "line": 16,
-          "column": 61
+          "line": 13,
+          "column": 10
         }
       ]
     },
@@ -4890,13 +5418,13 @@
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 24,
-          "column": 14
+          "line": 124,
+          "column": 6
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 124,
-          "column": 6
+          "line": 24,
+          "column": 14
         }
       ]
     },
@@ -4927,8 +5455,102 @@
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 169,
+          "column": 1
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 167,
+          "column": 129
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
           "line": 54,
           "column": 14
+        }
+      ]
+    },
+    {
+      "id": ".msgTopologyOperator.podSecurityContext.fsGroup",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 623,
+          "column": 5
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 169,
+          "column": 1
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 167,
+          "column": 129
+        }
+      ]
+    },
+    {
+      "id": ".msgTopologyOperator.podSecurityContext.fsGroupChangePolicy",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 617,
+          "column": 5
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 169,
+          "column": 1
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 167,
+          "column": 129
+        }
+      ]
+    },
+    {
+      "id": ".msgTopologyOperator.podSecurityContext.supplementalGroups",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 621,
+          "column": 5
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 169,
+          "column": 1
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 167,
+          "column": 129
+        }
+      ]
+    },
+    {
+      "id": ".msgTopologyOperator.podSecurityContext.sysctls",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 619,
+          "column": 5
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 169,
+          "column": 1
+        },
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 167,
+          "column": 129
         }
       ]
     },
@@ -4943,13 +5565,13 @@
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 52,
-          "column": 77
+          "line": 51,
+          "column": 14
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 51,
-          "column": 14
+          "line": 52,
+          "column": 77
         }
       ]
     },
@@ -4995,17 +5617,12 @@
           "column": 5
         },
         {
-          "file": "templates/messaging-topology-operator/clusterrole.yaml",
-          "line": 1,
-          "column": 8
-        },
-        {
           "file": "templates/messaging-topology-operator/aggregate-cluster-roles.yaml",
           "line": 1,
           "column": 8
         },
         {
-          "file": "templates/messaging-topology-operator/role.yaml",
+          "file": "templates/messaging-topology-operator/clusterrolebinding.yaml",
           "line": 1,
           "column": 8
         },
@@ -5015,12 +5632,17 @@
           "column": 8
         },
         {
-          "file": "templates/messaging-topology-operator/clusterrolebinding.yaml",
+          "file": "templates/messaging-topology-operator/role.yaml",
           "line": 1,
           "column": 8
         },
         {
           "file": "templates/messaging-topology-operator/rolebinding.yaml",
+          "line": 1,
+          "column": 8
+        },
+        {
+          "file": "templates/messaging-topology-operator/clusterrole.yaml",
           "line": 1,
           "column": 8
         }
@@ -5272,13 +5894,13 @@
         },
         {
           "file": "templates/messaging-topology-operator/webhook-service.yaml",
-          "line": 10,
-          "column": 80
+          "line": 9,
+          "column": 10
         },
         {
           "file": "templates/messaging-topology-operator/webhook-service.yaml",
-          "line": 9,
-          "column": 10
+          "line": 10,
+          "column": 80
         }
       ]
     },
@@ -5351,13 +5973,13 @@
         },
         {
           "file": "templates/messaging-topology-operator/webhook-service.yaml",
-          "line": 24,
-          "column": 82
+          "line": 25,
+          "column": 22
         },
         {
           "file": "templates/messaging-topology-operator/webhook-service.yaml",
-          "line": 25,
-          "column": 22
+          "line": 24,
+          "column": 82
         }
       ]
     },
@@ -5388,13 +6010,13 @@
         },
         {
           "file": "templates/messaging-topology-operator/webhook-service.yaml",
-          "line": 39,
-          "column": 20
+          "line": 38,
+          "column": 148
         },
         {
           "file": "templates/messaging-topology-operator/webhook-service.yaml",
-          "line": 38,
-          "column": 148
+          "line": 39,
+          "column": 20
         }
       ]
     },
@@ -5409,22 +6031,12 @@
         },
         {
           "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 169,
-          "column": 18
-        },
-        {
-          "file": "templates/messaging-topology-operator/webhook-service.yaml",
-          "line": 35,
-          "column": 16
-        },
-        {
-          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 145,
+          "line": 100,
           "column": 18
         },
         {
           "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 337,
+          "line": 289,
           "column": 18
         },
         {
@@ -5434,7 +6046,47 @@
         },
         {
           "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
+          "line": 241,
+          "column": 18
+        },
+        {
+          "file": "templates/messaging-topology-operator/webhook-service.yaml",
+          "line": 35,
+          "column": 16
+        },
+        {
+          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
+          "line": 52,
+          "column": 18
+        },
+        {
+          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
+          "line": 193,
+          "column": 18
+        },
+        {
+          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
+          "line": 169,
+          "column": 18
+        },
+        {
+          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
+          "line": 265,
+          "column": 18
+        },
+        {
+          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
           "line": 76,
+          "column": 18
+        },
+        {
+          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
+          "line": 337,
+          "column": 18
+        },
+        {
+          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
+          "line": 145,
           "column": 18
         },
         {
@@ -5445,36 +6097,6 @@
         {
           "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
           "line": 121,
-          "column": 18
-        },
-        {
-          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 241,
-          "column": 18
-        },
-        {
-          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 289,
-          "column": 18
-        },
-        {
-          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 193,
-          "column": 18
-        },
-        {
-          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 100,
-          "column": 18
-        },
-        {
-          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 265,
-          "column": 18
-        },
-        {
-          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 52,
           "column": 18
         }
       ]
@@ -5490,13 +6112,13 @@
         },
         {
           "file": "templates/messaging-topology-operator/webhook-service.yaml",
-          "line": 28,
-          "column": 23
+          "line": 27,
+          "column": 10
         },
         {
           "file": "templates/messaging-topology-operator/webhook-service.yaml",
-          "line": 27,
-          "column": 10
+          "line": 28,
+          "column": 23
         }
       ]
     },
@@ -5532,13 +6154,8 @@
         },
         {
           "file": "templates/messaging-topology-operator/webhook-service.yaml",
-          "line": 24,
-          "column": 16
-        },
-        {
-          "file": "templates/messaging-topology-operator/webhook-service.yaml",
           "line": 38,
-          "column": 81
+          "column": 24
         },
         {
           "file": "templates/messaging-topology-operator/webhook-service.yaml",
@@ -5547,18 +6164,13 @@
         },
         {
           "file": "templates/messaging-topology-operator/webhook-service.yaml",
-          "line": 15,
-          "column": 76
-        },
-        {
-          "file": "templates/messaging-topology-operator/webhook-service.yaml",
           "line": 38,
-          "column": 24
+          "column": 81
         },
         {
           "file": "templates/messaging-topology-operator/webhook-service.yaml",
-          "line": 15,
-          "column": 15
+          "line": 24,
+          "column": 16
         },
         {
           "file": "templates/messaging-topology-operator/webhook-service.yaml",
@@ -5567,8 +6179,18 @@
         },
         {
           "file": "templates/messaging-topology-operator/webhook-service.yaml",
+          "line": 15,
+          "column": 15
+        },
+        {
+          "file": "templates/messaging-topology-operator/webhook-service.yaml",
           "line": 40,
           "column": 19
+        },
+        {
+          "file": "templates/messaging-topology-operator/webhook-service.yaml",
+          "line": 15,
+          "column": 76
         }
       ]
     },
@@ -5583,13 +6205,13 @@
         },
         {
           "file": "templates/messaging-topology-operator/sa.yaml",
-          "line": 9,
-          "column": 10
+          "line": 10,
+          "column": 80
         },
         {
           "file": "templates/messaging-topology-operator/sa.yaml",
-          "line": 10,
-          "column": 80
+          "line": 9,
+          "column": 10
         }
       ]
     },
@@ -5844,13 +6466,13 @@
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 58,
-          "column": 14
+          "line": 59,
+          "column": 41
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 59,
-          "column": 41
+          "line": 58,
+          "column": 14
         }
       ]
     },
@@ -5947,14 +6569,9 @@
           "column": 3
         },
         {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 96,
-          "column": 20
-        },
-        {
-          "file": "templates/messaging-topology-operator/networkpolicy.yaml",
-          "line": 45,
-          "column": 16
+          "file": "templates/NOTES.txt",
+          "line": 47,
+          "column": 8
         },
         {
           "file": "templates/messaging-topology-operator/clusterrolebinding.yaml",
@@ -5962,14 +6579,19 @@
           "column": 8
         },
         {
+          "file": "templates/messaging-topology-operator/networkpolicy.yaml",
+          "line": 45,
+          "column": 16
+        },
+        {
           "file": "templates/NOTES.txt",
           "line": 38,
           "column": 8
         },
         {
-          "file": "templates/NOTES.txt",
-          "line": 45,
-          "column": 4
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 96,
+          "column": 20
         }
       ]
     },
@@ -5983,19 +6605,19 @@
           "column": 3
         },
         {
-          "file": "templates/messaging-topology-operator/networkpolicy.yaml",
-          "line": 46,
-          "column": 13
+          "file": "templates/messaging-topology-operator/clusterrolebinding.yaml",
+          "line": 28,
+          "column": 30
         },
         {
-          "file": "templates/messaging-topology-operator/clusterrolebinding.yaml",
-          "line": 21,
-          "column": 5
+          "file": "templates/messaging-topology-operator/networkpolicy.yaml",
+          "line": 53,
+          "column": 24
         },
         {
           "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 97,
-          "column": 17
+          "line": 99,
+          "column": 25
         }
       ]
     },
@@ -6011,23 +6633,7 @@
         {
           "file": "templates/cluster-operator/podmonitor.yaml",
           "line": 11,
-          "column": 40
-        }
-      ]
-    },
-    {
-      "id": ".rabbitmqImage.registry",
-      "kinds": "/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 45,
-          "column": 3
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 56,
-          "column": 110
+          "column": 100
         }
       ]
     },
@@ -6042,8 +6648,13 @@
         },
         {
           "file": "templates/cluster-operator/deployment.yaml",
-          "line": 57,
-          "column": 3
+          "line": 62,
+          "column": 23
+        },
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 63,
+          "column": 40
         }
       ]
     },
@@ -6074,28 +6685,38 @@
         },
         {
           "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 234,
+          "line": 258,
           "column": 14
         },
         {
           "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 69,
+          "line": 138,
           "column": 14
         },
         {
-          "file": "templates/issuer.yaml",
-          "line": 1,
-          "column": 8
-        },
-        {
           "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 210,
+          "line": 282,
           "column": 14
         },
         {
           "file": "templates/messaging-topology-operator/certificate.yaml",
           "line": 1,
           "column": 8
+        },
+        {
+          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
+          "line": 306,
+          "column": 14
+        },
+        {
+          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
+          "line": 234,
+          "column": 14
+        },
+        {
+          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
+          "line": 210,
+          "column": 14
         },
         {
           "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
@@ -6108,9 +6729,9 @@
           "column": 14
         },
         {
-          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 138,
-          "column": 14
+          "file": "templates/issuer.yaml",
+          "line": 1,
+          "column": 8
         },
         {
           "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
@@ -6119,7 +6740,7 @@
         },
         {
           "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 258,
+          "line": 69,
           "column": 14
         },
         {
@@ -6144,16 +6765,6 @@
         },
         {
           "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 282,
-          "column": 14
-        },
-        {
-          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
-          "line": 306,
-          "column": 14
-        },
-        {
-          "file": "templates/messaging-topology-operator/validating-webhook-configuration.yaml",
           "line": 330,
           "column": 14
         }
@@ -6161,105 +6772,6 @@
     }
   ],
   "unused": [
-    {
-      "id": ".clusterOperator.containerSecurityContext.allowPrivilegeEscalation",
-      "kinds": "/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 220,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "id": ".clusterOperator.containerSecurityContext.capabilities.drop.0",
-      "kinds": "/K/K/K/K/I",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 223,
-          "column": 7
-        }
-      ]
-    },
-    {
-      "id": ".clusterOperator.containerSecurityContext.privileged",
-      "kinds": "/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 216,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "id": ".clusterOperator.containerSecurityContext.readOnlyRootFilesystem",
-      "kinds": "/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 218,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "id": ".clusterOperator.containerSecurityContext.runAsGroup",
-      "kinds": "/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 212,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "id": ".clusterOperator.containerSecurityContext.runAsNonRoot",
-      "kinds": "/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 214,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "id": ".clusterOperator.containerSecurityContext.runAsUser",
-      "kinds": "/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 210,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "id": ".clusterOperator.containerSecurityContext.seLinuxOptions",
-      "kinds": "/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 208,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "id": ".clusterOperator.containerSecurityContext.seccompProfile.type",
-      "kinds": "/K/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 226,
-          "column": 7
-        }
-      ]
-    },
     {
       "id": ".clusterOperator.image.digest",
       "kinds": "/K/K/K",
@@ -6300,17 +6812,6 @@
         {
           "file": "values.yaml",
           "line": 89,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "id": ".clusterOperator.image.tag",
-      "kinds": "/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 91,
           "column": 5
         }
       ]
@@ -6360,50 +6861,6 @@
       ]
     },
     {
-      "id": ".clusterOperator.podSecurityContext.fsGroup",
-      "kinds": "/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 201,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "id": ".clusterOperator.podSecurityContext.fsGroupChangePolicy",
-      "kinds": "/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 195,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "id": ".clusterOperator.podSecurityContext.supplementalGroups",
-      "kinds": "/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 199,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "id": ".clusterOperator.podSecurityContext.sysctls",
-      "kinds": "/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 197,
-          "column": 5
-        }
-      ]
-    },
-    {
       "id": ".clusterOperator.serviceAccount.name",
       "kinds": "/K/K/K",
       "contexts": [
@@ -6432,6 +6889,17 @@
         {
           "file": "values.yaml",
           "line": 79,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "id": ".credentialUpdaterImage.registry",
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 65,
           "column": 3
         }
       ]
@@ -6492,105 +6960,6 @@
       ]
     },
     {
-      "id": ".msgTopologyOperator.containerSecurityContext.allowPrivilegeEscalation",
-      "kinds": "/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 642,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "id": ".msgTopologyOperator.containerSecurityContext.capabilities.drop.0",
-      "kinds": "/K/K/K/K/I",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 645,
-          "column": 7
-        }
-      ]
-    },
-    {
-      "id": ".msgTopologyOperator.containerSecurityContext.privileged",
-      "kinds": "/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 638,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "id": ".msgTopologyOperator.containerSecurityContext.readOnlyRootFilesystem",
-      "kinds": "/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 640,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "id": ".msgTopologyOperator.containerSecurityContext.runAsGroup",
-      "kinds": "/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 634,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "id": ".msgTopologyOperator.containerSecurityContext.runAsNonRoot",
-      "kinds": "/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 636,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "id": ".msgTopologyOperator.containerSecurityContext.runAsUser",
-      "kinds": "/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 632,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "id": ".msgTopologyOperator.containerSecurityContext.seLinuxOptions",
-      "kinds": "/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 630,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "id": ".msgTopologyOperator.containerSecurityContext.seccompProfile.type",
-      "kinds": "/K/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 648,
-          "column": 7
-        }
-      ]
-    },
-    {
       "id": ".msgTopologyOperator.image.digest",
       "kinds": "/K/K/K",
       "contexts": [
@@ -6635,17 +7004,6 @@
       ]
     },
     {
-      "id": ".msgTopologyOperator.image.tag",
-      "kinds": "/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 503,
-          "column": 5
-        }
-      ]
-    },
-    {
       "id": ".msgTopologyOperator.metrics.service.annotations.prometheus~.io/port",
       "kinds": "/K/K/K/K/K",
       "contexts": [
@@ -6675,50 +7033,6 @@
           "file": "values.yaml",
           "line": 921,
           "column": 7
-        }
-      ]
-    },
-    {
-      "id": ".msgTopologyOperator.podSecurityContext.fsGroup",
-      "kinds": "/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 623,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "id": ".msgTopologyOperator.podSecurityContext.fsGroupChangePolicy",
-      "kinds": "/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 617,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "id": ".msgTopologyOperator.podSecurityContext.supplementalGroups",
-      "kinds": "/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 621,
-          "column": 5
-        }
-      ]
-    },
-    {
-      "id": ".msgTopologyOperator.podSecurityContext.sysctls",
-      "kinds": "/K/K/K",
-      "contexts": [
-        {
-          "file": "values.yaml",
-          "line": 619,
-          "column": 5
         }
       ]
     },
@@ -6754,9 +7068,31 @@
           "column": 3
         }
       ]
+    },
+    {
+      "id": ".rabbitmqImage.registry",
+      "kinds": "/K/K",
+      "contexts": [
+        {
+          "file": "values.yaml",
+          "line": 45,
+          "column": 3
+        }
+      ]
     }
   ],
   "undefined": [
+    {
+      "id": ".clusterOperator.containerSecurityContext.targetPlatform",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 156,
+          "column": 27
+        }
+      ]
+    },
     {
       "id": ".clusterOperator.metrics.serviceMonitor.additionalLabels.*",
       "kinds": "/K/K/K/K/W",
@@ -6770,6 +7106,17 @@
           "file": "templates/cluster-operator/servicemonitor.yaml",
           "line": 8,
           "column": 12
+        }
+      ]
+    },
+    {
+      "id": ".clusterOperator.podSecurityContext.targetPlatform",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/cluster-operator/deployment.yaml",
+          "line": 156,
+          "column": 27
         }
       ]
     },
@@ -6840,22 +7187,6 @@
       ]
     },
     {
-      "id": ".containerSecurityContext.*",
-      "kinds": "/K/W",
-      "contexts": [
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 1,
-          "column": 1
-        }
-      ]
-    },
-    {
       "id": ".extraDeploy.*.*",
       "kinds": "/K/W/W",
       "contexts": [
@@ -6863,6 +7194,17 @@
           "file": "templates/extra-list.yaml",
           "line": 1,
           "column": 1
+        }
+      ]
+    },
+    {
+      "id": ".msgTopologyOperator.containerSecurityContext.targetPlatform",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 156,
+          "column": 138
         }
       ]
     },
@@ -6879,6 +7221,17 @@
           "file": "templates/messaging-topology-operator/servicemonitor.yaml",
           "line": 8,
           "column": 12
+        }
+      ]
+    },
+    {
+      "id": ".msgTopologyOperator.podSecurityContext.targetPlatform",
+      "kinds": "/K/K/K",
+      "contexts": [
+        {
+          "file": "templates/messaging-topology-operator/deployment.yaml",
+          "line": 156,
+          "column": 138
         }
       ]
     },
@@ -6945,43 +7298,6 @@
           "file": "templates/messaging-topology-operator/clusterrole.yaml",
           "line": 23,
           "column": 24
-        }
-      ]
-    },
-    {
-      "id": ".podSecurityContext.*",
-      "kinds": "/K/W",
-      "contexts": [
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 167,
-          "column": 129
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 169,
-          "column": 1
-        }
-      ]
-    },
-    {
-      "id": ".targetPlatform",
-      "kinds": "/K",
-      "contexts": [
-        {
-          "file": "templates/messaging-topology-operator/deployment.yaml",
-          "line": 156,
-          "column": 138
-        },
-        {
-          "file": "templates/cluster-operator/deployment.yaml",
-          "line": 156,
-          "column": 27
         }
       ]
     }
