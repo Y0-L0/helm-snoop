@@ -1508,17 +1508,17 @@
         {
           "file": "templates/serviceaccount.yaml",
           "line": 10,
-          "column": 23
+          "column": 7
         },
         {
           "file": "templates/metrics-service.yaml",
           "line": 10,
-          "column": 23
+          "column": 7
         },
         {
           "file": "templates/service.yaml",
           "line": 8,
-          "column": 23
+          "column": 7
         }
       ]
     },
@@ -3916,7 +3916,7 @@
         {
           "file": "templates/metrics-service.yaml",
           "line": 10,
-          "column": 23
+          "column": 7
         }
       ]
     },
@@ -8121,7 +8121,7 @@
         {
           "file": "templates/service.yaml",
           "line": 8,
-          "column": 23
+          "column": 7
         }
       ]
     },
@@ -8572,7 +8572,7 @@
         {
           "file": "templates/serviceaccount.yaml",
           "line": 10,
-          "column": 23
+          "column": 7
         }
       ]
     },
