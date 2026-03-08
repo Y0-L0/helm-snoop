@@ -1,6 +1,7 @@
 package vpath
 
 import (
+	"fmt"
 	"strconv"
 
 	"gopkg.in/yaml.v3"
@@ -67,4 +68,61 @@ func (d *defCtx) eval(path Path, node *yaml.Node) {
 	case yaml.AliasNode:
 		d.eval(path, node.Alias)
 	}
+}
+
+// GetDefinitionsFromMap walks an already-parsed map and returns all leaf
+// definition paths. No line/column context is available; paths get a
+// source-only context using the provided source label.
+func GetDefinitionsFromMap(m map[string]any, source string) Paths {
+	if len(m) == 0 {
+		return nil
+	}
+	d := defCtx{fileName: source}
+	d.evalMap(Path{}, m)
+	return d.out
+}
+
+func (d *defCtx) evalMap(path Path, m map[string]any) {
+	if len(m) == 0 {
+		d.emitSourceOnly(path)
+		return
+	}
+	for key, val := range m {
+		child := path.WithKey(key)
+		child.Contexts = Contexts{{FileName: d.fileName}}
+		d.evalAny(child, val)
+	}
+}
+
+func (d *defCtx) evalAny(path Path, val any) {
+	switch v := val.(type) {
+	case map[string]any:
+		d.evalMap(path, v)
+	case []any:
+		if len(v) == 0 {
+			d.emitSourceOnly(path)
+			return
+		}
+		for i, item := range v {
+			d.evalAny(path.WithIdx(strconv.Itoa(i)), item)
+		}
+	default:
+		d.emitSourceOnly(path)
+	}
+}
+
+func (d *defCtx) emitSourceOnly(path Path) {
+	if len(path.Contexts) == 0 {
+		path.Contexts = Contexts{{FileName: d.fileName}}
+	}
+	p := path
+	d.out = append(d.out, &p)
+}
+
+// FormatMapSource formats a source label for inline extraValues from a config file.
+func FormatMapSource(configPath, chartKey string) string {
+	if chartKey == "" {
+		return fmt.Sprintf("%s:global.extraValues", configPath)
+	}
+	return fmt.Sprintf("%s:charts.%s.extraValues", configPath, chartKey)
 }
