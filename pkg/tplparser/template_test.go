@@ -1,20 +1,5 @@
 package tplparser
 
-import (
-	"helm.sh/helm/v4/pkg/chart/common"
-	chart "helm.sh/helm/v4/pkg/chart/v2"
-)
-
-type testFile struct{ name, data string }
-
-func buildChart(files ...testFile) *chart.Chart {
-	c := &chart.Chart{Templates: make([]*common.File, 0, len(files))}
-	for _, f := range files {
-		c.Templates = append(c.Templates, &common.File{Name: f.name, Data: []byte(f.data)})
-	}
-	return c
-}
-
 // Two files, one define each → both indexed with correct origins.
 func (s *Unittest) TestBuildTemplateIndex_TwoFilesTwoDefines() {
 	c := buildChart(
