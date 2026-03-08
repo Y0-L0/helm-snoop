@@ -3,6 +3,8 @@ package tplparser
 import (
 	"helm.sh/helm/v4/pkg/chart/common"
 	chart "helm.sh/helm/v4/pkg/chart/v2"
+
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
 // NoValues: template without any .Values usage should yield empty slice.
@@ -31,7 +33,7 @@ func (s *Unittest) TestGetUsages_CalledDefinesAreNotDoubleEvaluated() {
 	paths, err := GetUsages(c)
 	s.Require().NoError(err)
 	s.Require().Len(paths, 1)
-	s.Require().Equal(".foo.bar", paths[0].ID())
+	vpath.EqualPath(s, vpath.NewPath("foo", "bar"), paths[0])
 }
 
 // Invalid template syntax should return an error, not panic.

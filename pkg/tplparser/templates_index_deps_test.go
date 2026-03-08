@@ -3,6 +3,8 @@ package tplparser
 import (
 	"helm.sh/helm/v4/pkg/chart/common"
 	chart "helm.sh/helm/v4/pkg/chart/v2"
+
+	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
 // Root includes template defined in immediate dependency.
@@ -30,8 +32,7 @@ func (s *Unittest) TestTemplateIndex_DependencyInclude() {
 	s.Require().NoError(err)
 
 	s.Require().Len(paths, 1)
-	s.Equal(".child.k", paths[0].ID())
-	s.Equal("/K/K", paths[0].KindsString())
+	vpath.EqualPath(s, vpath.NewPath("child", "k"), paths[0])
 }
 
 // Root includes template defined in transitive dependency (child -> grandchild).
@@ -60,8 +61,7 @@ func (s *Unittest) TestTemplateIndex_TransitiveDependencyInclude() {
 	paths, err := parseFile("", "templates/cm.yaml", root.Templates[0].Data, idx)
 	s.Require().NoError(err)
 	s.Require().Len(paths, 1)
-	s.Equal(".grand.y", paths[0].ID())
-	s.Equal("/K/K", paths[0].KindsString())
+	vpath.EqualPath(s, vpath.NewPath("grand", "y"), paths[0])
 }
 
 // Same library chart at different dependency paths → no panic (shared dependency).
