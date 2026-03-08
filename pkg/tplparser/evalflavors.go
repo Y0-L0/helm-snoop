@@ -335,24 +335,12 @@ func evalRootVariable(ident []string) evalResult {
 
 // evalNamedVariable resolves range/with variables and action-assigned variables.
 func (e *evalCtx) evalNamedVariable(varName string, fields []string) evalResult {
-	if e.variables != nil {
-		if basePath, ok := e.variables[varName]; ok {
-			if len(fields) == 0 {
-				return evalResult{paths: []*vpath.Path{basePath}}
-			}
-			p := *basePath
-			for _, field := range fields {
-				p = p.WithKey(field)
-			}
-			return evalResult{paths: []*vpath.Path{&p}}
-		}
+	if e.variables == nil {
+		return evalResult{}
 	}
-
-	if e.varResults != nil {
-		if result, ok := e.varResults[varName]; ok {
-			return result.resolveFields(fields)
-		}
+	result, ok := e.variables[varName]
+	if !ok {
+		return evalResult{}
 	}
-
-	return evalResult{}
+	return result.resolveFields(fields)
 }
