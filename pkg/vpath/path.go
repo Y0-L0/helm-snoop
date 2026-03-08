@@ -41,6 +41,12 @@ func NewPath(tokens ...string) *Path {
 	return &p
 }
 
+func NewCheckedPath(tokens ...string) *Path {
+	p := NewPath(tokens...)
+	p.Usage = Checked
+	return p
+}
+
 // ID returns a dot-notation representation of the path (e.g., ".a.b.c").
 // Used for comparison, map keys, and human-readable output.
 // Does not distinguish between map (key) and array (int) segments.
