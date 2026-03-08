@@ -136,3 +136,20 @@ func (s *Unittest) TestActionAssign_Reassignment() {
 	expected := vpath.Paths{vpath.NewPath("second", "sub")}
 	vpath.EqualPaths(s, expected, paths)
 }
+
+// Variable bound to root ($) with .Values access strips the Values segment.
+func (s *Unittest) TestActionAssign_RootBoundVariableStripsValues() {
+	paths := s.parseChart(
+		testFile{
+			"templates/_helpers.yaml",
+			`{{ define "test.helper" }}{{ .Values.global.imagePullSecrets }}{{ end }}`,
+		},
+		testFile{
+			"templates/main.yaml",
+			`{{ $context := . }}{{ include "test.helper" $context }}`,
+		},
+	)
+
+	expected := vpath.Paths{vpath.NewPath("global", "imagePullSecrets")}
+	vpath.EqualPaths(s, expected, paths)
+}

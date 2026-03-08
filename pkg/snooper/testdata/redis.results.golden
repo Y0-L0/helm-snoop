@@ -1,41 +1,41 @@
 ==================================== redis =====================================
 
 ---------------------------------- Undefined -----------------------------------
-.Values.global.imagePullSecrets.*.*       templates/job.yaml:1:1
-                                          templates/statefulset.yaml:133:18
-                                          templates/statefulset.yaml:133:43
-                                          templates/statefulset.yaml:155:15
-                                          templates/statefulset.yaml:131:11
-.Values.global.imagePullSecrets.*.name.*  templates/job.yaml:1:1
-                                          templates/statefulset.yaml:133:18
-                                          templates/statefulset.yaml:133:43
-                                          templates/statefulset.yaml:131:11
-.extraObjects.*.*                         templates/extraobjects.yaml:1:1
-.extraPorts.*.containerPort               templates/statefulset.yaml:310:33
-.extraPorts.*.name                        templates/headless-service.yaml:30:22
-                                          templates/master-service.yaml:26:22
-                                          templates/statefulset.yaml:311:24
-                                          templates/master-service.yaml:27:16
-                                          templates/headless-service.yaml:31:16
-                                          templates/service.yaml:39:22
-                                          templates/service.yaml:40:16
-                                          templates/sentinel-master-service.yaml:28:16
-                                          templates/sentinel-master-service.yaml:27:22
-.extraPorts.*.port                        templates/service.yaml:38:16
-                                          templates/headless-service.yaml:29:16
-                                          templates/sentinel-master-service.yaml:26:16
-                                          templates/master-service.yaml:25:16
-.extraPorts.*.targetPort                  templates/service.yaml:39:22
-                                          templates/sentinel-master-service.yaml:27:22
-                                          templates/master-service.yaml:26:22
-                                          templates/headless-service.yaml:30:22
-.image.imagePullPolicy                    templates/statefulset.yaml:88:8
-                                          templates/job.yaml:83:50
-.metrics.image.imagePullPolicy            templates/statefulset.yaml:88:8
-.sentinel.image.imagePullPolicy           templates/statefulset.yaml:88:8
-.targetPlatform                           templates/job.yaml:1:1
-                                          templates/sentinel-master-deployment.yaml:1:1
-                                          templates/statefulset.yaml:163:13
+.extraObjects.*.*                  templates/extraobjects.yaml:1:1
+.extraPorts.*.containerPort        templates/statefulset.yaml:310:33
+.extraPorts.*.name                 templates/headless-service.yaml:31:16
+                                   templates/service.yaml:39:22
+                                   templates/headless-service.yaml:30:22
+                                   templates/sentinel-master-service.yaml:27:22
+                                   templates/master-service.yaml:26:22
+                                   templates/master-service.yaml:27:16
+                                   templates/sentinel-master-service.yaml:28:16
+                                   templates/statefulset.yaml:311:24
+                                   templates/service.yaml:40:16
+.extraPorts.*.port                 templates/service.yaml:38:16
+                                   templates/sentinel-master-service.yaml:26:16
+                                   templates/headless-service.yaml:29:16
+                                   templates/master-service.yaml:25:16
+.extraPorts.*.targetPort           templates/service.yaml:39:22
+                                   templates/master-service.yaml:26:22
+                                   templates/sentinel-master-service.yaml:27:22
+                                   templates/headless-service.yaml:30:22
+.global.imagePullSecrets.*.*       templates/statefulset.yaml:133:18
+                                   templates/statefulset.yaml:133:43
+                                   templates/job.yaml:1:1
+                                   templates/statefulset.yaml:131:11
+                                   templates/statefulset.yaml:155:15
+.global.imagePullSecrets.*.name.*  templates/job.yaml:1:1
+                                   templates/statefulset.yaml:133:18
+                                   templates/statefulset.yaml:133:43
+                                   templates/statefulset.yaml:131:11
+.image.imagePullPolicy             templates/job.yaml:83:50
+                                   templates/statefulset.yaml:88:8
+.metrics.image.imagePullPolicy     templates/statefulset.yaml:88:8
+.sentinel.image.imagePullPolicy    templates/statefulset.yaml:88:8
+.targetPlatform                    templates/sentinel-master-deployment.yaml:1:1
+                                   templates/statefulset.yaml:163:13
+                                   templates/job.yaml:1:1
 
 =================================== Summary ====================================
 
