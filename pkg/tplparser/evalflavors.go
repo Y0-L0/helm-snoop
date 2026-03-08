@@ -33,15 +33,6 @@ func (e *evalCtx) evalParamPaths(firstField string, restFields []string) (evalRe
 		return evalResult{}, true
 	}
 
-	// Strip .param.Values.foo → .foo when param is bound to root ($).
-	if len(base.paths) > 0 && base.paths[0].ID() == "." && len(restFields) > 0 &&
-		restFields[0] == "Values" { //nolint:goconst
-		restFields = restFields[1:]
-		if len(restFields) == 0 {
-			return evalResult{}, true
-		}
-	}
-
 	return base.resolveFields(restFields), true
 }
 
@@ -79,7 +70,7 @@ func (e *evalCtx) evalFieldNode(node *parse.FieldNode) evalResult {
 		return result
 	}
 
-	if firstField == "Values" {
+	if firstField == "Values" { //nolint:goconst
 		if len(node.Ident) == 1 {
 			// Just ".Values" with no path
 			return evalResult{}

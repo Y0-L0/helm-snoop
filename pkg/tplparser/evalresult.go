@@ -41,6 +41,15 @@ func (r evalResult) resolveFields(fields []string) evalResult {
 		}
 	}
 
+	// Strip .Values when base path is root — the root context ($) already
+	// represents the chart root, so "Values" is not a real path segment.
+	if len(r.paths) > 0 && r.paths[0].ID() == "." && fields[0] == "Values" {
+		fields = fields[1:]
+		if len(fields) == 0 {
+			return evalResult{}
+		}
+	}
+
 	// Leaf: append remaining fields to paths.
 	var paths []*vpath.Path
 	for _, p := range r.paths {

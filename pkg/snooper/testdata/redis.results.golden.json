@@ -63,48 +63,28 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 15,
-          "column": 19
+          "line": 376,
+          "column": 52
         },
         {
-          "file": "templates/sentinel-master-rbac.yaml",
+          "file": "templates/job.yaml",
           "line": 1,
-          "column": 77
+          "column": 8
         },
         {
-          "file": "templates/sentinel-master-service.yaml",
-          "line": 1,
-          "column": 77
+          "file": "templates/statefulset.yaml",
+          "line": 183,
+          "column": 27
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 293,
+          "column": 54
         },
         {
           "file": "templates/master-service.yaml",
           "line": 1,
           "column": 13
-        },
-        {
-          "file": "templates/networkpolicy.yaml",
-          "line": 30,
-          "column": 17
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 53,
-          "column": 46
-        },
-        {
-          "file": "templates/configmap.yaml",
-          "line": 36,
-          "column": 42
-        },
-        {
-          "file": "templates/networkpolicy.yaml",
-          "line": 67,
-          "column": 12
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 27,
-          "column": 46
         },
         {
           "file": "templates/statefulset.yaml",
@@ -113,8 +93,43 @@
         },
         {
           "file": "templates/networkpolicy.yaml",
+          "line": 30,
+          "column": 17
+        },
+        {
+          "file": "templates/networkpolicy.yaml",
+          "line": 67,
+          "column": 12
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 75,
+          "column": 22
+        },
+        {
+          "file": "templates/networkpolicy.yaml",
           "line": 112,
           "column": 17
+        },
+        {
+          "file": "templates/networkpolicy.yaml",
+          "line": 148,
+          "column": 12
+        },
+        {
+          "file": "templates/prestop-configmap.yaml",
+          "line": 1,
+          "column": 38
+        },
+        {
+          "file": "templates/configmap.yaml",
+          "line": 36,
+          "column": 42
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 53,
+          "column": 46
         },
         {
           "file": "templates/statefulset.yaml",
@@ -122,9 +137,24 @@
           "column": 48
         },
         {
-          "file": "templates/networkpolicy.yaml",
-          "line": 148,
-          "column": 12
+          "file": "templates/statefulset.yaml",
+          "line": 27,
+          "column": 46
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 15,
+          "column": 19
+        },
+        {
+          "file": "templates/sentinel-master-deployment.yaml",
+          "line": 1,
+          "column": 77
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 231,
+          "column": 48
         },
         {
           "file": "templates/servicemonitor.yaml",
@@ -137,24 +167,29 @@
           "column": 40
         },
         {
+          "file": "templates/service.yaml",
+          "line": 31,
+          "column": 42
+        },
+        {
           "file": "templates/statefulset.yaml",
           "line": 354,
           "column": 247
         },
         {
           "file": "templates/service.yaml",
-          "line": 31,
-          "column": 42
-        },
-        {
-          "file": "templates/prestop-configmap.yaml",
-          "line": 1,
-          "column": 38
-        },
-        {
-          "file": "templates/service.yaml",
           "line": 14,
           "column": 40
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 436,
+          "column": 46
+        },
+        {
+          "file": "templates/headless-service.yaml",
+          "line": 39,
+          "column": 12
         },
         {
           "file": "templates/service.yaml",
@@ -167,9 +202,9 @@
           "column": 38
         },
         {
-          "file": "templates/statefulset.yaml",
-          "line": 376,
-          "column": 52
+          "file": "templates/sentinel-master-service.yaml",
+          "line": 1,
+          "column": 77
         },
         {
           "file": "templates/headless-service.yaml",
@@ -182,49 +217,14 @@
           "column": 55
         },
         {
-          "file": "templates/headless-service.yaml",
-          "line": 39,
-          "column": 12
-        },
-        {
           "file": "templates/statefulset.yaml",
           "line": 404,
           "column": 52
         },
         {
-          "file": "templates/sentinel-master-deployment.yaml",
+          "file": "templates/sentinel-master-rbac.yaml",
           "line": 1,
           "column": 77
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 183,
-          "column": 27
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 231,
-          "column": 48
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 436,
-          "column": 46
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 75,
-          "column": 22
-        },
-        {
-          "file": "templates/job.yaml",
-          "line": 1,
-          "column": 8
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 293,
-          "column": 54
         }
       ]
     },
@@ -254,8 +254,33 @@
         },
         {
           "file": "templates/statefulset.yaml",
+          "line": 277,
+          "column": 20
+        },
+        {
+          "file": "templates/prestop-configmap.yaml",
+          "line": 160,
+          "column": 51
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 263,
+          "column": 44
+        },
+        {
+          "file": "templates/statefulset.yaml",
           "line": 119,
           "column": 3
+        },
+        {
+          "file": "templates/sentinel-master-deployment.yaml",
+          "line": 140,
+          "column": 14
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 780,
+          "column": 16
         },
         {
           "file": "templates/sentinel-master-deployment.yaml",
@@ -268,9 +293,9 @@
           "column": 16
         },
         {
-          "file": "templates/statefulset.yaml",
-          "line": 447,
-          "column": 20
+          "file": "templates/sentinel-master-deployment.yaml",
+          "line": 49,
+          "column": 42
         },
         {
           "file": "templates/job.yaml",
@@ -284,38 +309,8 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 780,
-          "column": 16
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 427,
-          "column": 20
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 315,
-          "column": 46
-        },
-        {
-          "file": "templates/job.yaml",
-          "line": 52,
-          "column": 18
-        },
-        {
-          "file": "templates/sentinel-master-deployment.yaml",
-          "line": 49,
-          "column": 42
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 719,
-          "column": 18
-        },
-        {
-          "file": "templates/configmap.yaml",
-          "line": 36,
-          "column": 12
+          "line": 91,
+          "column": 219
         },
         {
           "file": "templates/secret.yaml",
@@ -323,29 +318,24 @@
           "column": 68
         },
         {
-          "file": "templates/sentinel-master-deployment.yaml",
-          "line": 140,
-          "column": 14
+          "file": "templates/statefulset.yaml",
+          "line": 447,
+          "column": 20
         },
         {
-          "file": "templates/prestop-configmap.yaml",
-          "line": 160,
-          "column": 51
+          "file": "templates/configmap.yaml",
+          "line": 36,
+          "column": 12
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 91,
-          "column": 219
+          "line": 315,
+          "column": 46
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 263,
-          "column": 44
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 299,
-          "column": 76
+          "line": 719,
+          "column": 18
         },
         {
           "file": "templates/statefulset.yaml",
@@ -359,13 +349,23 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 277,
+          "line": 299,
+          "column": 76
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 427,
           "column": 20
         },
         {
           "file": "templates/job.yaml",
           "line": 98,
           "column": 14
+        },
+        {
+          "file": "templates/job.yaml",
+          "line": 52,
+          "column": 18
         },
         {
           "file": "templates/job.yaml",
@@ -400,11 +400,6 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 102,
-          "column": 21
-        },
-        {
-          "file": "templates/statefulset.yaml",
           "line": 101,
           "column": 59
         },
@@ -412,6 +407,11 @@
           "file": "templates/configmap.yaml",
           "line": 1,
           "column": 1
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 102,
+          "column": 21
         },
         {
           "file": "templates/statefulset.yaml",
@@ -439,6 +439,11 @@
           "column": 39
         },
         {
+          "file": "templates/job.yaml",
+          "line": 98,
+          "column": 21
+        },
+        {
           "file": "templates/sentinel-master-deployment.yaml",
           "line": 104,
           "column": 20
@@ -450,18 +455,13 @@
         },
         {
           "file": "templates/sentinel-master-deployment.yaml",
-          "line": 112,
-          "column": 1
-        },
-        {
-          "file": "templates/sentinel-master-deployment.yaml",
           "line": 113,
           "column": 18
         },
         {
-          "file": "templates/job.yaml",
-          "line": 98,
-          "column": 21
+          "file": "templates/sentinel-master-deployment.yaml",
+          "line": 112,
+          "column": 1
         }
       ]
     },
@@ -491,8 +491,8 @@
         },
         {
           "file": "templates/sentinel-master-deployment.yaml",
-          "line": 57,
-          "column": 16
+          "line": 140,
+          "column": 14
         },
         {
           "file": "templates/statefulset.yaml",
@@ -550,11 +550,6 @@
           "column": 109
         },
         {
-          "file": "templates/job.yaml",
-          "line": 91,
-          "column": 39
-        },
-        {
           "file": "templates/statefulset.yaml",
           "line": 427,
           "column": 20
@@ -565,9 +560,14 @@
           "column": 13
         },
         {
+          "file": "templates/statefulset.yaml",
+          "line": 447,
+          "column": 20
+        },
+        {
           "file": "templates/sentinel-master-deployment.yaml",
-          "line": 140,
-          "column": 14
+          "line": 57,
+          "column": 16
         },
         {
           "file": "templates/sentinel-master-deployment.yaml",
@@ -575,9 +575,9 @@
           "column": 28
         },
         {
-          "file": "templates/statefulset.yaml",
-          "line": 447,
-          "column": 20
+          "file": "templates/job.yaml",
+          "line": 91,
+          "column": 39
         }
       ]
     },
@@ -653,23 +653,18 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 125,
-          "column": 26
-        },
-        {
-          "file": "templates/secret.yaml",
-          "line": 1,
-          "column": 8
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 481,
-          "column": 40
+          "line": 571,
+          "column": 22
         },
         {
           "file": "templates/statefulset.yaml",
           "line": 223,
           "column": 22
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 125,
+          "column": 26
         },
         {
           "file": "templates/statefulset.yaml",
@@ -683,8 +678,8 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 673,
-          "column": 18
+          "line": 113,
+          "column": 26
         },
         {
           "file": "templates/sentinel-master-deployment.yaml",
@@ -693,13 +688,18 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 175,
-          "column": 24
+          "line": 511,
+          "column": 140
         },
         {
           "file": "templates/statefulset.yaml",
           "line": 299,
           "column": 50
+        },
+        {
+          "file": "templates/secret.yaml",
+          "line": 1,
+          "column": 8
         },
         {
           "file": "templates/statefulset.yaml",
@@ -712,29 +712,9 @@
           "column": 20
         },
         {
-          "file": "templates/statefulset.yaml",
-          "line": 113,
-          "column": 26
-        },
-        {
           "file": "templates/prestop-configmap.yaml",
           "line": 202,
           "column": 12
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 650,
-          "column": 23
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 511,
-          "column": 140
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 571,
-          "column": 22
         },
         {
           "file": "templates/job.yaml",
@@ -742,9 +722,29 @@
           "column": 18
         },
         {
+          "file": "templates/statefulset.yaml",
+          "line": 481,
+          "column": 40
+        },
+        {
           "file": "templates/prestop-configmap.yaml",
           "line": 30,
           "column": 12
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 673,
+          "column": 18
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 175,
+          "column": 24
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 650,
+          "column": 23
         }
       ]
     },
@@ -793,9 +793,9 @@
           "column": 59
         },
         {
-          "file": "templates/secret.yaml",
-          "line": 1,
-          "column": 34
+          "file": "templates/sentinel-master-deployment.yaml",
+          "line": 25,
+          "column": 8
         },
         {
           "file": "templates/job.yaml",
@@ -803,9 +803,9 @@
           "column": 23
         },
         {
-          "file": "templates/sentinel-master-deployment.yaml",
-          "line": 25,
-          "column": 8
+          "file": "templates/secret.yaml",
+          "line": 1,
+          "column": 34
         }
       ]
     },
@@ -834,14 +834,14 @@
           "column": 1
         },
         {
-          "file": "templates/statefulset.yaml",
-          "line": 32,
-          "column": 28
-        },
-        {
           "file": "templates/job.yaml",
           "line": 33,
           "column": 57
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 32,
+          "column": 28
         },
         {
           "file": "templates/statefulset.yaml",
@@ -850,13 +850,13 @@
         },
         {
           "file": "templates/sentinel-master-deployment.yaml",
-          "line": 36,
-          "column": 16
+          "line": 35,
+          "column": 6
         },
         {
           "file": "templates/sentinel-master-deployment.yaml",
-          "line": 35,
-          "column": 6
+          "line": 36,
+          "column": 16
         },
         {
           "file": "templates/job.yaml",
@@ -921,9 +921,9 @@
           "column": 1
         },
         {
-          "file": "templates/prestop-configmap.yaml",
-          "line": 65,
-          "column": 67
+          "file": "templates/statefulset.yaml",
+          "line": 628,
+          "column": 140
         },
         {
           "file": "templates/statefulset.yaml",
@@ -931,19 +931,9 @@
           "column": 150
         },
         {
-          "file": "templates/sentinel-master-deployment.yaml",
-          "line": 103,
-          "column": 70
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 643,
-          "column": 140
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 574,
-          "column": 22
+          "file": "templates/prestop-configmap.yaml",
+          "line": 65,
+          "column": 67
         },
         {
           "file": "templates/prestop-configmap.yaml",
@@ -957,13 +947,23 @@
         },
         {
           "file": "templates/statefulset.yaml",
+          "line": 643,
+          "column": 140
+        },
+        {
+          "file": "templates/sentinel-master-deployment.yaml",
+          "line": 103,
+          "column": 70
+        },
+        {
+          "file": "templates/statefulset.yaml",
           "line": 650,
           "column": 23
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 628,
-          "column": 140
+          "line": 574,
+          "column": 22
         }
       ]
     },
@@ -1085,9 +1085,39 @@
           "column": 1
         },
         {
+          "file": "templates/prestop-configmap.yaml",
+          "line": 199,
+          "column": 113
+        },
+        {
           "file": "templates/statefulset.yaml",
           "line": 160,
           "column": 143
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 495,
+          "column": 162
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 510,
+          "column": 159
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 104,
+          "column": 140
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 522,
+          "column": 155
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 159,
+          "column": 139
         },
         {
           "file": "templates/statefulset.yaml",
@@ -1095,8 +1125,28 @@
           "column": 138
         },
         {
+          "file": "templates/statefulset.yaml",
+          "line": 122,
+          "column": 161
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 585,
+          "column": 138
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 173,
+          "column": 159
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 90,
+          "column": 160
+        },
+        {
           "file": "templates/prestop-configmap.yaml",
-          "line": 199,
+          "line": 26,
           "column": 113
         },
         {
@@ -1111,58 +1161,8 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 585,
-          "column": 138
-        },
-        {
-          "file": "templates/prestop-configmap.yaml",
-          "line": 26,
-          "column": 113
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 159,
-          "column": 139
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 104,
-          "column": 140
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 173,
-          "column": 159
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 495,
-          "column": 162
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 122,
-          "column": 161
-        },
-        {
-          "file": "templates/statefulset.yaml",
           "line": 162,
           "column": 141
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 510,
-          "column": 159
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 522,
-          "column": 155
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 90,
-          "column": 160
         }
       ]
     },
@@ -1351,12 +1351,27 @@
           "column": 1
         },
         {
+          "file": "templates/sentinel-master-service.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/sentinel-service.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
           "file": "templates/pdb.yaml",
           "line": 1,
           "column": 1
         },
         {
-          "file": "templates/configmap.yaml",
+          "file": "templates/metrics-service.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/master-service.yaml",
           "line": 1,
           "column": 1
         },
@@ -1366,17 +1381,12 @@
           "column": 1
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 13,
-          "column": 9
+          "file": "templates/statefulset.yaml",
+          "line": 73,
+          "column": 59
         },
         {
-          "file": "templates/sentinel-service.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
-          "file": "templates/sentinel-master-service.yaml",
+          "file": "templates/configmap.yaml",
           "line": 1,
           "column": 1
         },
@@ -1401,16 +1411,6 @@
           "column": 3
         },
         {
-          "file": "templates/master-service.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
-          "file": "templates/metrics-service.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
           "file": "templates/prestop-configmap.yaml",
           "line": 81,
           "column": 57
@@ -1421,9 +1421,9 @@
           "column": 10
         },
         {
-          "file": "templates/statefulset.yaml",
-          "line": 73,
-          "column": 59
+          "file": "templates/serviceaccount.yaml",
+          "line": 13,
+          "column": 9
         }
       ]
     },
@@ -1462,19 +1462,14 @@
           "column": 13
         },
         {
-          "file": "templates/configmap.yaml",
+          "file": "templates/statefulset.yaml",
+          "line": 71,
+          "column": 30
+        },
+        {
+          "file": "templates/sentinel-master-service.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/sentinel-master-deployment.yaml",
-          "line": 73,
-          "column": 45
-        },
-        {
-          "file": "templates/prestop-configmap.yaml",
-          "line": 65,
-          "column": 23
         },
         {
           "file": "templates/pdb.yaml",
@@ -1487,37 +1482,12 @@
           "column": 1
         },
         {
-          "file": "templates/service.yaml",
-          "line": 1,
-          "column": 1
+          "file": "templates/prestop-configmap.yaml",
+          "line": 65,
+          "column": 23
         },
         {
-          "file": "templates/networkpolicy.yaml",
-          "line": 72,
-          "column": 10
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 71,
-          "column": 30
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 56,
-          "column": 17
-        },
-        {
-          "file": "templates/job.yaml",
-          "line": 55,
-          "column": 27
-        },
-        {
-          "file": "templates/sentinel-master-service.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
-          "file": "templates/sentinel-master-rbac.yaml",
+          "file": "templates/configmap.yaml",
           "line": 1,
           "column": 1
         },
@@ -1527,7 +1497,12 @@
           "column": 1
         },
         {
-          "file": "templates/sentinel-service.yaml",
+          "file": "templates/servicemonitor.yaml",
+          "line": 63,
+          "column": 9
+        },
+        {
+          "file": "templates/secret.yaml",
           "line": 1,
           "column": 1
         },
@@ -1537,7 +1512,32 @@
           "column": 92
         },
         {
-          "file": "templates/secret.yaml",
+          "file": "templates/job.yaml",
+          "line": 55,
+          "column": 27
+        },
+        {
+          "file": "templates/networkpolicy.yaml",
+          "line": 72,
+          "column": 10
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 56,
+          "column": 17
+        },
+        {
+          "file": "templates/serviceaccount.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/sentinel-service.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/sentinel-master-rbac.yaml",
           "line": 1,
           "column": 1
         },
@@ -1547,14 +1547,14 @@
           "column": 69
         },
         {
-          "file": "templates/serviceaccount.yaml",
-          "line": 1,
-          "column": 1
+          "file": "templates/sentinel-master-deployment.yaml",
+          "line": 73,
+          "column": 45
         },
         {
-          "file": "templates/servicemonitor.yaml",
-          "line": 63,
-          "column": 9
+          "file": "templates/service.yaml",
+          "line": 1,
+          "column": 1
         }
       ]
     },
@@ -1583,14 +1583,24 @@
           "column": 1
         },
         {
+          "file": "templates/configmap.yaml",
+          "line": 15,
+          "column": 34
+        },
+        {
           "file": "templates/statefulset.yaml",
-          "line": 33,
-          "column": 21
+          "line": 413,
+          "column": 20
         },
         {
           "file": "templates/statefulset.yaml",
           "line": 749,
           "column": 16
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 33,
+          "column": 21
         },
         {
           "file": "templates/configmap.yaml",
@@ -1601,16 +1611,6 @@
           "file": "templates/statefulset.yaml",
           "line": 34,
           "column": 54
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 413,
-          "column": 20
-        },
-        {
-          "file": "templates/configmap.yaml",
-          "line": 15,
-          "column": 34
         }
       ]
     },
@@ -1639,33 +1639,13 @@
           "column": 1
         },
         {
-          "file": "templates/statefulset.yaml",
-          "line": 46,
-          "column": 39
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 753,
-          "column": 22
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 32,
-          "column": 64
-        },
-        {
           "file": "templates/configmap.yaml",
           "line": 1,
           "column": 36
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 752,
-          "column": 20
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 749,
+          "line": 31,
           "column": 16
         },
         {
@@ -1675,8 +1655,28 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 31,
+          "line": 46,
+          "column": 39
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 749,
           "column": 16
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 32,
+          "column": 64
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 752,
+          "column": 20
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 753,
+          "column": 22
         }
       ]
     },
@@ -1706,13 +1706,13 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 46,
-          "column": 39
+          "line": 47,
+          "column": 28
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 47,
-          "column": 28
+          "line": 46,
+          "column": 39
         }
       ]
     },
@@ -1752,12 +1752,12 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 415,
+          "line": 274,
           "column": 29
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 274,
+          "line": 415,
           "column": 29
         }
       ]
@@ -1787,11 +1787,6 @@
           "column": 1
         },
         {
-          "file": "templates/sentinel-master-deployment.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
           "file": "templates/statefulset.yaml",
           "line": 178,
           "column": 25
@@ -1800,6 +1795,11 @@
           "file": "templates/statefulset.yaml",
           "line": 178,
           "column": 51
+        },
+        {
+          "file": "templates/sentinel-master-deployment.yaml",
+          "line": 1,
+          "column": 1
         }
       ]
     },
@@ -1828,11 +1828,6 @@
           "column": 1
         },
         {
-          "file": "templates/sentinel-master-deployment.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
           "file": "templates/statefulset.yaml",
           "line": 178,
           "column": 25
@@ -1841,6 +1836,11 @@
           "file": "templates/statefulset.yaml",
           "line": 178,
           "column": 51
+        },
+        {
+          "file": "templates/sentinel-master-deployment.yaml",
+          "line": 1,
+          "column": 1
         }
       ]
     },
@@ -1869,11 +1869,6 @@
           "column": 1
         },
         {
-          "file": "templates/sentinel-master-deployment.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
           "file": "templates/statefulset.yaml",
           "line": 178,
           "column": 25
@@ -1882,6 +1877,11 @@
           "file": "templates/statefulset.yaml",
           "line": 178,
           "column": 51
+        },
+        {
+          "file": "templates/sentinel-master-deployment.yaml",
+          "line": 1,
+          "column": 1
         }
       ]
     },
@@ -1910,11 +1910,6 @@
           "column": 1
         },
         {
-          "file": "templates/sentinel-master-deployment.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
           "file": "templates/statefulset.yaml",
           "line": 178,
           "column": 25
@@ -1923,6 +1918,11 @@
           "file": "templates/statefulset.yaml",
           "line": 178,
           "column": 51
+        },
+        {
+          "file": "templates/sentinel-master-deployment.yaml",
+          "line": 1,
+          "column": 1
         }
       ]
     },
@@ -1951,11 +1951,6 @@
           "column": 1
         },
         {
-          "file": "templates/sentinel-master-deployment.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
           "file": "templates/statefulset.yaml",
           "line": 178,
           "column": 25
@@ -1964,6 +1959,11 @@
           "file": "templates/statefulset.yaml",
           "line": 178,
           "column": 51
+        },
+        {
+          "file": "templates/sentinel-master-deployment.yaml",
+          "line": 1,
+          "column": 1
         }
       ]
     },
@@ -1992,11 +1992,6 @@
           "column": 1
         },
         {
-          "file": "templates/sentinel-master-deployment.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
           "file": "templates/statefulset.yaml",
           "line": 178,
           "column": 25
@@ -2005,6 +2000,11 @@
           "file": "templates/statefulset.yaml",
           "line": 178,
           "column": 51
+        },
+        {
+          "file": "templates/sentinel-master-deployment.yaml",
+          "line": 1,
+          "column": 1
         }
       ]
     },
@@ -2033,11 +2033,6 @@
           "column": 1
         },
         {
-          "file": "templates/sentinel-master-deployment.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
           "file": "templates/statefulset.yaml",
           "line": 178,
           "column": 25
@@ -2046,6 +2041,11 @@
           "file": "templates/statefulset.yaml",
           "line": 178,
           "column": 51
+        },
+        {
+          "file": "templates/sentinel-master-deployment.yaml",
+          "line": 1,
+          "column": 1
         }
       ]
     },
@@ -2074,11 +2074,6 @@
           "column": 1
         },
         {
-          "file": "templates/sentinel-master-deployment.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
           "file": "templates/statefulset.yaml",
           "line": 178,
           "column": 25
@@ -2087,6 +2082,11 @@
           "file": "templates/statefulset.yaml",
           "line": 178,
           "column": 51
+        },
+        {
+          "file": "templates/sentinel-master-deployment.yaml",
+          "line": 1,
+          "column": 1
         }
       ]
     },
@@ -2250,8 +2250,8 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 36,
-          "column": 16
+          "line": 37,
+          "column": 56
         },
         {
           "file": "templates/statefulset.yaml",
@@ -2265,8 +2265,8 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 37,
-          "column": 56
+          "line": 36,
+          "column": 16
         }
       ]
     },
@@ -2491,9 +2491,14 @@
           "column": 1
         },
         {
-          "file": "templates/sentinel-master-rbac.yaml",
-          "line": 13,
-          "column": 6
+          "file": "templates/master-service.yaml",
+          "line": 12,
+          "column": 54
+        },
+        {
+          "file": "templates/job.yaml",
+          "line": 12,
+          "column": 9
         },
         {
           "file": "templates/statefulset.yaml",
@@ -2501,14 +2506,9 @@
           "column": 3
         },
         {
-          "file": "templates/prestop-configmap.yaml",
-          "line": 11,
-          "column": 90
-        },
-        {
-          "file": "templates/metrics-service.yaml",
-          "line": 13,
-          "column": 27
+          "file": "templates/sentinel-master-service.yaml",
+          "line": 10,
+          "column": 80
         },
         {
           "file": "templates/secret.yaml",
@@ -2516,14 +2516,19 @@
           "column": 87
         },
         {
-          "file": "templates/master-service.yaml",
-          "line": 12,
-          "column": 54
+          "file": "templates/prestop-configmap.yaml",
+          "line": 11,
+          "column": 90
         },
         {
-          "file": "templates/headless-service.yaml",
+          "file": "templates/configmap.yaml",
           "line": 11,
-          "column": 89
+          "column": 102
+        },
+        {
+          "file": "templates/metrics-service.yaml",
+          "line": 13,
+          "column": 27
         },
         {
           "file": "templates/servicemonitor.yaml",
@@ -2531,19 +2536,9 @@
           "column": 2
         },
         {
-          "file": "templates/service.yaml",
-          "line": 12,
-          "column": 21
-        },
-        {
-          "file": "templates/pdb.yaml",
-          "line": 14,
-          "column": 1
-        },
-        {
-          "file": "templates/job.yaml",
-          "line": 12,
-          "column": 9
+          "file": "templates/sentinel-master-rbac.yaml",
+          "line": 13,
+          "column": 6
         },
         {
           "file": "templates/sentinel-service.yaml",
@@ -2561,9 +2556,14 @@
           "column": 2
         },
         {
-          "file": "templates/configmap.yaml",
+          "file": "templates/service.yaml",
+          "line": 12,
+          "column": 21
+        },
+        {
+          "file": "templates/headless-service.yaml",
           "line": 11,
-          "column": 102
+          "column": 89
         },
         {
           "file": "templates/networkpolicy.yaml",
@@ -2571,9 +2571,9 @@
           "column": 5
         },
         {
-          "file": "templates/sentinel-master-service.yaml",
-          "line": 10,
-          "column": 80
+          "file": "templates/pdb.yaml",
+          "line": 14,
+          "column": 1
         }
       ]
     },
@@ -2634,11 +2634,6 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 79,
-          "column": 73
-        },
-        {
-          "file": "templates/statefulset.yaml",
           "line": 81,
           "column": 28
         },
@@ -2646,6 +2641,11 @@
           "file": "templates/statefulset.yaml",
           "line": 81,
           "column": 49
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 79,
+          "column": 73
         },
         {
           "file": "templates/job.yaml",
@@ -2802,14 +2802,14 @@
           "column": 1
         },
         {
-          "file": "templates/job.yaml",
-          "line": 77,
-          "column": 100
-        },
-        {
           "file": "templates/statefulset.yaml",
           "line": 79,
           "column": 31
+        },
+        {
+          "file": "templates/job.yaml",
+          "line": 77,
+          "column": 100
         }
       ]
     },
@@ -2962,44 +2962,9 @@
           "column": 1
         },
         {
-          "file": "templates/statefulset.yaml",
-          "line": 354,
-          "column": 38
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 369,
-          "column": 38
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 527,
-          "column": 22
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 533,
-          "column": 27
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 476,
-          "column": 22
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 628,
-          "column": 38
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 339,
-          "column": 38
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 213,
-          "column": 27
+          "file": "templates/prestop-configmap.yaml",
+          "line": 207,
+          "column": 12
         },
         {
           "file": "templates/statefulset.yaml",
@@ -3007,9 +2972,9 @@
           "column": 38
         },
         {
-          "file": "templates/prestop-configmap.yaml",
-          "line": 38,
-          "column": 12
+          "file": "templates/statefulset.yaml",
+          "line": 136,
+          "column": 22
         },
         {
           "file": "templates/statefulset.yaml",
@@ -3018,18 +2983,53 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 142,
+          "line": 213,
+          "column": 27
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 527,
+          "column": 22
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 339,
+          "column": 38
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 533,
           "column": 27
         },
         {
           "file": "templates/prestop-configmap.yaml",
-          "line": 207,
+          "line": 38,
           "column": 12
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 136,
+          "line": 369,
+          "column": 38
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 628,
+          "column": 38
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 354,
+          "column": 38
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 476,
           "column": 22
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 142,
+          "column": 27
         }
       ]
     },
@@ -3249,9 +3249,9 @@
           "column": 8
         },
         {
-          "file": "templates/networkpolicy.yaml",
-          "line": 88,
-          "column": 12
+          "file": "templates/statefulset.yaml",
+          "line": 668,
+          "column": 16
         },
         {
           "file": "templates/servicemonitor.yaml",
@@ -3259,9 +3259,9 @@
           "column": 8
         },
         {
-          "file": "templates/statefulset.yaml",
-          "line": 668,
-          "column": 16
+          "file": "templates/networkpolicy.yaml",
+          "line": 88,
+          "column": 12
         }
       ]
     },
@@ -3642,13 +3642,13 @@
         },
         {
           "file": "templates/metrics-service.yaml",
-          "line": 18,
-          "column": 22
+          "line": 17,
+          "column": 10
         },
         {
           "file": "templates/metrics-service.yaml",
-          "line": 17,
-          "column": 10
+          "line": 18,
+          "column": 22
         }
       ]
     },
@@ -3714,13 +3714,13 @@
         },
         {
           "file": "templates/metrics-service.yaml",
-          "line": 34,
-          "column": 14
+          "line": 35,
+          "column": 20
         },
         {
           "file": "templates/metrics-service.yaml",
-          "line": 35,
-          "column": 20
+          "line": 34,
+          "column": 14
         }
       ]
     },
@@ -3786,8 +3786,18 @@
         },
         {
           "file": "templates/metrics-service.yaml",
+          "line": 20,
+          "column": 15
+        },
+        {
+          "file": "templates/metrics-service.yaml",
           "line": 34,
           "column": 23
+        },
+        {
+          "file": "templates/metrics-service.yaml",
+          "line": 34,
+          "column": 68
         },
         {
           "file": "templates/metrics-service.yaml",
@@ -3796,23 +3806,13 @@
         },
         {
           "file": "templates/metrics-service.yaml",
-          "line": 17,
-          "column": 15
-        },
-        {
-          "file": "templates/metrics-service.yaml",
           "line": 26,
           "column": 15
         },
         {
           "file": "templates/metrics-service.yaml",
-          "line": 20,
+          "line": 17,
           "column": 15
-        },
-        {
-          "file": "templates/metrics-service.yaml",
-          "line": 34,
-          "column": 68
         }
       ]
     },
@@ -3904,12 +3904,12 @@
         },
         {
           "file": "templates/servicemonitor.yaml",
-          "line": 33,
+          "line": 53,
           "column": 23
         },
         {
           "file": "templates/servicemonitor.yaml",
-          "line": 53,
+          "line": 33,
           "column": 23
         }
       ]
@@ -3940,12 +3940,12 @@
         },
         {
           "file": "templates/servicemonitor.yaml",
-          "line": 26,
+          "line": 46,
           "column": 20
         },
         {
           "file": "templates/servicemonitor.yaml",
-          "line": 46,
+          "line": 26,
           "column": 20
         }
       ]
@@ -4171,14 +4171,14 @@
           "column": 1
         },
         {
+          "file": "templates/servicemonitor.yaml",
+          "line": 15,
+          "column": 79
+        },
+        {
           "file": "templates/statefulset.yaml",
           "line": 15,
           "column": 104
-        },
-        {
-          "file": "templates/job.yaml",
-          "line": 18,
-          "column": 11
         },
         {
           "file": "templates/sentinel-master-rbac.yaml",
@@ -4186,9 +4186,9 @@
           "column": 28
         },
         {
-          "file": "templates/sentinel-master-service.yaml",
-          "line": 13,
-          "column": 82
+          "file": "templates/job.yaml",
+          "line": 18,
+          "column": 11
         },
         {
           "file": "templates/service.yaml",
@@ -4196,9 +4196,9 @@
           "column": 75
         },
         {
-          "file": "templates/headless-service.yaml",
-          "line": 15,
-          "column": 1
+          "file": "templates/master-service.yaml",
+          "line": 17,
+          "column": 38
         },
         {
           "file": "templates/prestop-configmap.yaml",
@@ -4206,44 +4206,19 @@
           "column": 28
         },
         {
-          "file": "templates/sentinel-service.yaml",
-          "line": 17,
-          "column": 31
-        },
-        {
-          "file": "templates/master-service.yaml",
-          "line": 17,
-          "column": 38
-        },
-        {
           "file": "templates/sentinel-master-deployment.yaml",
           "line": 18,
           "column": 1
         },
         {
-          "file": "templates/servicemonitor.yaml",
-          "line": 15,
-          "column": 79
+          "file": "templates/sentinel-service.yaml",
+          "line": 17,
+          "column": 31
         },
         {
-          "file": "templates/networkpolicy.yaml",
-          "line": 21,
-          "column": 7
-        },
-        {
-          "file": "templates/secret.yaml",
-          "line": 15,
-          "column": 102
-        },
-        {
-          "file": "templates/pdb.yaml",
-          "line": 18,
-          "column": 29
-        },
-        {
-          "file": "templates/configmap.yaml",
-          "line": 18,
-          "column": 6
+          "file": "templates/sentinel-master-service.yaml",
+          "line": 13,
+          "column": 82
         },
         {
           "file": "templates/metrics-service.yaml",
@@ -4251,9 +4226,34 @@
           "column": 32
         },
         {
+          "file": "templates/configmap.yaml",
+          "line": 18,
+          "column": 6
+        },
+        {
+          "file": "templates/secret.yaml",
+          "line": 15,
+          "column": 102
+        },
+        {
+          "file": "templates/networkpolicy.yaml",
+          "line": 21,
+          "column": 7
+        },
+        {
           "file": "templates/serviceaccount.yaml",
           "line": 16,
           "column": 1
+        },
+        {
+          "file": "templates/headless-service.yaml",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "file": "templates/pdb.yaml",
+          "line": 18,
+          "column": 29
         }
       ]
     },
@@ -4309,17 +4309,17 @@
         },
         {
           "file": "templates/networkpolicy.yaml",
-          "line": 93,
-          "column": 14
-        },
-        {
-          "file": "templates/networkpolicy.yaml",
           "line": 45,
           "column": 14
         },
         {
           "file": "templates/networkpolicy.yaml",
           "line": 25,
+          "column": 14
+        },
+        {
+          "file": "templates/networkpolicy.yaml",
+          "line": 93,
           "column": 14
         }
       ]
@@ -4541,13 +4541,13 @@
         },
         {
           "file": "templates/pdb.yaml",
-          "line": 17,
-          "column": 10
+          "line": 18,
+          "column": 22
         },
         {
           "file": "templates/pdb.yaml",
-          "line": 18,
-          "column": 22
+          "line": 17,
+          "column": 10
         }
       ]
     },
@@ -4577,13 +4577,13 @@
         },
         {
           "file": "templates/pdb.yaml",
-          "line": 15,
-          "column": 20
+          "line": 14,
+          "column": 10
         },
         {
           "file": "templates/pdb.yaml",
-          "line": 14,
-          "column": 10
+          "line": 15,
+          "column": 20
         }
       ]
     },
@@ -4674,14 +4674,14 @@
           "column": 1
         },
         {
-          "file": "templates/statefulset.yaml",
-          "line": 804,
-          "column": 10
-        },
-        {
           "file": "templates/configmap.yaml",
           "line": 33,
           "column": 12
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 804,
+          "column": 10
         },
         {
           "file": "templates/statefulset.yaml",
@@ -4983,13 +4983,13 @@
           "column": 1
         },
         {
-          "file": "templates/job.yaml",
-          "line": 22,
+          "file": "templates/statefulset.yaml",
+          "line": 40,
           "column": 13
         },
         {
-          "file": "templates/statefulset.yaml",
-          "line": 40,
+          "file": "templates/job.yaml",
+          "line": 22,
           "column": 13
         },
         {
@@ -5025,13 +5025,13 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 25,
-          "column": 13
+          "line": 819,
+          "column": 15
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 819,
-          "column": 15
+          "line": 25,
+          "column": 13
         }
       ]
     },
@@ -5065,14 +5065,14 @@
           "column": 61
         },
         {
-          "file": "templates/sentinel-master-deployment.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
           "file": "templates/statefulset.yaml",
           "line": 173,
           "column": 23
+        },
+        {
+          "file": "templates/sentinel-master-deployment.yaml",
+          "line": 1,
+          "column": 1
         }
       ]
     },
@@ -5319,27 +5319,12 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 15,
-          "column": 72
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 493,
-          "column": 35
-        },
-        {
-          "file": "templates/statefulset.yaml",
           "line": 509,
           "column": 37
         },
         {
-          "file": "templates/job.yaml",
-          "line": 76,
-          "column": 35
-        },
-        {
           "file": "templates/statefulset.yaml",
-          "line": 595,
+          "line": 493,
           "column": 35
         },
         {
@@ -5351,6 +5336,21 @@
           "file": "templates/job.yaml",
           "line": 81,
           "column": 35
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 595,
+          "column": 35
+        },
+        {
+          "file": "templates/job.yaml",
+          "line": 76,
+          "column": 35
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 15,
+          "column": 72
         }
       ]
     },
@@ -5535,12 +5535,12 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 133,
+          "line": 584,
           "column": 21
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 584,
+          "line": 133,
           "column": 21
         }
       ]
@@ -5571,13 +5571,13 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 591,
-          "column": 27
+          "line": 608,
+          "column": 22
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 608,
-          "column": 22
+          "line": 591,
+          "column": 27
         }
       ]
     },
@@ -5607,8 +5607,8 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 91,
-          "column": 47
+          "line": 496,
+          "column": 53
         },
         {
           "file": "templates/statefulset.yaml",
@@ -5617,8 +5617,8 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 496,
-          "column": 53
+          "line": 91,
+          "column": 47
         }
       ]
     },
@@ -5678,14 +5678,9 @@
           "column": 1
         },
         {
-          "file": "templates/sentinel-master-deployment.yaml",
-          "line": 1,
-          "column": 8
-        },
-        {
-          "file": "templates/servicemonitor.yaml",
-          "line": 43,
-          "column": 14
+          "file": "templates/service.yaml",
+          "line": 9,
+          "column": 27
         },
         {
           "file": "templates/networkpolicy.yaml",
@@ -5693,13 +5688,13 @@
           "column": 12
         },
         {
-          "file": "templates/statefulset.yaml",
-          "line": 740,
-          "column": 16
+          "file": "templates/sentinel-master-rbac.yaml",
+          "line": 1,
+          "column": 8
         },
         {
           "file": "templates/networkpolicy.yaml",
-          "line": 30,
+          "line": 112,
           "column": 57
         },
         {
@@ -5708,32 +5703,17 @@
           "column": 22
         },
         {
-          "file": "templates/sentinel-master-deployment.yaml",
-          "line": 90,
-          "column": 4
+          "file": "templates/networkpolicy.yaml",
+          "line": 122,
+          "column": 12
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 86,
-          "column": 4
+          "line": 27,
+          "column": 16
         },
         {
-          "file": "templates/sentinel-master-rbac.yaml",
-          "line": 1,
-          "column": 8
-        },
-        {
-          "file": "templates/headless-service.yaml",
-          "line": 20,
-          "column": 10
-        },
-        {
-          "file": "templates/networkpolicy.yaml",
-          "line": 112,
-          "column": 57
-        },
-        {
-          "file": "templates/sentinel-master-service.yaml",
+          "file": "templates/sentinel-master-deployment.yaml",
           "line": 1,
           "column": 8
         },
@@ -5744,18 +5724,23 @@
         },
         {
           "file": "templates/statefulset.yaml",
+          "line": 86,
+          "column": 4
+        },
+        {
+          "file": "templates/servicemonitor.yaml",
+          "line": 43,
+          "column": 14
+        },
+        {
+          "file": "templates/statefulset.yaml",
           "line": 376,
           "column": 22
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 27,
+          "line": 740,
           "column": 16
-        },
-        {
-          "file": "templates/headless-service.yaml",
-          "line": 33,
-          "column": 12
         },
         {
           "file": "templates/statefulset.yaml",
@@ -5763,7 +5748,22 @@
           "column": 25
         },
         {
-          "file": "templates/sentinel-master-rbac.yaml",
+          "file": "templates/prestop-configmap.yaml",
+          "line": 1,
+          "column": 8
+        },
+        {
+          "file": "templates/service.yaml",
+          "line": 14,
+          "column": 10
+        },
+        {
+          "file": "templates/headless-service.yaml",
+          "line": 20,
+          "column": 10
+        },
+        {
+          "file": "templates/serviceaccount.yaml",
           "line": 1,
           "column": 1
         },
@@ -5773,34 +5773,19 @@
           "column": 8
         },
         {
-          "file": "templates/master-service.yaml",
+          "file": "templates/sentinel-master-rbac.yaml",
           "line": 1,
-          "column": 53
+          "column": 1
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 354,
+          "column": 217
         },
         {
           "file": "templates/statefulset.yaml",
           "line": 407,
           "column": 20
-        },
-        {
-          "file": "templates/prestop-configmap.yaml",
-          "line": 1,
-          "column": 8
-        },
-        {
-          "file": "templates/service.yaml",
-          "line": 9,
-          "column": 27
-        },
-        {
-          "file": "templates/serviceaccount.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
-          "file": "templates/networkpolicy.yaml",
-          "line": 122,
-          "column": 12
         },
         {
           "file": "templates/serviceaccount.yaml",
@@ -5813,19 +5798,34 @@
           "column": 10
         },
         {
-          "file": "templates/statefulset.yaml",
-          "line": 354,
-          "column": 217
-        },
-        {
           "file": "templates/service.yaml",
           "line": 31,
           "column": 12
         },
         {
-          "file": "templates/service.yaml",
-          "line": 14,
-          "column": 10
+          "file": "templates/headless-service.yaml",
+          "line": 33,
+          "column": 12
+        },
+        {
+          "file": "templates/sentinel-master-service.yaml",
+          "line": 1,
+          "column": 8
+        },
+        {
+          "file": "templates/sentinel-master-deployment.yaml",
+          "line": 90,
+          "column": 4
+        },
+        {
+          "file": "templates/networkpolicy.yaml",
+          "line": 30,
+          "column": 57
+        },
+        {
+          "file": "templates/master-service.yaml",
+          "line": 1,
+          "column": 53
         }
       ]
     },
@@ -6206,8 +6206,18 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 568,
-          "column": 51
+          "line": 569,
+          "column": 44
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 91,
+          "column": 264
+        },
+        {
+          "file": "templates/prestop-configmap.yaml",
+          "line": 25,
+          "column": 21
         },
         {
           "file": "templates/sentinel-master-deployment.yaml",
@@ -6215,14 +6225,9 @@
           "column": 38
         },
         {
-          "file": "templates/prestop-configmap.yaml",
-          "line": 198,
-          "column": 21
-        },
-        {
           "file": "templates/statefulset.yaml",
-          "line": 91,
-          "column": 264
+          "line": 567,
+          "column": 35
         },
         {
           "file": "templates/statefulset.yaml",
@@ -6236,18 +6241,8 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 570,
-          "column": 42
-        },
-        {
-          "file": "templates/prestop-configmap.yaml",
-          "line": 25,
-          "column": 21
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 569,
-          "column": 44
+          "line": 568,
+          "column": 51
         },
         {
           "file": "templates/statefulset.yaml",
@@ -6256,8 +6251,13 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 567,
-          "column": 35
+          "line": 570,
+          "column": 42
+        },
+        {
+          "file": "templates/prestop-configmap.yaml",
+          "line": 198,
+          "column": 21
         }
       ]
     },
@@ -6358,6 +6358,11 @@
           "column": 1
         },
         {
+          "file": "templates/serviceaccount.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
           "file": "templates/sentinel-master-deployment.yaml",
           "line": 90,
           "column": 4
@@ -6368,9 +6373,9 @@
           "column": 8
         },
         {
-          "file": "templates/serviceaccount.yaml",
+          "file": "templates/sentinel-master-service.yaml",
           "line": 1,
-          "column": 1
+          "column": 8
         },
         {
           "file": "templates/sentinel-master-deployment.yaml",
@@ -6381,11 +6386,6 @@
           "file": "templates/serviceaccount.yaml",
           "line": 1,
           "column": 42
-        },
-        {
-          "file": "templates/sentinel-master-service.yaml",
-          "line": 1,
-          "column": 8
         },
         {
           "file": "templates/sentinel-master-rbac.yaml",
@@ -6703,14 +6703,44 @@
           "column": 1
         },
         {
+          "file": "templates/statefulset.yaml",
+          "line": 643,
+          "column": 109
+        },
+        {
+          "file": "templates/prestop-configmap.yaml",
+          "line": 24,
+          "column": 23
+        },
+        {
+          "file": "templates/sentinel-master-deployment.yaml",
+          "line": 103,
+          "column": 39
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 628,
+          "column": 109
+        },
+        {
           "file": "templates/networkpolicy.yaml",
-          "line": 43,
+          "line": 125,
           "column": 20
         },
         {
-          "file": "templates/service.yaml",
-          "line": 32,
+          "file": "templates/headless-service.yaml",
+          "line": 34,
           "column": 16
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 618,
+          "column": 33
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 91,
+          "column": 112
         },
         {
           "file": "templates/prestop-configmap.yaml",
@@ -6723,19 +6753,9 @@
           "column": 20
         },
         {
-          "file": "templates/sentinel-master-deployment.yaml",
-          "line": 103,
-          "column": 39
-        },
-        {
           "file": "templates/statefulset.yaml",
-          "line": 91,
-          "column": 112
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 618,
-          "column": 33
+          "line": 496,
+          "column": 118
         },
         {
           "file": "templates/statefulset.yaml",
@@ -6744,43 +6764,23 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 589,
-          "column": 41
+          "line": 550,
+          "column": 27
         },
         {
-          "file": "templates/prestop-configmap.yaml",
-          "line": 24,
-          "column": 23
-        },
-        {
-          "file": "templates/headless-service.yaml",
-          "line": 34,
+          "file": "templates/service.yaml",
+          "line": 32,
           "column": 16
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 643,
-          "column": 109
+          "line": 589,
+          "column": 41
         },
         {
           "file": "templates/statefulset.yaml",
           "line": 561,
           "column": 23
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 628,
-          "column": 109
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 550,
-          "column": 27
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 496,
-          "column": 118
         },
         {
           "file": "templates/networkpolicy.yaml",
@@ -6789,7 +6789,7 @@
         },
         {
           "file": "templates/networkpolicy.yaml",
-          "line": 125,
+          "line": 43,
           "column": 20
         }
       ]
@@ -7325,6 +7325,16 @@
           "column": 1
         },
         {
+          "file": "templates/headless-service.yaml",
+          "line": 40,
+          "column": 16
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 220,
+          "column": 50
+        },
+        {
           "file": "templates/networkpolicy.yaml",
           "line": 152,
           "column": 20
@@ -7338,16 +7348,6 @@
           "file": "templates/statefulset.yaml",
           "line": 306,
           "column": 33
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 220,
-          "column": 50
-        },
-        {
-          "file": "templates/headless-service.yaml",
-          "line": 40,
-          "column": 16
         },
         {
           "file": "templates/networkpolicy.yaml",
@@ -7418,12 +7418,7 @@
         },
         {
           "file": "templates/master-service.yaml",
-          "line": 22,
-          "column": 20
-        },
-        {
-          "file": "templates/service.yaml",
-          "line": 28,
+          "line": 21,
           "column": 14
         },
         {
@@ -7432,9 +7427,14 @@
           "column": 20
         },
         {
-          "file": "templates/master-service.yaml",
-          "line": 21,
+          "file": "templates/service.yaml",
+          "line": 28,
           "column": 14
+        },
+        {
+          "file": "templates/master-service.yaml",
+          "line": 22,
+          "column": 20
         }
       ]
     },
@@ -7463,24 +7463,19 @@
           "column": 1
         },
         {
-          "file": "templates/statefulset.yaml",
-          "line": 481,
-          "column": 182
+          "file": "templates/networkpolicy.yaml",
+          "line": 23,
+          "column": 20
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 112,
-          "column": 114
+          "line": 157,
+          "column": 104
         },
         {
-          "file": "templates/statefulset.yaml",
-          "line": 174,
-          "column": 113
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 219,
-          "column": 106
+          "file": "templates/job.yaml",
+          "line": 82,
+          "column": 122
         },
         {
           "file": "templates/statefulset.yaml",
@@ -7488,39 +7483,19 @@
           "column": 106
         },
         {
-          "file": "templates/statefulset.yaml",
-          "line": 511,
-          "column": 109
-        },
-        {
           "file": "templates/job.yaml",
-          "line": 91,
-          "column": 23
+          "line": 77,
+          "column": 114
         },
         {
-          "file": "templates/prestop-configmap.yaml",
-          "line": 23,
-          "column": 20
-        },
-        {
-          "file": "templates/networkpolicy.yaml",
-          "line": 23,
-          "column": 20
+          "file": "templates/secret.yaml",
+          "line": 22,
+          "column": 78
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 155,
-          "column": 106
-        },
-        {
-          "file": "templates/prestop-configmap.yaml",
-          "line": 196,
-          "column": 20
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 251,
-          "column": 23
+          "line": 163,
+          "column": 104
         },
         {
           "file": "templates/configmap.yaml",
@@ -7529,23 +7504,53 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 157,
-          "column": 104
-        },
-        {
-          "file": "templates/secret.yaml",
-          "line": 22,
-          "column": 78
-        },
-        {
-          "file": "templates/networkpolicy.yaml",
-          "line": 80,
-          "column": 20
+          "line": 155,
+          "column": 106
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 163,
-          "column": 104
+          "line": 481,
+          "column": 182
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 174,
+          "column": 113
+        },
+        {
+          "file": "templates/headless-service.yaml",
+          "line": 24,
+          "column": 16
+        },
+        {
+          "file": "templates/job.yaml",
+          "line": 69,
+          "column": 51
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 205,
+          "column": 106
+        },
+        {
+          "file": "templates/service.yaml",
+          "line": 24,
+          "column": 16
+        },
+        {
+          "file": "templates/job.yaml",
+          "line": 91,
+          "column": 23
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 511,
+          "column": 109
+        },
+        {
+          "file": "templates/networkpolicy.yaml",
+          "line": 33,
+          "column": 20
         },
         {
           "file": "templates/networkpolicy.yaml",
@@ -7554,7 +7559,52 @@
         },
         {
           "file": "templates/networkpolicy.yaml",
+          "line": 70,
+          "column": 20
+        },
+        {
+          "file": "templates/networkpolicy.yaml",
+          "line": 80,
+          "column": 20
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 219,
+          "column": 106
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 112,
+          "column": 114
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 567,
+          "column": 84
+        },
+        {
+          "file": "templates/networkpolicy.yaml",
+          "line": 115,
+          "column": 20
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 251,
+          "column": 23
+        },
+        {
+          "file": "templates/networkpolicy.yaml",
           "line": 133,
+          "column": 20
+        },
+        {
+          "file": "templates/networkpolicy.yaml",
+          "line": 150,
+          "column": 20
+        },
+        {
+          "file": "templates/prestop-configmap.yaml",
+          "line": 196,
           "column": 20
         },
         {
@@ -7563,24 +7613,9 @@
           "column": 115
         },
         {
-          "file": "templates/job.yaml",
-          "line": 82,
-          "column": 122
-        },
-        {
           "file": "templates/sentinel-master-service.yaml",
           "line": 21,
           "column": 16
-        },
-        {
-          "file": "templates/job.yaml",
-          "line": 77,
-          "column": 114
-        },
-        {
-          "file": "templates/networkpolicy.yaml",
-          "line": 33,
-          "column": 20
         },
         {
           "file": "templates/master-service.yaml",
@@ -7588,43 +7623,8 @@
           "column": 16
         },
         {
-          "file": "templates/headless-service.yaml",
-          "line": 24,
-          "column": 16
-        },
-        {
-          "file": "templates/service.yaml",
-          "line": 24,
-          "column": 16
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 567,
-          "column": 84
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 205,
-          "column": 106
-        },
-        {
-          "file": "templates/networkpolicy.yaml",
-          "line": 115,
-          "column": 20
-        },
-        {
-          "file": "templates/job.yaml",
-          "line": 69,
-          "column": 51
-        },
-        {
-          "file": "templates/networkpolicy.yaml",
-          "line": 150,
-          "column": 20
-        },
-        {
-          "file": "templates/networkpolicy.yaml",
-          "line": 70,
+          "file": "templates/prestop-configmap.yaml",
+          "line": 23,
           "column": 20
         }
       ]
@@ -7654,14 +7654,9 @@
           "column": 1
         },
         {
-          "file": "templates/master-service.yaml",
-          "line": 15,
-          "column": 12
-        },
-        {
-          "file": "templates/sentinel-master-service.yaml",
-          "line": 19,
-          "column": 12
+          "file": "templates/service.yaml",
+          "line": 28,
+          "column": 23
         },
         {
           "file": "templates/service.yaml",
@@ -7669,16 +7664,6 @@
           "column": 12
         },
         {
-          "file": "templates/service.yaml",
-          "line": 28,
-          "column": 60
-        },
-        {
-          "file": "templates/service.yaml",
-          "line": 28,
-          "column": 23
-        },
-        {
           "file": "templates/master-service.yaml",
           "line": 21,
           "column": 23
@@ -7687,6 +7672,21 @@
           "file": "templates/master-service.yaml",
           "line": 21,
           "column": 60
+        },
+        {
+          "file": "templates/master-service.yaml",
+          "line": 15,
+          "column": 12
+        },
+        {
+          "file": "templates/service.yaml",
+          "line": 28,
+          "column": 60
+        },
+        {
+          "file": "templates/sentinel-master-service.yaml",
+          "line": 19,
+          "column": 12
         }
       ]
     },
@@ -7782,6 +7782,21 @@
           "column": 1
         },
         {
+          "file": "templates/sentinel-master-deployment.yaml",
+          "line": 89,
+          "column": 53
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 85,
+          "column": 5
+        },
+        {
+          "file": "templates/sentinel-master-rbac.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
           "file": "templates/serviceaccount.yaml",
           "line": 1,
           "column": 1
@@ -7790,21 +7805,6 @@
           "file": "templates/serviceaccount.yaml",
           "line": 1,
           "column": 8
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 85,
-          "column": 5
-        },
-        {
-          "file": "templates/sentinel-master-deployment.yaml",
-          "line": 89,
-          "column": 53
-        },
-        {
-          "file": "templates/sentinel-master-rbac.yaml",
-          "line": 1,
-          "column": 1
         }
       ]
     },
@@ -7833,24 +7833,9 @@
           "column": 1
         },
         {
-          "file": "templates/sentinel-master-rbac.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
           "file": "templates/serviceaccount.yaml",
           "line": 1,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 88,
-          "column": 27
-        },
-        {
-          "file": "templates/sentinel-master-deployment.yaml",
-          "line": 92,
-          "column": 24
         },
         {
           "file": "templates/statefulset.yaml",
@@ -7859,8 +7844,23 @@
         },
         {
           "file": "templates/sentinel-master-deployment.yaml",
+          "line": 92,
+          "column": 24
+        },
+        {
+          "file": "templates/sentinel-master-deployment.yaml",
           "line": 93,
           "column": 71
+        },
+        {
+          "file": "templates/sentinel-master-rbac.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 88,
+          "column": 27
         }
       ]
     },
@@ -8106,14 +8106,14 @@
           "column": 1
         },
         {
-          "file": "templates/statefulset.yaml",
-          "line": 555,
-          "column": 22
-        },
-        {
           "file": "templates/configmap.yaml",
           "line": 23,
           "column": 12
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 555,
+          "column": 22
         }
       ]
     },
@@ -8142,24 +8142,14 @@
           "column": 1
         },
         {
-          "file": "templates/configmap.yaml",
-          "line": 22,
-          "column": 40
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 175,
-          "column": 43
-        },
-        {
           "file": "templates/statefulset.yaml",
           "line": 179,
           "column": 18
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 767,
-          "column": 25
+          "line": 554,
+          "column": 50
         },
         {
           "file": "templates/statefulset.yaml",
@@ -8168,8 +8158,18 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 554,
-          "column": 50
+          "line": 767,
+          "column": 25
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 175,
+          "column": 43
+        },
+        {
+          "file": "templates/configmap.yaml",
+          "line": 22,
+          "column": 40
         }
       ]
     },
@@ -8204,11 +8204,6 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 552,
-          "column": 47
-        },
-        {
-          "file": "templates/statefulset.yaml",
           "line": 764,
           "column": 26
         },
@@ -8216,6 +8211,11 @@
           "file": "templates/configmap.yaml",
           "line": 20,
           "column": 37
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 552,
+          "column": 47
         },
         {
           "file": "templates/statefulset.yaml",
@@ -8255,8 +8255,8 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 553,
-          "column": 46
+          "line": 765,
+          "column": 25
         },
         {
           "file": "templates/statefulset.yaml",
@@ -8264,14 +8264,14 @@
           "column": 26
         },
         {
+          "file": "templates/statefulset.yaml",
+          "line": 553,
+          "column": 46
+        },
+        {
           "file": "templates/configmap.yaml",
           "line": 21,
           "column": 36
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 765,
-          "column": 25
         }
       ]
     },
@@ -8306,13 +8306,13 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 775,
-          "column": 26
+          "line": 774,
+          "column": 25
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 774,
-          "column": 25
+          "line": 775,
+          "column": 26
         }
       ]
     },
@@ -8347,13 +8347,13 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 776,
-          "column": 25
+          "line": 777,
+          "column": 26
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 777,
-          "column": 26
+          "line": 776,
+          "column": 25
         }
       ]
     },
@@ -8383,18 +8383,8 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 421,
-          "column": 20
-        },
-        {
-          "file": "templates/statefulset.yaml",
           "line": 174,
           "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 769,
-          "column": 16
         },
         {
           "file": "templates/statefulset.yaml",
@@ -8405,6 +8395,16 @@
           "file": "templates/statefulset.yaml",
           "line": 457,
           "column": 20
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 421,
+          "column": 20
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 769,
+          "column": 16
         }
       ]
     },
@@ -8434,28 +8434,18 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 173,
-          "column": 154
+          "line": 219,
+          "column": 49
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 643,
-          "column": 203
+          "line": 548,
+          "column": 22
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 163,
-          "column": 47
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 302,
-          "column": 36
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 123,
-          "column": 58
+          "line": 174,
+          "column": 56
         },
         {
           "file": "templates/configmap.yaml",
@@ -8464,23 +8454,33 @@
         },
         {
           "file": "templates/statefulset.yaml",
+          "line": 339,
+          "column": 109
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 173,
+          "column": 154
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 481,
+          "column": 125
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 417,
+          "column": 20
+        },
+        {
+          "file": "templates/statefulset.yaml",
           "line": 453,
           "column": 18
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 174,
-          "column": 56
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 112,
-          "column": 57
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 155,
-          "column": 49
+          "line": 163,
+          "column": 47
         },
         {
           "file": "templates/secret.yaml",
@@ -8493,9 +8493,9 @@
           "column": 47
         },
         {
-          "file": "templates/statefulset.yaml",
-          "line": 481,
-          "column": 221
+          "file": "templates/secret.yaml",
+          "line": 24,
+          "column": 18
         },
         {
           "file": "templates/statefulset.yaml",
@@ -8504,18 +8504,13 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 161,
-          "column": 49
-        },
-        {
-          "file": "templates/secret.yaml",
-          "line": 24,
-          "column": 18
+          "line": 643,
+          "column": 203
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 205,
-          "column": 49
+          "line": 481,
+          "column": 221
         },
         {
           "file": "templates/statefulset.yaml",
@@ -8524,18 +8519,18 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 339,
-          "column": 109
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 219,
+          "line": 155,
           "column": 49
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 548,
-          "column": 22
+          "line": 205,
+          "column": 49
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 302,
+          "column": 36
         },
         {
           "file": "templates/statefulset.yaml",
@@ -8544,18 +8539,23 @@
         },
         {
           "file": "templates/statefulset.yaml",
+          "line": 112,
+          "column": 57
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 123,
+          "column": 58
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 161,
+          "column": 49
+        },
+        {
+          "file": "templates/statefulset.yaml",
           "line": 628,
           "column": 203
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 417,
-          "column": 20
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 481,
-          "column": 125
         }
       ]
     },
@@ -8616,53 +8616,8 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 339,
-          "column": 138
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 155,
-          "column": 74
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 302,
-          "column": 61
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 369,
-          "column": 138
-        },
-        {
-          "file": "templates/secret.yaml",
-          "line": 22,
-          "column": 44
-        },
-        {
-          "file": "templates/statefulset.yaml",
           "line": 163,
           "column": 72
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 112,
-          "column": 82
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 205,
-          "column": 74
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 219,
-          "column": 74
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 481,
-          "column": 150
         },
         {
           "file": "templates/statefulset.yaml",
@@ -8671,13 +8626,8 @@
         },
         {
           "file": "templates/statefulset.yaml",
-          "line": 161,
-          "column": 74
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 157,
-          "column": 72
+          "line": 369,
+          "column": 138
         },
         {
           "file": "templates/configmap.yaml",
@@ -8686,13 +8636,63 @@
         },
         {
           "file": "templates/statefulset.yaml",
+          "line": 302,
+          "column": 61
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 155,
+          "column": 74
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 205,
+          "column": 74
+        },
+        {
+          "file": "templates/statefulset.yaml",
           "line": 174,
           "column": 81
         },
         {
           "file": "templates/statefulset.yaml",
+          "line": 219,
+          "column": 74
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 339,
+          "column": 138
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 157,
+          "column": 72
+        },
+        {
+          "file": "templates/statefulset.yaml",
           "line": 123,
           "column": 83
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 161,
+          "column": 74
+        },
+        {
+          "file": "templates/secret.yaml",
+          "line": 22,
+          "column": 44
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 112,
+          "column": 82
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 481,
+          "column": 150
         }
       ]
     },
@@ -8767,63 +8767,6 @@
   "unused": [],
   "undefined": [
     {
-      "id": ".Values.global.imagePullSecrets.*.*",
-      "kinds": "/K/K/K/W/W",
-      "contexts": [
-        {
-          "file": "templates/job.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 18
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 155,
-          "column": 15
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 131,
-          "column": 11
-        }
-      ]
-    },
-    {
-      "id": ".Values.global.imagePullSecrets.*.name.*",
-      "kinds": "/K/K/K/W/K/W",
-      "contexts": [
-        {
-          "file": "templates/job.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 18
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 133,
-          "column": 43
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 131,
-          "column": 11
-        }
-      ]
-    },
-    {
       "id": ".extraObjects.*.*",
       "kinds": "/K/W/W",
       "contexts": [
@@ -8851,26 +8794,6 @@
       "contexts": [
         {
           "file": "templates/headless-service.yaml",
-          "line": 30,
-          "column": 22
-        },
-        {
-          "file": "templates/master-service.yaml",
-          "line": 26,
-          "column": 22
-        },
-        {
-          "file": "templates/statefulset.yaml",
-          "line": 311,
-          "column": 24
-        },
-        {
-          "file": "templates/master-service.yaml",
-          "line": 27,
-          "column": 16
-        },
-        {
-          "file": "templates/headless-service.yaml",
           "line": 31,
           "column": 16
         },
@@ -8880,8 +8803,23 @@
           "column": 22
         },
         {
-          "file": "templates/service.yaml",
-          "line": 40,
+          "file": "templates/headless-service.yaml",
+          "line": 30,
+          "column": 22
+        },
+        {
+          "file": "templates/sentinel-master-service.yaml",
+          "line": 27,
+          "column": 22
+        },
+        {
+          "file": "templates/master-service.yaml",
+          "line": 26,
+          "column": 22
+        },
+        {
+          "file": "templates/master-service.yaml",
+          "line": 27,
           "column": 16
         },
         {
@@ -8890,9 +8828,14 @@
           "column": 16
         },
         {
-          "file": "templates/sentinel-master-service.yaml",
-          "line": 27,
-          "column": 22
+          "file": "templates/statefulset.yaml",
+          "line": 311,
+          "column": 24
+        },
+        {
+          "file": "templates/service.yaml",
+          "line": 40,
+          "column": 16
         }
       ]
     },
@@ -8906,13 +8849,13 @@
           "column": 16
         },
         {
-          "file": "templates/headless-service.yaml",
-          "line": 29,
+          "file": "templates/sentinel-master-service.yaml",
+          "line": 26,
           "column": 16
         },
         {
-          "file": "templates/sentinel-master-service.yaml",
-          "line": 26,
+          "file": "templates/headless-service.yaml",
+          "line": 29,
           "column": 16
         },
         {
@@ -8932,13 +8875,13 @@
           "column": 22
         },
         {
-          "file": "templates/sentinel-master-service.yaml",
-          "line": 27,
+          "file": "templates/master-service.yaml",
+          "line": 26,
           "column": 22
         },
         {
-          "file": "templates/master-service.yaml",
-          "line": 26,
+          "file": "templates/sentinel-master-service.yaml",
+          "line": 27,
           "column": 22
         },
         {
@@ -8949,18 +8892,75 @@
       ]
     },
     {
+      "id": ".global.imagePullSecrets.*.*",
+      "kinds": "/K/K/W/W",
+      "contexts": [
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 18
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
+        },
+        {
+          "file": "templates/job.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 131,
+          "column": 11
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 155,
+          "column": 15
+        }
+      ]
+    },
+    {
+      "id": ".global.imagePullSecrets.*.name.*",
+      "kinds": "/K/K/W/K/W",
+      "contexts": [
+        {
+          "file": "templates/job.yaml",
+          "line": 1,
+          "column": 1
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 18
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 133,
+          "column": 43
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 131,
+          "column": 11
+        }
+      ]
+    },
+    {
       "id": ".image.imagePullPolicy",
       "kinds": "/K/K",
       "contexts": [
         {
-          "file": "templates/statefulset.yaml",
-          "line": 88,
-          "column": 8
-        },
-        {
           "file": "templates/job.yaml",
           "line": 83,
           "column": 50
+        },
+        {
+          "file": "templates/statefulset.yaml",
+          "line": 88,
+          "column": 8
         }
       ]
     },
@@ -8991,11 +8991,6 @@
       "kinds": "/K",
       "contexts": [
         {
-          "file": "templates/job.yaml",
-          "line": 1,
-          "column": 1
-        },
-        {
           "file": "templates/sentinel-master-deployment.yaml",
           "line": 1,
           "column": 1
@@ -9004,6 +8999,11 @@
           "file": "templates/statefulset.yaml",
           "line": 163,
           "column": 13
+        },
+        {
+          "file": "templates/job.yaml",
+          "line": 1,
+          "column": 1
         }
       ]
     }
