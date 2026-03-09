@@ -27,9 +27,6 @@ func formatChartFindings(w io.Writer, c *Chart) {
 }
 
 func formatSummary(w io.Writer, charts Charts) {
-	fmt.Fprintf(w, "%s\n\n", termcolor.Header("Summary", "="))
-
-	tw := tabwriter.NewWriter(w, 0, 0, 2, ' ', 0)
 	totalUnused := 0
 	totalUndefined := 0
 	scanned := 0
@@ -37,7 +34,6 @@ func formatSummary(w io.Writer, charts Charts) {
 	for _, c := range charts {
 		if c.Skip {
 			skipped++
-			fmt.Fprintf(tw, "%s\t%s\n", termcolor.Dim("s"), termcolor.Dim(c.Name))
 			continue
 		}
 		scanned++
@@ -45,15 +41,29 @@ func formatSummary(w io.Writer, charts Charts) {
 			totalUnused += len(c.Result.Unused)
 			totalUndefined += len(c.Result.Undefined)
 		}
-		if c.HasFindings() {
+	}
+
+	hasFindings := totalUnused > 0 || totalUndefined > 0
+	if hasFindings {
+		fmt.Fprintf(w, "%s\n\n", termcolor.RedHeader("Summary", "="))
+	} else {
+		fmt.Fprintf(w, "%s\n\n", termcolor.GreenHeader("Summary", "="))
+	}
+
+	tw := tabwriter.NewWriter(w, 0, 0, 2, ' ', 0)
+	for _, c := range charts {
+		switch {
+		case c.Skip:
+			fmt.Fprintf(tw, "%s\t%s\n", termcolor.Dim("s"), termcolor.Dim(c.Name))
+		case c.HasFindings():
 			fmt.Fprintf(
-				tw, "%s\t%s\t%d Unused\t%d Undefined\n",
+				tw, "%s\t%s\t%s\t%s\n",
 				termcolor.Red("\u2717"),
 				termcolor.Red(c.Name),
-				len(c.Result.Unused),
-				len(c.Result.Undefined),
+				termcolor.Red(fmt.Sprintf("%d Unused", len(c.Result.Unused))),
+				termcolor.Red(fmt.Sprintf("%d Undefined", len(c.Result.Undefined))),
 			)
-		} else {
+		default:
 			fmt.Fprintf(tw, "%s\t%s\n", termcolor.Green("\u2713"), termcolor.Green(c.Name))
 		}
 	}
@@ -61,7 +71,6 @@ func formatSummary(w io.Writer, charts Charts) {
 
 	fmt.Fprintln(w)
 
-	hasFindings := totalUnused > 0 || totalUndefined > 0
 	skippedSuffix := ""
 	if skipped > 0 {
 		skippedSuffix = fmt.Sprintf(" (%d skipped)", skipped)
