@@ -12,6 +12,7 @@
 
 =================================== Summary ====================================
 
-chart-a  1 Unused  1 Undefined  
-chart-b  1 Unused  0 Undefined  
-Total    2 Unused  1 Undefined  across 2 chart(s)
+✗  chart-a  1 Unused  1 Undefined
+✗  chart-b  1 Unused  0 Undefined
+
+==================== 2 Unused  1 Undefined across 2 charts =====================

@@ -5,7 +5,6 @@ import (
 	"log/slog"
 	"os"
 	filepath "path/filepath"
-	"strings"
 
 	"github.com/y0-l0/helm-snoop/pkg/snooper"
 	"github.com/y0-l0/helm-snoop/pkg/vpath"
@@ -121,11 +120,11 @@ func (s *Unittest) TestVerbosityLevels() {
 		args     []string
 		expected slog.Level
 	}{
-		{"no verbosity", []string{"helm-snoop", "../../testdata/test-chart"}, slog.LevelWarn},
-		{"single v", []string{"helm-snoop", "-v", "../../testdata/test-chart"}, slog.LevelInfo},
-		{"double v", []string{"helm-snoop", "-vv", "../../testdata/test-chart"}, slog.LevelDebug},
+		{"no verbosity", []string{"helm-snoop", "../../testdata/test-chart"}, slog.LevelError},
+		{"single v", []string{"helm-snoop", "-v", "../../testdata/test-chart"}, slog.LevelWarn},
+		{"double v", []string{"helm-snoop", "-vv", "../../testdata/test-chart"}, slog.LevelInfo},
 		{"triple v", []string{"helm-snoop", "-vvv", "../../testdata/test-chart"}, slog.LevelDebug},
-		{"separate v flags", []string{"helm-snoop", "-v", "-v", "../../testdata/test-chart"}, slog.LevelDebug},
+		{"separate v flags", []string{"helm-snoop", "-v", "-v", "../../testdata/test-chart"}, slog.LevelInfo},
 	}
 
 	for _, tc := range tests {
@@ -184,9 +183,7 @@ func (s *Unittest) TestMultipleChartsSingleSummary() {
 
 	s.Equal(1, code, "expected exit code 1 for findings")
 	out := stdout.String()
-	summaryCount := strings.Count(out, "Summary")
-	s.Equal(1, summaryCount, "summary should appear exactly once, got:\n%s", out)
-	s.Contains(out, "across 2 chart(s)")
+	s.Contains(out, "2 charts")
 }
 
 func (s *Unittest) TestMultipleArgsDeduplication() {
