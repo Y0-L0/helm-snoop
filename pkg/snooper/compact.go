@@ -10,37 +10,47 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
-func formatChartCompact(w io.Writer, result *Result) {
+func formatChartCompact(w io.Writer, c *Chart) {
 	// Chart header
-	fmt.Fprintf(w, "%s\n\n", termcolor.Header(result.ChartName, "="))
+	fmt.Fprintf(w, "%s\n\n", termcolor.Header(c.Name, "="))
+
+	if c.Result == nil {
+		return
+	}
 
 	// Unused section (only if non-empty)
-	if len(result.Unused) > 0 {
+	if len(c.Result.Unused) > 0 {
 		fmt.Fprintln(w, termcolor.Header("Unused", "-"))
-		formatPathsCompact(w, result.Unused)
+		formatPathsCompact(w, c.Result.Unused)
 	}
 
 	// Undefined section (only if non-empty)
-	if len(result.Undefined) > 0 {
+	if len(c.Result.Undefined) > 0 {
 		fmt.Fprintln(w, termcolor.Header("Undefined", "-"))
-		formatPathsCompact(w, result.Undefined)
+		formatPathsCompact(w, c.Result.Undefined)
 	}
 
 	fmt.Fprintln(w)
 }
 
-func formatSummary(w io.Writer, results Results) {
+func formatSummary(w io.Writer, charts Charts) {
 	fmt.Fprintf(w, "%s\n\n", termcolor.Header("Summary", "="))
 
 	tw := tabwriter.NewWriter(w, 0, 0, 2, ' ', 0)
 	totalUnused := 0
 	totalUndefined := 0
-	for _, r := range results {
-		totalUnused += len(r.Unused)
-		totalUndefined += len(r.Undefined)
-		fmt.Fprintf(tw, "%s\t%d Unused\t%d Undefined\t\n", r.ChartName, len(r.Unused), len(r.Undefined))
+	for _, c := range charts {
+		unused := 0
+		undefined := 0
+		if c.Result != nil {
+			unused = len(c.Result.Unused)
+			undefined = len(c.Result.Undefined)
+		}
+		totalUnused += unused
+		totalUndefined += undefined
+		fmt.Fprintf(tw, "%s\t%d Unused\t%d Undefined\t\n", c.Name, unused, undefined)
 	}
-	fmt.Fprintf(tw, "Total\t%d Unused\t%d Undefined\tacross %d chart(s)\n", totalUnused, totalUndefined, len(results))
+	fmt.Fprintf(tw, "Total\t%d Unused\t%d Undefined\tacross %d chart(s)\n", totalUnused, totalUndefined, len(charts))
 	tw.Flush()
 }
 

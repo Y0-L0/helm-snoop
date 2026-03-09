@@ -13,9 +13,13 @@ func np() *vpath.Path { return &vpath.Path{} }
 func (s *Unittest) TestIgnorePaths_SinglePath() {
 	var capturedPaths vpath.Paths
 
-	mockSnoop := func(charts []snooper.Chart) (snooper.Results, error) {
+	mockSnoop := func(charts snooper.Charts) error {
 		capturedPaths = charts[0].Ignore
-		return snooper.Results{{}}, nil
+		for _, c := range charts {
+			c.Name = filepath.Base(c.Path)
+			c.Result = &snooper.Result{}
+		}
+		return nil
 	}
 
 	command := NewParser(
@@ -34,9 +38,13 @@ func (s *Unittest) TestIgnorePaths_SinglePath() {
 func (s *Unittest) TestIgnorePaths_MultipleWithAllKinds() {
 	var capturedPaths vpath.Paths
 
-	mockSnoop := func(charts []snooper.Chart) (snooper.Results, error) {
+	mockSnoop := func(charts snooper.Charts) error {
 		capturedPaths = charts[0].Ignore
-		return snooper.Results{{}}, nil
+		for _, c := range charts {
+			c.Name = filepath.Base(c.Path)
+			c.Result = &snooper.Result{}
+		}
+		return nil
 	}
 
 	command := NewParser(
@@ -94,9 +102,9 @@ func (s *Unittest) TestIgnorePaths_InvalidPaths() {
 
 	for _, tc := range tests {
 		s.Run(tc.name, func() {
-			mockSnoop := func(_ []snooper.Chart) (snooper.Results, error) {
+			mockSnoop := func(_ snooper.Charts) error {
 				s.T().Fatal("snoop should not be called with invalid path")
-				return nil, errors.New("unreachable")
+				return errors.New("unreachable")
 			}
 
 			command := NewParser(
@@ -115,9 +123,13 @@ func (s *Unittest) TestIgnorePaths_InvalidPaths() {
 func (s *Unittest) TestIgnorePaths_NoIgnoreList() {
 	var capturedPaths vpath.Paths
 
-	mockSnoop := func(charts []snooper.Chart) (snooper.Results, error) {
+	mockSnoop := func(charts snooper.Charts) error {
 		capturedPaths = charts[0].Ignore
-		return snooper.Results{{}}, nil
+		for _, c := range charts {
+			c.Name = filepath.Base(c.Path)
+			c.Result = &snooper.Result{}
+		}
+		return nil
 	}
 
 	command := NewParser(
@@ -135,9 +147,13 @@ func (s *Unittest) TestIgnorePaths_NoIgnoreList() {
 func (s *Unittest) TestValuesFiles_SingleFile() {
 	var capturedFiles []string
 
-	mockSnoop := func(charts []snooper.Chart) (snooper.Results, error) {
+	mockSnoop := func(charts snooper.Charts) error {
 		capturedFiles = charts[0].ValuesFiles
-		return snooper.Results{{}}, nil
+		for _, c := range charts {
+			c.Name = filepath.Base(c.Path)
+			c.Result = &snooper.Result{}
+		}
+		return nil
 	}
 
 	extraValues := filepath.Join(testdataDir(), "test-chart", "values.yaml")
@@ -155,9 +171,13 @@ func (s *Unittest) TestValuesFiles_SingleFile() {
 func (s *Unittest) TestValuesFiles_MultipleFiles() {
 	var capturedFiles []string
 
-	mockSnoop := func(charts []snooper.Chart) (snooper.Results, error) {
+	mockSnoop := func(charts snooper.Charts) error {
 		capturedFiles = charts[0].ValuesFiles
-		return snooper.Results{{}}, nil
+		for _, c := range charts {
+			c.Name = filepath.Base(c.Path)
+			c.Result = &snooper.Result{}
+		}
+		return nil
 	}
 
 	f1 := filepath.Join(testdataDir(), "test-chart", "values.yaml")
@@ -176,9 +196,13 @@ func (s *Unittest) TestValuesFiles_MultipleFiles() {
 func (s *Unittest) TestValuesFiles_NoFlag() {
 	var capturedFiles []string
 
-	mockSnoop := func(charts []snooper.Chart) (snooper.Results, error) {
+	mockSnoop := func(charts snooper.Charts) error {
 		capturedFiles = charts[0].ValuesFiles
-		return snooper.Results{{}}, nil
+		for _, c := range charts {
+			c.Name = filepath.Base(c.Path)
+			c.Result = &snooper.Result{}
+		}
+		return nil
 	}
 
 	command := NewParser(

@@ -11,53 +11,61 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
-// Chart holds resolved per-chart configuration for analysis.
+// Chart holds resolved per-chart configuration and analysis results.
 type Chart struct {
 	Path        string
+	Name        string
 	Skip        bool
 	Ignore      vpath.Paths
 	ValuesFiles []string
 	ExtraValues map[string]any
+	Result      *Result
 }
 
-type SnoopFunc func([]Chart) (Results, error)
+type Charts []*Chart
 
-func Snoop(charts []Chart) (Results, error) {
-	var results Results
-	for _, chart := range charts {
-		result, err := snoopChart(chart)
-		if err != nil {
-			return nil, err
+type SnoopFunc func(Charts) error
+
+func Snoop(charts Charts) error {
+	for _, c := range charts {
+		if err := snoopChart(c); err != nil {
+			return err
 		}
-		results = append(results, result)
 	}
-	return results, nil
+	return nil
 }
 
-func snoopChart(cs Chart) (*Result, error) {
+func snoopChart(cs *Chart) error {
 	chart, err := loader.Load(cs.Path)
 	if err != nil {
-		return nil, fmt.Errorf("failed to read the helm chart.\nerror: %w", err)
+		return fmt.Errorf("failed to read the helm chart.\nerror: %w", err)
+	}
+
+	cs.Name = chart.Name()
+
+	if cs.Skip {
+		return nil
 	}
 
 	used, err := tplparser.GetUsages(chart)
 	if err != nil {
-		return nil, fmt.Errorf("failed to analyze the helm chart.\nerror: %w", err)
+		return fmt.Errorf("failed to analyze the helm chart.\nerror: %w", err)
 	}
 
 	defined, err := loadDefinitions(chart.Raw, cs.ValuesFiles, cs.ExtraValues)
 	if err != nil {
-		return nil, err
+		return err
 	}
 
-	result := &Result{ChartName: chart.Name()}
+	result := &Result{}
 	result.Referenced, result.Unused, result.Undefined = vpath.MergeJoinLoose(defined, used)
 
 	if len(cs.Ignore) > 0 {
 		result = filterIgnoredWithMerge(result, cs.Ignore)
 	}
 
-	return result, nil
+	cs.Result = result
+	return nil
 }
 
 // findRawFile returns the raw bytes of a file from the chart's Raw slice, or nil if not found.
@@ -111,7 +119,6 @@ func filterIgnoredWithMerge(result *Result, ignorePaths vpath.Paths) *Result {
 	_, _, keptUndefined := vpath.MergeJoinLoose(ignorePaths, result.Undefined)
 
 	return &Result{
-		ChartName:  result.ChartName,
 		Referenced: result.Referenced, // Never filtered
 		Unused:     keptUnused,
 		Undefined:  keptUndefined,

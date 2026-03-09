@@ -20,7 +20,7 @@ type Options struct {
 
 // Resolve loads the config file (if any), merges settings, and returns
 // a Chart for each chart path.
-func Resolve(chartPaths []string, opts Options) ([]snooper.Chart, error) {
+func Resolve(chartPaths []string, opts Options) (snooper.Charts, error) {
 	var cfg *fileConfig
 	var configDir string
 
@@ -41,7 +41,7 @@ func Resolve(chartPaths []string, opts Options) ([]snooper.Chart, error) {
 	// Build merged global: config global + CLI globals.
 	global := mergedGlobal(cfg, opts, configDir)
 
-	charts := make([]snooper.Chart, len(chartPaths))
+	charts := make(snooper.Charts, len(chartPaths))
 	for i, chartPath := range chartPaths {
 		charts[i] = resolveChart(chartPath, global, cfg, configDir)
 	}
@@ -76,8 +76,8 @@ func resolveChart(
 	global globalSettings,
 	cfg *fileConfig,
 	configDir string,
-) snooper.Chart {
-	cs := snooper.Chart{
+) *snooper.Chart {
+	cs := &snooper.Chart{
 		Path:        chartPath,
 		Ignore:      global.ignore,
 		ValuesFiles: global.valuesFiles,

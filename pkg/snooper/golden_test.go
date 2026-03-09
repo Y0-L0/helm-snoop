@@ -11,11 +11,10 @@ func (s *GoldenTest) TestSnoop_json_TestChart() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop([]Chart{{Path: filepath.Join(s.chartsDir, "test-chart")}})
-	s.Require().NoError(err)
-	s.Require().Len(results, 1)
+	charts := Charts{{Path: filepath.Join(s.chartsDir, "test-chart")}}
+	s.Require().NoError(Snoop(charts))
 
-	actual := results[0].toJSON()
+	actual := charts[0].toJSON()
 	s.EqualGoldenJSON("test-chart.results.golden.json", actual)
 }
 
@@ -23,11 +22,10 @@ func (s *GoldenTest) TestSnoop_json_IntercomService() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop([]Chart{{Path: filepath.Join(s.chartsDir, "intercom-service-2.23.0.tgz")}})
-	s.Require().NoError(err)
-	s.Require().Len(results, 1)
+	charts := Charts{{Path: filepath.Join(s.chartsDir, "intercom-service-2.23.0.tgz")}}
+	s.Require().NoError(Snoop(charts))
 
-	actual := results[0].toJSON()
+	actual := charts[0].toJSON()
 	s.EqualGoldenJSON("intercom-service.results.golden.json", actual)
 }
 
@@ -35,11 +33,10 @@ func (s *GoldenTest) TestSnoop_json_Guardian() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop([]Chart{{Path: filepath.Join(s.chartsDir, "guardian-0.24.4.tgz")}})
-	s.Require().NoError(err)
-	s.Require().Len(results, 1)
+	charts := Charts{{Path: filepath.Join(s.chartsDir, "guardian-0.24.4.tgz")}}
+	s.Require().NoError(Snoop(charts))
 
-	actual := results[0].toJSON()
+	actual := charts[0].toJSON()
 	s.EqualGoldenJSON("guardian.results.golden.json", actual)
 }
 
@@ -63,38 +60,37 @@ func (s *GoldenTest) TestSnoop_txt_TestChart() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop([]Chart{{Path: filepath.Join(s.chartsDir, "test-chart")}})
-	s.Require().NoError(err)
-	s.compactGoldenTest("test-chart.results", results)
+	charts := Charts{{Path: filepath.Join(s.chartsDir, "test-chart")}}
+	s.Require().NoError(Snoop(charts))
+	s.compactGoldenTest("test-chart.results", charts)
 }
 
 func (s *GoldenTest) TestSnoop_txt_IntercomService() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop([]Chart{{Path: filepath.Join(s.chartsDir, "intercom-service-2.23.0.tgz")}})
-	s.Require().NoError(err)
-	s.compactGoldenTest("intercom-service.results", results)
+	charts := Charts{{Path: filepath.Join(s.chartsDir, "intercom-service-2.23.0.tgz")}}
+	s.Require().NoError(Snoop(charts))
+	s.compactGoldenTest("intercom-service.results", charts)
 }
 
 func (s *GoldenTest) TestSnoop_txt_Guardian() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop([]Chart{{Path: filepath.Join(s.chartsDir, "guardian-0.24.4.tgz")}})
-	s.Require().NoError(err)
-	s.compactGoldenTest("guardian.results", results)
+	charts := Charts{{Path: filepath.Join(s.chartsDir, "guardian-0.24.4.tgz")}}
+	s.Require().NoError(Snoop(charts))
+	s.compactGoldenTest("guardian.results", charts)
 }
 
 func (s *GoldenTest) TestSnoop_json_Redis() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop([]Chart{{Path: filepath.Join(s.chartsDir, "redis-0.25.6.tgz")}})
-	s.Require().NoError(err)
-	s.Require().Len(results, 1)
+	charts := Charts{{Path: filepath.Join(s.chartsDir, "redis-0.25.6.tgz")}}
+	s.Require().NoError(Snoop(charts))
 
-	actual := results[0].toJSON()
+	actual := charts[0].toJSON()
 	s.EqualGoldenJSON("redis.results.golden.json", actual)
 }
 
@@ -102,20 +98,19 @@ func (s *GoldenTest) TestSnoop_txt_Redis() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop([]Chart{{Path: filepath.Join(s.chartsDir, "redis-0.25.6.tgz")}})
-	s.Require().NoError(err)
-	s.compactGoldenTest("redis.results", results)
+	charts := Charts{{Path: filepath.Join(s.chartsDir, "redis-0.25.6.tgz")}}
+	s.Require().NoError(Snoop(charts))
+	s.compactGoldenTest("redis.results", charts)
 }
 
 func (s *GoldenTest) TestSnoop_json_RabbitmqClusterOperator() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop([]Chart{{Path: filepath.Join(s.chartsDir, "rabbitmq-cluster-operator-0.2.1.tgz")}})
-	s.Require().NoError(err)
-	s.Require().Len(results, 1)
+	charts := Charts{{Path: filepath.Join(s.chartsDir, "rabbitmq-cluster-operator-0.2.1.tgz")}}
+	s.Require().NoError(Snoop(charts))
 
-	actual := results[0].toJSON()
+	actual := charts[0].toJSON()
 	s.EqualGoldenJSON("rabbitmq-cluster-operator.results.golden.json", actual)
 }
 
@@ -123,20 +118,19 @@ func (s *GoldenTest) TestSnoop_txt_RabbitmqClusterOperator() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop([]Chart{{Path: filepath.Join(s.chartsDir, "rabbitmq-cluster-operator-0.2.1.tgz")}})
-	s.Require().NoError(err)
-	s.compactGoldenTest("rabbitmq-cluster-operator.results", results)
+	charts := Charts{{Path: filepath.Join(s.chartsDir, "rabbitmq-cluster-operator-0.2.1.tgz")}}
+	s.Require().NoError(Snoop(charts))
+	s.compactGoldenTest("rabbitmq-cluster-operator.results", charts)
 }
 
 func (s *GoldenTest) TestSnoop_UnusedHaveValuesContext() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop([]Chart{{Path: filepath.Join(s.chartsDir, "test-chart")}})
-	s.Require().NoError(err)
-	s.Require().Len(results, 1)
+	charts := Charts{{Path: filepath.Join(s.chartsDir, "test-chart")}}
+	s.Require().NoError(Snoop(charts))
 
-	for _, p := range results[0].Unused {
+	for _, p := range charts[0].Result.Unused {
 		s.Require().NotEmpty(p.Contexts, "unused path %s should have a context", p.ID())
 		s.Equal("values.yaml", p.Contexts[0].FileName,
 			"unused path %s context should point to values.yaml", p.ID())

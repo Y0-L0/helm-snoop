@@ -11,35 +11,25 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
-func mockSnoop(charts []snooper.Chart) (snooper.Results, error) {
-	var results snooper.Results
+func mockSnoop(charts snooper.Charts) error {
 	for _, c := range charts {
-		results = append(results, &snooper.Result{
-			ChartName:  filepath.Base(c.Path),
-			Referenced: vpath.Paths{},
-			Unused:     vpath.Paths{},
-			Undefined:  vpath.Paths{},
-		})
+		c.Name = filepath.Base(c.Path)
+		c.Result = &snooper.Result{}
 	}
-	return results, nil
+	return nil
 }
 
 type trackingSnoop struct {
 	calls []string
 }
 
-func (t *trackingSnoop) snoop(charts []snooper.Chart) (snooper.Results, error) {
-	var results snooper.Results
+func (t *trackingSnoop) snoop(charts snooper.Charts) error {
 	for _, c := range charts {
 		t.calls = append(t.calls, c.Path)
-		results = append(results, &snooper.Result{
-			ChartName:  filepath.Base(c.Path),
-			Referenced: vpath.Paths{},
-			Unused:     vpath.Paths{},
-			Undefined:  vpath.Paths{},
-		})
+		c.Name = filepath.Base(c.Path)
+		c.Result = &snooper.Result{}
 	}
-	return results, nil
+	return nil
 }
 
 func testdataDir() string {
@@ -173,19 +163,16 @@ func (s *Unittest) TestMultipleChartsSingleSummary() {
 	)
 	s.Require().NoError(err)
 
-	findingsSnoop := func(charts []snooper.Chart) (snooper.Results, error) {
-		var results snooper.Results
+	findingsSnoop := func(charts snooper.Charts) error {
 		for _, c := range charts {
 			unused := vpath.NewPath("someUnused")
 			unused.Contexts = vpath.Contexts{{FileName: "values.yaml", Line: 1, Column: 1}}
-			results = append(results, &snooper.Result{
-				ChartName:  filepath.Base(c.Path),
-				Referenced: vpath.Paths{},
-				Unused:     vpath.Paths{unused},
-				Undefined:  vpath.Paths{},
-			})
+			c.Name = filepath.Base(c.Path)
+			c.Result = &snooper.Result{
+				Unused: vpath.Paths{unused},
+			}
 		}
-		return results, nil
+		return nil
 	}
 
 	var stdout, stderr bytes.Buffer
@@ -217,11 +204,15 @@ func (s *Unittest) TestMultipleArgsDeduplication() {
 }
 
 func (s *Unittest) TestConfigFlag() {
-	var captured []snooper.Chart
+	var captured snooper.Charts
 
-	mockSnoop := func(charts []snooper.Chart) (snooper.Results, error) {
+	mockSnoop := func(charts snooper.Charts) error {
 		captured = charts
-		return snooper.Results{{}}, nil
+		for _, c := range charts {
+			c.Name = filepath.Base(c.Path)
+			c.Result = &snooper.Result{}
+		}
+		return nil
 	}
 
 	dir := s.T().TempDir()
@@ -252,11 +243,15 @@ global:
 }
 
 func (s *Unittest) TestNoConfigFlag() {
-	var captured []snooper.Chart
+	var captured snooper.Charts
 
-	mockSnoop := func(charts []snooper.Chart) (snooper.Results, error) {
+	mockSnoop := func(charts snooper.Charts) error {
 		captured = charts
-		return snooper.Results{{}}, nil
+		for _, c := range charts {
+			c.Name = filepath.Base(c.Path)
+			c.Result = &snooper.Result{}
+		}
+		return nil
 	}
 
 	chartPath := filepath.Join(testdataDir(), "test-chart")
@@ -275,11 +270,15 @@ func (s *Unittest) TestNoConfigFlag() {
 }
 
 func (s *Unittest) TestConfigAndCLIFlagsMerge() {
-	var captured []snooper.Chart
+	var captured snooper.Charts
 
-	mockSnoop := func(charts []snooper.Chart) (snooper.Results, error) {
+	mockSnoop := func(charts snooper.Charts) error {
 		captured = charts
-		return snooper.Results{{}}, nil
+		for _, c := range charts {
+			c.Name = filepath.Base(c.Path)
+			c.Result = &snooper.Result{}
+		}
+		return nil
 	}
 
 	dir := s.T().TempDir()
