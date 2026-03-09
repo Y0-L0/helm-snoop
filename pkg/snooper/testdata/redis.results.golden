@@ -39,5 +39,6 @@
 
 =================================== Summary ====================================
 
-redis  0 Unused  11 Undefined  
-Total  0 Unused  11 Undefined  across 1 chart(s)
+✗  redis  0 Unused  11 Undefined
+
+==================== 0 Unused  11 Undefined across 1 charts ====================

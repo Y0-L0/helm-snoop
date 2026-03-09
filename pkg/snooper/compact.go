@@ -10,21 +10,14 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
-func formatChartCompact(w io.Writer, c *Chart) {
-	// Chart header
+func formatChartFindings(w io.Writer, c *Chart) {
 	fmt.Fprintf(w, "%s\n\n", termcolor.Header(c.Name, "="))
 
-	if c.Result == nil {
-		return
-	}
-
-	// Unused section (only if non-empty)
 	if len(c.Result.Unused) > 0 {
 		fmt.Fprintln(w, termcolor.Header("Unused", "-"))
 		formatPathsCompact(w, c.Result.Unused)
 	}
 
-	// Undefined section (only if non-empty)
 	if len(c.Result.Undefined) > 0 {
 		fmt.Fprintln(w, termcolor.Header("Undefined", "-"))
 		formatPathsCompact(w, c.Result.Undefined)
@@ -39,19 +32,54 @@ func formatSummary(w io.Writer, charts Charts) {
 	tw := tabwriter.NewWriter(w, 0, 0, 2, ' ', 0)
 	totalUnused := 0
 	totalUndefined := 0
+	scanned := 0
+	skipped := 0
 	for _, c := range charts {
-		unused := 0
-		undefined := 0
-		if c.Result != nil {
-			unused = len(c.Result.Unused)
-			undefined = len(c.Result.Undefined)
+		if c.Skip {
+			skipped++
+			fmt.Fprintf(tw, "%s\t%s\n", termcolor.Dim("s"), termcolor.Dim(c.Name))
+			continue
 		}
-		totalUnused += unused
-		totalUndefined += undefined
-		fmt.Fprintf(tw, "%s\t%d Unused\t%d Undefined\t\n", c.Name, unused, undefined)
+		scanned++
+		if c.Result != nil {
+			totalUnused += len(c.Result.Unused)
+			totalUndefined += len(c.Result.Undefined)
+		}
+		if c.HasFindings() {
+			fmt.Fprintf(
+				tw, "%s\t%s\t%d Unused\t%d Undefined\n",
+				termcolor.Red("\u2717"),
+				termcolor.Red(c.Name),
+				len(c.Result.Unused),
+				len(c.Result.Undefined),
+			)
+		} else {
+			fmt.Fprintf(tw, "%s\t%s\n", termcolor.Green("\u2713"), termcolor.Green(c.Name))
+		}
 	}
-	fmt.Fprintf(tw, "Total\t%d Unused\t%d Undefined\tacross %d chart(s)\n", totalUnused, totalUndefined, len(charts))
 	tw.Flush()
+
+	fmt.Fprintln(w)
+
+	hasFindings := totalUnused > 0 || totalUndefined > 0
+	skippedSuffix := ""
+	if skipped > 0 {
+		skippedSuffix = fmt.Sprintf(" (%d skipped)", skipped)
+	}
+
+	if hasFindings {
+		footer := fmt.Sprintf(
+			"%d Unused  %d Undefined across %d charts%s",
+			totalUnused,
+			totalUndefined,
+			scanned,
+			skippedSuffix,
+		)
+		fmt.Fprintln(w, termcolor.RedHeader(footer, "="))
+	} else {
+		footer := fmt.Sprintf("All %d charts ok%s", scanned, skippedSuffix)
+		fmt.Fprintln(w, termcolor.GreenHeader(footer, "="))
+	}
 }
 
 func formatPathsCompact(w io.Writer, paths vpath.Paths) {

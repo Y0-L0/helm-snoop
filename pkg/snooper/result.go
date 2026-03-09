@@ -16,7 +16,9 @@ type Result struct {
 
 func (cs Charts) ToText(w io.Writer) {
 	for _, c := range cs {
-		formatChartCompact(w, c)
+		if c.HasFindings() {
+			formatChartFindings(w, c)
+		}
 	}
 	formatSummary(w, cs)
 }

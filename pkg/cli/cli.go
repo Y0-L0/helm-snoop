@@ -110,8 +110,10 @@ Examples:
 			var logLevel slog.Level
 			switch verbosity {
 			case 0:
-				logLevel = slog.LevelWarn
+				logLevel = slog.LevelError
 			case 1:
+				logLevel = slog.LevelWarn
+			case 2:
 				logLevel = slog.LevelInfo
 			default:
 				logLevel = slog.LevelDebug

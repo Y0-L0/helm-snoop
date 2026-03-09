@@ -54,5 +54,6 @@
 
 =================================== Summary ====================================
 
-rabbitmq-cluster-operator  28 Unused  19 Undefined  
-Total                      28 Unused  19 Undefined  across 1 chart(s)
+✗  rabbitmq-cluster-operator  28 Unused  19 Undefined
+
+=================== 28 Unused  19 Undefined across 1 charts ====================

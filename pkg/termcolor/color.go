@@ -15,6 +15,7 @@ const (
 	bold  = "\033[1m"
 	dim   = "\033[2m"
 	red   = "\033[31m"
+	green = "\033[32m"
 )
 
 var enabled = term.IsTerminal(int(os.Stdout.Fd())) && os.Getenv("NO_COLOR") == ""
@@ -51,9 +52,27 @@ func Red(s string) string {
 	return wrap(s, red)
 }
 
+// Green returns s wrapped in green.
+func Green(s string) string {
+	return wrap(s, green)
+}
+
 // Header returns a centered, padded header like "===== text =====".
-// It bolds the result when color output is enabled.
 func Header(text, char string) string {
+	return colorHeader(text, char, bold)
+}
+
+// RedHeader returns a centered, padded header in bold red.
+func RedHeader(text, char string) string {
+	return colorHeader(text, char, bold+red)
+}
+
+// GreenHeader returns a centered, padded header in bold green.
+func GreenHeader(text, char string) string {
+	return colorHeader(text, char, bold+green)
+}
+
+func colorHeader(text, char, code string) string {
 	if char == "" {
 		char = "-"
 	}
@@ -61,13 +80,13 @@ func Header(text, char string) string {
 	width := termWidth()
 	// Ensure some sane minimal width to keep visual separation
 	if width < len(textWithSpaces)+2 {
-		return Bold(char + textWithSpaces + char)
+		return wrap(char+textWithSpaces+char, code)
 	}
 	totalPadding := width - len(textWithSpaces)
 	leftPad := totalPadding / 2
 	rightPad := totalPadding - leftPad
 	line := strings.Repeat(char, leftPad) + textWithSpaces + strings.Repeat(char, rightPad)
-	return Bold(line)
+	return wrap(line, code)
 }
 
 // termWidth returns the current terminal width in columns.
