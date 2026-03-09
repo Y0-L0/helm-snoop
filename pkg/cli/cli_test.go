@@ -11,7 +11,7 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
-func mockSnoop(charts []snooper.ChartSettings) (snooper.Results, error) {
+func mockSnoop(charts []snooper.Chart) (snooper.Results, error) {
 	var results snooper.Results
 	for _, c := range charts {
 		results = append(results, &snooper.Result{
@@ -28,7 +28,7 @@ type trackingSnoop struct {
 	calls []string
 }
 
-func (t *trackingSnoop) snoop(charts []snooper.ChartSettings) (snooper.Results, error) {
+func (t *trackingSnoop) snoop(charts []snooper.Chart) (snooper.Results, error) {
 	var results snooper.Results
 	for _, c := range charts {
 		t.calls = append(t.calls, c.Path)
@@ -173,7 +173,7 @@ func (s *Unittest) TestMultipleChartsSingleSummary() {
 	)
 	s.Require().NoError(err)
 
-	findingsSnoop := func(charts []snooper.ChartSettings) (snooper.Results, error) {
+	findingsSnoop := func(charts []snooper.Chart) (snooper.Results, error) {
 		var results snooper.Results
 		for _, c := range charts {
 			unused := vpath.NewPath("someUnused")
@@ -217,9 +217,9 @@ func (s *Unittest) TestMultipleArgsDeduplication() {
 }
 
 func (s *Unittest) TestConfigFlag() {
-	var captured []snooper.ChartSettings
+	var captured []snooper.Chart
 
-	mockSnoop := func(charts []snooper.ChartSettings) (snooper.Results, error) {
+	mockSnoop := func(charts []snooper.Chart) (snooper.Results, error) {
 		captured = charts
 		return snooper.Results{{}}, nil
 	}
@@ -252,9 +252,9 @@ global:
 }
 
 func (s *Unittest) TestNoConfigFlag() {
-	var captured []snooper.ChartSettings
+	var captured []snooper.Chart
 
-	mockSnoop := func(charts []snooper.ChartSettings) (snooper.Results, error) {
+	mockSnoop := func(charts []snooper.Chart) (snooper.Results, error) {
 		captured = charts
 		return snooper.Results{{}}, nil
 	}
@@ -275,9 +275,9 @@ func (s *Unittest) TestNoConfigFlag() {
 }
 
 func (s *Unittest) TestConfigAndCLIFlagsMerge() {
-	var captured []snooper.ChartSettings
+	var captured []snooper.Chart
 
-	mockSnoop := func(charts []snooper.ChartSettings) (snooper.Results, error) {
+	mockSnoop := func(charts []snooper.Chart) (snooper.Results, error) {
 		captured = charts
 		return snooper.Results{{}}, nil
 	}

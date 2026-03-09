@@ -11,17 +11,17 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
-// ChartSettings holds resolved per-chart configuration for analysis.
-type ChartSettings struct {
+// Chart holds resolved per-chart configuration for analysis.
+type Chart struct {
 	Path        string
 	Ignore      vpath.Paths
 	ValuesFiles []string
 	ExtraValues map[string]any
 }
 
-type SnoopFunc func([]ChartSettings) (Results, error)
+type SnoopFunc func([]Chart) (Results, error)
 
-func Snoop(charts []ChartSettings) (Results, error) {
+func Snoop(charts []Chart) (Results, error) {
 	var results Results
 	for _, chart := range charts {
 		result, err := snoopChart(chart)
@@ -33,7 +33,7 @@ func Snoop(charts []ChartSettings) (Results, error) {
 	return results, nil
 }
 
-func snoopChart(cs ChartSettings) (*Result, error) {
+func snoopChart(cs Chart) (*Result, error) {
 	chart, err := loader.Load(cs.Path)
 	if err != nil {
 		return nil, fmt.Errorf("failed to read the helm chart.\nerror: %w", err)
