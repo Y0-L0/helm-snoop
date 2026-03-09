@@ -65,9 +65,9 @@ func (s *Unittest) TestHasFindings() {
 	}
 }
 
-func (s *GoldenTest) compactGoldenTest(name string, results Results) {
+func (s *GoldenTest) compactGoldenTest(name string, charts Charts) {
 	var buf bytes.Buffer
-	results.ToText(&buf)
+	charts.ToText(&buf)
 
 	goldenPath := filepath.Join("testdata", name+".golden")
 	if s.update {
@@ -82,12 +82,14 @@ func (s *GoldenTest) compactGoldenTest(name string, results Results) {
 }
 
 func (s *GoldenTest) TestCompactEmpty() {
-	results := Results{{
-		ChartName: "test-chart",
-		Unused:    vpath.Paths{},
-		Undefined: vpath.Paths{},
+	charts := Charts{{
+		Name: "test-chart",
+		Result: &Result{
+			Unused:    vpath.Paths{},
+			Undefined: vpath.Paths{},
+		},
 	}}
-	s.compactGoldenTest("compact_empty", results)
+	s.compactGoldenTest("compact_empty", charts)
 }
 
 func (s *GoldenTest) TestCompactUnusedOnly() {
@@ -100,12 +102,14 @@ func (s *GoldenTest) TestCompactUnusedOnly() {
 		{FileName: "values.yaml", Line: 12, Column: 1},
 	}
 
-	results := Results{{
-		ChartName: "test-chart",
-		Unused:    vpath.Paths{unused1, unused2},
-		Undefined: vpath.Paths{},
+	charts := Charts{{
+		Name: "test-chart",
+		Result: &Result{
+			Unused:    vpath.Paths{unused1, unused2},
+			Undefined: vpath.Paths{},
+		},
 	}}
-	s.compactGoldenTest("compact_unused_only", results)
+	s.compactGoldenTest("compact_unused_only", charts)
 }
 
 func (s *GoldenTest) TestCompactUndefinedOnly() {
@@ -114,12 +118,14 @@ func (s *GoldenTest) TestCompactUndefinedOnly() {
 		{FileName: "templates/service.yaml", Line: 36, Column: 20},
 	}
 
-	results := Results{{
-		ChartName: "test-chart",
-		Unused:    vpath.Paths{},
-		Undefined: vpath.Paths{undef1},
+	charts := Charts{{
+		Name: "test-chart",
+		Result: &Result{
+			Unused:    vpath.Paths{},
+			Undefined: vpath.Paths{undef1},
+		},
 	}}
-	s.compactGoldenTest("compact_undefined_only", results)
+	s.compactGoldenTest("compact_undefined_only", charts)
 }
 
 func (s *GoldenTest) TestCompactBothSections() {
@@ -133,12 +139,14 @@ func (s *GoldenTest) TestCompactBothSections() {
 		{FileName: "templates/configmap.yaml", Line: 17, Column: 3},
 	}
 
-	results := Results{{
-		ChartName: "my-chart",
-		Unused:    vpath.Paths{unused},
-		Undefined: vpath.Paths{undef},
+	charts := Charts{{
+		Name: "my-chart",
+		Result: &Result{
+			Unused:    vpath.Paths{unused},
+			Undefined: vpath.Paths{undef},
+		},
 	}}
-	s.compactGoldenTest("compact_both", results)
+	s.compactGoldenTest("compact_both", charts)
 }
 
 func (s *GoldenTest) TestCompactMultipleContexts() {
@@ -149,12 +157,14 @@ func (s *GoldenTest) TestCompactMultipleContexts() {
 		{FileName: "templates/ingress.yaml", Line: 5, Column: 15},
 	}
 
-	results := Results{{
-		ChartName: "test-chart",
-		Unused:    vpath.Paths{},
-		Undefined: vpath.Paths{undef},
+	charts := Charts{{
+		Name: "test-chart",
+		Result: &Result{
+			Unused:    vpath.Paths{},
+			Undefined: vpath.Paths{undef},
+		},
 	}}
-	s.compactGoldenTest("compact_multiple_contexts", results)
+	s.compactGoldenTest("compact_multiple_contexts", charts)
 }
 
 func (s *GoldenTest) TestCompactMultipleCharts() {
@@ -172,17 +182,21 @@ func (s *GoldenTest) TestCompactMultipleCharts() {
 		{FileName: "values.yaml", Line: 2, Column: 3},
 	}
 
-	results := Results{
+	charts := Charts{
 		{
-			ChartName: "chart-a",
-			Unused:    vpath.Paths{unused1},
-			Undefined: vpath.Paths{undef1},
+			Name: "chart-a",
+			Result: &Result{
+				Unused:    vpath.Paths{unused1},
+				Undefined: vpath.Paths{undef1},
+			},
 		},
 		{
-			ChartName: "chart-b",
-			Unused:    vpath.Paths{unused2},
-			Undefined: vpath.Paths{},
+			Name: "chart-b",
+			Result: &Result{
+				Unused:    vpath.Paths{unused2},
+				Undefined: vpath.Paths{},
+			},
 		},
 	}
-	s.compactGoldenTest("compact_multiple_charts", results)
+	s.compactGoldenTest("compact_multiple_charts", charts)
 }

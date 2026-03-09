@@ -9,19 +9,16 @@ import (
 )
 
 type Result struct {
-	ChartName  string
 	Referenced vpath.Paths
 	Unused     vpath.Paths
 	Undefined  vpath.Paths
 }
 
-type Results []*Result
-
-func (rs Results) ToText(w io.Writer) {
-	for _, r := range rs {
-		formatChartCompact(w, r)
+func (cs Charts) ToText(w io.Writer) {
+	for _, c := range cs {
+		formatChartCompact(w, c)
 	}
-	formatSummary(w, rs)
+	formatSummary(w, cs)
 }
 
 type ResultJSON struct {
@@ -35,25 +32,31 @@ func (r *Result) HasFindings() bool {
 	return len(r.Unused) > 0 || len(r.Undefined) > 0
 }
 
-func (rs Results) HasFindings() error {
-	for _, r := range rs {
-		if r.HasFindings() {
+func (c *Chart) HasFindings() bool {
+	return c.Result != nil && c.Result.HasFindings()
+}
+
+func (cs Charts) HasFindings() error {
+	for _, c := range cs {
+		if c.HasFindings() {
 			return errors.New("")
 		}
 	}
 	return nil
 }
 
-func (rs Results) ToJSON(w io.Writer, showReferenced bool) error {
+func (cs Charts) ToJSON(w io.Writer, showReferenced bool) error {
 	var out []ResultJSON
-	for _, r := range rs {
+	for _, c := range cs {
 		rj := ResultJSON{
-			ChartName: r.ChartName,
-			Unused:    r.Unused.ToJSON(),
-			Undefined: r.Undefined.ToJSON(),
+			ChartName: c.Name,
 		}
-		if showReferenced {
-			rj.Referenced = r.Referenced.ToJSON()
+		if c.Result != nil {
+			rj.Unused = c.Result.Unused.ToJSON()
+			rj.Undefined = c.Result.Undefined.ToJSON()
+			if showReferenced {
+				rj.Referenced = c.Result.Referenced.ToJSON()
+			}
 		}
 		out = append(out, rj)
 	}
@@ -63,11 +66,14 @@ func (rs Results) ToJSON(w io.Writer, showReferenced bool) error {
 }
 
 // toJSON for backward compatibility with tests.
-func (r *Result) toJSON() ResultJSON {
-	return ResultJSON{
-		ChartName:  r.ChartName,
-		Referenced: r.Referenced.ToJSON(),
-		Unused:     r.Unused.ToJSON(),
-		Undefined:  r.Undefined.ToJSON(),
+func (c *Chart) toJSON() ResultJSON {
+	rj := ResultJSON{
+		ChartName: c.Name,
 	}
+	if c.Result != nil {
+		rj.Referenced = c.Result.Referenced.ToJSON()
+		rj.Unused = c.Result.Unused.ToJSON()
+		rj.Undefined = c.Result.Undefined.ToJSON()
+	}
+	return rj
 }

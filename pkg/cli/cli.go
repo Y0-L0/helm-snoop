@@ -137,20 +137,19 @@ Examples:
 				return err
 			}
 
-			results, err := snoop(charts)
-			if err != nil {
+			if err := snoop(charts); err != nil {
 				return err
 			}
 
 			if !jsonOutput {
-				results.ToText(cmd.OutOrStdout())
-				return results.HasFindings()
+				charts.ToText(cmd.OutOrStdout())
+				return charts.HasFindings()
 			}
 
-			if results.ToJSON(cmd.OutOrStdout(), showReferenced) != nil {
+			if charts.ToJSON(cmd.OutOrStdout(), showReferenced) != nil {
 				return errors.New("")
 			}
-			return results.HasFindings()
+			return charts.HasFindings()
 		},
 	}
 
