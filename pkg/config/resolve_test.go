@@ -126,6 +126,34 @@ charts:
 	}, charts[0].ExtraValues)
 }
 
+func (s *Unittest) TestResolve_SkipPerChart() {
+	dir := s.T().TempDir()
+	configPath := filepath.Join(dir, ".helm-snoop.yaml")
+	s.Require().NoError(os.WriteFile(configPath, []byte(`
+version: 0
+charts:
+  skipped-chart:
+    skip: true
+  normal-chart:
+    ignore:
+      - .foo
+`), 0o600))
+
+	charts, err := Resolve(
+		[]string{
+			filepath.Join(dir, "skipped-chart"),
+			filepath.Join(dir, "normal-chart"),
+			filepath.Join(dir, "unlisted-chart"),
+		},
+		Options{ConfigPath: configPath},
+	)
+	s.Require().NoError(err)
+	s.Require().Len(charts, 3)
+	s.True(charts[0].Skip, "skipped-chart should be skipped")
+	s.False(charts[1].Skip, "normal-chart should not be skipped")
+	s.False(charts[2].Skip, "unlisted-chart should not be skipped")
+}
+
 func (s *Unittest) TestResolve_UnmatchedChartIgnored() {
 	dir := s.T().TempDir()
 	configPath := filepath.Join(dir, ".helm-snoop.yaml")

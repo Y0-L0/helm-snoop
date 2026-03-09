@@ -19,6 +19,7 @@ type fileConfig struct {
 
 // fileChartConfig holds per-chart (or global) settings from the config file.
 type fileChartConfig struct {
+	Skip        bool           `yaml:"skip"`
 	Ignore      []string       `yaml:"ignore"`
 	ValuesFiles []string       `yaml:"valuesFiles"`
 	ExtraValues map[string]any `yaml:"extraValues"`

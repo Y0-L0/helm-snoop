@@ -83,6 +83,23 @@ func (s *Unittest) TestParse_MinimalValid() {
 	s.Empty(cfg.Charts)
 }
 
+func (s *Unittest) TestParse_Skip() {
+	data := []byte(`
+version: 0
+charts:
+  my-chart:
+    skip: true
+  other-chart:
+    ignore:
+      - .foo
+`)
+	cfg, err := parse(data)
+	s.Require().NoError(err)
+
+	s.True(cfg.Charts["my-chart"].Skip)
+	s.False(cfg.Charts["other-chart"].Skip)
+}
+
 func (s *Unittest) TestParse_GlobalOnly() {
 	data := []byte(`
 version: 0
