@@ -98,6 +98,8 @@ func resolveChart(
 		return cs
 	}
 
+	cs.Skip = chartCfg.Skip
+
 	// Append per-chart ignore and valuesFiles.
 	cs.Ignore = append(cs.Ignore, parsePaths(chartCfg.Ignore)...)
 	cs.ValuesFiles = append(cs.ValuesFiles, resolvePaths(chartCfg.ValuesFiles, configDir)...)

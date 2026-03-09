@@ -14,6 +14,7 @@ import (
 // Chart holds resolved per-chart configuration for analysis.
 type Chart struct {
 	Path        string
+	Skip        bool
 	Ignore      vpath.Paths
 	ValuesFiles []string
 	ExtraValues map[string]any
