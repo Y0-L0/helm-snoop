@@ -145,13 +145,14 @@ Examples:
 
 			if !jsonOutput {
 				charts.ToText(cmd.OutOrStdout())
-				return charts.HasFindings()
-			}
-
-			if charts.ToJSON(cmd.OutOrStdout(), showReferenced) != nil {
+			} else if err := charts.ToJSON(cmd.OutOrStdout(), showReferenced); err != nil {
 				return errors.New("")
 			}
-			return charts.HasFindings()
+
+			if charts.HasFindings() {
+				return errors.New("")
+			}
+			return nil
 		},
 	}
 
