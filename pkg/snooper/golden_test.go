@@ -11,7 +11,7 @@ func (s *GoldenTest) TestSnoop_json_TestChart() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop([]ChartSettings{{Path: filepath.Join(s.chartsDir, "test-chart")}})
+	results, err := Snoop([]Chart{{Path: filepath.Join(s.chartsDir, "test-chart")}})
 	s.Require().NoError(err)
 	s.Require().Len(results, 1)
 
@@ -23,7 +23,7 @@ func (s *GoldenTest) TestSnoop_json_IntercomService() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop([]ChartSettings{{Path: filepath.Join(s.chartsDir, "intercom-service-2.23.0.tgz")}})
+	results, err := Snoop([]Chart{{Path: filepath.Join(s.chartsDir, "intercom-service-2.23.0.tgz")}})
 	s.Require().NoError(err)
 	s.Require().Len(results, 1)
 
@@ -35,7 +35,7 @@ func (s *GoldenTest) TestSnoop_json_Guardian() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop([]ChartSettings{{Path: filepath.Join(s.chartsDir, "guardian-0.24.4.tgz")}})
+	results, err := Snoop([]Chart{{Path: filepath.Join(s.chartsDir, "guardian-0.24.4.tgz")}})
 	s.Require().NoError(err)
 	s.Require().Len(results, 1)
 
@@ -63,7 +63,7 @@ func (s *GoldenTest) TestSnoop_txt_TestChart() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop([]ChartSettings{{Path: filepath.Join(s.chartsDir, "test-chart")}})
+	results, err := Snoop([]Chart{{Path: filepath.Join(s.chartsDir, "test-chart")}})
 	s.Require().NoError(err)
 	s.compactGoldenTest("test-chart.results", results)
 }
@@ -72,7 +72,7 @@ func (s *GoldenTest) TestSnoop_txt_IntercomService() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop([]ChartSettings{{Path: filepath.Join(s.chartsDir, "intercom-service-2.23.0.tgz")}})
+	results, err := Snoop([]Chart{{Path: filepath.Join(s.chartsDir, "intercom-service-2.23.0.tgz")}})
 	s.Require().NoError(err)
 	s.compactGoldenTest("intercom-service.results", results)
 }
@@ -81,7 +81,7 @@ func (s *GoldenTest) TestSnoop_txt_Guardian() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop([]ChartSettings{{Path: filepath.Join(s.chartsDir, "guardian-0.24.4.tgz")}})
+	results, err := Snoop([]Chart{{Path: filepath.Join(s.chartsDir, "guardian-0.24.4.tgz")}})
 	s.Require().NoError(err)
 	s.compactGoldenTest("guardian.results", results)
 }
@@ -90,7 +90,7 @@ func (s *GoldenTest) TestSnoop_json_Redis() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop([]ChartSettings{{Path: filepath.Join(s.chartsDir, "redis-0.25.6.tgz")}})
+	results, err := Snoop([]Chart{{Path: filepath.Join(s.chartsDir, "redis-0.25.6.tgz")}})
 	s.Require().NoError(err)
 	s.Require().Len(results, 1)
 
@@ -102,7 +102,7 @@ func (s *GoldenTest) TestSnoop_txt_Redis() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop([]ChartSettings{{Path: filepath.Join(s.chartsDir, "redis-0.25.6.tgz")}})
+	results, err := Snoop([]Chart{{Path: filepath.Join(s.chartsDir, "redis-0.25.6.tgz")}})
 	s.Require().NoError(err)
 	s.compactGoldenTest("redis.results", results)
 }
@@ -111,7 +111,7 @@ func (s *GoldenTest) TestSnoop_json_RabbitmqClusterOperator() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop([]ChartSettings{{Path: filepath.Join(s.chartsDir, "rabbitmq-cluster-operator-0.2.1.tgz")}})
+	results, err := Snoop([]Chart{{Path: filepath.Join(s.chartsDir, "rabbitmq-cluster-operator-0.2.1.tgz")}})
 	s.Require().NoError(err)
 	s.Require().Len(results, 1)
 
@@ -123,7 +123,7 @@ func (s *GoldenTest) TestSnoop_txt_RabbitmqClusterOperator() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop([]ChartSettings{{Path: filepath.Join(s.chartsDir, "rabbitmq-cluster-operator-0.2.1.tgz")}})
+	results, err := Snoop([]Chart{{Path: filepath.Join(s.chartsDir, "rabbitmq-cluster-operator-0.2.1.tgz")}})
 	s.Require().NoError(err)
 	s.compactGoldenTest("rabbitmq-cluster-operator.results", results)
 }
@@ -132,7 +132,7 @@ func (s *GoldenTest) TestSnoop_UnusedHaveValuesContext() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	results, err := Snoop([]ChartSettings{{Path: filepath.Join(s.chartsDir, "test-chart")}})
+	results, err := Snoop([]Chart{{Path: filepath.Join(s.chartsDir, "test-chart")}})
 	s.Require().NoError(err)
 	s.Require().Len(results, 1)
 

@@ -10,7 +10,7 @@ func (s *GoldenTest) TestSnoop_ExtraValues_AddsDefinitions() {
 
 	// test-chart has no findings normally. Adding extraValues introduces
 	// a new defined-but-unused path.
-	charts := []ChartSettings{{
+	charts := []Chart{{
 		Path: filepath.Join(s.chartsDir, "test-chart"),
 		ExtraValues: map[string]any{
 			"extraKey": "extraValue",
@@ -32,7 +32,7 @@ func (s *GoldenTest) TestSnoop_ExtraValues_NestedMap() {
 	restore := disableStrictParsing()
 	defer restore()
 
-	charts := []ChartSettings{{
+	charts := []Chart{{
 		Path: filepath.Join(s.chartsDir, "test-chart"),
 		ExtraValues: map[string]any{
 			"deep": map[string]any{
@@ -57,12 +57,12 @@ func (s *GoldenTest) TestSnoop_ExtraValues_Nil() {
 	defer restore()
 
 	// nil ExtraValues should behave the same as before.
-	baseline, err := Snoop([]ChartSettings{{
+	baseline, err := Snoop([]Chart{{
 		Path: filepath.Join(s.chartsDir, "test-chart"),
 	}})
 	s.Require().NoError(err)
 
-	withNil, err := Snoop([]ChartSettings{{
+	withNil, err := Snoop([]Chart{{
 		Path:        filepath.Join(s.chartsDir, "test-chart"),
 		ExtraValues: nil,
 	}})
