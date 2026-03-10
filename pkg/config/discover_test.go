@@ -30,18 +30,9 @@ func (s *Unittest) TestDiscover_InParentDir() {
 
 func (s *Unittest) TestDiscover_NotFound() {
 	dir := s.T().TempDir()
-	// No config file anywhere in the temp dir hierarchy that we control,
-	// but we can't guarantee the real filesystem. So we just test the
-	// function returns without error from a dir with no config.
-	child := filepath.Join(dir, "isolated")
-	s.Require().NoError(os.MkdirAll(child, 0o750))
-
-	found, err := discover(child)
+	found, err := discover(dir)
 	s.Require().NoError(err)
-	// May find a config in a real parent dir, but from a temp dir it shouldn't.
-	if found != "" {
-		s.T().Logf("found unexpected config at %s (possibly from real filesystem)", found)
-	}
+	s.Empty(found)
 }
 
 func (s *Unittest) TestResolve_AutoDiscover() {
