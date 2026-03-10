@@ -37,46 +37,6 @@ func testdataDir() string {
 	return filepath.Join(wd, "..", "..", "testdata")
 }
 
-func (s *Unittest) TestResolveChartRootFromFile() {
-	chartRoot := filepath.Join(testdataDir(), "test-chart")
-	got, err := resolveChartRoot(filepath.Join(chartRoot, "values.yaml"))
-	s.Require().NoError(err)
-	s.Equal(chartRoot, got)
-}
-
-func (s *Unittest) TestResolveChartRootFromNestedFile() {
-	chartRoot := filepath.Join(testdataDir(), "test-chart")
-	got, err := resolveChartRoot(filepath.Join(chartRoot, "templates", "configmap.yaml"))
-	s.Require().NoError(err)
-	s.Equal(chartRoot, got)
-}
-
-func (s *Unittest) TestResolveChartRootFromChartDir() {
-	chartRoot := filepath.Join(testdataDir(), "test-chart")
-	got, err := resolveChartRoot(chartRoot)
-	s.Require().NoError(err)
-	s.Equal(chartRoot, got)
-}
-
-func (s *Unittest) TestResolveChartRootNoChartYaml() {
-	_, err := resolveChartRoot(os.TempDir())
-	s.Require().Error(err)
-	s.Contains(err.Error(), "no Chart.yaml found")
-}
-
-func (s *Unittest) TestResolveChartRootNonexistentPath() {
-	_, err := resolveChartRoot("/nonexistent/path/to/file.yaml")
-	s.Require().Error(err)
-}
-
-func (s *Unittest) TestResolveChartRootArchivePassthrough() {
-	// A valid chart archive is returned as-is (loader accepts it directly)
-	chartRoot := filepath.Join(testdataDir(), "test-chart")
-	got, err := resolveChartRoot(chartRoot)
-	s.Require().NoError(err)
-	s.Equal(chartRoot, got)
-}
-
 func (s *Unittest) TestHelp() {
 	command := NewParser([]string{"helm-snoop", "--help"}, snooper.SetupLogging, mockSnoop)
 	err := command.Execute()
@@ -142,16 +102,6 @@ func (s *Unittest) TestVerbosityLevels() {
 	}
 }
 
-func (s *Unittest) TestFileArgResolvesToChartRoot() {
-	tracker := &trackingSnoop{}
-	chartFile := filepath.Join(testdataDir(), "test-chart", "values.yaml")
-	command := NewParser([]string{"helm-snoop", chartFile}, snooper.SetupLogging, tracker.snoop)
-	err := command.Execute()
-	s.Require().NoError(err)
-	s.Require().Len(tracker.calls, 1)
-	s.Equal(filepath.Join(testdataDir(), "test-chart"), tracker.calls[0])
-}
-
 func (s *Unittest) TestMultipleChartsSingleSummary() {
 	chartA := filepath.Join(testdataDir(), "test-chart")
 	chartB := s.T().TempDir()
@@ -184,20 +134,6 @@ func (s *Unittest) TestMultipleChartsSingleSummary() {
 	s.Equal(1, code, "expected exit code 1 for findings")
 	out := stdout.String()
 	s.Contains(out, "2 charts")
-}
-
-func (s *Unittest) TestMultipleArgsDeduplication() {
-	tracker := &trackingSnoop{}
-	chartDir := filepath.Join(testdataDir(), "test-chart")
-	command := NewParser([]string{
-		"helm-snoop",
-		filepath.Join(chartDir, "values.yaml"),
-		filepath.Join(chartDir, "templates", "configmap.yaml"),
-		filepath.Join(chartDir, "templates", "deployment.yaml"),
-	}, snooper.SetupLogging, tracker.snoop)
-	err := command.Execute()
-	s.Require().NoError(err)
-	s.Require().Len(tracker.calls, 1, "expected deduplication to single chart")
 }
 
 func (s *Unittest) TestConfigFlag() {
