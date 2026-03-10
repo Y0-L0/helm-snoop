@@ -20,17 +20,22 @@ type ArgumentError string
 
 func (e ArgumentError) Error() string { return string(e) }
 
+// Options holds all CLI flag values.
+type Options struct {
+	verbosity      int
+	noColor        bool
+	ignorePaths    cliPaths
+	valuesFiles    []string
+	configPath     string
+	noConfig       bool
+	jsonOutput     bool
+	showReferenced bool
+}
+
 func NewParser(args []string, setupLogging func(slog.Level), snoop snooper.SnoopFunc) *cobra.Command {
 	slog.Debug("raw cli arguments", "args", args)
 
-	var verbosity int
-	var noColor bool
-	ignorePaths := &cliPaths{}
-	var valuesFiles []string
-	var configPath string
-	var noConfig bool
-	var jsonOutput bool
-	var showReferenced bool
+	var opts Options
 
 	rootCmd := &cobra.Command{
 		Use:   "helm-snoop [FLAGS] <chart-path or file>...",
@@ -45,11 +50,11 @@ Examples:
 		Args:          cobra.MinimumNArgs(1),
 		SilenceErrors: true,
 		PersistentPreRun: func(_ *cobra.Command, _ []string) {
-			if noColor {
+			if opts.noColor {
 				termcolor.Disable()
 			}
 			var logLevel slog.Level
-			switch verbosity {
+			switch opts.verbosity {
 			case 0:
 				logLevel = slog.LevelError
 			case 1:
@@ -71,10 +76,10 @@ Examples:
 			assert.Strict = false //nolint:reassign // strict mode is for dev/test only.
 
 			charts, err := config.Resolve(chartRoots, config.Options{
-				ConfigPath:  configPath,
-				NoConfig:    noConfig,
-				Ignore:      vpath.Paths(*ignorePaths),
-				ValuesFiles: valuesFiles,
+				ConfigPath:  opts.configPath,
+				NoConfig:    opts.noConfig,
+				Ignore:      vpath.Paths(opts.ignorePaths),
+				ValuesFiles: opts.valuesFiles,
 			})
 			if err != nil {
 				return err
@@ -84,9 +89,9 @@ Examples:
 				return err
 			}
 
-			if !jsonOutput {
+			if !opts.jsonOutput {
 				charts.ToText(cmd.OutOrStdout())
-			} else if err := charts.ToJSON(cmd.OutOrStdout(), showReferenced); err != nil {
+			} else if err := charts.ToJSON(cmd.OutOrStdout(), opts.showReferenced); err != nil {
 				return errors.New("")
 			}
 
@@ -108,21 +113,21 @@ Examples:
 	}
 
 	rootCmd.PersistentFlags().CountVarP(
-		&verbosity,
+		&opts.verbosity,
 		"verbose",
 		"v",
 		"Increase the log level. Can be specified multiple times.",
 	)
 
 	rootCmd.PersistentFlags().BoolVar(
-		&noColor,
+		&opts.noColor,
 		"no-color",
 		false,
 		"Disable colored output",
 	)
 
 	rootCmd.Flags().VarP(
-		ignorePaths,
+		&opts.ignorePaths,
 		"ignore",
 		"i",
 		`Ignore value paths matching patterns. Supports wildcards (*) and integers match as any key.
@@ -135,7 +140,7 @@ Repeatable. Paths match the dot-notation output format for easy copy-paste.`,
 	)
 
 	rootCmd.Flags().StringArrayVarP(
-		&valuesFiles,
+		&opts.valuesFiles,
 		"values",
 		"f",
 		nil,
@@ -143,28 +148,28 @@ Repeatable. Paths match the dot-notation output format for easy copy-paste.`,
 	)
 
 	rootCmd.Flags().StringVar(
-		&configPath,
+		&opts.configPath,
 		"config",
 		"",
 		"Path to .helm-snoop.yaml config file (default: auto-discover)",
 	)
 
 	rootCmd.Flags().BoolVar(
-		&noConfig,
+		&opts.noConfig,
 		"no-config",
 		false,
 		"Skip config file loading",
 	)
 
 	rootCmd.Flags().BoolVar(
-		&jsonOutput,
+		&opts.jsonOutput,
 		"json",
 		false,
 		"Output results in JSON format",
 	)
 
 	rootCmd.Flags().BoolVar(
-		&showReferenced,
+		&opts.showReferenced,
 		"referenced",
 		false,
 		"Include referenced values in output",
