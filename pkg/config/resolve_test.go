@@ -9,10 +9,22 @@ import (
 
 func np() *vpath.Path { return &vpath.Path{} }
 
+type testOptions struct {
+	configPath  string
+	noConfig    bool
+	ignore      vpath.Paths
+	valuesFiles []string
+}
+
+func (o *testOptions) ConfigPath() string    { return o.configPath }
+func (o *testOptions) NoConfig() bool        { return o.noConfig }
+func (o *testOptions) Ignore() vpath.Paths   { return o.ignore }
+func (o *testOptions) ValuesFiles() []string { return o.valuesFiles }
+
 func (s *Unittest) TestResolve_NoConfig() {
 	charts, err := Resolve(
 		[]string{"/charts/a", "/charts/b"},
-		Options{NoConfig: true},
+		&testOptions{noConfig: true},
 	)
 	s.Require().NoError(err)
 	s.Require().Len(charts, 2)
@@ -27,10 +39,10 @@ func (s *Unittest) TestResolve_CLIFlagsOnly() {
 	ignore := vpath.Paths{np().Key("image").Key("tag")}
 	charts, err := Resolve(
 		[]string{"/charts/a"},
-		Options{
-			NoConfig:    true,
-			Ignore:      ignore,
-			ValuesFiles: []string{"/extra/values.yaml"},
+		&testOptions{
+			noConfig:    true,
+			ignore:      ignore,
+			valuesFiles: []string{"/extra/values.yaml"},
 		},
 	)
 	s.Require().NoError(err)
@@ -55,10 +67,10 @@ global:
 
 	charts, err := Resolve(
 		[]string{filepath.Join(dir, "my-chart")},
-		Options{
-			ConfigPath:  configPath,
-			Ignore:      vpath.Paths{np().Key("cli").Key("ignore")},
-			ValuesFiles: []string{"/cli/extra.yaml"},
+		&testOptions{
+			configPath:  configPath,
+			ignore:      vpath.Paths{np().Key("cli").Key("ignore")},
+			valuesFiles: []string{"/cli/extra.yaml"},
 		},
 	)
 	s.Require().NoError(err)
@@ -104,7 +116,7 @@ charts:
 `), 0o600))
 
 	chartPath := filepath.Join(dir, "my-chart")
-	charts, err := Resolve([]string{chartPath}, Options{ConfigPath: configPath})
+	charts, err := Resolve([]string{chartPath}, &testOptions{configPath: configPath})
 	s.Require().NoError(err)
 	s.Require().Len(charts, 1)
 
@@ -145,7 +157,7 @@ charts:
 			filepath.Join(dir, "normal-chart"),
 			filepath.Join(dir, "unlisted-chart"),
 		},
-		Options{ConfigPath: configPath},
+		&testOptions{configPath: configPath},
 	)
 	s.Require().NoError(err)
 	s.Require().Len(charts, 3)
@@ -166,7 +178,7 @@ charts:
 `), 0o600))
 
 	chartPath := filepath.Join(dir, "my-chart")
-	charts, err := Resolve([]string{chartPath}, Options{ConfigPath: configPath})
+	charts, err := Resolve([]string{chartPath}, &testOptions{configPath: configPath})
 	s.Require().NoError(err)
 	s.Require().Len(charts, 1)
 	s.Empty(charts[0].Ignore)
@@ -175,7 +187,7 @@ charts:
 func (s *Unittest) TestResolve_ExplicitConfigNotFound() {
 	_, err := Resolve(
 		[]string{"/charts/a"},
-		Options{ConfigPath: "/nonexistent/.helm-snoop.yaml"},
+		&testOptions{configPath: "/nonexistent/.helm-snoop.yaml"},
 	)
 	s.Require().Error(err)
 	s.Contains(err.Error(), "reading config file")
@@ -186,7 +198,7 @@ func (s *Unittest) TestResolve_InvalidConfig() {
 	configPath := filepath.Join(dir, ".helm-snoop.yaml")
 	s.Require().NoError(os.WriteFile(configPath, []byte(`version: 99`), 0o600))
 
-	_, err := Resolve([]string{"/charts/a"}, Options{ConfigPath: configPath})
+	_, err := Resolve([]string{"/charts/a"}, &testOptions{configPath: configPath})
 	s.Require().Error(err)
 	s.Contains(err.Error(), "unsupported config version")
 }
@@ -204,7 +216,7 @@ global:
 
 	charts, err := Resolve(
 		[]string{filepath.Join(dir, "chart")},
-		Options{ConfigPath: configPath},
+		&testOptions{configPath: configPath},
 	)
 	s.Require().NoError(err)
 	s.Equal([]string{
@@ -217,7 +229,7 @@ func (s *Unittest) TestResolve_NoConfigFileFound() {
 	// No --config, no config file in the filesystem → empty options applied.
 	charts, err := Resolve(
 		[]string{"/charts/a"},
-		Options{},
+		&testOptions{},
 	)
 	s.Require().NoError(err)
 	s.Require().Len(charts, 1)
