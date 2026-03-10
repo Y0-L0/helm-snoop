@@ -37,6 +37,19 @@ func (o *Options) NoConfig() bool        { return o.noConfig }
 func (o *Options) Ignore() vpath.Paths   { return vpath.Paths(o.ignorePaths) }
 func (o *Options) ValuesFiles() []string { return o.valuesFiles }
 
+func (o *Options) logLevel() slog.Level {
+	switch o.verbosity {
+	case 0:
+		return slog.LevelError
+	case 1:
+		return slog.LevelWarn
+	case 2:
+		return slog.LevelInfo
+	default:
+		return slog.LevelDebug
+	}
+}
+
 func NewParser(args []string, setupLogging func(slog.Level), snoop snooper.SnoopFunc) *cobra.Command {
 	slog.Debug("raw cli arguments", "args", args)
 
@@ -58,18 +71,7 @@ Examples:
 			if opts.noColor {
 				termcolor.Disable()
 			}
-			var logLevel slog.Level
-			switch opts.verbosity {
-			case 0:
-				logLevel = slog.LevelError
-			case 1:
-				logLevel = slog.LevelWarn
-			case 2:
-				logLevel = slog.LevelInfo
-			default:
-				logLevel = slog.LevelDebug
-			}
-			setupLogging(logLevel)
+			setupLogging(opts.logLevel())
 		},
 		RunE: func(cmd *cobra.Command, args []string) error {
 			chartRoots, err := resolveUniqueCharts(args)
