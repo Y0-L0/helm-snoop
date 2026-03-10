@@ -53,7 +53,7 @@ global:
 
 	charts, err := Resolve(
 		[]string{filepath.Join(dir, "chart")},
-		Options{},
+		&testOptions{},
 	)
 	s.Require().NoError(err)
 	s.Require().Len(charts, 1)

@@ -10,12 +10,12 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
-// Options holds CLI-level settings that get merged with the config file.
-type Options struct {
-	ConfigPath  string      // --config flag (empty = auto-discover)
-	NoConfig    bool        // --no-config flag
-	Ignore      vpath.Paths // CLI -i flags
-	ValuesFiles []string    // CLI -f flags
+// Options provides CLI-level settings that get merged with the config file.
+type Options interface {
+	ConfigPath() string
+	NoConfig() bool
+	Ignore() vpath.Paths
+	ValuesFiles() []string
 }
 
 // Resolve loads the config file (if any), merges settings, and returns
@@ -24,8 +24,8 @@ func Resolve(chartPaths []string, opts Options) (snooper.Charts, error) {
 	var cfg *fileConfig
 	var configDir string
 
-	if !opts.NoConfig {
-		data, cfgPath, err := loadConfigFile(opts.ConfigPath)
+	if !opts.NoConfig() {
+		data, cfgPath, err := loadConfigFile(opts.ConfigPath())
 		if err != nil {
 			return nil, err
 		}
@@ -65,8 +65,8 @@ func mergedGlobal(cfg *fileConfig, opts Options, configDir string) globalSetting
 	}
 
 	// Append CLI flags.
-	g.ignore = append(g.ignore, opts.Ignore...)
-	g.valuesFiles = append(g.valuesFiles, opts.ValuesFiles...)
+	g.ignore = append(g.ignore, opts.Ignore()...)
+	g.valuesFiles = append(g.valuesFiles, opts.ValuesFiles()...)
 
 	return g
 }

@@ -20,7 +20,7 @@ type ArgumentError string
 
 func (e ArgumentError) Error() string { return string(e) }
 
-// Options holds all CLI flag values.
+// Options holds all CLI flag values and implements config.Options.
 type Options struct {
 	verbosity      int
 	noColor        bool
@@ -31,6 +31,11 @@ type Options struct {
 	jsonOutput     bool
 	showReferenced bool
 }
+
+func (o *Options) ConfigPath() string    { return o.configPath }
+func (o *Options) NoConfig() bool        { return o.noConfig }
+func (o *Options) Ignore() vpath.Paths   { return vpath.Paths(o.ignorePaths) }
+func (o *Options) ValuesFiles() []string { return o.valuesFiles }
 
 func NewParser(args []string, setupLogging func(slog.Level), snoop snooper.SnoopFunc) *cobra.Command {
 	slog.Debug("raw cli arguments", "args", args)
@@ -75,12 +80,7 @@ Examples:
 			cmd.SilenceUsage = true
 			assert.Strict = false //nolint:reassign // strict mode is for dev/test only.
 
-			charts, err := config.Resolve(chartRoots, config.Options{
-				ConfigPath:  opts.configPath,
-				NoConfig:    opts.noConfig,
-				Ignore:      vpath.Paths(opts.ignorePaths),
-				ValuesFiles: opts.valuesFiles,
-			})
+			charts, err := config.Resolve(chartRoots, &opts)
 			if err != nil {
 				return err
 			}
