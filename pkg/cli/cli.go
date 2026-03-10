@@ -37,6 +37,32 @@ func (o *Options) NoConfig() bool        { return o.noConfig }
 func (o *Options) Ignore() vpath.Paths   { return vpath.Paths(o.ignorePaths) }
 func (o *Options) ValuesFiles() []string { return o.valuesFiles }
 
+func (o *Options) run(w io.Writer, chartRoots []string, snoop snooper.SnoopFunc) error {
+	if o.noColor {
+		termcolor.Disable()
+	}
+
+	charts, err := config.Resolve(chartRoots, o)
+	if err != nil {
+		return err
+	}
+
+	if err := snoop(charts); err != nil {
+		return err
+	}
+
+	if !o.jsonOutput {
+		charts.ToText(w)
+	} else if err := charts.ToJSON(w, o.showReferenced); err != nil {
+		return errors.New("")
+	}
+
+	if charts.HasFindings() {
+		return errors.New("")
+	}
+	return nil
+}
+
 func (o *Options) logLevel() slog.Level {
 	switch o.verbosity {
 	case 0:
@@ -68,9 +94,6 @@ Examples:
 		Args:          cobra.MinimumNArgs(1),
 		SilenceErrors: true,
 		PersistentPreRun: func(_ *cobra.Command, _ []string) {
-			if opts.noColor {
-				termcolor.Disable()
-			}
 			setupLogging(opts.logLevel())
 		},
 		RunE: func(cmd *cobra.Command, args []string) error {
@@ -82,25 +105,7 @@ Examples:
 			cmd.SilenceUsage = true
 			assert.Strict = false //nolint:reassign // strict mode is for dev/test only.
 
-			charts, err := config.Resolve(chartRoots, &opts)
-			if err != nil {
-				return err
-			}
-
-			if err := snoop(charts); err != nil {
-				return err
-			}
-
-			if !opts.jsonOutput {
-				charts.ToText(cmd.OutOrStdout())
-			} else if err := charts.ToJSON(cmd.OutOrStdout(), opts.showReferenced); err != nil {
-				return errors.New("")
-			}
-
-			if charts.HasFindings() {
-				return errors.New("")
-			}
-			return nil
+			return opts.run(cmd.OutOrStdout(), chartRoots, snoop)
 		},
 	}
 
