@@ -53,7 +53,7 @@ func (o *Options) run(w io.Writer, chartRoots []string, snoop snooper.SnoopFunc)
 
 	if !o.jsonOutput {
 		charts.ToText(w)
-	} else if err := charts.ToJSON(w, o.showReferenced); err != nil {
+	} else if charts.ToJSON(w, o.showReferenced) != nil {
 		return errors.New("")
 	}
 
