@@ -9,13 +9,11 @@ on:
         description: "Version tag to test (e.g. v0.6.0)"
         required: true
 
-permissions:
-  contents: read
-  packages: read
-
 jobs:
   homebrew:
     runs-on: macos-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
@@ -33,6 +31,8 @@ jobs:
 
   apt:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Derive version
         run: |
@@ -60,6 +60,9 @@ jobs:
 
   container:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
     steps:
       - name: Derive version
         run: |
@@ -85,6 +88,8 @@ jobs:
 
   binary:
     runs-on: ubuntu-24.04-arm
+    permissions:
+      contents: read
     steps:
       - name: Derive version
         run: |
