@@ -1,0 +1,109 @@
+name: test-release
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version tag to test (e.g. v0.6.0)"
+        required: true
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  homebrew:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          sparse-checkout: testdata/test-chart
+
+      - name: Install via Homebrew
+        run: brew install y0-l0/tap/helm-snoop
+
+      - name: Verify version
+        run: helm-snoop version
+
+      - name: Run against test chart
+        run: helm-snoop testdata/test-chart
+
+  apt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Derive version
+        run: |
+          VERSION="${{ inputs.version || github.event.release.tag_name }}"
+          echo "VERSION=${VERSION#v}" >> "$GITHUB_ENV"
+
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          sparse-checkout: testdata/test-chart
+
+      - name: Install via APT
+        run: |
+          apt-get update -qq
+          apt-get install -y ca-certificates >/dev/null 2>&1
+          echo 'deb [trusted=yes] https://apt.fury.io/stadimeter/ /' > /etc/apt/sources.list.d/fury.list
+          apt-get update -qq
+          apt-get install -y helm-snoop=${VERSION}
+
+      - name: Verify version
+        run: helm-snoop version
+
+      - name: Run against test chart
+        run: helm-snoop testdata/test-chart
+
+  container:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Derive version
+        run: |
+          VERSION="${{ inputs.version || github.event.release.tag_name }}"
+          echo "VERSION=${VERSION#v}" >> "$GITHUB_ENV"
+
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          sparse-checkout: testdata/test-chart
+
+      - name: Pull image
+        run: docker pull "ghcr.io/y0-l0/helm-snoop:${VERSION}"
+
+      - name: Verify version
+        run: docker run --rm "ghcr.io/y0-l0/helm-snoop:${VERSION}" version
+
+      - name: Run against test chart
+        run: >-
+          docker run --rm
+          -v "${{ github.workspace }}/testdata/test-chart:/chart:ro"
+          "ghcr.io/y0-l0/helm-snoop:${VERSION}" /chart
+
+  binary:
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - name: Derive version
+        run: |
+          VERSION="${{ inputs.version || github.event.release.tag_name }}"
+          echo "VERSION=${VERSION#v}" >> "$GITHUB_ENV"
+
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          sparse-checkout: testdata/test-chart
+
+      - name: Download and extract binary
+        run: >-
+          curl -fsSL
+          "https://github.com/${{ github.repository }}/releases/download/v${VERSION}/helm-snoop_${VERSION}_linux_arm64.tar.gz"
+          | tar -xz -C /usr/local/bin
+
+      - name: Verify version
+        run: helm-snoop version
+
+      - name: Run against test chart
+        run: helm-snoop testdata/test-chart
