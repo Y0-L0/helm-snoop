@@ -37,43 +37,47 @@ func formatSection(w io.Writer, title string, paths vpath.Paths) {
 	fmt.Fprintln(w, termcolor.Header(title, "-"))
 	tw := tabwriter.NewWriter(w, 0, 0, 2, ' ', tabwriter.StripEscape)
 	for _, p := range paths {
-		if len(p.Contexts) == 0 {
-			fmt.Fprintf(tw, "%s\n", termcolor.Red(p.ID()))
-			continue
-		}
-		fmt.Fprintf(tw, "%s\t%s\n", termcolor.Red(p.ID()), termcolor.Dim(p.Contexts[0].String()))
-		for _, ctx := range p.Contexts[1:] {
-			fmt.Fprintf(tw, "%s\t%s\n", termcolor.Red(""), termcolor.Dim(ctx.String()))
+		id := termcolor.Red(p.ID())
+		for i := range max(len(p.Contexts), 1) {
+			context := ""
+			if i < len(p.Contexts) {
+				context = termcolor.Dim(p.Contexts[i].String())
+			}
+			fmt.Fprintf(tw, "%s\t%s\n", id, context)
+			id = termcolor.Red("")
 		}
 	}
 	tw.Flush()
 }
 
 func formatSummaryHeader(w io.Writer, charts Charts) {
+	header := termcolor.GreenHeader("Summary", "=")
 	if charts.HasFindings() {
-		fmt.Fprintf(w, "%s\n\n", termcolor.RedHeader("Summary", "="))
-	} else {
-		fmt.Fprintf(w, "%s\n\n", termcolor.GreenHeader("Summary", "="))
+		header = termcolor.RedHeader("Summary", "=")
 	}
+	fmt.Fprintf(w, "%s\n\n", header)
 }
 
 func formatSummaryTable(w io.Writer, charts Charts) {
 	tw := tabwriter.NewWriter(w, 0, 0, 2, ' ', 0)
 	for _, c := range charts {
-		switch {
-		case c.Skip:
-			fmt.Fprintf(tw, "%s\t%s\n", termcolor.Dim("s"), termcolor.Dim(c.Name))
-		case c.hasFindings():
-			fmt.Fprintf(
-				tw, "%s\t%s\t%s\t%s\n",
-				termcolor.Red("\u2717"),
-				termcolor.Red(c.Name),
+		icon := termcolor.Green("\u2713")
+		name := termcolor.Green(c.Name)
+		var suffix string
+
+		if c.Skip {
+			icon = termcolor.Dim("s")
+			name = termcolor.Dim(c.Name)
+		} else if c.hasFindings() {
+			icon = termcolor.Red("\u2717")
+			name = termcolor.Red(c.Name)
+			suffix = fmt.Sprintf(
+				"\t%s\t%s",
 				termcolor.Red(fmt.Sprintf("%d Unused", len(c.Result.Unused))),
 				termcolor.Red(fmt.Sprintf("%d Undefined", len(c.Result.Undefined))),
 			)
-		default:
-			fmt.Fprintf(tw, "%s\t%s\n", termcolor.Green("\u2713"), termcolor.Green(c.Name))
 		}
+		fmt.Fprintf(tw, "%s\t%s%s\n", icon, name, suffix)
 	}
 	tw.Flush()
 	fmt.Fprintln(w)
