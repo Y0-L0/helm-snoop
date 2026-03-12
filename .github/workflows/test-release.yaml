@@ -18,7 +18,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           sparse-checkout: testdata/test-chart
 
@@ -40,17 +40,17 @@ jobs:
           echo "VERSION=${VERSION#v}" >> "$GITHUB_ENV"
 
       - name: Checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           sparse-checkout: testdata/test-chart
 
       - name: Install via APT
         run: |
-          apt-get update -qq
-          apt-get install -y ca-certificates >/dev/null 2>&1
-          echo 'deb [trusted=yes] https://apt.fury.io/stadimeter/ /' > /etc/apt/sources.list.d/fury.list
-          apt-get update -qq
-          apt-get install -y helm-snoop=${VERSION}
+          sudo apt-get update -qq
+          sudo apt-get install -y ca-certificates >/dev/null 2>&1
+          echo 'deb [trusted=yes] https://apt.fury.io/stadimeter/ /' | sudo tee /etc/apt/sources.list.d/fury.list
+          sudo apt-get update -qq
+          sudo apt-get install -y helm-snoop=${VERSION}
 
       - name: Verify version
         run: helm-snoop version
@@ -67,7 +67,7 @@ jobs:
           echo "VERSION=${VERSION#v}" >> "$GITHUB_ENV"
 
       - name: Checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           sparse-checkout: testdata/test-chart
 
@@ -92,7 +92,7 @@ jobs:
           echo "VERSION=${VERSION#v}" >> "$GITHUB_ENV"
 
       - name: Checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           sparse-checkout: testdata/test-chart
 
