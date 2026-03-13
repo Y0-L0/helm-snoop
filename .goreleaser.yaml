@@ -14,10 +14,10 @@ builds:
       - arm64
     ldflags:
       - -s -w
-      - -X github.com/y0-l0/helm-snoop/pkg/version.version={{.Version}}
-      - -X github.com/y0-l0/helm-snoop/pkg/version.commit={{.Commit}}
-      - -X github.com/y0-l0/helm-snoop/pkg/version.treeState={{if .IsGitDirty}}dirty{{else}}clean{{end}}
-      - -X github.com/y0-l0/helm-snoop/pkg/version.commitDate={{.CommitDate}}
+      - -X github.com/y0-l0/helm-snoop/pkg/appinfo.version={{.Version}}
+      - -X github.com/y0-l0/helm-snoop/pkg/appinfo.commit={{.Commit}}
+      - -X github.com/y0-l0/helm-snoop/pkg/appinfo.treeState={{if .IsGitDirty}}dirty{{else}}clean{{end}}
+      - -X github.com/y0-l0/helm-snoop/pkg/appinfo.commitDate={{.CommitDate}}
 
 nfpms:
   - id: linux-packages
