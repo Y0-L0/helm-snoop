@@ -36,6 +36,20 @@ docker run --rm -v $(pwd):/chart ghcr.io/y0-l0/helm-snoop:latest /chart
 brew install y0-l0/tap/helm-snoop
 ```
 
+**mise (macOS/Linux):**
+
+With [mise](https://mise.jdx.dev/getting-started.html) installed and activated:
+
+```bash
+mise use \
+  --global \
+  github:Y0-L0/helm-snoop@latest
+```
+
+The [GitHub backend](https://mise.jdx.dev/dev-tools/backends/github.html)
+downloads the release binary for your OS and architecture.
+Omit `--global` to add helm-snoop to the current project's `mise.toml`.
+
 **APT (Debian/Ubuntu):**
 ```bash
 echo "deb [trusted=yes] https://apt.fury.io/stadimeter/ /" \
@@ -48,6 +62,13 @@ sudo apt update && sudo apt install helm-snoop
 VERSION=0.7.0
 curl -fsSL "https://github.com/y0-l0/helm-snoop/releases/download/v${VERSION}/helm-snoop_${VERSION}_linux_amd64.tar.gz" | tar -xz
 sudo mv helm-snoop /usr/local/bin/
+```
+
+**Build from source:**
+
+```bash
+go install \
+  github.com/y0-l0/helm-snoop/cmd/helm-snoop@latest
 ```
 
 ## 💻 Usage
