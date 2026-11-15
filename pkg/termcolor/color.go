@@ -92,7 +92,7 @@ func colorHeader(text, char, code string) string {
 // termWidth returns the current terminal width in columns.
 // Prefers TTY size, falls back to $COLUMNS, then 80.
 func termWidth() int {
-	fd := int(os.Stdout.Fd()) //nolint:gosec // G115: file descriptors are always small.
+	fd := int(os.Stdout.Fd())
 	if term.IsTerminal(fd) {
 		if w, _, err := term.GetSize(fd); err == nil && w > 0 {
 			return w

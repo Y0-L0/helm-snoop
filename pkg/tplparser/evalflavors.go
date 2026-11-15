@@ -70,7 +70,7 @@ func (e *evalCtx) evalFieldNode(node *parse.FieldNode) evalResult {
 		return result
 	}
 
-	if firstField == "Values" { //nolint:goconst
+	if firstField == valuesField {
 		if len(node.Ident) == 1 {
 			// Just ".Values" with no path
 			return evalResult{}
@@ -326,7 +326,7 @@ func evalRootVariable(ident []string) evalResult {
 	if len(ident) == 1 {
 		return evalResult{paths: vpath.Paths{vpath.NewPath()}}
 	}
-	if ident[1] != "Values" || len(ident) < 3 {
+	if ident[1] != valuesField || len(ident) < 3 {
 		return evalResult{}
 	}
 	p := vpath.NewPath(ident[2:]...)
