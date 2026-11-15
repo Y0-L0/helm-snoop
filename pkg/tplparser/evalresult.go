@@ -4,6 +4,8 @@ import (
 	"github.com/y0-l0/helm-snoop/pkg/vpath"
 )
 
+const valuesField = "Values"
+
 type evalResult struct {
 	// args contains literal string values extracted from the node.
 	// Used for literal folding and as keys for path synthesis (index, get).
@@ -43,7 +45,7 @@ func (r evalResult) resolveFields(fields []string) evalResult {
 
 	// Strip .Values when base path is root — the root context ($) already
 	// represents the chart root, so "Values" is not a real path segment.
-	if len(r.paths) > 0 && r.paths[0].ID() == "." && fields[0] == "Values" {
+	if len(r.paths) > 0 && r.paths[0].ID() == "." && fields[0] == valuesField {
 		fields = fields[1:]
 		if len(fields) == 0 {
 			return evalResult{}
